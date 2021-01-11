@@ -1,0 +1,1 @@
+Enable to allow users to see the Report Issue button. Be sure to add Categories, these are shown as a drop down when users select the Report Issue button

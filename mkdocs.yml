@@ -1,0 +1,7 @@
+site_name: Ombi Docs
+nav:
+  - Home: Index.md
+  - Installation: Installation.md
+  - Settings: 
+    - Reverse Proxying: Settings\Reverse-Proxy-v4.md
+    - Reverse Proxy Examples: Settings\Reverse-Proxy-Examples.md
