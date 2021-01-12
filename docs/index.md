@@ -5,7 +5,7 @@ The wiki is built using [mkdocs](https://www.mkdocs.org).
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
+    mkdocs.yml    # The configuration file for the site itself.
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
@@ -25,11 +25,10 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 * * [_Windows MySQL Instructions_](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database-(MySQL)-on-Windows)
 * * [_Migration procedure from SQLite to MySQL/MariaDB_](https://github.com/tidusjar/Ombi/wiki/Migration-procedure-from-SQLite-to-MySQL-or-MariaDB)<br>
 <!-- end of the list --><br>
-[**Settings**](https://github.com/tidusjar/Ombi/wiki/Settings)<br>
 * [All the *Arrs (Sonarr etc)](https://github.com/tidusjar/Ombi/wiki/Arr-Settings)<br>
 * [Authentication](https://github.com/tidusjar/Ombi/wiki/Authentication-Settings)<br> 
 * [Customization](https://github.com/tidusjar/Ombi/wiki/Customization-Settings)<br>
-    * [Common Themes](https://github.com/tidusjar/Ombi/wiki/Ombi-v4-Custom-Themes)
+* [Common Themes](https://github.com/tidusjar/Ombi/wiki/Ombi-v4-Custom-Themes)<br>
 * [DogNzb](https://github.com/tidusjar/Ombi/wiki/DogNzb-Settings)<br>
 * [Issues](https://github.com/tidusjar/Ombi/wiki/Issue-Settings)<br> 
 * [Jobs/Tasks/Schedules](https://github.com/tidusjar/Ombi/wiki/Jobs-Tasks-Schedules)<br> 
