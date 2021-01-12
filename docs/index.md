@@ -3,13 +3,6 @@
 Please note the wiki is maintained by TidusJar and the community.<br>
 The wiki is built using [mkdocs](https://www.mkdocs.org).
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
 ## Project layout
 
     mkdocs.yml    # The configuration file.
@@ -17,6 +10,11 @@ The wiki is built using [mkdocs](https://www.mkdocs.org).
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
+### Old files below
+Any files that get edited are to be removed from the below list and added under their relevant heading inside `mkdocs.yml`, to ensure we avoid double-handling.  
+Please ensure that any time you wish to work on the site you do a `git pull` to be sure you're working on the most up-to-date version of the site.
+
+---
 
 [**FAQ**](https://github.com/tidusjar/Ombi/wiki/FAQ)<br>
 [Syncing Tautulli/Ombi users](https://github.com/tidusjar/Ombi/wiki/Ombi-&-Tautulli)<br>
