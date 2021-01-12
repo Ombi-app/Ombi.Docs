@@ -1,6 +1,19 @@
+---
 site_name: Ombi Docs
+site_description: The official guide for Ombi 
+site_author: Ombi-App
+site_url: https://docs.ombi.app
+
+repo_url: https://github.com/Ombi-App/Ombi.Docs
+repo_name: Ombi-App/Ombi.Docs
+
 theme:
   name: material
+  features:
+    - navigation.instant
+  language: en
+  favicon: assets/images/favicon.ico
+
 nav:
   - Home: index.md
   - Installation: installation.md
