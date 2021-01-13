@@ -1,6 +1,6 @@
 # Ombi.Docs
 
-Docs Site: [https://docs/ombi.io](https://docs.ombi.io/)  
+Docs Site: [https://docs/ombi.app](https://docs.ombi.app/)  
 
 This is the source repository for the upcoming Ombi Docs site. The intent is to replace the aging wiki with something a little more... professional.
 It is very much a work in progress at this point.  
