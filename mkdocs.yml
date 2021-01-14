@@ -7,7 +7,8 @@ site_url: https://docs.ombi.app
 repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
 
-theme:
+# Site theming (logos, colours, icons)
+# Ombi orange is hex #e37200theme:
   name: material
   language: en
   features:
@@ -18,14 +19,12 @@ theme:
 #    primary: tbd
 #    accent: e37200 #Ombi
 
+extra:
 
+# Navigation Layout
 nav:
   - Home: index.md
   - Installation: installation.md
   - Settings: 
     - Reverse Proxying: settings\reverse-proxy-v4.md
     - Reverse Proxy Examples: settings\reverse-proxy-examples.md
-
-
-# Notes:
-#  Ombi orange is hex #e37200
