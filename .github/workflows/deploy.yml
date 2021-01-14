@@ -1,4 +1,4 @@
-name: Deploy docs to GitHub Pages via mkdocs
+name: Build and deploy docs
 
 on:
   push:
