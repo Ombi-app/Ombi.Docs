@@ -41,3 +41,5 @@ nav:
   - Settings: 
     - Reverse Proxying: settings\reverse-proxy-v4.md
     - Reverse Proxy Examples: settings\reverse-proxy-examples.md
+  - Scripting:
+    - Ombi & Tautulli: scripting\ombi-tautulli.md
