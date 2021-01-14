@@ -7,25 +7,36 @@ site_url: https://docs.ombi.app
 repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
 
+# Site theming (logos, colours, icons)
+# Ombi orange is hex #e37200theme:
 theme:
   name: material
+  language: en
   features:
     - navigation.instant
-  language: en
   favicon: assets/images/favicon.ico
-  #logo: assets/images/apple-touch-icon.png
-  #palette:
+#  logo: assets/images/apple-touch-icon.png
+#  palette:
 #    primary: tbd
-#    accent: e37200 #Ombi Orange
+#    accent: e37200 #Ombi
 
-
+extra:
+  social:
+    - icon: "fontawesome/brands/discord"
+      link: "https://discord.gg/Sa7wNWb"
+    - icon: "fontawesome/brands/twitch"
+      link: "https://www.twitch.tv/tidusjar"
+    - icon: "fontawesome/brands/twitter"
+      link: "https://twitter.com/intent/follow?screen_name=tidusjar"
+    - icon: "fontawesome/brands/patreon"
+      link: "https://patreon.com/tidusjar/Ombi"
+    - icon: "fontawesome/brands/paypal"
+      link: "https://paypal.me/PlexRequestsNet"
+    
+# Navigation Layout
 nav:
   - Home: index.md
   - Installation: installation.md
   - Settings: 
     - Reverse Proxying: settings\reverse-proxy-v4.md
     - Reverse Proxy Examples: settings\reverse-proxy-examples.md
-
-
-# Notes:
-#  Ombi orange is hex #e37200
