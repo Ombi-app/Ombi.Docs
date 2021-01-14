@@ -13,7 +13,10 @@ theme:
     - navigation.instant
   language: en
   favicon: assets/images/favicon.ico
-  logo: assets/images/logo-orange-small.png
+  #logo: assets/images/apple-touch-icon.png
+  #palette:
+#    primary: tbd
+#    accent: e37200 #Ombi Orange
 
 
 nav:
