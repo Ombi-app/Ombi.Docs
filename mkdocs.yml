@@ -37,6 +37,7 @@ extra:
 nav:
   - Home: index.md
   - Installation: installation.md
+  - FAQ: faq.md
   - Settings: 
     - Reverse Proxying: settings\reverse-proxy-v4.md
     - Reverse Proxy Examples: settings\reverse-proxy-examples.md
