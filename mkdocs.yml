@@ -13,6 +13,8 @@ theme:
     - navigation.instant
   language: en
   favicon: assets/images/favicon.ico
+  logo: assets/images/logo-orange-small.png
+
 
 nav:
   - Home: index.md
@@ -20,3 +22,7 @@ nav:
   - Settings: 
     - Reverse Proxying: settings\reverse-proxy-v4.md
     - Reverse Proxy Examples: settings\reverse-proxy-examples.md
+
+
+# Notes:
+#  Ombi orange is hex #e37200
