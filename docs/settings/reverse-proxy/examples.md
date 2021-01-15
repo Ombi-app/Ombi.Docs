@@ -1,38 +1,24 @@
+# Reverse Proxy Examples
+
 > Note: These examples assume you are using **_/ombi_** as your **Base URL**.  
 > If your **Base URL** differs, replace all instances of **_/ombi_** with **_/YourBaseURL_**.  
 > If you're using a **subdomain** (ombi.example.com), replace all instances of **_/ombi_** with **_/_**, and remove the first _location_ block.
-<br>
-
-[v4 Reverse Proxy (WIP)](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-v4)<br>
-
-Server type:<br>
-* [Nginx](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#nginx)
-  * [Nginx with subdomain](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#nginx-with-subdomain)
-* [Apache](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#apache)
-* [IIS](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#iis)
-  * [IIS with subdirectory](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#iis-with-subfolder)
-  * [IIS with subdomain](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#iis-with-subdomain)
-* [Caddy](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#caddy)
-  * [Caddy with subdirectory](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#subdirectory)
-  * [Caddy with subdomain](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#subdomain)
-* [Traefik](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#traefik)
-  * [Traefik with subdirectory](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#traefik-with-subdirectory)
-  * [Traefik with subdomain](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#traefik-with-subdomain)
-  * [Traefik with subdomain and subdirectory](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#traefik-with-subdomain-and-subdirectory)
-
+  
 ## **Nginx:**
-To use nginx as a reverse proxy requires no extra modules, but it does require configuring.<br>
-In the configuration for your nginx site (nginx.conf for the default site), you'll need to add a 'block' for catching ombi as a subpath. If you wish to use a subdomain, there is an [example further down](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples#nginx-with-subdomain).<br>
-It goes directly below the default location, which usually looks like this:<br>
+
+To use nginx as a reverse proxy requires no extra modules, but it does require configuring.  
+In the configuration for your nginx site (nginx.conf for the default site), you'll need to add a 'block' for catching ombi as a subpath. If you wish to use a subdomain, there is an [example further down](#nginx-with-subdomain).  
+It goes directly below the default location, which usually looks like this:  
 
     location / {
         root   html;
         index  index.html index.htm;
     }
 
-The block to add looks like this (some changes can be made depending on your setup, but generally this works).<br>
-Note that if the machine hosting your application is not the same as your web server, then you'll need to replace "127.0.0.1" with the IP of your Ombi host.<br>
-Nginx is smart enough to match the "ombi" in your location to the "ombi" in your BaseURL.<br>
+The block to add looks like this (some changes can be made depending on your setup, but generally this works).  
+Note that if the machine hosting your application is not the same as your web server, then you'll need to replace `127.0.0.1` with the IP of your Ombi host.  
+If you are using a port other than `5000`, you'll also need to update that to match.  
+Nginx is smart enough to match the "ombi" in your location to the "ombi" in your BaseURL.  
 
     location /ombi/ {
         proxy_pass http://127.0.0.1:5000;
@@ -47,26 +33,27 @@ Nginx is smart enough to match the "ombi" in your location to the "ombi" in your
     }
 
 ### nginx with Subdomain
-If you wish to use ombi.example.com rather than example.com/ombi, then you need to create a site per service.<br>
-You will also need to ensure that ombi is not configured to use a BaseURL. <br>
-Each site has a separate config file in the sites-available directory. By default, this is `/etc/nginx/sites-available`.<br>
-We're going to use the site name as the file name, so in this case we need to put the following into <br>`/etc/nginx/sites-available/ombi.example.com.conf`<br>
-Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the `listen 443`, generate, and apply the certificates using LetsEncrypt.<br>
-Of course, replace 127.0.0.1:5000 with whatever IP and port combination you are using for Ombi.<br>
+
+If you wish to use ombi.example.com rather than example.com/ombi, then you need to create a site per service.  
+You will also need to ensure that ombi is not configured to use a BaseURL.  
+Each site has a separate config file in the sites-available directory. By default, this is `/etc/nginx/sites-available`.  
+We're going to use the site name as the file name, so in this case we need to put the following into <br>`/etc/nginx/sites-available/ombi.example.com.conf`  
+Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the `listen 443`, generate, and apply the certificates using LetsEncrypt.  
+Of course, replace 127.0.0.1:5000 with whatever IP and port combination you are using for Ombi.  
 Ensure your Application Url (in Ombi) matches the `server_name` field.
 
-````conf
-server {
-  listen 80;
-  listen [::]:80;
+    server {
+    listen 80;
+    listen [::]:80;
 
-  server_name ombi.example.com;
+    server_name ombi.example.com;
 
-  location / {
-      proxy_pass http://127.0.0.1:5000/;
-  }
-}
-````
+    location / {
+        proxy_pass http://127.0.0.1:5000/;
+    }
+    }
+
+
 Disable support for Websockets. Disable these items by commenting them out:
 ````conf
     # Allow websockets on all servers
