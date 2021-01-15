@@ -3,9 +3,9 @@
 ## Error updating from Web UI
 
 See [Update Errors](../updating)
-
 ***
-### When searching for a TV Show, it appears and then disappears straight away! Or doesn't appear at all!
+
+## TV Show search results disappear
 
 This is due to our TV Provider [TVMaze](https://www.tvmaze.com/) not having the metadata we need to process that TV Show. We require TV Maze to supply us with a TVDBId for that show.
 You can easily check this by calling the TV Maze API: http://api.tvmaze.com/search/shows?q=Dexter
@@ -19,17 +19,18 @@ If you search for a TV show and get this error:
 
 ![sorry](https://i.imgur.com/v4NbRjL.jpg)
 
-_This most commonly is caused by incorrect spelling._ 😃
+_This is most commonly caused by incorrect spelling._ 😃
 
-This could also be caused by there not being enough metadata available such as `thetvdbid` and/or episiode information.
+This could also be caused by there not being enough metadata available such as `thetvdbid` and/or episode information.
 
 These are two checks that Ombi looks for to verify that a show exists and is available to be requested.
 
 Most of the time, you can freely edit the listings on [TVMAZE](https://www.tvmaze.com/) and the [theTVDB](https://www.thetvdb.com/) to have the information needed to make an item available.
 
-If you have edited the TVMAZE and/or theTVDB listings for a show, there is a time delay before the api's have the new information.  Give it a few hours before searching again.
+If you have edited the TVMAZE and/or theTVDB listings for a show, there is a time delay before the APIs have the new information.  Give it a few hours before searching again.
 ***
-### libunwind8 error
+
+## libunwind8 error
 > libunwind.so.8: cannot open shared object file You may need to install libwind8.   
 
 Run `apt install libunwind8`
