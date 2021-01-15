@@ -20,18 +20,18 @@ theme:
 #    primary: tbd
 #    accent: e37200 #Ombi
 
-#extra:
-#  social:
-#    - icon: "fontawesome/brands/discord"
-#      link: "https://discord.gg/Sa7wNWb"
-#    - icon: "fontawesome/brands/twitch"
-#      link: "https://www.twitch.tv/tidusjar"
-#    - icon: "fontawesome/brands/twitter"
-#      link: "https://twitter.com/intent/follow?screen_name=tidusjar"
-#    - icon: "fontawesome/brands/patreon"
-#      link: "https://patreon.com/tidusjar/Ombi"
-#    - icon: "fontawesome/brands/paypal"
-#      link: "https://paypal.me/PlexRequestsNet"
+extra:
+  social:
+    - icon: "fontawesome/brands/discord"
+      link: "https://discord.gg/Sa7wNWb"
+    - icon: "fontawesome/brands/twitch"
+      link: "https://www.twitch.tv/tidusjar"
+    - icon: "fontawesome/brands/twitter"
+      link: "https://twitter.com/intent/follow?screen_name=tidusjar"
+    - icon: "fontawesome/brands/patreon"
+      link: "https://patreon.com/tidusjar/Ombi"
+    - icon: "fontawesome/brands/paypal"
+      link: "https://paypal.me/PlexRequestsNet"
     
 # Navigation Layout
 nav:
@@ -42,7 +42,7 @@ nav:
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
     - Reverse Proxying:
-      - V4: settings\reverse-proxy\v4.md
-      - Examples: settings\reverse-proxy\examples.md
+      - V4: settings/reverse-proxy/v4.md
+      - Examples: settings/reverse-proxy/examples.md
   - Scripting:
-    - Ombi & Tautulli: scripting\ombi-tautulli.md
+    - Ombi & Tautulli: scripting/ombi-tautulli.md
