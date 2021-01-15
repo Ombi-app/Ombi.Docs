@@ -40,7 +40,9 @@ nav:
   - FAQ: faq.md
   - Suggesting Features: feature-suggestions.md
   - Settings: 
-    - Reverse Proxying: settings\reverse-proxy-v4.md
-    - Reverse Proxy Examples: settings\reverse-proxy-examples.md
+    - Generic Settings: settings/ombi-settings.md
+    - Reverse Proxying:
+      - V4: settings\reverse-proxy\v4.md
+      - Examples: settings\reverse-proxy\examples.md
   - Scripting:
     - Ombi & Tautulli: scripting\ombi-tautulli.md
