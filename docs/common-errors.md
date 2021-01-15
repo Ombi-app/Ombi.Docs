@@ -1,5 +1,8 @@
-### Error updating from Web UI
-See [Update Errors](https://github.com/tidusjar/Ombi/wiki/Update-Settings#updater-note)
+# Commonly Encountered Errors
+
+## Error updating from Web UI
+
+See [Update Errors](../updating)
 
 ***
 ### When searching for a TV Show, it appears and then disappears straight away! Or doesn't appear at all!
