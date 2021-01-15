@@ -6,6 +6,7 @@ site_url: https://docs.ombi.app
 
 repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
+edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/"
 
 # Site theming (logos, colours, icons)
 # Ombi orange is hex #e37200theme:
