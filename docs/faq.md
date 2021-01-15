@@ -3,17 +3,6 @@
 If you feel like a question should be added please reach out via the Ombi Discord (link at bottom of page).  
 ***
 
-## TV Show search results disappear
-
-This is due to our TV Provider TV Maze not having the metadata we need to process that TV Show (we require TV Maze to supply us with a TVDBId to match a show properly).  
-You can easily check this by calling the TV Maze API:  
-[http://api.tvmaze.com/search/shows?q=Dexter](http://api.tvmaze.com/search/shows?q=Dexter)
-
-You can see under the `externals` object there should be a `theTvDb` property. If that is `null` then Ombi cannot process that show.
-
-You can request the `theTvDb` id to be added [here](https://www.tvmaze.com/threads/2677/edit-requests)
-***
-
 ## TV shows and episodes not showing as available
 
 The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.

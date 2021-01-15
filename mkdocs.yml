@@ -1,4 +1,3 @@
----
 site_name: Ombi Docs
 site_description: The official guide for Ombi 
 site_author: Ombi-App
@@ -6,6 +5,7 @@ site_url: https://docs.ombi.app
 
 repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
+edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/"
 
 # Site theming (logos, colours, icons)
 # Ombi orange is hex #e37200theme:
@@ -37,7 +37,9 @@ extra:
 nav:
   - Home: index.md
   - Installation: installation.md
+  - Updating: updating.md
   - FAQ: faq.md
+  - Common Errors: common-errors.md
   - Suggesting Features: feature-suggestions.md
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
