@@ -1,20 +1,29 @@
-# Friendly Names
+# Syncing Friendly Names
 
 A number of people have now asked if Ombi and Tautulli can synchronise 'friendly names' or 'aliases' for users.  
 At present there is no built-in support for this.  
 
-However, one of the Discord users (thanks, DirtyCajunRice) wrote a python script to achieve this.  
-Enter the URLs and API keys for your Ombi and Tautulli instances, and save the file into your preferred scripts folder as `sync_aliases.py`.  
-I prefer:  
+## Contributor
+
+One of the Discord users (thanks, DirtyCajunRice) wrote a python script to achieve this.  
+
+## The Method
+
+Either copy/paste the contents of [The Script](#the-script) into a file (saved somewhere logical) named `sync_aliases.py`, or [download the file](../assets/scripts/sync_aliases.py).  
+Something simple like the following is preferred:  
 
 * **Windows:** `C:\Scripts\`
 * **Linux:** `/opt/scripts/`
 
-Once that's done, enter a command prompt/terminal and run `python sync_aliases.py` to run the script and have it match entries.  
 _**Note:** This script requires the requests module to be installed. You can install this with  
 `pip install requests`._  
-  
-If you'd like to make this sync happen on a schedule, then setting a scheduled task or cron job to run the python script will achieve this. A handy utility for managing this kind of thing is [Chronos](https://github.com/simse/chronos).  
+
+Once the script is in place, you'll need to edit the script to include _your_ urls and API keys (both for Tautulli and Ombi).  
+Then, enter a command prompt/terminal in that folder and run `python sync_aliases.py` to run the script and have it match entries.  
+
+If you'd like to make this sync happen on a schedule, then setting a scheduled task or cron job to run the python script will achieve this. A handy utility for managing this kind of thing is [Chronos](https://github.com/simse/chronos) (or you can create a scheduled task in Windows using [Powershell](#scheduling-this-task-with-powershell)).  
+
+## The Script
 
 ````python
 from requests import Session
@@ -49,7 +58,7 @@ for user in OMBI_USERS:
             print('Error updating {}'.format(user['userName']))
 ````
 
-## Powershell command for scheduling this
+## Scheduling this task with Powershell
 
 ````powershell
 $action = New-ScheduledTaskAction -Execute 'C:\Python27\python.exe' -Argument 'C:\Scripts\sync_aliases.py'
