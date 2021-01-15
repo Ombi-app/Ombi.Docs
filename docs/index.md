@@ -1,6 +1,7 @@
 # Welcome to the Ombi wiki
 
 Please note the wiki is maintained by TidusJar and the community.  
+
 The wiki is built using [mkdocs](https://www.mkdocs.org).
 
 ## Project layout
@@ -17,8 +18,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 ---
 
-[**FAQ**](https://github.com/tidusjar/Ombi/wiki/FAQ)  
-[Syncing Tautulli/Ombi users](https://github.com/tidusjar/Ombi/wiki/Ombi-&-Tautulli)  
 [**Installation Guide**](https://github.com/tidusjar/Ombi/wiki/Installation)  
 [Docker Networking](https://github.com/tidusjar/Ombi/wiki/Docker-Containers)  
 [Prerequisites](https://github.com/tidusjar/Ombi/wiki/Prerequisites)  

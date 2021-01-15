@@ -1,6 +1,7 @@
 # Ombi.Docs
 
 Docs Site: [https://docs/ombi.app](https://docs.ombi.app/)  
+![Doc Deployment](https://github.com/Ombi-app/Ombi.Docs/workflows/Build%20and%20deploy%20docs/badge.svg)
 
 This is the source repository for the upcoming Ombi Docs site. The intent is to replace the aging wiki with something a little more... professional.
 It is very much a work in progress at this point.  
