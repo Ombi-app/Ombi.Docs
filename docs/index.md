@@ -42,7 +42,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 #### **Notifications**
 
 [Roles & Notifications](https://github.com/tidusjar/Ombi/wiki/Roles-and-Notifications)  
-[Discord](https://github.com/tidusjar/Ombi/wiki/Discord-Notification-Settings)  
 [Email](https://github.com/tidusjar/Ombi/wiki/Email-Notification-Settings)  
 [Mass Email](https://github.com/tidusjar/Ombi/wiki/Mass-Email)  
 [Pushbullet](https://github.com/tidusjar/Ombi/wiki/Pushbullet-Notification-Settings)  
@@ -50,13 +49,11 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 [Slack](https://github.com/tidusjar/Ombi/wiki/Slack-Notification-Settings)  
 [Telegram](https://github.com/tidusjar/Ombi/wiki/Telegram-Notifications)  
 [Whatsapp/Twilio](https://github.com/tidusjar/Ombi/wiki/twilio)  
-[Notification Variables](https://github.com/tidusjar/Ombi/wiki/Notification-Template-Variables)
 
 #### **Information**
 
 [API](https://github.com/tidusjar/Ombi/wiki/Api-Information)  
 [Building V4](https://github.com/tidusjar/Ombi/wiki/Building-V4)  
-[Common Errors](https://github.com/tidusjar/Ombi/wiki/Common-Errors)  
 [Request Workflow](https://github.com/tidusjar/Ombi/wiki/Request-Workflow)  
 [Reverse Proxying](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples)  
 [v4 Reverse Proxy (WIP)](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-v4)  
