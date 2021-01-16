@@ -18,7 +18,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 ---
 
-[**Installation Guide**](https://github.com/tidusjar/Ombi/wiki/Installation)  
 [Docker Networking](https://github.com/tidusjar/Ombi/wiki/Docker-Containers)  
 [Prerequisites](https://github.com/tidusjar/Ombi/wiki/Prerequisites)  
 [Using a different database](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database)  
@@ -26,7 +25,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 [_Migration procedure from SQLite to MySQL/MariaDB_](https://github.com/tidusjar/Ombi/wiki/Migration-procedure-from-SQLite-to-MySQL-or-MariaDB)  
 [All the *Arrs (Sonarr etc)](https://github.com/tidusjar/Ombi/wiki/Arr-Settings)  
 [Authentication](https://github.com/tidusjar/Ombi/wiki/Authentication-Settings)  
-[Customization](https://github.com/tidusjar/Ombi/wiki/Customization-Settings)  
 [Common Themes](https://github.com/tidusjar/Ombi/wiki/Ombi-v4-Custom-Themes)  
 [DogNzb](https://github.com/tidusjar/Ombi/wiki/DogNzb-Settings)  
 [Issues](https://github.com/tidusjar/Ombi/wiki/Issue-Settings)  

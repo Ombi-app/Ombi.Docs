@@ -43,6 +43,7 @@ nav:
   - Suggesting Features: feature-suggestions.md
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
+    - Customization: settings/customization.md
     - Reverse Proxying:
         V4: settings/reverse-proxy/v4.md
         Examples: settings/reverse-proxy/examples.md
