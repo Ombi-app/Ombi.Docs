@@ -46,5 +46,7 @@ nav:
     - Reverse Proxying:
         V4: settings/reverse-proxy/v4.md
         Examples: settings/reverse-proxy/examples.md
+    - Notifications:
+        Discord: settings/notifications/discord.md
   - Scripting:
       Ombi & Tautulli: scripting/ombi-tautulli.md
