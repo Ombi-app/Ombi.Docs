@@ -1,4 +1,6 @@
-In all of the notification templates you are able to pass in data the Ombi will populate when sending out the notification message.
+# Notification Templating
+
+In every notification type, you are able to pass in variables that Ombi will populate with data when sending out the actual message.
 
 Below are all the supported variables.
 
