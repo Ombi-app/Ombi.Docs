@@ -2,16 +2,16 @@
 
 In every notification type, you are able to pass in variables that Ombi will populate with data when sending out the actual message.
 
-Below are all the supported variables.
+## Supported Notification Variables
 
 | Variable       | Description |
-| ------------- |-------------| 
+| ------------- |-------------|
 | {UserName}     |  The username of the user |
 | {Alias}     |  The Alias of the user (if no alias then it falls back to UserName) |
 | {UserPreference}     |  The value of the preference set on the User Management page for that notification agent |
-| {RequestedDate}      | The Date the media was requested       | 
-| {RequestId}      | Ombi's Internal ID for this request       | 
-| {RequestStatus}      | Current status of the request       | 
+| {RequestedDate}      | The Date the media was requested       |
+| {RequestId}      | Ombi's Internal ID for this request       |
+| {RequestStatus}      | Current status of the request       |
 | {Type} | The type of the request e.g. Movie, TvShow       |
 | {Title} | The title of the request e.g. Lion King       |
 | {Overview} |    Overview of the requested item    |
@@ -23,7 +23,7 @@ Below are all the supported variables.
 | {ApplicationName} |    The Application Name from the Customization Settings   |
 | {ApplicationUrl} |   The Application URL from the Customization Settings    |
 | {IssueDescription} | * The description of the issue provided by the user |
-| {IssueCategory} | * The issue category that was assigned to the issue |
+| {IssueCategory} | * The category that was assigned to the issue |
 | {IssueSubject} | * The subject of the issue that was provided by the user |
 | {NewIssueComment} | ** The new comment text on the issue |
 | {DenyReason} | *** This is the reason text when we deny a request |
@@ -38,12 +38,13 @@ Notes:
 `**`This is only for an issue comment notification, it will be empty for everything else
 `***` this is only for requests that have been denied
 
-## Newsletter
+## Supported Newsletter Variables
 
-Since there is no real request associated with a newsletter it's slightly different, these are the allowed variables:
+A newsletter behaves slightly differently, since there is no request associated with it.  
+These are the allowed variables for a newsletter:  
 
 | Variable       | Description |
-| ------------- |-------------| 
+| ------------- |-------------|
 | {UserName}     |  The User who the email is being sent to |
 | {Alias}     |  The User who the email is being sent to |
 | {ApplicationName} |    The Application Name from the Customization Settings   |
