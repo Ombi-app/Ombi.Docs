@@ -52,3 +52,5 @@ nav:
         Discord: settings/notifications/discord.md
   - Scripting:
       Ombi & Tautulli: scripting/ombi-tautulli.md
+  - Info:
+      Request Flow: info/request-workflow.md
