@@ -67,6 +67,7 @@ You would only need to install/support a certificate for **www.somedomain.com**.
 This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the `--baseurl /ombi` option
 
 ### Location Block
+
     location /ombi {
        proxy_pass http://<ip addr or hostname>:5000;
        include /etc/nginx/proxy.conf;
@@ -82,6 +83,7 @@ This configuration is if you want to run a subdirectory configuration. Note, Omb
     }
 
 ### proxy.conf
+
     client_max_body_size 10m;
     client_body_buffer_size 128k;
 
