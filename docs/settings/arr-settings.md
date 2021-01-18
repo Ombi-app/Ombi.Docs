@@ -114,6 +114,8 @@ This tells Ombi that Sonarr wants things organised into Season subfolders. Usual
 
 ## Advanced
 
+Any setting behind advanced is not recommended to be altered, _unless you know what you are doing._
+
 ## Do not search
 
 When a movie/series/album gets requested and approved, it will be added as unmonitored to the Arrs.  
