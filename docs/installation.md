@@ -9,8 +9,6 @@ For considerations when migrating an existing install rather than starting fresh
 
 ***
 
-<!-- [Prerequisites](https://github.com/tidusjar/Ombi/wiki/Prerequisites) -->
-
 ## Recommended install workflow
 
 1. Install Ombi for your preferred OS using the steps provided below.
