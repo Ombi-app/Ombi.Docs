@@ -1,4 +1,7 @@
-Under Settings -> Movies / TV / Music, you'll find the configuration sections for each of the following:<br>
+# All the Arrs
+
+Under Settings -> Movies / TV / Music, you'll find the configuration sections for each of the following:  
+
 * Sonarr
 * Radarr
 * Lidarr
