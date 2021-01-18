@@ -15,3 +15,20 @@ This is to use the API that Ombi provides. See [here](https://github.com/tidusja
 
 This will auto delete requests which have been marked available for 'x' days.  
 If the days are set to `0` then it will delete all requests after the job runs. If it's set to `1` then it will delete available requests after they have been available in the system for a day.  
+
+## Do not send Notifications if a User has the Auto Approve permission
+
+This will not send the admin any "New Request" notifications if they have auto approve, that simple really!
+
+## Hide requests from other users
+
+This will not show any requests to any "normal" user (non-admin or power user). 
+
+## Ignore any certificate errors
+
+If you find you are having any SSL certificate errors e.g. 
+> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
+
+Enable this option and it should work.
+
+
