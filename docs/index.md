@@ -52,9 +52,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 [API](https://github.com/tidusjar/Ombi/wiki/Api-Information)  
 [Building V4](https://github.com/tidusjar/Ombi/wiki/Building-V4)  
-[Request Workflow](https://github.com/tidusjar/Ombi/wiki/Request-Workflow)  
-[Reverse Proxying](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples)  
-[v4 Reverse Proxy (WIP)](https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-v4)  
 [Startup Parameters](https://github.com/tidusjar/Ombi/wiki/Startup-Parameters)  
 [Translations](https://github.com/tidusjar/Ombi/wiki/Translations)  
 [User Roles](https://github.com/tidusjar/Ombi/wiki/User-Roles)
