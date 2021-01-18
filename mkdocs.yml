@@ -43,11 +43,15 @@ nav:
   - Suggesting Features: feature-suggestions.md
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
-    - Reverse Proxying:
-        V4: settings/reverse-proxy/v4.md
-        Examples: settings/reverse-proxy/examples.md
+    - Customization: settings/customization.md
+    - Reverse Proxying: settings/reverse-proxy.md
     - Notifications:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
   - Scripting:
       Ombi & Tautulli: scripting/ombi-tautulli.md
+  - Info:
+      Request Flow: info/request-workflow.md
+  - Archive:
+      Prerequisites: archived/prerequisites.md
+      V4 Specific Proxying: archived/v4-specific-proxy.md

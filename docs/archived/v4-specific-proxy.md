@@ -1,4 +1,7 @@
-This is an NGINX subdomain reverse proxy that **DOES NOT** use baseurl.  I'm running Ombi v4 on "Docker for Windows" (sic) with NGINX running natively on Windows 10 via [OrganizrInstaller](https://github.com/elmerfdz/OrganizrInstaller).
+# V4 Specific Proxying
+
+This is an NGINX subdomain reverse proxy that **DOES NOT** use baseurl.  
+For running Ombi v4 on "Docker for Windows" (sic) with NGINX running natively on Windows 10 via [OrganizrInstaller](https://github.com/elmerfdz/OrganizrInstaller).
 
 ```conf
 # Ombi v4 Subdomain
@@ -22,18 +25,18 @@ server {
         ssl_ecdh_curve secp384r1;
         resolver 1.1.1.1 1.0.0.1 valid=300s;
         resolver_timeout 10s;
-		gzip on;
-		gzip_vary on;
-		gzip_min_length 1000;
-		gzip_proxied any;
-		gzip_types text/plain text/css text/xml application/xml text/javascript application/x-javascript image/svg+xml;
-		gzip_disable "MSIE [1-6]\.";
+        gzip on;
+        gzip_vary on;
+        gzip_min_length 1000;
+        gzip_proxied any;
+        gzip_types text/plain text/css text/xml application/xml text/javascript application/x-javascript image/svg+xml;
+        gzip_disable "MSIE [1-6]\.";
     
     location / {
         proxy_pass http://127.0.0.1:5000;
-	proxy_http_version 1.1;
-	proxy_set_header Upgrade $http_upgrade;
-	proxy_set_header Connection "upgrade";
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
     }
 # This allows access to the actual api
 location /api {
@@ -45,8 +48,11 @@ location /swagger {
 }
 }
 ```
+
 ***
+
 ## Subdirectory Configuration
+
 This is an NGINX reverse proxy configuration that **DOES** use baseurl. This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Unbuntu 18.04.
 
 The advantage of this configuration is that it allows for a single certificate to provide ssl services for many different web apps.
@@ -58,11 +64,10 @@ The advantage of this configuration is that it allows for a single certificate t
 
 You would only need to install/support a certificate for **www.somedomain.com**.
 
-**Important note that you should use extreme care when exposing services to the internet**
-
 This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the `--baseurl /ombi` option
 
 ### Location Block
+
     location /ombi {
        proxy_pass http://<ip addr or hostname>:5000;
        include /etc/nginx/proxy.conf;
@@ -78,6 +83,7 @@ This configuration is if you want to run a subdirectory configuration. Note, Omb
     }
 
 ### proxy.conf
+
     client_max_body_size 10m;
     client_body_buffer_size 128k;
 

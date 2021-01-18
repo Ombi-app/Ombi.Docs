@@ -61,7 +61,7 @@ Be sure to adjust directories to your Ombi install location
 **Path:** `C:\Tools\Ombi\Ombi.exe`  
 **Start directory:** `C:\Tools\Ombi`
 
-![Ombi NSSM](../assets/images/embeds/nssm_service.png)  
+![Ombi NSSM](./assets/images/embeds/nssm_service.png)  
 
 #### Standard Setup with different port number
 
@@ -71,7 +71,7 @@ Be sure to adjust directories to your Ombi install location
 **Start directory:** `C:\Tools\Ombi`  
 **Arguments:** `--host "http://*:PORTNUMBER"`
 
-![Ombi NSSM with Port](../assets/images/embeds/nssm_service.png)  
+![Ombi NSSM with Port](./assets/images/embeds/nssm_service_with_port.png)  
 
 ### Install as a Service with Windows Task Scheduler
 
@@ -117,14 +117,16 @@ Replace the port in the below commands with your own port if you're running a di
 ### Debian / APT repo
 
 **Note:** Thi is the easy way, and only works with Debian-based distros.  
-**This repo is maintained by [@louis-lau](https://github.com/louis-lau).** Go bug him on discord if you have problems specifically with the repo. Don't open an issue with us.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
 
 1. Add the apt repository to the apt sources list:  
-   * _If you would like stable releases, execute:_  
-   `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/develop/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`
+   `echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`
+   > For old (v3) releases, use:  
+   > `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
-   `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`
+   `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`
+   > For old (v3) releases, use:  
+   > `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`
 3. Update the package list and install Ombi:  
    `sudo apt update && sudo apt install ombi`
 

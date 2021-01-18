@@ -49,12 +49,20 @@ This is due to Ombi needing to know where to send users if they click any links 
 
 ## Ombi does not default to English or my preferred language
 
-This is mostly an issue with Chrome.
-Ombi sets whatever is the first language your browser presents, you can run the command `navigator.languages` in the Chrome console to see the list.
-
+Once you have set your preferred language in the user preferences area of Ombi, then it's attached to your user profile. When Ombi loads up, it checks what was set and will use that. If nothing has been set then Ombi sets whatever is the first language your browser presents to it.  
+If this does not get presented properly, this is mostly an issue with Chrome.  
+You can run the command `navigator.languages` in the Chrome console to see the list.  
 To get Ombi to display the language you want, make that language appear as the first entry in the above command.
 
-You can do this by going to the language settings in Chrome `(chrome://settings/languages)` > click the down arrow next to Language > click the 3 ellipsis by the language you want to set as default > click move to the top. Please set Chrome to use this as display language as well.
+You can do this by:
+
+- Open the Chrome Language Settings page  
+`chrome://settings/languages`
+- Click the down arrow next to Language
+- Click the 3 ellipses by the language you want to set as default
+- Click move to the top.
+
+Please set Chrome to use this as display language as well.
 ***
 
 ## Docker Issues
