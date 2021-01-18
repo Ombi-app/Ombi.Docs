@@ -44,7 +44,7 @@ nav:
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
     - Customization: settings/customization.md
-    - Reverse Proxying: settings/reverse-proxy/examples.md
+    - Reverse Proxying: settings/reverse-proxy.md
     - Notifications:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
@@ -53,4 +53,5 @@ nav:
   - Info:
       Request Flow: info/request-workflow.md
   - Archive:
+      Prerequisites: archived/prerequisites.md
       V4 Specific Proxying: archived/v4-specific-proxy.md
