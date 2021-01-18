@@ -33,6 +33,7 @@ For doing code standards checking (a.k.a. 'linting'):
 [DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)  
 For syntax highlighting and preview functions:  
 [yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
 ## Using mkdocs
 
 The site is being built using [mkdocs](https://www.mkdocs.org/), which converts standard markdown to static html.  
