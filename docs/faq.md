@@ -49,7 +49,7 @@ This is due to Ombi needing to know where to send users if they click any links 
 
 ## Ombi does not default to English or my preferred language
 
-This is mostly an issue with Chrome.
+Once you have set your preferred language in the user preferences area of Ombi, then it's attached to your user profile. So when Ombi loads up it checks what was set and will use that. If nothing has been set then this is mostly an issue with Chrome.
 Ombi sets whatever is the first language your browser presents, you can run the command `navigator.languages` in the Chrome console to see the list.
 
 To get Ombi to display the language you want, make that language appear as the first entry in the above command.
