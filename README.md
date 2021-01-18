@@ -27,6 +27,12 @@ Note that as `mkdocs.yml` _is_ written in an indent-sensitive language, the new 
 [VS Code](https://code.visualstudio.com/) is a good option to use for this, as it has extensions for markup and markdown syntax highlighting (as well as preview functions).  
 [Atom](https://atom.io/) is another good option.
 
+### Suggested plugins for VS Code
+
+For doing code standards checking (a.k.a. 'linting'):  
+[DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)  
+For syntax highlighting and preview functions:  
+[yzhang.markdown-all-in-one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 ## Using mkdocs
 
 The site is being built using [mkdocs](https://www.mkdocs.org/), which converts standard markdown to static html.  
