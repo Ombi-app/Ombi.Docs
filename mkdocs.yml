@@ -43,6 +43,7 @@ nav:
   - Suggesting Features: feature-suggestions.md
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
+    - All the Arrs: settings/arr-settings.md
     - Customization: settings/customization.md
     - Reverse Proxying: settings/reverse-proxy.md
     - Notifications:
