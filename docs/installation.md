@@ -121,8 +121,12 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 
 1. Add the apt repository to the apt sources list:  
    `echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`
+   > For old (v3) releases, use:  
+   > `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
    `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`
+   > For old (v3) releases, use:  
+   > `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`
 3. Update the package list and install Ombi:  
    `sudo apt update && sudo apt install ombi`
 
