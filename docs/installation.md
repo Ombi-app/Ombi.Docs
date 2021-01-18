@@ -114,7 +114,7 @@ Replace the port in the below commands with your own port if you're running a di
 
 ### Debian / APT repo
 
-**Note:** Thi is the easy way, and only works with Debian-based distros.  
+**Note:** This is the easy way, and only works with Debian-based distros.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
 
 1. Add the apt repository to the apt sources list:  
