@@ -24,7 +24,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 [Jobs/Tasks/Schedules](https://github.com/tidusjar/Ombi/wiki/Jobs-Tasks-Schedules)  
 [Landing Page](https://github.com/tidusjar/Ombi/wiki/Landing-Page-Settings)  
 [Newsletter](https://github.com/tidusjar/Ombi/wiki/Newsletter-Settings)  
-[Ombi](https://github.com/tidusjar/Ombi/wiki/Ombi-Settings)  
 [Update](https://github.com/tidusjar/Ombi/wiki/Update-Settings)  
 [Voting](https://github.com/tidusjar/Ombi/wiki/Vote-Settings)
 
