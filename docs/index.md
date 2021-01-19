@@ -31,7 +31,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 ##### User Interfaces
 
 [Mobile App](https://github.com/tidusjar/Ombi/wiki/Mobile-App-Setup)  
-[Common Themes](https://github.com/tidusjar/Ombi/wiki/Ombi-v4-Custom-Themes)  
 
 ##### **Notifications**
 
