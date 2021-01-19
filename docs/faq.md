@@ -3,6 +3,11 @@
 If you feel like a question should be added please reach out via the Ombi Discord (link at bottom of page).  
 ***
 
+## How do I request a feature be added to Ombi
+
+See [Feature Suggestions](../info/feature-suggestions)
+***
+
 ## TV shows and episodes not showing as available
 
 The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.
