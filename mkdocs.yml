@@ -16,7 +16,6 @@ theme:
   features:
     - navigation.instant
   favicon: assets/images/ombi/favicon.ico
-  
 #  logo: assets/images/apple-touch-icon.png
 #  palette:
 #    primary: tbd
