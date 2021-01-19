@@ -1,4 +1,7 @@
-Notifications not working but the 'Test Notification' does?
+# Roles and notifications
+
+Certain roles automatically disable some notifications for that user.  
+If notifications are not working but the 'Test Notification' does, check the roles they're assigned.
 
 ***
 
@@ -14,7 +17,9 @@ _Some_ Roles do not trigger _some_ notifications:
 (There is no role for normal user as long as they exist and do not have Admin or Power User role they are a normal user)
 
 ***
-### Notifications
+
+## Notifications
+
 * **ISSUE**
 * **ISSUE COMMENT**
 * **ISSUE RESOLVED**
@@ -25,4 +30,4 @@ _Some_ Roles do not trigger _some_ notifications:
 * **REQUEST DECLINED**
 * **WELCOME EMAIL** _(does nothing for any Agent except email)_
 
-See [here](https://github.com/tidusjar/Ombi/wiki/User-Roles) for more information on roles.
+See [here](../user-roles) for more information on roles.

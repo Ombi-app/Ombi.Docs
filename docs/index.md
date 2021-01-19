@@ -31,10 +31,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 [Mobile App](https://github.com/tidusjar/Ombi/wiki/Mobile-App-Setup)  
 
-##### **Notifications**
-
-[Roles & Notifications](https://github.com/tidusjar/Ombi/wiki/Roles-and-Notifications)  
-
 #### **Information**
 
 [Startup Parameters](https://github.com/tidusjar/Ombi/wiki/Startup-Parameters)  

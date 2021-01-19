@@ -68,6 +68,7 @@ nav:
     - Request Flow: info/request-workflow.md
     - Suggesting Features: info/feature-suggestions.md
     - User Roles: info/user-roles.md
+    - Roles and Notifications: info/roles-and-notifications.md
   - Scripting:
     - Ombi & Tautulli: scripting/ombi-tautulli.md
   - Development:
