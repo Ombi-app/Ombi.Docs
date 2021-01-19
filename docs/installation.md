@@ -17,7 +17,7 @@ If you are migrating systems, rather than starting fresh, stop here and look at 
 3. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../settings/reverse-proxy).
 4. Configure notification methods and system connections (Sonarr, Radarr, etc).  
 Ensure you have systems to handle approved requests _before_ you give users access to the system.
-5. [Import users](https://github.com/tidusjar/Ombi/wiki/User-Importer-Settings) and [assign permissions](https://github.com/tidusjar/Ombi/wiki/User-Roles-Explained).
+5. [Import users](https://github.com/tidusjar/Ombi/wiki/User-Importer-Settings) and [assign permissions](../info/user-roles).
 
 ## Migrating Systems
 

@@ -60,6 +60,7 @@ nav:
       Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md
       Suggesting Features: info/feature-suggestions.md
+      User Roles: info/user-roles.md
   - Scripting:
       Ombi & Tautulli: scripting/ombi-tautulli.md
   - Archive:
