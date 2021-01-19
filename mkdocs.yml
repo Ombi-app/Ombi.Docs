@@ -47,9 +47,10 @@ nav:
     - Authentication: settings/authentication.md
     - Customization: settings/customization.md
     - DogNzb: settings/dognzb.md
+    - Issues: settings/issues.md
+    - Landing Page: settings/landing-page.md
     - Reverse Proxying: settings/reverse-proxy.md
     - User Importer: settings/import-users.md
-    - Issues: settings/issues.md
     - Notifications:
       - Template Variables: settings/notifications/template-variables.md
       - Discord: settings/notifications/discord.md
