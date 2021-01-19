@@ -9,7 +9,7 @@
 ### Nginx Subdirectory
 
 To use nginx as a reverse proxy requires no extra modules, but it does require configuring.  
-In the configuration for your nginx site (nginx.conf for the default site), you'll need to add a 'block' for catching ombi as a subpath. If you wish to use a subdomain, there is an [example further down](#nginx-with-subdomain).  
+In the configuration for your nginx site (nginx.conf for the default site), you'll need to add a 'block' for catching ombi as a subpath. If you wish to use a subdomain, there is an [example further down](#nginx-subdomain).  
 It goes directly below the default location, which usually looks like this:  
 
     location / {
