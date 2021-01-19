@@ -23,8 +23,7 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 [Issues](https://github.com/tidusjar/Ombi/wiki/Issue-Settings)  
 [Jobs/Tasks/Schedules](https://github.com/tidusjar/Ombi/wiki/Jobs-Tasks-Schedules)  
 [Landing Page](https://github.com/tidusjar/Ombi/wiki/Landing-Page-Settings)  
-[Newsletter](https://github.com/tidusjar/Ombi/wiki/Newsletter-Settings)  
-[Update](https://github.com/tidusjar/Ombi/wiki/Update-Settings)  
+[Newsletter](https://github.com/tidusjar/Ombi/wiki/Newsletter-Settings)
 [Voting](https://github.com/tidusjar/Ombi/wiki/Vote-Settings)
 
 ##### User Interfaces
