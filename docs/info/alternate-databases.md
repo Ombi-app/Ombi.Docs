@@ -139,4 +139,4 @@ You effectively have a clean ombi install.
 
 #### Migration
 
-You can migrate the existing sqlite databses to mysql if you choose by following the [Migration Guide](https://github.com/tidusjar/Ombi/wiki/Migration-procedure-from-SQLite-to-MySQL-or-MariaDB)
+You can migrate the existing sqlite databses to mysql if you choose by following the [Migration Guide](../migrating-databases)
