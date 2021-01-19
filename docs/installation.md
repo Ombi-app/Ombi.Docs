@@ -14,7 +14,7 @@ For considerations when migrating an existing install rather than starting fresh
 1. Install Ombi for your preferred OS using the steps provided below.
 If you are migrating systems, rather than starting fresh, stop here and look at [Migrating Systems](#migrating-systems).
 2. Configure your [install-specific settings](../settings/customization) like the application url you'll be using externally.
-3. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../settings/reverse-proxy/examples/).
+3. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../settings/reverse-proxy).
 4. Configure notification methods and system connections (Sonarr, Radarr, etc).  
 Ensure you have systems to handle approved requests _before_ you give users access to the system.
 5. [Import users](https://github.com/tidusjar/Ombi/wiki/User-Importer-Settings) and [assign permissions](https://github.com/tidusjar/Ombi/wiki/User-Roles-Explained).
@@ -100,7 +100,7 @@ As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if yo
 ### Windows Firewall
 
 To allow a port through Windows Firewall, you have a few options.
-Note that this is not the preferred method of access, and a [Reverse Proxy](../settings/reverse-proxy/examples/) is recommended instead.  
+Note that this is not the preferred method of access, and a [Reverse Proxy](../settings/reverse-proxy) is recommended instead.  
 Replace the port in the below commands with your own port if you're running a different port than the default.  
 
 **Command Prompt**  
@@ -176,7 +176,7 @@ However, there are a number of them available, maintained by various members of 
 linuxserver.io update their image the most up-to-date, and they have pretty comprehensive instructions for installation. See the page for their image [here](https://hub.docker.com/r/linuxserver/ombi/).  
 We currently recommended using the tag `v4-preview` until they shift v4 to the `latest` tag.
 
-If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see [Things to consider with Docker](https://github.com/tidusjar/Ombi/wiki/Docker-Containers) to (hopefully) help clear up some things with how networking and access works with a Docker system.
+If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see [Things to consider with Docker](../info/docker-containers) to (hopefully) help clear up some things with how networking and access works with a Docker system.
 
 ***
 

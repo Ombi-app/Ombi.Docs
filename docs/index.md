@@ -18,7 +18,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 ---
 
-[Docker Networking](https://github.com/tidusjar/Ombi/wiki/Docker-Containers)  
 [Using a different database](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database)  
 [_Windows MySQL Instructions_](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database-(MySQL)-on-Windows)
 [_Migration procedure from SQLite to MySQL/MariaDB_](https://github.com/tidusjar/Ombi/wiki/Migration-procedure-from-SQLite-to-MySQL-or-MariaDB)  

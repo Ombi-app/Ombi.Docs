@@ -52,6 +52,7 @@ nav:
   - Scripting:
       Ombi & Tautulli: scripting/ombi-tautulli.md
   - Info:
+      Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md
   - Archive:
       Prerequisites: archived/prerequisites.md
