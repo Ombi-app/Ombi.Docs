@@ -46,6 +46,7 @@ nav:
     - All the Arrs: settings/arr-settings.md
     - Customization: settings/customization.md
     - Reverse Proxying: settings/reverse-proxy.md
+    - User Importer: settings/import-users.md
     - Notifications:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
