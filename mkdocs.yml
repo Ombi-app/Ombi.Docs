@@ -59,6 +59,7 @@ nav:
         Telegram: settings/notifications/telegram.md
         Twilio: settings/notifications/twilio.md
   - Info:
+      Alternate Databases: info/alternate-databases.md
       API Information: info/api-information.md
       Common Themes: info/common-themes.md
       Docker Containers: info/docker-containers.md
