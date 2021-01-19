@@ -44,6 +44,7 @@ nav:
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
     - All the Arrs: settings/arr-settings.md
+    - Authentication: settings/authentication.md
     - Customization: settings/customization.md
     - Reverse Proxying: settings/reverse-proxy.md
     - User Importer: settings/import-users.md
