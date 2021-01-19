@@ -39,7 +39,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 ##### **Notifications**
 
 [Roles & Notifications](https://github.com/tidusjar/Ombi/wiki/Roles-and-Notifications)  
-[Email](https://github.com/tidusjar/Ombi/wiki/Email-Notification-Settings)  
 [Mass Email](https://github.com/tidusjar/Ombi/wiki/Mass-Email)  
 [Pushbullet](https://github.com/tidusjar/Ombi/wiki/Pushbullet-Notification-Settings)  
 [Pushover](https://github.com/tidusjar/Ombi/wiki/Pushover-Notification-Settings)  

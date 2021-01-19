@@ -8,7 +8,7 @@ repo_name: Ombi-App/Ombi.Docs
 edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/"
 
 # Site theming (logos, colours, icons)
-# Ombi orange is hex #e37200theme:
+# Ombi orange is hex #e37200
 theme:
   name: material
   language: en
@@ -48,6 +48,7 @@ nav:
     - Notifications:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
+        Email: settings/notifications/email.md
   - Info:
       Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md
