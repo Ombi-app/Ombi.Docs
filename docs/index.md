@@ -22,11 +22,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 [Jobs/Tasks/Schedules](https://github.com/tidusjar/Ombi/wiki/Jobs-Tasks-Schedules)  
 
-##### User Interfaces
-
-[Mobile App](https://github.com/tidusjar/Ombi/wiki/Mobile-App-Setup)  
-
 #### **Information**
 
-[Startup Parameters](https://github.com/tidusjar/Ombi/wiki/Startup-Parameters)  
 [_Windows MySQL Instructions_](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database-(MySQL)-on-Windows)

@@ -49,6 +49,7 @@ nav:
     - DogNzb: settings/dognzb.md
     - Issues: settings/issues.md
     - Landing Page: settings/landing-page.md
+    - Mobile App: settings/mobile-app.md
     - Reverse Proxying: settings/reverse-proxy.md
     - User Importer: settings/import-users.md
     - Vote: settings/voting.md
@@ -66,14 +67,15 @@ nav:
   - Info:
     - Alternate Databases: info/alternate-databases.md
     - Migrating Databases: info/migrating-databases.md
-    - Backing Up: info/backing-up.md
     - API Information: info/api-information.md
+    - Backing Up: info/backing-up.md
     - Common Themes: info/common-themes.md
     - Docker Containers: info/docker-containers.md
     - Request Flow: info/request-workflow.md
+    - Roles and Notifications: info/roles-and-notifications.md
+    - Startup Parameters: info/startup-parameters.md
     - Suggesting Features: info/feature-suggestions.md
     - User Roles: info/user-roles.md
-    - Roles and Notifications: info/roles-and-notifications.md
   - Scripting:
     - Ombi & Tautulli: scripting/ombi-tautulli.md
   - Development:
