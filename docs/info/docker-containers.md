@@ -27,10 +27,8 @@ Please bear in mind that this is just an example and can/should be changed to yo
 
 1. Create a folder for your "/config"-volume and for the MySQL-container  
 
-        ```bash
         mkdir -p /opt/ombi/config/
         mkdir -p /opt/ombi/mysql/
-        ``` 
 
 1. Create a "database.json"-file in the folder from step 1 with this content --> [see](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database):
 
