@@ -34,7 +34,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 ##### **Notifications**
 
 [Roles & Notifications](https://github.com/tidusjar/Ombi/wiki/Roles-and-Notifications)  
-[Mass Email](https://github.com/tidusjar/Ombi/wiki/Mass-Email)
 
 #### **Information**
 
