@@ -9,7 +9,7 @@ THIS IS NOT AN OFFICIALLY SUPPORTED METHOD. FOLLOW THIS AT YOUR OWN RISK.**
 2. Inside the ombi root directory, go to `/ClientApp/dist/`
 3. Find `index.html`
 4. Make the below edits to the file.
-Add `<link rel="stylesheet" href="CustomCSS.css">` right under `<link rel="stylesheet" href="styles.4d16b0dc8c12c7d965e8.css"><link rel="stylesheet" href="main.8ae492ffa0cbafb195ba.css">` and before `</head>`
+Add `<link rel="stylesheet" href="CustomCSS.css">` right under `<link rel="stylesheet" href="styles.4d16b0dc8c12c7d965e8.css"><link rel="stylesheet" href="main.8ae492ffa0cbafb195ba.css">` and before "</head>"
 5. Save your changes.
 6. Make a new file named `CustomCSS.css` in this same folder.
 7. Edit this CSS to your liking.
