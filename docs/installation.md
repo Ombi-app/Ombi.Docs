@@ -91,7 +91,7 @@ As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if yo
 12. Fill `Start in (optional):` with `Ombi.exe`'s working directory. IE: `C:\Ombi\` or `C:\SERVERS\Ombi\` basically, wherever you extracted your 'Ombi' folder to and where it lives. Click `OK`
 13. `Settings Tab` Untick `Stop the task if it runs longer than:` Click `OK`
 14. You will be prompted for your windows user name and password. Please enter your credentials and click `OK`
-15. Click `Task Scheduler Library` right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at [http://localhost:5000](http://localhost:5000) !
+15. Click `Task Scheduler Library` right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at [http://localhost:3579](http://localhost:3579) !
 
 **_Note: The next time you restart your PC, Task Scheduler will run ombi for you._**
 
@@ -103,11 +103,18 @@ To allow a port through Windows Firewall, you have a few options.
 Note that this is not the preferred method of access, and a [Reverse Proxy](../settings/reverse-proxy) is recommended instead.  
 Replace the port in the below commands with your own port if you're running a different port than the default.  
 
-**Command Prompt**  
-`netsh advfirewall firewall add rule name="Ombi" dir=in action=allow protocol=TCP localport=5000`  
+#### Command Prompt
 
-**Powershell**  
-`New-NetFirewallRule -DisplayName 'Ombi' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('5000')`
+```cmd
+netsh advfirewall firewall add rule name="Ombi" dir=in action=allow protocol=TCP localport=3579
+```
+
+#### Powershell
+
+```powershell
+New-NetFirewallRule -DisplayName 'Ombi' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('3579')
+```
+
 ***
 
 ## Linux systems
@@ -118,18 +125,18 @@ Replace the port in the below commands with your own port if you're running a di
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
 
 1. Add the apt repository to the apt sources list:  
-`echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`
-   > _For old (v3) releases, use:_  
-   > `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`  
+`echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
+   _For old (v3) releases, use:_  
+   `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`  
 1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
-`curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`
-   > _For old (v3) releases, use:_  
-   > `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`  
+`curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
+   _For old (v3) releases, use:_  
+   `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`  
 1. Update the package list and install Ombi:  
    `sudo apt update && sudo apt install ombi`
 
 If no errors are shown, Ombi has been installed successfully and will automatically start during boot.  
-Ombi should now be reachable on "http://your-ip-address:5000"
+Ombi should now be reachable on "http://your-ip-address:3579"
 
 Packages in this repo use systemd.  
 Use either the `systemctl` or the `service` command to start, stop, or restart Ombi.  
@@ -153,7 +160,7 @@ Deps: `compat-openssl10 libcurl-devel libunwind-devel openssl-devel`
 3. Launch Terminal
 4. `cd` to the path of the folder (e.g. `cd /opt/Ombi`)
 5. Execute `./Ombi`. Process should load.
-6. Ombi should now be reachable at localhost:5000
+6. Ombi should now be reachable at localhost:3579
 
 **Startup**  
 To have Ombi run at startup, add `RunAtLoad WorkingDirectory /opt/Ombi` to the command.  
