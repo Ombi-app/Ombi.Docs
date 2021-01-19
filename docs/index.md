@@ -20,7 +20,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 #### Settings
 
-[Authentication](https://github.com/tidusjar/Ombi/wiki/Authentication-Settings)  
 [DogNzb](https://github.com/tidusjar/Ombi/wiki/DogNzb-Settings)  
 [Issues](https://github.com/tidusjar/Ombi/wiki/Issue-Settings)  
 [Jobs/Tasks/Schedules](https://github.com/tidusjar/Ombi/wiki/Jobs-Tasks-Schedules)  
@@ -28,7 +27,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 [Newsletter](https://github.com/tidusjar/Ombi/wiki/Newsletter-Settings)  
 [Ombi](https://github.com/tidusjar/Ombi/wiki/Ombi-Settings)  
 [Update](https://github.com/tidusjar/Ombi/wiki/Update-Settings)  
-[User Import](https://github.com/tidusjar/Ombi/wiki/User-Importer-Settings)  
 [Voting](https://github.com/tidusjar/Ombi/wiki/Vote-Settings)
 
 ##### User Interfaces
@@ -43,9 +41,7 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 #### **Information**
 
-[Building V4](https://github.com/tidusjar/Ombi/wiki/Building-V4)  
 [Startup Parameters](https://github.com/tidusjar/Ombi/wiki/Startup-Parameters)  
-[Translations](https://github.com/tidusjar/Ombi/wiki/Translations)  
 [Backups](https://github.com/tidusjar/Ombi/wiki/Backups)
 [Using a different database](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database)  
 [_Windows MySQL Instructions_](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database-(MySQL)-on-Windows)
