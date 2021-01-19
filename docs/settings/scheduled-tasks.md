@@ -1,7 +1,11 @@
-All of the jobs are using Quartz CRON expressions.  
+# Scheduled Tasks
+
+Everything Ombi does runs as a scheduled task.  
+All of these tasks are on timers using Quartz CRON expressions.  
 [Cronmaker](http://www.cronmaker.com/) should be able to assist you in creating the expression or translate the current ones.  
 
-### Job Descriptions
+## Job Descriptions
+
 |**Jobs**|**Default Expression**|**CRON Definition**|**Description**|
 |--------------------------|--------------------------|-------------------------------|-------------------------------|
 |Sonarr Sync              | `0 10 0/1 1/1 * ? *`     | Every hour on the 10th minute |   Pulls in all of the monitored episodes, seasons and series into Ombi, so Ombi can have a quick lookup              |Pulls in all of the monitored episodes, seasons and series into Ombi, so Ombi can have a quick lookup
