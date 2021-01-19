@@ -50,6 +50,7 @@ nav:
         Discord: settings/notifications/discord.md
         Email: settings/notifications/email.md
         Pushbullet: settings/notifications/pushbullet.md
+        Pushover: settings/notifications/pushover.md
         Twilio: settings/notifications/twilio.md
   - Info:
       Docker Containers: info/docker-containers.md
