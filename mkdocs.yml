@@ -51,6 +51,7 @@ nav:
     - Landing Page: settings/landing-page.md
     - Reverse Proxying: settings/reverse-proxy.md
     - User Importer: settings/import-users.md
+    - Vote: settings/voting.md
     - Notifications:
       - Template Variables: settings/notifications/template-variables.md
       - Discord: settings/notifications/discord.md
