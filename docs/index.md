@@ -20,7 +20,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 #### Settings
 
-[DogNzb](https://github.com/tidusjar/Ombi/wiki/DogNzb-Settings)  
 [Issues](https://github.com/tidusjar/Ombi/wiki/Issue-Settings)  
 [Jobs/Tasks/Schedules](https://github.com/tidusjar/Ombi/wiki/Jobs-Tasks-Schedules)  
 [Landing Page](https://github.com/tidusjar/Ombi/wiki/Landing-Page-Settings)  
