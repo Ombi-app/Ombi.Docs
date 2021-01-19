@@ -12,9 +12,11 @@ edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/"
 theme:
   name: material
   language: en
+  code_wrap: true
   features:
     - navigation.instant
   favicon: assets/images/ombi/favicon.ico
+  
 #  logo: assets/images/apple-touch-icon.png
 #  palette:
 #    primary: tbd
@@ -49,6 +51,11 @@ nav:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
         Email: settings/notifications/email.md
+        Pushbullet: settings/notifications/pushbullet.md
+        Pushover: settings/notifications/pushover.md
+        Slack: settings/notifications/slack.md
+        Telegram: settings/notifications/telegram.md
+        Twilio: settings/notifications/twilio.md
   - Info:
       Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md

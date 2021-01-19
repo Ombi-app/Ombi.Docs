@@ -1,4 +1,6 @@
-# Setup
+# Twilio Notifications
+
+## Setup
 
 1. Ensure you have a Twilio account
 1. Login and go to your dashboard
