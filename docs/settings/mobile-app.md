@@ -1,7 +1,9 @@
-Please stop asking for an iOS app.<br>
-We had one. Apple removed it.<br>
-We appealed/argued it, and Apple stood by their decision to not allow it in the App Store.<br>
-Users are more than welcome to create their own apps, however future versions of Ombi are being written to look beautiful in mobile browsers regardless - rendering lack of app almost moot.<br>
+# Mobile App
+
+Note: Please stop asking for an iOS app.  
+We had one. Apple removed it.  
+We appealed/argued it, and Apple stood by their decision to not allow it in the App Store.  
+Users are more than welcome to create their own apps, however future versions of Ombi are being written to look beautiful in mobile browsers regardless - rendering lack of app almost moot.  
 
 # Setup
 
@@ -13,5 +15,5 @@ A good idea is to set this up using a [Reverse Proxy](https://github.com/tidusja
 # Connecting
 
 ### How to connect the website to the app:
-[GIF VIDEO!](https://i.imgur.com/83isemg.gif)
 
+[GIF VIDEO!](https://i.imgur.com/83isemg.gif)
