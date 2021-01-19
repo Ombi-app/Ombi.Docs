@@ -13,7 +13,7 @@ To create the folder and run Ombi on port 3579 (the default for v4), run the fol
 
 ```bash
 mkdir -p /opt/ombi/config/
-docker run -d --name=ombi -p 3579:3579 --restart=unless-stopped -v /opt/ombi/config:/config linuxserver/ombi:v4-preview
+docker run -d --name=ombi -p 3579:3579 --restart=unless-stopped -v /opt/ombi/config:/config linuxserver/ombi:development
 ```
 
 This will create the folder and a container named "ombi" that you can then manage like any other docker container.  
