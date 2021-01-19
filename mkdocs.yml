@@ -55,6 +55,7 @@ nav:
       - Discord: settings/notifications/discord.md
       - Email: settings/notifications/email.md
       - Mass Email: settings/notifications/mass-email.md
+      - Newsletter: settings/notifications/newsletter.md
       - Pushbullet: settings/notifications/pushbullet.md
       - Pushover: settings/notifications/pushover.md
       - Slack: settings/notifications/slack.md
