@@ -18,10 +18,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 
 ---
 
-#### Settings
-
-[Jobs/Tasks/Schedules](https://github.com/tidusjar/Ombi/wiki/Jobs-Tasks-Schedules)  
-
 #### **Information**
 
 [_Windows MySQL Instructions_](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database-(MySQL)-on-Windows)
