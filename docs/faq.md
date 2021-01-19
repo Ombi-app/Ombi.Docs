@@ -47,7 +47,7 @@ This is due to Ombi needing to know where to send users if they click any links 
 
 ## Notifications for requests not being received
 
-1. Check and test if you have configured the notification(s) as per instructions in [Discord Notification Settings](https://github.com/tidusjar/Ombi/wiki/Discord-Notification-Settings) and [Email Notification Settings](https://github.com/tidusjar/Ombi/wiki/Email-Notification-Settings)
+1. Check and test if you have configured the notification(s) as per instructions in [Discord Notification Settings](../settings/notifications/discord) and [Email Notification Settings](../settings/notifications/email)
 2. If testing the notification(s) work fine then make sure that the user requesting is not an auto approve or admin user
 
 ***
@@ -76,7 +76,7 @@ If you're running all your services in containers, be mindful that sometimes NAT
 If you have services behind a reverse proxy, use the full external address for the service.  
 If you have them behind Organizr as well, then use the Docker IP and port of each container instead - to avoid any routing or authentication issues that this can cause.  
 If you use the host IP instead of the container IP, be sure to use the local port you mapped to the container, rather than simply the container port (these are not always the same).  
-For a breakdown of docker networking (and some reasoning), see [Docker Networking](https://github.com/tidusjar/Ombi/wiki/Docker-Containers).
+For a breakdown of docker networking (and some reasoning), see [Docker Networking](../info/docker-containers).
 ***
 
 ## Database uses
