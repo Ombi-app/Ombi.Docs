@@ -56,6 +56,7 @@ nav:
         Telegram: settings/notifications/telegram.md
         Twilio: settings/notifications/twilio.md
   - Info:
+      API Information: info/api-information.md
       Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md
       Suggesting Features: info/feature-suggestions.md
