@@ -15,6 +15,7 @@ theme:
   code_wrap: true
   features:
     - navigation.instant
+    - navigation.tabs
   favicon: assets/images/ombi/favicon.ico
 #  logo: assets/images/apple-touch-icon.png
 #  palette:
@@ -72,13 +73,12 @@ nav:
     - Backing Up: info/backing-up.md
     - Common Themes: info/common-themes.md
     - Docker Containers: info/docker-containers.md
+    - Ombi & Tautulli: info/ombi-tautulli.md
     - Request Flow: info/request-workflow.md
     - Roles and Notifications: info/roles-and-notifications.md
     - Startup Parameters: info/startup-parameters.md
     - Suggesting Features: info/feature-suggestions.md
     - User Roles: info/user-roles.md
-  - Scripting:
-    - Ombi & Tautulli: scripting/ombi-tautulli.md
   - Development:
     - Building Ombi: development/building-ombi.md
     - Translating Ombi: development/translations.md
