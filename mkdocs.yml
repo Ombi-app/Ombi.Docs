@@ -44,26 +44,35 @@ nav:
   - Settings: 
     - Generic Settings: settings/ombi-settings.md
     - All the Arrs: settings/arr-settings.md
+    - Authentication: settings/authentication.md
     - Customization: settings/customization.md
+    - DogNzb: settings/dognzb.md
     - Reverse Proxying: settings/reverse-proxy.md
     - User Importer: settings/import-users.md
     - Notifications:
-        Template Variables: settings/notifications/template-variables.md
-        Discord: settings/notifications/discord.md
-        Email: settings/notifications/email.md
-        Pushbullet: settings/notifications/pushbullet.md
-        Pushover: settings/notifications/pushover.md
-        Slack: settings/notifications/slack.md
-        Telegram: settings/notifications/telegram.md
-        Twilio: settings/notifications/twilio.md
+      - Template Variables: settings/notifications/template-variables.md
+      - Discord: settings/notifications/discord.md
+      - Email: settings/notifications/email.md
+      - Mass Email: settings/notifications/mass-email.md
+      - Pushbullet: settings/notifications/pushbullet.md
+      - Pushover: settings/notifications/pushover.md
+      - Slack: settings/notifications/slack.md
+      - Telegram: settings/notifications/telegram.md
+      - Twilio: settings/notifications/twilio.md
   - Info:
-      API Information: info/api-information.md
-      Docker Containers: info/docker-containers.md
-      Request Flow: info/request-workflow.md
-      Suggesting Features: info/feature-suggestions.md
-      User Roles: info/user-roles.md
+    - Alternate Databases: info/alternate-databases.md
+    - Migrating Databases: info/migrating-databases.md
+    - API Information: info/api-information.md
+    - Common Themes: info/common-themes.md
+    - Docker Containers: info/docker-containers.md
+    - Request Flow: info/request-workflow.md
+    - Suggesting Features: info/feature-suggestions.md
+    - User Roles: info/user-roles.md
   - Scripting:
-      Ombi & Tautulli: scripting/ombi-tautulli.md
+    - Ombi & Tautulli: scripting/ombi-tautulli.md
+  - Development:
+    - Building Ombi: development/building-ombi.md
+    - Translating Ombi: development/translations.md
   - Archive:
-      Prerequisites: archived/prerequisites.md
-      V4 Specific Proxying: archived/v4-specific-proxy.md
+    - Prerequisites: archived/prerequisites.md
+    - V4 Specific Proxying: archived/v4-specific-proxy.md

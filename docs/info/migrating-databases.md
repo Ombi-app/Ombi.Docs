@@ -1,86 +1,48 @@
-_This guide assumes you already have [MySQL/MariaDB](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database) working with ombi._
+# Migrating to MySQL
 
-# Migration procedure
+_Editors Note: This page is a WIP._  
+_This guide assumes you have already configured [MySQL/MariaDB](../alternate-databases) to work with ombi._
 
-* 1\. [Requirements](#1-requirements)
-* 2\. [Create database and user in the server MySql/MariaDB](#2-create-database-and-user-in-the-server-mysqlmariadb)
-    * 2.1\. [A Single Database](#21-a-single-database)
-    * 2.2\. [In Multiple DataBases or Servers MySql/MariaDB](#22-in-multiple-databases-or-servers-mysqlmariadb)
-* 3\. [Download Script and install dependencies](#3-download-script-and-install-dependencies)
-* 4\. [Create and prepare tables](#4-create-and-prepare-tables)
-* 5\. [Data Migration](#5-data-migration)
-    * 5.1\. [Data Migration (*Single Database*)](#51-data-migration-single-database)
-    * 5.2\. [Data Migration (*Multiple DataBases or Servers MySql/MariaDB*)](#52-data-migration-multiple-databases-or-servers-mysqlmariadb)
-* 6\. [Help](#6-help)
-* 7\. [F.A.Q.](#7-faq)
+## Migration procedure
 
 > This would be the procedure to migrate the Ombi databases from SQLite to a MySQL/MariaDB server.
-> 
-> If there is an error you can contact Discour or you can open an incident [here](https://github.com/vsc55/ombi_sqlite_mysql/issues).
+> If there is an error you can contact in Discord or you can open an incident [here](https://github.com/vsc55/ombi_sqlite_mysql/issues).
 
+### 1. Requirements
 
-## 1. Requirements
 * Python3
 * Ombi version 4.0.728 or higher
 
-## 2. Create database and user in the server MySql/MariaDB
+### 2. Download Script and install dependencies
 
-On the MySQL/MariaDB server we will create the database and the user that we will use later.
-
-### 2.1. A Single Database
-```mysql
-CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
-GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-```
-
-### 2.2. In Multiple DataBases or Servers MySql/MariaDB
-```mysql
-CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
-GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
-```
-> _You need to GRANT ALL PRIVILEGES for every database you create._
-
-[Go Up](#migration-procedure)
-
-## 3. Download Script and install dependencies
 1. Download the script.
+
     ```bash
-    $ git clone https://github.com/vsc55/ombi_sqlite_mysql.git ombi_sqlite_mysql
-    $ cd ombi_sqlite_mysql
-    $ chmod +x *.py
+    git clone https://github.com/vsc55/ombi_sqlite_mysql.git ombi_sqlite_mysql
+    cd ombi_sqlite_mysql
+    chmod +x *.py
     ```
+
 2. Install the dependencies according to the operating system we use.
-    ```bash
-    $ apt-get install python-mysqldb    # Debian/Ubuntu
-    $ emerge -va mysqlclient            # Gentoo
-    $ pip install mysqlclient           # Python Pip
-    $ python -m pip install mysqlclient # Python Pip
-    ```
 
-[Go Up](#migration-procedure)
+    `apt-get install python-mysqldb`    # Debian/Ubuntu  
+    `emerge -va mysqlclient`            # Gentoo  
+    `pip install mysqlclient`           # Python Pip  
+    `python -m pip install mysqlclient` # Python Pip  
 
-## 4. Create and prepare tables
+### 3. Create and prepare tables
+
 1. Update to the latest version of ombi.
 2. Stop ombi
-3. Create or Modify **database.json** to use mysql.
-    ```bash
-    $ python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi
-    Migration tool from SQLite to MySql/MariaDB for ombi (3.0.4) By VSC55
+3. Create or Modify **database.json** to use mysql.  
+  `python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`
 
-    Generate file "database.json":
-    - Saving in (/etc/Ombi/database.json)... [✓]
-    ```
 4. **Only if we are going to use *Multiple DataBases* or *Multiple Servers*.**
 
-   To be able to use multiple servers or databases we will need to manually edit **database.json**.
+   To be able to use multiple servers or databases we will need to manually edit **database.json**.  
+    The example below will export the **"OmbiDatabase"** and **"SettingsDatabase"** databases to the server at **"192.168.0.100"** (but to different databases on the same server), while the **"ExternalDatabase"** database will be sent to server **"192.168.1.200"**.
+    
     ```json
-    $ vi database.json
     {
         "OmbiDatabase": {
             "Type": "MySQL",
@@ -96,13 +58,12 @@ GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
         }
     }
     ```
-    > The example above will export the **"OmbiDatabase"** and **"SettingsDatabase"** databases to server **"192.168.0.100"** but to different databases on the same server, while the **"ExternalDatabase"** database will be sent to server **"192.168.1.200"**.
 
 5. Run the following command:
-    ```
+
+    ``` bash
     $ ombi --migrate
     ```
-[Go Up](#migration-procedure)
 
 
 ## 5. Data Migration

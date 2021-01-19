@@ -1,11 +1,15 @@
-This example I'll be using VSCode to edit the frontend.
+# Ombi Development
+
+## Frontend
+
+In this example I'll be using VS Code to edit the frontend.
 
 1. Clone the Repository
-1. Change branch to `feature/v4`
-1. Install the .Net Core SDK (latest) https://dotnet.microsoft.com/download/dotnet-core
+1. Change to the relevant branch (currently `development`)
+1. Install the .Net Core SDK (latest) [https://dotnet.microsoft.com/download/dotnet-core](https://dotnet.microsoft.com/download/dotnet-core)
 1. Install [NodeJS](https://nodejs.org/en/download/) and Tools for Node.js Native Modules
 1. Install [Yarn](https://yarnpkg.com/en/)
-1. Set the Env variable to development `$export ASPNETCORE_Environment=Development` or `$env:ASPNETCORE_ENVIRONMENT = "Development"` in Powershell 
+1. Set the Env variable to development `$export ASPNETCORE_Environment=Development` or `$env:ASPNETCORE_ENVIRONMENT = "Development"` in Powershell
 1. Open up a New Terminal in the following location: `~src/Ombi/ClientApp`, run the following:
    1. `yarn` _(wait for it to install all dependencies)_
    1. `yarn start`
