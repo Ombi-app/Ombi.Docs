@@ -1,5 +1,8 @@
+# Updating Ombi
+
 ## Updater Note
-__*Note*__: The built-in automatic updater is broken for 'local' installations.<br>
+
+__*Note*__: The built-in automatic updater is broken for 'local' installations.  
 The developer is aware of this, as is the support team. Current development is focused on a UI rewrite - once a viable cross-platform update method has been found, it will be implemented as a fix.<br>
 Automated container updates via something like WatchTower for docker installs are unaffected - only direct installs using apt/exe deployment.<br>
 If you have a suggestion for an update solution, feel free to either fork the project and submit a pull request, or submit a suggestion over on Discord.

@@ -62,6 +62,7 @@ nav:
   - Info:
     - Alternate Databases: info/alternate-databases.md
     - Migrating Databases: info/migrating-databases.md
+    - Backing Up: info/backing-up.md
     - API Information: info/api-information.md
     - Common Themes: info/common-themes.md
     - Docker Containers: info/docker-containers.md

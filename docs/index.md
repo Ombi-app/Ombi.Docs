@@ -34,5 +34,4 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 #### **Information**
 
 [Startup Parameters](https://github.com/tidusjar/Ombi/wiki/Startup-Parameters)  
-[Backups](https://github.com/tidusjar/Ombi/wiki/Backups)
 [_Windows MySQL Instructions_](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database-(MySQL)-on-Windows)
