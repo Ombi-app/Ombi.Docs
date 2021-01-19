@@ -48,6 +48,7 @@ nav:
     - Notifications:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
+        Email: settings/notifications/email.md
   - Info:
       Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md
