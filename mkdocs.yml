@@ -16,7 +16,6 @@ theme:
   features:
     - navigation.instant
   favicon: assets/images/ombi/favicon.ico
-  
 #  logo: assets/images/apple-touch-icon.png
 #  palette:
 #    primary: tbd
@@ -47,6 +46,7 @@ nav:
     - All the Arrs: settings/arr-settings.md
     - Customization: settings/customization.md
     - Reverse Proxying: settings/reverse-proxy.md
+    - User Importer: settings/import-users.md
     - Notifications:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
@@ -57,9 +57,11 @@ nav:
         Telegram: settings/notifications/telegram.md
         Twilio: settings/notifications/twilio.md
   - Info:
+      API Information: info/api-information.md
       Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md
       Suggesting Features: info/feature-suggestions.md
+      User Roles: info/user-roles.md
   - Scripting:
       Ombi & Tautulli: scripting/ombi-tautulli.md
   - Archive:

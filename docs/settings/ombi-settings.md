@@ -9,7 +9,7 @@ This is for Reverse Proxy setups. Put the base url you want in e.g. if the `/loc
 
 ## Api Key
 
-This is to use the API that Ombi provides. See [here](https://github.com/tidusjar/Ombi/wiki/Api-Information)
+This is to use the API that Ombi provides. See [here](../../info/api-information)
 
 ## Auto Delete Available Requests
 
