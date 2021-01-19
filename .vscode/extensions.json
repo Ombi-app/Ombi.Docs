@@ -2,6 +2,7 @@
     "recommendations": [
         "davidanson.vscode-markdownlint",
         "yzhang.markdown-all-in-one",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
