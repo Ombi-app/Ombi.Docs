@@ -49,6 +49,7 @@ nav:
         Template Variables: settings/notifications/template-variables.md
         Discord: settings/notifications/discord.md
         Email: settings/notifications/email.md
+        Twilio: settings/notifications/twilio.md
   - Info:
       Docker Containers: info/docker-containers.md
       Request Flow: info/request-workflow.md

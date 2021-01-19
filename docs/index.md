@@ -44,7 +44,6 @@ Please ensure that any time you wish to work on the site you do a `git pull` to 
 [Pushover](https://github.com/tidusjar/Ombi/wiki/Pushover-Notification-Settings)  
 [Slack](https://github.com/tidusjar/Ombi/wiki/Slack-Notification-Settings)  
 [Telegram](https://github.com/tidusjar/Ombi/wiki/Telegram-Notifications)  
-[Whatsapp/Twilio](https://github.com/tidusjar/Ombi/wiki/twilio)  
 
 #### **Information**
 
