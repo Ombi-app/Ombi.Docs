@@ -14,8 +14,10 @@ theme:
   language: en
   code_wrap: true
   features:
-    - navigation.instant
     - navigation.tabs
+    - navigation.tabs.instant
+    - navigation.instant
+
   favicon: assets/images/ombi/favicon.ico
 #  logo: assets/images/apple-touch-icon.png
 #  palette:
