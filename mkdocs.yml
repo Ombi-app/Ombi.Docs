@@ -46,9 +46,8 @@ plugins:
 # Markdown extensions
 markdown_extensions:
   - sane_lists
-  - codehilite:
+  - pymdownx.highlight:
       guess_lang: true
-  - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.superfences
   - pymdownx.inlinehilite
