@@ -6,33 +6,68 @@
   
 ## Nginx
 
+To use nginx as a reverse proxy requires no extra modules, but it does require configuring.  
+
 ### Nginx Subdirectory
 
-To use nginx as a reverse proxy requires no extra modules, but it does require configuring.  
-In the configuration for your nginx site (nginx.conf for the default site), you'll need to add a 'block' for catching ombi as a subpath. If you wish to use a subdomain, there is an [example further down](#nginx-subdomain).  
-It goes directly below the default location, which usually looks like this:  
+This is an NGINX reverse proxy configuration that **DOES** use baseurl.  
+This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Unbuntu 18.04.
 
-    location / {
-        root   html;
-        index  index.html index.htm;
+The advantage of this configuration is that it allows for a single certificate to provide ssl services for many different web apps.
+
+For example:  
+www.somedomain.com/ombi  
+www.somedomain.com/sonarr  
+www.somedomain.com/radarr  
+
+You would only need to install/support a certificate for **www.somedomain.com**.
+
+This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the `--baseurl /ombi` option
+
+#### Location Block
+
+    location /ombi {
+       proxy_pass http://<ip addr or hostname>:3579;
+       include /etc/nginx/proxy.conf;
     }
 
-The block to add looks like this (some changes can be made depending on your setup, but generally this works).  
-Note that if the machine hosting your application is not the same as your web server, then you'll need to replace `127.0.0.1` with the IP of your Ombi host.  
-If you are using a port other than `5000`, you'll also need to update that to match.  
-Nginx is smart enough to match the "ombi" in your location to the "ombi" in your BaseURL.  
-
-    location /ombi/ {
-        proxy_pass http://127.0.0.1:5000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-Host $server_name;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Ssl on;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_read_timeout  90;
-        proxy_redirect http://127.0.0.1:5000 https://$host;
+    # This allows access to the actual api
+    location /ombi/api {
+       proxy_pass http://<ip addr or hostname>:3579;
     }
+    # This allows access to the documentation for the api
+    location /ombi/swagger {
+        proxy_pass http://<ip addr or hostname>:3579;
+    }
+
+#### proxy.conf
+
+    client_max_body_size 10m;
+    client_body_buffer_size 128k;
+
+    #Timeout if the real server is dead
+    proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+
+    # Advanced Proxy Config
+    send_timeout 5m;
+    proxy_read_timeout 240;
+    proxy_send_timeout 240;
+    proxy_connect_timeout 240;
+
+    # Basic Proxy Config
+    proxy_set_header Host $host:$server_port;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Host $server_name;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_redirect  http://  $scheme://;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_cache_bypass $cookie_session;
+    proxy_no_cache $cookie_session;
+    proxy_buffers 32 4k;
+    proxy_redirect http://<ip addr or hostname>:3579 https://$host;
 
 ### Nginx Subdomain
 
@@ -42,28 +77,52 @@ Each site has a separate config file in the sites-available directory. By defaul
 We're going to use the site name as the file name, so in this case we need to put the following into  
 `/etc/nginx/sites-available/ombi.example.com.conf`  
 Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the `listen 443`, generate, and apply the certificates using LetsEncrypt.  
-Of course, replace 127.0.0.1:5000 with whatever IP and port combination you are using for Ombi.  
+Of course, replace 127.0.0.1:3579 with whatever IP and port combination you are using for Ombi.  
 Ensure your Application Url (in Ombi) matches the `server_name` field.
 
+    # Ombi v4 Subdomain
+    # Replace DOMAIN.TLD with your domain
     server {
-    listen 80;
-    listen [::]:80;
-
-    server_name ombi.example.com;
-
-    location / {
-        proxy_pass http://127.0.0.1:5000/;
+        listen 80;
+        server_name ombi.*;
+        return 301 https://$server_name$request_uri;
     }
+    server {
+        listen 443 ssl http2;
+        server_name ombi.*;
+        server_name ombi.DOMAIN.TLD;
+        ssl_certificate /nginx/ssl/DOMAIN.TLD-chain.pem;
+        ssl_certificate_key /nginx/ssl/DOMAIN.TLD-key.pem;
+        ssl_session_cache builtin:1000;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+        ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-DES-CBC3-SHA:ECDHE-ECDSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA';
+        ssl_session_tickets off;
+        ssl_ecdh_curve secp384r1;
+        resolver 1.1.1.1 1.0.0.1 valid=300s;
+        resolver_timeout 10s;
+        gzip on;
+        gzip_vary on;
+        gzip_min_length 1000;
+        gzip_proxied any;
+        gzip_types text/plain text/css text/xml application/xml text/javascript application/x-javascript image/svg+xml;
+        gzip_disable "MSIE [1-6]\.";
+    
+        location / {
+            proxy_pass http://127.0.0.1:3579;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        }
+        # This allows access to the actual api
+        location /api {
+                proxy_pass http://127.0.0.1:3579;
+        }
+        # This allows access to the documentation for the api
+        location /swagger {
+                proxy_pass http://127.0.0.1:3579;
+        }
     }
-
-Disable support for Websockets. Disable these items by commenting them out:
-
-```conf
-# Allow websockets on all servers
-#proxy_http_version 1.1;
-#proxy_set_header Upgrade $http_upgrade;
-#proxy_set_header Connection "upgrade";
-```
 
 Once the config file has been created (_and saved_), we need to enable the site. This is done by symlinking the config file into the sites-enabled directory. The below commands will achieve this (obviously, replace the `ombi.example.com` sections with whatever names you used for your setup.  
 __Linux:__  
@@ -83,18 +142,16 @@ __Windows:__
 To run Apache with a reverse proxy setup, you'll need to activate certain modules.  
 (assume all commands require sudo):  
 
-```bash
-apt-get install -y libapache2-mod-proxy-html libxml2-dev
-a2enmod proxy
-a2enmod proxy_http
-a2enmod proxy_ajp
-a2enmod rewrite
-a2enmod deflate
-a2enmod headers
-a2enmod proxy_balancer
-a2enmod proxy_connect
-a2enmod proxy_html
-```
+    apt-get install -y libapache2-mod-proxy-html libxml2-dev
+    a2enmod proxy
+    a2enmod proxy_http
+    a2enmod proxy_ajp
+    a2enmod rewrite
+    a2enmod deflate
+    a2enmod headers
+    a2enmod proxy_balancer
+    a2enmod proxy_connect
+    a2enmod proxy_html
 
 In your Virtualhost configuration file you'll need to add a few things.  
 _**Note:** VirtualHost configurations are usually under /etc/apache2/sites-enabled/_  
@@ -112,14 +169,14 @@ If you want to run ombi.example.com instead of site.example.com/ombi, then repla
 
     <Location /ombi>
     Allow from 0.0.0.0 
-    ProxyPass "http://ip.of.ombi.host:5000/ombi" connectiontimeout=5 timeout=30 keepalive=on 
-    ProxyPassReverse "http://ip.of.ombi.host:5000/ombi" 
+    ProxyPass "http://ip.of.ombi.host:3579/ombi" connectiontimeout=5 timeout=30 keepalive=on 
+    ProxyPassReverse "http://ip.of.ombi.host:3579/ombi" 
     </Location>
 
 ### Apache2 Subdomain
 
-    ProxyPass /ombi http://ip.of.ombi.host:5000/ombi
-    ProxyPassReverse /ombi http://ip.of.ombi.host:5000/ombi
+    ProxyPass /ombi http://ip.of.ombi.host:3579/ombi
+    ProxyPassReverse /ombi http://ip.of.ombi.host:3579/ombi
 
 Once all your changes are done, you'll need to run `service apache2 restart` to make the changes go live.
 
@@ -157,7 +214,7 @@ Within this directory you would place the below rules in a web.config file. Ther
                 <clear />
                 <rule name="ReverseProxyInboundOMBI" stopProcessing="true">
                     <match url="(.*)" />
-                    <action type="Rewrite" url="http://localhost:5000/ombi/{R:1}" />
+                    <action type="Rewrite" url="http://localhost:3579/ombi/{R:1}" />
                     <serverVariables>
                         <set name="host" value="$host" />
                         <set name="HTTP_X_FORWARDED_HOST" value="$server_name" />
@@ -178,7 +235,7 @@ Within this directory you would place the below rules in a web.config file. Ther
                     <action type="Rewrite" value="{HTTP_X_ORIGINAL_ACCEPT_ENCODING}" />
                 </rule>
                 <rule name="ReverseProxyOutboundOMBI" preCondition="ResponseIsHtml1" enabled="true" stopProcessing="false">
-                    <match filterByTags="A, Area, Base, Form, Frame, Head, IFrame, Img, Input, Link, Script" pattern="^http(s)?://localhost:5000/ombi/(.*)" />
+                    <match filterByTags="A, Area, Base, Form, Frame, Head, IFrame, Img, Input, Link, Script" pattern="^http(s)?://localhost:3579/ombi/(.*)" />
                     <conditions logicalGrouping="MatchAll" trackAllCaptures="true">
                         <add input="{HTTP_REFERER}" pattern="/ombi" />
                     </conditions>
@@ -229,7 +286,7 @@ Within this directory you would place the below rules in a web.config file. Ther
 
                 <rule name="RP_Ombi" enabled="true" stopProcessing="true">
                     <match url="(.*)" />
-                    <action type="Rewrite" url="http://localhost:5000/{R:1}" />
+                    <action type="Rewrite" url="http://localhost:3579/{R:1}" />
                     <serverVariables>
                     </serverVariables>
                 </rule>
@@ -263,7 +320,7 @@ _**Note:** The official binaries and Docker image do not include any of the DNS 
 ```conf
 your.domain.tld {
     route /ombi* {
-        reverse_proxy 127.0.0.1:5000
+        reverse_proxy 127.0.0.1:3579
     }
 }
 ```
@@ -272,7 +329,7 @@ your.domain.tld {
 
 ```conf
 ombi.yourdomain.tld {
-    reverse_proxy 127.0.0.1:5000
+    reverse_proxy 127.0.0.1:3579
   }
 ```
 
