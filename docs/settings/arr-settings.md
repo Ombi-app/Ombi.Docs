@@ -35,7 +35,7 @@ If you have set up your Plex (or Emby) sync to detect what is available you won'
 ## Hostname
 
 This is the address you use to connect to the service. If it's running on the same machine as Ombi, localhost usually works.  
-If you're running the services (and Ombi itself) in docker containers, you could use the [container IP](https://github.com/tidusjar/Ombi/wiki/Docker-Containers).  
+If you're running the services (and Ombi itself) in docker containers, you could use the [container IP](../../info/docker-containers).  
 If the services are on multiple machines, IP addresses tend to be useful here.  
 If, however, you use the service behind a [reverse proxy](../reverse-proxy), then the 'hostname' field is the bit from __before__ the 'baseurl'.  
 In the examples above, this would be `app.example.com`.

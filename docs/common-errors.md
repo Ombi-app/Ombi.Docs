@@ -17,7 +17,7 @@ You can request the `theTvDb` id to be added [here](https://www.tvmaze.com/threa
 ***
 If you search for a TV show and get this error:
 
-![sorry](https://i.imgur.com/v4NbRjL.jpg)
+![sorry](./assets/images/embeds/results_disappeared.jpg)
 
 _This is most commonly caused by incorrect spelling._ 😃
 

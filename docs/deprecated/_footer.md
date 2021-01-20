@@ -1,1 +1,0 @@
-[Return to Top](https://github.com/tidusjar/Ombi/wiki/Installation#installation-instructions)

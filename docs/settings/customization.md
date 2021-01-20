@@ -22,7 +22,7 @@ This is used for the Login Page, Landing Page and also any notifications that we
 
 There are two ways we officially support custom CSS.
 They are by import or direct entry.
-For some ideas, you can find some common customisations under [V4 Custom Themes](https://github.com/tidusjar/Ombi/wiki/Ombi-v4-Custom-Themes)  
+For some ideas, you can find some common customisations under [Common Themes](../../info/common-themes/)  
 Any CSS you wish to use should be put into the Custom CSS box. It could be a reference to a CSS file (via an import reference) or could be raw CSS itself.
 
 **Note:** For CSS import to work, it requires a MIME type of `text/css` or the browser will not load it as a stylesheet.  

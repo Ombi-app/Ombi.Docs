@@ -30,7 +30,7 @@ Please bear in mind that this is just an example and can/should be changed to yo
         mkdir -p /opt/ombi/config/
         mkdir -p /opt/ombi/mysql/
 
-1. Create a "database.json"-file in the folder from step 1 with this content --> [see](https://github.com/tidusjar/Ombi/wiki/Using-a-different-database):
+1. Create a "database.json"-file in the folder from step 1 with this content --> [see here](../alternate-databases):
 
         {
           "OmbiDatabase": {

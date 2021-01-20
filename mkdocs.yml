@@ -14,8 +14,9 @@ theme:
   language: en
   code_wrap: true
   features:
-    - navigation.instant
     - navigation.tabs
+    #- navigation.tabs.sticky #(enable once released, will lock header when scrolling)
+    - navigation.instant
   favicon: assets/images/ombi/favicon.ico
 #  logo: assets/images/apple-touch-icon.png
 #  palette:
@@ -34,7 +35,12 @@ extra:
       link: "https://patreon.com/tidusjar/Ombi"
     - icon: "fontawesome/brands/paypal"
       link: "https://paypal.me/PlexRequestsNet"
-    
+
+plugins:
+  - search
+  - git-revision-date:
+      enabled_if_env: CI
+
 # Navigation Layout
 nav:
   - Home: index.md
@@ -83,5 +89,5 @@ nav:
     - Building Ombi: development/building-ombi.md
     - Translating Ombi: development/translations.md
   - Archive:
-    - Prerequisites: archived/prerequisites.md
-    - V4 Specific Proxying: archived/v4-specific-proxy.md
+    - Prerequisites: archive/prerequisites.md
+    - V4 Specific Proxying: archive/v4-specific-proxy.md
