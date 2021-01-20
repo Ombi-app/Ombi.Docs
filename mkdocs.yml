@@ -35,7 +35,11 @@ extra:
       link: "https://patreon.com/tidusjar/Ombi"
     - icon: "fontawesome/brands/paypal"
       link: "https://paypal.me/PlexRequestsNet"
-    
+
+plugins:
+  - git-revision-date:
+      enabled_if_env: CI
+
 # Navigation Layout
 nav:
   - Home: index.md
