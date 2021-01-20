@@ -38,8 +38,7 @@ extra:
 
 plugins:
   - search
-  - git-revision-date:
-      enabled_if_env: CI
+  - git-revision-date
 
 # Navigation Layout
 nav:
