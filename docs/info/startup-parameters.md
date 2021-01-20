@@ -18,4 +18,4 @@ By default, this is the application directory.
 
 ## --baseurl
 
-The base URL for reverse proxy scenarios. See [reverse proxying](../../settings/reverse-proxy).
+The base URL for reverse proxy scenarios. See [reverse proxying](../../info/reverse-proxy).

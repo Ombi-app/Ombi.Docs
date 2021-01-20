@@ -59,7 +59,7 @@ nav:
     - Issues: settings/issues.md
     - Landing Page: settings/landing-page.md
     - Mobile App: settings/mobile-app.md
-    - Reverse Proxying: settings/reverse-proxy.md
+    - Reverse Proxying: info/reverse-proxy.md
     - Scheduled Tasks: settings/scheduled-tasks.md
     - User Importer: settings/import-users.md
     - Vote: settings/voting.md

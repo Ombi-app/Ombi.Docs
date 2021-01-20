@@ -14,7 +14,7 @@ For considerations when migrating an existing install rather than starting fresh
 1. Install Ombi for your preferred OS using the steps provided below.
 If you are migrating systems, rather than starting fresh, stop here and look at [Migrating Systems](#migrating-systems).
 2. Configure your [install-specific settings](../settings/customization) like the application url you'll be using externally.
-3. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../settings/reverse-proxy).
+3. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../info/reverse-proxy).
 4. Configure notification methods and system connections (Sonarr, Radarr, etc).  
 Ensure you have systems to handle approved requests _before_ you give users access to the system.
 5. [Import users](../settings/import-users) and [assign permissions](../info/user-roles).
@@ -100,7 +100,7 @@ As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if yo
 ### Windows Firewall
 
 To allow a port through Windows Firewall, you have a few options.
-Note that this is not the preferred method of access, and a [Reverse Proxy](../settings/reverse-proxy) is recommended instead.  
+Note that this is not the preferred method of access, and a [Reverse Proxy](../info/reverse-proxy) is recommended instead.  
 Replace the port in the below commands with your own port if you're running a different port than the default.  
 
 #### Command Prompt
