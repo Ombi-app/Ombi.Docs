@@ -37,6 +37,7 @@ extra:
       link: "https://paypal.me/PlexRequestsNet"
 
 plugins:
+  - search
   - git-revision-date:
       enabled_if_env: CI
 
