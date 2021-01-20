@@ -43,6 +43,13 @@ plugins:
   - search
   - git-revision-date-localized
 
+# Markdown extensions
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+
 # Navigation Layout
 nav:
   - Home: index.md
@@ -59,7 +66,6 @@ nav:
     - Issues: settings/issues.md
     - Landing Page: settings/landing-page.md
     - Mobile App: settings/mobile-app.md
-    - Reverse Proxying: settings/reverse-proxy.md
     - Scheduled Tasks: settings/scheduled-tasks.md
     - User Importer: settings/import-users.md
     - Vote: settings/voting.md
@@ -83,6 +89,7 @@ nav:
     - Docker Containers: info/docker-containers.md
     - Ombi & Tautulli: info/ombi-tautulli.md
     - Request Flow: info/request-workflow.md
+    - Reverse Proxying: info/reverse-proxy.md
     - Roles and Notifications: info/roles-and-notifications.md
     - Startup Parameters: info/startup-parameters.md
     - Suggesting Features: info/feature-suggestions.md
