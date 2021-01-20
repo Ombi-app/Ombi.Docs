@@ -91,7 +91,7 @@ As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if yo
 12. Fill `Start in (optional):` with `Ombi.exe`'s working directory. IE: `C:\Ombi\` or `C:\SERVERS\Ombi\` basically, wherever you extracted your 'Ombi' folder to and where it lives. Click `OK`
 13. `Settings Tab` Untick `Stop the task if it runs longer than:` Click `OK`
 14. You will be prompted for your windows user name and password. Please enter your credentials and click `OK`
-15. Click `Task Scheduler Library` right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at [http://localhost:3579](http://localhost:3579) !
+15. Click `Task Scheduler Library` right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at [http://localhost:5000](http://localhost:5000) !
 
 **_Note: The next time you restart your PC, Task Scheduler will run ombi for you._**
 
@@ -136,7 +136,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
    `sudo apt update && sudo apt install ombi`
 
 If no errors are shown, Ombi has been installed successfully and will automatically start during boot.  
-Ombi should now be reachable on "http://your-ip-address:3579"
+Ombi should now be reachable on "http://your-ip-address:5000"
 
 Packages in this repo use systemd.  
 Use either the `systemctl` or the `service` command to start, stop, or restart Ombi.  
@@ -160,7 +160,7 @@ Deps: `compat-openssl10 libcurl-devel libunwind-devel openssl-devel`
 3. Launch Terminal
 4. `cd` to the path of the folder (e.g. `cd /opt/Ombi`)
 5. Execute `./Ombi`. Process should load.
-6. Ombi should now be reachable at localhost:3579
+6. Ombi should now be reachable at localhost:5000
 
 **Startup**  
 To have Ombi run at startup, add `RunAtLoad WorkingDirectory /opt/Ombi` to the command.  

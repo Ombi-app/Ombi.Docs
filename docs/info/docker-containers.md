@@ -13,7 +13,7 @@ To create the folder and run Ombi on port 3579 (the default for v4), run the fol
 
 ```bash
 mkdir -p /opt/ombi/config/
-docker run -d --name=ombi -p 3579:3579 --restart=unless-stopped -v /opt/ombi/config:/config linuxserver/ombi:development
+docker run -d --name=ombi -p 5000:5000 --restart=unless-stopped -v /opt/ombi/config:/config linuxserver/ombi:development
 ```
 
 This will create the folder and a container named "ombi" that you can then manage like any other docker container.  
@@ -63,7 +63,7 @@ Please bear in mind that this is just an example and can/should be changed to yo
             volumes:
               - /opt/ombi/config:/config
             ports:
-              - "3579:3579"
+              - "5000:5000"
             depends_on:
             - "mysql_db"
 
@@ -109,7 +109,7 @@ Login with root and your chosen password, then run the following commands:
         docker-compose down 
         docker-compose up -d
 
-1. Open Ombi "http://docker-host-ip:3579" and Setup your ombi-installation
+1. Open Ombi "http://docker-host-ip:5000" and Setup your ombi-installation
 
 ## Considerations
 
@@ -123,9 +123,9 @@ This means that the container runs like any other network application, with comp
 ### Bridge
 
 Bridge networking makes the Docker Host behave like a VM Host *and* a router, with a whole separate virtual network behind its own LAN IP.  
-Each *__container__* then gets an IP in a whole different IP range than your LAN itself. Usually, Docker uses 172.17.0.x for these. If the Ombi container was given 172.17.0.3, then it would listen on 172.17.0.3:3579 (for example).  
+Each *__container__* then gets an IP in a whole different IP range than your LAN itself. Usually, Docker uses 172.17.0.x for these. If the Ombi container was given 172.17.0.3, then it would listen on 172.17.0.3:5000 (for example).  
 This means that you map ports from the *__host__* to the *__container__*, much like port forwarding for access from outside your network (as you would for passing ports 80 and 443 to your web server, for instance). The two ports do not have to be the same - you could map 3589 on your *__host__* to point to 3579 on your *__container__*.  
-To access the service from outside of the Docker *__host__*, you'd browse to the LAN IP of said host and the port you mapped - 3589 in the example above. Docker would see the traffic hit the *__host__* on 3589 and pass it through (via Network Address Translation, or 'NAT') to the *__container__* on 172.17.0.3:3579
+To access the service from outside of the Docker *__host__*, you'd browse to the LAN IP of said host and the port you mapped - 3589 in the example above. Docker would see the traffic hit the *__host__* on 3589 and pass it through (via Network Address Translation, or 'NAT') to the *__container__* on 172.17.0.3:5000
 
 ## Talking to Other Services
 
