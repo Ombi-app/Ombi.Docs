@@ -36,7 +36,7 @@ Start the Ombi service with `service Ombi start` and confirm that it's worked wi
 
 Yes, you can.  
 This is a little more involved than some people are comfortable with, as it's not officially supported.  
-If that doesn't worry you, and you're comfortable with running custom scripts and Python code, then you can check out the script created by DirtyCajunRice [here](scripting/ombi-tautulli.md).
+If that doesn't worry you, and you're comfortable with running custom scripts and Python code, then you can check out the script created by DirtyCajunRice [here](info/ombi-tautulli.md).
 ***
 
 ## Notifications are not sending, but mass email works
