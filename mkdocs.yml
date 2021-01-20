@@ -12,7 +12,6 @@ repo_name: Ombi-App/Ombi.Docs
 # Ombi orange is hex #e37200
 theme:
   name: material
-  custom_dir: overrides
   language: en
   code_wrap: true
   features:
