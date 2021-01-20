@@ -3,7 +3,7 @@
 As the API is an evolving entity, documenting it here becomes impossible.  
 To get around this, the API documents itself, live.  
 You can find the documentation on the API via the 'swagger' URL,  
-`http://your.ombi.ip:3579/swagger`
+`http://your.ombi.ip:5000/swagger`
 
 This will provide you all the documentation about the available API endpoints and how to use them.
 
