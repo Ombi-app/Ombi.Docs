@@ -1,13 +1,14 @@
+# Site Details
 site_name: Ombi Docs
 site_description: The official guide for Ombi 
 site_author: Ombi-App
 site_url: https://docs.ombi.app
-
+edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/
 repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
-edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/"
 
-# Site theming (logos, colours, icons)
+
+# Site appearance (logos, colours, icons)
 # Ombi orange is hex #e37200
 theme:
   name: material
@@ -15,7 +16,7 @@ theme:
   code_wrap: true
   features:
     - navigation.tabs
-    #- navigation.tabs.sticky #(enable once released, will lock header when scrolling)
+    #- navigation.tabs.sticky #(insiders only, reaching out RE open-source access possibility)
     - navigation.instant
   favicon: assets/images/ombi/favicon.ico
 #  logo: assets/images/apple-touch-icon.png
@@ -23,6 +24,7 @@ theme:
 #    primary: tbd
 #    accent: e37200 #Ombi
 
+# Additional links
 extra:
   social:
     - icon: "fontawesome/brands/discord"
@@ -36,9 +38,10 @@ extra:
     - icon: "fontawesome/brands/paypal"
       link: "https://paypal.me/PlexRequestsNet"
 
+# Function extensions
 plugins:
   - search
-  - git-revision-date
+  - git-revision-date-localized
 
 # Navigation Layout
 nav:

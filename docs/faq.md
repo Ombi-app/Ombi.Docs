@@ -140,5 +140,3 @@ UPDATE MovieRequests
 SET Approved = 0 
 WHERE Approved = 1 AND Available = 0;
 ```
-
-***
