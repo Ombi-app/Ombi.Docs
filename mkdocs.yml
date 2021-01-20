@@ -15,9 +15,8 @@ theme:
   code_wrap: true
   features:
     - navigation.tabs
-    - navigation.tabs.instant
+    #- navigation.tabs.sticky #(enable once released, will lock header when scrolling)
     - navigation.instant
-
   favicon: assets/images/ombi/favicon.ico
 #  logo: assets/images/apple-touch-icon.png
 #  palette:
