@@ -45,9 +45,9 @@ plugins:
   # Pretty URLs
   - redirects:
       redirect_maps:
-        'settings/lidarr': 'settings/arr-settings.md'
-        'settings/radarr': 'settings/arr-settings.md'
-        'settings/sonarr': 'settings/arr-settings.md'
+        'settings/lidarr': 'settings/all-the-arrs.md'
+        'settings/radarr': 'settings/all-the-arrs.md'
+        'settings/sonarr': 'settings/all-the-arrs.md'
 
 # Markdown extensions
 markdown_extensions:
@@ -66,8 +66,8 @@ nav:
   - FAQ: faq.md
   - Common Errors: common-errors.md
   - Settings: 
-    - Generic Settings: settings/ombi-settings.md
-    - All the Arrs: settings/arr-settings.md
+    - Generic Settings: settings/ombi.md
+    - All the Arrs: settings/all-the-arrs.md
     - Authentication: settings/authentication.md
     - Customization: settings/customization.md
     - DogNzb: settings/dognzb.md
