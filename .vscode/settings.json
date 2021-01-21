@@ -4,8 +4,10 @@
         "Sonarr",
         "Upvotes",
         "dognzb",
+        "emby",
         "favicon",
         "fontawesome",
+        "inlinehilite",
         "lidarr",
         "mkdocs",
         "ombi",
@@ -14,11 +16,12 @@
         "plex",
         "proxying",
         "pushbullet",
+        "pymdownx",
         "radarr",
+        "superfences",
         "tautulli",
-        "tidus",
-        "twilio",
         "templating",
-        "emby"
+        "tidus",
+        "twilio"
     ]
 }

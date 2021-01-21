@@ -55,7 +55,6 @@ markdown_extensions:
   - pymdownx.highlight:
       guess_lang: true
   - pymdownx.superfences
-  - pymdownx.superfences
   - pymdownx.inlinehilite
 
 # Navigation Layout
