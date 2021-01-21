@@ -42,6 +42,10 @@ extra:
 plugins:
   - search
   - git-revision-date-localized
+  # Pretty URLs
+  - redirects:
+      redirect_maps:
+        'settings/sonarr': 'settings/arr-settings.md'
 
 # Markdown extensions
 markdown_extensions:
