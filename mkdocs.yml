@@ -72,7 +72,7 @@ nav:
     - Customization: settings/customization.md
     - DogNzb: settings/dognzb.md
     - Issues: settings/issues.md
-    - Landing Page: settings/landing-page.md
+    - Landing Page: settings/landingpage.md
     - Mobile App: settings/mobile-app.md
     - Scheduled Tasks: settings/scheduled-tasks.md
     - User Importer: settings/import-users.md
