@@ -62,7 +62,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Installation: installation.md
-  - Updating: updating.md
+  - Updating: settings/update.md
   - FAQ: faq.md
   - Common Errors: common-errors.md
   - Settings: 
