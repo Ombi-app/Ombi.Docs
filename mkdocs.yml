@@ -76,7 +76,7 @@ nav:
     - Mobile App: settings/mobile-app.md
     - Scheduled Tasks: settings/scheduled-tasks.md
     - User Importer: settings/usermanagement.md
-    - Vote: settings/voting.md
+    - Vote: settings/vote.md
     - Notifications:
       - Template Variables: settings/notifications/template-variables.md
       - Discord: settings/notifications/discord.md
