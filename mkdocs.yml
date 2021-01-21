@@ -75,7 +75,7 @@ nav:
     - Landing Page: settings/landingpage.md
     - Mobile App: settings/mobile-app.md
     - Scheduled Tasks: settings/scheduled-tasks.md
-    - User Importer: settings/import-users.md
+    - User Importer: settings/usermanagement.md
     - Vote: settings/voting.md
     - Notifications:
       - Template Variables: settings/notifications/template-variables.md
