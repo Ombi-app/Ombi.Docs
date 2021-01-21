@@ -45,6 +45,8 @@ plugins:
   # Pretty URLs
   - redirects:
       redirect_maps:
+        'settings/lidarr': 'settings/arr-settings.md'
+        'settings/radarr': 'settings/arr-settings.md'
         'settings/sonarr': 'settings/arr-settings.md'
 
 # Markdown extensions
