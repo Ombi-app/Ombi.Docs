@@ -78,7 +78,6 @@ nav:
     - User Importer: settings/usermanagement.md
     - Vote: settings/vote.md
     - Notifications:
-      - Template Variables: settings/notifications/template-variables.md
       - Discord: settings/notifications/discord.md
       - Email: settings/notifications/email.md
       - Mass Email: settings/notifications/mass-email.md
@@ -95,6 +94,7 @@ nav:
     - Backing Up: info/backing-up.md
     - Common Themes: info/common-themes.md
     - Docker Containers: info/docker-containers.md
+    - Notification Variables: info/notification-template-variables.md
     - Ombi & Tautulli: info/ombi-tautulli.md
     - Request Flow: info/request-workflow.md
     - Reverse Proxying: info/reverse-proxy.md

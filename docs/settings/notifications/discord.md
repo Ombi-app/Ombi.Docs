@@ -14,7 +14,7 @@ This can be found by right clicking their name in Discord and selecting "Copy ID
 (Only visible while in Developer Mode - this can be enabled under "Settings > Appearance".)  
 ![User ID Placement](../../assets/images/embeds/discord_user_id.png)
 2. Add `<@{UserPreference}>` where you want to mention in your notification template.  
-Refer to the [Notification Template Variables](../Template-Variables) for information on formatting your notifications.
+Refer to the [Notification Template Variables](../../../info/notification-template-variables) for information on formatting your notifications.
 
 Extra tips:  
 You can set a channel so nobody can post, and the webhook can still post.  
