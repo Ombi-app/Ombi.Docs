@@ -48,6 +48,7 @@ plugins:
         'settings/lidarr': 'settings/all-the-arrs.md'
         'settings/radarr': 'settings/all-the-arrs.md'
         'settings/sonarr': 'settings/all-the-arrs.md'
+        'settings/update': 'guides/updating.md'
 
 # Markdown extensions
 markdown_extensions:
@@ -60,10 +61,10 @@ markdown_extensions:
 # Navigation Layout
 nav:
   - Home: index.md
-  - Installation: installation.md
-  - Updating: settings/update.md
-  - FAQ: faq.md
-  - Common Errors: common-errors.md
+  - Installation: guides/installation.md
+  - Updating: guides/updating.md
+  - FAQ: info/faq.md
+  - Common Errors: info/common-errors.md
   - Settings: 
     - Generic Settings: settings/ombi.md
     - All the Arrs: settings/all-the-arrs.md
@@ -88,7 +89,6 @@ nav:
       - Twilio: settings/notifications/twilio.md
   - Info:
     - Alternate Databases: info/alternate-databases.md
-    - Migrating Databases: info/migrating-databases.md
     - API Information: info/api-information.md
     - Backing Up: info/backing-up.md
     - Common Themes: info/common-themes.md
@@ -101,6 +101,10 @@ nav:
     - Startup Parameters: info/startup-parameters.md
     - Suggesting Features: info/feature-suggestions.md
     - User Roles: info/user-roles.md
+  - Guides:
+    - Installation: guides/installation.md
+    - Migrating Databases: guides/migrating-databases.md
+    - Updating: guides/updating.md
   - Development:
     - Building Ombi: development/building-ombi.md
     - Translating Ombi: development/translations.md

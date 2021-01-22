@@ -1,7 +1,7 @@
 # Migrating to MySQL
 
 _Editors Note: This page is a WIP._  
-_This guide assumes you have already configured [MySQL/MariaDB](../alternate-databases) to work with ombi._
+_This guide assumes you have already configured [MySQL/MariaDB](../../info/alternate-databases) to work with ombi._
 
 ## Migration procedure
 
