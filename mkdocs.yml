@@ -42,6 +42,13 @@ extra:
 plugins:
   - search
   - git-revision-date-localized
+  # Pretty URLs
+  - redirects:
+      redirect_maps:
+        'settings/lidarr': 'settings/all-the-arrs.md'
+        'settings/radarr': 'settings/all-the-arrs.md'
+        'settings/sonarr': 'settings/all-the-arrs.md'
+        'settings/update': 'guides/updating.md'
 
 # Markdown extensions
 markdown_extensions:
@@ -49,30 +56,28 @@ markdown_extensions:
   - pymdownx.highlight:
       guess_lang: true
   - pymdownx.superfences
-  - pymdownx.superfences
   - pymdownx.inlinehilite
 
 # Navigation Layout
 nav:
   - Home: index.md
-  - Installation: installation.md
-  - Updating: updating.md
-  - FAQ: faq.md
-  - Common Errors: common-errors.md
+  - Installation: guides/installation.md
+  - Updating: guides/updating.md
+  - FAQ: info/faq.md
+  - Common Errors: info/common-errors.md
   - Settings: 
-    - Generic Settings: settings/ombi-settings.md
-    - All the Arrs: settings/arr-settings.md
+    - Generic Settings: settings/ombi.md
+    - All the Arrs: settings/all-the-arrs.md
     - Authentication: settings/authentication.md
     - Customization: settings/customization.md
     - DogNzb: settings/dognzb.md
     - Issues: settings/issues.md
-    - Landing Page: settings/landing-page.md
+    - Landing Page: settings/landingpage.md
     - Mobile App: settings/mobile-app.md
-    - Scheduled Tasks: settings/scheduled-tasks.md
-    - User Importer: settings/import-users.md
-    - Vote: settings/voting.md
+    - Scheduled Tasks: settings/jobs.md
+    - User Importer: settings/usermanagement.md
+    - Vote: settings/vote.md
     - Notifications:
-      - Template Variables: settings/notifications/template-variables.md
       - Discord: settings/notifications/discord.md
       - Email: settings/notifications/email.md
       - Mass Email: settings/notifications/mass-email.md
@@ -84,11 +89,11 @@ nav:
       - Twilio: settings/notifications/twilio.md
   - Info:
     - Alternate Databases: info/alternate-databases.md
-    - Migrating Databases: info/migrating-databases.md
     - API Information: info/api-information.md
     - Backing Up: info/backing-up.md
     - Common Themes: info/common-themes.md
     - Docker Containers: info/docker-containers.md
+    - Notification Variables: info/notification-template-variables.md
     - Ombi & Tautulli: info/ombi-tautulli.md
     - Request Flow: info/request-workflow.md
     - Reverse Proxying: info/reverse-proxy.md
@@ -96,6 +101,10 @@ nav:
     - Startup Parameters: info/startup-parameters.md
     - Suggesting Features: info/feature-suggestions.md
     - User Roles: info/user-roles.md
+  - Guides:
+    - Installation: guides/installation.md
+    - Migrating Databases: guides/migrating-databases.md
+    - Updating: guides/updating.md
   - Development:
     - Building Ombi: development/building-ombi.md
     - Translating Ombi: development/translations.md

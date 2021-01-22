@@ -14,9 +14,9 @@ This also supports Group Chat ID's.
 
 ## Tagging Users
 
-You can also add [UserPreference](../template-variables) to Telegram!  
+You can also add [UserPreference](../../../info/notification-template-variables) to Telegram!  
 In the User Management settings, Enter each users Telegram Username into the field.
 ![userpreference](../../assets/images/embeds/telegram_user_preferences.jpg)
 
-In order for the notification to call a user you must add `@{UserPreference}` as a [Notification Variable](../template-variables) into the Notification Settings, as pictured.  
+In order for the notification to call a user you must add `@{UserPreference}` as a [Notification Variable](../../../info/notification-template-variables) into the Notification Settings, as pictured.  
 ![Notification Settings](../../assets/images/embeds/userpreference_notification.png)
