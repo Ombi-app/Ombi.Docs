@@ -19,7 +19,7 @@ To do so is fairly straightforward.
     * If you're running Ombi manually, kill the process.
 2. Back up the database info from the Ombi directory.
     * SQlite  
-      There are 3 important db files (see what they do [here](../faq/#database-uses)).  
+      There are 3 important db files (see what they do [here](../../info/faq/#database-uses)).  
         * Ombi.db
         * OmbiExternal.db
         * OmbiSettings.db  
