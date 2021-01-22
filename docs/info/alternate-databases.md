@@ -26,7 +26,7 @@ The `database.json` file needs to look like the below example (replacing usernam
 ```
 
 As you can see you can specify a database type and a connectionstring per database that Ombi has.
-You can see what each database is used for [here](../../faq/#database-uses).
+You can see what each database is used for [here](../faq/#database-uses).
 
 ***
 
@@ -139,7 +139,7 @@ You effectively have a clean ombi install.
 
 #### Migration
 
-You can migrate the existing sqlite databses to mysql if you choose by following the [Migration Guide](../guides/migrating-databases)
+You can migrate the existing sqlite databses to mysql if you choose by following the [Migration Guide](../../guides/migrating-databases)
 
 ## Installing MySQL on Windows
 
