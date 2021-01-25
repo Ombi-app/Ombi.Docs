@@ -17,7 +17,7 @@ You can request the `theTvDb` id to be added [here](https://www.tvmaze.com/threa
 ***
 If you search for a TV show and get this error:
 
-![sorry](./assets/images/embeds/results_disappeared.jpg)
+![sorry](../assets/images/embeds/results_disappeared.jpg)
 
 _This is most commonly caused by incorrect spelling._ 😃
 
@@ -92,7 +92,7 @@ Referenced in [Issue 3214](https://github.com/tidusjar/Ombi/issues/3214#issuecom
 
 ### Docker
 
-Here is a oneliner to fix the issue, assuming you are running in a docker container, your container has `ombi` in the name, your image requires the config dir to be mounted at `/config`, and the host is running Debian, Ubuntu, or a related distro that uses `apt`. If any of these points aren't true, see the details below the command and modify to your needs.
+Here is a one-liner to fix the issue, assuming you are running in a docker container, your container has `ombi` in the name, your image requires the config dir to be mounted at `/config`, and the host is running Debian, Ubuntu, or a related distro that uses `apt`. If any of these points aren't true, see the details below the command and modify to your needs.
 
 ```shell
 sudo apt update
