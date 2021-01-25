@@ -139,6 +139,12 @@ nav:
     - Mobile App: guides/mobile-app.md
     - Suggesting Features: guides/feature-suggestions.md
     - Updating: guides/updating.md
+    - Discover: guides/discover.md
+    - Donate: guides/donate.md
+    - Issues: guides/issues.md
+    - Preferences: guides/preferences.md
+    - Requests list: guides/requests-list.md
+    - User Management: guides/usermanagement.md
   - Development:
     - Building Ombi: development/building-ombi.md
     - Translating Ombi: development/translations.md
