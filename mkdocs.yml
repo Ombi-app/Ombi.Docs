@@ -84,10 +84,10 @@ nav:
     - DogNzb: settings/dognzb.md
     - Radarr: settings/all-the-arrs.md
     - Notifications:
-      #- Mobile: settings/notifications/cloudmobile.md
-      #- Legacy Mobile: settings/notifications/mobile.md
+      - Mobile: settings/notifications/cloudmobile.md
+      - Legacy Mobile: settings/notifications/mobile.md
       - Email: settings/notifications/email.md
-      - Mass Email: settings/notifications/mass-email.md
+      - Mass Email: settings/notifications/massemail.md
       - Newsletter: settings/notifications/newsletter.md
       - Discord: settings/notifications/discord.md
       - Slack: settings/notifications/slack.md
