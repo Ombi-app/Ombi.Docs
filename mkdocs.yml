@@ -45,9 +45,11 @@ plugins:
   # Pretty URLs
   - redirects:
       redirect_maps:
+        # These are all combined, so redirect to the one place.
         'settings/lidarr.md': 'settings/all-the-arrs.md'
         'settings/radarr.md': 'settings/all-the-arrs.md'
         'settings/sonarr.md': 'settings/all-the-arrs.md'
+        # All the 'notification' types
         'settings/cloudmobile.md': 'settings/notifications/cloudmobile.md'
         'settings/discord.md': 'settings/notifications/discord.md'
         'settings/email.md': 'settings/notifications/email.md'
@@ -62,7 +64,8 @@ plugins:
         'settings/telegram.md': 'settings/notifications/telegram.md'
         'settings/twilio.md': 'settings/notifications/twilio.md'
         'settings/webhook.md': 'settings/notifications/webhook.md'
-        'settings/update': 'guides/updating.md'
+        # Temporary redirect until an explanation of the update page is ready
+        'settings/update.md': 'guides/updating.md'
 
 # Markdown extensions
 markdown_extensions:
