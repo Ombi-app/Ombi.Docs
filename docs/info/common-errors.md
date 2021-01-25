@@ -2,7 +2,7 @@
 
 ## Error updating from Web UI
 
-See [Update Errors](../updating)
+See [Update Errors](../../guides/updating/#automatic-updates)
 ***
 
 ## TV Show search results disappear
