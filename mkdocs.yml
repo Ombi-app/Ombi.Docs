@@ -49,7 +49,7 @@ plugins:
         'settings/lidarr.md': 'settings/all-the-arrs.md'
         'settings/radarr.md': 'settings/all-the-arrs.md'
         'settings/sonarr.md': 'settings/all-the-arrs.md'
-        # All the 'notification' types
+        # All the 'notification' setting types
         'settings/cloudmobile.md': 'settings/notifications/cloudmobile.md'
         'settings/discord.md': 'settings/notifications/discord.md'
         'settings/email.md': 'settings/notifications/email.md'
@@ -64,6 +64,13 @@ plugins:
         'settings/telegram.md': 'settings/notifications/telegram.md'
         'settings/twilio.md': 'settings/notifications/twilio.md'
         'settings/webhook.md': 'settings/notifications/webhook.md'
+        # Guides redirects
+        'discover.md': 'guides/discover.md'
+        'donate.md': 'guides/donate.md'
+        'issues.md': 'guides/issues.md'
+        'preferences.md': 'guides/preferences.md'
+        'requests-list.md': 'guides/requests-list.md'
+        'usermanagement.md': 'guides/usermanagement.md'
         # Temporary redirect until an explanation of the update page is ready
         'settings/update.md': 'guides/updating.md'
 
@@ -139,6 +146,12 @@ nav:
     - Mobile App: guides/mobile-app.md
     - Suggesting Features: guides/feature-suggestions.md
     - Updating: guides/updating.md
+    - Discover: guides/discover.md
+    - Donate: guides/donate.md
+    - Issues: guides/issues.md
+    - Preferences: guides/preferences.md
+    - Requests list: guides/requests-list.md
+    - User Management: guides/usermanagement.md
   - Development:
     - Building Ombi: development/building-ombi.md
     - Translating Ombi: development/translations.md
