@@ -74,9 +74,9 @@ nav:
     - Authentication: settings/authentication.md
     - Vote: settings/vote.md
     #- TheMovieDB
-    - Plex
-    #- Emby
-    #- Jellyfin
+    - Plex: settings/plex.md
+    - Emby: settings/emby.md
+    - Jellyfin: settings/jellyfin.md
     - Sonarr: settings/all-the-arrs.md
     - DogNzb: settings/dognzb.md
     #- Sickrage
