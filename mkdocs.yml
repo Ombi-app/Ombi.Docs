@@ -41,7 +41,10 @@ extra:
 # Function extensions
 plugins:
   - search
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      type: timeago
+      locale: en
+      fallback_to_build_date: false
   # Pretty URLs
   - redirects:
       redirect_maps:
@@ -81,6 +84,9 @@ markdown_extensions:
       guess_lang: true
   - pymdownx.superfences
   - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+      toc_depth: 4
 
 # Navigation Layout
 nav:
