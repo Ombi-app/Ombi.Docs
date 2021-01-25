@@ -131,13 +131,13 @@ nav:
     - Reverse Proxying: info/reverse-proxy.md
     - Roles and Notifications: info/roles-and-notifications.md
     - Startup Parameters: info/startup-parameters.md
-    - Suggesting Features: info/feature-suggestions.md
+    - Suggesting Features: guides/feature-suggestions.md
     - User Roles: info/user-roles.md
   - Guides:
     - Installation: guides/installation.md
     - Migrating Databases: guides/migrating-databases.md
     - Mobile App: guides/mobile-app.md
-    - Suggesting Features: info/feature-suggestions.md
+    - Suggesting Features: guides/feature-suggestions.md
     - Updating: guides/updating.md
   - Development:
     - Building Ombi: development/building-ombi.md

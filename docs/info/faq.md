@@ -5,7 +5,7 @@ If you feel like a question should be added please reach out via the Ombi Discor
 
 ## How do I request a feature be added to Ombi
 
-See [Feature Suggestions](./feature-suggestions)
+See [Feature Suggestions](../guides/feature-suggestions)
 ***
 
 ## TV shows and episodes not showing as available
