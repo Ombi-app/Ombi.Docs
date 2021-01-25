@@ -1,3 +1,3 @@
-# Plex
+# Telegram
 
-## Coming Soon
+See [Telegram](./notifications/telegram)
