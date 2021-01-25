@@ -5,7 +5,7 @@ If you feel like a question should be added please reach out via the Ombi Discor
 
 ## How do I request a feature be added to Ombi
 
-See [Feature Suggestions](../info/feature-suggestions)
+See [Feature Suggestions](./feature-suggestions)
 ***
 
 ## TV shows and episodes not showing as available
@@ -100,7 +100,7 @@ This database contains all of the settings that you have applied to Ombi e.g. No
 
 ## How can I include Ombi logs in Logarr?
 
-Because Ombi adds the date into the name of the logfile, you can't hardcode to the latest log file - the link will be incorrect the next day.  
+Because Ombi adds the date into the name of the log file, you can't hard-code to the latest log file - the link will be incorrect the next day.  
 Instead, we can use the php date() function and string concatenation (.) to build the path on the fly when we are in Logarr.  
 The logs are named in the format `log-yyyymmdd.txt` - so January 14, 2019 would be `log-20190114.txt`. php date(Ymd) gives us the date in that format, and we can concatenate it into our ombi log path in Logarr configs like so:  
 _(**Note**: change folder paths to match your own install directory of Ombi.)_  
@@ -109,7 +109,7 @@ _(**Note**: change folder paths to match your own install directory of Ombi.)_
 "Ombi" => 'C:\Services\Ombi\Logs\log-' . date("Ymd") . '.txt',
 ````
 
-_You can also use similar code for any software which hardcodes the date into the config. It's not uncommon._
+_You can also use similar code for any software which hard-codes the date into the config. It's not uncommon._
 
 ***
 
