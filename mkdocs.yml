@@ -93,11 +93,11 @@ nav:
       - Slack: settings/notifications/slack.md
       - Pushbullet: settings/notifications/pushbullet.md
       - Pushover: settings/notifications/pushover.md
-      #- Mattermost: settings/notifications/mattermost.md
+      - Mattermost: settings/notifications/mattermost.md
       - Telegram: settings/notifications/telegram.md
-      #- Gotify: settings/notifications/gotify.md
+      - Gotify: settings/notifications/gotify.md
       - Twilio: settings/notifications/twilio.md
-      #- Webhook: settings/notifications/webhook.md
+      - Webhook: settings/notifications/webhook.md
     #- About: settings/about.md
     #- Failed Requests: settings/failedrequests.md
     - Scheduled Tasks: settings/jobs.md
