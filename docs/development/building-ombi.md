@@ -13,8 +13,8 @@ In this example I'll be using VS Code to edit the frontend.
 1. Open up a New Terminal in the following location: `~src/Ombi/ClientApp`, run the following:
    1. `yarn` _(wait for it to install all dependencies)_
    1. `yarn start`
-1. Go to `~/src/Ombi` in a Terminal Window and run `dotnet run -- --host http://*:3577`
-1. Navigate to [http://localhost:3577/](http://localhost:3577/)
+1. Go to `~/src/Ombi` in a Terminal Window and run `dotnet run -- --host http://*:5000`
+1. Navigate to [http://localhost:5000/](http://localhost:5000/)
 
 You can now make UI changes and it will use Hot Module Reloading to show the changes.
 

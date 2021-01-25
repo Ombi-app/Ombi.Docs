@@ -9,7 +9,7 @@ Users are more than welcome to create their own apps, however future versions of
 
 ### Application URL
 
-You can find this in the [Customization Settings](../customization/#application-url).  
+You can find this in the [Customization Settings](../../settings/customization/#application-url).  
 Make sure the application url is set to your externally accessible domain for Ombi.  
 e.g. the demo site uses `https://demo.ombi.io/`  
 

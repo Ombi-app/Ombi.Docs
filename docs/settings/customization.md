@@ -46,7 +46,7 @@ Use the custom page with caution.
 
 We do have the ability to change what backgrounds are used on the landing and login pages.
 
-This is not done via the Ombi UI, but done in the `appsettings.json` file in the Ombi directory [Example.](https://github.com/tidusjar/Ombi/blob/master/src/Ombi/appsettings.json)  
+This is not done via the Ombi UI, but done in the `appsettings.json` file in the Ombi directory [Example.](https://github.com/Ombi-app/Ombi/blob/master/src/Ombi/appsettings.json)  
 If you look at that file you can see the following sections:
 
 ```json
