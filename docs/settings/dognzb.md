@@ -1,6 +1,7 @@
 # DogNZB Settings
 
-Here we can configure Ombi to use DogNzb's watchlists.
+Here we can configure Ombi to use DogNzb's watchlists.  
+_Yes, we know this is in the Nav twice. It's in two places in the settings - note that the Nav matches the order pages appear in the settings._  
 
 ## Enabled
 

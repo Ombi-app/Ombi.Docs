@@ -35,8 +35,6 @@ To do so is fairly straightforward.
 
 You can use your own update script here, please note that this will have to manage the termination and start of the Ombi process. You will have to terminate Ombi yourself.  
 
-* Unimatrix0 has written a [good systemd update script for Ombi](https://github.com/Unimatrix0/update_ombi/blob/master/update_ombi.sh).
-
 * carnivorouz - [v4 Linux systemd script](https://github.com/carnivorouz/updateOmbi/blob/main/updateOmbi.sh)
 
 ### Script Path
