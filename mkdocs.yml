@@ -79,9 +79,9 @@ nav:
     - Jellyfin: settings/jellyfin.md
     - Sonarr: settings/all-the-arrs.md
     - DogNzb: settings/dognzb.md
-    #- Sickrage
-    #- Couchpotato
-    #- DogNzb: settings/dognzb.md
+    - Sickrage: settings/sickrage.md
+    - Couchpotato: settings/couchpotato.md
+    - DogNzb: settings/dognzb.md
     - Radarr: settings/all-the-arrs.md
     - Notifications:
       #- Mobile: settings/notifications/cloudmobile.md
