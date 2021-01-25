@@ -6,6 +6,7 @@
         "blocklist",
         "cloudmobile",
         "couchpotato",
+        "dog",
         "dognzb",
         "emby",
         "failedrequests",
@@ -18,6 +19,7 @@
         "md",
         "mkdocs",
         "notifications",
+        "nzb",
         "ombi",
         "patreon",
         "paypal",
@@ -34,6 +36,8 @@
         "themoviedb",
         "tidus",
         "twilio",
-        "usermanagement"
+        "usermanagement",
+        "watchlist",
+        "watchlists"
     ]
 }
