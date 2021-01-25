@@ -98,10 +98,10 @@ nav:
       - Gotify: settings/notifications/gotify.md
       - Twilio: settings/notifications/twilio.md
       - Webhook: settings/notifications/webhook.md
-    #- About: settings/about.md
-    #- Failed Requests: settings/failedrequests.md
+    - About: settings/about.md
+    - Failed Requests: settings/failedrequests.md
     - Scheduled Tasks: settings/jobs.md
-    #- Logs: settings/logs.md
+    - Logs: settings/logs.md
   - Info:
     - Alternate Databases: info/alternate-databases.md
     - API Information: info/api-information.md
