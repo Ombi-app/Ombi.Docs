@@ -67,26 +67,41 @@ nav:
   - Common Errors: info/common-errors.md
   - Settings: 
     - Generic Settings: settings/ombi.md
-    - All the Arrs: settings/all-the-arrs.md
-    - Authentication: settings/authentication.md
     - Customization: settings/customization.md
-    - DogNzb: settings/dognzb.md
-    - Issues: settings/issues.md
     - Landing Page: settings/landingpage.md
-    - Mobile App: settings/mobile-app.md
-    - Scheduled Tasks: settings/jobs.md
-    - User Importer: settings/usermanagement.md
+    - Issues: settings/issues.md
+    - User Management: settings/usermanagement.md
+    - Authentication: settings/authentication.md
     - Vote: settings/vote.md
+    #- TheMovieDB
+    #- Plex
+    #- Emby
+    #- Jellyfin
+    - Sonarr: settings/all-the-arrs.md
+    - DogNzb: settings/dognzb.md
+    #- Sickrage
+    #- Couchpotato
+    #- DogNzb: settings/dognzb.md
+    - Radarr: settings/all-the-arrs.md
     - Notifications:
-      - Discord: settings/notifications/discord.md
+      #- Mobile: settings/notifications/cloudmobile.md
+      #- Legacy Mobile: settings/notifications/mobile.md
       - Email: settings/notifications/email.md
       - Mass Email: settings/notifications/mass-email.md
       - Newsletter: settings/notifications/newsletter.md
+      - Discord: settings/notifications/discord.md
+      - Slack: settings/notifications/slack.md
       - Pushbullet: settings/notifications/pushbullet.md
       - Pushover: settings/notifications/pushover.md
-      - Slack: settings/notifications/slack.md
+      #- Mattermost: settings/notifications/mattermost.md
       - Telegram: settings/notifications/telegram.md
+      #- Gotify: settings/notifications/gotify.md
       - Twilio: settings/notifications/twilio.md
+      #- Webhook: settings/notifications/webhook.md
+    #- About: settings/about.md
+    #- Failed Requests: settings/failedrequests.md
+    - Scheduled Tasks: settings/jobs.md
+    #- Logs: settings/logs.md
   - Info:
     - Alternate Databases: info/alternate-databases.md
     - API Information: info/api-information.md
@@ -104,6 +119,7 @@ nav:
   - Guides:
     - Installation: guides/installation.md
     - Migrating Databases: guides/migrating-databases.md
+    - Mobile App: guides/mobile-app.md
     - Updating: guides/updating.md
   - Development:
     - Building Ombi: development/building-ombi.md
