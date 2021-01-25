@@ -3,6 +3,7 @@
         "Arrs",
         "Sonarr",
         "Upvotes",
+        "blocklist",
         "cloudmobile",
         "couchpotato",
         "dognzb",
@@ -30,6 +31,7 @@
         "superfences",
         "tautulli",
         "templating",
+        "themoviedb",
         "tidus",
         "twilio",
         "usermanagement"
