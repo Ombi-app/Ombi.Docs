@@ -73,7 +73,7 @@ nav:
     - User Management: settings/usermanagement.md
     - Authentication: settings/authentication.md
     - Vote: settings/vote.md
-    #- TheMovieDB
+    - TheMovieDB: settings/themoviedb.md
     - Plex: settings/plex.md
     - Emby: settings/emby.md
     - Jellyfin: settings/jellyfin.md
