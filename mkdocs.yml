@@ -137,6 +137,7 @@ nav:
     - Installation: guides/installation.md
     - Migrating Databases: guides/migrating-databases.md
     - Mobile App: guides/mobile-app.md
+    - Suggesting Features: info/feature-suggestions.md
     - Updating: guides/updating.md
   - Development:
     - Building Ombi: development/building-ombi.md
