@@ -70,6 +70,7 @@ plugins:
         # Guides redirects
         'discover.md': 'guides/discover.md'
         'donate.md': 'guides/donate.md'
+        'installation.md': 'guides/installation.md'
         'issues.md': 'guides/issues.md'
         'preferences.md': 'guides/preferences.md'
         'requests-list.md': 'guides/requests-list.md'
