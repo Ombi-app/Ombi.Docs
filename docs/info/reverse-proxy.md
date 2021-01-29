@@ -11,16 +11,16 @@ To use nginx as a reverse proxy requires no extra modules, but it does require c
 ### Nginx Subdirectory
 
 This is an NGINX reverse proxy configuration that **DOES** use baseurl.  
-This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Unbuntu 18.04.
+This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Ubuntu 18.04.
 
 The advantage of this configuration is that it allows for a single certificate to provide ssl services for many different web apps.
 
 For example:  
-www.somedomain.com/ombi  
-www.somedomain.com/sonarr  
-www.somedomain.com/radarr  
+www.example.com/ombi  
+www.example.com/sonarr  
+www.example.com/radarr  
 
-You would only need to install/support a certificate for **www.somedomain.com**.
+You would only need to install/support a certificate for **www.example.com**.
 
 This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the `--baseurl /ombi` option
 
@@ -184,8 +184,6 @@ Once all your changes are done, you'll need to run `service apache2 restart` to 
 
 ## IIS
 
-- _(Below rules DO WORK with OMBI v3 - Edited 22 APR 18 by @seanvree)_
-
 NOTE: There are some extra steps involved with getting IIS to proxy things.  
 Install these two modules:
 
@@ -200,7 +198,7 @@ IIS admin -> Application Request Routing Cache -> Server Proxy Settings, tick "E
 - _NOTE1:  Below rules assume you have a "virtual directory" named "OMBI" under your default website in IIS.  That VD should target a physical directory that resides at `c:\inetpub\wwwroot\ombi`.  
 Within this directory you would place the below rules in a web.config file. There should be no other files in this directory.  
 (This should NOT be your OMBI install directory)_
-- _NOTE2:  Change `yourdomain.com`_
+- _NOTE2:  Change `example.com`_
 
 ```xml
 <configuration>
@@ -239,7 +237,7 @@ Within this directory you would place the below rules in a web.config file. Ther
                     <conditions logicalGrouping="MatchAll" trackAllCaptures="true">
                         <add input="{HTTP_REFERER}" pattern="/ombi" />
                     </conditions>
-                    <action type="Rewrite" value="http{R:1}://YOURDOMAIN.com/ombi/{R:2}" />
+                    <action type="Rewrite" value="http{R:1}://example.com/ombi/{R:2}" />
                 </rule>
         <preConditions>
             <preCondition name="ResponseIsHtml1">
@@ -267,7 +265,7 @@ The address for this needs to match your application URL in Ombi, and should tar
 Within this directory you would place the below rules in a web.config file. There should be no other files in this directory.  
 (This should NOT be your OMBI install directory)_
 
-- _NOTE2:  Change "yourdomain.com"_
+- _NOTE2:  Change "example.com"_
 - _NOTE 3: Change "ombi_ip:port" to whatever your local address for Ombi is._
 - _NOTE 4: Be sure you set your application URL in Ombi to whatever your site in IIS is listening to._
 
@@ -328,7 +326,7 @@ your.domain.tld {
 ### Caddy Subdomain
 
 ```conf
-ombi.yourdomain.tld {
+ombi.example.tld {
     reverse_proxy 127.0.0.1:5000
   }
 ```
