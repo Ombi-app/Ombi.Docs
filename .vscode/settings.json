@@ -102,5 +102,9 @@
         "watchlists",
         "wwwroot",
         "yyyymmdd"
-    ]
+    ],
+    "markdownlint.config": {
+        "default": true,
+        "code-block-style": { "style": "consistent" }
+    }
 }
