@@ -77,7 +77,7 @@ Be sure to adjust directories to your Ombi install location
 
 As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if you were double clicking it and running it like a regular executable, except it's hidden from the task bar and can only be closed by the Task Manager or the Task Scheduler.
 
-1. Open 'Task Scheduler' either search for it in start. Or simply Run... <kbd>WIN</kbd>+<kbd>R</kbd> `%windir%\system32\taskschd.msc`
+1. Open 'Task Scheduler' either search for it in start. Or simply Run... ++win+r++  `%windir%\system32\taskschd.msc`
 2. Click `Create task...` on the right hand side.
 3. Give the task a name. _Example:_ Ombi And a description if you want. (Not necessary)
 4. Check `Run with highest privileges`
@@ -89,7 +89,7 @@ As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if yo
 10. Click the `Actions` Tab and Click `New...`
 11. Click `Browse...` and navigate to your `Ombi.exe` Click `Open`
 12. Fill `Start in (optional):` with `Ombi.exe`'s working directory. IE: `C:\Ombi\` or `C:\SERVERS\Ombi\` basically, wherever you extracted your 'Ombi' folder to and where it lives. Click `OK`
-13. `Settings Tab` Untick `Stop the task if it runs longer than:` Click `OK`
+13. `Settings Tab` Un-tick `Stop the task if it runs longer than:` Click `OK`
 14. You will be prompted for your windows user name and password. Please enter your credentials and click `OK`
 15. Click `Task Scheduler Library` right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at [http://localhost:5000](http://localhost:5000) !
 
@@ -121,7 +121,7 @@ New-NetFirewallRule -DisplayName 'Ombi' -Direction Inbound -Action Allow -Protoc
 
 ### Debian / APT repo
 
-**Note:** This is the easy way, and only works with Debian-based distros.  
+**Note:** This is the easy way, and only works with Debian-based distributions.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
 
 1. Add the apt repository to the apt sources list:  
@@ -179,7 +179,7 @@ The Ombi team do not currently maintain any Docker containers directly.
 
 However, there are a number of them available, maintained by various members of the community.  
 linuxserver.io keep their image the most up-to-date, and they have pretty comprehensive instructions for installation. See the page for their image [here](https://hub.docker.com/r/linuxserver/ombi/).  
-We currently recommended using the tag `development` until they shift v4 to the `latest` tag.
+We currently recommended using the `development` tag, at least until they shift v4 to the `latest` tag.
 
 If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see [Things to consider with Docker](../info/docker-containers) to (hopefully) help clear up some things with how networking and access works with a Docker system.
 
