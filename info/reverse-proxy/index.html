@@ -1,0 +1,2280 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The official guide for Ombi">
+      
+      
+      
+        <meta name="author" content="Ombi-App">
+      
+      
+        <link rel="canonical" href="https://docs.ombi.app/info/reverse-proxy/">
+      
+      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+    
+    
+      
+        <title>Reverse Proxying - Ombi Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/timeago.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reverse-proxy-examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Ombi Docs
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Reverse Proxying
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Ombi-App/Ombi.Docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ombi-App/Ombi.Docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../guides/installation/" class="md-tabs__link">
+      Installation
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../guides/updating/" class="md-tabs__link">
+      Updating
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../faq/" class="md-tabs__link">
+      FAQ
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../common-errors/" class="md-tabs__link">
+      Common Errors
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../settings/ombi/" class="md-tabs__link">
+        Settings
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../alternate-databases/" class="md-tabs__link md-tabs__link--active">
+        Info
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../guides/installation/" class="md-tabs__link">
+        Guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../development/building-ombi/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../archive/prerequisites/" class="md-tabs__link">
+        Archive
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Ombi Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Ombi-App/Ombi.Docs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ombi-App/Ombi.Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/updating/" class="md-nav__link">
+        Updating
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-errors/" class="md-nav__link">
+        Common Errors
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        Settings
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Settings" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          Settings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/ombi/" class="md-nav__link">
+        Generic Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/customization/" class="md-nav__link">
+        Customization
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/landingpage/" class="md-nav__link">
+        Landing Page
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/issues/" class="md-nav__link">
+        Issues
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/usermanagement/" class="md-nav__link">
+        User Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/authentication/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/vote/" class="md-nav__link">
+        Vote
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/themoviedb/" class="md-nav__link">
+        TheMovieDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/plex/" class="md-nav__link">
+        Plex
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/emby/" class="md-nav__link">
+        Emby
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/jellyfin/" class="md-nav__link">
+        Jellyfin
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/all-the-arrs/" class="md-nav__link">
+        Sonarr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/dognzb/" class="md-nav__link">
+        DogNzb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/sickrage/" class="md-nav__link">
+        Sickrage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/couchpotato/" class="md-nav__link">
+        Couchpotato
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/dognzb/" class="md-nav__link">
+        DogNzb
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/all-the-arrs/" class="md-nav__link">
+        Radarr
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6-18" type="checkbox" id="nav-6-18" >
+      
+      <label class="md-nav__link" for="nav-6-18">
+        Notifications
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Notifications" data-md-level="2">
+        <label class="md-nav__title" for="nav-6-18">
+          <span class="md-nav__icon md-icon"></span>
+          Notifications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/cloudmobile/" class="md-nav__link">
+        Mobile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/mobile/" class="md-nav__link">
+        Legacy Mobile
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/email/" class="md-nav__link">
+        Email
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/massemail/" class="md-nav__link">
+        Mass Email
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/newsletter/" class="md-nav__link">
+        Newsletter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/discord/" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/slack/" class="md-nav__link">
+        Slack
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/pushbullet/" class="md-nav__link">
+        Pushbullet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/pushover/" class="md-nav__link">
+        Pushover
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/mattermost/" class="md-nav__link">
+        Mattermost
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/telegram/" class="md-nav__link">
+        Telegram
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/gotify/" class="md-nav__link">
+        Gotify
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/twilio/" class="md-nav__link">
+        Twilio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/notifications/webhook/" class="md-nav__link">
+        Webhook
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/failedrequests/" class="md-nav__link">
+        Failed Requests
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/jobs/" class="md-nav__link">
+        Scheduled Tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings/logs/" class="md-nav__link">
+        Logs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      
+      <label class="md-nav__link" for="nav-7">
+        Info
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Info" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Info
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alternate-databases/" class="md-nav__link">
+        Alternate Databases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-information/" class="md-nav__link">
+        API Information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backing-up/" class="md-nav__link">
+        Backing Up
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-themes/" class="md-nav__link">
+        Common Themes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker-containers/" class="md-nav__link">
+        Docker Containers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notification-template-variables/" class="md-nav__link">
+        Notification Variables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ombi-tautulli/" class="md-nav__link">
+        Ombi & Tautulli
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../request-workflow/" class="md-nav__link">
+        Request Flow
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Reverse Proxying
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Reverse Proxying
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+    <nav class="md-nav" aria-label="Nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nginx-subdirectory" class="md-nav__link">
+    Nginx Subdirectory
+  </a>
+  
+    <nav class="md-nav" aria-label="Nginx Subdirectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location-block" class="md-nav__link">
+    Location Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxyconf" class="md-nav__link">
+    proxy.conf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-subdomain" class="md-nav__link">
+    Nginx Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache2" class="md-nav__link">
+    Apache2
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache2-subdirectory" class="md-nav__link">
+    Apache2 Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache2-subdomain" class="md-nav__link">
+    Apache2 Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iis" class="md-nav__link">
+    IIS
+  </a>
+  
+    <nav class="md-nav" aria-label="IIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iis-subdirectory" class="md-nav__link">
+    IIS Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iis-subdomain" class="md-nav__link">
+    IIS Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caddy" class="md-nav__link">
+    Caddy
+  </a>
+  
+    <nav class="md-nav" aria-label="Caddy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caddy-subdirectory" class="md-nav__link">
+    Caddy Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caddy-subdomain" class="md-nav__link">
+    Caddy Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traefik" class="md-nav__link">
+    Traefik
+  </a>
+  
+    <nav class="md-nav" aria-label="Traefik">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traefik-subdirectory" class="md-nav__link">
+    Traefik Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traefik-subdomain" class="md-nav__link">
+    Traefik Subdomain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traefik-subdomain-and-subdirectory" class="md-nav__link">
+    Traefik Subdomain and Subdirectory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles-and-notifications/" class="md-nav__link">
+        Roles and Notifications
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../startup-parameters/" class="md-nav__link">
+        Startup Parameters
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/feature-suggestions/" class="md-nav__link">
+        Suggesting Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-roles/" class="md-nav__link">
+        User Roles
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Guides
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Guides" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/migrating-databases/" class="md-nav__link">
+        Migrating Databases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/mobile-app/" class="md-nav__link">
+        Mobile App
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/feature-suggestions/" class="md-nav__link">
+        Suggesting Features
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/updating/" class="md-nav__link">
+        Updating
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/discover/" class="md-nav__link">
+        Discover
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/donate/" class="md-nav__link">
+        Donate
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/issues/" class="md-nav__link">
+        Issues
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/preferences/" class="md-nav__link">
+        Preferences
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/requests-list/" class="md-nav__link">
+        Requests list
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/usermanagement/" class="md-nav__link">
+        User Management
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
+      
+      <label class="md-nav__link" for="nav-9">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/building-ombi/" class="md-nav__link">
+        Building Ombi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/translations/" class="md-nav__link">
+        Translating Ombi
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+      
+      <label class="md-nav__link" for="nav-10">
+        Archive
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Archive" data-md-level="1">
+        <label class="md-nav__title" for="nav-10">
+          <span class="md-nav__icon md-icon"></span>
+          Archive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/prerequisites/" class="md-nav__link">
+        Prerequisites
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/v4-specific-proxy/" class="md-nav__link">
+        V4 Specific Proxying
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nginx" class="md-nav__link">
+    Nginx
+  </a>
+  
+    <nav class="md-nav" aria-label="Nginx">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nginx-subdirectory" class="md-nav__link">
+    Nginx Subdirectory
+  </a>
+  
+    <nav class="md-nav" aria-label="Nginx Subdirectory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location-block" class="md-nav__link">
+    Location Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxyconf" class="md-nav__link">
+    proxy.conf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-subdomain" class="md-nav__link">
+    Nginx Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apache2" class="md-nav__link">
+    Apache2
+  </a>
+  
+    <nav class="md-nav" aria-label="Apache2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache2-subdirectory" class="md-nav__link">
+    Apache2 Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache2-subdomain" class="md-nav__link">
+    Apache2 Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iis" class="md-nav__link">
+    IIS
+  </a>
+  
+    <nav class="md-nav" aria-label="IIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iis-subdirectory" class="md-nav__link">
+    IIS Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iis-subdomain" class="md-nav__link">
+    IIS Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caddy" class="md-nav__link">
+    Caddy
+  </a>
+  
+    <nav class="md-nav" aria-label="Caddy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caddy-subdirectory" class="md-nav__link">
+    Caddy Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caddy-subdomain" class="md-nav__link">
+    Caddy Subdomain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traefik" class="md-nav__link">
+    Traefik
+  </a>
+  
+    <nav class="md-nav" aria-label="Traefik">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traefik-subdirectory" class="md-nav__link">
+    Traefik Subdirectory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traefik-subdomain" class="md-nav__link">
+    Traefik Subdomain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traefik-subdomain-and-subdirectory" class="md-nav__link">
+    Traefik Subdomain and Subdirectory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/info/reverse-proxy.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="reverse-proxy-examples">Reverse Proxy Examples<a class="headerlink" href="#reverse-proxy-examples" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Note: These examples assume you are using <strong><em>/ombi</em></strong> as your <strong>Base URL</strong>.<br />
+If your <strong>Base URL</strong> differs, replace all instances of <strong><em>/ombi</em></strong> with <strong><em>/YourBaseURL</em></strong>.<br />
+If you're using a <strong>subdomain</strong> (ombi.example.com), replace all instances of <strong><em>/ombi</em></strong> with <strong><em>/</em></strong>, and remove the first <em>location</em> block.</p>
+</blockquote>
+<h2 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
+<p>To use nginx as a reverse proxy requires no extra modules, but it does require configuring.  </p>
+<h3 id="nginx-subdirectory">Nginx Subdirectory<a class="headerlink" href="#nginx-subdirectory" title="Permanent link">&para;</a></h3>
+<p>This is an NGINX reverse proxy configuration that <strong>DOES</strong> use baseurl.<br />
+This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Ubuntu 18.04.</p>
+<p>The advantage of this configuration is that it allows for a single certificate to provide ssl services for many different web apps.</p>
+<p>For example:<br />
+www.example.com/ombi<br />
+www.example.com/sonarr<br />
+www.example.com/radarr  </p>
+<p>You would only need to install/support a certificate for <strong>www.example.com</strong>.</p>
+<p>This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the <code class="highlight"><span class="err">--baseurl /ombi</span></code> option</p>
+<h4 id="location-block">Location Block<a class="headerlink" href="#location-block" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>    <span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span> <span class="p">{</span>
+       <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span> <span class="n">addr</span> <span class="n">or</span> <span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span>
+       <span class="err">include</span> <span class="err">/etc/nginx/proxy.conf</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="err">#</span> <span class="nt">This</span> <span class="nt">allows</span> <span class="nt">access</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">actual</span> <span class="nt">api</span>
+    <span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span><span class="o">/</span><span class="nt">api</span> <span class="p">{</span>
+       <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span> <span class="n">addr</span> <span class="n">or</span> <span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="err">#</span> <span class="nt">This</span> <span class="nt">allows</span> <span class="nt">access</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">documentation</span> <span class="nt">for</span> <span class="nt">the</span> <span class="nt">api</span>
+    <span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span><span class="o">/</span><span class="nt">swagger</span> <span class="p">{</span>
+        <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span> <span class="n">addr</span> <span class="n">or</span> <span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h4 id="proxyconf">proxy.conf<a class="headerlink" href="#proxyconf" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>    <span class="nt">client_max_body_size</span> <span class="nt">10m</span><span class="o">;</span>
+    <span class="nt">client_body_buffer_size</span> <span class="nt">128k</span><span class="o">;</span>
+
+    <span class="p">#</span><span class="nn">Timeout</span> <span class="nt">if</span> <span class="nt">the</span> <span class="nt">real</span> <span class="nt">server</span> <span class="nt">is</span> <span class="nt">dead</span>
+    <span class="nt">proxy_next_upstream</span> <span class="nt">error</span> <span class="nt">timeout</span> <span class="nt">invalid_header</span> <span class="nt">http_500</span> <span class="nt">http_502</span> <span class="nt">http_503</span><span class="o">;</span>
+
+    <span class="err">#</span> <span class="nt">Advanced</span> <span class="nt">Proxy</span> <span class="nt">Config</span>
+    <span class="nt">send_timeout</span> <span class="nt">5m</span><span class="o">;</span>
+    <span class="nt">proxy_read_timeout</span> <span class="nt">240</span><span class="o">;</span>
+    <span class="nt">proxy_send_timeout</span> <span class="nt">240</span><span class="o">;</span>
+    <span class="nt">proxy_connect_timeout</span> <span class="nt">240</span><span class="o">;</span>
+
+    <span class="err">#</span> <span class="nt">Basic</span> <span class="nt">Proxy</span> <span class="nt">Config</span>
+    <span class="nt">proxy_set_header</span> <span class="nt">Host</span> <span class="o">$</span><span class="nt">host</span><span class="o">:$</span><span class="nt">server_port</span><span class="o">;</span>
+    <span class="nt">proxy_set_header</span> <span class="nt">X-Real-IP</span> <span class="o">$</span><span class="nt">remote_addr</span><span class="o">;</span>
+    <span class="nt">proxy_set_header</span> <span class="nt">X-Forwarded-Host</span> <span class="o">$</span><span class="nt">server_name</span><span class="o">;</span>
+    <span class="nt">proxy_set_header</span> <span class="nt">X-Forwarded-For</span> <span class="o">$</span><span class="nt">proxy_add_x_forwarded_for</span><span class="o">;</span>
+    <span class="nt">proxy_set_header</span> <span class="nt">X-Forwarded-Proto</span> <span class="nt">https</span><span class="o">;</span>
+    <span class="nt">proxy_redirect</span>  <span class="nt">http</span><span class="o">://</span>  <span class="o">$</span><span class="nt">scheme</span><span class="o">://;</span>
+    <span class="nt">proxy_http_version</span> <span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="o">;</span>
+    <span class="nt">proxy_set_header</span> <span class="nt">Upgrade</span> <span class="o">$</span><span class="nt">http_upgrade</span><span class="o">;</span>
+    <span class="nt">proxy_set_header</span> <span class="nt">Connection</span> <span class="s2">&quot;upgrade&quot;</span><span class="o">;</span>
+    <span class="nt">proxy_cache_bypass</span> <span class="o">$</span><span class="nt">cookie_session</span><span class="o">;</span>
+    <span class="nt">proxy_no_cache</span> <span class="o">$</span><span class="nt">cookie_session</span><span class="o">;</span>
+    <span class="nt">proxy_buffers</span> <span class="nt">32</span> <span class="nt">4k</span><span class="o">;</span>
+    <span class="nt">proxy_redirect</span> <span class="nt">http</span><span class="o">://&lt;</span><span class="nt">ip</span> <span class="nt">addr</span> <span class="nt">or</span> <span class="nt">hostname</span><span class="o">&gt;</span><span class="p">:</span><span class="nd">5000</span> <span class="nt">https</span><span class="o">://$</span><span class="nt">host</span><span class="o">;</span>
+</code></pre></div>
+<h3 id="nginx-subdomain">Nginx Subdomain<a class="headerlink" href="#nginx-subdomain" title="Permanent link">&para;</a></h3>
+<p>If you wish to use ombi.example.com rather than example.com/ombi, then you need to create a site per service.<br />
+You will also need to ensure that ombi is not configured to use a BaseURL.<br />
+Each site has a separate config file in the sites-available directory. By default, this is <code class="highlight"><span class="err">/etc/nginx/sites-available</span></code>.<br />
+We're going to use the site name as the file name, so in this case we need to put the following into<br />
+<code class="highlight"><span class="err">/etc/nginx/sites-available/ombi.example.com.conf</span></code><br />
+Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the <code class="highlight"><span class="err">listen 443</span></code>, generate, and apply the certificates using LetsEncrypt.<br />
+Of course, replace 127.0.0.1:5000 with whatever IP and port combination you are using for Ombi.<br />
+Ensure your Application Url (in Ombi) matches the <code class="highlight"><span class="err">server_name</span></code> field.</p>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># Ombi v4 Subdomain</span>
+    <span class="c1"># Replace EXAMPLE.COM with your domain</span>
+    <span class="n">server</span> <span class="p">{</span>
+        <span class="n">listen</span> <span class="mi">80</span><span class="p">;</span>
+        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.*</span><span class="p">;</span>
+        <span class="k">return</span> <span class="mi">301</span> <span class="n">https</span><span class="p">:</span><span class="o">//$</span><span class="n">server_name</span><span class="o">$</span><span class="n">request_uri</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">server</span> <span class="p">{</span>
+        <span class="n">listen</span> <span class="mi">443</span> <span class="n">ssl</span> <span class="n">http2</span><span class="p">;</span>
+        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.*</span><span class="p">;</span>
+        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="p">;</span>
+        <span class="n">ssl_certificate</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">chain</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
+        <span class="n">ssl_certificate_key</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
+        <span class="n">ssl_session_cache</span> <span class="n">builtin</span><span class="p">:</span><span class="mi">1000</span><span class="p">;</span>
+        <span class="n">ssl_protocols</span> <span class="n">TLSv1</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">1</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">2</span><span class="p">;</span>
+        <span class="n">ssl_prefer_server_ciphers</span> <span class="n">on</span><span class="p">;</span>
+        <span class="n">ssl_ciphers</span> <span class="s1">&#39;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-DES-CBC3-SHA:ECDHE-ECDSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA&#39;</span><span class="p">;</span>
+        <span class="n">ssl_session_tickets</span> <span class="n">off</span><span class="p">;</span>
+        <span class="n">ssl_ecdh_curve</span> <span class="n">secp384r1</span><span class="p">;</span>
+        <span class="n">resolver</span> <span class="mf">1.1</span><span class="o">.</span><span class="mf">1.1</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="n">valid</span><span class="o">=</span><span class="mi">300</span><span class="n">s</span><span class="p">;</span>
+        <span class="n">resolver_timeout</span> <span class="mi">10</span><span class="n">s</span><span class="p">;</span>
+        <span class="n">gzip</span> <span class="n">on</span><span class="p">;</span>
+        <span class="n">gzip_vary</span> <span class="n">on</span><span class="p">;</span>
+        <span class="n">gzip_min_length</span> <span class="mi">1000</span><span class="p">;</span>
+        <span class="n">gzip_proxied</span> <span class="n">any</span><span class="p">;</span>
+        <span class="n">gzip_types</span> <span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">text</span><span class="o">/</span><span class="n">css</span> <span class="n">text</span><span class="o">/</span><span class="n">xml</span> <span class="n">application</span><span class="o">/</span><span class="n">xml</span> <span class="n">text</span><span class="o">/</span><span class="n">javascript</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">javascript</span> <span class="n">image</span><span class="o">/</span><span class="n">svg</span><span class="o">+</span><span class="n">xml</span><span class="p">;</span>
+        <span class="n">gzip_disable</span> <span class="s2">&quot;MSIE [1-6]\.&quot;</span><span class="p">;</span>
+
+        <span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
+            <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
+        <span class="n">proxy_http_version</span> <span class="mf">1.1</span><span class="p">;</span>
+        <span class="n">proxy_set_header</span> <span class="n">Upgrade</span> <span class="o">$</span><span class="n">http_upgrade</span><span class="p">;</span>
+        <span class="n">proxy_set_header</span> <span class="n">Connection</span> <span class="s2">&quot;upgrade&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1"># This allows access to the actual api</span>
+        <span class="n">location</span> <span class="o">/</span><span class="n">api</span> <span class="p">{</span>
+                <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1"># This allows access to the documentation for the api</span>
+        <span class="n">location</span> <span class="o">/</span><span class="n">swagger</span> <span class="p">{</span>
+                <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Once the config file has been created (<em>and saved</em>), we need to enable the site. This is done by symlinking the config file into the sites-enabled directory. The below commands will achieve this (obviously, replace the <code class="highlight"><span class="err">ombi.example.com</span></code> sections with whatever names you used for your setup.<br />
+<strong>Linux:</strong><br />
+<code class="highlight"><span class="err">ln -s /etc/nginx/sites-available/ombi.example.com.conf /etc/nginx/sites-enabled/ombi.example.com.conf</span></code><br />
+<strong>Windows:</strong><br />
+<code class="highlight"><span class="err">mklink C:\nginx\conf\sites-enabled\ombi.example.com.conf C:\nginx\conf\sites-available\ombi.example.com.conf</span></code><br />
+We then restart nginx to load the new config file, at which point your system will be listening on <a href="http://ombi.example.com">http://ombi.example.com</a> for traffic (after you set up certbot, it will change to <a href="http://ombi.example.com">https://ombi.example.com</a>).<br />
+<strong>Linux:</strong><br />
+<code class="highlight"><span class="err">service nginx restart</span></code><br />
+<strong>Windows:</strong><br />
+<code class="highlight"><span class="n">nginx</span> <span class="o">-</span><span class="n">s</span> <span class="n">reload</span></code>  </p>
+<hr />
+<h2 id="apache2">Apache2<a class="headerlink" href="#apache2" title="Permanent link">&para;</a></h2>
+<p>To run Apache with a reverse proxy setup, you'll need to activate certain modules.<br />
+(assume all commands require sudo):  </p>
+<div class="highlight"><pre><span></span><code>    apt-get install -y libapache2-mod-proxy-html libxml2-dev
+    a2enmod proxy
+    a2enmod proxy_http
+    a2enmod proxy_ajp
+    a2enmod rewrite
+    a2enmod deflate
+    a2enmod headers
+    a2enmod proxy_balancer
+    a2enmod proxy_connect
+    a2enmod proxy_html
+</code></pre></div>
+<p>In your Virtualhost configuration file you'll need to add a few things.<br />
+<em><strong>Note:</strong> VirtualHost configurations are usually under /etc/apache2/sites-enabled/</em>  </p>
+<p>Just below the <code class="highlight"><span class="err">DocumentRoot</span></code> entry:<br />
+<code class="highlight"><span class="err">ProxyPreserveHost On</span></code>  </p>
+<p>You can then add the configuration for each item you wish to proxy.<br />
+There are two methods for doing this.<br />
+One is with a 'Location' section, the other is simply a direct mapping (the dirty way).<br />
+The mapping goes just before the <code class="highlight"><span class="err">&lt;/VirtualHost&gt;</span></code> closing tag, regardless of the method.<br />
+If you want to run ombi.example.com instead of site.example.com/ombi, then replace <code class="highlight"><span class="err">/ombi</span></code> with <code class="highlight"><span class="err">/</span></code> and drop the <code class="highlight"><span class="err">/ombi</span></code> from the end of the internal addresses, as well as removing the BaseURL from Ombi itself.</p>
+<h3 id="apache2-subdirectory">Apache2 Subdirectory<a class="headerlink" href="#apache2-subdirectory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>    <span class="nt">&lt;Location</span> <span class="err">/ombi</span><span class="nt">&gt;</span>
+    Allow from 0.0.0.0 
+    ProxyPass &quot;http://ip.of.ombi.host:5000/ombi&quot; connectiontimeout=5 timeout=30 keepalive=on 
+    ProxyPassReverse &quot;http://ip.of.ombi.host:5000/ombi&quot; 
+    <span class="nt">&lt;/Location&gt;</span>
+</code></pre></div>
+<h3 id="apache2-subdomain">Apache2 Subdomain<a class="headerlink" href="#apache2-subdomain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">    ProxyPass /ombi http://ip.of.ombi.host:5000/ombi</span>
+<span class="err">    ProxyPassReverse /ombi http://ip.of.ombi.host:5000/ombi</span>
+</code></pre></div>
+<p>Once all your changes are done, you'll need to run <code class="highlight"><span class="err">service apache2 restart</span></code> to make the changes go live.</p>
+<hr />
+<h2 id="iis">IIS<a class="headerlink" href="#iis" title="Permanent link">&para;</a></h2>
+<p>NOTE: There are some extra steps involved with getting IIS to proxy things.<br />
+Install these two modules:</p>
+<ul>
+<li><a href="http://www.iis.net/downloads/microsoft/url-rewrite">URL Rewrite</a></li>
+<li><a href="https://www.iis.net/downloads/microsoft/application-request-routing">Application Request Routing</a></li>
+</ul>
+<p>After installing the above, enable the proxy function via:<br />
+IIS admin -&gt; Application Request Routing Cache -&gt; Server Proxy Settings, tick "Enable proxy"</p>
+<h3 id="iis-subdirectory">IIS Subdirectory<a class="headerlink" href="#iis-subdirectory" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>NOTE1:  Below rules assume you have a "virtual directory" named "OMBI" under your default website in IIS.  That VD should target a physical directory that resides at <code class="highlight"><span class="c">c:\inetpub\wwwroot\ombi</span></code>.<br />
+Within this directory you would place the below rules in a web.config file. There should be no other files in this directory.<br />
+(This should NOT be your OMBI install directory)</em></li>
+<li><em>NOTE2:  Change <code class="highlight"><span class="err">example.com</span></code></em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;system.webServer&gt;</span>
+        <span class="nt">&lt;defaultDocument&gt;</span>
+            <span class="nt">&lt;files&gt;</span>
+            <span class="nt">&lt;/files&gt;</span>
+        <span class="nt">&lt;/defaultDocument&gt;</span>
+        <span class="nt">&lt;rewrite&gt;</span>
+            <span class="nt">&lt;rules&gt;</span>
+                <span class="nt">&lt;clear</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;ReverseProxyInboundOMBI&quot;</span> <span class="na">stopProcessing=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;match</span> <span class="na">url=</span><span class="s">&quot;(.*)&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;action</span> <span class="na">type=</span><span class="s">&quot;Rewrite&quot;</span> <span class="na">url=</span><span class="s">&quot;http://localhost:5000/ombi/{R:1}&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;serverVariables&gt;</span>
+                        <span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">&quot;host&quot;</span> <span class="na">value=</span><span class="s">&quot;$host&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">&quot;HTTP_X_FORWARDED_HOST&quot;</span> <span class="na">value=</span><span class="s">&quot;$server_name&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">&quot;HTTP_X_REAL_IP&quot;</span> <span class="na">value=</span><span class="s">&quot;$remote_addr&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">&quot;HTTP_X_FORWARDED_FOR&quot;</span> <span class="na">value=</span><span class="s">&quot;$proxy_add_x_forwarded_for&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">&quot;HTTP_X_FORWARDED_PROTO&quot;</span> <span class="na">value=</span><span class="s">&quot;$scheme&quot;</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">&quot;HTTP_X_FORWARDED_SSL&quot;</span> <span class="na">value=</span><span class="s">&quot;on&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/serverVariables&gt;</span>
+                    <span class="nt">&lt;conditions</span> <span class="na">trackAllCaptures=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;/conditions&gt;</span>
+                <span class="nt">&lt;/rule&gt;</span>
+            <span class="nt">&lt;/rules&gt;</span>
+            <span class="nt">&lt;outboundRules&gt;</span>
+                <span class="nt">&lt;clear</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;Restore Encoding&quot;</span> <span class="na">preCondition=</span><span class="s">&quot;Restore HTTP_ACCEPT_ENCODING}&quot;</span> <span class="na">enabled=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;match</span> <span class="na">serverVariable=</span><span class="s">&quot;HTTP_ACCEPT_ENCODING&quot;</span> <span class="na">pattern=</span><span class="s">&quot;^(.+)&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;conditions</span> <span class="na">logicalGrouping=</span><span class="s">&quot;MatchAll&quot;</span> <span class="na">trackAllCaptures=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;action</span> <span class="na">type=</span><span class="s">&quot;Rewrite&quot;</span> <span class="na">value=</span><span class="s">&quot;{HTTP_X_ORIGINAL_ACCEPT_ENCODING}&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/rule&gt;</span>
+                <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;ReverseProxyOutboundOMBI&quot;</span> <span class="na">preCondition=</span><span class="s">&quot;ResponseIsHtml1&quot;</span> <span class="na">enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">stopProcessing=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;match</span> <span class="na">filterByTags=</span><span class="s">&quot;A, Area, Base, Form, Frame, Head, IFrame, Img, Input, Link, Script&quot;</span> <span class="na">pattern=</span><span class="s">&quot;^http(s)?://localhost:5000/ombi/(.*)&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;conditions</span> <span class="na">logicalGrouping=</span><span class="s">&quot;MatchAll&quot;</span> <span class="na">trackAllCaptures=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;add</span> <span class="na">input=</span><span class="s">&quot;{HTTP_REFERER}&quot;</span> <span class="na">pattern=</span><span class="s">&quot;/ombi&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/conditions&gt;</span>
+                    <span class="nt">&lt;action</span> <span class="na">type=</span><span class="s">&quot;Rewrite&quot;</span> <span class="na">value=</span><span class="s">&quot;http{R:1}://example.com/ombi/{R:2}&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/rule&gt;</span>
+        <span class="nt">&lt;preConditions&gt;</span>
+            <span class="nt">&lt;preCondition</span> <span class="na">name=</span><span class="s">&quot;ResponseIsHtml1&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;add</span> <span class="na">input=</span><span class="s">&quot;{RESPONSE_CONTENT_TYPE}&quot;</span> <span class="na">pattern=</span><span class="s">&quot;^text/html&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/preCondition&gt;</span>
+            <span class="nt">&lt;preCondition</span> <span class="na">name=</span><span class="s">&quot;Restore HTTP_ACCEPT_ENCODING}&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;add</span> <span class="na">input=</span><span class="s">&quot;{RESPONSE_CONTENT_TYPE}&quot;</span> <span class="na">pattern=</span><span class="s">&quot;.+&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/preCondition&gt;</span>
+        <span class="nt">&lt;/preConditions&gt;</span>
+            <span class="nt">&lt;/outboundRules&gt;</span>
+        <span class="nt">&lt;/rewrite&gt;</span>
+        <span class="nt">&lt;security&gt;</span>
+            <span class="nt">&lt;authentication&gt;</span>
+            <span class="nt">&lt;/authentication&gt;</span>
+        <span class="nt">&lt;/security&gt;</span>
+        <span class="nt">&lt;urlCompression</span> <span class="na">doStaticCompression=</span><span class="s">&quot;true&quot;</span> <span class="na">doDynamicCompression=</span><span class="s">&quot;false&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/system.webServer&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+<h3 id="iis-subdomain">IIS Subdomain<a class="headerlink" href="#iis-subdomain" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><em>NOTE1:  Below rules assume you have a dedicated site to run Ombi under in IIS.<br />
+The address for this needs to match your application URL in Ombi, and should target a physical directory that resides at c:\inetpub\ombi.<br />
+Within this directory you would place the below rules in a web.config file. There should be no other files in this directory.<br />
+(This should NOT be your OMBI install directory)</em></p>
+</li>
+<li>
+<p><em>NOTE2:  Change "example.com"</em></p>
+</li>
+<li><em>NOTE 3: Change "ombi_ip:port" to whatever your local address for Ombi is.</em></li>
+<li><em>NOTE 4: Be sure you set your application URL in Ombi to whatever your site in IIS is listening to.</em></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;system.webServer&gt;</span>
+        <span class="nt">&lt;rewrite&gt;</span>
+            <span class="nt">&lt;rules&gt;</span>
+                <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;HTTP to HTTPS redirect&quot;</span> <span class="na">stopProcessing=</span><span class="s">&quot;true&quot;</span> <span class="na">enabled=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;match</span> <span class="na">url=</span><span class="s">&quot;(.*)&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;conditions&gt;</span>
+                        <span class="nt">&lt;add</span> <span class="na">input=</span><span class="s">&quot;{HTTPS}&quot;</span> <span class="na">pattern=</span><span class="s">&quot;off&quot;</span> <span class="na">ignoreCase=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/conditions&gt;</span>
+                    <span class="nt">&lt;action</span> <span class="na">type=</span><span class="s">&quot;Redirect&quot;</span> <span class="na">redirectType=</span><span class="s">&quot;Found&quot;</span> <span class="na">url=</span><span class="s">&quot;https://{HTTP_HOST}/{R:1}&quot;</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/rule&gt;</span>
+
+                <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">&quot;RP_Ombi&quot;</span> <span class="na">enabled=</span><span class="s">&quot;true&quot;</span> <span class="na">stopProcessing=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;match</span> <span class="na">url=</span><span class="s">&quot;(.*)&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;action</span> <span class="na">type=</span><span class="s">&quot;Rewrite&quot;</span> <span class="na">url=</span><span class="s">&quot;http://localhost:5000/{R:1}&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;serverVariables&gt;</span>
+                    <span class="nt">&lt;/serverVariables&gt;</span>
+                <span class="nt">&lt;/rule&gt;</span>
+            <span class="nt">&lt;/rules&gt;</span>
+            <span class="nt">&lt;outboundRules&gt;</span>
+                <span class="nt">&lt;clear</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;preConditions&gt;</span>
+                    <span class="nt">&lt;preCondition</span> <span class="na">name=</span><span class="s">&quot;Restore HTTP_ACCEPT_ENCODING}&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;add</span> <span class="na">input=</span><span class="s">&quot;{RESPONSE_CONTENT_TYPE}&quot;</span> <span class="na">pattern=</span><span class="s">&quot;.+&quot;</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/preCondition&gt;</span>
+                <span class="nt">&lt;/preConditions&gt;</span>
+            <span class="nt">&lt;/outboundRules&gt;</span>
+        <span class="nt">&lt;/rewrite&gt;</span>
+    <span class="nt">&lt;/system.webServer&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span> 
+</code></pre></div>
+<hr />
+<h2 id="caddy">Caddy<a class="headerlink" href="#caddy" title="Permanent link">&para;</a></h2>
+<p>Caddy 2 is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go.<br />
+You can find Caddy <a href="https://caddyserver.com/">here</a>, and their docs can be found <a href="https://caddyserver.com/docs/">here</a>.<br />
+An official docker image can be found <a href="https://hub.docker.com/r/abiosoft/caddy/">here</a>.<br />
+Otherwise you can direct install using a binary found <a href="https://github.com/caddyserver/caddy/releases">here</a>.</p>
+<p><em><strong>Note:</strong> The official binaries and Docker image do not include any of the DNS plugins required for wildcard certificates or DNS verification instead of port 80 verification. If your connection blocks port 80, you will need to build your own binary or image to include these.</em></p>
+<h3 id="caddy-subdirectory">Caddy Subdirectory<a class="headerlink" href="#caddy-subdirectory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">domain.example.com {</span>
+<span class="err">    route /ombi* {</span>
+<span class="err">        reverse_proxy 127.0.0.1:5000</span>
+<span class="err">    }</span>
+<span class="err">}</span>
+</code></pre></div>
+<h3 id="caddy-subdomain">Caddy Subdomain<a class="headerlink" href="#caddy-subdomain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">ombi.example.com {</span>
+<span class="err">    reverse_proxy 127.0.0.1:5000</span>
+<span class="err">  }</span>
+</code></pre></div>
+<h2 id="traefik">Traefik<a class="headerlink" href="#traefik" title="Permanent link">&para;</a></h2>
+<p>Traefik is the a great reverse proxy option if you are using a container-based setup such as docker compose.<br />
+You can find Traefik <a href="https://docs.traefik.io/">here</a>, and their getting started guide <a href="https://docs.traefik.io/getting-started/quick-start/">here</a>.<br />
+For more information and examples on the usage of labels in docker compose (specific to traefik) go <a href="https://docs.traefik.io/user-guides/docker-compose/basic-example/">here</a>.<br />
+<em><strong>Note:</strong> The following configuration examples only apply to traefik version 2 and later.</em><br />
+<em><strong>Note 2:</strong> All examples contain additional labels not necessarily required for your setup such as wildcard SSL certificates via Let's Encrypt and SSL related headers.</em></p>
+<p>Adjust the values of <code class="highlight"><span class="err">traefik.docker.network=traefik_proxy</span></code>, <code class="highlight"><span class="err">traefik.http.routers.ombi.entrypoints=https</span></code> and <code class="highlight"><span class="err">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</span></code> to match your specific setup.</p>
+<h3 id="traefik-subdirectory">Traefik Subdirectory<a class="headerlink" href="#traefik-subdirectory" title="Permanent link">&para;</a></h3>
+<p>The following configuration would make Ombi available at "https://example.com/ombi".<br />
+<em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight"><span class="err">PathPrefix</span></code> instead of <code class="highlight"><span class="err">Path</span></code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight"><span class="err">Path Vs PathPrefix</span></code>.</em></p>
+<div class="highlight"><pre><span></span><code>    <span class="nt">labels</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=PathPrefix(`/ombi`)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+</code></pre></div>
+<h3 id="traefik-subdomain">Traefik Subdomain<a class="headerlink" href="#traefik-subdomain" title="Permanent link">&para;</a></h3>
+<p>The following configuration would make Ombi available at <a href="https://ombi.example.com">https://ombi.example.com</a>.  </p>
+<div class="highlight"><pre><span></span><code>    <span class="nt">labels</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+</code></pre></div>
+<h3 id="traefik-subdomain-and-subdirectory">Traefik Subdomain and Subdirectory<a class="headerlink" href="#traefik-subdomain-and-subdirectory" title="Permanent link">&para;</a></h3>
+<p>The following configuration would make Ombi available at <a href="https://media.example.com/request">https://media.example.com/request</a>.<br />
+<em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight"><span class="err">PathPrefix</span></code> instead of <code class="highlight"><span class="err">Path</span></code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight"><span class="err">Path Vs PathPrefix</span></code>.</em></p>
+<div class="highlight"><pre><span></span><code>    <span class="nt">labels</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`media.example.com`) &amp;&amp; PathPrefix(`/request`)</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+</code></pre></div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-01-30T08:32:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-01-30</span>
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../request-workflow/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Request Flow
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../roles-and-notifications/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Roles and Notifications
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://discord.gg/Sa7wNWb" target="_blank" rel="noopener" title="discord.gg" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.twitch.tv/tidusjar" target="_blank" rel="noopener" title="www.twitch.tv" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M391.17 103.47h-38.63v109.7h38.63zM285 103h-38.63v109.75H285zM120.83 0L24.31 91.42v329.16h115.83V512l96.53-91.42h77.25L487.69 256V0zm328.24 237.75l-77.22 73.12h-77.24l-67.6 64v-64h-86.87V36.58h308.93z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/intent/follow?screen_name=tidusjar" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://patreon.com/tidusjar/Ombi" target="_blank" rel="noopener" title="patreon.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 194.8c0 101.3-82.4 183.8-183.8 183.8-101.7 0-184.4-82.4-184.4-183.8 0-101.6 82.7-184.3 184.4-184.3C429.6 10.5 512 93.2 512 194.8zM0 501.5h90v-491H0v491z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://paypal.me/PlexRequestsNet" target="_blank" rel="noopener" title="paypal.me" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M111.4 295.9c-3.5 19.2-17.4 108.7-21.5 134-.3 1.8-1 2.5-3 2.5H12.3c-7.6 0-13.1-6.6-12.1-13.9L58.8 46.6c1.5-9.6 10.1-16.9 20-16.9 152.3 0 165.1-3.7 204 11.4 60.1 23.3 65.6 79.5 44 140.3-21.5 62.6-72.5 89.5-140.1 90.3-43.4.7-69.5-7-75.3 24.2zM357.1 152c-1.8-1.3-2.5-1.8-3 1.3-2 11.4-5.1 22.5-8.8 33.6-39.9 113.8-150.5 103.9-204.5 103.9-6.1 0-10.1 3.3-10.9 9.4-22.6 140.4-27.1 169.7-27.1 169.7-1 7.1 3.5 12.9 10.6 12.9h63.5c8.6 0 15.7-6.3 17.4-14.9.7-5.4-1.1 6.1 14.4-91.3 4.6-22 14.3-19.7 29.3-19.7 71 0 126.4-28.8 142.9-112.3 6.5-34.8 4.6-71.4-23.8-92.6z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs', 'navigation.instant'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>
