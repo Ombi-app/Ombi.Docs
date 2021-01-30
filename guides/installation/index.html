@@ -1935,7 +1935,7 @@ If you are running docker, place these files into the folder you've passed into 
 <p>~~Allows automatic updating on windows:~~ updater currently broken.</p>
 <p>As an alternative to NSSM, you can use Task Scheduler to run <code class="highlight"><span class="err">Ombi.exe</span></code> as if you were double clicking it and running it like a regular executable, except it's hidden from the task bar and can only be closed by the Task Manager or the Task Scheduler.</p>
 <ol>
-<li>Open 'Task Scheduler' either search for it in start. Or simply Run... <kbd>WIN</kbd>+<kbd>R</kbd> <code class="highlight"><span class="nf">%windir</span><span class="o">%</span><span class="err">\</span><span class="n">system32</span><span class="err">\</span><span class="n">taskschd</span><span class="p">.</span><span class="n">msc</span></code></li>
+<li>Open 'Task Scheduler' either search for it in start. Or simply Run... <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span>  <code class="highlight"><span class="nf">%windir</span><span class="o">%</span><span class="err">\</span><span class="n">system32</span><span class="err">\</span><span class="n">taskschd</span><span class="p">.</span><span class="n">msc</span></code></li>
 <li>Click <code class="highlight"><span class="err">Create task...</span></code> on the right hand side.</li>
 <li>Give the task a name. <em>Example:</em> Ombi And a description if you want. (Not necessary)</li>
 <li>Check <code class="highlight"><span class="err">Run with highest privileges</span></code></li>
@@ -1947,7 +1947,7 @@ If you are running docker, place these files into the folder you've passed into 
 <li>Click the <code class="highlight"><span class="err">Actions</span></code> Tab and Click <code class="highlight"><span class="err">New...</span></code></li>
 <li>Click <code class="highlight"><span class="err">Browse...</span></code> and navigate to your <code class="highlight"><span class="err">Ombi.exe</span></code> Click <code class="highlight"><span class="err">Open</span></code></li>
 <li>Fill <code class="highlight"><span class="err">Start in (optional):</span></code> with <code class="highlight"><span class="err">Ombi.exe</span></code>'s working directory. IE: <code class="highlight"><span class="c">C:\Ombi\</span></code> or <code class="highlight"><span class="c">C:\SERVERS\Ombi\</span></code> basically, wherever you extracted your 'Ombi' folder to and where it lives. Click <code class="highlight"><span class="err">OK</span></code></li>
-<li><code class="highlight"><span class="err">Settings Tab</span></code> Untick <code class="highlight"><span class="err">Stop the task if it runs longer than:</span></code> Click <code class="highlight"><span class="err">OK</span></code></li>
+<li><code class="highlight"><span class="err">Settings Tab</span></code> Un-tick <code class="highlight"><span class="err">Stop the task if it runs longer than:</span></code> Click <code class="highlight"><span class="err">OK</span></code></li>
 <li>You will be prompted for your windows user name and password. Please enter your credentials and click <code class="highlight"><span class="err">OK</span></code></li>
 <li>Click <code class="highlight"><span class="err">Task Scheduler Library</span></code> right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at <a href="http://localhost:5000">http://localhost:5000</a> !</li>
 </ol>
@@ -1966,7 +1966,7 @@ Replace the port in the below commands with your own port if you're running a di
 <hr />
 <h2 id="linux-systems">Linux systems<a class="headerlink" href="#linux-systems" title="Permanent link">&para;</a></h2>
 <h3 id="debian-apt-repo">Debian / APT repo<a class="headerlink" href="#debian-apt-repo" title="Permanent link">&para;</a></h3>
-<p><strong>Note:</strong> This is the easy way, and only works with Debian-based distros.<br />
+<p><strong>Note:</strong> This is the easy way, and only works with Debian-based distributions.<br />
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.</p>
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
@@ -2015,7 +2015,7 @@ Our preferred deployment method for macOS now, as a result, has to be as a Docke
 <p>The Ombi team do not currently maintain any Docker containers directly.  </p>
 <p>However, there are a number of them available, maintained by various members of the community.<br />
 linuxserver.io keep their image the most up-to-date, and they have pretty comprehensive instructions for installation. See the page for their image <a href="https://hub.docker.com/r/linuxserver/ombi/">here</a>.<br />
-We currently recommended using the tag <code class="highlight"><span class="err">development</span></code> until they shift v4 to the <code class="highlight"><span class="err">latest</span></code> tag.</p>
+We currently recommended using the <code class="highlight"><span class="err">development</span></code> tag, at least until they shift v4 to the <code class="highlight"><span class="err">latest</span></code> tag.</p>
 <p>If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see <a href="../info/docker-containers">Things to consider with Docker</a> to (hopefully) help clear up some things with how networking and access works with a Docker system.</p>
 <hr />
 <h2 id="helm">Helm<a class="headerlink" href="#helm" title="Permanent link">&para;</a></h2>
@@ -2030,7 +2030,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-01-22T23:27:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-01-22</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-01-30T09:56:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-01-30</span>
     
   </small>
 </div>
