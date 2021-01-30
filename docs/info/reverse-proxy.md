@@ -11,21 +11,22 @@ To use nginx as a reverse proxy requires no extra modules, but it does require c
 ### Nginx Subdirectory
 
 This is an NGINX reverse proxy configuration that **DOES** use baseurl.  
-This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Unbuntu 18.04.
+This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Ubuntu 18.04.
 
 The advantage of this configuration is that it allows for a single certificate to provide ssl services for many different web apps.
 
 For example:  
-www.somedomain.com/ombi  
-www.somedomain.com/sonarr  
-www.somedomain.com/radarr  
+www.example.com/ombi  
+www.example.com/sonarr  
+www.example.com/radarr  
 
-You would only need to install/support a certificate for **www.somedomain.com**.
+You would only need to install/support a certificate for **www.example.com**.
 
 This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the `--baseurl /ombi` option
 
 #### Location Block
 
+```conf
     location /ombi {
        proxy_pass http://<ip addr or hostname>:5000;
        include /etc/nginx/proxy.conf;
@@ -39,9 +40,11 @@ This configuration is if you want to run a subdirectory configuration. Note, Omb
     location /ombi/swagger {
         proxy_pass http://<ip addr or hostname>:5000;
     }
+```
 
 #### proxy.conf
 
+```conf
     client_max_body_size 10m;
     client_body_buffer_size 128k;
 
@@ -68,6 +71,7 @@ This configuration is if you want to run a subdirectory configuration. Note, Omb
     proxy_no_cache $cookie_session;
     proxy_buffers 32 4k;
     proxy_redirect http://<ip addr or hostname>:5000 https://$host;
+```
 
 ### Nginx Subdomain
 
@@ -80,8 +84,9 @@ Note that this example does not enable SSL or generate a certificate, but that c
 Of course, replace 127.0.0.1:5000 with whatever IP and port combination you are using for Ombi.  
 Ensure your Application Url (in Ombi) matches the `server_name` field.
 
+```conf
     # Ombi v4 Subdomain
-    # Replace DOMAIN.TLD with your domain
+    # Replace EXAMPLE.COM with your domain
     server {
         listen 80;
         server_name ombi.*;
@@ -90,9 +95,9 @@ Ensure your Application Url (in Ombi) matches the `server_name` field.
     server {
         listen 443 ssl http2;
         server_name ombi.*;
-        server_name ombi.DOMAIN.TLD;
-        ssl_certificate /nginx/ssl/DOMAIN.TLD-chain.pem;
-        ssl_certificate_key /nginx/ssl/DOMAIN.TLD-key.pem;
+        server_name ombi.EXAMPLE.COM;
+        ssl_certificate /nginx/ssl/EXAMPLE.COM-chain.pem;
+        ssl_certificate_key /nginx/ssl/EXAMPLE.COM-key.pem;
         ssl_session_cache builtin:1000;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_prefer_server_ciphers on;
@@ -123,6 +128,7 @@ Ensure your Application Url (in Ombi) matches the `server_name` field.
                 proxy_pass http://127.0.0.1:5000;
         }
     }
+```
 
 Once the config file has been created (_and saved_), we need to enable the site. This is done by symlinking the config file into the sites-enabled directory. The below commands will achieve this (obviously, replace the `ombi.example.com` sections with whatever names you used for your setup.  
 __Linux:__  
@@ -142,6 +148,7 @@ __Windows:__
 To run Apache with a reverse proxy setup, you'll need to activate certain modules.  
 (assume all commands require sudo):  
 
+```bash
     apt-get install -y libapache2-mod-proxy-html libxml2-dev
     a2enmod proxy
     a2enmod proxy_http
@@ -152,6 +159,7 @@ To run Apache with a reverse proxy setup, you'll need to activate certain module
     a2enmod proxy_balancer
     a2enmod proxy_connect
     a2enmod proxy_html
+```
 
 In your Virtualhost configuration file you'll need to add a few things.  
 _**Note:** VirtualHost configurations are usually under /etc/apache2/sites-enabled/_  
@@ -167,24 +175,26 @@ If you want to run ombi.example.com instead of site.example.com/ombi, then repla
 
 ### Apache2 Subdirectory
 
+```conf
     <Location /ombi>
     Allow from 0.0.0.0 
     ProxyPass "http://ip.of.ombi.host:5000/ombi" connectiontimeout=5 timeout=30 keepalive=on 
     ProxyPassReverse "http://ip.of.ombi.host:5000/ombi" 
     </Location>
+```
 
 ### Apache2 Subdomain
 
+```conf
     ProxyPass /ombi http://ip.of.ombi.host:5000/ombi
     ProxyPassReverse /ombi http://ip.of.ombi.host:5000/ombi
+```
 
 Once all your changes are done, you'll need to run `service apache2 restart` to make the changes go live.
 
 ***
 
 ## IIS
-
-- _(Below rules DO WORK with OMBI v3 - Edited 22 APR 18 by @seanvree)_
 
 NOTE: There are some extra steps involved with getting IIS to proxy things.  
 Install these two modules:
@@ -200,7 +210,7 @@ IIS admin -> Application Request Routing Cache -> Server Proxy Settings, tick "E
 - _NOTE1:  Below rules assume you have a "virtual directory" named "OMBI" under your default website in IIS.  That VD should target a physical directory that resides at `c:\inetpub\wwwroot\ombi`.  
 Within this directory you would place the below rules in a web.config file. There should be no other files in this directory.  
 (This should NOT be your OMBI install directory)_
-- _NOTE2:  Change `yourdomain.com`_
+- _NOTE2:  Change `example.com`_
 
 ```xml
 <configuration>
@@ -239,7 +249,7 @@ Within this directory you would place the below rules in a web.config file. Ther
                     <conditions logicalGrouping="MatchAll" trackAllCaptures="true">
                         <add input="{HTTP_REFERER}" pattern="/ombi" />
                     </conditions>
-                    <action type="Rewrite" value="http{R:1}://YOURDOMAIN.com/ombi/{R:2}" />
+                    <action type="Rewrite" value="http{R:1}://example.com/ombi/{R:2}" />
                 </rule>
         <preConditions>
             <preCondition name="ResponseIsHtml1">
@@ -267,7 +277,7 @@ The address for this needs to match your application URL in Ombi, and should tar
 Within this directory you would place the below rules in a web.config file. There should be no other files in this directory.  
 (This should NOT be your OMBI install directory)_
 
-- _NOTE2:  Change "yourdomain.com"_
+- _NOTE2:  Change "example.com"_
 - _NOTE 3: Change "ombi_ip:port" to whatever your local address for Ombi is._
 - _NOTE 4: Be sure you set your application URL in Ombi to whatever your site in IIS is listening to._
 
@@ -318,7 +328,7 @@ _**Note:** The official binaries and Docker image do not include any of the DNS 
 ### Caddy Subdirectory
 
 ```conf
-your.domain.tld {
+domain.example.com {
     route /ombi* {
         reverse_proxy 127.0.0.1:5000
     }
@@ -328,7 +338,7 @@ your.domain.tld {
 ### Caddy Subdomain
 
 ```conf
-ombi.yourdomain.tld {
+ombi.example.com {
     reverse_proxy 127.0.0.1:5000
   }
 ```

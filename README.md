@@ -13,7 +13,7 @@ Install Python for your OS, ensuring that it gets added to PATH.
 
 Once you have Python installed, you'll need to clone the repository and install the python packages used by this site (like mkdocs itself).
 To do this, clone the repo, and from the relevant terminal/shell/prompt, change directory to the repo folder and run  
-`pip install -r docs/requirements.txt`  
+`pip install -r requirements.txt`  
 to ensure you have all the relevant packages for use.
 
 ## Editing the site
@@ -25,6 +25,7 @@ Note that as `mkdocs.yml` _is_ written in an indent-sensitive language, the new 
 ## Suggested editor
 
 [VS Code](https://code.visualstudio.com/) is a good option to use for this, as it has extensions for markup and markdown syntax highlighting (as well as preview functions).  
+Included in this repository  is a workspace config for vscode with some defined spelling, linting, and error-checking methods, as well as a group of recommended VS Code extensions for use.  
 [Atom](https://atom.io/) is another good option.
 
 ### Suggested plugins for VS Code
