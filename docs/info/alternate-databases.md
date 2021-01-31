@@ -139,7 +139,7 @@ You effectively have a clean ombi install.
 
 #### Migration
 
-You can migrate the existing sqlite databses to mysql if you choose by following the [Migration Guide](../../guides/migrating-databases)
+You can migrate the existing sqlite databases to mysql if you choose by following the [Migration Guide](../../guides/migrating-databases)
 
 ## Installing MySQL on Windows
 
