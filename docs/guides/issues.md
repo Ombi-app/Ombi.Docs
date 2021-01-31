@@ -1,3 +1,0 @@
-# Issues
-
-## Coming Soon

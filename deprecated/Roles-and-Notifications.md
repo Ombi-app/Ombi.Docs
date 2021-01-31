@@ -1,0 +1,28 @@
+Notifications not working but the 'Test Notification' does?
+
+***
+
+_Some_ Roles do not trigger _some_ notifications:
+
+* 'Admin' will **NOT** trigger "New Request" notification. _(because you know you made the request)_
+
+* 'API' will trigger the "New Request" notification.
+
+* 'PowerUser' will trigger the "New Request" notification.
+
+* normal users will trigger the "New Request" notification.  
+(There is no role for normal user as long as they exist and do not have Admin or Power User role they are a normal user)
+
+***
+### Notifications
+* **ISSUE**
+* **ISSUE COMMENT**
+* **ISSUE RESOLVED**
+* **ITEM ADDED TO FAULT QUEUE**
+* **NEW REQUEST**
+* **REQUEST APPROVED**
+* **REQUEST AVAILABLE**
+* **REQUEST DECLINED**
+* **WELCOME EMAIL** _(does nothing for any Agent except email)_
+
+See [here](https://github.com/tidusjar/Ombi/wiki/User-Roles) for more information on roles.

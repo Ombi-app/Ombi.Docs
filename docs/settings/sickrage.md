@@ -1,3 +1,0 @@
-# SickRage
-
-## Coming Soon

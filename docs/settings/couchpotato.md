@@ -1,3 +1,0 @@
-# Couchpotato
-
-## Coming Soon

@@ -1,3 +1,0 @@
-# Jellyfin
-
-## Coming Soon

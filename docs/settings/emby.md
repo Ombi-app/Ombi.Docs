@@ -1,3 +1,0 @@
-# Emby
-
-## Coming Soon

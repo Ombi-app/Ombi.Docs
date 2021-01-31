@@ -1,3 +1,0 @@
-# Failed Requests
-
-## Coming Soon

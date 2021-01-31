@@ -1,3 +1,0 @@
-# Mattermost
-
-## Coming Soon
