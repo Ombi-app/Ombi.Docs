@@ -48,6 +48,7 @@
         "favicon",
         "flix",
         "fontawesome",
+        "ghcr",
         "globalsettings",
         "gotify",
         "gzip",
@@ -76,6 +77,7 @@
         "massemail",
         "md",
         "middlewares",
+        "mkdir",
         "mkdocs",
         "mklink",
         "movierequests",
@@ -97,16 +99,19 @@
         "organizr",
         "patreon",
         "paypal",
+        "pgid",
         "phpmyadmin",
         "plex",
         "plexepisode",
         "plexseasonscontent",
         "plexservercontent",
+        "portainer",
         "preload",
         "processname",
         "proto",
         "proxied",
         "proxying",
+        "puid",
         "pushbullet",
         "pymdownx",
         "r",
@@ -164,6 +169,7 @@
     ],
     "markdownlint.config": {
         "default": true,
-        "code-block-style": { "style": "consistent" }
+        "code-block-style": { "style": "consistent" },
+        "ol-prefix": { "style": "one_or_ordered" }
     }
 }
