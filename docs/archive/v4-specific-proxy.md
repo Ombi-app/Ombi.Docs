@@ -53,14 +53,13 @@ location /swagger {
 
 ## Subdirectory Configuration
 
-This is an NGINX reverse proxy configuration that **DOES** use baseurl. This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Unbuntu 18.04.
+This is an NGINX reverse proxy configuration that **DOES** use baseurl. This has been tested both from a localhost redirect as well as through a router from a DMZ machine on Ubuntu 18.04.
 
-The advantage of this configuration is that it allows for a single certificate to provide ssl services for many different web apps.
+The advantage of this configuration is that it allows for a single certificate to provide ssl services for many different web apps, like so:
 
-    e.g.
-    www.somedomain.com/ombi
-    www.somedomain.com/sonarr
-    www.somedomain.com/radarr
+* www.somedomain.com/ombi
+* www.somedomain.com/sonarr
+* www.somedomain.com/radarr
 
 You would only need to install/support a certificate for **www.somedomain.com**.
 
@@ -68,45 +67,49 @@ This configuration is if you want to run a subdirectory configuration. Note, Omb
 
 ### Location Block
 
-    location /ombi {
-       proxy_pass http://<ip addr or hostname>:5000;
-       include /etc/nginx/proxy.conf;
-    }
+```conf
+location /ombi {
+    proxy_pass http://<ip addr or hostname>:5000;
+    include /etc/nginx/proxy.conf;
+}
 
-    # This allows access to the actual api
-    location /ombi/api {
-       proxy_pass http://<ip addr or hostname>:5000;
-    }
-    # This allows access to the documentation for the api
-    location /ombi/swagger {
-        proxy_pass http://<ip addr or hostname>:5000;
-    }
+# This allows access to the actual api
+location /ombi/api {
+    proxy_pass http://<ip addr or hostname>:5000;
+}
+# This allows access to the documentation for the api
+location /ombi/swagger {
+    proxy_pass http://<ip addr or hostname>:5000;
+}
+```
 
 ### proxy.conf
 
-    client_max_body_size 10m;
-    client_body_buffer_size 128k;
+```conf
+client_max_body_size 10m;
+client_body_buffer_size 128k;
 
-    #Timeout if the real server is dead
-    proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
+#Timeout if the real server is dead
+proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
 
-    # Advanced Proxy Config
-    send_timeout 5m;
-    proxy_read_timeout 240;
-    proxy_send_timeout 240;
-    proxy_connect_timeout 240;
+# Advanced Proxy Config
+send_timeout 5m;
+proxy_read_timeout 240;
+proxy_send_timeout 240;
+proxy_connect_timeout 240;
 
-    # Basic Proxy Config
-    proxy_set_header Host $host:$server_port;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-Host $server_name;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto https;
-    proxy_redirect  http://  $scheme://;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "upgrade";
-    proxy_cache_bypass $cookie_session;
-    proxy_no_cache $cookie_session;
-    proxy_buffers 32 4k;
-    proxy_redirect http://<ip addr or hostname>:5000 https://$host;
+# Basic Proxy Config
+proxy_set_header Host $host:$server_port;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-Host $server_name;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto https;
+proxy_redirect  http://  $scheme://;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+proxy_cache_bypass $cookie_session;
+proxy_no_cache $cookie_session;
+proxy_buffers 32 4k;
+proxy_redirect http://<ip addr or hostname>:5000 https://$host;
+```
