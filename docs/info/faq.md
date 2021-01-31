@@ -1,4 +1,6 @@
-# F(requently) A(sked) Q(uestions)
+# FAQ
+
+--8<-- "assets/glossary.md"
 
 If you feel like a question should be added please reach out via the Ombi Discord (link at bottom of page).  
 ***

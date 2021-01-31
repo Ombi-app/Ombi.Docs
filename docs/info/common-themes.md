@@ -59,7 +59,7 @@ height: 5px;
 ## Remove "Sign in with Ombi"
 
 (Only show "Sign in with Plex")  
-**Note:** This css mod hides the "Sign in with Ombi" option (but does not disable it). A user _could_ inspect the HTML element and "unhide" the ombi login option, but the hope is "out of sight == out of mind".  
+**Note:** This css mod hides the "Sign in with Ombi" option (but does not disable it). A user _could_ inspect the HTML element and "un-hide" the ombi login option, but the hope is "out of sight == out of mind".  
 
 V4:
 
@@ -130,7 +130,7 @@ display: none;
 [sokotaro](https://www.reddit.com/user/sokotaro/)  
 
 * Remove Sign In with Ombi  
-* Increase Searchbar on Mobile
+* Increase Search bar on Mobile
 
 [Rockfist93](https://www.reddit.com/user/Rockfist93/)  
 

@@ -1,12 +1,17 @@
-# Welcome to the Ombi wiki
+# Ombi Docs
 
-Please note the wiki is maintained by TidusJar and the community.  
+--8<-- "assets/glossary.md"
 
-The wiki is built using [mkdocs](https://www.mkdocs.org).
+**Welcome to the official Ombi Documentation!**
 
-## Project layout
+Please note the docs are maintained by TidusJar and the Ombi-app team.  
 
-    mkdocs.yml    # The configuration file for the site itself.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Getting started:
+
+- [Installation](./guides/installation)
+- [Updating](./guides/updating)
+
+General Information:
+
+- [FAQ](./info/faq)
+- [Common Errors](./info/common-errors)

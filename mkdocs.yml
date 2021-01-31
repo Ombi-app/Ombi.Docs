@@ -38,6 +38,20 @@ extra:
     - icon: "fontawesome/brands/paypal"
       link: "https://paypal.me/PlexRequestsNet"
 
+# Markdown extensions
+markdown_extensions:
+  - sane_lists
+  - pymdownx.highlight:
+      guess_lang: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - abbr
+
 # Function extensions
 plugins:
   - search
@@ -45,7 +59,7 @@ plugins:
       type: timeago
       locale: en
       fallback_to_build_date: false
-  # Pretty URLs
+  # Pretty URLs (ties to nav)
   - redirects:
       redirect_maps:
         # These are all combined, so redirect to the one place.
@@ -78,25 +92,14 @@ plugins:
         # Temporary redirect until an explanation of the update page is ready
         'settings/update.md': 'guides/updating.md'
 
-# Markdown extensions
-markdown_extensions:
-  - sane_lists
-  - pymdownx.highlight:
-      guess_lang: true
-  - pymdownx.keys
-  - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - toc:
-      permalink: true
-      toc_depth: 4
+
 
 # Navigation Layout
 nav:
   - Home: index.md
-  - Installation: guides/installation.md
-  - Updating: guides/updating.md
-  - FAQ: info/faq.md
-  - Common Errors: info/common-errors.md
+  - Getting Started:
+    - Installation: guides/installation.md
+    - Updating: guides/updating.md
   - Settings: 
     - Generic Settings: settings/ombi.md
     - Customization: settings/customization.md
@@ -138,8 +141,10 @@ nav:
     - Alternate Databases: info/alternate-databases.md
     - API Information: info/api-information.md
     - Backing Up: info/backing-up.md
+    - Common Errors: info/common-errors.md
     - Common Themes: info/common-themes.md
     - Docker Containers: info/docker-containers.md
+    - FAQ: info/faq.md
     - Notification Variables: info/notification-template-variables.md
     - Ombi & Tautulli: info/ombi-tautulli.md
     - Request Flow: info/request-workflow.md
@@ -162,6 +167,7 @@ nav:
     - User Management: guides/usermanagement.md
   - Development:
     - Building Ombi: development/building-ombi.md
+    - The Docs: development/docs.md
     - Translating Ombi: development/translations.md
   - Archive:
     - Prerequisites: archive/prerequisites.md

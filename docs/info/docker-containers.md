@@ -25,91 +25,103 @@ Details for the file can be found [here](../alternate-databases).
 Here an example of a docker-compose stack with Ombi, MySQL and phpMyAdmin.  
 Please bear in mind that this is just an example and can/should be changed to your needs:  
 
-1. Create a folder for your "/config"-volume and for the MySQL-container  
+1. Create a folder for your "/config"-volume and for the MySQL-container
 
-        mkdir -p /opt/ombi/config/
-        mkdir -p /opt/ombi/mysql/
+    ```bash
+    mkdir -p /opt/ombi/config/
+    mkdir -p /opt/ombi/mysql/
+    ```
 
 1. Create a "database.json"-file in the folder from step 1 with this content --> [see here](../alternate-databases):
 
-        {
-          "OmbiDatabase": {
-            "Type": "MySQL",
-            "ConnectionString": "Server=mysql_db;Port=3306;Database=Ombi;User=ombi;Password=ombi"
-          },
-          "SettingsDatabase": {
-            "Type": "MySQL",
-            "ConnectionString": "Server=mysql_db;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi"
-          },
-          "ExternalDatabase": {
-            "Type": "MySQL",
-            "ConnectionString": "Server=mysql_db;Port=3306;Database=Ombi_External;User=ombi;Password=ombi"
-          }
-        }
+    ```json
+    {
+      "OmbiDatabase": {
+        "Type": "MySQL",
+        "ConnectionString": "Server=mysql_db;Port=3306;Database=Ombi;User=ombi;Password=ombi"
+      },
+      "SettingsDatabase": {
+        "Type": "MySQL",
+        "ConnectionString": "Server=mysql_db;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi"
+      },
+      "ExternalDatabase": {
+        "Type": "MySQL",
+        "ConnectionString": "Server=mysql_db;Port=3306;Database=Ombi_External;User=ombi;Password=ombi"
+      }
+    }
+    ```
 
 1. Create a "docker-compose.yml" file in the folder from step 1 with this content:
 
-         ---
-        version: "2"
-        services:
-          ombi:
-            image: ghcr.io/linuxserver/ombi:v4-preview
-                    container_name: ombi
-            restart: unless-stopped
-            environment:
-              - PUID=1000
-              - PGID=1000
-              - TZ=Europe/Zurich
-            volumes:
-              - /opt/ombi/config:/config
-            ports:
-              - "5000:5000"
-            depends_on:
+    ```yml
+    ---
+    version: "2"
+    services:
+      ombi:
+        image: ghcr.io/linuxserver/ombi:v4-preview
+                container_name: ombi
+        restart: unless-stopped
+        environment:
+          - PUID=1000
+          - PGID=1000
+          - TZ=Europe/Zurich
+        volumes:
+          - /opt/ombi/config:/config
+        ports:
+          - "5000:5000"
+        depends_on:
+        - "mysql_db"
+
+      mysql_db:
+        image: "mysql:5.7" #maybe switch to a newer one, I've tested it with this image
+        container_name: ombi_mysql
+        restart: unless-stopped
+        environment:
+          MYSQL_ROOT_PASSWORD: 123 #change your root password here
+        volumes:
+          -  /opt/ombi/mysql:/var/lib/mysql
+
+      phpmyadmin:
+          image: phpmyadmin/phpmyadmin
+          container_name: ombi_phpmyadmin
+          restart: unless-stopped
+          environment:
+            PMA_HOST: mysql_db
+          ports:
+            - '8080:80'
+          depends_on:
             - "mysql_db"
-
-          mysql_db:
-            image: "mysql:5.7" #maybe switch to a newer one, I've tested it with this image
-            container_name: ombi_mysql
-            restart: unless-stopped
-            environment:
-              MYSQL_ROOT_PASSWORD: 123 #change your root password here
-            volumes:
-              -  /opt/ombi/mysql:/var/lib/mysql
-
-          phpmyadmin:
-              image: phpmyadmin/phpmyadmin
-              container_name: ombi_phpmyadmin
-              restart: unless-stopped
-              environment:
-                PMA_HOST: mysql_db
-              ports:
-               - '8080:80'
-              depends_on:
-               - "mysql_db"
+    ```
 
 1. Run docker-compose to start this stack
 
-        cd /opt/ombi/config
-        docker-compose up -d
+    ```bash
+    cd /opt/ombi/config
+    docker-compose up -d
+    ```
 
 1. Open the phpMyadmin website "http://docker-host-ip:8080/server_sql.php".  
 Login with root and your chosen password, then run the following commands:
 
-        CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
-        GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    ```mysql
+    CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
+    GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    ```
 
 1. Stop the stack and start it again
 
-        cd /opt/ombi/config
-        docker-compose down 
-        docker-compose up -d
+    ```bash
+    cd /opt/ombi/config
+    docker-compose down 
+    docker-compose up -d
+    ```
 
-1. Open Ombi "http://docker-host-ip:5000" and Setup your ombi-installation
+1. Open Ombi "http://docker-host-ip:5000" and setup your ombi installation.
 
 ## Considerations
 

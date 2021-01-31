@@ -10,7 +10,7 @@ In every notification type, you are able to pass in variables that Ombi will pop
 | {Alias}     |  The Alias of the user (if no alias then it falls back to UserName) |
 | {UserPreference}     |  The value of the preference set on the User Management page for that notification agent |
 | {RequestedDate}      | The Date the media was requested       |
-| {RequestId}      | Ombi's Internal ID for this request       |
+| {RequestId}      | The Ombi internal ID for this request       |
 | {RequestStatus}      | Current status of the request       |
 | {Type} | The type of the request e.g. Movie, TvShow       |
 | {Title} | The title of the request e.g. Lion King       |

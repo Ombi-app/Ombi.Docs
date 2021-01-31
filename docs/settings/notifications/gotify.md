@@ -1,3 +1,3 @@
-# Mattermost
+# Gotify
 
 ## Coming Soon
