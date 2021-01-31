@@ -1,6 +1,5 @@
 # Migrating to MySQL
 
-_Editors Note: This page is a WIP._  
 _This guide assumes you have already configured [MySQL/MariaDB](../../info/alternate-databases) to work with ombi._
 
 ## Migration procedure
@@ -35,13 +34,11 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 1. Update to the latest version of ombi.
 2. Stop ombi
 3. Create or Modify **database.json** to use mysql.  
-  `python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`
-
-4. **Only if we are going to use *Multiple DataBases* or *Multiple Servers*.**
-
+  `python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`  
+4. **Only if we are going to use *Multiple Databases* or *Multiple Servers*.**  
    To be able to use multiple servers or databases we will need to manually edit **database.json**.  
     The example below will export the **"OmbiDatabase"** and **"SettingsDatabase"** databases to the server at **"192.168.0.100"** (but to different databases on the same server), while the **"ExternalDatabase"** database will be sent to server **"192.168.1.200"**.
-    
+
     ```json
     {
         "OmbiDatabase": {
@@ -62,23 +59,24 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 5. Run the following command:
 
     ``` bash
-    $ ombi --migrate
+    ombi --migrate
     ```
 
-
-## 5. Data Migration
+## 4. Data Migration
 
 When it comes to migrating the data, we have several different ways of doing it.
 We can export everything to a single database (step 4.1), to different databases or to different mysql servers (step 4.2).
 
-### 5.1. Data Migration (*Single Database*)
+### 4.1. Data Migration (*Single Database*)
+
 > For data migration we will need the file **"migration.json"** that contains the locations of the SQLite databases.
-> 
+>  
 > If this file does not exist, it will be created and will search the databases in the folder specified with the parameter **"--config"**.
 >
 >If we don't want to migrate all the data, we can generate the file **"migration.json"** with the parameter **"--only_manager_json"** and then edit it by deleting the databases we don't want to migrate.
 
-> ### If we do not want to export OmbiExternal.
+#### 4.1.1 Exclude OmbiExternal from export (optional)
+>
 > ```bash
 > $ python ombi_sqlite2mysql.py -c /etc/Ombi --only_manager_json
 > Migration tool from SQLite to MySql/MariaDB for ombi (3.0.4) By VSC55
@@ -88,7 +86,9 @@ We can export everything to a single database (step 4.1), to different databases
 >
 > $ vi /etc/Ombi/migration.json
 > ```
+>  
 > Content "migration.json":
+>  
 > ```json
 > {
 >    "OmbiDatabase": {
@@ -102,7 +102,8 @@ We can export everything to a single database (step 4.1), to different databases
 > }
 > ```
 
-1. Start data migration.
+1. Start data migration.  
+
     > _The script will **empty the tables** from the MySQL/MariaDB database and automatically migrate the data from SQLite to MySQL/MariaDB._
 
     ```bash
@@ -146,15 +147,15 @@ We can export everything to a single database (step 4.1), to different databases
 
     MySQL > Disconnecting... [✓]
     ```
+
 2. Start ombi and test if everything works fine.
 
-[Go Up](#migration-procedure)
+### 4.2. Data Migration (*Multiple DataBases or Servers MySql/MariaDB*)
 
-
-### 5.2. Data Migration (*Multiple DataBases or Servers MySql/MariaDB*)
 > For data migration to multiple databases or servers we will need the file **"database_multi.json"** that contains the locations of the servers where we are going to export the data.
 
-1. To create the file **"database_multi.json"** we will use the file **"database.json"** so we will only have to rename it.
+1. To create the file **"database_multi.json"** we will use the file **"database.json"** so we will only have to rename it.  
+
     ```json
     $ vi database_multi.json
     {
@@ -175,6 +176,7 @@ We can export everything to a single database (step 4.1), to different databases
 
     > We can omit the export of a database by removing it from **"database_multi.json"** or adding the property **"Skip"**.
     > The example next will export the databases **"OmbiDatabase"** and **"SettingsDatabase"** but omit **"ExternalDatabase"**.
+
     ```json
     $ vi database_multi.json
     {
@@ -195,7 +197,8 @@ We can export everything to a single database (step 4.1), to different databases
     ```
 
     > We can also send the same database to different servers with the following configuration.
-    > The example next sends databases "OmbiDatabase", "SettingsDatabase" and "ExternalDatabase" to servers 192.168.1.100 and 192.168.1.200.
+    > The next example sends databases "OmbiDatabase", "SettingsDatabase" and "ExternalDatabase" to servers 192.168.1.100 and 192.168.1.200.
+
     ```json
     $ vi database_multi.json
     {
@@ -224,11 +227,13 @@ We can export everything to a single database (step 4.1), to different databases
             "ConnectionString": "Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi"
         }
     }
-    ```
-    > ### NOTE: If you want to export all the content to several servers we will have to repeat the point "Create and prepare tables" with the different servers so that all the tables are created. You will also have to modify the file **database.json** at the end of the export process before running ombi to leave a single server for each database.
+    ```  
+
+    > __NOTE: If you want to export all the content to several servers we will have to repeat the point "Create and prepare tables" with the different servers so that all the tables are created. You will also have to modify the file **database.json** at the end of the export process before running ombi to leave a single server for each database.__
 
 2. Start data migration.
     > The script will empty the tables from the MySQL/MariaDB database and automatically migrate the data from SQLite to MySQL/MariaDB.
+
     ```bash
     $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi
     Migration tool from SQLite to Multi MySql/MariaDB for ombi (1.0.0) By VSC55
@@ -378,10 +383,8 @@ We can export everything to a single database (step 4.1), to different databases
 
 3. Start ombi and test if everything works fine.
 
-[Go Up](#migration-procedure)
+## 5. Help
 
-
-## 6. Help
 ```bash
 $ python ombi_sqlite2mysql.py -h
 Migration tool from SQLite to MySql/MariaDB for ombi (3.0.4) By VSC55
@@ -397,7 +400,7 @@ Options:
   --port=PORT           Port server MySQL/MariaDB, default 3306.
   --db=DB               Name database, default Ombi.
   --user=USER           User with access to MySQL/MariaDB, default ombi.
-  --passwd=PASSWD       User password for MySQL/MariaDB, defalt empty.
+  --passwd=PASSWD       User password for MySQL/MariaDB, default empty.
   --no_backup           Disable the backup of the "__EFMigrationsHistory"
                         table.
   --save_dump           Save all query insert in the file "data_ombi.mysql".
@@ -424,12 +427,10 @@ Options:
   --save_dump           Save all query insert in the file.
 ```
 
-[Go Up](#migration-procedure)
+## 6. FAQ
 
+**P: Errors appear in the verification of the migrated data saying that there is more data in SQLite than in MySQL or vice versa.**  
 
-## 7. F.A.Q.
-
-**P: Errors appear in the verification of the migrated data saying that there is more data in SQLite than in MySQL or vice versa.**
 ```bash
 - Running   [############################################################] 9242/9242
 - [!!] -> __efmigrationshistory -> [SQLite (0) / MySQL (41)] = -41
@@ -463,16 +464,17 @@ Options:
 - [!!] -> userqualityprofiles -> [SQLite (0) / MySQL (20)] = -20
 - Checking  [############################################################] 43/43
 ```
+
 S: We will have to force the elimination of the data in all the tables with the parameter `--force` as follows.
+
 ```bash
 # Single Database:
 $ python ombi_sqlite2mysql.py -c /etc/Ombi --force --host 192.168.1.100 --db Ombi --user ombi --passwd ombi
 ```
+
 ```bash
 # Multiple DataBases or Servers MySql/MariaDB:
 $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 ```
 
 ---
-
-[Go Up](#migration-procedure)
