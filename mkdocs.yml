@@ -7,7 +7,6 @@ edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/
 repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
 
-
 # Site appearance (logos, colours, icons)
 # Ombi orange is hex #e37200
 theme:
@@ -52,20 +51,18 @@ markdown_extensions:
       toc_depth: 4
   - abbr
 
-# Function extensions
+# mkdocs function extensions
 plugins:
   - search
   - git-revision-date-localized:
       type: timeago
       locale: en
       fallback_to_build_date: false
-  # Pretty URLs (ties to nav)
-  - redirects:
+  - redirects: # Pretty URLs (links with nav)
       redirect_maps:
-        # These are all combined, so redirect to the one place.
-        'settings/lidarr.md': 'settings/all-the-arrs.md'
-        'settings/radarr.md': 'settings/all-the-arrs.md'
-        'settings/sonarr.md': 'settings/all-the-arrs.md'
+        'settings/lidarr.md': 'settings/all-the-arrs.md' # Combined page
+        'settings/radarr.md': 'settings/all-the-arrs.md' # Combined page
+        'settings/sonarr.md': 'settings/all-the-arrs.md' # Combined page
         # All the 'notification' setting types
         'settings/cloudmobile.md': 'settings/notifications/cloudmobile.md'
         'settings/discord.md': 'settings/notifications/discord.md'
