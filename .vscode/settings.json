@@ -7,6 +7,7 @@
         "adguard",
         "advfirewall",
         "aesgcm",
+        "anson",
         "appsettings",
         "armhf",
         "artifacthub",
@@ -22,6 +23,7 @@
         "couchpotato",
         "customisations",
         "customise",
+        "david",
         "devel",
         "distro",
         "dog",
@@ -56,6 +58,7 @@
         "loadbalancer",
         "localport",
         "logarr",
+        "markdownlint",
         "massemail",
         "md",
         "middlewares",
@@ -113,7 +116,8 @@
         "watchlists",
         "windir",
         "wwwroot",
-        "yyyymmdd"
+        "yyyymmdd",
+        "yzhang"
     ],
     "markdownlint.config": {
         "default": true,
