@@ -1,8 +1,10 @@
 # Customization Settings
 
+--8<-- "assets/glossary.md"
+
 ## Application Name
 
-This will replace most references to the word `Ombi` to a new name.  
+This will replace most references to the word `Ombi` with a new name.  
 This includes in notifications and on the website (need to refresh the browser to see the change).  
 
 ## Application Url
