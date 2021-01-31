@@ -44,7 +44,7 @@ In the examples above, this would be `app.example.com`.
 ## Port
 
 If you're not using a reverse proxy, this is whatever port you use to access the service (it's the number after the second ":" in the address bar). In the case of Sonarr, the default is `8989`.  
-If you're using a reverse proxy *without* SSL, the port will be `80` (protip: don't do that).  
+If you're using a reverse proxy *without* SSL, the port will be `80` (pro-tip: don't do that).  
 If you're running *with* SSL, the port will be `443`.  
 ***
 
