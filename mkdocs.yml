@@ -38,6 +38,18 @@ extra:
     - icon: "fontawesome/brands/paypal"
       link: "https://paypal.me/PlexRequestsNet"
 
+# Markdown extensions
+markdown_extensions:
+  - sane_lists
+  - pymdownx.highlight:
+      guess_lang: true
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+      toc_depth: 4
+
 # Function extensions
 plugins:
   - search
@@ -45,7 +57,7 @@ plugins:
       type: timeago
       locale: en
       fallback_to_build_date: false
-  # Pretty URLs
+  # Pretty URLs (ties to nav)
   - redirects:
       redirect_maps:
         # These are all combined, so redirect to the one place.
@@ -78,17 +90,7 @@ plugins:
         # Temporary redirect until an explanation of the update page is ready
         'settings/update.md': 'guides/updating.md'
 
-# Markdown extensions
-markdown_extensions:
-  - sane_lists
-  - pymdownx.highlight:
-      guess_lang: true
-  - pymdownx.keys
-  - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - toc:
-      permalink: true
-      toc_depth: 4
+
 
 # Navigation Layout
 nav:
