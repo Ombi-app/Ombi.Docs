@@ -9,6 +9,7 @@ Please note the docs are maintained by TidusJar and the Ombi-app team.
 Getting started:
 
 - [Installation](./guides/installation)
+- [Updating](./guides/updating)
 
 General Information:
 
