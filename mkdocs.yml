@@ -16,13 +16,13 @@ theme:
   code_wrap: true
   features:
     - navigation.tabs
-    #- navigation.tabs.sticky #(insiders only, reaching out RE open-source access possibility)
     - navigation.instant
   favicon: assets/images/ombi/favicon.ico
 #  logo: assets/images/apple-touch-icon.png
-#  palette:
-#    primary: tbd
-#    accent: e37200 #Ombi
+  palette:
+    scheme: preference
+    #primary: amber #Not sure on this. Looks kinda nasty.
+    #accent: e37200 #Ombi
 
 # Additional links
 extra:
