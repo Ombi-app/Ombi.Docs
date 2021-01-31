@@ -9,11 +9,11 @@ _Some_ Roles do not trigger _some_ notifications:
 
 * 'Admin' will **NOT** trigger "New Request" notification. _(because you know you made the request)_
 
-* 'API' will trigger the "New Request" notificaion.
+* 'API' will trigger the "New Request" notification.
 
-* 'PowerUser' will trigger the "New Request" notificaion.
+* 'PowerUser' will trigger the "New Request" notification.
 
-* normal users will trigger the "New Request" notificaion.  
+* normal users will trigger the "New Request" notification.  
 (There is no role for normal user as long as they exist and do not have Admin or Power User role they are a normal user)
 
 ***
