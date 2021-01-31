@@ -30,6 +30,7 @@
         "compat",
         "couchpotato",
         "devel",
+        "dialog",
         "distro",
         "dognzb",
         "dpkg",
@@ -119,5 +120,8 @@
         "yyyymmdd",
         "yzhang",
         "zimreapers"
+    ],
+    "markdownlint.ignore": [
+        "assets/glossary.md"
     ]
 }
