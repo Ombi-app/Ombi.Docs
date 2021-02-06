@@ -1,5 +1,7 @@
 # Installation
 
+ --8<-- "assets/glossary.md"
+
 __Note__: After installing the system, be sure to configure your own systems to handle the requests after approval.  
 Any requests made without an endpoint to receive it will not be able to be re-processed at this point.  
 Whatever combination of the supported systems you use is up to you - Sonarr, Radarr, Couchpotato, Lidarr... Whatever.  

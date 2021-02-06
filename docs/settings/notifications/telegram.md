@@ -1,5 +1,7 @@
 # Telegram Notifications
 
+ --8<-- "assets/glossary.md"
+
 ## Bot Needed
 
 You need a bot for Telegram notifications.  

@@ -1,5 +1,7 @@
 # Reverse Proxy Examples
 
+ --8<-- "assets/glossary.md"
+
 > Note: These examples assume you are using **_/ombi_** as your **Base URL**.  
 > If your **Base URL** differs, replace all instances of **_/ombi_** with **_/YourBaseURL_**.  
 > If you're using a **subdomain** (ombi.example.com), replace all instances of **_/ombi_** with **_/_**, and remove the first _location_ block.

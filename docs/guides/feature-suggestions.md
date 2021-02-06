@@ -1,5 +1,7 @@
 # Feature Suggestions
 
+ --8<-- "assets/glossary.md"
+
 ## Where do I submit feature requests?
 
 If you'd like to suggest a new feature for Ombi, this can be done over at [Feature Suggestions](https://features.ombi.io).  

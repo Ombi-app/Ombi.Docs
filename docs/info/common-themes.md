@@ -1,5 +1,7 @@
 # Common Themes
 
+ --8<-- "assets/glossary.md"
+
 ## Dark Mode Red Buttons
 
 ``` css

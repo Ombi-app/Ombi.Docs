@@ -1,5 +1,7 @@
 # DogNZB Settings
 
+ --8<-- "assets/glossary.md"
+
 Here we can configure Ombi to use watchlists from DogNzb.  
 _Yes, we know this is in the Nav twice. It's in two places in the settings - note that the Nav matches the order pages appear in the settings._  
 

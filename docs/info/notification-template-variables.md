@@ -1,6 +1,9 @@
 # Notification Templating
 
-In every notification type, you are able to pass in variables that Ombi will populate with data when sending out the actual message.
+ --8<-- "assets/glossary.md"
+
+In every notification type, you are able to pass in variables that Ombi will populate with data when sending out the actual message.  
+See below for accepted variables and what they will be translated to.
 
 ## Supported Notification Variables
 

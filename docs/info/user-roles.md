@@ -1,5 +1,7 @@
 # User Roles
 
+ --8<-- "assets/glossary.md"
+
 Here is an explanation of what the roles mean and what permissions they give.  
 **Note**: _Changing user roles requires them to log out and in again before they are applied._  
 

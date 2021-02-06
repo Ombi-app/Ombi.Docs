@@ -1,5 +1,7 @@
 # Generic Settings
 
+ --8<-- "assets/glossary.md"
+
 This page contains some of the basic settings to configure Ombi.  
 It is a _stub_, and only holds settings that aren't big enough for their own full pages.  
 

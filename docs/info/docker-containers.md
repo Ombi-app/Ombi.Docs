@@ -1,5 +1,7 @@
 # Docker Intro
 
+ --8<-- "assets/glossary.md"
+
 If you're running Ombi in a Docker container, then chances are you're running other services in one as well.  
 There are things to consider when doing this - primarily, how are your containers going to communicate with each other/other machines?  
 

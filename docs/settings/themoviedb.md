@@ -1,5 +1,7 @@
 # The Movie DB
 
+ --8<-- "assets/glossary.md"
+
 ## Show Adult Movies
 
 Turn this on to allow Ombi to include movies flagged as 'adult' in search results.  
