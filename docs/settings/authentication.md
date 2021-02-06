@@ -1,7 +1,5 @@
 # Authentication Settings
 
- --8<-- "assets/glossary.md"
-
 ## Allow users to login without a password
 
 This does exactly what it says on the tin.  

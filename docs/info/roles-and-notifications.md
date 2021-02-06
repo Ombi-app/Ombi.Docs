@@ -1,7 +1,5 @@
 # Roles and notifications
 
- --8<-- "assets/glossary.md"
-
 Certain roles automatically disable some notifications for that user.  
 If notifications are not working but the 'Test Notification' does, check the roles they're assigned.
 

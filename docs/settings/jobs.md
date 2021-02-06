@@ -1,7 +1,5 @@
 # Scheduled Tasks
 
- --8<-- "assets/glossary.md"
-
 Everything Ombi does runs as a scheduled task.  
 All of these tasks are on timers using Quartz CRON expressions.  
 [Cronmaker](http://www.cronmaker.com/) should be able to assist you in creating the expression or translate the current ones.  

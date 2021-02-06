@@ -1,7 +1,5 @@
 # Backing Up Ombi
 
- --8<-- "assets/glossary.md"
-
 ## Stop Ombi
 
 Stop Ombi with the relevant command for your system (stop-process ombi, net stop ombi, service ombi stop, docker stop ombi...), and...

@@ -1,7 +1,5 @@
 # Vote
 
- --8<-- "assets/glossary.md"
-
 ## Enable
 
 Switch on for user requests to auto-approve once enough users vote that they also want that item.

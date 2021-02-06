@@ -1,7 +1,5 @@
 # Landing Page
 
- --8<-- "assets/glossary.md"
-
 You can have a landing page appear before users get to the login page.  
 This is useful if you wish to have messages or disclaimers displayed before they make requests.
 

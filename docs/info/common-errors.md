@@ -1,7 +1,5 @@
 # Commonly Encountered Errors
 
- --8<-- "assets/glossary.md"
-
 ## Error updating from Web UI
 
 See [Update Errors](../../guides/updating/#automatic-updates)

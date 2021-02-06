@@ -1,7 +1,5 @@
 # Syncing Friendly Names
 
- --8<-- "assets/glossary.md"
-
 A number of people have now asked if Ombi and Tautulli can synchronise 'friendly names' or 'aliases' for users.  
 At present there is no built-in support for this.  
 
