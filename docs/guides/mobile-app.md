@@ -1,7 +1,5 @@
 # Mobile App
 
- --8<-- "assets/glossary.md"
-
 Note: Please stop asking for an iOS app.  
 We had one. Apple removed it.  
 We appealed/argued it, and Apple stood by their decision to not allow it in the App Store.  

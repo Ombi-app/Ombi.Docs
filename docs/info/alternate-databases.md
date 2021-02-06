@@ -1,7 +1,5 @@
 # Alternate Database Options
 
- --8<-- "assets/glossary.md"
-
 Ombi supports multiple database types, not just sqlite.  
 The way this works is that Ombi looks for a `database.json` file in the installation directory (or, if you specified a `Storage Path` at startup, in that location e.g. AppData).  
 If the file is not found then Ombi falls back to the default, creating or using existing SQLite databases in the Ombi directory.

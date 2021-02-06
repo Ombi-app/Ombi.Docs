@@ -1,7 +1,5 @@
 # Newsletters
 
- --8<-- "assets/glossary.md"
-
 The newsletter will send out an email to each user with the `Receives Newsletter` role with a list of the movies and tv shows/episodes that have been added recently.  
 The newsletter will never show duplicates, so once it's been sent out then it will only show new content in the next email.  
 By default this is scheduled to run every Friday at 12GMT.

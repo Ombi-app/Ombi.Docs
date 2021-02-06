@@ -1,7 +1,5 @@
 # Ombi Translations
 
- --8<-- "assets/glossary.md"
-
 ## Editing and contributing to translations
 
 We are using Crowdin to manage the translations!  

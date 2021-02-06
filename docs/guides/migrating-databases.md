@@ -1,7 +1,5 @@
 # Migrating to MySQL
 
- --8<-- "assets/glossary.md"
-
 _This guide assumes you have already configured [MySQL/MariaDB](../../info/alternate-databases) to work with ombi._
 
 ## Migration procedure

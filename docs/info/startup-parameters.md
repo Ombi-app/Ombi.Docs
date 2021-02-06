@@ -1,7 +1,5 @@
 # Startup Parameters
 
- --8<-- "assets/glossary.md"
-
 Certain parameters (or _arguments_) can be passed to the ombi application to enforce specific settings.
 
 ## --host
