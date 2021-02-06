@@ -1,5 +1,7 @@
 # Updating Ombi
 
+ --8<-- "assets/glossary.md"
+
 ## Automatic Updates
 
 __*Note*__: The built-in automatic updater is broken for 'local' installations.  

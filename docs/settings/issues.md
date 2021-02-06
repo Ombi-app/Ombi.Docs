@@ -1,5 +1,7 @@
 # Issue Settings
 
+ --8<-- "assets/glossary.md"
+
 This function is used to allow users to report issues with specific items in your libraries.  
 
 ## Enable

@@ -1,5 +1,7 @@
 # Email Notifications
 
+ --8<-- "assets/glossary.md"
+
 ## Setting up email notifications
 
 1. Go to Email Notifications in the Ombi menu, and make sure "Enabled" is checked.  

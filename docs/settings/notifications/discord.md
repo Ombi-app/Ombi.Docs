@@ -1,5 +1,7 @@
 # Discord Notifications
 
+ --8<-- "assets/glossary.md"
+
 Ombi can be set up to send notifications to a Discord server for request states.
 
 ## Configuring access to the channel

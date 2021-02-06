@@ -1,5 +1,7 @@
 # Twilio Notifications
 
+ --8<-- "assets/glossary.md"
+
 ## Setup
 
 1. Ensure you have a Twilio account

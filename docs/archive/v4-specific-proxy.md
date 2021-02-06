@@ -85,6 +85,8 @@ location /ombi/swagger {
 
 ### proxy.conf
 
+ --8<-- "assets/glossary.md"
+
 ```conf
 client_max_body_size 10m;
 client_body_buffer_size 128k;

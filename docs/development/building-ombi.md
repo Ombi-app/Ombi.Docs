@@ -1,5 +1,7 @@
 # Ombi Development
 
+ --8<-- "assets/glossary.md"
+
 ## Frontend
 
 In this example I'll be using VS Code to edit the frontend.

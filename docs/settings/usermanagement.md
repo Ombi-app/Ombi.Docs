@@ -1,5 +1,7 @@
 # Importing Users
 
+ --8<-- "assets/glossary.md"
+
 This page is slightly dynamic depending on what Media Server you have enabled.
 
 ## Import Plex/Emby Users

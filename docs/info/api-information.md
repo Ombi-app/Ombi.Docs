@@ -1,5 +1,7 @@
 # API Details
 
+ --8<-- "assets/glossary.md"
+
 As the API is an evolving entity, documenting it here becomes impossible.  
 To get around this, the API documents itself, live.  
 You can find the documentation on the API via the 'swagger' URL,  

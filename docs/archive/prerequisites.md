@@ -1,5 +1,7 @@
 # Prerequisites
 
+ --8<-- "assets/glossary.md"
+
 You shouldn't need to read these.  
 They're only for if you are encountering errors and want to dig deeper.  
 All the prerequisites should be in the .zip/.tar.gz/deployed application folder.

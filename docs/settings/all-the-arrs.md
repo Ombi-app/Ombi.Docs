@@ -1,5 +1,7 @@
 # All the Arrs
 
+ --8<-- "assets/glossary.md"
+
 Under Settings -> Movies / TV / Music, you'll find the configuration sections for each of the following:  
 
 * Sonarr

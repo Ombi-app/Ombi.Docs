@@ -32,6 +32,18 @@ Note that the new documentation repository is not directly publicly editable - f
 
 As such, all edit requests will need to go through approval by [submitting a pull request](https://docs.github.com/en/free-pro-team@latest/articles/creating-a-pull-request).
 
+## Required Info
+
+Every page must have a top-level header, followed by an inclusion tag for the site glossary to work.  
+A top level header is preceded by a single "#", so the first lines of the page should look like so:  
+
+```markdown
+# Page title
+
+ --8<-- "assets/glossary.md"
+
+```
+
 ## Suggested editor
 
 [VS Code](https://code.visualstudio.com/) is a good option to use for editing this content, as it has extensions for markup and markdown syntax highlighting (as well as preview functions).  
