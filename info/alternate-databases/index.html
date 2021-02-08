@@ -1898,59 +1898,59 @@ After clicking you will be presented with a new page asking you to login or sign
 <ol>
 <li>Choose a Setup Type<br />
 Make sure Custom is selected and click Next.<br />
-<img alt="MySQL Setup Type" src="../../assets/images/embeds/mysql_setup_type.png" />  </li>
+<img alt="MySQL Setup Type" loading="lazy" src="../../assets/images/embeds/mysql_setup_type.png" />  </li>
 <li>Select Products and Features<br />
 Select the following products to install:  <ul>
 <li>MySQL Server  </li>
 <li>MySQL Workbench
 Click on next to continue.<br />
-<img alt="Features to Install" src="../../assets/images/embeds/mysql_features.png" /></li>
+<img alt="Features to Install" loading="lazy" src="../../assets/images/embeds/mysql_features.png" /></li>
 </ul>
 </li>
 <li>Installation<br />
 It could give you a message that some requirements are missing.<br />
 This is fine, since it will install those requirements. Click Execute. When the installation is finished, click on next.<br />
-<img alt="MySQL install" src="../../assets/images/embeds/mysql_install.png" /></li>
+<img alt="MySQL install" loading="lazy" src="../../assets/images/embeds/mysql_install.png" /></li>
 </ol>
 <h3 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h3>
 <p>Click Next.<br />
-<img alt="MySQL Configuration" src="../../assets/images/embeds/mysql_configure_1.png" />  </p>
+<img alt="MySQL Configuration" loading="lazy" src="../../assets/images/embeds/mysql_configure_1.png" />  </p>
 <h4 id="high-availability">High Availability<a class="headerlink" href="#high-availability" title="Permanent link">&para;</a></h4>
 <p>Make sure the Standalone MySQL Server is selected and click Next.<br />
-<img alt="MySQL Availability" src="../../assets/images/embeds/mysql_configure_2.png" />  </p>
+<img alt="MySQL Availability" loading="lazy" src="../../assets/images/embeds/mysql_configure_2.png" />  </p>
 <h4 id="type-and-networking">Type and Networking<a class="headerlink" href="#type-and-networking" title="Permanent link">&para;</a></h4>
 <p>You now see the default settings.<br />
 <strong>Nothing <em>needs</em> to be changed</strong>, but you can change the port if needed. Make sure that you don't forget the port number in the database.json when you are going to migrate!<br />
 Click Next.<br />
-<img alt="MySQL Networking" src="../../assets/images/embeds/mysql_configure_3.png" />  </p>
+<img alt="MySQL Networking" loading="lazy" src="../../assets/images/embeds/mysql_configure_3.png" />  </p>
 <h4 id="authentication-method">Authentication Method<a class="headerlink" href="#authentication-method" title="Permanent link">&para;</a></h4>
 <p>We need to change the default setting to "Use Legacy Authentication Method".<br />
 Since this <em>is</em> a security risk I would advise closing the port (3306 default) in your modem.<br />
-<img alt="MySQL Authentication" src="../../assets/images/embeds/mysql_configure_4.png" />  </p>
+<img alt="MySQL Authentication" loading="lazy" src="../../assets/images/embeds/mysql_configure_4.png" />  </p>
 <h4 id="account-and-roles">Account and Roles<a class="headerlink" href="#account-and-roles" title="Permanent link">&para;</a></h4>
 <p>We need to set a root password which allows us to connect to MySQL Server. This password is important, as it is needed for creating databases and potential future maintenance on it.<br />
 Because of this, make sure you don't forget the password!<br />
 We don't need to create users here - that's done in the migration process above.<br />
-<img alt="MySQL Accounts" src="../../assets/images/embeds/mysql_configure_5.png" />  </p>
+<img alt="MySQL Accounts" loading="lazy" src="../../assets/images/embeds/mysql_configure_5.png" />  </p>
 <h4 id="windows-service">Windows Service<a class="headerlink" href="#windows-service" title="Permanent link">&para;</a></h4>
 <p>You can keep the default settings here and click on Next.<br />
-<img alt="MySQL Service" src="../../assets/images/embeds/mysql_configure_6.png" />  </p>
+<img alt="MySQL Service" loading="lazy" src="../../assets/images/embeds/mysql_configure_6.png" />  </p>
 <h4 id="apply-configuration">Apply Configuration<a class="headerlink" href="#apply-configuration" title="Permanent link">&para;</a></h4>
 <p>Now it is time to actually apply all the configuration we just set. Hit Execute.<br />
-<img alt="MySQL Apply" src="../../assets/images/embeds/mysql_configure_7.png" />  </p>
+<img alt="MySQL Apply" loading="lazy" src="../../assets/images/embeds/mysql_configure_7.png" />  </p>
 <p>Once it is done, hit Finish.<br />
-<img alt="MySQL Done" src="../../assets/images/embeds/mysql_configure_8.png" />  </p>
+<img alt="MySQL Done" loading="lazy" src="../../assets/images/embeds/mysql_configure_8.png" />  </p>
 <hr />
 <h4 id="using-mysql-workbench">Using MySQL Workbench<a class="headerlink" href="#using-mysql-workbench" title="Permanent link">&para;</a></h4>
 <p>In order to run the sql commands above, you'll need to use MySQL workbench.<br />
 Hit start and type MySQL Workbench. Run the application.</p>
-<p><img alt="MySQL Workbench" src="../../assets/images/embeds/mysql_workbench_link.png" />  </p>
+<p><img alt="MySQL Workbench" loading="lazy" src="../../assets/images/embeds/mysql_workbench_link.png" />  </p>
 <p>Click on the grey block which is named: "Local Instance". It will pop-up a box to enter your root password which you set in the installation of MySQL Server.<br />
 Once you have entered the root password it will ask if you wanna store your password in the vault. I would recommend to do so, so you don't need to enter your root password again when you connect.</p>
-<p><img alt="MySQL Connection" src="../../assets/images/embeds/mysql_workbench_connection.png" />  </p>
+<p><img alt="MySQL Connection" loading="lazy" src="../../assets/images/embeds/mysql_workbench_connection.png" />  </p>
 <p>You can now see the workbench which is displaying your MySQL server.<br />
 Enter the queries/commands you wish to run into the query editor on screen, then click on the Lightning Bolt above the code to execute them.</p>
-<p><img alt="MySQL Query" src="../../assets/images/embeds/mysql_workbench_query.png" />  </p>
+<p><img alt="MySQL Query" loading="lazy" src="../../assets/images/embeds/mysql_workbench_query.png" />  </p>
 <p>We are done with MySQL Server and the MySQL workbench. One quick tip is that on the left side (where you found Users and Privileges) there is a Dashboard.<br />
 This will show you what kind of activity is running on your MySQL Server, and can be handy to check if Ombi has a connection or not.</p>
 <hr />
@@ -1962,7 +1962,7 @@ This will show you what kind of activity is running on your MySQL Server, and ca
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-06T04:06:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-08T02:33:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-08</span>
     
   </small>
 </div>
