@@ -7,7 +7,7 @@ Visit Telegram and create a bot [here](https://core.telegram.org/bots#6-botfathe
 
 ## Ombi Settings
 
-![Telegram Settings](../../assets/images/embeds/telegram_notifications.jpg)
+![Telegram Settings](../../assets/images/embeds/telegram_notifications.jpg){: loading=lazy }
 
 You also need a Chat ID from Telegram. You can get the Chat ID from [here](https://telegram.me/get_id_bot).  
 This also supports Group Chat ID's.
@@ -16,7 +16,7 @@ This also supports Group Chat ID's.
 
 You can also add [UserPreference](../../../info/notification-template-variables) to Telegram!  
 In the User Management settings, Enter each users Telegram Username into the field.
-![userpreference](../../assets/images/embeds/telegram_user_preferences.jpg)
+![userpreference](../../assets/images/embeds/telegram_user_preferences.jpg){: loading=lazy }
 
 In order for the notification to call a user you must add `@{UserPreference}` as a [Notification Variable](../../../info/notification-template-variables) into the Notification Settings, as pictured.  
-![Notification Settings](../../assets/images/embeds/userpreference_notification.png)
+![Notification Settings](../../assets/images/embeds/userpreference_notification.png){: loading=lazy }
