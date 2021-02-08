@@ -59,7 +59,7 @@ Be sure to adjust directories to your Ombi install location
 **Path:** `C:\Tools\Ombi\Ombi.exe`  
 **Start directory:** `C:\Tools\Ombi`
 
-![Ombi NSSM](../assets/images/embeds/nssm_service.png)  
+![Ombi NSSM](../assets/images/embeds/nssm_service.png){: loading=lazy }  
 
 #### Standard Setup with different port number
 
@@ -69,7 +69,7 @@ Be sure to adjust directories to your Ombi install location
 **Start directory:** `C:\Tools\Ombi`  
 **Arguments:** `--host "http://*:PORTNUMBER"`
 
-![Ombi NSSM with Port](../assets/images/embeds/nssm_service_with_port.png)  
+![Ombi NSSM with Port](../assets/images/embeds/nssm_service_with_port.png){: loading=lazy }  
 
 ### Install as a Service with Windows Task Scheduler
 

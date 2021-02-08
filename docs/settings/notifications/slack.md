@@ -29,4 +29,6 @@ _More info coming soon._
 
 _More info coming soon._
 
-![Slack Settings Screenshot](../../assets/images/embeds/slack_notification.png)
+## Screenshot
+
+![Slack Settings Screenshot](../../assets/images/embeds/slack_notification.png){: loading=lazy }
