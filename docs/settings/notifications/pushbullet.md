@@ -5,4 +5,5 @@ On this page you can customize the text of Pushbullet notifications.
 
 ## Setup
 
-After navigating to the Pushbullet site, click Create Access Token, then copy and paste the generated key into Ombi.
+After navigating to the Pushbullet site, click Create Access Token, then copy and paste the generated key into Ombi.  
+This can be found in your [Pushbullet Account Settings](https://www.pushbullet.com/#settings/account).
