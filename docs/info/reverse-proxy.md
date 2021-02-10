@@ -429,3 +429,7 @@ _**Note:** When using a subdirectory it is essential to use `PathPrefix` instead
       - traefik.http.middlewares.ombi.headers.STSPreload=true
       - traefik.http.middlewares.ombi.headers.frameDeny=true
 ```
+
+## V3 Specific
+
+The notes regarding Ye Olde V3 Proxy can be found [in the archive](../archive/v3-specific-proxy).
