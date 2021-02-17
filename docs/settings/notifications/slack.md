@@ -31,4 +31,4 @@ _More info coming soon._
 
 ## Screenshot
 
-![Slack Settings Screenshot](../../assets/images/embeds/slack_notification.png){: loading=lazy }
+![Slack Settings Screenshot](../../assets/images/slack_notification.png){: loading=lazy }

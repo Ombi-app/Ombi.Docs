@@ -27,4 +27,4 @@ This lets you set a custom notification tone to use for notifications from Ombi.
 
 ## Screenshot
 
-![Pushover Settings Screenshot](../../assets/images/embeds/pushover_notification.png){: loading=lazy }
+![Pushover Settings Screenshot](../../assets/images/pushover_notification.png){: loading=lazy }
