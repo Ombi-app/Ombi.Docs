@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/development/building-ombi/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1469,20 +1467,20 @@
 <p>In this example I'll be using VS Code to edit the frontend.</p>
 <ol>
 <li>Clone the Repository</li>
-<li>Change to the relevant branch (currently <code class="highlight"><span class="err">development</span></code>)</li>
+<li>Change to the relevant branch (currently <code class="highlight">development</code>)</li>
 <li>Install the .Net Core SDK (latest) <a href="https://dotnet.microsoft.com/download/dotnet-core">https://dotnet.microsoft.com/download/dotnet-core</a></li>
 <li>Install <a href="https://nodejs.org/en/download/">NodeJS</a> and Tools for Node.js Native Modules</li>
 <li>Install <a href="https://yarnpkg.com/en/">Yarn</a></li>
-<li>Set the Env variable to development <code class="highlight"><span class="o">$</span><span class="k">export</span> <span class="n">ASPNETCORE_Environment</span><span class="o">=</span><span class="n">Development</span></code> or <code class="highlight"><span class="err">$env:ASPNETCORE_ENVIRONMENT = &quot;Development&quot;</span></code> in Powershell</li>
-<li>Open up a New Terminal in the following location: <code class="highlight"><span class="err">~src/Ombi/ClientApp</span></code>, run the following:</li>
-<li><code class="highlight"><span class="err">yarn</span></code> <em>(wait for it to install all dependencies)</em></li>
-<li><code class="highlight"><span class="err">yarn start</span></code></li>
-<li>Go to <code class="highlight"><span class="err">~/src/Ombi</span></code> in a Terminal Window and run <code class="highlight"><span class="err">dotnet run -- --host http://*:5000</span></code></li>
+<li>Set the Env variable to development <code class="highlight"><span class="o">$</span><span class="k">export</span> <span class="n">ASPNETCORE_Environment</span><span class="o">=</span><span class="n">Development</span></code> or <code class="highlight">$env:ASPNETCORE_ENVIRONMENT = &quot;Development&quot;</code> in Powershell</li>
+<li>Open up a New Terminal in the following location: <code class="highlight">~src/Ombi/ClientApp</code>, run the following:</li>
+<li><code class="highlight">yarn</code> <em>(wait for it to install all dependencies)</em></li>
+<li><code class="highlight">yarn start</code></li>
+<li>Go to <code class="highlight">~/src/Ombi</code> in a Terminal Window and run <code class="highlight">dotnet run -- --host http://*:5000</code></li>
 <li>Navigate to <a href="http://localhost:5000/">http://localhost:5000/</a></li>
 </ol>
 <p>You can now make UI changes and it will use Hot Module Reloading to show the changes.</p>
 <p><em>If you are doing this on your server machine changing the environment will make your Ombi install fail to run.</em>
-<em>Be sure to change the environment back to <code class="highlight"><span class="err">production</span></code> to re-run Ombi.</em></p>
+<em>Be sure to change the environment back to <code class="highlight">production</code> to re-run Ombi.</em></p>
                 
                   
                     

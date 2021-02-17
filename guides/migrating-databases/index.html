@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/guides/migrating-databases/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1649,10 +1647,10 @@ chmod +x *.py
 </li>
 <li>
 <p>Install the dependencies according to the operating system we use.</p>
-<p><code class="highlight"><span class="err">apt-get install python-mysqldb</span></code>    # Debian/Ubuntu<br />
-<code class="highlight"><span class="err">emerge -va mysqlclient</span></code>            # Gentoo<br />
-<code class="highlight"><span class="err">pip install mysqlclient</span></code>           # Python Pip<br />
-<code class="highlight"><span class="err">python -m pip install mysqlclient</span></code> # Python Pip  </p>
+<p><code class="highlight">apt-get install python-mysqldb</code>    # Debian/Ubuntu<br />
+<code class="highlight">emerge -va mysqlclient</code>            # Gentoo<br />
+<code class="highlight">pip install mysqlclient</code>           # Python Pip<br />
+<code class="highlight">python -m pip install mysqlclient</code> # Python Pip  </p>
 </li>
 </ol>
 <h3 id="3-create-and-prepare-tables">3. Create and prepare tables<a class="headerlink" href="#3-create-and-prepare-tables" title="Permanent link">&para;</a></h3>
@@ -1660,7 +1658,7 @@ chmod +x *.py
 <li>Update to the latest version of ombi.</li>
 <li>Stop ombi</li>
 <li>Create or Modify <strong>database.json</strong> to use mysql.<br />
-<code class="highlight"><span class="err">python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi</span></code>  </li>
+<code class="highlight">python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi</code>  </li>
 <li>
 <p><strong>Only if we are going to use <em>Multiple Databases</em> or <em>Multiple Servers</em>.</strong><br />
    To be able to use multiple servers or databases we will need to manually edit <strong>database.json</strong>.<br />
@@ -2076,7 +2074,7 @@ Options:
 - <span class="o">[</span>!!<span class="o">]</span> -&gt; userqualityprofiles -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">20</span><span class="o">)]</span> <span class="o">=</span> -20
 - Checking  <span class="o">[</span><span class="c1">############################################################] 43/43</span>
 </code></pre></div>
-<p>S: We will have to force the elimination of the data in all the tables with the parameter <code class="highlight"><span class="err">--force</span></code> as follows.</p>
+<p>S: We will have to force the elimination of the data in all the tables with the parameter <code class="highlight">--force</code> as follows.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Single Database:</span>
 $ python ombi_sqlite2mysql.py -c /etc/Ombi --force --host <span class="m">192</span>.168.1.100 --db Ombi --user ombi --passwd ombi
 </code></pre></div>

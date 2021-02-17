@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/info/faq/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1673,12 +1671,12 @@ Edit Library &gt; Advanced &gt; Agent = TheTVDB</p>
 <h2 id="ombi-wont-start-after-updating-to-ubuntu-1904">Ombi won't start after updating to Ubuntu 19.04<a class="headerlink" href="#ombi-wont-start-after-updating-to-ubuntu-1904" title="Permanent link">&para;</a></h2>
 <p>.Net Core is not yet supported officially on Ubuntu 19.04 (see <a href="https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions">Supported Distributions</a> to confirm).<br />
 Since the Ombi backend uses .Net Core, we will have to manually install the older version of libssl (from 18.10) in order to make Ombi run.<br />
-To confirm this is the fault, run <code class="highlight"><span class="err">journalctl -u Ombi -b</span></code> and look for the line "<code class="highlight"><span class="err">no usable version of libssl found</span></code>" - this will confirm that this is the fix.<br />
+To confirm this is the fault, run <code class="highlight">journalctl -u Ombi -b</code> and look for the line "<code class="highlight">no usable version of libssl found</code>" - this will confirm that this is the fix.<br />
 We can do this using the following commands from a terminal:</p>
 <div class="highlight"><pre><span></span><code>wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
 sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
 </code></pre></div>
-<p>Start the Ombi service with <code class="highlight"><span class="err">service Ombi start</span></code> and confirm that it's worked with <code class="highlight"><span class="err">systemctl status ombi</span></code>.</p>
+<p>Start the Ombi service with <code class="highlight">service Ombi start</code> and confirm that it's worked with <code class="highlight">systemctl status ombi</code>.</p>
 <hr />
 <h2 id="can-i-synchronise-users-between-ombi-and-tautulli">Can I synchronise users between Ombi and Tautulli?<a class="headerlink" href="#can-i-synchronise-users-between-ombi-and-tautulli" title="Permanent link">&para;</a></h2>
 <p>Yes, you can.<br />
@@ -1698,12 +1696,12 @@ This is due to Ombi needing to know where to send users if they click any links 
 <h2 id="ombi-does-not-default-to-english-or-my-preferred-language">Ombi does not default to English or my preferred language<a class="headerlink" href="#ombi-does-not-default-to-english-or-my-preferred-language" title="Permanent link">&para;</a></h2>
 <p>Once you have set your preferred language in the user preferences area of Ombi, then it's attached to your user profile. When Ombi loads up, it checks what was set and will use that. If nothing has been set then Ombi sets whatever is the first language your browser presents to it.<br />
 If this does not get presented properly, this is mostly an issue with Chrome.<br />
-You can run the command <code class="highlight"><span class="err">navigator.languages</span></code> in the Chrome console to see the list.<br />
+You can run the command <code class="highlight">navigator.languages</code> in the Chrome console to see the list.<br />
 To get Ombi to display the language you want, make that language appear as the first entry in the above command.</p>
 <p>You can do this by:</p>
 <ul>
 <li>Open the Chrome Language Settings page<br />
-<code class="highlight"><span class="c">chrome://settings/languages</span></code></li>
+<code class="highlight">chrome://settings/languages</code></li>
 <li>Click the down arrow next to Language</li>
 <li>Click the 3 ellipses by the language you want to set as default</li>
 <li>Click move to the top.</li>
@@ -1730,7 +1728,7 @@ It contains Ombi specific information e.g. Users, Requests, Issues</p>
 <h2 id="how-can-i-include-ombi-logs-in-logarr">How can I include Ombi logs in Logarr?<a class="headerlink" href="#how-can-i-include-ombi-logs-in-logarr" title="Permanent link">&para;</a></h2>
 <p>Because Ombi adds the date into the name of the log file, you can't hard-code to the latest log file - the link will be incorrect the next day.<br />
 Instead, we can use the php date() function and string concatenation (.) to build the path on the fly when we are in Logarr.<br />
-The logs are named in the format <code class="highlight"><span class="err">log-yyyymmdd.txt</span></code> - so January 14, 2019 would be <code class="highlight"><span class="err">log-20190114.txt</span></code>. php date(Ymd) gives us the date in that format, and we can concatenate it into our ombi log path in Logarr configs like so:<br />
+The logs are named in the format <code class="highlight">log-yyyymmdd.txt</code> - so January 14, 2019 would be <code class="highlight">log-20190114.txt</code>. php date(Ymd) gives us the date in that format, and we can concatenate it into our ombi log path in Logarr configs like so:<br />
 <em>(<strong>Note</strong>: change folder paths to match your own install directory of Ombi.)</em>  </p>
 <div class="highlight"><pre><span></span><code><span class="x">&quot;Ombi&quot; =&gt; &#39;C:\Services\Ombi\Logs\log-&#39; . date(&quot;Ymd&quot;) . &#39;.txt&#39;,</span>
 </code></pre></div>

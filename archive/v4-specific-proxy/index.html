@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/archive/v4-specific-proxy/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1561,7 +1559,7 @@ For running Ombi v4 on "Docker for Windows" (sic) with NGINX running natively on
 <li>www.somedomain.com/radarr</li>
 </ul>
 <p>You would only need to install/support a certificate for <strong>www.somedomain.com</strong>.</p>
-<p>This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the <code class="highlight"><span class="err">--baseurl /ombi</span></code> option</p>
+<p>This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the <code class="highlight">--baseurl /ombi</code> option</p>
 <h3 id="location-block">Location Block<a class="headerlink" href="#location-block" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span> <span class="p">{</span>
     <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span> <span class="n">addr</span> <span class="n">or</span> <span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span>

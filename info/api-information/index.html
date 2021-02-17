@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/info/api-information/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1508,25 +1506,25 @@
 <p>As the API is an evolving entity, documenting it here becomes impossible.<br />
 To get around this, the API documents itself, live.<br />
 You can find the documentation on the API via the 'swagger' URL,<br />
-<code class="highlight"><span class="c">http://your.ombi.ip:5000/swagger</span></code></p>
+<code class="highlight">http://your.ombi.ip:5000/swagger</code></p>
 <p>This will provide you all the documentation about the available API endpoints and how to use them.</p>
 <h2 id="interacting-with-the-api">Interacting with the API<a class="headerlink" href="#interacting-with-the-api" title="Permanent link">&para;</a></h2>
 <p>There are two different ways to interact with the API</p>
 <h3 id="jwt-bearer-authentication">JWT Bearer Authentication<a class="headerlink" href="#jwt-bearer-authentication" title="Permanent link">&para;</a></h3>
 <ul>
 <li>This means you need to authenticate with a username and password and you will get a unique token that the application can use to identity that user including all roles.  </li>
-<li>You use this by setting an <code class="highlight"><span class="err">Authorization</span></code> header with the value being <code class="highlight"><span class="err">Bearer YOUR_TOKEN</span></code>.  </li>
+<li>You use this by setting an <code class="highlight">Authorization</code> header with the value being <code class="highlight">Bearer YOUR_TOKEN</code>.  </li>
 </ul>
 <h3 id="api-key">API Key<a class="headerlink" href="#api-key" title="Permanent link">&para;</a></h3>
 <ul>
 <li>You can use the API key that is found in the Ombi settings page of the application.<br />
 Using the API key provides admin access to the whole system, so keep this a secret.</li>
-<li>You can use this by setting an <code class="highlight"><span class="err">ApiKey</span></code> header, with the value being the API key from the settings page</li>
+<li>You can use this by setting an <code class="highlight">ApiKey</code> header, with the value being the API key from the settings page</li>
 <li>NOTE: when using the API Key everything is assumed to be admin, and thus has no user associated with it.<br />
 If you want it to be associated with a user you need to pass in an <em>additional</em> header ("UserName"), with the value being the username of the user you would like to associate it with.<br />
 If the username does not exist then the API call will fail.</li>
 </ul>
-<p>If you want to use any username (including ones that do not exist in Ombi), then pass in an <code class="highlight"><span class="err">ApiAlias</span></code> header and Ombi will use that.</p>
+<p>If you want to use any username (including ones that do not exist in Ombi), then pass in an <code class="highlight">ApiAlias</code> header and Ombi will use that.</p>
                 
                   
                     

@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/info/common-errors/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1623,13 +1621,13 @@
 <h2 id="tv-show-search-results-disappear">TV Show search results disappear<a class="headerlink" href="#tv-show-search-results-disappear" title="Permanent link">&para;</a></h2>
 <p>This is due to our TV Provider <a href="https://www.tvmaze.com/">TVMaze</a> not having the metadata we need to process that TV Show. We require TV Maze to supply us with a TVDBId for that show.
 You can easily check this by calling the TV Maze API: <a href="http://api.tvmaze.com/search/shows?q=Dexter">http://api.tvmaze.com/search/shows?q=Dexter</a>  </p>
-<p>You can see under the <code class="highlight"><span class="err">externals</span></code> object there should be a <code class="highlight"><span class="err">theTvDb</span></code> property. If that is <code class="highlight"><span class="err">null</span></code> then Ombi cannot process that show.  </p>
-<p>You can request the <code class="highlight"><span class="err">theTvDb</span></code> id to be added <a href="https://www.tvmaze.com/threads/2677/edit-requests">here</a>  </p>
+<p>You can see under the <code class="highlight">externals</code> object there should be a <code class="highlight">theTvDb</code> property. If that is <code class="highlight">null</code> then Ombi cannot process that show.  </p>
+<p>You can request the <code class="highlight">theTvDb</code> id to be added <a href="https://www.tvmaze.com/threads/2677/edit-requests">here</a>  </p>
 <hr />
 <p>If you search for a TV show and get this error:</p>
-<p><img alt="sorry" loading="lazy" src="../../assets/images/embeds/results_disappeared.jpg" /></p>
+<p><img alt="sorry" loading="lazy" src="../../assets/images/results_disappeared.jpg" /></p>
 <p><em>This is most commonly caused by incorrect spelling.</em> 😃</p>
-<p>This could also be caused by there not being enough metadata available such as <code class="highlight"><span class="err">thetvdbid</span></code> and/or episode information.</p>
+<p>This could also be caused by there not being enough metadata available such as <code class="highlight">thetvdbid</code> and/or episode information.</p>
 <p>These are two checks that Ombi looks for to verify that a show exists and is available to be requested.</p>
 <p>Most of the time, you can freely edit the listings on <a href="https://www.tvmaze.com/">TVMAZE</a> and the <a href="https://www.thetvdb.com/">theTVDB</a> to have the information needed to make an item available.</p>
 <p>If you have edited the TVMAZE and/or theTVDB listings for a show, there is a time delay before the APIs have the new information.  Give it a few hours before searching again.</p>
@@ -1638,40 +1636,40 @@ You can easily check this by calling the TV Maze API: <a href="http://api.tvmaze
 <blockquote>
 <p>libunwind.so.8: cannot open shared object file You may need to install libwind8.  </p>
 </blockquote>
-<p>Run <code class="highlight"><span class="err">apt install libunwind8</span></code></p>
+<p>Run <code class="highlight">apt install libunwind8</code></p>
 <hr />
 <h2 id="systemnethttpcurlhandler">System.Net.Http.CurlHandler<a class="headerlink" href="#systemnethttpcurlhandler" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>System.TypeInitializationException: The type initializer for 'System.Net.Http.CurlHandler' threw an exception.</p>
 </blockquote>
-<p>Run <code class="highlight"><span class="err">apt install libcurl4-openssl-dev</span></code></p>
+<p>Run <code class="highlight">apt install libcurl4-openssl-dev</code></p>
 <hr />
 <h2 id="proxmox-lxc-containers">Proxmox LXC Containers<a class="headerlink" href="#proxmox-lxc-containers" title="Permanent link">&para;</a></h2>
-<p><code class="highlight"><span class="err">set LC_ALL=en_US.UTF-8</span></code></p>
+<p><code class="highlight">set LC_ALL=en_US.UTF-8</code></p>
 <p>or  </p>
-<p><code class="highlight"><span class="err">sudo locale-gen &quot;en_US.UTF-8&quot;</span></code></p>
+<p><code class="highlight">sudo locale-gen &quot;en_US.UTF-8&quot;</code></p>
 <p>or  </p>
-<p><code class="highlight"><span class="err">sudo dpkg-reconfigure locales</span></code></p>
+<p><code class="highlight">sudo dpkg-reconfigure locales</code></p>
 <p>and reboot</p>
 <p><em>Taken from <a href="https://github.com/tidusjar/Ombi/issues/1783#issuecomment-351498238">https://github.com/tidusjar/Ombi/issues/1783#issuecomment-351498238</a></em>  </p>
 <hr />
 <h2 id="i386-unsupported">i386 unsupported<a class="headerlink" href="#i386-unsupported" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>N: Skipping acquire of configured file <span class="s1">&#39;main/binary-i386/Packages&#39;</span> as repository <span class="s1">&#39;http://repo.ombi.turd.me/develop jessie InRelease&#39;</span> doesn<span class="s1">&#39;t support architecture &#39;</span>i386<span class="err">&#39;</span>
 </code></pre></div>
-<p>Replace <code class="highlight"><span class="k">deb</span> <span class="s">http://repo.ombi.turd.me/stable/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> with  <code class="highlight"><span class="k">deb</span> <span class="sx">[arch=amd64]</span> <span class="kp">http://repo.ombi.turd.me/stable/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> in <code class="highlight"><span class="err">/etc/apt/sources.list.d/ombi.list</span></code>.  </p>
+<p>Replace <code class="highlight"><span class="k">deb</span> <span class="s">http://repo.ombi.turd.me/stable/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> with  <code class="highlight"><span class="k">deb</span> <span class="sx">[arch=amd64]</span> <span class="kp">http://repo.ombi.turd.me/stable/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> in <code class="highlight">/etc/apt/sources.list.d/ombi.list</code>.  </p>
 <hr />
 <h2 id="mobile-notifications-pihole">Mobile Notifications &amp; PiHole<a class="headerlink" href="#mobile-notifications-pihole" title="Permanent link">&para;</a></h2>
 <p>Numerous PiHole and AdGuard lists block OneSignal by default, causing Ombi to be unable to push a notification to it and your mobile device to be unable to retrieve one from it.<br />
 The error will be similar to:<br />
-<code class="highlight"><span class="err">There was an error when sending the Mobile message. Please check your settings</span></code>.</p>
+<code class="highlight">There was an error when sending the Mobile message. Please check your settings</code>.</p>
 <p>Check your PiHole/Adguard immediately after hitting the "Test Notification" button.<br />
 If you see "onesignal.com" being blocked, whitelist it and try again.</p>
 <hr />
 <h2 id="no-such-column-xrequestid">No such column: x.RequestId<a class="headerlink" href="#no-such-column-xrequestid" title="Permanent link">&para;</a></h2>
-<p>If you are on the latest version and are seeing <code class="highlight"><span class="err">SQLite Error 1: &#39;No such column: x.RequestId&#39;</span></code>, refer below for a solution.<br />
+<p>If you are on the latest version and are seeing <code class="highlight">SQLite Error 1: &#39;No such column: x.RequestId&#39;</code>, refer below for a solution.<br />
 Referenced in <a href="https://github.com/tidusjar/Ombi/issues/3214#issuecomment-555821356">Issue 3214</a></p>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
-<p>Here is a one-liner to fix the issue, assuming you are running in a docker container, your container has <code class="highlight"><span class="err">ombi</span></code> in the name, your image requires the config dir to be mounted at <code class="highlight"><span class="err">/config</span></code>, and the host is running Debian, Ubuntu, or a related distro that uses <code class="highlight"><span class="err">apt</span></code>. If any of these points aren't true, see the details below the command and modify to your needs.</p>
+<p>Here is a one-liner to fix the issue, assuming you are running in a docker container, your container has <code class="highlight">ombi</code> in the name, your image requires the config dir to be mounted at <code class="highlight">/config</code>, and the host is running Debian, Ubuntu, or a related distro that uses <code class="highlight">apt</code>. If any of these points aren't true, see the details below the command and modify to your needs.</p>
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install -y sqlite3
 sqlite3 <span class="k">$(</span> <span class="se">\</span>
@@ -1680,25 +1678,25 @@ sqlite3 <span class="k">$(</span> <span class="se">\</span>
 <span class="k">)</span>/app/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
 </code></pre></div>
 <p>Explanation of parts:</p>
-<p>Update <code class="highlight"><span class="err">apt</span></code> &amp; install <code class="highlight"><span class="err">sqlite3</span></code></p>
+<p>Update <code class="highlight">apt</code> &amp; install <code class="highlight">sqlite3</code></p>
 <div class="highlight"><pre><span></span><code>sudo apt update
 sudo apt install -y sqlite3<span class="p">;</span>
 </code></pre></div>
-<p>Inspect container <code class="highlight"><span class="err">$CONTAINER_ID</span></code>, list mounts, and if the mount destination is <code class="highlight"><span class="err">/config</span></code>, print the source</p>
+<p>Inspect container <code class="highlight">$CONTAINER_ID</code>, list mounts, and if the mount destination is <code class="highlight">/config</code>, print the source</p>
 <div class="highlight"><pre><span></span><code>docker inspect --format <span class="se">\</span>
   <span class="s1">&#39;{{ range .Mounts }}{{if eq .Destination &quot;/config&quot;}}{{ .Source }}{{end}}{{end}}&#39;</span>  <span class="se">\</span>
   <span class="nv">$CONTAINER_ID</span>
 </code></pre></div>
-<p>List containers, filtering on <code class="highlight"><span class="err">ombi</span></code>. Format output to only include the container id.</p>
+<p>List containers, filtering on <code class="highlight">ombi</code>. Format output to only include the container id.</p>
 <div class="highlight"><pre><span></span><code>docker ps --filter <span class="nv">name</span><span class="o">=</span>ombi --format <span class="s1">&#39;{{.ID}}&#39;</span>
 </code></pre></div>
-<p>Concatenate the inspected directory path with the path to the <code class="highlight"><span class="na">.db</span></code> file within the <code class="highlight"><span class="err">/config</span></code> dir</p>
+<p>Concatenate the inspected directory path with the path to the <code class="highlight"><span class="na">.db</span></code> file within the <code class="highlight">/config</code> dir</p>
 <div class="highlight"><pre><span></span><code><span class="k">$(</span> ... <span class="k">)</span>/app/OmbiExternal.db
 </code></pre></div>
-<p>Tell <code class="highlight"><span class="err">sqlite3</span></code> to run the actual query</p>
+<p>Tell <code class="highlight">sqlite3</code> to run the actual query</p>
 <div class="highlight"><pre><span></span><code> sqlite3 /opt/ombi/app/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
 </code></pre></div>
-<p>After you are done, you can remove <code class="highlight"><span class="err">sqlite3</span></code></p>
+<p>After you are done, you can remove <code class="highlight">sqlite3</code></p>
 <div class="highlight"><pre><span></span><code>sudo apt remove --purge sqlite3
 </code></pre></div>
 <h3 id="unraid">Unraid<a class="headerlink" href="#unraid" title="Permanent link">&para;</a></h3>
@@ -1730,7 +1728,7 @@ sudo apt install -y sqlite3
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-08T02:33:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-08</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T01:16:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
     
   </small>
 </div>

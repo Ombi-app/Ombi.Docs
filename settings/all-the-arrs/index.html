@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/settings/all-the-arrs/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1775,9 +1773,9 @@
 </ul>
 <p>Each one does a different thing, but they're all based on the same codebase - so their configurations are similar.<br />
 As an example address, assume we use a service behind a reverse proxy, with each service being accessible at the following addresses:<br />
-Sonarr: <code class="highlight"><span class="c">https://app.example.com/sonarr</span></code><br />
-Lidarr: <code class="highlight"><span class="c">https://app.example.com/lidarr</span></code><br />
-Radarr: <code class="highlight"><span class="c">https://app.example.com/radarr</span></code>  </p>
+Sonarr: <code class="highlight">https://app.example.com/sonarr</code><br />
+Lidarr: <code class="highlight">https://app.example.com/lidarr</code><br />
+Radarr: <code class="highlight">https://app.example.com/radarr</code>  </p>
 <hr />
 <h2 id="enabled">Enabled<a class="headerlink" href="#enabled" title="Permanent link">&para;</a></h2>
 <p>This switch tells Ombi whether to use this service or not. Don't run the service? Don't enable it.  </p>
@@ -1797,23 +1795,23 @@ If you have set up your Plex (or Emby) sync to detect what is available you won'
 If you're running the services (and Ombi itself) in docker containers, you could use the <a href="../../info/docker-containers">container IP</a>.<br />
 If the services are on multiple machines, IP addresses tend to be useful here.<br />
 If, however, you use the service behind a <a href="../../info/reverse-proxy">reverse proxy</a>, then the 'hostname' field is the bit from <strong>before</strong> the 'baseurl'.<br />
-In the examples above, this would be <code class="highlight"><span class="err">app.example.com</span></code>.</p>
+In the examples above, this would be <code class="highlight">app.example.com</code>.</p>
 <hr />
 <h2 id="port">Port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h2>
-<p>If you're not using a reverse proxy, this is whatever port you use to access the service (it's the number after the second ":" in the address bar). In the case of Sonarr, the default is <code class="highlight"><span class="err">8989</span></code>.<br />
-If you're using a reverse proxy <em>without</em> SSL, the port will be <code class="highlight"><span class="err">80</span></code> (pro-tip: don't do that).<br />
-If you're running <em>with</em> SSL, the port will be <code class="highlight"><span class="err">443</span></code>.  </p>
+<p>If you're not using a reverse proxy, this is whatever port you use to access the service (it's the number after the second ":" in the address bar). In the case of Sonarr, the default is <code class="highlight"><span class="mf">8989</span></code>.<br />
+If you're using a reverse proxy <em>without</em> SSL, the port will be <code class="highlight"><span class="mf">80</span></code> (pro-tip: don't do that).<br />
+If you're running <em>with</em> SSL, the port will be <code class="highlight"><span class="mf">443</span></code>.  </p>
 <hr />
 <h2 id="ssl">SSL<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h2>
 <p>If you're running a reverse proxy with SSL, and are going through that address rather than the direct internal address, this needs to be enabled. Otherwise, leave it off.</p>
 <hr />
 <h2 id="api-key">API key<a class="headerlink" href="#api-key" title="Permanent link">&para;</a></h2>
 <p>This is the API key for each relevant service.<br />
-You can get this by looking under <code class="highlight"><span class="err">Settings -&gt; General</span></code> in each one.</p>
+You can get this by looking under <code class="highlight"><span class="n">Settings</span> <span class="o">-&gt;</span> <span class="n">General</span></code> in each one.</p>
 <hr />
 <h2 id="base-url">Base URL<a class="headerlink" href="#base-url" title="Permanent link">&para;</a></h2>
 <p>If you use a reverse proxy and have a baseurl configured in any of the services, you'll need to fill this in.<br />
-This tends to be the thing you put in after the hostname to access the service - in the example above for Lidarr, this field would need to have <code class="highlight"><span class="err">/lidarr</span></code> added to it.</p>
+This tends to be the thing you put in after the hostname to access the service - in the example above for Lidarr, this field would need to have <code class="highlight">/lidarr</code> added to it.</p>
 <hr />
 <h2 id="quality-profiles">Quality Profiles<a class="headerlink" href="#quality-profiles" title="Permanent link">&para;</a></h2>
 <p>Depending on the service, you may have this appear several times.<br />
@@ -1827,7 +1825,7 @@ If it doesn't work, save the settings and "Test Connectivity". You may not be ab
 <h2 id="sonarr-radarr">Sonarr / Radarr<a class="headerlink" href="#sonarr-radarr" title="Permanent link">&para;</a></h2>
 <h3 id="default-minimum-availability">Default Minimum Availability<a class="headerlink" href="#default-minimum-availability" title="Permanent link">&para;</a></h3>
 <p>This tells Ombi what it should add movies to Radarr as - should it wait until they're available on disc to look for them, in theatres, announced...?<br />
-To try to avoid picking up fakes, <code class="highlight"><span class="err">Physical/Web</span></code> is your best option.</p>
+To try to avoid picking up fakes, <code class="highlight">Physical/Web</code> is your best option.</p>
 <hr />
 <h3 id="language-profile">Language Profile<a class="headerlink" href="#language-profile" title="Permanent link">&para;</a></h3>
 <p>There will be a button to 'get' these from the service. Click it, wait, and select one.<br />

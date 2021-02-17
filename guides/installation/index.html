@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/guides/installation/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1908,17 +1906,17 @@ Ensure you have systems to handle approved requests <em>before</em> you give use
 <p>If you're migrating Ombi from an existing install to a new install, the install process itself is exactly the same as below - with one exception, regardless of what you're migrating from or to.<br />
 If you are using sqlite, you will need to keep the following from your original installation:</p>
 <ul>
-<li><code class="highlight"><span class="err">Ombi.db</span></code></li>
-<li><code class="highlight"><span class="err">OmbiExternal.db</span></code></li>
-<li><code class="highlight"><span class="err">OmbiSettings.db</span></code></li>
+<li><code class="highlight">Ombi.db</code></li>
+<li><code class="highlight">OmbiExternal.db</code></li>
+<li><code class="highlight">OmbiSettings.db</code></li>
 </ul>
-<p>If you are using an alternate database, you will need to keep <code class="highlight"><span class="err">database.json</span></code>.</p>
+<p>If you are using an alternate database, you will need to keep <code class="highlight">database.json</code>.</p>
 <p>When it comes time to actually launch Ombi on your fresh installation, place the above files into the new Ombi directory (wherever you may have put it), and <em>then</em> launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).<br />
 If you are running docker, place these files into the folder you've passed into the container as "/config" for the installation to find them.  </p>
 <hr />
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Download the latest <code class="highlight"><span class="err">win10-xxx.zip</span></code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases">Ombi Releases</a></li>
+<li>Download the latest <code class="highlight">win10-xxx.zip</code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases">Ombi Releases</a></li>
 <li>Right click the file &gt; Properties &gt; Unblock</li>
 <li>Extract the zip to your preferred directory.<br />
 <strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
@@ -1927,7 +1925,7 @@ If you are running docker, place these files into the folder you've passed into 
 <h3 id="install-as-a-service-with-nssm">Install as a Service with NSSM<a class="headerlink" href="#install-as-a-service-with-nssm" title="Permanent link">&para;</a></h3>
 <p>(This is the preferred method on Windows)</p>
 <ol>
-<li>Download the latest <code class="highlight"><span class="err">win10-xxx.zip</span></code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases">Ombi Releases</a></li>
+<li>Download the latest <code class="highlight">win10-xxx.zip</code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases">Ombi Releases</a></li>
 <li>Right click &gt; Properties &gt; Unblock</li>
 <li>Extract the zip to your preferred directory.<br />
 <strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
@@ -1935,34 +1933,34 @@ If you are running docker, place these files into the folder you've passed into 
 </ol>
 <h4 id="standard-setup">Standard Setup<a class="headerlink" href="#standard-setup" title="Permanent link">&para;</a></h4>
 <p>Be sure to adjust directories to your Ombi install location</p>
-<p><strong>Path:</strong> <code class="highlight"><span class="c">C:\Tools\Ombi\Ombi.exe</span></code><br />
-<strong>Start directory:</strong> <code class="highlight"><span class="c">C:\Tools\Ombi</span></code></p>
-<p><img alt="Ombi NSSM" loading="lazy" src="../../assets/images/embeds/nssm_service.png" />  </p>
+<p><strong>Path:</strong> <code class="highlight">C:\Tools\Ombi\Ombi.exe</code><br />
+<strong>Start directory:</strong> <code class="highlight">C:\Tools\Ombi</code></p>
+<p><img alt="Ombi NSSM" loading="lazy" src="../../assets/images/nssm_service.png" />  </p>
 <h4 id="standard-setup-with-different-port-number">Standard Setup with different port number<a class="headerlink" href="#standard-setup-with-different-port-number" title="Permanent link">&para;</a></h4>
 <p>Be sure to adjust directories to your Ombi install location</p>
-<p><strong>Path:</strong> <code class="highlight"><span class="c">C:\Tools\Ombi\Ombi.exe</span></code><br />
-<strong>Start directory:</strong> <code class="highlight"><span class="c">C:\Tools\Ombi</span></code><br />
-<strong>Arguments:</strong> <code class="highlight"><span class="err">--host &quot;http://*:PORTNUMBER&quot;</span></code></p>
-<p><img alt="Ombi NSSM with Port" loading="lazy" src="../../assets/images/embeds/nssm_service_with_port.png" />  </p>
+<p><strong>Path:</strong> <code class="highlight">C:\Tools\Ombi\Ombi.exe</code><br />
+<strong>Start directory:</strong> <code class="highlight">C:\Tools\Ombi</code><br />
+<strong>Arguments:</strong> <code class="highlight">--host &quot;http://*:PORTNUMBER&quot;</code></p>
+<p><img alt="Ombi NSSM with Port" loading="lazy" src="../../assets/images/nssm_service_with_port.png" />  </p>
 <h3 id="install-as-a-service-with-windows-task-scheduler">Install as a Service with Windows Task Scheduler<a class="headerlink" href="#install-as-a-service-with-windows-task-scheduler" title="Permanent link">&para;</a></h3>
 <p>~~Allows automatic updating on windows:~~ updater currently broken.</p>
-<p>As an alternative to NSSM, you can use Task Scheduler to run <code class="highlight"><span class="err">Ombi.exe</span></code> as if you were double clicking it and running it like a regular executable, except it's hidden from the task bar and can only be closed by the Task Manager or the Task Scheduler.</p>
+<p>As an alternative to NSSM, you can use Task Scheduler to run <code class="highlight">Ombi.exe</code> as if you were double clicking it and running it like a regular executable, except it's hidden from the task bar and can only be closed by the Task Manager or the Task Scheduler.</p>
 <ol>
 <li>Open 'Task Scheduler' either search for it in start. Or simply Run... <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span>  <code class="highlight"><span class="nf">%windir</span><span class="o">%</span><span class="err">\</span><span class="n">system32</span><span class="err">\</span><span class="n">taskschd</span><span class="p">.</span><span class="n">msc</span></code></li>
-<li>Click <code class="highlight"><span class="err">Create task...</span></code> on the right hand side.</li>
+<li>Click <code class="highlight">Create task...</code> on the right hand side.</li>
 <li>Give the task a name. <em>Example:</em> Ombi And a description if you want. (Not necessary)</li>
-<li>Check <code class="highlight"><span class="err">Run with highest privileges</span></code></li>
-<li>Click <code class="highlight"><span class="err">Run whether user is logged on or not</span></code> to ensure Ombi runs even when you are logged out!</li>
-<li>Check <code class="highlight"><span class="err">Hidden</span></code></li>
+<li>Check <code class="highlight">Run with highest privileges</code></li>
+<li>Click <code class="highlight">Run whether user is logged on or not</code> to ensure Ombi runs even when you are logged out!</li>
+<li>Check <code class="highlight">Hidden</code></li>
 <li>Configure for: Choose your Windows version.</li>
-<li>Click the <code class="highlight"><span class="err">Triggers</span></code> Tab and click <code class="highlight"><span class="err">New...</span></code></li>
-<li><code class="highlight"><span class="err">Begin the task:</span></code> 'At system startup. <code class="highlight"><span class="err">Click</span></code> OK`</li>
-<li>Click the <code class="highlight"><span class="err">Actions</span></code> Tab and Click <code class="highlight"><span class="err">New...</span></code></li>
-<li>Click <code class="highlight"><span class="err">Browse...</span></code> and navigate to your <code class="highlight"><span class="err">Ombi.exe</span></code> Click <code class="highlight"><span class="err">Open</span></code></li>
-<li>Fill <code class="highlight"><span class="err">Start in (optional):</span></code> with <code class="highlight"><span class="err">Ombi.exe</span></code>'s working directory. IE: <code class="highlight"><span class="c">C:\Ombi\</span></code> or <code class="highlight"><span class="c">C:\SERVERS\Ombi\</span></code> basically, wherever you extracted your 'Ombi' folder to and where it lives. Click <code class="highlight"><span class="err">OK</span></code></li>
-<li><code class="highlight"><span class="err">Settings Tab</span></code> Un-tick <code class="highlight"><span class="err">Stop the task if it runs longer than:</span></code> Click <code class="highlight"><span class="err">OK</span></code></li>
-<li>You will be prompted for your windows user name and password. Please enter your credentials and click <code class="highlight"><span class="err">OK</span></code></li>
-<li>Click <code class="highlight"><span class="err">Task Scheduler Library</span></code> right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at <a href="http://localhost:5000">http://localhost:5000</a> !</li>
+<li>Click the <code class="highlight">Triggers</code> Tab and click <code class="highlight">New...</code></li>
+<li><code class="highlight">Begin the task:</code> 'At system startup. <code class="highlight">Click</code> OK`</li>
+<li>Click the <code class="highlight">Actions</code> Tab and Click <code class="highlight">New...</code></li>
+<li>Click <code class="highlight">Browse...</code> and navigate to your <code class="highlight">Ombi.exe</code> Click <code class="highlight">Open</code></li>
+<li>Fill <code class="highlight">Start in (optional):</code> with <code class="highlight">Ombi.exe</code>'s working directory. IE: <code class="highlight">C:\Ombi\</code> or <code class="highlight">C:\SERVERS\Ombi\</code> basically, wherever you extracted your 'Ombi' folder to and where it lives. Click <code class="highlight">OK</code></li>
+<li><code class="highlight">Settings Tab</code> Un-tick <code class="highlight"><span class="nv">Stop</span> <span class="nv">the</span> <span class="nv">task</span> <span class="k">if</span> <span class="nv">it</span> <span class="nv">runs</span> <span class="nv">longer</span> <span class="nv">than</span>:</code> Click <code class="highlight">OK</code></li>
+<li>You will be prompted for your windows user name and password. Please enter your credentials and click <code class="highlight">OK</code></li>
+<li>Click <code class="highlight">Task Scheduler Library</code> right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at <a href="http://localhost:5000">http://localhost:5000</a> !</li>
 </ol>
 <p><strong><em>Note: The next time you restart your PC, Task Scheduler will run ombi for you.</em></strong></p>
 <p><a href="https://imgur.com/a/oXEWW8z">How to WITH PICTURES!</a></p>
@@ -1971,7 +1969,7 @@ If you are running docker, place these files into the folder you've passed into 
 Note that this is not the preferred method of access, and a <a href="../../info/reverse-proxy">Reverse Proxy</a> is recommended instead.<br />
 Replace the port in the below commands with your own port if you're running a different port than the default.  </p>
 <h4 id="command-prompt">Command Prompt<a class="headerlink" href="#command-prompt" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="err">netsh advfirewall firewall add rule name=&quot;Ombi&quot; dir=in action=allow protocol=TCP localport=3579</span>
+<div class="highlight"><pre><span></span><code>netsh advfirewall firewall add rule name=&quot;Ombi&quot; dir=in action=allow protocol=TCP localport=3579
 </code></pre></div>
 <h4 id="powershell">Powershell<a class="headerlink" href="#powershell" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;Ombi&#39;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-LocalPort</span> <span class="p">@(</span><span class="s1">&#39;3579&#39;</span><span class="p">)</span>
@@ -1983,52 +1981,52 @@ Replace the port in the below commands with your own port if you're running a di
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.</p>
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
-<code class="highlight"><span class="err">echo &quot;deb https://apt.ombi.app/develop jessie main&quot; | sudo tee /etc/apt/sources.list.d/ombi.list</span></code><br />
+<code class="highlight">echo &quot;deb https://apt.ombi.app/develop jessie main&quot; | sudo tee /etc/apt/sources.list.d/ombi.list</code><br />
 <em>For old (v3) releases, use:</em><br />
-<code class="highlight"><span class="err">echo &quot;deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main&quot; | sudo tee &quot;/etc/apt/sources.list.d/ombi.list&quot;</span></code>  </li>
+<code class="highlight">echo &quot;deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main&quot; | sudo tee &quot;/etc/apt/sources.list.d/ombi.list&quot;</code>  </li>
 <li>This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
-<code class="highlight"><span class="err">curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -</span></code><br />
+<code class="highlight">curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -</code><br />
 <em>For old (v3) releases, use:</em><br />
-<code class="highlight"><span class="err">wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -</span></code>  </li>
+<code class="highlight">wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -</code>  </li>
 <li>Update the package list and install Ombi:<br />
-<code class="highlight"><span class="err">sudo apt update &amp;&amp; sudo apt install ombi</span></code></li>
+<code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></li>
 </ol>
 <p>If no errors are shown, Ombi has been installed successfully and will automatically start during boot.<br />
 Ombi should now be reachable on "http://your-ip-address:5000"</p>
 <p>Packages in this repo use systemd.<br />
-Use either the <code class="highlight"><span class="err">systemctl</span></code> or the <code class="highlight"><span class="err">service</span></code> command to start, stop, or restart Ombi.<br />
+Use either the <code class="highlight">systemctl</code> or the <code class="highlight">service</code> command to start, stop, or restart Ombi.<br />
 If an update is available for Ombi:  </p>
 <ul>
 <li>It will get installed along with all other updates if you:
- <code class="highlight"><span class="err">sudo apt update &amp;&amp; sudo apt upgrade</span></code></li>
+ <code class="highlight">sudo apt update &amp;&amp; sudo apt upgrade</code></li>
 <li>Or if you <em>only</em> want to update Ombi:
- <code class="highlight"><span class="err">sudo apt update &amp;&amp; sudo apt install ombi</span></code></li>
+ <code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></li>
 </ul>
 <h3 id="fedora-29">Fedora 29<a class="headerlink" href="#fedora-29" title="Permanent link">&para;</a></h3>
-<p>Deps: <code class="highlight"><span class="err">compat-openssl10 libcurl-devel libunwind-devel openssl-devel</span></code></p>
+<p>Deps: <code class="highlight">compat-openssl10 libcurl-devel libunwind-devel openssl-devel</code></p>
 <hr />
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Download the latest osx <a href="https://github.com/Ombi-app/Ombi.Releases/releases">release</a> <code class="highlight"><span class="err">osx-x64.tar.gz</span></code></li>
+<li>Download the latest osx <a href="https://github.com/Ombi-app/Ombi.Releases/releases">release</a> <code class="highlight">osx-x64.tar.gz</code></li>
 <li>Extract the contents to the desired location (we suggest something like /opt/Ombi/)</li>
 <li>Launch Terminal</li>
-<li><code class="highlight"><span class="err">cd</span></code> to the path of the folder (e.g. <code class="highlight"><span class="err">cd /opt/Ombi</span></code>)</li>
-<li>Execute <code class="highlight"><span class="err">./Ombi</span></code>. Process should load.</li>
+<li><code class="highlight">cd</code> to the path of the folder (e.g. <code class="highlight">cd /opt/Ombi</code>)</li>
+<li>Execute <code class="highlight">./Ombi</code>. Process should load.</li>
 <li>Ombi should now be reachable at localhost:5000</li>
 </ol>
 <p><strong>Startup</strong><br />
-To have Ombi run at startup, add <code class="highlight"><span class="err">RunAtLoad WorkingDirectory /opt/Ombi</span></code> to the command.<br />
-i.e.  <code class="highlight"><span class="err">/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi</span></code></p>
+To have Ombi run at startup, add <code class="highlight">RunAtLoad WorkingDirectory /opt/Ombi</code> to the command.<br />
+i.e.  <code class="highlight">/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi</code></p>
 <p><strong><em>Note: macOS Catalina has strengthened Gatekeeper.<br />
 As a result, allowing apps from 'unverified' sources is now a hidden option.<br />
-It requires executing <code class="highlight"><span class="err">sudo spctl --master-disable</span></code> in Terminal to allow apps from unverified sources before Ombi can be launched reliably.<br />
+It requires executing <code class="highlight">sudo spctl --master-disable</code> in Terminal to allow apps from unverified sources before Ombi can be launched reliably.<br />
 Our preferred deployment method for macOS now, as a result, has to be as a Docker container (simply to avoid this as a problem until a more secure and stable solution is discovered).</em></strong></p>
 <hr />
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <p>The Ombi team do not currently maintain any Docker containers directly.  </p>
 <p>However, there are a number of them available, maintained by various members of the community.<br />
 linuxserver.io keep their image the most up-to-date, and they have pretty comprehensive instructions for installation. See the page for their image <a href="https://hub.docker.com/r/linuxserver/ombi/">here</a>.<br />
-We currently recommended using the <code class="highlight"><span class="err">development</span></code> tag, at least until they shift v4 to the <code class="highlight"><span class="err">latest</span></code> tag.</p>
+We currently recommended using the <code class="highlight">development</code> tag, at least until they shift v4 to the <code class="highlight">latest</code> tag.</p>
 <p>If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see <a href="../info/docker-containers">Things to consider with Docker</a> to (hopefully) help clear up some things with how networking and access works with a Docker system.</p>
 <hr />
 <h2 id="helm">Helm<a class="headerlink" href="#helm" title="Permanent link">&para;</a></h2>
@@ -2043,7 +2041,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-08T02:33:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-08</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T01:16:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
     
   </small>
 </div>

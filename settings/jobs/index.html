@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/settings/jobs/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1481,91 +1479,91 @@ All of these tasks are on timers using Quartz CRON expressions.<br />
 <tbody>
 <tr>
 <td>Sonarr Sync</td>
-<td><code class="highlight"><span class="err">0 10 0/1 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">10</span> <span class="mf">0</span><span class="o">/</span><span class="mf">1</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every hour on the 10th minute</td>
 <td>Pulls in all of the monitored episodes, seasons and series into Ombi, so Ombi can have a quick lookup</td>
 </tr>
 <tr>
 <td>SickRage Sync</td>
-<td><code class="highlight"><span class="err">0 35 0/1 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">35</span> <span class="mf">0</span><span class="o">/</span><span class="mf">1</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every hour on the 35th minute</td>
 <td>Pulls in all of the monitored episodes, seasons and series into Ombi, so Ombi can have a quick lookup</td>
 </tr>
 <tr>
 <td>Radarr Sync</td>
-<td><code class="highlight"><span class="err">0 15 0/1 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">15</span> <span class="mf">0</span><span class="o">/</span><span class="mf">1</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every hour on the 15th minute</td>
 <td>Pulls in all of the monitored Movies into Ombi, so Ombi can have a quick lookup</td>
 </tr>
 <tr>
 <td>Lidarr Sync</td>
-<td><code class="highlight"><span class="err">0 40 0/1 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">40</span> <span class="mf">0</span><span class="o">/</span><span class="mf">1</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every hour on the 40th minute</td>
 <td>Pulls in all of the monitored Albums and Artists into Ombi, so Ombi can have a quick lookup</td>
 </tr>
 <tr>
 <td>CouchPotato Sync</td>
-<td><code class="highlight"><span class="err">0 30 0/1 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">30</span> <span class="mf">0</span><span class="o">/</span><span class="mf">1</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every hour on the 30th minute</td>
 <td>Pulls in all of the monitored Movies into Ombi, so Ombi can have a quick lookup</td>
 </tr>
 <tr>
 <td>Automatic Update</td>
-<td><code class="highlight"><span class="err">0 0 0/6 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">0</span><span class="o">/</span><span class="mf">6</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 6 hours</td>
 <td>Automatically updates</td>
 </tr>
 <tr>
 <td>Retry Failed Requests</td>
-<td><code class="highlight"><span class="err">0 0 6 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">6</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 1 day at 06:00</td>
 <td>Retries any requests that failed to send to the DVR application</td>
 </tr>
 <tr>
 <td>Plex Sync</td>
-<td><code class="highlight"><span class="err">0 0 2 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">2</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 1 day at 02:00</td>
 <td>Goes through Plex and updates the local index of what Plex has</td>
 </tr>
 <tr>
 <td>Plex Recently Added Sync</td>
-<td><code class="highlight"><span class="err">0 0/30 * 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span><span class="o">/</span><span class="mf">30</span> <span class="o">*</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 30 minutes</td>
 <td>Goes through the recently added items in Plex and Ombi keeps a local copy of what Plex has</td>
 </tr>
 <tr>
 <td>Emby Sync</td>
-<td><code class="highlight"><span class="err">0 5 0/1 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">5</span> <span class="mf">0</span><span class="o">/</span><span class="mf">1</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every hour on the 5th minute</td>
 <td>Goes through Emby and Ombi keeps a local copy of what Emby has</td>
 </tr>
 <tr>
 <td>User Importer</td>
-<td><code class="highlight"><span class="err">0 0 0 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">0</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 1 day at 00:00</td>
 <td>Imports the users from Plex/Emby so they can log into Ombi</td>
 </tr>
 <tr>
 <td>Refresh Metadata</td>
-<td><code class="highlight"><span class="err">0 0 12 1/3 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">12</span> <span class="mf">1</span><span class="o">/</span><span class="mf">3</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 3 days at 12:00</td>
 <td>Tries to find any missing metadata we might have for our cached data e.g. ImdbId</td>
 </tr>
 <tr>
 <td>Newsletter</td>
-<td><code class="highlight"><span class="err">0 0 12 ? * 6 *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">12</span> <span class="err">?</span> <span class="o">*</span> <span class="mf">6</span> <span class="o">*</span></code></td>
 <td>Every 7 days at 12:00</td>
 <td>Sends out the newsletter if enabled</td>
 </tr>
 <tr>
 <td>Issue Purge/Delete</td>
-<td><code class="highlight"><span class="err">0 0 0 1/1 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">0</span> <span class="mf">1</span><span class="o">/</span><span class="mf">1</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 1 day at 00:00</td>
 <td>Deleted issues after the specified time setup in the Issue settings</td>
 </tr>
 <tr>
 <td>Media Data Refresh</td>
-<td><code class="highlight"><span class="err">0 0 12 1/5 * ? *</span></code></td>
+<td><code class="highlight"><span class="mf">0</span> <span class="mf">0</span> <span class="mf">12</span> <span class="mf">1</span><span class="o">/</span><span class="mf">5</span> <span class="o">*</span> <span class="err">?</span> <span class="o">*</span></code></td>
 <td>Every 5 days at 12:00</td>
 <td>Deletes all the content we have previously cached with Plex/Emby and then re-caches that data</td>
 </tr>

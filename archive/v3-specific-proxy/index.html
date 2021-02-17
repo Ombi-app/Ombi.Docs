@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/archive/v3-specific-proxy/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1745,34 +1743,34 @@ If you're using a <strong>subdomain</strong> (ombi.example.com), replace all ins
 <p>To use nginx as a reverse proxy requires no extra modules, but it does require configuring.<br />
 In the configuration for your nginx site (nginx.conf for the default site), you'll need to add a 'block' for catching ombi as a subpath. If you wish to use a subdomain, there is an <a href="#nginx-with-subdomain">example further down</a>.<br />
 It goes directly below the default location, which usually looks like this:  </p>
-<div class="highlight"><pre><span></span><code><span class="err">location / {</span>
-<span class="err">    root   html;</span>
-<span class="err">    index  index.html index.htm;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>location / {
+    root   html;
+    index  index.html index.htm;
+}
 </code></pre></div>
 <p>The block to add looks like this (some changes can be made depending on your setup, but generally this works).<br />
 Note that if the machine hosting your application is not the same as your web server, then you'll need to replace "127.0.0.1" with the IP of your Ombi host.<br />
 Nginx is smart enough to match the "ombi" in your location to the "ombi" in your BaseURL.  </p>
-<div class="highlight"><pre><span></span><code><span class="err">location /ombi/ {</span>
-<span class="err">    proxy_pass http://127.0.0.1:5000;</span>
-<span class="err">    proxy_set_header Host $host;</span>
-<span class="err">    proxy_set_header X-Forwarded-Host $server_name;</span>
-<span class="err">    proxy_set_header X-Real-IP $remote_addr;</span>
-<span class="err">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
-<span class="err">    proxy_set_header X-Forwarded-Ssl on;</span>
-<span class="err">    proxy_set_header X-Forwarded-Proto $scheme;</span>
-<span class="err">    proxy_read_timeout  90;</span>
-<span class="err">    proxy_redirect http://127.0.0.1:5000 https://$host;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span><span class="o">/</span> <span class="p">{</span>
+    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span><span class="p">;</span>
+    <span class="err">proxy_set_header</span> <span class="err">Host</span> <span class="err">$host</span><span class="p">;</span>
+    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-Host</span> <span class="err">$server_name</span><span class="p">;</span>
+    <span class="err">proxy_set_header</span> <span class="err">X-Real-IP</span> <span class="err">$remote_addr</span><span class="p">;</span>
+    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-For</span> <span class="err">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-Ssl</span> <span class="err">on</span><span class="p">;</span>
+    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-Proto</span> <span class="err">$scheme</span><span class="p">;</span>
+    <span class="err">proxy_read_timeout</span>  <span class="err">90</span><span class="p">;</span>
+    <span class="err">proxy_redirect</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span> <span class="n">https</span><span class="o">://</span><span class="err">$</span><span class="n">host</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="nginx-with-subdomain">nginx with Subdomain<a class="headerlink" href="#nginx-with-subdomain" title="Permanent link">&para;</a></h3>
 <p>If you wish to use ombi.example.com rather than example.com/ombi, then you need to create a site per service.<br />
 You will also need to ensure that ombi is not configured to use a BaseURL.<br />
-Each site has a separate config file in the sites-available directory. By default, this is <code class="highlight"><span class="err">/etc/nginx/sites-available</span></code>.<br />
-We're going to use the site name as the file name, so in this case we need to put the following into   <code class="highlight"><span class="err">/etc/nginx/sites-available/ombi.example.com.conf</span></code><br />
-Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the <code class="highlight"><span class="err">listen 443</span></code>, generate, and apply the certificates using LetsEncrypt.<br />
-Of course, replace <code class="highlight"><span class="err">127.0.0.1:5000</span></code> with whatever IP and port combination you are using for Ombi.<br />
-Ensure your Application Url (in Ombi) matches the <code class="highlight"><span class="err">server_name</span></code> field.</p>
+Each site has a separate config file in the sites-available directory. By default, this is <code class="highlight">/etc/nginx/sites-available</code>.<br />
+We're going to use the site name as the file name, so in this case we need to put the following into   <code class="highlight">/etc/nginx/sites-available/ombi.example.com.conf</code><br />
+Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the <code class="highlight">listen 443</code>, generate, and apply the certificates using LetsEncrypt.<br />
+Of course, replace <code class="highlight"><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mf">5000</span></code> with whatever IP and port combination you are using for Ombi.<br />
+Ensure your Application Url (in Ombi) matches the <code class="highlight">server_name</code> field.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">server</span> <span class="p">{</span>
   <span class="err">listen</span> <span class="err">80</span><span class="p">;</span>
   <span class="n">listen</span> <span class="cp">[</span><span class="p">::</span><span class="cp">]</span><span class="p">:</span><span class="mi">80</span><span class="p">;</span>
@@ -1785,19 +1783,19 @@ Ensure your Application Url (in Ombi) matches the <code class="highlight"><span 
 <span class="err">}</span>
 </code></pre></div>
 <p>Disable support for Websockets. Disable these items by commenting them out:</p>
-<div class="highlight"><pre><span></span><code><span class="err"># Allow websockets on all servers</span>
-<span class="err">#proxy_http_version 1.1;</span>
-<span class="err">#proxy_set_header Upgrade $http_upgrade;</span>
-<span class="err">#proxy_set_header Connection &quot;upgrade&quot;;</span>
+<div class="highlight"><pre><span></span><code># Allow websockets on all servers
+#proxy_http_version 1.1;
+#proxy_set_header Upgrade $http_upgrade;
+#proxy_set_header Connection &quot;upgrade&quot;;
 </code></pre></div>
-<p>Once the config file has been created (<em>and saved</em>), we need to enable the site. This is done by symlinking the config file into the sites-enabled directory. The below commands will achieve this (obviously, replace the <code class="highlight"><span class="err">ombi.example.com</span></code> sections with whatever names you used for your setup.<br />
+<p>Once the config file has been created (<em>and saved</em>), we need to enable the site. This is done by symlinking the config file into the sites-enabled directory. The below commands will achieve this (obviously, replace the <code class="highlight">ombi.example.com</code> sections with whatever names you used for your setup.<br />
 <strong>Linux:</strong><br />
-<code class="highlight"><span class="err">ln -s /etc/nginx/sites-available/ombi.example.com.conf /etc/nginx/sites-enabled/ombi.example.com.conf</span></code><br />
+<code class="highlight">ln -s /etc/nginx/sites-available/ombi.example.com.conf /etc/nginx/sites-enabled/ombi.example.com.conf</code><br />
 <strong>Windows:</strong><br />
-<code class="highlight"><span class="err">mklink C:\nginx\conf\sites-enabled\ombi.example.com.conf C:\nginx\conf\sites-available\ombi.example.com.conf</span></code><br />
-We then restart nginx to load the new config file, at which point your system will be listening on <code class="highlight"><span class="c">http://ombi.example.com</span></code> for traffic (after you set up certbot, it will change to <code class="highlight"><span class="c">https://ombi.example.com</span></code>).<br />
+<code class="highlight">mklink C:\nginx\conf\sites-enabled\ombi.example.com.conf C:\nginx\conf\sites-available\ombi.example.com.conf</code><br />
+We then restart nginx to load the new config file, at which point your system will be listening on <code class="highlight">http://ombi.example.com</code> for traffic (after you set up certbot, it will change to <code class="highlight">https://ombi.example.com</code>).<br />
 <strong>Linux:</strong><br />
-<code class="highlight"><span class="err">service nginx restart</span></code><br />
+<code class="highlight">service nginx restart</code><br />
 <strong>Windows:</strong><br />
 <code class="highlight"><span class="n">nginx</span> <span class="o">-</span><span class="n">s</span> <span class="n">reload</span></code>  </p>
 <hr />
@@ -1818,13 +1816,13 @@ a2enmod proxy_html
 </code></pre></div>
 <p>In your Virtualhost configuration file you'll need to add a few things.<br />
 <em><strong>Note:</strong> VirtualHost configurations are usually under /etc/apache2/sites-enabled/</em>  </p>
-<p>Just below the <code class="highlight"><span class="err">DocumentRoot</span></code> entry:<br />
-<code class="highlight"><span class="err">ProxyPreserveHost On</span></code>  </p>
+<p>Just below the <code class="highlight">DocumentRoot</code> entry:<br />
+<code class="highlight">ProxyPreserveHost On</code>  </p>
 <p>You can then add the configuration for each item you wish to proxy.<br />
 There are two methods for doing this.<br />
 One is with a 'Location' section, the other is simply a direct mapping (the dirty way).<br />
-The mapping goes just before the <code class="highlight"><span class="err">&lt;/VirtualHost&gt;</span></code> closing tag, regardless of the method.<br />
-If you want to run ombi.example.com instead of site.example.com/ombi, then replace <code class="highlight"><span class="err">/ombi</span></code> with <code class="highlight"><span class="err">/</span></code> and drop the <code class="highlight"><span class="err">/ombi</span></code> from the end of the internal addresses, as well as removing the BaseURL from Ombi itself.</p>
+The mapping goes just before the <code class="highlight">&lt;/VirtualHost&gt;</code> closing tag, regardless of the method.<br />
+If you want to run ombi.example.com instead of site.example.com/ombi, then replace <code class="highlight">/ombi</code> with <code class="highlight">/</code> and drop the <code class="highlight">/ombi</code> from the end of the internal addresses, as well as removing the BaseURL from Ombi itself.</p>
 <h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;Location</span> <span class="err">/ombi</span><span class="nt">&gt;</span>
 Allow from 0.0.0.0 
@@ -1833,10 +1831,10 @@ ProxyPassReverse &quot;http://ip.of.ombi.host:5000/ombi&quot;
 <span class="nt">&lt;/Location&gt;</span>
 </code></pre></div>
 <h3 id="direct-mapping">Direct Mapping<a class="headerlink" href="#direct-mapping" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err">ProxyPass /ombi http://ip.of.ombi.host:5000/ombi</span>
-<span class="err">ProxyPassReverse /ombi http://ip.of.ombi.host:5000/ombi</span>
+<div class="highlight"><pre><span></span><code>ProxyPass /ombi http://ip.of.ombi.host:5000/ombi
+ProxyPassReverse /ombi http://ip.of.ombi.host:5000/ombi
 </code></pre></div>
-<p>Once all your changes are done, you'll need to run <code class="highlight"><span class="err">service apache2 restart</span></code> to make the changes go live.</p>
+<p>Once all your changes are done, you'll need to run <code class="highlight">service apache2 restart</code> to make the changes go live.</p>
 <hr />
 <h2 id="iis">IIS<a class="headerlink" href="#iis" title="Permanent link">&para;</a></h2>
 <p>NOTE: There are some extra steps involved with getting IIS to proxy things.<br />
@@ -1961,16 +1959,16 @@ You can find Caddy <a href="https://caddyserver.com/">here</a>, and their docs c
 An official docker image can be found <a href="https://hub.docker.com/r/abiosoft/caddy/">here</a>.   Otherwise you can direct install using a binary found <a href="https://github.com/caddyserver/caddy/releases">here</a>.</p>
 <p><em><strong>Note:</strong> The official binaries and Docker image do not include any of the DNS plugins required for wildcard certificates or DNS verification instead of port 80 verification. If your connection blocks port 80, you will need to build your own binary or image to include these.</em></p>
 <h3 id="subdirectory">Subdirectory<a class="headerlink" href="#subdirectory" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err">site.example.com {</span>
-<span class="err">    route /ombi* {</span>
-<span class="err">        reverse_proxy 127.0.0.1:5000</span>
-<span class="err">    }</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>site.example.com {
+    route /ombi* {
+        reverse_proxy 127.0.0.1:5000
+    }
+}
 </code></pre></div>
 <h3 id="subdomain">Subdomain<a class="headerlink" href="#subdomain" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err">ombi.example.com {</span>
-<span class="err">    reverse_proxy 127.0.0.1:5000</span>
-<span class="err">  }</span>
+<div class="highlight"><pre><span></span><code>ombi.example.com {
+    reverse_proxy 127.0.0.1:5000
+  }
 </code></pre></div>
 <h2 id="traefik">Traefik<a class="headerlink" href="#traefik" title="Permanent link">&para;</a></h2>
 <p>Traefik is a great reverse proxy option if you are using a container-based setup such as docker compose.<br />
@@ -1978,9 +1976,9 @@ You can find Traefik <a href="https://docs.traefik.io/">here</a>, and their gett
 For more information and examples on the usage of labels in docker compose (specific to traefik) go <a href="https://docs.traefik.io/user-guides/docker-compose/basic-example/">here</a>.<br />
 <em><strong>Note:</strong> The following configuration examples only apply to traefik version 2 and later.</em><br />
 <em><strong>Note 2:</strong> All examples contain additional labels not necessarily required for your setup such as wildcard SSL certificates via Let's Encrypt and SSL related headers.</em></p>
-<p>Adjust the values of <code class="highlight"><span class="err">traefik.docker.network=traefik_proxy</span></code>, <code class="highlight"><span class="err">traefik.http.routers.ombi.entrypoints=https</span></code> and <code class="highlight"><span class="err">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</span></code> to match your specific setup.</p>
+<p>Adjust the values of <code class="highlight">traefik.docker.network=traefik_proxy</code>, <code class="highlight">traefik.http.routers.ombi.entrypoints=https</code> and <code class="highlight">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</code> to match your specific setup.</p>
 <h3 id="traefik-with-subdomain">Traefik With Subdomain<a class="headerlink" href="#traefik-with-subdomain" title="Permanent link">&para;</a></h3>
-<p>The following configuration would make Ombi available at <code class="highlight"><span class="c">https://ombi.example.com</span></code>.</p>
+<p>The following configuration would make Ombi available at <code class="highlight">https://ombi.example.com</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
@@ -2001,8 +1999,8 @@ For more information and examples on the usage of labels in docker compose (spec
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
 </code></pre></div>
 <h3 id="traefik-with-subdirectory">Traefik With Subdirectory<a class="headerlink" href="#traefik-with-subdirectory" title="Permanent link">&para;</a></h3>
-<p>The following configuration would make Ombi available at <code class="highlight"><span class="c">https://example.com/ombi</span></code>.<br />
-<em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight"><span class="err">PathPrefix</span></code> instead of <code class="highlight"><span class="err">Path</span></code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight"><span class="err">Path Vs PathPrefix</span></code>.</em></p>
+<p>The following configuration would make Ombi available at <code class="highlight">https://example.com/ombi</code>.<br />
+<em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight">PathPrefix</code> instead of <code class="highlight">Path</code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight">Path Vs PathPrefix</code>.</em></p>
 <div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
@@ -2023,8 +2021,8 @@ For more information and examples on the usage of labels in docker compose (spec
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
 </code></pre></div>
 <h3 id="traefik-with-subdomain-and-subdirectory">Traefik With Subdomain and Subdirectory<a class="headerlink" href="#traefik-with-subdomain-and-subdirectory" title="Permanent link">&para;</a></h3>
-<p>The following configuration would make Ombi available at <code class="highlight"><span class="c">https://plex.example.com/request</span></code>.<br />
-<em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight"><span class="err">PathPrefix</span></code> instead of <code class="highlight"><span class="err">Path</span></code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight"><span class="err">Path Vs PathPrefix</span></code>.</em></p>
+<p>The following configuration would make Ombi available at <code class="highlight">https://plex.example.com/request</code>.<br />
+<em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight">PathPrefix</code> instead of <code class="highlight">Path</code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight">Path Vs PathPrefix</code>.</em></p>
 <div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>

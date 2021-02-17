@@ -15,7 +15,7 @@
       
         <link rel="canonical" href="https://docs.ombi.app/info/alternate-databases/">
       
-      <link rel="shortcut icon" href="../../assets/images/ombi/favicon.ico">
+      <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
@@ -83,8 +83,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-header-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -297,8 +296,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://docs.ombi.app" title="Ombi Docs" class="md-nav__button md-logo" aria-label="Ombi Docs">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../assets/logo/ombi-logo.png" alt="logo">
 
     </a>
     Ombi Docs
@@ -1780,10 +1778,10 @@
                 
                 <h1 id="alternate-database-options">Alternate Database Options<a class="headerlink" href="#alternate-database-options" title="Permanent link">&para;</a></h1>
 <p>Ombi supports multiple database types, not just sqlite.<br />
-The way this works is that Ombi looks for a <code class="highlight"><span class="err">database.json</span></code> file in the installation directory (or, if you specified a <code class="highlight"><span class="err">Storage Path</span></code> at startup, in that location e.g. AppData).<br />
+The way this works is that Ombi looks for a <code class="highlight">database.json</code> file in the installation directory (or, if you specified a <code class="highlight">Storage Path</code> at startup, in that location e.g. AppData).<br />
 If the file is not found then Ombi falls back to the default, creating or using existing SQLite databases in the Ombi directory.</p>
 <h2 id="databasejson">database.json<a class="headerlink" href="#databasejson" title="Permanent link">&para;</a></h2>
-<p>The <code class="highlight"><span class="err">database.json</span></code> file needs to look like the below example (replacing usernames, passwords, and server addresses to match your own mysql server as needed).</p>
+<p>The <code class="highlight">database.json</code> file needs to look like the below example (replacing usernames, passwords, and server addresses to match your own mysql server as needed).</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
@@ -1826,7 +1824,7 @@ You can see what each database is used for <a href="../faq/#database-uses">here<
 <h3 id="mysqlmariadb">MySql/MariaDB<a class="headerlink" href="#mysqlmariadb" title="Permanent link">&para;</a></h3>
 <p>Supported versions:<br />
 <a href="https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions">https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions</a></p>
-<p>Please ensure that your database character set is set to <code class="highlight"><span class="err">utf8mb4</span></code>.<br />
+<p>Please ensure that your database character set is set to <code class="highlight">utf8mb4</code>.<br />
 You can check your db charset by running the following query:<br />
 <code class="highlight"><span class="n">show</span> <span class="n">variables</span> <span class="n">like</span> <span class="s1">&#39;character_set_database&#39;</span><span class="p">;</span></code><br />
 You can use a separate database per function (like sqlite does, with the 3 db files), or point all of them at the same mysql database, as each table has a unique name regardless.<br />
@@ -1867,7 +1865,7 @@ You can use a separate database per function (like sqlite does, with the 3 db fi
 </code></pre></div>
 <h4 id="create-database-and-user">Create database and user<a class="headerlink" href="#create-database-and-user" title="Permanent link">&para;</a></h4>
 <p>On the MySQL/MariaDB server we will create the database and the user that we will use later.<br />
-<em>You need to</em> <code class="highlight"><span class="err">GRANT ALL PRIVILEGES</span></code> <em>for every database you create.</em></p>
+<em>You need to</em> <code class="highlight">GRANT ALL PRIVILEGES</code> <em>for every database you create.</em></p>
 <p>This is done in the mysql console (or phpmyadmin if you have that configured).</p>
 <h5>Single Database permissions</h5>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
@@ -1887,7 +1885,7 @@ You can use a separate database per function (like sqlite does, with the 3 db fi
 <h4 id="functionality">Functionality<a class="headerlink" href="#functionality" title="Permanent link">&para;</a></h4>
 <p>So long as:</p>
 <ul>
-<li><code class="highlight"><span class="err">database.json</span></code> exists</li>
+<li><code class="highlight">database.json</code> exists</li>
 <li>The details within it are correct</li>
 <li>The database(s) exist</li>
 <li>The user(s) exist</li>
@@ -1910,59 +1908,59 @@ After clicking you will be presented with a new page asking you to login or sign
 <ol>
 <li>Choose a Setup Type<br />
 Make sure Custom is selected and click Next.<br />
-<img alt="MySQL Setup Type" loading="lazy" src="../../assets/images/embeds/mysql_setup_type.png" />  </li>
+<img alt="MySQL Setup Type" loading="lazy" src="../../assets/images/mysql_setup_type.png" />  </li>
 <li>Select Products and Features<br />
 Select the following products to install:  <ul>
 <li>MySQL Server  </li>
 <li>MySQL Workbench
 Click on next to continue.<br />
-<img alt="Features to Install" loading="lazy" src="../../assets/images/embeds/mysql_features.png" /></li>
+<img alt="Features to Install" loading="lazy" src="../../assets/images/mysql_features.png" /></li>
 </ul>
 </li>
 <li>Installation<br />
 It could give you a message that some requirements are missing.<br />
 This is fine, since it will install those requirements. Click Execute. When the installation is finished, click on next.<br />
-<img alt="MySQL install" loading="lazy" src="../../assets/images/embeds/mysql_install.png" /></li>
+<img alt="MySQL install" loading="lazy" src="../../assets/images/mysql_install.png" /></li>
 </ol>
 <h3 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h3>
 <p>Click Next.<br />
-<img alt="MySQL Configuration" loading="lazy" src="../../assets/images/embeds/mysql_configure_1.png" />  </p>
+<img alt="MySQL Configuration" loading="lazy" src="../../assets/images/mysql_configure_1.png" />  </p>
 <h4 id="high-availability">High Availability<a class="headerlink" href="#high-availability" title="Permanent link">&para;</a></h4>
 <p>Make sure the Standalone MySQL Server is selected and click Next.<br />
-<img alt="MySQL Availability" loading="lazy" src="../../assets/images/embeds/mysql_configure_2.png" />  </p>
+<img alt="MySQL Availability" loading="lazy" src="../../assets/images/mysql_configure_2.png" />  </p>
 <h4 id="type-and-networking">Type and Networking<a class="headerlink" href="#type-and-networking" title="Permanent link">&para;</a></h4>
 <p>You now see the default settings.<br />
 <strong>Nothing <em>needs</em> to be changed</strong>, but you can change the port if needed. Make sure that you don't forget the port number in the database.json when you are going to migrate!<br />
 Click Next.<br />
-<img alt="MySQL Networking" loading="lazy" src="../../assets/images/embeds/mysql_configure_3.png" />  </p>
+<img alt="MySQL Networking" loading="lazy" src="../../assets/images/mysql_configure_3.png" />  </p>
 <h4 id="authentication-method">Authentication Method<a class="headerlink" href="#authentication-method" title="Permanent link">&para;</a></h4>
 <p>We need to change the default setting to "Use Legacy Authentication Method".<br />
 Since this <em>is</em> a security risk I would advise closing the port (3306 default) in your modem.<br />
-<img alt="MySQL Authentication" loading="lazy" src="../../assets/images/embeds/mysql_configure_4.png" />  </p>
+<img alt="MySQL Authentication" loading="lazy" src="../../assets/images/mysql_configure_4.png" />  </p>
 <h4 id="account-and-roles">Account and Roles<a class="headerlink" href="#account-and-roles" title="Permanent link">&para;</a></h4>
 <p>We need to set a root password which allows us to connect to MySQL Server. This password is important, as it is needed for creating databases and potential future maintenance on it.<br />
 Because of this, make sure you don't forget the password!<br />
 We don't need to create users here - that's done in the migration process above.<br />
-<img alt="MySQL Accounts" loading="lazy" src="../../assets/images/embeds/mysql_configure_5.png" />  </p>
+<img alt="MySQL Accounts" loading="lazy" src="../../assets/images/mysql_configure_5.png" />  </p>
 <h4 id="windows-service">Windows Service<a class="headerlink" href="#windows-service" title="Permanent link">&para;</a></h4>
 <p>You can keep the default settings here and click on Next.<br />
-<img alt="MySQL Service" loading="lazy" src="../../assets/images/embeds/mysql_configure_6.png" />  </p>
+<img alt="MySQL Service" loading="lazy" src="../../assets/images/mysql_configure_6.png" />  </p>
 <h4 id="apply-configuration">Apply Configuration<a class="headerlink" href="#apply-configuration" title="Permanent link">&para;</a></h4>
 <p>Now it is time to actually apply all the configuration we just set. Hit Execute.<br />
-<img alt="MySQL Apply" loading="lazy" src="../../assets/images/embeds/mysql_configure_7.png" />  </p>
+<img alt="MySQL Apply" loading="lazy" src="../../assets/images/mysql_configure_7.png" />  </p>
 <p>Once it is done, hit Finish.<br />
-<img alt="MySQL Done" loading="lazy" src="../../assets/images/embeds/mysql_configure_8.png" />  </p>
+<img alt="MySQL Done" loading="lazy" src="../../assets/images/mysql_configure_8.png" />  </p>
 <hr />
 <h4 id="using-mysql-workbench">Using MySQL Workbench<a class="headerlink" href="#using-mysql-workbench" title="Permanent link">&para;</a></h4>
 <p>In order to run the sql commands above, you'll need to use MySQL workbench.<br />
 Hit start and type MySQL Workbench. Run the application.</p>
-<p><img alt="MySQL Workbench" loading="lazy" src="../../assets/images/embeds/mysql_workbench_link.png" />  </p>
+<p><img alt="MySQL Workbench" loading="lazy" src="../../assets/images/mysql_workbench_link.png" />  </p>
 <p>Click on the grey block which is named: "Local Instance". It will pop-up a box to enter your root password which you set in the installation of MySQL Server.<br />
 Once you have entered the root password it will ask if you wanna store your password in the vault. I would recommend to do so, so you don't need to enter your root password again when you connect.</p>
-<p><img alt="MySQL Connection" loading="lazy" src="../../assets/images/embeds/mysql_workbench_connection.png" />  </p>
+<p><img alt="MySQL Connection" loading="lazy" src="../../assets/images/mysql_workbench_connection.png" />  </p>
 <p>You can now see the workbench which is displaying your MySQL server.<br />
 Enter the queries/commands you wish to run into the query editor on screen, then click on the Lightning Bolt above the code to execute them.</p>
-<p><img alt="MySQL Query" loading="lazy" src="../../assets/images/embeds/mysql_workbench_query.png" />  </p>
+<p><img alt="MySQL Query" loading="lazy" src="../../assets/images/mysql_workbench_query.png" />  </p>
 <p>We are done with MySQL Server and the MySQL workbench. One quick tip is that on the left side (where you found Users and Privileges) there is a Dashboard.<br />
 This will show you what kind of activity is running on your MySQL Server, and can be handy to check if Ombi has a connection or not.</p>
 <hr />
@@ -1974,7 +1972,7 @@ This will show you what kind of activity is running on your MySQL Server, and ca
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-08T02:33:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-08</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T01:16:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
     
   </small>
 </div>
