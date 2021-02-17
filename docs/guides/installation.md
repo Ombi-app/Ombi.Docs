@@ -11,7 +11,7 @@ For considerations when migrating an existing install rather than starting fresh
 
 ## Recommended install workflow
 
-1. Install Ombi for your preferred OS using the steps provided below.
+1. Install Ombi for your preferred OS using the steps provided below.  
 If you are migrating systems, rather than starting fresh, stop here and look at [Migrating Systems](#migrating-systems).
 2. Configure your [install-specific settings](../../settings/customization) like the application url you'll be using externally.
 3. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../../info/reverse-proxy).
@@ -71,7 +71,7 @@ Be sure to adjust directories to your Ombi install location
 
 ![Ombi NSSM with Port](../assets/images/nssm_service_with_port.png){: loading=lazy }  
 
-### Install as a Service with Windows Task Scheduler
+### Run automatically with Windows Task Scheduler
 
 ~~Allows automatic updating on windows:~~ updater currently broken.
 
@@ -95,7 +95,9 @@ As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if yo
 
 **_Note: The next time you restart your PC, Task Scheduler will run ombi for you._**
 
-[How to WITH PICTURES!](https://imgur.com/a/oXEWW8z)
+#### Scheduled task (with pictures)
+
+[How to WITH PICTURES!](../schedule-with-pictures)
 
 ### Windows Firewall
 

@@ -163,6 +163,7 @@ nav:
     - Preferences: guides/preferences.md
     - Requests list: guides/requests-list.md
     - User Management: guides/usermanagement.md
+    - Scheduled Windows Task: guides/schedule-with-pictures.md
   - Development:
     - Building Ombi: development/building-ombi.md
     - The Docs: development/docs.md
