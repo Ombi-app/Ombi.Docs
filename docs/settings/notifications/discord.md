@@ -12,7 +12,7 @@ You can find an official guide for this [here](https://support.discordapp.com/hc
 1. Set the user's 'Notification Preferences' to the person's discord user ID.  
 This can be found by right clicking their name in Discord and selecting "Copy ID".  
 (Only visible while in Developer Mode - this can be enabled under "Settings > Appearance".)  
-![User ID Placement](../../assets/images/embeds/discord_user_id.png){: loading=lazy }
+![User ID Placement](../../assets/images/discord_user_id.png){: loading=lazy }
 2. Add `<@{UserPreference}>` where you want to mention in your notification template.  
 Refer to the [Notification Template Variables](../../../info/notification-template-variables) for information on formatting your notifications.
 

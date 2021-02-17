@@ -16,8 +16,8 @@ theme:
   features:
     - navigation.tabs
     - navigation.instant
-  favicon: assets/images/ombi/favicon.ico
-#  logo: assets/images/apple-touch-icon.png
+  favicon: assets/logo/favicon.ico
+  logo: assets/logo/ombi-logo.png
   palette:
     scheme: preference
     #primary: amber #Not sure on this. Looks kinda nasty.
