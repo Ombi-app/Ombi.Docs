@@ -5,7 +5,7 @@ For running Ombi v4 on "Docker for Windows" (sic) with NGINX running natively on
 
 ```conf
 # Ombi v4 Subdomain
-# Replace DOMAIN.TLD with your domain
+# Replace EXAMPLE.COM with your domain
 server {
     listen 80;
     server_name ombi.*;
@@ -14,9 +14,9 @@ server {
 server {
     listen 443 ssl http2;
     server_name ombi.*;
-        server_name ombi.DOMAIN.TLD;
-        ssl_certificate /nginx/ssl/DOMAIN.TLD-chain.pem;
-        ssl_certificate_key /nginx/ssl/DOMAIN.TLD-key.pem;
+        server_name ombi.EXAMPLE.COM;
+        ssl_certificate /nginx/ssl/EXAMPLE.COM-chain.pem;
+        ssl_certificate_key /nginx/ssl/EXAMPLE.COM-key.pem;
         ssl_session_cache builtin:1000;
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
         ssl_prefer_server_ciphers on;
