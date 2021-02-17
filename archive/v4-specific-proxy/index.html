@@ -1518,7 +1518,7 @@
 <p>This is an NGINX subdomain reverse proxy that <strong>DOES NOT</strong> use baseurl.<br />
 For running Ombi v4 on "Docker for Windows" (sic) with NGINX running natively on Windows 10 via <a href="https://github.com/elmerfdz/OrganizrInstaller">OrganizrInstaller</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Ombi v4 Subdomain</span>
-<span class="c1"># Replace DOMAIN.TLD with your domain</span>
+<span class="c1"># Replace EXAMPLE.COM with your domain</span>
 <span class="n">server</span> <span class="p">{</span>
     <span class="n">listen</span> <span class="mi">80</span><span class="p">;</span>
     <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.*</span><span class="p">;</span>
@@ -1527,9 +1527,9 @@ For running Ombi v4 on "Docker for Windows" (sic) with NGINX running natively on
 <span class="n">server</span> <span class="p">{</span>
     <span class="n">listen</span> <span class="mi">443</span> <span class="n">ssl</span> <span class="n">http2</span><span class="p">;</span>
     <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.*</span><span class="p">;</span>
-        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.</span><span class="n">DOMAIN</span><span class="o">.</span><span class="n">TLD</span><span class="p">;</span>
-        <span class="n">ssl_certificate</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">DOMAIN</span><span class="o">.</span><span class="n">TLD</span><span class="o">-</span><span class="n">chain</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
-        <span class="n">ssl_certificate_key</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">DOMAIN</span><span class="o">.</span><span class="n">TLD</span><span class="o">-</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
+        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="p">;</span>
+        <span class="n">ssl_certificate</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">chain</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
+        <span class="n">ssl_certificate_key</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
         <span class="n">ssl_session_cache</span> <span class="n">builtin</span><span class="p">:</span><span class="mi">1000</span><span class="p">;</span>
         <span class="n">ssl_protocols</span> <span class="n">TLSv1</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">1</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">2</span><span class="p">;</span>
         <span class="n">ssl_prefer_server_ciphers</span> <span class="n">on</span><span class="p">;</span>
@@ -1623,7 +1623,7 @@ For running Ombi v4 on "Docker for Windows" (sic) with NGINX running natively on
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-06T04:06:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T02:43:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
     
   </small>
 </div>
