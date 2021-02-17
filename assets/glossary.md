@@ -4,3 +4,4 @@
 *[CSS]: Cascading Style Sheet, used for storing common HTML formatting.
 *[SQL]: Structured Query Language (a type of database).
 *[MIME]: Multipart Internet Mail Extension.
+*[oauth]: An open standard for authentication.
