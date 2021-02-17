@@ -48,7 +48,7 @@ This configuration is if you want to run a subdirectory configuration. Note, Omb
     client_max_body_size 10m;
     client_body_buffer_size 128k;
 
-    #Timeout if the real server is dead
+    # Timeout if the real server is dead
     proxy_next_upstream error timeout invalid_header http_500 http_502 http_503;
 
     # Advanced Proxy Config
