@@ -440,9 +440,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-as-a-service-with-windows-task-scheduler" class="md-nav__link">
-    Install as a Service with Windows Task Scheduler
+  <a href="#run-automatically-with-windows-task-scheduler" class="md-nav__link">
+    Run automatically with Windows Task Scheduler
   </a>
+  
+    <nav class="md-nav" aria-label="Run automatically with Windows Task Scheduler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-task-with-pictures" class="md-nav__link">
+    Scheduled task (with pictures)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1354,9 +1367,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-as-a-service-with-windows-task-scheduler" class="md-nav__link">
-    Install as a Service with Windows Task Scheduler
+  <a href="#run-automatically-with-windows-task-scheduler" class="md-nav__link">
+    Run automatically with Windows Task Scheduler
   </a>
+  
+    <nav class="md-nav" aria-label="Run automatically with Windows Task Scheduler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-task-with-pictures" class="md-nav__link">
+    Scheduled task (with pictures)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1563,6 +1589,18 @@
     <li class="md-nav__item">
       <a href="../usermanagement/" class="md-nav__link">
         User Management
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedule-with-pictures/" class="md-nav__link">
+        Scheduled Windows Task
       </a>
     </li>
   
@@ -1782,9 +1820,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-as-a-service-with-windows-task-scheduler" class="md-nav__link">
-    Install as a Service with Windows Task Scheduler
+  <a href="#run-automatically-with-windows-task-scheduler" class="md-nav__link">
+    Run automatically with Windows Task Scheduler
   </a>
+  
+    <nav class="md-nav" aria-label="Run automatically with Windows Task Scheduler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-task-with-pictures" class="md-nav__link">
+    Scheduled task (with pictures)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1894,7 +1945,7 @@ For considerations when migrating an existing install rather than starting fresh
 <hr />
 <h2 id="recommended-install-workflow">Recommended install workflow<a class="headerlink" href="#recommended-install-workflow" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Install Ombi for your preferred OS using the steps provided below.
+<li>Install Ombi for your preferred OS using the steps provided below.<br />
 If you are migrating systems, rather than starting fresh, stop here and look at <a href="#migrating-systems">Migrating Systems</a>.</li>
 <li>Configure your <a href="../../settings/customization">install-specific settings</a> like the application url you'll be using externally.</li>
 <li>Configure external access to Ombi. We recommend using SSL and a <a href="../../info/reverse-proxy">reverse proxy</a>.</li>
@@ -1942,7 +1993,7 @@ If you are running docker, place these files into the folder you've passed into 
 <strong>Start directory:</strong> <code class="highlight">C:\Tools\Ombi</code><br />
 <strong>Arguments:</strong> <code class="highlight">--host &quot;http://*:PORTNUMBER&quot;</code></p>
 <p><img alt="Ombi NSSM with Port" loading="lazy" src="../../assets/images/nssm_service_with_port.png" />  </p>
-<h3 id="install-as-a-service-with-windows-task-scheduler">Install as a Service with Windows Task Scheduler<a class="headerlink" href="#install-as-a-service-with-windows-task-scheduler" title="Permanent link">&para;</a></h3>
+<h3 id="run-automatically-with-windows-task-scheduler">Run automatically with Windows Task Scheduler<a class="headerlink" href="#run-automatically-with-windows-task-scheduler" title="Permanent link">&para;</a></h3>
 <p>~~Allows automatic updating on windows:~~ updater currently broken.</p>
 <p>As an alternative to NSSM, you can use Task Scheduler to run <code class="highlight">Ombi.exe</code> as if you were double clicking it and running it like a regular executable, except it's hidden from the task bar and can only be closed by the Task Manager or the Task Scheduler.</p>
 <ol>
@@ -1963,7 +2014,8 @@ If you are running docker, place these files into the folder you've passed into 
 <li>Click <code class="highlight">Task Scheduler Library</code> right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at <a href="http://localhost:5000">http://localhost:5000</a> !</li>
 </ol>
 <p><strong><em>Note: The next time you restart your PC, Task Scheduler will run ombi for you.</em></strong></p>
-<p><a href="https://imgur.com/a/oXEWW8z">How to WITH PICTURES!</a></p>
+<h4 id="scheduled-task-with-pictures">Scheduled task (with pictures)<a class="headerlink" href="#scheduled-task-with-pictures" title="Permanent link">&para;</a></h4>
+<p><a href="../schedule-with-pictures">How to WITH PICTURES!</a></p>
 <h3 id="windows-firewall">Windows Firewall<a class="headerlink" href="#windows-firewall" title="Permanent link">&para;</a></h3>
 <p>To allow a port through Windows Firewall, you have a few options.
 Note that this is not the preferred method of access, and a <a href="../../info/reverse-proxy">Reverse Proxy</a> is recommended instead.<br />
@@ -2041,7 +2093,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T01:16:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T02:06:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
     
   </small>
 </div>

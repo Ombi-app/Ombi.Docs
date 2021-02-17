@@ -13,14 +13,14 @@
         <meta name="author" content="Ombi-App">
       
       
-        <link rel="canonical" href="https://docs.ombi.app/info/alternate-databases/">
+        <link rel="canonical" href="https://docs.ombi.app/guides/schedule-with-pictures/">
       
       <link rel="shortcut icon" href="../../assets/logo/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
     
     
       
-        <title>Alternate Databases - Ombi Docs</title>
+        <title>Scheduled Windows Task - Ombi Docs</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#alternate-database-options" class="md-skip">
+        <a href="#task-scheduler-with-pictures" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Alternate Databases
+              Scheduled Windows Task
             
           </span>
         </div>
@@ -183,7 +183,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../guides/installation/" class="md-tabs__link">
+      <a href="../installation/" class="md-tabs__link">
         Getting Started
       </a>
     </li>
@@ -209,15 +209,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../info/alternate-databases/" class="md-tabs__link">
         Info
       </a>
     </li>
@@ -227,13 +225,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../guides/installation/" class="md-tabs__link">
+      <a href="../installation/" class="md-tabs__link md-tabs__link--active">
         Guides
       </a>
     </li>
@@ -362,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -374,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/updating/" class="md-nav__link">
+      <a href="../updating/" class="md-nav__link">
         Updating
       </a>
     </li>
@@ -872,14 +872,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
       
       <label class="md-nav__link" for="nav-4">
         Info
@@ -896,206 +894,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Alternate Databases
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../info/alternate-databases/" class="md-nav__link">
         Alternate Databases
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#databasejson" class="md-nav__link">
-    database.json
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-databases" class="md-nav__link">
-    Supported Databases
-  </a>
-  
-    <nav class="md-nav" aria-label="Supported Databases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sqlite" class="md-nav__link">
-    SQLite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysqlmariadb" class="md-nav__link">
-    MySql/MariaDB
-  </a>
-  
-    <nav class="md-nav" aria-label="MySql/MariaDB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-database" class="md-nav__link">
-    Single Database
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-databases" class="md-nav__link">
-    Multiple Databases
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-database-and-user" class="md-nav__link">
-    Create database and user
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#functionality" class="md-nav__link">
-    Functionality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#migration" class="md-nav__link">
-    Migration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-mysql-on-windows" class="md-nav__link">
-    Installing MySQL on Windows
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing MySQL on Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure" class="md-nav__link">
-    Configure
-  </a>
-  
-    <nav class="md-nav" aria-label="Configure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#high-availability" class="md-nav__link">
-    High Availability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-and-networking" class="md-nav__link">
-    Type and Networking
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#authentication-method" class="md-nav__link">
-    Authentication Method
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#account-and-roles" class="md-nav__link">
-    Account and Roles
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-service" class="md-nav__link">
-    Windows Service
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#apply-configuration" class="md-nav__link">
-    Apply Configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-mysql-workbench" class="md-nav__link">
-    Using MySQL Workbench
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1105,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-information/" class="md-nav__link">
+      <a href="../../info/api-information/" class="md-nav__link">
         API Information
       </a>
     </li>
@@ -1117,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backing-up/" class="md-nav__link">
+      <a href="../../info/backing-up/" class="md-nav__link">
         Backing Up
       </a>
     </li>
@@ -1129,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common-errors/" class="md-nav__link">
+      <a href="../../info/common-errors/" class="md-nav__link">
         Common Errors
       </a>
     </li>
@@ -1141,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../common-themes/" class="md-nav__link">
+      <a href="../../info/common-themes/" class="md-nav__link">
         Common Themes
       </a>
     </li>
@@ -1153,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker-containers/" class="md-nav__link">
+      <a href="../../info/docker-containers/" class="md-nav__link">
         Docker Containers
       </a>
     </li>
@@ -1165,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../../info/faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -1177,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../notification-template-variables/" class="md-nav__link">
+      <a href="../../info/notification-template-variables/" class="md-nav__link">
         Notification Variables
       </a>
     </li>
@@ -1189,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ombi-tautulli/" class="md-nav__link">
+      <a href="../../info/ombi-tautulli/" class="md-nav__link">
         Ombi & Tautulli
       </a>
     </li>
@@ -1201,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../request-workflow/" class="md-nav__link">
+      <a href="../../info/request-workflow/" class="md-nav__link">
         Request Flow
       </a>
     </li>
@@ -1213,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reverse-proxy/" class="md-nav__link">
+      <a href="../../info/reverse-proxy/" class="md-nav__link">
         Reverse Proxying
       </a>
     </li>
@@ -1225,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roles-and-notifications/" class="md-nav__link">
+      <a href="../../info/roles-and-notifications/" class="md-nav__link">
         Roles and Notifications
       </a>
     </li>
@@ -1237,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../startup-parameters/" class="md-nav__link">
+      <a href="../../info/startup-parameters/" class="md-nav__link">
         Startup Parameters
       </a>
     </li>
@@ -1249,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/feature-suggestions/" class="md-nav__link">
+      <a href="../feature-suggestions/" class="md-nav__link">
         Suggesting Features
       </a>
     </li>
@@ -1261,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-roles/" class="md-nav__link">
+      <a href="../../info/user-roles/" class="md-nav__link">
         User Roles
       </a>
     </li>
@@ -1280,12 +1083,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
       
       <label class="md-nav__link" for="nav-5">
         Guides
@@ -1304,7 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         Installation
       </a>
     </li>
@@ -1316,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/migrating-databases/" class="md-nav__link">
+      <a href="../migrating-databases/" class="md-nav__link">
         Migrating Databases
       </a>
     </li>
@@ -1328,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/mobile-app/" class="md-nav__link">
+      <a href="../mobile-app/" class="md-nav__link">
         Mobile App
       </a>
     </li>
@@ -1340,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/feature-suggestions/" class="md-nav__link">
+      <a href="../feature-suggestions/" class="md-nav__link">
         Suggesting Features
       </a>
     </li>
@@ -1352,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/updating/" class="md-nav__link">
+      <a href="../updating/" class="md-nav__link">
         Updating
       </a>
     </li>
@@ -1364,7 +1169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/discover/" class="md-nav__link">
+      <a href="../discover/" class="md-nav__link">
         Discover
       </a>
     </li>
@@ -1376,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/donate/" class="md-nav__link">
+      <a href="../donate/" class="md-nav__link">
         Donate
       </a>
     </li>
@@ -1388,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/issues/" class="md-nav__link">
+      <a href="../issues/" class="md-nav__link">
         Issues
       </a>
     </li>
@@ -1400,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/preferences/" class="md-nav__link">
+      <a href="../preferences/" class="md-nav__link">
         Preferences
       </a>
     </li>
@@ -1412,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/requests-list/" class="md-nav__link">
+      <a href="../requests-list/" class="md-nav__link">
         Requests list
       </a>
     </li>
@@ -1424,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/usermanagement/" class="md-nav__link">
+      <a href="../usermanagement/" class="md-nav__link">
         User Management
       </a>
     </li>
@@ -1434,11 +1239,20 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../guides/schedule-with-pictures/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Scheduled Windows Task
       </a>
+      
     </li>
   
 
@@ -1601,178 +1415,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#databasejson" class="md-nav__link">
-    database.json
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#supported-databases" class="md-nav__link">
-    Supported Databases
-  </a>
-  
-    <nav class="md-nav" aria-label="Supported Databases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sqlite" class="md-nav__link">
-    SQLite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mysqlmariadb" class="md-nav__link">
-    MySql/MariaDB
-  </a>
-  
-    <nav class="md-nav" aria-label="MySql/MariaDB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-database" class="md-nav__link">
-    Single Database
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiple-databases" class="md-nav__link">
-    Multiple Databases
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-database-and-user" class="md-nav__link">
-    Create database and user
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#functionality" class="md-nav__link">
-    Functionality
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#migration" class="md-nav__link">
-    Migration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installing-mysql-on-windows" class="md-nav__link">
-    Installing MySQL on Windows
-  </a>
-  
-    <nav class="md-nav" aria-label="Installing MySQL on Windows">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#download" class="md-nav__link">
-    Download
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install" class="md-nav__link">
-    Install
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configure" class="md-nav__link">
-    Configure
-  </a>
-  
-    <nav class="md-nav" aria-label="Configure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#high-availability" class="md-nav__link">
-    High Availability
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#type-and-networking" class="md-nav__link">
-    Type and Networking
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#authentication-method" class="md-nav__link">
-    Authentication Method
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#account-and-roles" class="md-nav__link">
-    Account and Roles
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows-service" class="md-nav__link">
-    Windows Service
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#apply-configuration" class="md-nav__link">
-    Apply Configuration
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-mysql-workbench" class="md-nav__link">
-    Using MySQL Workbench
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1783,199 +1425,40 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/info/alternate-databases.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/guides/schedule-with-pictures.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="alternate-database-options">Alternate Database Options<a class="headerlink" href="#alternate-database-options" title="Permanent link">&para;</a></h1>
-<p>Ombi supports multiple database types, not just sqlite.<br />
-The way this works is that Ombi looks for a <code class="highlight">database.json</code> file in the installation directory (or, if you specified a <code class="highlight">Storage Path</code> at startup, in that location e.g. AppData).<br />
-If the file is not found then Ombi falls back to the default, creating or using existing SQLite databases in the Ombi directory.</p>
-<h2 id="databasejson">database.json<a class="headerlink" href="#databasejson" title="Permanent link">&para;</a></h2>
-<p>The <code class="highlight">database.json</code> file needs to look like the below example (replacing usernames, passwords, and server addresses to match your own mysql server as needed).</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Server=192.168.1.7;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=C:/tmp/Settings.db&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=C:/tmp/External.db&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>As you can see you can specify a database type and a connectionstring per database that Ombi has.
-You can see what each database is used for <a href="../faq/#database-uses">here</a>.</p>
-<hr />
-<h2 id="supported-databases">Supported Databases<a class="headerlink" href="#supported-databases" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>ConnectionString Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SQLite</td>
-<td>Data Source=C:/tmp/Ombi.db</td>
-</tr>
-<tr>
-<td>MySQL/MariaDB</td>
-<td>Server=localhost;Database=Ombi;User=root;Password=123456;</td>
-</tr>
-</tbody>
-</table>
-<h3 id="sqlite">SQLite<a class="headerlink" href="#sqlite" title="Permanent link">&para;</a></h3>
-<p>The default. This requires no database.json file, and checks for the relevant db files in the application directory.  </p>
-<h3 id="mysqlmariadb">MySql/MariaDB<a class="headerlink" href="#mysqlmariadb" title="Permanent link">&para;</a></h3>
-<p>Supported versions:<br />
-<a href="https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions">https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions</a></p>
-<p>Please ensure that your database character set is set to <code class="highlight">utf8mb4</code>.<br />
-You can check your db charset by running the following query:<br />
-<code class="highlight"><span class="n">show</span> <span class="n">variables</span> <span class="n">like</span> <span class="s1">&#39;character_set_database&#39;</span><span class="p">;</span></code><br />
-You can use a separate database per function (like sqlite does, with the 3 db files), or point all of them at the same mysql database, as each table has a unique name regardless.<br />
-<em>It is up to you whether you use separate databases for each. For people unfamiliar with mysql, it is much easier to drop a database than to drop specific tables.</em></p>
-<h4 id="single-database">Single Database<a class="headerlink" href="#single-database" title="Permanent link">&para;</a></h4>
-<p>This example shows using a single mysql "ombi" database for all 'sub' databases (tables).  </p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=localhost;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=localhost;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=localhost;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h4 id="multiple-databases">Multiple Databases<a class="headerlink" href="#multiple-databases" title="Permanent link">&para;</a></h4>
-<p>This example shows using a separate mysql database for each 'sub' database (tables).  </p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=localhost;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=localhost;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=localhost;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h4 id="create-database-and-user">Create database and user<a class="headerlink" href="#create-database-and-user" title="Permanent link">&para;</a></h4>
-<p>On the MySQL/MariaDB server we will create the database and the user that we will use later.<br />
-<em>You need to</em> <code class="highlight">GRANT ALL PRIVILEGES</code> <em>for every database you create.</em></p>
-<p>This is done in the mysql console (or phpmyadmin if you have that configured).</p>
-<h5>Single Database permissions</h5>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;ombi&#39;</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n n-Quoted">`Ombi`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-</code></pre></div>
-<h5>Multiple Database permissions</h5>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi_Settings`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi_External`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;ombi&#39;</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n n-Quoted">`Ombi`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n n-Quoted">`Ombi_Settings`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n n-Quoted">`Ombi_External`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-</code></pre></div>
-<hr />
-<h4 id="functionality">Functionality<a class="headerlink" href="#functionality" title="Permanent link">&para;</a></h4>
-<p>So long as:</p>
-<ul>
-<li><code class="highlight">database.json</code> exists</li>
-<li>The details within it are correct</li>
-<li>The database(s) exist</li>
-<li>The user(s) exist</li>
-</ul>
-<p>Restarting ombi should generate the tables and start up ombi like it would normally.</p>
-<p><em>This will not migrate any existing settings.</em><br />
-You effectively have a clean ombi install.</p>
-<h4 id="migration">Migration<a class="headerlink" href="#migration" title="Permanent link">&para;</a></h4>
-<p>You can migrate the existing sqlite databases to mysql if you choose by following the <a href="../../guides/migrating-databases">Migration Guide</a></p>
-<h2 id="installing-mysql-on-windows">Installing MySQL on Windows<a class="headerlink" href="#installing-mysql-on-windows" title="Permanent link">&para;</a></h2>
-<p>For installing MySQL we need to install the MySQL Community Server.<br />
-You can download it <a href="https://dev.mysql.com/downloads/mysql/">here</a>.</p>
-<hr />
-<h3 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
-<p>Hit the "Go to Download Page" button and click on the <strong>bottom</strong> "Download" button. This is the offline installer, the top one is the web installer.<br />
-After clicking you will be presented with a new page asking you to login or sign up. Do whatever you like here, but make sure you've also seen the "No thanks, just start my download." on the bottom left.</p>
-<hr />
-<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
-<p>When the download is complete, run the installer and follow the steps below:</p>
+                <h1 id="task-scheduler-with-pictures">Task Scheduler with Pictures<a class="headerlink" href="#task-scheduler-with-pictures" title="Permanent link">&para;</a></h1>
 <ol>
-<li>Choose a Setup Type<br />
-Make sure Custom is selected and click Next.<br />
-<img alt="MySQL Setup Type" loading="lazy" src="../../assets/images/mysql_setup_type.png" />  </li>
-<li>Select Products and Features<br />
-Select the following products to install:  <ul>
-<li>MySQL Server  </li>
-<li>MySQL Workbench
-Click on next to continue.<br />
-<img alt="Features to Install" loading="lazy" src="../../assets/images/mysql_features.png" /></li>
-</ul>
-</li>
-<li>Installation<br />
-It could give you a message that some requirements are missing.<br />
-This is fine, since it will install those requirements. Click Execute. When the installation is finished, click on next.<br />
-<img alt="MySQL install" loading="lazy" src="../../assets/images/mysql_install.png" /></li>
+<li>Open 'Task Scheduler'.<br />
+ Either search for it in start, or simply Run...<br />
+<span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span> <code class="highlight"><span class="nf">%windir</span><span class="o">%</span><span class="err">\</span><span class="n">system32</span><span class="err">\</span><span class="n">taskschd</span><span class="p">.</span><span class="n">msc</span></code>  </li>
+<li>Click <code class="highlight">Create task...</code> on the right hand side.<br />
+<img alt="Task Scheduler" loading="lazy" src="../../assets/images/task_scheduler.png" />  </li>
+<li>Give the task a name.<br />
+Example: Ombi<br />
+Add a description <em>if you want</em> (this is not required).<br />
+<img alt="Ombi Task" loading="lazy" src="../../assets/images/task_ombi.png" />  </li>
+<li>Check <code class="highlight">Run with highest privileges</code></li>
+<li>Click <code class="highlight">Run whether user is logged on or not</code> to ensure Ombi runs even when you are logged out!</li>
+<li>Check <code class="highlight">Hidden</code><br />
+<img alt="Task Trigger" loading="lazy" src="../../assets/images/task_trigger.png" />  </li>
+<li>Configure for: (Choose your Windows version.)</li>
+<li>Click the <code class="highlight">Triggers</code> Tab and click <code class="highlight">New...</code></li>
+<li>Begin the task: <code class="highlight">At system startup</code>. Click <code class="highlight">OK</code>.  </li>
+<li>Click <code class="highlight">Browse...</code> and navigate to your <code class="highlight">Ombi.exe</code> Click <code class="highlight">Open</code></li>
+<li>Fill <code class="highlight">Start in (optional):</code> with Ombi.exe's working directory.<br />
+IE: <code class="highlight">C:\Ombi\</code> or <code class="highlight">C:\SERVERS\Ombi\</code>. Basically, wherever you extracted your 'Ombi' folder to. Click <code class="highlight">OK</code>  </li>
+<li>Conditions: un-tick all, click 'OK'.
+<img alt="Task Conditions" loading="lazy" src="../../assets/images/task_conditions.png" />  </li>
+<li>Settings Tab: Untick <code class="highlight"><span class="nv">Stop</span> <span class="nv">the</span> <span class="nv">task</span> <span class="k">if</span> <span class="nv">it</span> <span class="nv">runs</span> <span class="nv">longer</span> <span class="nv">than</span>:</code>, then click <code class="highlight">OK</code>.
+<img alt="Task Settings" loading="lazy" src="../../assets/images/task_settings.png" />  </li>
+<li>You will be prompted for your windows user name and password.<br />
+Please enter your credentials, and click <code class="highlight">OK</code>.</li>
 </ol>
-<h3 id="configure">Configure<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h3>
-<p>Click Next.<br />
-<img alt="MySQL Configuration" loading="lazy" src="../../assets/images/mysql_configure_1.png" />  </p>
-<h4 id="high-availability">High Availability<a class="headerlink" href="#high-availability" title="Permanent link">&para;</a></h4>
-<p>Make sure the Standalone MySQL Server is selected and click Next.<br />
-<img alt="MySQL Availability" loading="lazy" src="../../assets/images/mysql_configure_2.png" />  </p>
-<h4 id="type-and-networking">Type and Networking<a class="headerlink" href="#type-and-networking" title="Permanent link">&para;</a></h4>
-<p>You now see the default settings.<br />
-<strong>Nothing <em>needs</em> to be changed</strong>, but you can change the port if needed. Make sure that you don't forget the port number in the database.json when you are going to migrate!<br />
-Click Next.<br />
-<img alt="MySQL Networking" loading="lazy" src="../../assets/images/mysql_configure_3.png" />  </p>
-<h4 id="authentication-method">Authentication Method<a class="headerlink" href="#authentication-method" title="Permanent link">&para;</a></h4>
-<p>We need to change the default setting to "Use Legacy Authentication Method".<br />
-Since this <em>is</em> a security risk I would advise closing the port (3306 default) in your modem.<br />
-<img alt="MySQL Authentication" loading="lazy" src="../../assets/images/mysql_configure_4.png" />  </p>
-<h4 id="account-and-roles">Account and Roles<a class="headerlink" href="#account-and-roles" title="Permanent link">&para;</a></h4>
-<p>We need to set a root password which allows us to connect to MySQL Server. This password is important, as it is needed for creating databases and potential future maintenance on it.<br />
-Because of this, make sure you don't forget the password!<br />
-We don't need to create users here - that's done in the migration process above.<br />
-<img alt="MySQL Accounts" loading="lazy" src="../../assets/images/mysql_configure_5.png" />  </p>
-<h4 id="windows-service">Windows Service<a class="headerlink" href="#windows-service" title="Permanent link">&para;</a></h4>
-<p>You can keep the default settings here and click on Next.<br />
-<img alt="MySQL Service" loading="lazy" src="../../assets/images/mysql_configure_6.png" />  </p>
-<h4 id="apply-configuration">Apply Configuration<a class="headerlink" href="#apply-configuration" title="Permanent link">&para;</a></h4>
-<p>Now it is time to actually apply all the configuration we just set. Hit Execute.<br />
-<img alt="MySQL Apply" loading="lazy" src="../../assets/images/mysql_configure_7.png" />  </p>
-<p>Once it is done, hit Finish.<br />
-<img alt="MySQL Done" loading="lazy" src="../../assets/images/mysql_configure_8.png" />  </p>
-<hr />
-<h4 id="using-mysql-workbench">Using MySQL Workbench<a class="headerlink" href="#using-mysql-workbench" title="Permanent link">&para;</a></h4>
-<p>In order to run the sql commands above, you'll need to use MySQL workbench.<br />
-Hit start and type MySQL Workbench. Run the application.</p>
-<p><img alt="MySQL Workbench" loading="lazy" src="../../assets/images/mysql_workbench_link.png" />  </p>
-<p>Click on the grey block which is named: "Local Instance". It will pop-up a box to enter your root password which you set in the installation of MySQL Server.<br />
-Once you have entered the root password it will ask if you wanna store your password in the vault. I would recommend to do so, so you don't need to enter your root password again when you connect.</p>
-<p><img alt="MySQL Connection" loading="lazy" src="../../assets/images/mysql_workbench_connection.png" />  </p>
-<p>You can now see the workbench which is displaying your MySQL server.<br />
-Enter the queries/commands you wish to run into the query editor on screen, then click on the Lightning Bolt above the code to execute them.</p>
-<p><img alt="MySQL Query" loading="lazy" src="../../assets/images/mysql_workbench_query.png" />  </p>
-<p>We are done with MySQL Server and the MySQL workbench. One quick tip is that on the left side (where you found Users and Privileges) there is a Dashboard.<br />
-This will show you what kind of activity is running on your MySQL Server, and can be handy to check if Ombi has a connection or not.</p>
-<hr />
+<p>Either restart your PC for task scheduler to take over, or manually start it in the Task Scheduler Library on the far left.</p>
                 
                   
                     
@@ -1984,7 +1467,7 @@ This will show you what kind of activity is running on your MySQL Server, and ca
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T01:16:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T02:06:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
     
   </small>
 </div>
@@ -2007,7 +1490,7 @@ This will show you what kind of activity is running on your MySQL Server, and ca
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../settings/logs/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../usermanagement/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2016,19 +1499,19 @@ This will show you what kind of activity is running on your MySQL Server, and ca
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Logs
+                User Management
               </div>
             </div>
           </a>
         
         
-          <a href="../api-information/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../development/building-ombi/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                API Information
+                Building Ombi
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
