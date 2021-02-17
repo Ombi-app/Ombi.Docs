@@ -8,7 +8,6 @@ repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
 
 # Site appearance (logos, colours, icons)
-# Ombi orange is hex #e37200
 theme:
   name: material
   language: en
@@ -21,7 +20,7 @@ theme:
   palette:
     scheme: preference
     #primary: amber #Not sure on this. Looks kinda nasty.
-    #accent: e37200 #Ombi
+    #accent: e37200 #Ombi orange
 
 # Additional links
 extra:
@@ -39,18 +38,19 @@ extra:
 
 # Markdown extensions
 markdown_extensions:
-  - sane_lists
+  - abbr
+  - attr_list
+  - meta
   - pymdownx.highlight:
       guess_lang: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.snippets
   - pymdownx.superfences
+  - sane_lists
   - toc:
       permalink: true
       toc_depth: 4
-  - abbr
-  - attr_list
 
 # mkdocs function extensions
 plugins:
@@ -89,8 +89,6 @@ plugins:
         'usermanagement.md': 'guides/usermanagement.md'
         # Temporary redirect until an explanation of the update page is ready
         'settings/update.md': 'guides/updating.md'
-
-
 
 # Navigation Layout
 nav:
