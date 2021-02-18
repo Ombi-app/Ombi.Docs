@@ -1,3 +1,6 @@
+---
+description: The Official Ombi Documentation!
+---
 # Ombi Docs
 
 --8<-- "assets/glossary.md"

@@ -1,4 +1,7 @@
-# FAQ
+---
+title: Ombi FAQ
+description: Frequently Asked Questions about Ombi!
+---
 
 --8<-- "assets/glossary.md"
 

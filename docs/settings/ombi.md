@@ -5,7 +5,7 @@ It is a _stub_, and only holds settings that aren't big enough for their own ful
 
 ## Base URL
 
-This is for Reverse Proxy setups. Put the base url you want in e.g. if the `/location` block is like the following (Nginx) `/location ombi` then put in `/ombi` as a Base Url
+This is for [Reverse Proxy](../info/reverse-proxy) setups. Put the base url you want in e.g. if the `/location` block is like the following (Nginx) `/location ombi` then put in `/ombi` as a Base Url
 
 ## Api Key
 
