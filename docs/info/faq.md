@@ -1,5 +1,5 @@
 ---
-title: Ombi FAQ
+title: FAQ
 description: Frequently Asked Questions about Ombi!
 ---
 
