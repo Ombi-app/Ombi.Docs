@@ -1,5 +1,5 @@
 ---
-description: Frequently Asked Questions about Ombi!
+description: The Official Ombi Documentation!
 ---
 # Ombi Docs
 
