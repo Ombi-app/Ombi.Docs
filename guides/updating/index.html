@@ -407,29 +407,28 @@
     Automatic Updates
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-updates" class="md-nav__link">
-    Manual updates
-  </a>
-  
-    <nav class="md-nav" aria-label="Manual updates">
+    <nav class="md-nav" aria-label="Automatic Updates">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#watchtower-docker" class="md-nav__link">
+    Watchtower (Docker)
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#use-script" class="md-nav__link">
-    Use Script
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#use-script-semi-automatic-updates" class="md-nav__link">
+    Use Script (semi-automatic updates)
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Script (semi-automatic updates)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#script-path" class="md-nav__link">
@@ -440,6 +439,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-updates" class="md-nav__link">
+    Manual Updates
+  </a>
   
 </li>
       
@@ -1262,29 +1268,28 @@
     Automatic Updates
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-updates" class="md-nav__link">
-    Manual updates
-  </a>
-  
-    <nav class="md-nav" aria-label="Manual updates">
+    <nav class="md-nav" aria-label="Automatic Updates">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#watchtower-docker" class="md-nav__link">
+    Watchtower (Docker)
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#use-script" class="md-nav__link">
-    Use Script
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#use-script-semi-automatic-updates" class="md-nav__link">
+    Use Script (semi-automatic updates)
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Script (semi-automatic updates)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#script-path" class="md-nav__link">
@@ -1295,6 +1300,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-updates" class="md-nav__link">
+    Manual Updates
+  </a>
   
 </li>
       
@@ -1559,29 +1571,28 @@
     Automatic Updates
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-updates" class="md-nav__link">
-    Manual updates
-  </a>
-  
-    <nav class="md-nav" aria-label="Manual updates">
+    <nav class="md-nav" aria-label="Automatic Updates">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#watchtower-docker" class="md-nav__link">
+    Watchtower (Docker)
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#use-script" class="md-nav__link">
-    Use Script
-  </a>
+      </ul>
+    </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#use-script-semi-automatic-updates" class="md-nav__link">
+    Use Script (semi-automatic updates)
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Script (semi-automatic updates)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#script-path" class="md-nav__link">
@@ -1592,6 +1603,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-updates" class="md-nav__link">
+    Manual Updates
+  </a>
   
 </li>
       
@@ -1618,8 +1636,31 @@
 The developer is aware of this, as is the support team. Current development is focused on a UI rewrite - once a viable cross-platform update method has been found, it will be implemented as a fix.<br />
 Automated container updates via something like WatchTower for docker installs are unaffected - only direct installs using apt/exe deployment.<br />
 If you have a suggestion for an update solution, feel free to either fork the project and submit a pull request, or submit a suggestion over on Discord.</p>
-<h2 id="manual-updates">Manual updates<a class="headerlink" href="#manual-updates" title="Permanent link">&para;</a></h2>
-<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<h3 id="watchtower-docker">Watchtower (Docker)<a class="headerlink" href="#watchtower-docker" title="Permanent link">&para;</a></h3>
+<p>There is an option in docker to use something called '<a href="https://hub.docker.com/r/containrrr/watchtower">Watchtower</a>' to automatically update containers/images. If going this route we strongly suggest using a few extra arguments for both the Ombi container and the watchtower one.<br />
+For the Ombi container, add a label to the container named <code class="highlight">com.centurylinklabs.watchtower.enable</code>. Set it to <code class="highlight">true</code>.<br />
+For the Watchtower one, add a label to the container named <code class="highlight">WATCHTOWER_LABEL_ENABLE</code>. Set it to <code class="highlight">true</code>.</p>
+<h2 id="use-script-semi-automatic-updates">Use Script (semi-automatic updates)<a class="headerlink" href="#use-script-semi-automatic-updates" title="Permanent link">&para;</a></h2>
+<p>You can use your own update script here, please note that this will have to manage the termination and start of the Ombi process. You will have to terminate Ombi yourself.  </p>
+<ul>
+<li>carnivorouz - <a href="https://github.com/carnivorouz/updateOmbi/blob/main/updateOmbi.sh">v4 Linux systemd script</a></li>
+</ul>
+<h3 id="script-path">Script Path<a class="headerlink" href="#script-path" title="Permanent link">&para;</a></h3>
+<p>The path to your script, we will automatically pass it the following arguments in the following order:</p>
+<div class="highlight"><pre><span></span><code>YourScript <span class="o">{</span>UpdateDownloadUrl<span class="o">}</span> --applicationPath <span class="o">{</span>CurrentInstallLocation<span class="o">}</span> --processname <span class="o">{</span>ProcessName<span class="o">}</span> --host <span class="o">{</span>Ombi Host Argument<span class="o">}</span> --storage <span class="o">{</span>Ombi StoragePath Argument<span class="o">}</span>
+</code></pre></div>
+<p>e.g.</p>
+<div class="highlight"><pre><span></span><code>Update.sh https://ci.appveyor.com/api/buildjobs/vxergo4kdyoaw929/artifacts/linux.tar.gz --applicationPath /opt/ombi --processname ombi --host http://*:5000 
+</code></pre></div>
+<p>This means the variables will be:<br />
+{UpdateDownloadUrl}: $1<br />
+{CurrentInstallLocation}: $3<br />
+{ProcessName}: $5<br />
+{Ombi Host Argument}: $7<br />
+{Ombi StoragePath Argument}: $9  </p>
+<p>The <code class="highlight"><span class="p">{</span><span class="n">UpdateDownloadUrl</span><span class="p">}</span></code> is the Download that will contain either the .zip or .tar.gz file.<br />
+<code class="highlight">{Ombi Host Argument}</code> and <code class="highlight">{Ombi StoragePath Argument}</code> are the args that you may have passed into Ombi e.g. <code class="highlight">Ombi Host Argument</code> could be <code class="highlight">http://*:5000</code> (They are optional)</p>
+<h2 id="manual-updates">Manual Updates<a class="headerlink" href="#manual-updates" title="Permanent link">&para;</a></h2>
 <p>It is possible to update Ombi manually.<br />
 To do so is fairly straightforward.  </p>
 <ol>
@@ -1646,26 +1687,6 @@ To do so is fairly straightforward.  </p>
 <li>Extract the zip to your Ombi directory.</li>
 <li>Start Ombi again.</li>
 </ol>
-<h3 id="use-script">Use Script<a class="headerlink" href="#use-script" title="Permanent link">&para;</a></h3>
-<p>You can use your own update script here, please note that this will have to manage the termination and start of the Ombi process. You will have to terminate Ombi yourself.  </p>
-<ul>
-<li>carnivorouz - <a href="https://github.com/carnivorouz/updateOmbi/blob/main/updateOmbi.sh">v4 Linux systemd script</a></li>
-</ul>
-<h3 id="script-path">Script Path<a class="headerlink" href="#script-path" title="Permanent link">&para;</a></h3>
-<p>The path to your script, we will automatically pass it the following arguments in the following order:</p>
-<div class="highlight"><pre><span></span><code>YourScript <span class="o">{</span>UpdateDownloadUrl<span class="o">}</span> --applicationPath <span class="o">{</span>CurrentInstallLocation<span class="o">}</span> --processname <span class="o">{</span>ProcessName<span class="o">}</span> --host <span class="o">{</span>Ombi Host Argument<span class="o">}</span> --storage <span class="o">{</span>Ombi StoragePath Argument<span class="o">}</span>
-</code></pre></div>
-<p>e.g.</p>
-<div class="highlight"><pre><span></span><code>Update.sh https://ci.appveyor.com/api/buildjobs/vxergo4kdyoaw929/artifacts/linux.tar.gz --applicationPath /opt/ombi --processname ombi --host http://*:5000 
-</code></pre></div>
-<p>This means the variables will be:<br />
-{UpdateDownloadUrl}: $1<br />
-{CurrentInstallLocation}: $3<br />
-{ProcessName}: $5<br />
-{Ombi Host Argument}: $7<br />
-{Ombi StoragePath Argument}: $8  </p>
-<p>The <code class="highlight"><span class="p">{</span><span class="n">UpdateDownloadUrl</span><span class="p">}</span></code> is the Download that will contain either the .zip or .tar.gz file.<br />
-<code class="highlight">{Ombi Host Argument}</code> and <code class="highlight">{Ombi StoragePath Argument}</code> are the args that you may have passed into Ombi e.g. <code class="highlight">Ombi Host Argument</code> could be <code class="highlight">http://*:5000</code> (They are optional)</p>
                 
                   
                     
@@ -1674,7 +1695,7 @@ To do so is fairly straightforward.  </p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-06T04:06:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-21T08:46:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-21</span>
     
   </small>
 </div>
