@@ -87,6 +87,8 @@ plugins:
         'preferences.md': 'guides/preferences.md'
         'requests-list.md': 'guides/requests-list.md'
         'usermanagement.md': 'guides/usermanagement.md'
+        # Info redirects
+        'faq.md': 'info/faq.md'
         # Temporary redirect until an explanation of the update page is ready
         'settings/update.md': 'guides/updating.md'
 
