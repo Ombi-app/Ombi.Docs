@@ -13,6 +13,10 @@ If you feel like a question should be added please reach out via the Ombi Discor
 See [Feature Suggestions](../../guides/feature-suggestions)
 ***
 
+## Unauthorized access to Index.html
+
+Ombi currently needs access to write and read the Index.html file (`ClientApp/dist/index.html`), this is to work around a unsupported scenario with Angular. Ombi will write and read that file every time Ombi starts up.
+
 ## TV shows and episodes not showing as available
 
 The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.
