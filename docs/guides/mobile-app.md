@@ -17,4 +17,4 @@ A good idea is to set this up using a [Reverse Proxy](../reverse-proxy), rather 
 
 ## Connecting the app
 
-![GIF VIDEO!](../../assets/images/embeds/app_setup.gif){: loading=lazy }
+![GIF VIDEO!](../../assets/images/app_setup.gif){: loading=lazy }

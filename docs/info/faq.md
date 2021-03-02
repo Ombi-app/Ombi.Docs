@@ -1,4 +1,7 @@
-# FAQ
+---
+title: FAQ
+description: Frequently Asked Questions about Ombi!
+---
 
 --8<-- "assets/glossary.md"
 
@@ -9,6 +12,10 @@ If you feel like a question should be added please reach out via the Ombi Discor
 
 See [Feature Suggestions](../../guides/feature-suggestions)
 ***
+
+## Unauthorized access to Index.html
+
+Ombi currently needs access to write and read the Index.html file (`ClientApp/dist/index.html`), this is to work around a unsupported scenario with Angular. Ombi will write and read that file every time Ombi starts up.
 
 ## TV shows and episodes not showing as available
 

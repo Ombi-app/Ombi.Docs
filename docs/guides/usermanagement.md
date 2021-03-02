@@ -2,4 +2,4 @@
 
 ## Coming Soon
 
-See [User Management](../settings/usermanagement)
+See [User Management](../../settings/usermanagement)
