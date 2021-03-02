@@ -89,6 +89,7 @@ plugins:
         'usermanagement.md': 'guides/usermanagement.md'
         # Info redirects
         'faq.md': 'info/faq.md'
+        'faults.md': 'info/known-faults.md'
         # Temporary redirect until an explanation of the update page is ready
         'settings/update.md': 'guides/updating.md'
 
@@ -143,6 +144,7 @@ nav:
     - Common Themes: info/common-themes.md
     - Docker Containers: info/docker-containers.md
     - FAQ: info/faq.md
+    - Known Faults: info/known-faults.md
     - Notification Variables: info/notification-template-variables.md
     - Ombi & Tautulli: info/ombi-tautulli.md
     - Request Flow: info/request-workflow.md
