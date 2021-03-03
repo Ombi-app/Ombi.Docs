@@ -1,10 +1,5 @@
 # Commonly Encountered Errors
 
-## Error updating from Web UI
-
-See [Update Errors](../../guides/updating/#automatic-updates)
-***
-
 ## TV Show search results disappear
 
 This is due to our TV Provider [TVMaze](https://www.tvmaze.com/) not having the metadata we need to process that TV Show. We require TV Maze to supply us with a TVDBId for that show.
@@ -30,20 +25,13 @@ Most of the time, you can freely edit the listings on [TVMAZE](https://www.tvmaz
 If you have edited the TVMAZE and/or theTVDB listings for a show, there is a time delay before the APIs have the new information.  Give it a few hours before searching again.
 ***
 
-## libunwind8 error
+## Docker Issues
 
-> libunwind.so.8: cannot open shared object file You may need to install libwind8.  
-
-Run `apt install libunwind8`
-
-***
-
-## System.Net.Http.CurlHandler
-
-> System.TypeInitializationException: The type initializer for 'System.Net.Http.CurlHandler' threw an exception.
-
-Run `apt install libcurl4-openssl-dev`
-
+If you're running all your services in containers, be mindful that sometimes NAT is a fickle mistress for those who fiddle.  
+If you have services behind a reverse proxy, use the full external address for the service.  
+If you have them behind Organizr as well, then use the Docker IP and port of each container instead - to avoid any routing or authentication issues that this can cause.  
+If you use the host IP instead of the container IP, be sure to use the local port you mapped to the container, rather than simply the container port (these are not always the same).  
+For a breakdown of docker networking (and some reasoning), see [Docker Networking](../info/docker-containers).
 ***
 
 ## Proxmox LXC Containers
@@ -71,17 +59,6 @@ N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository
 ```
 
 Replace `deb http://repo.ombi.turd.me/stable/ jessie main` with  `deb [arch=amd64] http://repo.ombi.turd.me/stable/ jessie main` in `/etc/apt/sources.list.d/ombi.list`.  
-
-***
-
-## Mobile Notifications & PiHole
-
-Numerous PiHole and AdGuard lists block OneSignal by default, causing Ombi to be unable to push a notification to it and your mobile device to be unable to retrieve one from it.  
-The error will be similar to:  
-`There was an error when sending the Mobile message. Please check your settings`.
-
-Check your PiHole/Adguard immediately after hitting the "Test Notification" button.  
-If you see "onesignal.com" being blocked, whitelist it and try again.
 
 ***
 
