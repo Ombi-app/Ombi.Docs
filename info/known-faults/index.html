@@ -1012,8 +1012,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#error-updating-from-web-ui" class="md-nav__link">
+    Error updating from Web UI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unauthorized-access-to-indexhtml" class="md-nav__link">
     Unauthorized access to Index.html
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cannot-start-ombi-on-ubuntu-1904" class="md-nav__link">
+    Cannot start Ombi on Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-notifications-pihole" class="md-nav__link">
+    Mobile Notifications &amp; PiHole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libunwind8-error" class="md-nav__link">
+    libunwind8 error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemnethttpcurlhandler" class="md-nav__link">
+    System.Net.Http.CurlHandler
   </a>
   
 </li>
@@ -1459,8 +1494,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#error-updating-from-web-ui" class="md-nav__link">
+    Error updating from Web UI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#unauthorized-access-to-indexhtml" class="md-nav__link">
     Unauthorized access to Index.html
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cannot-start-ombi-on-ubuntu-1904" class="md-nav__link">
+    Cannot start Ombi on Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-notifications-pihole" class="md-nav__link">
+    Mobile Notifications &amp; PiHole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libunwind8-error" class="md-nav__link">
+    libunwind8 error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemnethttpcurlhandler" class="md-nav__link">
+    System.Net.Http.CurlHandler
   </a>
   
 </li>
@@ -1486,9 +1556,43 @@
 <p>Any and all common bugs that we are aware of will be added here.<br />
 Please note that as things are being found, reported, and fixed at a colossal rate, this page will frequently be outdated.<br />
 To see all currently unfixed issues in the github repository, please see <a href="https://github.com/Ombi-app/Ombi/issues?q=is%3Aopen+is%3Aissue+label%3A%22bug+%2F+issue%22">this search.</a></p>
+<hr />
+<h2 id="error-updating-from-web-ui">Error updating from Web UI<a class="headerlink" href="#error-updating-from-web-ui" title="Permanent link">&para;</a></h2>
+<p>See <a href="../../guides/updating/#automatic-updates">Update Errors</a></p>
+<hr />
 <h2 id="unauthorized-access-to-indexhtml">Unauthorized access to Index.html<a class="headerlink" href="#unauthorized-access-to-indexhtml" title="Permanent link">&para;</a></h2>
 <p>Ombi currently needs access to write and read the Index.html file (<code class="highlight">ClientApp/dist/index.html</code>), this is to work around a unsupported scenario with Angular.<br />
 Ombi will write and read that file every time Ombi starts up.</p>
+<hr />
+<h2 id="cannot-start-ombi-on-ubuntu-1904">Cannot start Ombi on Ubuntu 19.04<a class="headerlink" href="#cannot-start-ombi-on-ubuntu-1904" title="Permanent link">&para;</a></h2>
+<p>.Net Core 5.0 is not supported officially on Ubuntu 19.04 (see <a href="https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions">Supported Distributions</a> to confirm).<br />
+Since the Ombi backend uses .Net Core, we will have to manually install the older version of libssl (from 18.10) in order to make Ombi run.<br />
+To confirm this is the fault, run <code class="highlight">journalctl -u Ombi -b</code> and look for the line "<code class="highlight">no usable version of libssl found</code>" - this will confirm that this is the fix.<br />
+We can do this using the following commands from a terminal:</p>
+<div class="highlight"><pre><span></span><code>wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
+sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
+</code></pre></div>
+<p>Start the Ombi service with <code class="highlight">service Ombi start</code> and confirm that it's worked with <code class="highlight">systemctl status ombi</code>.</p>
+<hr />
+<h2 id="mobile-notifications-pihole">Mobile Notifications &amp; PiHole<a class="headerlink" href="#mobile-notifications-pihole" title="Permanent link">&para;</a></h2>
+<p>Numerous PiHole and AdGuard lists block OneSignal by default, causing Ombi to be unable to push a notification to it and your mobile device to be unable to retrieve one from it.<br />
+The error will be similar to:<br />
+<code class="highlight">There was an error when sending the Mobile message. Please check your settings</code>.</p>
+<p>Check your PiHole/Adguard immediately after hitting the "Test Notification" button.<br />
+If you see "onesignal.com" being blocked, whitelist it and try again.</p>
+<hr />
+<h2 id="libunwind8-error">libunwind8 error<a class="headerlink" href="#libunwind8-error" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>libunwind.so.8: cannot open shared object file You may need to install libwind8.  </p>
+</blockquote>
+<p>Run <code class="highlight">apt install libunwind8</code></p>
+<hr />
+<h2 id="systemnethttpcurlhandler">System.Net.Http.CurlHandler<a class="headerlink" href="#systemnethttpcurlhandler" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>System.TypeInitializationException: The type initializer for 'System.Net.Http.CurlHandler' threw an exception.</p>
+</blockquote>
+<p>Run <code class="highlight">apt install libcurl4-openssl-dev</code></p>
+<hr />
                 
                   
                     
@@ -1497,7 +1601,7 @@ Ombi will write and read that file every time Ombi starts up.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-03T09:17:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-03</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-03T09:59:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-03</span>
     
   </small>
 </div>

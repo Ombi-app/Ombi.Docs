@@ -964,13 +964,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#error-updating-from-web-ui" class="md-nav__link">
-    Error updating from Web UI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#tv-show-search-results-disappear" class="md-nav__link">
     TV Show search results disappear
   </a>
@@ -978,15 +971,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#libunwind8-error" class="md-nav__link">
-    libunwind8 error
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemnethttpcurlhandler" class="md-nav__link">
-    System.Net.Http.CurlHandler
+  <a href="#docker-issues" class="md-nav__link">
+    Docker Issues
   </a>
   
 </li>
@@ -1001,13 +987,6 @@
         <li class="md-nav__item">
   <a href="#i386-unsupported" class="md-nav__link">
     i386 unsupported
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mobile-notifications-pihole" class="md-nav__link">
-    Mobile Notifications &amp; PiHole
   </a>
   
 </li>
@@ -1535,13 +1514,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#error-updating-from-web-ui" class="md-nav__link">
-    Error updating from Web UI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#tv-show-search-results-disappear" class="md-nav__link">
     TV Show search results disappear
   </a>
@@ -1549,15 +1521,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#libunwind8-error" class="md-nav__link">
-    libunwind8 error
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#systemnethttpcurlhandler" class="md-nav__link">
-    System.Net.Http.CurlHandler
+  <a href="#docker-issues" class="md-nav__link">
+    Docker Issues
   </a>
   
 </li>
@@ -1572,13 +1537,6 @@
         <li class="md-nav__item">
   <a href="#i386-unsupported" class="md-nav__link">
     i386 unsupported
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mobile-notifications-pihole" class="md-nav__link">
-    Mobile Notifications &amp; PiHole
   </a>
   
 </li>
@@ -1635,9 +1593,6 @@
                 
                 
                 <h1 id="commonly-encountered-errors">Commonly Encountered Errors<a class="headerlink" href="#commonly-encountered-errors" title="Permanent link">&para;</a></h1>
-<h2 id="error-updating-from-web-ui">Error updating from Web UI<a class="headerlink" href="#error-updating-from-web-ui" title="Permanent link">&para;</a></h2>
-<p>See <a href="../../guides/updating/#automatic-updates">Update Errors</a></p>
-<hr />
 <h2 id="tv-show-search-results-disappear">TV Show search results disappear<a class="headerlink" href="#tv-show-search-results-disappear" title="Permanent link">&para;</a></h2>
 <p>This is due to our TV Provider <a href="https://www.tvmaze.com/">TVMaze</a> not having the metadata we need to process that TV Show. We require TV Maze to supply us with a TVDBId for that show.
 You can easily check this by calling the TV Maze API: <a href="http://api.tvmaze.com/search/shows?q=Dexter">http://api.tvmaze.com/search/shows?q=Dexter</a>  </p>
@@ -1652,17 +1607,12 @@ You can easily check this by calling the TV Maze API: <a href="http://api.tvmaze
 <p>Most of the time, you can freely edit the listings on <a href="https://www.tvmaze.com/">TVMAZE</a> and the <a href="https://www.thetvdb.com/">theTVDB</a> to have the information needed to make an item available.</p>
 <p>If you have edited the TVMAZE and/or theTVDB listings for a show, there is a time delay before the APIs have the new information.  Give it a few hours before searching again.</p>
 <hr />
-<h2 id="libunwind8-error">libunwind8 error<a class="headerlink" href="#libunwind8-error" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>libunwind.so.8: cannot open shared object file You may need to install libwind8.  </p>
-</blockquote>
-<p>Run <code class="highlight">apt install libunwind8</code></p>
-<hr />
-<h2 id="systemnethttpcurlhandler">System.Net.Http.CurlHandler<a class="headerlink" href="#systemnethttpcurlhandler" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>System.TypeInitializationException: The type initializer for 'System.Net.Http.CurlHandler' threw an exception.</p>
-</blockquote>
-<p>Run <code class="highlight">apt install libcurl4-openssl-dev</code></p>
+<h2 id="docker-issues">Docker Issues<a class="headerlink" href="#docker-issues" title="Permanent link">&para;</a></h2>
+<p>If you're running all your services in containers, be mindful that sometimes NAT is a fickle mistress for those who fiddle.<br />
+If you have services behind a reverse proxy, use the full external address for the service.<br />
+If you have them behind Organizr as well, then use the Docker IP and port of each container instead - to avoid any routing or authentication issues that this can cause.<br />
+If you use the host IP instead of the container IP, be sure to use the local port you mapped to the container, rather than simply the container port (these are not always the same).<br />
+For a breakdown of docker networking (and some reasoning), see <a href="../info/docker-containers">Docker Networking</a>.</p>
 <hr />
 <h2 id="proxmox-lxc-containers">Proxmox LXC Containers<a class="headerlink" href="#proxmox-lxc-containers" title="Permanent link">&para;</a></h2>
 <p><code class="highlight">set LC_ALL=en_US.UTF-8</code></p>
@@ -1674,16 +1624,9 @@ You can easily check this by calling the TV Maze API: <a href="http://api.tvmaze
 <p><em>Taken from <a href="https://github.com/tidusjar/Ombi/issues/1783#issuecomment-351498238">https://github.com/tidusjar/Ombi/issues/1783#issuecomment-351498238</a></em>  </p>
 <hr />
 <h2 id="i386-unsupported">i386 unsupported<a class="headerlink" href="#i386-unsupported" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>N: Skipping acquire of configured file <span class="s1">&#39;main/binary-i386/Packages&#39;</span> as repository <span class="s1">&#39;http://repo.ombi.turd.me/develop jessie InRelease&#39;</span> doesn<span class="s1">&#39;t support architecture &#39;</span>i386<span class="err">&#39;</span>
+<div class="highlight"><pre><span></span><code>N: Skipping acquire of configured file <span class="s1">&#39;main/binary-i386/Packages&#39;</span> as repository <span class="s1">&#39;https://apt.ombi.app/develop jessie InRelease&#39;</span> doesn<span class="s1">&#39;t support architecture &#39;</span>i386<span class="err">&#39;</span>
 </code></pre></div>
-<p>Replace <code class="highlight"><span class="k">deb</span> <span class="s">http://repo.ombi.turd.me/stable/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> with  <code class="highlight"><span class="k">deb</span> <span class="sx">[arch=amd64]</span> <span class="kp">http://repo.ombi.turd.me/stable/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> in <code class="highlight">/etc/apt/sources.list.d/ombi.list</code>.  </p>
-<hr />
-<h2 id="mobile-notifications-pihole">Mobile Notifications &amp; PiHole<a class="headerlink" href="#mobile-notifications-pihole" title="Permanent link">&para;</a></h2>
-<p>Numerous PiHole and AdGuard lists block OneSignal by default, causing Ombi to be unable to push a notification to it and your mobile device to be unable to retrieve one from it.<br />
-The error will be similar to:<br />
-<code class="highlight">There was an error when sending the Mobile message. Please check your settings</code>.</p>
-<p>Check your PiHole/Adguard immediately after hitting the "Test Notification" button.<br />
-If you see "onesignal.com" being blocked, whitelist it and try again.</p>
+<p>Replace <code class="highlight"><span class="k">deb</span> <span class="s">http://apt.ombi.app/develop</span> <span class="kp">jessie</span> <span class="kp">main</span></code> with  <code class="highlight"><span class="k">deb</span> <span class="sx">[arch=amd64]</span> <span class="kp">http://apt.ombi.app/develop/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> in <code class="highlight">/etc/apt/sources.list.d/ombi.list</code>.  </p>
 <hr />
 <h2 id="no-such-column-xrequestid">No such column: x.RequestId<a class="headerlink" href="#no-such-column-xrequestid" title="Permanent link">&para;</a></h2>
 <p>If you are on the latest version and are seeing <code class="highlight">SQLite Error 1: &#39;No such column: x.RequestId&#39;</code>, refer below for a solution.<br />
@@ -1748,7 +1691,7 @@ sudo apt install -y sqlite3
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-17T01:16:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-17</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-03T20:16:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-03</span>
     
   </small>
 </div>
