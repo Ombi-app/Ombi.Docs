@@ -5,7 +5,9 @@ description: Frequently Asked Questions about Ombi!
 
 --8<-- "assets/glossary.md"
 
-If you feel like a question should be added please reach out via the Ombi Discord (link at bottom of page).  
+If you feel like a question should be added please reach out via the [Ombi Discord.](https://discord.gg/Sa7wNWb)  
+See also: [Known Faults](known-faults), [Common Errors](common-errors)
+
 ***
 
 ## How do I request a feature be added to Ombi
@@ -19,75 +21,11 @@ See [Feature Suggestions](../../guides/feature-suggestions)
 2) It allows for checking for actual availability (not just in place according to *arr, but indexed in a library and actually watchable).
 3) It allows for Ombi to use a plex ID for the link in newsletters etc - so users can click the notification and be taken directly to the item in Plex.
 
-## TV shows and episodes not showing as available
-
-The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.
-To fix this you need to ensure your TV Library in Plex is using an agent that provides this ID. We suggest "TheTVDB".  
-Edit Library > Advanced > Agent = TheTVDB
-
-Refresh the metadata for that library, and next time the Plex Sync job runs it should pick up that the content now has TheTVDB Id's!
-***
-
-## Ombi won't start after updating to Ubuntu 19.04
-
-.Net Core is not yet supported officially on Ubuntu 19.04 (see [Supported Distributions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) to confirm).  
-Since the Ombi backend uses .Net Core, we will have to manually install the older version of libssl (from 18.10) in order to make Ombi run.  
-To confirm this is the fault, run `journalctl -u Ombi -b` and look for the line "`no usable version of libssl found`" - this will confirm that this is the fix.  
-We can do this using the following commands from a terminal:
-
-````bash
-wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
-sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
-````
-
-Start the Ombi service with `service Ombi start` and confirm that it's worked with `systemctl status ombi`.
-***
-
 ## Can I synchronise users between Ombi and Tautulli?
 
 Yes, you can.  
 This is a little more involved than some people are comfortable with, as it's not officially supported.  
 If that doesn't worry you, and you're comfortable with running custom scripts and Python code, then you can check out the script created by DirtyCajunRice [here](../info/ombi-tautulli.md).
-***
-
-## Notifications are not sending, but mass email works
-
-Before any notifications will work properly you'll need to ensure you have configured your application URL under Settings -> Customization.  
-This is due to Ombi needing to know where to send users if they click any links within the notifications.
-***
-
-## Notifications for requests not being received
-
-1. Check and test if you have configured the notification(s) as per instructions in [Discord Notification Settings](../settings/notifications/discord) and [Email Notification Settings](../settings/notifications/email)
-2. If testing the notification(s) work fine then make sure that the user requesting is not an auto approve or admin user
-
-***
-
-## Ombi does not default to English or my preferred language
-
-Once you have set your preferred language in the user preferences area of Ombi, then it's attached to your user profile. When Ombi loads up, it checks what was set and will use that. If nothing has been set then Ombi sets whatever is the first language your browser presents to it.  
-If this does not get presented properly, this is mostly an issue with Chrome.  
-You can run the command `navigator.languages` in the Chrome console to see the list.  
-To get Ombi to display the language you want, make that language appear as the first entry in the above command.
-
-You can do this by:
-
-- Open the Chrome Language Settings page  
-`chrome://settings/languages`
-- Click the down arrow next to Language
-- Click the 3 ellipses by the language you want to set as default
-- Click move to the top.
-
-Please set Chrome to use this as display language as well.
-***
-
-## Docker Issues
-
-If you're running all your services in containers, be mindful that sometimes NAT is a fickle mistress for those who fiddle.  
-If you have services behind a reverse proxy, use the full external address for the service.  
-If you have them behind Organizr as well, then use the Docker IP and port of each container instead - to avoid any routing or authentication issues that this can cause.  
-If you use the host IP instead of the container IP, be sure to use the local port you mapped to the container, rather than simply the container port (these are not always the same).  
-For a breakdown of docker networking (and some reasoning), see [Docker Networking](../info/docker-containers).
 ***
 
 ## Database uses
@@ -151,3 +89,45 @@ UPDATE MovieRequests
 SET Approved = 0 
 WHERE Approved = 1 AND Available = 0;
 ```
+
+***
+
+## TV shows and episodes not showing as available
+
+The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.
+To fix this you need to ensure your TV Library in Plex is using an agent that provides this ID. We suggest "TheTVDB".  
+Edit Library > Advanced > Agent = TheTVDB
+
+Refresh the metadata for that library, and next time the Plex Sync job runs it should pick up that the content now has TheTVDB Id's!
+***
+
+## Notifications are not sending, but mass email works
+
+Before any notifications will work properly you'll need to ensure you have configured your application URL under Settings -> Customization.  
+This is due to Ombi needing to know where to send users if they click any links within the notifications.
+***
+
+## Notifications for requests not being received
+
+1. Check and test if you have configured the notification(s) as per instructions in [Discord Notification Settings](../settings/notifications/discord) and [Email Notification Settings](../settings/notifications/email)
+2. If testing the notification(s) work fine then make sure that the user requesting is not an auto approve or admin user
+
+***
+
+## Ombi does not default to English or my preferred language
+
+Once you have set your preferred language in the user preferences area of Ombi, then it's attached to your user profile. When Ombi loads up, it checks what was set and will use that. If nothing has been set then Ombi sets whatever is the first language your browser presents to it.  
+If this does not get presented properly, this is mostly an issue with Chrome.  
+You can run the command `navigator.languages` in the Chrome console to see the list.  
+To get Ombi to display the language you want, make that language appear as the first entry in the above command.
+
+You can do this by:
+
+- Open the Chrome Language Settings page  
+`chrome://settings/languages`
+- Click the down arrow next to Language
+- Click the 3 ellipses by the language you want to set as default
+- Click move to the top.
+
+Please set Chrome to use this as display language as well.
+***

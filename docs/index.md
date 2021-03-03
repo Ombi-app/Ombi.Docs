@@ -18,3 +18,4 @@ General Information:
 
 - [FAQ](./info/faq)
 - [Common Errors](./info/common-errors)
+- [Known Faults](./info/known-faults)
