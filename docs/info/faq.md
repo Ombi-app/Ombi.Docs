@@ -89,6 +89,7 @@ UPDATE MovieRequests
 SET Approved = 0 
 WHERE Approved = 1 AND Available = 0;
 ```
+
 ***
 
 ## TV shows and episodes not showing as available
