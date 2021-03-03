@@ -55,10 +55,10 @@ _Taken from [https://github.com/tidusjar/Ombi/issues/1783#issuecomment-351498238
 ## i386 unsupported
 
 ```bash
-N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'http://repo.ombi.turd.me/develop jessie InRelease' doesn't support architecture 'i386'
+N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'https://apt.ombi.app/develop jessie InRelease' doesn't support architecture 'i386'
 ```
 
-Replace `deb http://repo.ombi.turd.me/stable/ jessie main` with  `deb [arch=amd64] http://repo.ombi.turd.me/stable/ jessie main` in `/etc/apt/sources.list.d/ombi.list`.  
+Replace `deb http://apt.ombi.app/develop jessie main` with  `deb [arch=amd64] http://apt.ombi.app/develop/ jessie main` in `/etc/apt/sources.list.d/ombi.list`.  
 
 ***
 
