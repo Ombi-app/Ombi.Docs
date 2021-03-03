@@ -5,7 +5,9 @@ description: Frequently Asked Questions about Ombi!
 
 --8<-- "assets/glossary.md"
 
-If you feel like a question should be added please reach out via the Ombi Discord (link at bottom of page).  
+If you feel like a question should be added please reach out via the [Ombi Discord.](https://discord.gg/Sa7wNWb)  
+See also: [Known Faults](known-faults), [Common Errors](common-errors)
+
 ***
 
 ## How do I request a feature be added to Ombi
