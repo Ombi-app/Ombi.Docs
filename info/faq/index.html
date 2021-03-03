@@ -1003,8 +1003,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unauthorized-access-to-indexhtml" class="md-nav__link">
-    Unauthorized access to Index.html
+  <a href="#what-is-the-plex-connection-used-for" class="md-nav__link">
+    What is the Plex connection used for
   </a>
   
 </li>
@@ -1564,8 +1564,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unauthorized-access-to-indexhtml" class="md-nav__link">
-    Unauthorized access to Index.html
+  <a href="#what-is-the-plex-connection-used-for" class="md-nav__link">
+    What is the Plex connection used for
   </a>
   
 </li>
@@ -1691,8 +1691,10 @@
 <h2 id="how-do-i-request-a-feature-be-added-to-ombi">How do I request a feature be added to Ombi<a class="headerlink" href="#how-do-i-request-a-feature-be-added-to-ombi" title="Permanent link">&para;</a></h2>
 <p>See <a href="../../guides/feature-suggestions">Feature Suggestions</a></p>
 <hr />
-<h2 id="unauthorized-access-to-indexhtml">Unauthorized access to Index.html<a class="headerlink" href="#unauthorized-access-to-indexhtml" title="Permanent link">&para;</a></h2>
-<p>Ombi currently needs access to write and read the Index.html file (<code class="highlight">ClientApp/dist/index.html</code>), this is to work around a unsupported scenario with Angular. Ombi will write and read that file every time Ombi starts up.</p>
+<h2 id="what-is-the-plex-connection-used-for">What is the Plex connection used for<a class="headerlink" href="#what-is-the-plex-connection-used-for" title="Permanent link">&para;</a></h2>
+<p>1) It allows for using oAuth sign-in (so users don't have to add another password to the mix.
+2) It allows for checking for actual availability (not just in place according to *arr, but indexed in a library and actually watchable).
+3) It allows for Ombi to use a plex ID for the link in newsletters etc - so users can click the notification and be taken directly to the item in Plex.</p>
 <h2 id="tv-shows-and-episodes-not-showing-as-available">TV shows and episodes not showing as available<a class="headerlink" href="#tv-shows-and-episodes-not-showing-as-available" title="Permanent link">&para;</a></h2>
 <p>The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.
 To fix this you need to ensure your TV Library in Plex is using an agent that provides this ID. We suggest "TheTVDB".<br />
@@ -1795,7 +1797,7 @@ The relevant commands are:  </p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-01T21:18:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-01</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-03T09:17:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-03</span>
     
   </small>
 </div>

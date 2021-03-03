@@ -989,9 +989,38 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Known Faults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Known Faults
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unauthorized-access-to-indexhtml" class="md-nav__link">
+    Unauthorized access to Index.html
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1423,6 +1452,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unauthorized-access-to-indexhtml" class="md-nav__link">
+    Unauthorized access to Index.html
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1442,6 +1486,9 @@
 <p>Any and all common bugs that we are aware of will be added here.<br />
 Please note that as things are being found, reported, and fixed at a colossal rate, this page will frequently be outdated.<br />
 To see all currently unfixed issues in the github repository, please see <a href="https://github.com/Ombi-app/Ombi/issues?q=is%3Aopen+is%3Aissue+label%3A%22bug+%2F+issue%22">this search.</a></p>
+<h2 id="unauthorized-access-to-indexhtml">Unauthorized access to Index.html<a class="headerlink" href="#unauthorized-access-to-indexhtml" title="Permanent link">&para;</a></h2>
+<p>Ombi currently needs access to write and read the Index.html file (<code class="highlight">ClientApp/dist/index.html</code>), this is to work around a unsupported scenario with Angular.<br />
+Ombi will write and read that file every time Ombi starts up.</p>
                 
                   
                     
@@ -1450,7 +1497,7 @@ To see all currently unfixed issues in the github repository, please see <a href
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-02T04:07:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-02</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-03T09:17:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-03</span>
     
   </small>
 </div>
