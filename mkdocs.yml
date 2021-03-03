@@ -47,6 +47,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed
   - sane_lists
   - toc:
       permalink: true

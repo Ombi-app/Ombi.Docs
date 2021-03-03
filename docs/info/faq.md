@@ -13,9 +13,11 @@ If you feel like a question should be added please reach out via the Ombi Discor
 See [Feature Suggestions](../../guides/feature-suggestions)
 ***
 
-## Unauthorized access to Index.html
+## What is the Plex connection used for
 
-Ombi currently needs access to write and read the Index.html file (`ClientApp/dist/index.html`), this is to work around a unsupported scenario with Angular. Ombi will write and read that file every time Ombi starts up.
+1) It allows for using oAuth sign-in (so users don't have to add another password to the mix.
+2) It allows for checking for actual availability (not just in place according to *arr, but indexed in a library and actually watchable).
+3) It allows for Ombi to use a plex ID for the link in newsletters etc - so users can click the notification and be taken directly to the item in Plex.
 
 ## TV shows and episodes not showing as available
 
