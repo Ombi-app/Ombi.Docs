@@ -19,10 +19,6 @@ See [Feature Suggestions](../../guides/feature-suggestions)
 2) It allows for checking for actual availability (not just in place according to *arr, but indexed in a library and actually watchable).
 3) It allows for Ombi to use a plex ID for the link in newsletters etc - so users can click the notification and be taken directly to the item in Plex.
 
-## Unauthorized access to Index.html
-
-Ombi currently needs access to write and read the Index.html file (`ClientApp/dist/index.html`), this is to work around a unsupported scenario with Angular. Ombi will write and read that file every time Ombi starts up.
-
 ## TV shows and episodes not showing as available
 
 The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.
