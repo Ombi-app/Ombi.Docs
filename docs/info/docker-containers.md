@@ -58,7 +58,7 @@ Please bear in mind that this is just an example and can/should be changed to yo
     version: "2"
     services:
       ombi:
-        image: ghcr.io/linuxserver/ombi:v4-preview
+        image: ghcr.io/linuxserver/ombi:development
                 container_name: ombi
         restart: unless-stopped
         environment:
