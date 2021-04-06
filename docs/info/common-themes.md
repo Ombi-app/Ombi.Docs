@@ -121,6 +121,14 @@ display: none;
 }
 ```
 
+## Hide "Play on Plex" button
+
+``` css
+a#viewOnPlexButton {
+display:none;
+}
+```
+
 ## Contributors
 
 **Please thank all the people posting their custom CSS and the people below. Most of these are from the community at large, so credit where credit is due.**
