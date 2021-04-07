@@ -13,8 +13,9 @@ theme:
   language: en
   code_wrap: true
   features:
-    - navigation.tabs
     - navigation.instant
+    - navigation.tabs
+    - navigation.top
   favicon: assets/logo/favicon.ico
   logo: assets/logo/ombi-logo.png
   palette:
