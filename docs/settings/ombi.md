@@ -23,10 +23,3 @@ This will not send the admin any "New Request" notifications if they have auto a
 ## Hide requests from other users
 
 This will not show any requests to any "normal" user (non-admin or power user).
-
-## Ignore any certificate errors
-
-If you find you are having any SSL certificate errors e.g.
-> System.Net.Http.HttpRequestException: The SSL connection could not be established, see inner exception.
-
-Enable this option and it should work.
