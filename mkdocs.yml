@@ -18,9 +18,22 @@ theme:
   favicon: assets/logo/favicon.ico
   logo: assets/logo/ombi-logo.png
   palette:
-    scheme: preference
-    #primary: amber #Not sure on this. Looks kinda nasty.
-    #accent: e37200 #Ombi orange
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 
 # Additional links
 extra:
