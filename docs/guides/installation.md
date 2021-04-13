@@ -105,17 +105,17 @@ To allow a port through Windows Firewall, you have a few options.
 Note that this is not the preferred method of access, and a [Reverse Proxy](../../info/reverse-proxy) is recommended instead.  
 Replace the port in the below commands with your own port if you're running a different port than the default.  
 
-#### Command Prompt
+=== "Command Prompt"
 
-```cmd
-netsh advfirewall firewall add rule name="Ombi" dir=in action=allow protocol=TCP localport=3579
-```
+    ```batch
+    netsh advfirewall firewall add rule name="Ombi" dir=in action=allow protocol=TCP localport=5000
+    ```
 
-#### Powershell
+=== "Powershell"
 
-```powershell
-New-NetFirewallRule -DisplayName 'Ombi' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('3579')
-```
+    ```powershell
+    New-NetFirewallRule -DisplayName 'Ombi' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('5000')
+    ```
 
 ***
 
@@ -147,12 +147,6 @@ Ombi should now be reachable on "http://your-ip-address:5000"
 
 Packages in this repo use systemd.  
 Use either the `systemctl` or the `service` command to start, stop, or restart Ombi.  
-If an update is available for Ombi:  
-
-* It will get installed along with all other updates if you:
- `sudo apt update && sudo apt upgrade`
-* Or if you _only_ want to update Ombi:
- `sudo apt update && sudo apt install ombi`
 
 ### Fedora 29
 
