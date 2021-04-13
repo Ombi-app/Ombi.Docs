@@ -126,16 +126,21 @@ New-NetFirewallRule -DisplayName 'Ombi' -Direction Inbound -Action Allow -Protoc
 **Note:** This is the easy way, and only works with Debian-based distributions.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
 
-1. Add the apt repository to the apt sources list:  
-`echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
-   _For old (v3) releases, use:_  
-   `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`  
-1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
-`curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
-   _For old (v3) releases, use:_  
-   `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`  
-1. Update the package list and install Ombi:  
-   `sudo apt update && sudo apt install ombi`
+=== "V4"
+    1. Add the apt repository to the apt sources list:  
+    `echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
+    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
+    1. Update the package list and install Ombi:  
+    `sudo apt update && sudo apt install ombi`
+
+=== "V3 (Legacy)"
+    1. Add the apt repository to the apt sources list:  
+    `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`  
+    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`  
+    1. Update the package list and install Ombi:  
+    `sudo apt update && sudo apt install ombi`
 
 If no errors are shown, Ombi has been installed successfully and will automatically start during boot.  
 Ombi should now be reachable on "http://your-ip-address:5000"
