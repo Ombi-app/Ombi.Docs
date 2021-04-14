@@ -55,6 +55,7 @@ markdown_extensions:
   - abbr
   - attr_list
   - meta
+  - pymdownx.details
   - pymdownx.highlight:
       guess_lang: true
   - pymdownx.inlinehilite
