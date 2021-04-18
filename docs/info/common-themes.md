@@ -149,32 +149,46 @@ display:none;
 
 ***
 
+## Community Themes
+
+People with their own repositories of themes can have ones they'd like shared publicly linked here.  
+Please note that these are not tested or endorsed by the Ombi(tm) team. Any 'jank' encountered is down to the maintainer of the theme.
+
+* [OmbiFlix (Dark Netflix Clone)](https://github.com/DevilsDesigns/OmbiFlix-Themes)
+
+***
+
 ## Contributors
 
 **Please thank all the people posting their custom CSS and the people below. Most of these are from the community at large, so credit where credit is due.**
 
-### Reddit
+=== "Reddit"
+    [sokotaro](https://www.reddit.com/user/sokotaro/)  
 
-[sokotaro](https://www.reddit.com/user/sokotaro/)  
+    * Remove Sign In with Ombi
+    * Increase Search bar on Mobile
 
-* Remove Sign In with Ombi  
-* Increase Search bar on Mobile
+    [Rockfist93](https://www.reddit.com/user/Rockfist93/)  
 
-[Rockfist93](https://www.reddit.com/user/Rockfist93/)  
+    * Default Light Theme
+    * Default Dark Theme
 
-* Default Light Theme
-* Default Dark Theme
+    [bigworm50](https://www.reddit.com/user/bigworm50/)  
 
-[bigworm50](https://www.reddit.com/user/bigworm50/)  
+    * Custom Colored UI
 
-* Custom Colored UI
+    [zimreapers](https://www.reddit.com/user/zimreapers/)  
 
-[zimreapers](https://www.reddit.com/user/zimreapers/)  
+    * Hide Movies,TV-Shows,and Music Tabs
 
-* Hide Movies,TV-Shows,and Music Tabs
+=== "Github"
 
-### Github
+    [DevilsCoder](https://github.com/DevilsDesigns/)  
 
-[DevilsCoder](https://github.com/DevilsDesigns/)  
+    * [OmbiFlix (Dark Netflix Clone)](https://github.com/DevilsDesigns/OmbiFlix-Themes)
 
-* [OmbiFlix (Dark Netflix Clone)](https://github.com/DevilsDesigns/OmbiFlix-Themes)
+=== "Discord"
+
+    [Alacard]()
+
+    * Hide "Stream on" services
