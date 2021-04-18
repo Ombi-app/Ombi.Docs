@@ -93,33 +93,30 @@ app-nav-search mat-form-field{
 
 ***
 
-## Hide Movies/TV-Shows/Music from Menu
+## Hide Media Type from Menu
 
 **Note:** You're basically hiding the ID of whatever tab you want to hide using a CSS tag.
 
-### Hide TV-Shows
+=== "TV Shows"
+    ``` css
+    #TVtab {
+        display: none;
+    }
+    ```
 
-``` css
-#TVtab {
-display: none;
-}
-```
+=== "Movies"
+    ``` css
+    #Moviestab {
+        display: none;
+    }
+    ```
 
-### Hide Movies
-
-``` css
-#Moviestab {
-display: none;
-}
-```
-
-### Hide Music
-
-``` css
-#Music {
-display: none;
-}
-```
+=== "Music"
+    ``` css
+    #Music {
+        display: none;
+    }
+    ```
 
 ***
 
