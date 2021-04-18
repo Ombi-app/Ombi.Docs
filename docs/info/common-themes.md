@@ -56,7 +56,21 @@ height: 5px;
 
 ***
 
-## Remove "Sign in with Ombi"
+## Wider Search Bar
+
+**Note:** The current search bar is hard coded to "width: 50%".  
+This solution is neither perfect nor elegant, but it works for now.
+
+``` css
+app-nav-search mat-form-field{
+    margin-left: -50%;
+    min-width: 200%;
+}
+```
+
+***
+
+## Hide "Sign in with Ombi"
 
 (Only show "Sign in with Plex")  
 **Note:** This css mod hides the "Sign in with Ombi" option (but does not disable it). A user _could_ inspect the HTML element and "un-hide" the ombi login option, but the hope is "out of sight == out of mind".  
@@ -79,25 +93,12 @@ height: 5px;
 
 ***
 
-## Wider Search Bar
-
-**Note:** The current search bar is hard coded to "width: 50%".  
-This solution is neither perfect nor elegant, but it works for now.
-
-``` css
-app-nav-search mat-form-field{
-    margin-left: -50%;
-    min-width: 200%;
-}
-```
-
-***
-
-## Hide Media Type from Menu
+## Hide Media Types
 
 **Note:** You're basically hiding the ID of whatever tab you want to hide using a CSS tag.
 
 === "TV Shows"
+
     ``` css
     #TVtab {
         display: none;
@@ -105,6 +106,7 @@ app-nav-search mat-form-field{
     ```
 
 === "Movies"
+
     ``` css
     #Moviestab {
         display: none;
@@ -112,6 +114,7 @@ app-nav-search mat-form-field{
     ```
 
 === "Music"
+
     ``` css
     #Music {
         display: none;
