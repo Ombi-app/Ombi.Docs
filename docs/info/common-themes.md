@@ -1,23 +1,5 @@
 # Common Themes
 
-## Dark Mode Red Buttons
-
-``` css
-.dark .mat-fab.mat-accent, .dark .mat-flat-button.mat-accent, .dark .mat-mini-fab.mat-accent, .dark .mat-raised-button.mat-accent, .dark .mat-list-item.active-list-item, .dark .mat-checkbox-checked.mat-accent .mat-checkbox-background, .dark .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .dark .buttons button[type="button"], .dark .mat-tab-label-active[role="tab"] {
-background-color: #a30000 !important;
-}
-```
-
-## Light Mode Red Buttons
-
-``` css
-.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-list-item.active-list-item, .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .buttons button[type="button"], .mat-tab-label-active[role="tab"] {
-background-color: #a30000 !important;
-}
-```
-
-***
-
 ## Custom Colors
 
 **Note:** Replace #a30000 with the hex colour you want for all the coloured UI elements (this is red).  
@@ -53,6 +35,26 @@ width: 100%;
 height: 5px;
 }
 ```
+
+***
+
+### Red Buttons
+
+=== "Dark Mode"
+
+    ``` css
+    .dark .mat-fab.mat-accent, .dark .mat-flat-button.mat-accent, .dark .mat-mini-fab.mat-accent, .dark .mat-raised-button.mat-accent, .dark .mat-list-item.active-list-item, .dark .mat-checkbox-checked.mat-accent .mat-checkbox-background, .dark .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .dark .buttons button[type="button"], .dark .mat-tab-label-active[role="tab"] {
+    background-color: #a30000 !important;
+    }
+    ```
+
+=== "Light Mode"
+
+    ``` css
+    .mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent, .mat-list-item.active-list-item, .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .buttons button[type="button"], .mat-tab-label-active[role="tab"] {
+    background-color: #a30000 !important;
+    }
+    ```
 
 ***
 
