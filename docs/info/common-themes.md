@@ -61,21 +61,21 @@ height: 5px;
 (Only show "Sign in with Plex")  
 **Note:** This css mod hides the "Sign in with Ombi" option (but does not disable it). A user _could_ inspect the HTML element and "un-hide" the ombi login option, but the hope is "out of sight == out of mind".  
 
-V4:
+=== "V4"
 
-``` css
-button#sign-in{
-display:none;
-}
-```
+    ``` css
+    button#sign-in{
+       display:none;
+    }
+    ```
 
-V3 (old):
+=== "V3 (old)"
 
-``` css
-.login-buttons button:nth-of-type(1) {
-  display:none;
-}
-```
+    ``` css
+    .login-buttons button:nth-of-type(1) {
+        display:none;
+    }
+    ```
 
 ***
 
