@@ -13,6 +13,7 @@ theme:
   language: en
   code_wrap: true
   features:
+    - header.autohide
     - navigation.instant
     - navigation.tabs
     - navigation.top
@@ -55,10 +56,12 @@ markdown_extensions:
   - abbr
   - attr_list
   - meta
+  - pymdownx.details
   - pymdownx.highlight:
       guess_lang: true
   - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.saneheaders
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed
