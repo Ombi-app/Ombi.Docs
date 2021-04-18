@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/common-themes/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9299cb39.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f955dcd.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -112,16 +112,20 @@
           
           
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" type="radio" name="__palette" id="__palette_1">
-          <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
-          </label>
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
         
           
           
           <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" type="radio" name="__palette" id="__palette_2">
-          <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
-          </label>
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
         
       </form>
     
@@ -966,6 +970,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -982,6 +987,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
     
   
   
@@ -992,30 +998,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dark-mode-red-buttons" class="md-nav__link">
-    Dark Mode Red Buttons
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#light-mode-red-buttons" class="md-nav__link">
-    Light Mode Red Buttons
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#custom-colors" class="md-nav__link">
     Custom Colors
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-sign-in-with-ombi" class="md-nav__link">
-    Remove "Sign in with Ombi"
+    <nav class="md-nav" aria-label="Custom Colors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#red-buttons" class="md-nav__link">
+    Red Buttons
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1027,42 +1025,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hide-moviestv-showsmusic-from-menu" class="md-nav__link">
-    Hide Movies/TV-Shows/Music from Menu
-  </a>
-  
-    <nav class="md-nav" aria-label="Hide Movies/TV-Shows/Music from Menu">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hide-tv-shows" class="md-nav__link">
-    Hide TV-Shows
+  <a href="#hide-sign-in-with-ombi" class="md-nav__link">
+    Hide "Sign in with Ombi"
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#hide-movies" class="md-nav__link">
-    Hide Movies
+      
+        <li class="md-nav__item">
+  <a href="#hide-media-types" class="md-nav__link">
+    Hide Media Types
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hide-music" class="md-nav__link">
-    Hide Music
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#hide-play-on-plex-button" class="md-nav__link">
     Hide "Play on Plex" button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-stream-on-services" class="md-nav__link">
+    Hide "Stream On" services
   </a>
   
 </li>
@@ -1561,6 +1546,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
     
   
   
@@ -1571,30 +1557,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dark-mode-red-buttons" class="md-nav__link">
-    Dark Mode Red Buttons
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#light-mode-red-buttons" class="md-nav__link">
-    Light Mode Red Buttons
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#custom-colors" class="md-nav__link">
     Custom Colors
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-sign-in-with-ombi" class="md-nav__link">
-    Remove "Sign in with Ombi"
+    <nav class="md-nav" aria-label="Custom Colors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#red-buttons" class="md-nav__link">
+    Red Buttons
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1606,42 +1584,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hide-moviestv-showsmusic-from-menu" class="md-nav__link">
-    Hide Movies/TV-Shows/Music from Menu
-  </a>
-  
-    <nav class="md-nav" aria-label="Hide Movies/TV-Shows/Music from Menu">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hide-tv-shows" class="md-nav__link">
-    Hide TV-Shows
+  <a href="#hide-sign-in-with-ombi" class="md-nav__link">
+    Hide "Sign in with Ombi"
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#hide-movies" class="md-nav__link">
-    Hide Movies
+      
+        <li class="md-nav__item">
+  <a href="#hide-media-types" class="md-nav__link">
+    Hide Media Types
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hide-music" class="md-nav__link">
-    Hide Music
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#hide-play-on-plex-button" class="md-nav__link">
     Hide "Play on Plex" button
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-stream-on-services" class="md-nav__link">
+    Hide "Stream On" services
   </a>
   
 </li>
@@ -1691,17 +1656,6 @@
                 
                 
                 <h1 id="common-themes">Common Themes<a class="headerlink" href="#common-themes" title="Permanent link">&para;</a></h1>
-<h2 id="dark-mode-red-buttons">Dark Mode Red Buttons<a class="headerlink" href="#dark-mode-red-buttons" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-flat-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-mini-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-raised-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-list-item</span><span class="p">.</span><span class="nc">active-list-item</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-checkbox-checked</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-checkbox-indeterminate</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">buttons</span> <span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="o">],</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-tab-label-active</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;tab&quot;</span><span class="o">]</span> <span class="p">{</span>
-<span class="k">background-color</span><span class="p">:</span> <span class="mh">#a30000</span> <span class="cp">!important</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="light-mode-red-buttons">Light Mode Red Buttons<a class="headerlink" href="#light-mode-red-buttons" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">mat-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-flat-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-mini-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-raised-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-list-item</span><span class="p">.</span><span class="nc">active-list-item</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-checkbox-checked</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-checkbox-indeterminate</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">buttons</span> <span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="o">],</span> <span class="p">.</span><span class="nc">mat-tab-label-active</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;tab&quot;</span><span class="o">]</span> <span class="p">{</span>
-<span class="k">background-color</span><span class="p">:</span> <span class="mh">#a30000</span> <span class="cp">!important</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
 <h2 id="custom-colors">Custom Colors<a class="headerlink" href="#custom-colors" title="Permanent link">&para;</a></h2>
 <p><strong>Note:</strong> Replace #a30000 with the hex colour you want for all the coloured UI elements (this is red).<br />
 <strong>Note:</strong> Replace #121212 (currently black) with whatever you want the background colour to be.<br />
@@ -1735,19 +1689,20 @@
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="remove-sign-in-with-ombi">Remove "Sign in with Ombi"<a class="headerlink" href="#remove-sign-in-with-ombi" title="Permanent link">&para;</a></h2>
-<p>(Only show "Sign in with Plex")<br />
-<strong>Note:</strong> This css mod hides the "Sign in with Ombi" option (but does not disable it). A user <em>could</em> inspect the HTML element and "un-hide" the ombi login option, but the hope is "out of sight == out of mind".  </p>
-<p>V4:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">button</span><span class="p">#</span><span class="nn">sign-in</span><span class="p">{</span>
-<span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
+<h3 id="red-buttons">Red Buttons<a class="headerlink" href="#red-buttons" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Dark Mode</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-flat-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-mini-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-raised-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-list-item</span><span class="p">.</span><span class="nc">active-list-item</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-checkbox-checked</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-checkbox-indeterminate</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">buttons</span> <span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="o">],</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-tab-label-active</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;tab&quot;</span><span class="o">]</span> <span class="p">{</span>
+<span class="k">background-color</span><span class="p">:</span> <span class="mh">#a30000</span> <span class="cp">!important</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>V3 (old):</p>
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">login-buttons</span> <span class="nt">button</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Light Mode</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">mat-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-flat-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-mini-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-raised-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-list-item</span><span class="p">.</span><span class="nc">active-list-item</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-checkbox-checked</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-checkbox-indeterminate</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">buttons</span> <span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="o">],</span> <span class="p">.</span><span class="nc">mat-tab-label-active</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;tab&quot;</span><span class="o">]</span> <span class="p">{</span>
+<span class="k">background-color</span><span class="p">:</span> <span class="mh">#a30000</span> <span class="cp">!important</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
+</div>
 <hr />
 <h2 id="wider-search-bar">Wider Search Bar<a class="headerlink" href="#wider-search-bar" title="Permanent link">&para;</a></h2>
 <p><strong>Note:</strong> The current search bar is hard coded to "width: 50%".<br />
@@ -1758,28 +1713,61 @@ This solution is neither perfect nor elegant, but it works for now.</p>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="hide-moviestv-showsmusic-from-menu">Hide Movies/TV-Shows/Music from Menu<a class="headerlink" href="#hide-moviestv-showsmusic-from-menu" title="Permanent link">&para;</a></h2>
+<h2 id="hide-sign-in-with-ombi">Hide "Sign in with Ombi"<a class="headerlink" href="#hide-sign-in-with-ombi" title="Permanent link">&para;</a></h2>
+<p>(Only show "Sign in with Plex")<br />
+<strong>Note:</strong> This css mod hides the "Sign in with Ombi" option (but does not disable it). A user <em>could</em> inspect the HTML element and "un-hide" the ombi login option, but the hope is "out of sight == out of mind".  </p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">V4</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">button</span><span class="p">#</span><span class="nn">sign-in</span><span class="p">{</span>
+   <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">V3 (old)</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">login-buttons</span> <span class="nt">button</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h2 id="hide-media-types">Hide Media Types<a class="headerlink" href="#hide-media-types" title="Permanent link">&para;</a></h2>
 <p><strong>Note:</strong> You're basically hiding the ID of whatever tab you want to hide using a CSS tag.</p>
-<h3 id="hide-tv-shows">Hide TV-Shows<a class="headerlink" href="#hide-tv-shows" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">TV Shows</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">TVtab</span> <span class="p">{</span>
-<span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="hide-movies">Hide Movies<a class="headerlink" href="#hide-movies" title="Permanent link">&para;</a></h3>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Movies</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">Moviestab</span> <span class="p">{</span>
-<span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="hide-music">Hide Music<a class="headerlink" href="#hide-music" title="Permanent link">&para;</a></h3>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Music</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">Music</span> <span class="p">{</span>
-<span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
+</div>
+<hr />
 <h2 id="hide-play-on-plex-button">Hide "Play on Plex" button<a class="headerlink" href="#hide-play-on-plex-button" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="p">#</span><span class="nn">viewOnPlexButton</span> <span class="p">{</span>
 <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<hr />
+<h2 id="hide-stream-on-services">Hide "Stream On" services<a class="headerlink" href="#hide-stream-on-services" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">streamingContainer</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">streaming-on</span>
+<span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
 <h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
 <p><strong>Please thank all the people posting their custom CSS and the people below. Most of these are from the community at large, so credit where credit is due.</strong></p>
 <h3 id="reddit">Reddit<a class="headerlink" href="#reddit" title="Permanent link">&para;</a></h3>
@@ -1814,7 +1802,7 @@ This solution is neither perfect nor elegant, but it works for now.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-06T21:40:09+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-18T23:06:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-18</span>
     
   </small>
 </div>
@@ -1940,10 +1928,10 @@ This solution is neither perfect nor elegant, but it works for now.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.7353b375.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
