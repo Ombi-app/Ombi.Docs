@@ -121,6 +121,8 @@ display: none;
 }
 ```
 
+***
+
 ## Hide "Play on Plex" button
 
 ``` css
@@ -128,6 +130,22 @@ a#viewOnPlexButton {
 display:none;
 }
 ```
+
+***
+
+## Hide "Stream On" services
+
+``` css
+#streamingContainer {
+    display: none;
+}
+.streaming-on
+{
+    display: none;
+}
+```
+
+***
 
 ## Contributors
 
