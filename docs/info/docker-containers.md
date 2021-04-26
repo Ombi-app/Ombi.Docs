@@ -13,7 +13,7 @@ To create the folder and run Ombi on port 3579 (the default for v4), run the fol
 
 ```bash
 mkdir -p /opt/ombi/config/
-docker run -d --name=ombi -p 5000:5000 --restart=unless-stopped -v /opt/ombi/config:/config linuxserver/ombi:development
+docker run -d --name=ombi -p 5000:5000 --restart=unless-stopped -v /opt/ombi/config:/config linuxserver/ombi:latest
 ```
 
 This will create the folder and a container named "ombi" that you can then manage like any other docker container.  
@@ -51,14 +51,15 @@ Please bear in mind that this is just an example and can/should be changed to yo
     }
     ```
 
-1. Create a "docker-compose.yml" file in the folder from step 1 with this content:
+1. Create a "docker-compose.yml" file in the folder from step 1 with this content:  
+(replace the `TZ` value with your timezone)
 
     ```yml
     ---
-    version: "2"
+    version: "3"
     services:
       ombi:
-        image: ghcr.io/linuxserver/ombi:development
+        image: ghcr.io/linuxserver/ombi:latest
                 container_name: ombi
         restart: unless-stopped
         environment:
@@ -68,12 +69,12 @@ Please bear in mind that this is just an example and can/should be changed to yo
         volumes:
           - /opt/ombi/config:/config
         ports:
-          - "5000:5000"
+          - "5000:3579"
         depends_on:
         - "mysql_db"
 
       mysql_db:
-        image: "mysql:5.7" #maybe switch to a newer one, I've tested it with this image
+        image: "mysql:5.7"
         container_name: ombi_mysql
         restart: unless-stopped
         environment:
