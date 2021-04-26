@@ -181,7 +181,7 @@ The Ombi team do not currently maintain any Docker containers directly.
 However, there are a number of them available, maintained by various members of the community.  
 linuxserver.io keep their image the most up-to-date, and they have pretty comprehensive instructions for installation. See the page for their image [here](https://hub.docker.com/r/linuxserver/ombi/).  
 
-If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see [Things to consider with Docker](../info/docker-containers) to (hopefully) help clear up some things with how networking and access works with a Docker system.
+If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see [Things to consider with Docker](../../info/docker-containers) to (hopefully) help clear up some things with how networking and access works with a Docker system.
 
 ***
 
