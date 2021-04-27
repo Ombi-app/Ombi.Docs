@@ -85,7 +85,7 @@ app-nav-search mat-form-field{
     }
     ```
 
-=== "V3 (old)"
+=== "V3 (Legacy)"
 
     ``` css
     .login-buttons button:nth-of-type(1) {
@@ -97,7 +97,9 @@ app-nav-search mat-form-field{
 
 ## Hide Media Types
 
-**Note:** You're basically hiding the ID of whatever tab you want to hide using a CSS tag.
+**Note:**  
+You're basically hiding the ID of whatever tab you want to hide using a CSS tag.  
+This only works for V3 (legacy) builds, as V4 is no longer tabbed like this.
 
 === "TV Shows"
 
