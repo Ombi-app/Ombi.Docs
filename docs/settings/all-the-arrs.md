@@ -20,10 +20,9 @@ This switch tells Ombi whether to use this service or not. Don't run the service
 
 ## V3
 
-Currently Sonarr is in the process of migrating from V2 to V3, and is actively maintaining both versions.  
-"phantom-develop" is the v3 branch.  
-Radarr have already made V3 their 'release' version.  
-If you're running the V3 release of either of these things, turn this on (in the relevant page), otherwise leave it blank.  
+Sonarr recently made V3 their "stable" branch, meaning V2 is now 'legacy'.  
+This option is now the default for new sites, and should only be disabled if you are running the legacy version.  
+_We do not recommend this._  
 ***
 
 ## Scan for Availability
@@ -44,7 +43,7 @@ In the examples above, this would be `app.example.com`.
 ## Port
 
 If you're not using a reverse proxy, this is whatever port you use to access the service (it's the number after the second ":" in the address bar). In the case of Sonarr, the default is `8989`.  
-If you're using a reverse proxy *without* SSL, the port will be `80` (pro-tip: don't do that).  
+If you're using a reverse proxy *without* SSL, the port will be `80` _(pro-tip: don't do that)_.  
 If you're running *with* SSL, the port will be `443`.  
 ***
 
@@ -76,6 +75,12 @@ If it doesn't work, save the settings and "Test Connectivity". You may not be ab
 
 Depending on the service, you may have this appear several times. There will be a button to 'get' these from the service. Click it, wait, and select one.  
 If it doesn't work, save the settings and "Test Connectivity". You may not be able to communicate with the service yet.
+***
+
+## Submit
+
+This button is used to save and activate your new settings.  
+This will not work if you have not filled in _every_ option for the relevant service (folders, qualities, languages, seasons, albums, availability).  
 ***
 
 ## Sonarr / Radarr
