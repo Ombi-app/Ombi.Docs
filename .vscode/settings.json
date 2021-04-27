@@ -126,5 +126,6 @@
     ],
     "markdownlint.ignore": [
         "assets/glossary.md"
-    ]
+    ],
+    "editor.detectIndentation": false
 }
