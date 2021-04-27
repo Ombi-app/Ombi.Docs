@@ -7,6 +7,7 @@ Stop Ombi with the relevant command for your system (stop-process ombi, net stop
 ## Back up the databases
 
 === "SQLite"
+
     Back up the sqlite db files.
 
     - ombi.db
@@ -14,5 +15,6 @@ Stop Ombi with the relevant command for your system (stop-process ombi, net stop
     - ombiexternal.db
 
 === "MySQL"
+
     Back up database.json.  
     Export your mysql databases.
