@@ -985,26 +985,6 @@
     Back up the databases
   </a>
   
-    <nav class="md-nav" aria-label="Back up the databases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-sqlite" class="md-nav__link">
-    For SQLite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-mysql" class="md-nav__link">
-    For MySQL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -1520,26 +1500,6 @@
     Back up the databases
   </a>
   
-    <nav class="md-nav" aria-label="Back up the databases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-sqlite" class="md-nav__link">
-    For SQLite
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-mysql" class="md-nav__link">
-    For MySQL
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -1563,16 +1523,19 @@
 <h2 id="stop-ombi">Stop Ombi<a class="headerlink" href="#stop-ombi" title="Permanent link">&para;</a></h2>
 <p>Stop Ombi with the relevant command for your system (stop-process ombi, net stop ombi, service ombi stop, docker stop ombi...), and...</p>
 <h2 id="back-up-the-databases">Back up the databases<a class="headerlink" href="#back-up-the-databases" title="Permanent link">&para;</a></h2>
-<h3 id="for-sqlite">For SQLite<a class="headerlink" href="#for-sqlite" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">SQLite</label><div class="tabbed-content">
 <p>Back up the sqlite db files.</p>
 <ul>
 <li>ombi.db</li>
 <li>ombisettings.db</li>
 <li>ombiexternal.db</li>
 </ul>
-<h3 id="for-mysql">For MySQL<a class="headerlink" href="#for-mysql" title="Permanent link">&para;</a></h3>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">MySQL</label><div class="tabbed-content">
 <p>Back up database.json.<br />
 Export your mysql databases.</p>
+</div>
+</div>
                 
                   
                     
@@ -1581,7 +1544,7 @@ Export your mysql databases.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-06T04:06:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-27T21:42:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-27</span>
     
   </small>
 </div>

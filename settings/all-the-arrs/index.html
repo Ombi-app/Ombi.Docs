@@ -735,6 +735,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#submit" class="md-nav__link">
+    Submit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sonarr-radarr" class="md-nav__link">
     Sonarr / Radarr
   </a>
@@ -1703,6 +1710,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#submit" class="md-nav__link">
+    Submit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sonarr-radarr" class="md-nav__link">
     Sonarr / Radarr
   </a>
@@ -1824,10 +1838,9 @@ Radarr: <code class="highlight">https://app.example.com/radarr</code>  </p>
 <p>This switch tells Ombi whether to use this service or not. Don't run the service? Don't enable it.  </p>
 <hr />
 <h2 id="v3">V3<a class="headerlink" href="#v3" title="Permanent link">&para;</a></h2>
-<p>Currently Sonarr is in the process of migrating from V2 to V3, and is actively maintaining both versions.<br />
-"phantom-develop" is the v3 branch.<br />
-Radarr have already made V3 their 'release' version.<br />
-If you're running the V3 release of either of these things, turn this on (in the relevant page), otherwise leave it blank.  </p>
+<p>Sonarr recently made V3 their "stable" branch, meaning V2 is now 'legacy'.<br />
+This option is now the default for new sites, and should only be disabled if you are running the legacy version.<br />
+<em>We do not recommend this.</em>  </p>
 <hr />
 <h2 id="scan-for-availability">Scan for Availability<a class="headerlink" href="#scan-for-availability" title="Permanent link">&para;</a></h2>
 <p>This option will allow Ombi to sync with the Arrs to check for availability.<br />
@@ -1842,7 +1855,7 @@ In the examples above, this would be <code class="highlight">app.example.com</co
 <hr />
 <h2 id="port">Port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h2>
 <p>If you're not using a reverse proxy, this is whatever port you use to access the service (it's the number after the second ":" in the address bar). In the case of Sonarr, the default is <code class="highlight"><span class="mf">8989</span></code>.<br />
-If you're using a reverse proxy <em>without</em> SSL, the port will be <code class="highlight"><span class="mf">80</span></code> (pro-tip: don't do that).<br />
+If you're using a reverse proxy <em>without</em> SSL, the port will be <code class="highlight"><span class="mf">80</span></code> <em>(pro-tip: don't do that)</em>.<br />
 If you're running <em>with</em> SSL, the port will be <code class="highlight"><span class="mf">443</span></code>.  </p>
 <hr />
 <h2 id="ssl">SSL<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h2>
@@ -1864,6 +1877,10 @@ If it doesn't work, save the settings and "Test Connectivity". You may not be ab
 <h2 id="root-folders">Root Folders<a class="headerlink" href="#root-folders" title="Permanent link">&para;</a></h2>
 <p>Depending on the service, you may have this appear several times. There will be a button to 'get' these from the service. Click it, wait, and select one.<br />
 If it doesn't work, save the settings and "Test Connectivity". You may not be able to communicate with the service yet.</p>
+<hr />
+<h2 id="submit">Submit<a class="headerlink" href="#submit" title="Permanent link">&para;</a></h2>
+<p>This button is used to save and activate your new settings.<br />
+This will not work if you have not filled in <em>every</em> option for the relevant service (folders, qualities, languages, seasons, albums, availability).  </p>
 <hr />
 <h2 id="sonarr-radarr">Sonarr / Radarr<a class="headerlink" href="#sonarr-radarr" title="Permanent link">&para;</a></h2>
 <h3 id="default-minimum-availability">Default Minimum Availability<a class="headerlink" href="#default-minimum-availability" title="Permanent link">&para;</a></h3>
@@ -1900,7 +1917,7 @@ This means it will not auto download.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-06T04:06:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-27T20:40:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-27</span>
     
   </small>
 </div>

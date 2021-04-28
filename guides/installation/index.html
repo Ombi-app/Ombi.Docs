@@ -437,38 +437,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-as-a-service-with-nssm" class="md-nav__link">
-    Install as a Service with NSSM
-  </a>
-  
-    <nav class="md-nav" aria-label="Install as a Service with NSSM">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-setup" class="md-nav__link">
-    Standard Setup
+  <a href="#install-as-a-service" class="md-nav__link">
+    Install as a Service
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#standard-setup-with-different-port-number" class="md-nav__link">
-    Standard Setup with different port number
+  <a href="#install-as-a-scheduled-task" class="md-nav__link">
+    Install as a scheduled task
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-automatically-with-windows-task-scheduler" class="md-nav__link">
-    Run automatically with Windows Task Scheduler
-  </a>
-  
-    <nav class="md-nav" aria-label="Run automatically with Windows Task Scheduler">
+    <nav class="md-nav" aria-label="Install as a scheduled task">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1354,38 +1334,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-as-a-service-with-nssm" class="md-nav__link">
-    Install as a Service with NSSM
-  </a>
-  
-    <nav class="md-nav" aria-label="Install as a Service with NSSM">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-setup" class="md-nav__link">
-    Standard Setup
+  <a href="#install-as-a-service" class="md-nav__link">
+    Install as a Service
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#standard-setup-with-different-port-number" class="md-nav__link">
-    Standard Setup with different port number
+  <a href="#install-as-a-scheduled-task" class="md-nav__link">
+    Install as a scheduled task
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-automatically-with-windows-task-scheduler" class="md-nav__link">
-    Run automatically with Windows Task Scheduler
-  </a>
-  
-    <nav class="md-nav" aria-label="Run automatically with Windows Task Scheduler">
+    <nav class="md-nav" aria-label="Install as a scheduled task">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1786,38 +1746,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-as-a-service-with-nssm" class="md-nav__link">
-    Install as a Service with NSSM
-  </a>
-  
-    <nav class="md-nav" aria-label="Install as a Service with NSSM">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-setup" class="md-nav__link">
-    Standard Setup
+  <a href="#install-as-a-service" class="md-nav__link">
+    Install as a Service
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#standard-setup-with-different-port-number" class="md-nav__link">
-    Standard Setup with different port number
+  <a href="#install-as-a-scheduled-task" class="md-nav__link">
+    Install as a scheduled task
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-automatically-with-windows-task-scheduler" class="md-nav__link">
-    Run automatically with Windows Task Scheduler
-  </a>
-  
-    <nav class="md-nav" aria-label="Run automatically with Windows Task Scheduler">
+    <nav class="md-nav" aria-label="Install as a scheduled task">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1928,14 +1868,21 @@ Ensure you have systems to handle approved requests <em>before</em> you give use
 </ol>
 <h2 id="migrating-systems">Migrating Systems<a class="headerlink" href="#migrating-systems" title="Permanent link">&para;</a></h2>
 <p>If you're migrating Ombi from an existing install to a new install, the install process itself is exactly the same as below - with one exception, regardless of what you're migrating from or to.<br />
-If you are using sqlite, you will need to keep the following from your original installation:</p>
+Depending on what database you're using, you will need to keep the following files:  </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">SQLite</label><div class="tabbed-content">
 <ul>
 <li><code class="highlight">Ombi.db</code></li>
 <li><code class="highlight">OmbiExternal.db</code></li>
 <li><code class="highlight">OmbiSettings.db</code></li>
 </ul>
-<p>If you are using an alternate database, you will need to keep <code class="highlight">database.json</code>.</p>
-<p>When it comes time to actually launch Ombi on your fresh installation, place the above files into the new Ombi directory (wherever you may have put it), and <em>then</em> launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).<br />
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">MySQL</label><div class="tabbed-content">
+<ul>
+<li><code class="highlight">database.json</code></li>
+</ul>
+</div>
+</div>
+<p>When it comes time to actually launch Ombi on your fresh installation, place the relevant files into the new Ombi directory (wherever you may have put it), and <em>then</em> launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).<br />
 If you are running docker, place these files into the folder you've passed into the container as "/config" for the installation to find them.  </p>
 <hr />
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
@@ -1946,7 +1893,7 @@ If you are running docker, place these files into the folder you've passed into 
 <strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
 <li>Run Ombi.exe</li>
 </ol>
-<h3 id="install-as-a-service-with-nssm">Install as a Service with NSSM<a class="headerlink" href="#install-as-a-service-with-nssm" title="Permanent link">&para;</a></h3>
+<h3 id="install-as-a-service">Install as a Service<a class="headerlink" href="#install-as-a-service" title="Permanent link">&para;</a></h3>
 <p>(This is the preferred method on Windows)</p>
 <ol>
 <li>Download the latest <code class="highlight">win10-xxx.zip</code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases">Ombi Releases</a></li>
@@ -1955,19 +1902,21 @@ If you are running docker, place these files into the folder you've passed into 
 <strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
 <li>Use <a href="https://nssm.cc/">NSSM</a> to manage Ombi. Extract either the 32-/64-bit version to <em>C:\Windows\system32</em>. Open command prompt as an Administrator and type <em>nssm install Ombi</em>. Use one of the following settings depending on whether you want to keep or change the default port.</li>
 </ol>
-<h4 id="standard-setup">Standard Setup<a class="headerlink" href="#standard-setup" title="Permanent link">&para;</a></h4>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Standard Setup</label><div class="tabbed-content">
 <p>Be sure to adjust directories to your Ombi install location</p>
 <p><strong>Path:</strong> <code class="highlight">C:\Tools\Ombi\Ombi.exe</code><br />
 <strong>Start directory:</strong> <code class="highlight">C:\Tools\Ombi</code></p>
 <p><img alt="Ombi NSSM" loading="lazy" src="../../assets/images/nssm_service.png" />  </p>
-<h4 id="standard-setup-with-different-port-number">Standard Setup with different port number<a class="headerlink" href="#standard-setup-with-different-port-number" title="Permanent link">&para;</a></h4>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Alternate port number</label><div class="tabbed-content">
 <p>Be sure to adjust directories to your Ombi install location</p>
 <p><strong>Path:</strong> <code class="highlight">C:\Tools\Ombi\Ombi.exe</code><br />
 <strong>Start directory:</strong> <code class="highlight">C:\Tools\Ombi</code><br />
 <strong>Arguments:</strong> <code class="highlight">--host &quot;http://*:PORTNUMBER&quot;</code></p>
 <p><img alt="Ombi NSSM with Port" loading="lazy" src="../../assets/images/nssm_service_with_port.png" />  </p>
-<h3 id="run-automatically-with-windows-task-scheduler">Run automatically with Windows Task Scheduler<a class="headerlink" href="#run-automatically-with-windows-task-scheduler" title="Permanent link">&para;</a></h3>
-<p>~~Allows automatic updating on windows:~~ updater currently broken.</p>
+</div>
+</div>
+<h3 id="install-as-a-scheduled-task">Install as a scheduled task<a class="headerlink" href="#install-as-a-scheduled-task" title="Permanent link">&para;</a></h3>
 <p>As an alternative to NSSM, you can use Task Scheduler to run <code class="highlight">Ombi.exe</code> as if you were double clicking it and running it like a regular executable, except it's hidden from the task bar and can only be closed by the Task Manager or the Task Scheduler.</p>
 <ol>
 <li>Open 'Task Scheduler' either search for it in start. Or simply Run... <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span>  <code class="highlight"><span class="nf">%windir</span><span class="o">%</span><span class="err">\</span><span class="n">system32</span><span class="err">\</span><span class="n">taskschd</span><span class="p">.</span><span class="n">msc</span></code></li>
@@ -1993,11 +1942,11 @@ If you are running docker, place these files into the folder you've passed into 
 <p>To allow a port through Windows Firewall, you have a few options.
 Note that this is not the preferred method of access, and a <a href="../../info/reverse-proxy">Reverse Proxy</a> is recommended instead.<br />
 Replace the port in the below commands with your own port if you're running a different port than the default.  </p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Command Prompt</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Command Prompt</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>netsh advfirewall firewall add rule name=<span class="s2">&quot;Ombi&quot;</span> dir=in action=allow protocol=TCP localport=5000
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Powershell</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Powershell</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;Ombi&#39;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-LocalPort</span> <span class="p">@(</span><span class="s1">&#39;5000&#39;</span><span class="p">)</span>
 </code></pre></div>
 </div>
@@ -2007,7 +1956,7 @@ Replace the port in the below commands with your own port if you're running a di
 <h3 id="debian-apt-repo">Debian / APT repo<a class="headerlink" href="#debian-apt-repo" title="Permanent link">&para;</a></h3>
 <p><strong>Note:</strong> This is the easy way, and only works with Debian-based distributions.<br />
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">V4</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">V4</label><div class="tabbed-content">
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
 <code class="highlight">echo &quot;deb https://apt.ombi.app/develop jessie main&quot; | sudo tee /etc/apt/sources.list.d/ombi.list</code>  </li>
@@ -2017,7 +1966,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 <code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></li>
 </ol>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">V3 (Legacy)</label><div class="tabbed-content">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">V3 (Legacy)</label><div class="tabbed-content">
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
 <code class="highlight">echo &quot;deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main&quot; | sudo tee &quot;/etc/apt/sources.list.d/ombi.list&quot;</code>  </li>
@@ -2070,7 +2019,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-26T21:40:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-26</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-27T20:49:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-27</span>
     
   </small>
 </div>
