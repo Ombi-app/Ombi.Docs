@@ -32,18 +32,18 @@ If that doesn't worry you, and you're comfortable with running custom scripts an
 
 There are 3 databases that Ombi uses.
 
-### Ombi.db
+=== "Ombi"
 
-This database is the main ombi database.  
-It contains Ombi specific information e.g. Users, Requests, Issues
+    This database is the main ombi database.  
+    It contains Ombi specific information e.g. Users, Requests, Issues
 
-### OmbiExternal.db
+=== "OmbiExternal"
 
-This database contains the information we take from external providers e.g. Plex Server Content, Radarr Content, Sonarr Content
+    This database contains the information we take from external providers e.g. Plex Server Content, Radarr Content, Sonarr Content
 
-### OmbiSettings.db
+=== "OmbiSettings"
 
-This database contains all of the settings that you have applied to Ombi e.g. Notification Preferences, SMTP Settings, Sonarr Settings, Plex Settings
+    This database contains all of the settings that you have applied to Ombi e.g. Notification Preferences, SMTP Settings, Sonarr Settings, Plex Settings
 
 ***
 
@@ -54,9 +54,9 @@ Instead, we can use the php date() function and string concatenation (.) to buil
 The logs are named in the format `log-yyyymmdd.txt` - so January 14, 2019 would be `log-20190114.txt`. php date(Ymd) gives us the date in that format, and we can concatenate it into our ombi log path in Logarr configs like so:  
 _(**Note**: change folder paths to match your own install directory of Ombi.)_  
 
-````php
+```php
 "Ombi" => 'C:\Services\Ombi\Logs\log-' . date("Ymd") . '.txt',
-````
+```
 
 _You can also use similar code for any software which hard-codes the date into the config. It's not uncommon._
 

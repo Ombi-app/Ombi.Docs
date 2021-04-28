@@ -22,15 +22,17 @@ Ensure you have systems to handle approved requests _before_ you give users acce
 ## Migrating Systems
 
 If you're migrating Ombi from an existing install to a new install, the install process itself is exactly the same as below - with one exception, regardless of what you're migrating from or to.  
-If you are using sqlite, you will need to keep the following from your original installation:
+Depending on what database you're using, you will need to keep the following files:  
 
-* `Ombi.db`
-* `OmbiExternal.db`
-* `OmbiSettings.db`
+=== "SQLite"
+    * `Ombi.db`
+    * `OmbiExternal.db`
+    * `OmbiSettings.db`
 
-If you are using an alternate database, you will need to keep `database.json`.
+=== "MySQL"
+    * `database.json`
 
-When it comes time to actually launch Ombi on your fresh installation, place the above files into the new Ombi directory (wherever you may have put it), and *then* launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).  
+When it comes time to actually launch Ombi on your fresh installation, place the relevant files into the new Ombi directory (wherever you may have put it), and *then* launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).  
 If you are running docker, place these files into the folder you've passed into the container as "/config" for the installation to find them.  
 ***
 
@@ -42,7 +44,7 @@ If you are running docker, place these files into the folder you've passed into 
 **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
 4. Run Ombi.exe
 
-### Install as a Service with NSSM
+### Install as a Service
 
 (This is the preferred method on Windows)
 
@@ -52,46 +54,42 @@ If you are running docker, place these files into the folder you've passed into 
 **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
 4. Use [NSSM](https://nssm.cc/) to manage Ombi. Extract either the 32-/64-bit version to *C:\Windows\system32*. Open command prompt as an Administrator and type *nssm install Ombi*. Use one of the following settings depending on whether you want to keep or change the default port.
 
-#### Standard Setup
+=== "Standard Setup"
+    Be sure to adjust directories to your Ombi install location
 
-Be sure to adjust directories to your Ombi install location
+    **Path:** `C:\Tools\Ombi\Ombi.exe`  
+    **Start directory:** `C:\Tools\Ombi`
 
-**Path:** `C:\Tools\Ombi\Ombi.exe`  
-**Start directory:** `C:\Tools\Ombi`
+    ![Ombi NSSM](../assets/images/nssm_service.png){: loading=lazy }  
 
-![Ombi NSSM](../assets/images/nssm_service.png){: loading=lazy }  
+=== "Alternate port number"
+    Be sure to adjust directories to your Ombi install location
 
-#### Standard Setup with different port number
+    **Path:** `C:\Tools\Ombi\Ombi.exe`  
+    **Start directory:** `C:\Tools\Ombi`  
+    **Arguments:** `--host "http://*:PORTNUMBER"`
 
-Be sure to adjust directories to your Ombi install location
+    ![Ombi NSSM with Port](../assets/images/nssm_service_with_port.png){: loading=lazy }  
 
-**Path:** `C:\Tools\Ombi\Ombi.exe`  
-**Start directory:** `C:\Tools\Ombi`  
-**Arguments:** `--host "http://*:PORTNUMBER"`
-
-![Ombi NSSM with Port](../assets/images/nssm_service_with_port.png){: loading=lazy }  
-
-### Run automatically with Windows Task Scheduler
-
-~~Allows automatic updating on windows:~~ updater currently broken.
+### Install as a scheduled task
 
 As an alternative to NSSM, you can use Task Scheduler to run `Ombi.exe` as if you were double clicking it and running it like a regular executable, except it's hidden from the task bar and can only be closed by the Task Manager or the Task Scheduler.
 
 1. Open 'Task Scheduler' either search for it in start. Or simply Run... ++win+r++  `%windir%\system32\taskschd.msc`
-2. Click `Create task...` on the right hand side.
-3. Give the task a name. _Example:_ Ombi And a description if you want. (Not necessary)
-4. Check `Run with highest privileges`
-5. Click `Run whether user is logged on or not` to ensure Ombi runs even when you are logged out!
-6. Check `Hidden`
-7. Configure for: Choose your Windows version.
-8. Click the `Triggers` Tab and click `New...`
-9. `Begin the task:` 'At system startup. `Click` OK`
-10. Click the `Actions` Tab and Click `New...`
-11. Click `Browse...` and navigate to your `Ombi.exe` Click `Open`
-12. Fill `Start in (optional):` with `Ombi.exe`'s working directory. IE: `C:\Ombi\` or `C:\SERVERS\Ombi\` basically, wherever you extracted your 'Ombi' folder to and where it lives. Click `OK`
-13. `Settings Tab` Un-tick `Stop the task if it runs longer than:` Click `OK`
-14. You will be prompted for your windows user name and password. Please enter your credentials and click `OK`
-15. Click `Task Scheduler Library` right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at [http://localhost:5000](http://localhost:5000) !
+1. Click `Create task...` on the right hand side.
+1. Give the task a name. _Example:_ Ombi And a description if you want. (Not necessary)
+1. Check `Run with highest privileges`
+1. Click `Run whether user is logged on or not` to ensure Ombi runs even when you are logged out!
+1. Check `Hidden`
+1. Configure for: Choose your Windows version.
+1. Click the `Triggers` Tab and click `New...`
+1. `Begin the task:` 'At system startup. `Click` OK`
+1. Click the `Actions` Tab and Click `New...`
+1. Click `Browse...` and navigate to your `Ombi.exe` Click `Open`
+1. Fill `Start in (optional):` with `Ombi.exe`'s working directory. IE: `C:\Ombi\` or `C:\SERVERS\Ombi\` basically, wherever you extracted your 'Ombi' folder to and where it lives. Click `OK`
+1. `Settings Tab` Un-tick `Stop the task if it runs longer than:` Click `OK`
+1. You will be prompted for your windows user name and password. Please enter your credentials and click `OK`
+1. Click `Task Scheduler Library` right click on your new task and hit run. give it a good 20-30 seconds to start.  Ombi should now be reachable at [http://localhost:5000](http://localhost:5000) !
 
 **_Note: The next time you restart your PC, Task Scheduler will run ombi for you._**
 

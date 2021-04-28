@@ -10,12 +10,6 @@ To see all currently unfixed issues in the github repository, please see [this s
 See [Update Errors](../../guides/updating/#automatic-updates)
 ***
 
-## Unauthorized access to Index.html
-
-Ombi currently needs access to write and read the Index.html file (`ClientApp/dist/index.html`), this is to work around a unsupported scenario with Angular.  
-Ombi will write and read that file every time Ombi starts up.
-***
-
 ## Cannot start Ombi on Ubuntu 19.04
 
 .Net Core 5.0 is not supported officially on Ubuntu 19.04 (see [Supported Distributions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) to confirm).  

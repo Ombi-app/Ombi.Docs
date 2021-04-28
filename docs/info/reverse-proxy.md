@@ -272,14 +272,13 @@ Within this directory you would place the below rules in a web.config file. Ther
 
 ### IIS Subdomain
 
-- _NOTE1:  Below rules assume you have a dedicated site to run Ombi under in IIS.  
+- *NOTE 1:  Below rules assume you have a dedicated site to run Ombi under in IIS.  
 The address for this needs to match your application URL in Ombi, and should target a physical directory that resides at c:\inetpub\ombi.  
 Within this directory you would place the below rules in a web.config file. There should be no other files in this directory.  
-(This should NOT be your OMBI install directory)_
+(This should NOT be your OMBI install directory)*
 
-- _NOTE2:  Change "example.com"_
-- _NOTE 3: Change "ombi_ip:port" to whatever your local address for Ombi is._
-- _NOTE 4: Be sure you set your application URL in Ombi to whatever your site in IIS is listening to._
+- *NOTE 2: Change "ombi_ip:port" to whatever your local address for Ombi is.*
+- *NOTE 3: Be sure you set your application URL in Ombi to whatever your site in IIS is listening to.*
 
 ```xml
 <configuration>
@@ -296,7 +295,7 @@ Within this directory you would place the below rules in a web.config file. Ther
 
                 <rule name="RP_Ombi" enabled="true" stopProcessing="true">
                     <match url="(.*)" />
-                    <action type="Rewrite" url="http://localhost:5000/{R:1}" />
+                    <action type="Rewrite" url="http://ombi_ip:port/{R:1}" />
                     <serverVariables>
                     </serverVariables>
                 </rule>
