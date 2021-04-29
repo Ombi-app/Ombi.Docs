@@ -28,6 +28,11 @@ This is a little more involved than some people are comfortable with, as it's no
 If that doesn't worry you, and you're comfortable with running custom scripts and Python code, then you can check out the script created by DirtyCajunRice [here](../info/ombi-tautulli.md).
 ***
 
+## How do I get the QR code for mobile connections?
+
+Ensure that the [application URL](../../settings/customization/#application-url) has been entered.  
+***
+
 ## Database uses
 
 There are 3 databases that Ombi uses.
