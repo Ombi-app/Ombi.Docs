@@ -34,16 +34,18 @@ There are 3 databases that Ombi uses.
 
 === "Ombi"
 
-    This database is the main ombi database.  
-    It contains Ombi specific information e.g. Users, Requests, Issues
+    This contains Ombi specific information  
+    e.g. Users, Requests, Issues
 
 === "OmbiExternal"
 
-    This database contains the information we take from external providers e.g. Plex Server Content, Radarr Content, Sonarr Content
+    This contains the information we take from external providers  
+    e.g. Plex Server Content, Radarr Content, Sonarr Content
 
 === "OmbiSettings"
 
-    This database contains all of the settings that you have applied to Ombi e.g. Notification Preferences, SMTP Settings, Sonarr Settings, Plex Settings
+    This contains all of the settings that you have applied to Ombi  
+    e.g. Notification Preferences, SMTP Settings, Sonarr Settings, Plex Settings
 
 ***
 
@@ -65,30 +67,42 @@ _You can also use similar code for any software which hard-codes the date into t
 ## Can I force requests to re-add to client systems?
 
 Some people make the mistake of letting users request content before they configure the client systems to receive the requests (Sonarr/Radarr/CouchPotato/SickRage/Lidarr etc).  
-Unfortunately, with the way Ombi handles passing requests along to the systems you configure, there is no way to force the software to 're-add' the requested item to the downloader/monitoring system.  
-This would cause the system to attempt to add duplicates in some cases. Your best option is to add the request to the relevant system manually. Ombi will match the two items and notify the user as it would normally moving forward.  
-  
-If you are able to open the Ombi.db file and execute commands on it manually (Ombi will need to be stopped for this to work), you can mark the relevant requests as "needs approval" via an SQL command. This would allow you to then click "approve" and have Ombi add the request to the relevant application and continue as normal.  
+To force Ombi to attempt to re-process the request (and send it to the relevant system):
 
-_**Note:** this is not supported officially and carries risks._  
-The relevant commands are:  
+=== "The UI Way"
+    1. Open Ombi.
+    2. Click "Requests" (left hand menu).
+    3. Find the relevant request in the lists.
+    4. Click "Details".
+    5. Click the little gear icon (top right).
+    6. Click "Re-Process Request".
 
-```sql
-UPDATE AlbumRequests
-SET Approved = 0
-WHERE Approved = 1 AND Available = 0;
+    ![Re-Process Request](../assets/images/radarr_reprocess.png)
 
-UPDATE ChildRequests
-SET Approved = 0
-WHERE Approved = 1 AND Available = 0;
-UPDATE EpisodeRequests
-SET Approved = 0
-WHERE Approved = 1 AND Available = 0;
+=== "The SQL way (unsupported)"
+    In older versions of Ombi, there was no way to force the software to 're-add' the requested item to the downloader/monitoring system.  
+    To achieve this, you would need to open the Ombi.db file and execute commands on it manually (Ombi will need to be stopped for this to work), marking the relevant requests as "needs approval" via an SQL command.  
+    This would allow you to then click "approve" and have Ombi add the request to the relevant application and continue as normal.  
 
-UPDATE MovieRequests
-SET Approved = 0 
-WHERE Approved = 1 AND Available = 0;
-```
+    _**Note:** this is not supported officially and carries risks._  
+    The relevant commands are:  
+
+    ```sql
+    UPDATE AlbumRequests
+    SET Approved = 0
+    WHERE Approved = 1 AND Available = 0;
+
+    UPDATE ChildRequests
+    SET Approved = 0
+    WHERE Approved = 1 AND Available = 0;
+    UPDATE EpisodeRequests
+    SET Approved = 0
+    WHERE Approved = 1 AND Available = 0;
+
+    UPDATE MovieRequests
+    SET Approved = 0 
+    WHERE Approved = 1 AND Available = 0;
+    ```
 
 ***
 
