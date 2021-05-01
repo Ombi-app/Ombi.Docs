@@ -1039,6 +1039,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-i-get-the-qr-code-for-mobile-connections" class="md-nav__link">
+    How do I get the QR code for mobile connections?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#database-uses" class="md-nav__link">
     Database uses
   </a>
@@ -1560,6 +1567,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-i-get-the-qr-code-for-mobile-connections" class="md-nav__link">
+    How do I get the QR code for mobile connections?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#database-uses" class="md-nav__link">
     Database uses
   </a>
@@ -1642,17 +1656,22 @@ See also: <a href="known-faults">Known Faults</a>, <a href="common-errors">Commo
 This is a little more involved than some people are comfortable with, as it's not officially supported.<br />
 If that doesn't worry you, and you're comfortable with running custom scripts and Python code, then you can check out the script created by DirtyCajunRice <a href="../ombi-tautulli/">here</a>.</p>
 <hr />
+<h2 id="how-do-i-get-the-qr-code-for-mobile-connections">How do I get the QR code for mobile connections?<a class="headerlink" href="#how-do-i-get-the-qr-code-for-mobile-connections" title="Permanent link">&para;</a></h2>
+<p>Ensure that the <a href="../../settings/customization/#application-url">application URL</a> has been entered.  </p>
+<hr />
 <h2 id="database-uses">Database uses<a class="headerlink" href="#database-uses" title="Permanent link">&para;</a></h2>
 <p>There are 3 databases that Ombi uses.</p>
 <div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Ombi</label><div class="tabbed-content">
-<p>This database is the main ombi database.<br />
-It contains Ombi specific information e.g. Users, Requests, Issues</p>
+<p>This contains Ombi specific information<br />
+e.g. Users, Requests, Issues</p>
 </div>
 <input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">OmbiExternal</label><div class="tabbed-content">
-<p>This database contains the information we take from external providers e.g. Plex Server Content, Radarr Content, Sonarr Content</p>
+<p>This contains the information we take from external providers<br />
+e.g. Plex Server Content, Radarr Content, Sonarr Content</p>
 </div>
 <input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">OmbiSettings</label><div class="tabbed-content">
-<p>This database contains all of the settings that you have applied to Ombi e.g. Notification Preferences, SMTP Settings, Sonarr Settings, Plex Settings</p>
+<p>This contains all of the settings that you have applied to Ombi<br />
+e.g. Notification Preferences, SMTP Settings, Sonarr Settings, Plex Settings</p>
 </div>
 </div>
 <hr />
@@ -1667,9 +1686,22 @@ The logs are named in the format <code class="highlight">log-yyyymmdd.txt</code>
 <hr />
 <h2 id="can-i-force-requests-to-re-add-to-client-systems">Can I force requests to re-add to client systems?<a class="headerlink" href="#can-i-force-requests-to-re-add-to-client-systems" title="Permanent link">&para;</a></h2>
 <p>Some people make the mistake of letting users request content before they configure the client systems to receive the requests (Sonarr/Radarr/CouchPotato/SickRage/Lidarr etc).<br />
-Unfortunately, with the way Ombi handles passing requests along to the systems you configure, there is no way to force the software to 're-add' the requested item to the downloader/monitoring system.<br />
-This would cause the system to attempt to add duplicates in some cases. Your best option is to add the request to the relevant system manually. Ombi will match the two items and notify the user as it would normally moving forward.  </p>
-<p>If you are able to open the Ombi.db file and execute commands on it manually (Ombi will need to be stopped for this to work), you can mark the relevant requests as "needs approval" via an <abbr title="Structured Query Language (a type of database).">SQL</abbr> command. This would allow you to then click "approve" and have Ombi add the request to the relevant application and continue as normal.  </p>
+To force Ombi to attempt to re-process the request (and send it to the relevant system):</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">The UI Way</label><div class="tabbed-content">
+<ol>
+<li>Open Ombi.</li>
+<li>Click "Requests" (left hand menu).</li>
+<li>Find the relevant request in the lists.</li>
+<li>Click "Details".</li>
+<li>Click the little gear icon (top right).</li>
+<li>Click "Re-Process Request".</li>
+</ol>
+<p><img alt="Re-Process Request" src="../../assets/images/radarr_reprocess.png" /></p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">The <abbr title="Structured Query Language (a type of database).">SQL</abbr> way (unsupported)</label><div class="tabbed-content">
+<p>In older versions of Ombi, there was no way to force the software to 're-add' the requested item to the downloader/monitoring system.<br />
+To achieve this, you would need to open the Ombi.db file and execute commands on it manually (Ombi will need to be stopped for this to work), marking the relevant requests as "needs approval" via an <abbr title="Structured Query Language (a type of database).">SQL</abbr> command.<br />
+This would allow you to then click "approve" and have Ombi add the request to the relevant application and continue as normal.  </p>
 <p><em><strong>Note:</strong> this is not supported officially and carries risks.</em><br />
 The relevant commands are:  </p>
 <div class="highlight"><pre><span></span><code><span class="k">UPDATE</span> <span class="n">AlbumRequests</span>
@@ -1687,6 +1719,8 @@ The relevant commands are:  </p>
 <span class="k">SET</span> <span class="n">Approved</span> <span class="o">=</span> <span class="mi">0</span> 
 <span class="k">WHERE</span> <span class="n">Approved</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">Available</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </code></pre></div>
+</div>
+</div>
 <hr />
 <h2 id="tv-shows-and-episodes-not-showing-as-available">TV shows and episodes not showing as available<a class="headerlink" href="#tv-shows-and-episodes-not-showing-as-available" title="Permanent link">&para;</a></h2>
 <p>The most common reason for this is that we require TVDB information to match against, and your TV library in Plex probably doesn't have this metadata information.
@@ -1727,7 +1761,7 @@ To get Ombi to display the language you want, make that language appear as the f
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-27T21:42:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-27</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-29T23:45:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-29</span>
     
   </small>
 </div>

@@ -1886,6 +1886,16 @@ Depending on what database you're using, you will need to keep the following fil
 If you are running docker, place these files into the folder you've passed into the container as "/config" for the installation to find them.  </p>
 <hr />
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">V4</label><div class="tabbed-content">
+<ol>
+<li>Download the latest <code class="highlight">win10-xxx.zip</code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases/latest">Ombi Releases</a></li>
+<li>Right click the file &gt; Properties &gt; Unblock</li>
+<li>Extract the zip to your preferred directory.<br />
+<strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
+<li>Run Ombi.exe</li>
+</ol>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">V4 (Develop)</label><div class="tabbed-content">
 <ol>
 <li>Download the latest <code class="highlight">win10-xxx.zip</code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases">Ombi Releases</a></li>
 <li>Right click the file &gt; Properties &gt; Unblock</li>
@@ -1893,6 +1903,8 @@ If you are running docker, place these files into the folder you've passed into 
 <strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
 <li>Run Ombi.exe</li>
 </ol>
+</div>
+</div>
 <h3 id="install-as-a-service">Install as a Service<a class="headerlink" href="#install-as-a-service" title="Permanent link">&para;</a></h3>
 <p>(This is the preferred method on Windows)</p>
 <ol>
@@ -1902,13 +1914,13 @@ If you are running docker, place these files into the folder you've passed into 
 <strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
 <li>Use <a href="https://nssm.cc/">NSSM</a> to manage Ombi. Extract either the 32-/64-bit version to <em>C:\Windows\system32</em>. Open command prompt as an Administrator and type <em>nssm install Ombi</em>. Use one of the following settings depending on whether you want to keep or change the default port.</li>
 </ol>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Standard Setup</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Standard Setup</label><div class="tabbed-content">
 <p>Be sure to adjust directories to your Ombi install location</p>
 <p><strong>Path:</strong> <code class="highlight">C:\Tools\Ombi\Ombi.exe</code><br />
 <strong>Start directory:</strong> <code class="highlight">C:\Tools\Ombi</code></p>
 <p><img alt="Ombi NSSM" loading="lazy" src="../../assets/images/nssm_service.png" />  </p>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Alternate port number</label><div class="tabbed-content">
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Alternate port number</label><div class="tabbed-content">
 <p>Be sure to adjust directories to your Ombi install location</p>
 <p><strong>Path:</strong> <code class="highlight">C:\Tools\Ombi\Ombi.exe</code><br />
 <strong>Start directory:</strong> <code class="highlight">C:\Tools\Ombi</code><br />
@@ -1942,11 +1954,11 @@ If you are running docker, place these files into the folder you've passed into 
 <p>To allow a port through Windows Firewall, you have a few options.
 Note that this is not the preferred method of access, and a <a href="../../info/reverse-proxy">Reverse Proxy</a> is recommended instead.<br />
 Replace the port in the below commands with your own port if you're running a different port than the default.  </p>
-<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Command Prompt</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Command Prompt</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code>netsh advfirewall firewall add rule name=<span class="s2">&quot;Ombi&quot;</span> dir=in action=allow protocol=TCP localport=5000
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Powershell</label><div class="tabbed-content">
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Powershell</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;Ombi&#39;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-LocalPort</span> <span class="p">@(</span><span class="s1">&#39;5000&#39;</span><span class="p">)</span>
 </code></pre></div>
 </div>
@@ -1956,7 +1968,16 @@ Replace the port in the below commands with your own port if you're running a di
 <h3 id="debian-apt-repo">Debian / APT repo<a class="headerlink" href="#debian-apt-repo" title="Permanent link">&para;</a></h3>
 <p><strong>Note:</strong> This is the easy way, and only works with Debian-based distributions.<br />
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.</p>
-<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">V4</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">V4 (Stable)</label><div class="tabbed-content">
+<p><em>Note that fixes and features get pushed to V4 (Develop) much more rapidly than Stable.</em>
+1. Add the apt repository to the apt sources list:<br />
+<code class="highlight">echo &quot;deb https://apt.ombi.app/master jessie main&quot; | sudo tee /etc/apt/sources.list.d/ombi.list</code><br />
+1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
+<code class="highlight">curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -</code><br />
+1. Update the package list and install Ombi:<br />
+<code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></p>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">V4 (Develop)</label><div class="tabbed-content">
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
 <code class="highlight">echo &quot;deb https://apt.ombi.app/develop jessie main&quot; | sudo tee /etc/apt/sources.list.d/ombi.list</code>  </li>
@@ -1966,7 +1987,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 <code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></li>
 </ol>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">V3 (Legacy)</label><div class="tabbed-content">
+<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">V3 (Legacy)</label><div class="tabbed-content">
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
 <code class="highlight">echo &quot;deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main&quot; | sudo tee &quot;/etc/apt/sources.list.d/ombi.list&quot;</code>  </li>
@@ -2019,7 +2040,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-27T20:49:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-27</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-04-30T04:03:49+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-04-30</span>
     
   </small>
 </div>
