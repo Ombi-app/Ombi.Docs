@@ -1,22 +1,20 @@
 # Mobile App
 
-Note: The iOS app is currently going through the Apple Review Process, I'm hopefully but they have declined the app a lot at this point.
+Note: Please stop asking for an iOS app.  
+We had one. Apple removed it.  
+We appealed/argued it, and Apple stood by their decision to not allow it in the App Store.  
+Users are more than welcome to create their own apps, however future versions of Ombi are being written to look beautiful in mobile browsers regardless - rendering lack of app almost moot.  
 
-## QR Code Login
-
-To enable the QR Code login, you need to ensure you have setup your Application URL.
-
-Once you have set that up you can find the QR code to scan under your user profile (Top right where your username is) and then press the Mobile Tab, there now should be a QR code present!
-
-### Logging in manually with Plex 2FA
-
-If you do nto want to use the QR code mechanism, you still can log in manually. If you have a Plex Account with MFA/2FA enabled, you will need to enter your password in the following format: `password132456` where the `132465` is your 2FA code.
-
+## Preparation
 
 ### Application URL
 
 You can find this in the [Customization Settings](../../settings/customization/#application-url).  
 Make sure the application url is set to your externally accessible domain for Ombi.  
-e.g. the demo site uses `https://app.ombi.io/`
+e.g. the demo site uses `https://demo.ombi.io/`  
 
 A good idea is to set this up using a [Reverse Proxy](../reverse-proxy), rather than simply forwarding a port.
+
+## Connecting the app
+
+![GIF VIDEO!](../../assets/images/app_setup.gif){: loading=lazy }
