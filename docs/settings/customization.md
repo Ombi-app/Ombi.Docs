@@ -11,8 +11,9 @@ This includes in notifications and on the website (need to refresh the browser t
 
 This is for any external links we send out (this link should be the externally accessible URL), usually in the form of an email.  
 e.g. Password reset email - we use the Application URL to take them to a page where they can reset their password.  
+This is also used to generate the QR code for mobile app connections.  
 
-**Format:** `http://ombi.app/` or `https://ombi.app/`  
+**Format:** `http://ombi.example.com/` or `http://ombi.example.com/` or `https://example.com/ombi/`  
 
 ## Custom Logo
 

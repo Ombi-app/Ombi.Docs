@@ -13,11 +13,11 @@ For considerations when migrating an existing install rather than starting fresh
 
 1. Install Ombi for your preferred OS using the steps provided below.  
 If you are migrating systems, rather than starting fresh, stop here and look at [Migrating Systems](#migrating-systems).
-2. Configure your [install-specific settings](../../settings/customization) like the application url you'll be using externally.
-3. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../../info/reverse-proxy).
-4. Configure notification methods and system connections (Sonarr, Radarr, etc).  
+1. Configure your [install-specific settings](../../settings/customization) like the application url you'll be using externally.
+1. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../../info/reverse-proxy).
+1. Configure notification methods and system connections (Sonarr, Radarr, etc).  
 Ensure you have systems to handle approved requests _before_ you give users access to the system.
-5. [Import users](../../settings/import-users) and [assign permissions](../../info/user-roles).
+1. [Import users](../../settings/import-users) and [assign permissions](../../info/user-roles).
 
 ## Migrating Systems
 
@@ -38,21 +38,29 @@ If you are running docker, place these files into the folder you've passed into 
 
 ## Windows
 
-1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases)
-2. Right click the file > Properties > Unblock
-3. Extract the zip to your preferred directory.  
-**DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
-4. Run Ombi.exe
+=== "V4"
+    1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases/latest)
+    1. Right click the file > Properties > Unblock
+    1. Extract the zip to your preferred directory.  
+    **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
+    1. Run Ombi.exe
+
+=== "V4 (Develop)"
+    1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases)
+    1. Right click the file > Properties > Unblock
+    1. Extract the zip to your preferred directory.  
+    **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
+    1. Run Ombi.exe
 
 ### Install as a Service
 
 (This is the preferred method on Windows)
 
 1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases)
-2. Right click > Properties > Unblock
-3. Extract the zip to your preferred directory.  
+1. Right click > Properties > Unblock
+1. Extract the zip to your preferred directory.  
 **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
-4. Use [NSSM](https://nssm.cc/) to manage Ombi. Extract either the 32-/64-bit version to *C:\Windows\system32*. Open command prompt as an Administrator and type *nssm install Ombi*. Use one of the following settings depending on whether you want to keep or change the default port.
+1. Use [NSSM](https://nssm.cc/) to manage Ombi. Extract either the 32-/64-bit version to *C:\Windows\system32*. Open command prompt as an Administrator and type *nssm install Ombi*. Use one of the following settings depending on whether you want to keep or change the default port.
 
 === "Standard Setup"
     Be sure to adjust directories to your Ombi install location
@@ -124,7 +132,16 @@ Replace the port in the below commands with your own port if you're running a di
 **Note:** This is the easy way, and only works with Debian-based distributions.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
 
-=== "V4"
+=== "V4 (Stable)"
+    _Note that fixes and features get pushed to V4 (Develop) much more rapidly than Stable._
+    1. Add the apt repository to the apt sources list:  
+    `echo "deb https://apt.ombi.app/master jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
+    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
+    1. Update the package list and install Ombi:  
+    `sudo apt update && sudo apt install ombi`
+
+=== "V4 (Develop)"
     1. Add the apt repository to the apt sources list:  
     `echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
     1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
