@@ -1,7 +1,7 @@
 # Mobile App
 
-Note: The iOS app is currently going through the Apple Review Process.  
-I'm hopeful, but they have declined the app a lot at this point.
+[![Android App](../assets/images/get_it_on_play_store.png)](https://play.google.com/store/apps/details?id=com.tidusjar.Ombi&hl=en_NZ&gl=US)  
+[![iOS App](../assets/images/get_it_on_app_store.png)](https://apps.apple.com/us/app/ombi/id1335260043)
 
 ## Connecting the App
 
