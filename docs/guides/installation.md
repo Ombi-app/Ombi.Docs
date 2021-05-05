@@ -131,6 +131,7 @@ Replace the port in the below commands with your own port if you're running a di
 
 **Note:** This is the easy way, and only works with Debian-based distributions.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
+**Note 2:**  We are in the process of changing repo providers. Bear with us.
 
 === "V4 (Stable)"
     _Note that fixes and features get pushed to V4 (Develop) much more rapidly than Stable._
