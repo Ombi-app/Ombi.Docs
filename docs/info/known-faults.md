@@ -10,6 +10,13 @@ To see all currently unfixed issues in the github repository, please see [this s
 See [Update Errors](../../guides/updating/#automatic-updates)
 ***
 
+## Repo Errors
+
+Using the v4 repo, I get "missing release file".  
+
+We are currently migrating the repositories. Bear with us, it will be resolved soon.  
+***
+
 ## Cannot start Ombi on Ubuntu 19.04
 
 .Net Core 5.0 is not supported officially on Ubuntu 19.04 (see [Supported Distributions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) to confirm).  
