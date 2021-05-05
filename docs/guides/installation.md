@@ -133,18 +133,18 @@ Replace the port in the below commands with your own port if you're running a di
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.
 **Note 2:**  We are in the process of changing repo providers. Bear with us.
 
-=== "V4 (Stable)"
-    _Note that fixes and features get pushed to V4 (Develop) much more rapidly than Stable._
+=== "V4 (Develop)"
     1. Add the apt repository to the apt sources list:  
-    `echo "deb https://apt.ombi.app/master jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
+    `echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
     1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
     `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
     1. Update the package list and install Ombi:  
     `sudo apt update && sudo apt install ombi`
 
-=== "V4 (Develop)"
+=== "V4 (Stable)"
+    _Note that this is the 'slow' ring. Fixes and features get pushed to V4 (Develop) much more rapidly than Stable._  
     1. Add the apt repository to the apt sources list:  
-    `echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
+    `echo "deb https://apt.ombi.app/master jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
     1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
     `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
     1. Update the package list and install Ombi:  
