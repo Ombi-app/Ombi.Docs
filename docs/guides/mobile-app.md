@@ -1,7 +1,8 @@
 # Mobile App
 
-[![Android App](../assets/images/get_it_on_play_store.png)](https://play.google.com/store/apps/details?id=com.tidusjar.Ombi&hl=en_NZ&gl=US)  
-[![iOS App](../assets/images/get_it_on_app_store.png)](https://apps.apple.com/us/app/ombi/id1335260043)
+| Android | iOS |
+| :-: | :-: |
+| [![Android App](../assets/images/get_it_on_play_store.png)](https://play.google.com/store/apps/details?id=com.tidusjar.Ombi&hl=en_NZ&gl=US) | [![iOS App](../assets/images/get_it_on_app_store.png)](https://apps.apple.com/us/app/ombi/id1335260043) |
 
 ## Connecting the App
 
@@ -10,6 +11,18 @@
 To enable the QR Code login, you need to ensure you have setup your Application URL.
 
 Once you have set that up you can find the QR code to scan under your user profile (Top right where your username is) and then press the Mobile Tab, there should now be a QR code present!
+
+### Mobile Browser
+
+If you (or your users) have difficulty with the QR method, you can also open your Ombi instance in a web browser on your mobile device.  
+From here, tapping/clicking on the user icon (top  right) will open the user preferences page, which includes:
+
+* Google Play (Android app) link.
+* App Store (iOS app) link.
+* "Open Mobile App" button.
+
+Click "Open Mobile App" to open the app on your device and auto-fill the settings.  
+_Note: This requires the application URL to be configured correctly, and the app to be installed already._
 
 ### Logging in manually with Plex 2FA
 
