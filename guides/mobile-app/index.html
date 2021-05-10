@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ombi.app/guides/mobile-app/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e35208c4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -1211,6 +1211,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mobile-browser" class="md-nav__link">
+    Mobile Browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#logging-in-manually-with-plex-2fa" class="md-nav__link">
     Logging in manually with Plex 2FA
   </a>
@@ -1524,6 +1531,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mobile-browser" class="md-nav__link">
+    Mobile Browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#logging-in-manually-with-plex-2fa" class="md-nav__link">
     Logging in manually with Plex 2FA
   </a>
@@ -1560,12 +1574,34 @@
                 
                 
                 <h1 id="mobile-app">Mobile App<a class="headerlink" href="#mobile-app" title="Permanent link">&para;</a></h1>
-<p><a href="https://play.google.com/store/apps/details?id=com.tidusjar.Ombi&amp;hl=en_NZ&amp;gl=US"><img alt="Android App" src="../../assets/images/get_it_on_play_store.png" /></a><br />
-<a href="https://apps.apple.com/us/app/ombi/id1335260043"><img alt="iOS App" src="../../assets/images/get_it_on_app_store.png" /></a></p>
+<table>
+<thead>
+<tr>
+<th align="center">Android</th>
+<th align="center">iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="https://play.google.com/store/apps/details?id=com.tidusjar.Ombi&amp;hl=en_NZ&amp;gl=US"><img alt="Android App" src="../../assets/images/get_it_on_play_store.png" /></a></td>
+<td align="center"><a href="https://apps.apple.com/us/app/ombi/id1335260043"><img alt="iOS App" src="../../assets/images/get_it_on_app_store.png" /></a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="connecting-the-app">Connecting the App<a class="headerlink" href="#connecting-the-app" title="Permanent link">&para;</a></h2>
 <h3 id="qr-code-login">QR Code Login<a class="headerlink" href="#qr-code-login" title="Permanent link">&para;</a></h3>
 <p>To enable the QR Code login, you need to ensure you have setup your Application URL.</p>
 <p>Once you have set that up you can find the QR code to scan under your user profile (Top right where your username is) and then press the Mobile Tab, there should now be a QR code present!</p>
+<h3 id="mobile-browser">Mobile Browser<a class="headerlink" href="#mobile-browser" title="Permanent link">&para;</a></h3>
+<p>If you (or your users) have difficulty with the QR method, you can also open your Ombi instance in a web browser on your mobile device.<br />
+From here, tapping/clicking on the user icon (top  right) will open the user preferences page, which includes:</p>
+<ul>
+<li>Google Play (Android app) link.</li>
+<li>App Store (iOS app) link.</li>
+<li>"Open Mobile App" button.</li>
+</ul>
+<p>Click "Open Mobile App" to open the app on your device and auto-fill the settings.<br />
+<em>Note: This requires the application URL to be configured correctly, and the app to be installed already.</em></p>
 <h3 id="logging-in-manually-with-plex-2fa">Logging in manually with Plex 2FA<a class="headerlink" href="#logging-in-manually-with-plex-2fa" title="Permanent link">&para;</a></h3>
 <p>If you do not want to use the QR code mechanism, you still can log in manually.<br />
 If you have a Plex Account with MFA/2FA enabled, you will need to enter your password in the following format: <code class="highlight">password132456</code> where the <code class="highlight"><span class="mf">132465</span></code> is your 2FA code.</p>
@@ -1582,7 +1618,8 @@ e.g. the demo site uses <code class="highlight">https://demo.ombi.io/</code>  </
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-05-02T03:15:46+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-05-02</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-05-10T01:53:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-05-10</span>
+      
     
   </small>
 </div>
@@ -1598,7 +1635,7 @@ e.g. the demo site uses <code class="highlight">https://demo.ombi.io/</code>  </
           </div>
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+          <a href="#" class="md-top md-icon" title="Back to top" data-md-component="top" data-md-state="hidden">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
           </a>
         
@@ -1708,10 +1745,10 @@ e.g. the demo site uses <code class="highlight">https://demo.ombi.io/</code>  </
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
