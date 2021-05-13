@@ -1,5 +1,11 @@
 # Common Themes
 
+## WARNING
+
+V4 introduced/introduces an entirely new UI structure, and is in the process of being entirely rewritten.  
+As such, these classes and themes are subject to change. They may or may not work.  
+Once we finish the standardisation of CSS classes, we will write up a "how-to" regarding what classes we have, and validate these theme options.
+
 ## Custom Colors
 
 **Note:** Replace #a30000 with the hex colour you want for all the coloured UI elements (this is red).  
