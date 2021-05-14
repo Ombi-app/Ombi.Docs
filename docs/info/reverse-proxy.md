@@ -431,4 +431,4 @@ _**Note:** When using a subdirectory it is essential to use `PathPrefix` instead
 
 ## V3 Specific
 
-The notes regarding Ye Olde V3 Proxy can be found [in the archive](../archive/v3-specific-proxy).
+The notes regarding Ye Olde V3 Proxy can be found [in the archive](../../archive/v3-specific-proxy).
