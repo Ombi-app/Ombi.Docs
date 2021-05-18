@@ -13,6 +13,7 @@ Getting started:
 
 - [Installation](./guides/installation)
 - [Updating](./guides/updating)
+- [Mobile Apps](./guides/mobile-app)
 
 General Information:
 
