@@ -17,7 +17,7 @@ For the Watchtower one, add a label to the container named `WATCHTOWER_LABEL_ENA
 
 You can use your own update script here, please note that this will have to manage the termination and start of the Ombi process. You will have to terminate Ombi yourself.  
 
-* carnivorouz - [v4 Linux systemd script](https://github.com/carnivorouz/updateOmbi/blob/main/updateOmbi.sh)
+* carnivorouz - [v4 Linux systemd script](https://github.com/carnivorouz/updateOmbi)
 
 ### Script Path
 
