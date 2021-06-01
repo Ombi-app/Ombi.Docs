@@ -128,7 +128,7 @@ This is due to Ombi needing to know where to send users if they click any links 
 
 ## Notifications for requests not being received
 
-1. Check and test if you have configured the notification(s) as per instructions in [Discord Notification Settings](../settings/notifications/discord) and [Email Notification Settings](../settings/notifications/email)
+1. Check and test if you have configured the notification(s) as per instructions in [Discord Notification Settings](../../settings/notifications/discord) and [Email Notification Settings](../../settings/notifications/email)
 2. If testing the notification(s) work fine then make sure that the user requesting is not an auto approve or admin user
 
 ***
