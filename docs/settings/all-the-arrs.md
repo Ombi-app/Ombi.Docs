@@ -18,13 +18,6 @@ Radarr: `https://app.example.com/radarr`
 This switch tells Ombi whether to use this service or not. Don't run the service? Don't enable it.  
 ***
 
-## V3
-
-Sonarr recently made V3 their "stable" branch, meaning V2 is now 'legacy'.  
-This option is now the default for new sites, and should only be disabled if you are running the legacy version.  
-_We do not recommend this._  
-***
-
 ## Scan for Availability
 
 This option will allow Ombi to sync with the Arrs to check for availability.  
@@ -115,6 +108,13 @@ This tells Ombi that Lidarr wants things organised into individual subfolders pe
 ### Enable Season Folders
 
 This tells Ombi that Sonarr wants things organised into Season subfolders. Usually, this should be ticked.
+***
+
+### V3
+
+Sonarr made V3 their "stable" branch, meaning V2 is now 'legacy'.  
+This option is now the default for new sites, and should only be disabled if you are running the legacy version.  
+_We do not recommend this._  
 ***
 
 ## Advanced
