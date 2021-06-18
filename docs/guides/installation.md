@@ -17,7 +17,7 @@ If you are migrating systems, rather than starting fresh, stop here and look at 
 1. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../../info/reverse-proxy).
 1. Configure notification methods and system connections (Sonarr, Radarr, etc).  
 Ensure you have systems to handle approved requests _before_ you give users access to the system.
-1. [Import users](../../settings/import-users) and [assign permissions](../../info/user-roles).
+1. [Import users](../../settings/usermanagement) and [assign permissions](../../info/user-roles).
 
 ## Migrating Systems
 
