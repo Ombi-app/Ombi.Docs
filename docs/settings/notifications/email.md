@@ -39,3 +39,13 @@ Sometimes Gmail requires you to enable "access for less secure apps". This setti
 ### Two Factor Authentication
 
 If you have 2 factor authentication turned on with your Gmail account, you will need to create an App Password with Google. More information can be found [here](https://support.google.com/accounts/answer/185833)
+
+### Email failing even with correct SMTP settings
+
+A common cause of the system failing to generate emails is a missing [Application URL](../../customization/#application-url).  
+This generally results in Ombi logging an error saying:  
+
+```text
+[Warning] Exception when testing Email Notifications
+System.InvalidOperationException: This operation is not supported for a relative URI.
+```
