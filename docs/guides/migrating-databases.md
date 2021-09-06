@@ -480,4 +480,5 @@ $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 **P: How do I migrate if I'm using docker.**
 
 S: Configure a database_multi.json as needed and place it into the `/config` folder. In the docker storage config, mount the `ombi_sqlite_mysql` as something like `/migrate`. Exec ombi bash and install the appropriate python3 tools (apt update; apt install python3 python3-mysqldb -y;). Run your appropriate command for python like  `python3 ombi_sqlite2mysql_multi.py -c /config` and your migration will take place.
+
 ---
