@@ -52,6 +52,10 @@ extra:
     - icon: "fontawesome/brands/paypal"
       link: "https://paypal.me/PlexRequestsNet"
 
+# Extra CSS
+extra_css:
+  - assets/stylesheets/extra.css
+
 # Markdown extensions
 markdown_extensions:
   - abbr
