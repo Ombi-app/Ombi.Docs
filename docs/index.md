@@ -1,5 +1,8 @@
 ---
 description: The Official Ombi Documentation!
+hide:
+  - navigation
+  - toc
 ---
 # Ombi Docs
 
