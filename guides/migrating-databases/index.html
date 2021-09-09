@@ -44,6 +44,8 @@
     
       <link rel="stylesheet" href="../../css/timeago.css">
     
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
     
       
 
@@ -648,7 +650,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_18" type="checkbox" id="__nav_3_18" >
@@ -1218,12 +1222,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#4-data-migration" class="md-nav__link">
     4. Data Migration
   </a>
@@ -1255,6 +1254,11 @@
   <a href="#42-data-migration-multiple-databases-or-servers-mysqlmariadb" class="md-nav__link">
     4.2. Data Migration (Multiple DataBases or Servers MySql/MariaDB)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1597,12 +1601,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#4-data-migration" class="md-nav__link">
     4. Data Migration
   </a>
@@ -1634,6 +1633,11 @@
   <a href="#42-data-migration-multiple-databases-or-servers-mysqlmariadb" class="md-nav__link">
     4.2. Data Migration (Multiple DataBases or Servers MySql/MariaDB)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1734,16 +1738,16 @@ chmod +x *.py
 </code></pre></div>
 </li>
 </ol>
-<h2 id="4-data-migration">4. Data Migration<a class="headerlink" href="#4-data-migration" title="Permanent link">&para;</a></h2>
+<h3 id="4-data-migration">4. Data Migration<a class="headerlink" href="#4-data-migration" title="Permanent link">&para;</a></h3>
 <p>When it comes to migrating the data, we have several different ways of doing it.
 We can export everything to a single database (step 4.1), to different databases or to different mysql servers (step 4.2).</p>
-<h3 id="41-data-migration-single-database">4.1. Data Migration (<em>Single Database</em>)<a class="headerlink" href="#41-data-migration-single-database" title="Permanent link">&para;</a></h3>
+<h4 id="41-data-migration-single-database">4.1. Data Migration (<em>Single Database</em>)<a class="headerlink" href="#41-data-migration-single-database" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>For data migration we will need the file <strong>"migration.json"</strong> that contains the locations of the SQLite databases.</p>
 <p>If this file does not exist, it will be created and will search the databases in the folder specified with the parameter <strong>"--config"</strong>.</p>
 <p>If we don't want to migrate all the data, we can generate the file <strong>"migration.json"</strong> with the parameter <strong>"--only_manager_json"</strong> and then edit it by deleting the databases we don't want to migrate.</p>
 </blockquote>
-<h4 id="411-exclude-ombiexternal-from-export-optional">4.1.1 Exclude OmbiExternal from export (optional)<a class="headerlink" href="#411-exclude-ombiexternal-from-export-optional" title="Permanent link">&para;</a></h4>
+<h5 id="411-exclude-ombiexternal-from-export-optional">4.1.1 Exclude OmbiExternal from export (optional)<a class="headerlink" href="#411-exclude-ombiexternal-from-export-optional" title="Permanent link">&para;</a></h5>
 <blockquote>
 <div class="highlight"><pre><span></span><code>$ python ombi_sqlite2mysql.py -c /etc/Ombi --only_manager_json
 Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.4<span class="o">)</span> By VSC55
@@ -1817,7 +1821,7 @@ MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
 <p>Start ombi and test if everything works fine.</p>
 </li>
 </ol>
-<h3 id="42-data-migration-multiple-databases-or-servers-mysqlmariadb">4.2. Data Migration (<em>Multiple DataBases or Servers MySql/MariaDB</em>)<a class="headerlink" href="#42-data-migration-multiple-databases-or-servers-mysqlmariadb" title="Permanent link">&para;</a></h3>
+<h4 id="42-data-migration-multiple-databases-or-servers-mysqlmariadb">4.2. Data Migration (<em>Multiple DataBases or Servers MySql/MariaDB</em>)<a class="headerlink" href="#42-data-migration-multiple-databases-or-servers-mysqlmariadb" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>For data migration to multiple databases or servers we will need the file <strong>"database_multi.json"</strong> that contains the locations of the servers where we are going to export the data.</p>
 </blockquote>
@@ -2090,7 +2094,7 @@ Options:
   --save_dump           Save all query insert <span class="k">in</span> the file.
 </code></pre></div>
 <h2 id="6-faq">6. FAQ<a class="headerlink" href="#6-faq" title="Permanent link">&para;</a></h2>
-<p><strong>P: Errors appear in the verification of the migrated data saying that there is more data in SQLite than in MySQL or vice versa.</strong>  </p>
+<p><strong>P: Migrated data verification says there is more data in SQLite than in MySQL or vice versa.</strong>  </p>
 <div class="highlight"><pre><span></span><code>- Running   <span class="o">[</span><span class="c1">############################################################] 9242/9242</span>
 - <span class="o">[</span>!!<span class="o">]</span> -&gt; __efmigrationshistory -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">41</span><span class="o">)]</span> <span class="o">=</span> -41
 - <span class="o">[</span>!!<span class="o">]</span> -&gt; applicationconfiguration -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">3</span><span class="o">)]</span> <span class="o">=</span> -3
@@ -2131,7 +2135,10 @@ $ python ombi_sqlite2mysql.py -c /etc/Ombi --force --host <span class="m">192</s
 $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 </code></pre></div>
 <p><strong>P: How do I migrate if I'm using docker?</strong></p>
-<p>S: Configure a database_multi.json as needed and place it into the <code class="highlight">/config</code> folder. In the docker storage config, mount the <code class="highlight">ombi_sqlite_mysql</code> as something like <code class="highlight">/migrate</code>. <code class="highlight"><span class="k">exec</span> <span class="nv">ombi</span> <span class="nv">bash</span></code> and install the appropriate python3 tools (<code class="highlight">apt update; apt install python3 python3-mysqldb -y;</code>). Run your appropriate command for python like  <code class="highlight">python3 ombi_sqlite2mysql_multi.py -c /config</code> and your migration will take place.</p>
+<p>S: Configure <code class="highlight">database_multi.json</code> as needed and place it into the <code class="highlight">/config</code> folder.<br />
+In the docker storage config, mount the <code class="highlight">ombi_sqlite_mysql</code> folder to the container (we recommend mounting it as <code class="highlight">/migrate</code>).<br />
+Run <code class="highlight"><span class="nv">docker</span> <span class="k">exec</span> <span class="nv">ombi</span> <span class="nv">bash</span></code> and install the appropriate python3 tools (<code class="highlight">apt update; apt install python3 python3-mysqldb -y;</code>).<br />
+Run your appropriate command for python like  <code class="highlight">python3 /migrate/ombi_sqlite2mysql_multi.py -c /config</code> and your migration will take place.</p>
 <hr />
                 
                   
@@ -2141,7 +2148,7 @@ $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-09-06T19:07:30+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-09-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-09-09T23:23:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-09-09</span>
       
     
   </small>
@@ -2271,7 +2278,7 @@ $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
