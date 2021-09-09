@@ -2130,6 +2130,8 @@ $ python ombi_sqlite2mysql.py -c /etc/Ombi --force --host <span class="m">192</s
 <div class="highlight"><pre><span></span><code><span class="c1"># Multiple DataBases or Servers MySql/MariaDB:</span>
 $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 </code></pre></div>
+<p><strong>P: How do I migrate if I'm using docker?</strong></p>
+<p>S: Configure a database_multi.json as needed and place it into the <code class="highlight">/config</code> folder. In the docker storage config, mount the <code class="highlight">ombi_sqlite_mysql</code> as something like <code class="highlight">/migrate</code>. <code class="highlight"><span class="k">exec</span> <span class="nv">ombi</span> <span class="nv">bash</span></code> and install the appropriate python3 tools (<code class="highlight">apt update; apt install python3 python3-mysqldb -y;</code>). Run your appropriate command for python like  <code class="highlight">python3 ombi_sqlite2mysql_multi.py -c /config</code> and your migration will take place.</p>
 <hr />
                 
                   
@@ -2139,7 +2141,7 @@ $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-02-06T04:06:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-02-06</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-09-06T19:07:30+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-09-06</span>
       
     
   </small>
