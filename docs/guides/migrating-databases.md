@@ -62,12 +62,12 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
     ombi --migrate
     ```
 
-## 4. Data Migration
+### 4. Data Migration
 
 When it comes to migrating the data, we have several different ways of doing it.
 We can export everything to a single database (step 4.1), to different databases or to different mysql servers (step 4.2).
 
-### 4.1. Data Migration (*Single Database*)
+#### 4.1. Data Migration (*Single Database*)
 
 > For data migration we will need the file **"migration.json"** that contains the locations of the SQLite databases.
 >  
@@ -75,7 +75,7 @@ We can export everything to a single database (step 4.1), to different databases
 >
 >If we don't want to migrate all the data, we can generate the file **"migration.json"** with the parameter **"--only_manager_json"** and then edit it by deleting the databases we don't want to migrate.
 
-#### 4.1.1 Exclude OmbiExternal from export (optional)
+##### 4.1.1 Exclude OmbiExternal from export (optional)
 >
 > ```bash
 > $ python ombi_sqlite2mysql.py -c /etc/Ombi --only_manager_json
@@ -150,7 +150,7 @@ We can export everything to a single database (step 4.1), to different databases
 
 2. Start ombi and test if everything works fine.
 
-### 4.2. Data Migration (*Multiple DataBases or Servers MySql/MariaDB*)
+#### 4.2. Data Migration (*Multiple DataBases or Servers MySql/MariaDB*)
 
 > For data migration to multiple databases or servers we will need the file **"database_multi.json"** that contains the locations of the servers where we are going to export the data.
 
@@ -429,7 +429,7 @@ Options:
 
 ## 6. FAQ
 
-**P: Errors appear in the verification of the migrated data saying that there is more data in SQLite than in MySQL or vice versa.**  
+**P: Migrated data verification says there is more data in SQLite than in MySQL or vice versa.**  
 
 ```bash
 - Running   [############################################################] 9242/9242
@@ -479,6 +479,9 @@ $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 
 **P: How do I migrate if I'm using docker?**
 
-S: Configure a database_multi.json as needed and place it into the `/config` folder. In the docker storage config, mount the `ombi_sqlite_mysql` as something like `/migrate`. `exec ombi bash` and install the appropriate python3 tools (`apt update; apt install python3 python3-mysqldb -y;`). Run your appropriate command for python like  `python3 ombi_sqlite2mysql_multi.py -c /config` and your migration will take place.
+S: Configure `database_multi.json` as needed and place it into the `/config` folder.  
+In the docker storage config, mount the `ombi_sqlite_mysql` folder to the container (we recommend mounting it as `/migrate`).  
+Run `docker exec ombi bash` and install the appropriate python3 tools (`apt update; apt install python3 python3-mysqldb -y;`).  
+Run your appropriate command for python like  `python3 /migrate/ombi_sqlite2mysql_multi.py -c /config` and your migration will take place.
 
 ---
