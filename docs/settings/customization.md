@@ -9,11 +9,29 @@ This includes in notifications and on the website (need to refresh the browser t
 
 ## Application Url
 
-This is for any external links we send out (this link should be the externally accessible URL), usually in the form of an email.  
+This is for any external links Ombi sends out (this link should be the externally accessible URL) through any of the notification methods.  
 e.g. Password reset email - we use the Application URL to take them to a page where they can reset their password.  
 This is also used to generate the QR code for mobile app connections.  
+It should look like a full web address, complete with what connection type needs to be used - `http://` or `https://`.  
+If you're not using a reverse proxy, it should also include the port needed near the end (for example, `:5000`).  
 
-**Format:** `http://ombi.example.com/` or `http://ombi.example.com/` or `https://example.com/ombi/`  
+### Application URL Format
+
+=== "Reverse proxy with SSL"
+    With a subdomain: `https://ombi.example.com`  
+    With a baseurl: `https://site.example.com/ombi`
+    This would be if you have Ombi configured behind a reverse proxy, with SSL enabled.
+
+=== "Reverse proxy without SSL"
+    With a subdomain: `http://ombi.example.com`  
+    With a baseurl: `http://site.example.com/ombi`  
+    This would be if you have Ombi configured behind a reverse proxy, with SSL enabled.  
+    _This is not recommended._  
+    _If you have a reverse proxy in play, put SSL on it with something like [Let'sEncrypt](https://letsencrypt.org/)._
+
+=== "Naked"
+    `http://ombi.example.com:5000`  
+    _We REALLY do not recommend this option. While we endeavour to make the application itself as secure as possible, leaving traffic to go in and out of your network unencrypted is not a good thing to do, nor is simply punching a hole in your firewall through a forwarded port._
 
 ## Custom Logo
 
