@@ -34,4 +34,4 @@ You can find this in the [Customization Settings](../../settings/customization/#
 Make sure the application url is set to your externally accessible domain for Ombi.  
 e.g. the demo site uses `https://demo.ombi.io/`  
 
-A good idea is to set this up using a [Reverse Proxy](../reverse-proxy), rather than simply forwarding a port.
+A good idea is to set this up using a [Reverse Proxy](../../info/reverse-proxy), rather than simply forwarding a port.
