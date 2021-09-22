@@ -42,7 +42,7 @@ If you have 2 factor authentication turned on with your Gmail account, you will 
 
 ### Email failing even with correct SMTP settings
 
-A common cause of the system failing to generate emails is a missing [Application URL](../../customization/#application-url).  
+A common cause of the system failing to generate emails is a missing entry under [Settings -> Customisation > Application URL](../../customization/#application-url).  
 This generally results in Ombi logging an error saying:  
 
 ```text
