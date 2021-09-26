@@ -18,18 +18,31 @@ You can view what the different roles mean [Here](../info/user-roles.md)
 
 ## Default Request Limit
 
-These are the default request limits for the users, based on a rolling 7 day count.  
+_Note - this option behaves differently as of `v4.0.1499`._  
+
+These are the default request limits for the users, based on the behaviour in the version in use.  
 If the user reaches their request limit they will no longer be able to request. If you do not want your user to have a request limit, set it to 0.
 
 **NOTE:** For TV Shows, 1 episode counts as 1 request
 
-When we state a rolling 7 days, this is how it works:
+=== "New Behaviour"
+    Request limits reset at the start of the day/week/month depending on the setting of that user.  
+    This is set per user and request type (so for each user you can have a different setting for music/movies/TV shows if you want).  
+    Coming soon:
 
-* Request Limit is set to 10
-* Day 1 - Request 3 things
-* Day 6 - Request 7 things
-* Day 7 - Cannot Request
-* Day 8 - We can now request 3 more times
+    * Applying the setting via bulk edit in user management.
+    * Setting a default for importing as.
+
+=== "Versions older than 4.0.1499"
+    Older versions of Ombi employed a 'rolling' 7 day count.  
+    _This is still the default for existing installs, for backwards compatibility. New installs will use the new behaviour by default._
+    When we state a rolling 7 days, this is how it works:
+
+    * Request Limit is set to 10
+    * Day 1 - Request 3 things
+    * Day 6 - Request 7 things
+    * Day 7 - Cannot Request
+    * Day 8 - We can now request 3 more times
 
 ## Run Importer button
 
