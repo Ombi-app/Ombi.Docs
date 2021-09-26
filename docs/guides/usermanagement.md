@@ -1,4 +1,4 @@
-# User Management (WIP)
+# User Management
 
 This section allows you to adjust per-user settings for Ombi.  
 
