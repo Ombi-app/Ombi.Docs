@@ -14,6 +14,8 @@ theme:
   code_wrap: true
   features:
     - header.autohide
+    - navigation.expand
+    - navigation.indexes
     - navigation.instant
     - navigation.sections
     - navigation.tabs
@@ -141,7 +143,8 @@ nav:
     - Couchpotato: settings/couchpotato.md
     - DogNzb: settings/dognzb.md
     - Radarr: settings/all-the-arrs.md
-    - Notifications:
+    - Notifications: 
+      - WARNING: settings/notifications.md
       - Mobile: settings/notifications/cloudmobile.md
       - Legacy Mobile: settings/notifications/mobile.md
       - Email: settings/notifications/email.md
