@@ -2288,8 +2288,16 @@ If you are running docker, place these files into the folder you've passed into 
 <li>Download the latest <code class="highlight">win10-xxx.zip</code> (x64 or x86 depends on your system) from <a href="https://github.com/Ombi-app/Ombi.Releases/releases">Ombi Releases</a></li>
 <li>Right click &gt; Properties &gt; Unblock</li>
 <li>Extract the zip to your preferred directory.<br />
+In the example configs below, we've put the contents of the archive into <code class="highlight">C:\Tools\Ombi</code>.
 <strong>DO NOT</strong> place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.</li>
-<li>Use <a href="https://nssm.cc/">NSSM</a> to manage Ombi. Download either the 32-/64-bit version, extract the archive, then put the <code class="highlight">nssm.exe</code> file into <em>C:\Windows\system32</em>. Open command prompt as an Administrator and type <em>nssm install Ombi</em>. Use one of the following settings depending on whether you want to keep or change the default port.</li>
+<li>Use <a href="https://nssm.cc/">NSSM</a> to manage Ombi.<br />
+(Download either the 32-/64-bit version, extract the archive, then put the <code class="highlight">nssm.exe</code> file into <code class="highlight">C:\Windows\system32</code>.)</li>
+<li>Open command prompt as an Administrator, type <code class="highlight">nssm install Ombi</code>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span><br />
+Use one of the below settings depending on whether you want to keep or change the default port.</li>
+<li>Click "Install service"</li>
+<li>In your command prompt window, type <code class="highlight">net start Ombi</code> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span></li>
+<li>Wait 10-20 seconds for Ombi to start up, then open a web browser.</li>
+<li>Ombi should now be reachable at <a href="http://localhost:5000">http://localhost:5000</a>.</li>
 </ol>
 <div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Standard Setup</label><div class="tabbed-content">
 <p>Be sure to adjust directories to your Ombi install location</p>
@@ -2418,7 +2426,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-10-14T20:01:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-10-14</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-10-14T20:27:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-10-14</span>
       
     
   </small>
