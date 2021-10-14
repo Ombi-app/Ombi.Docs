@@ -59,8 +59,16 @@ If you are running docker, place these files into the folder you've passed into 
 1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases)
 1. Right click > Properties > Unblock
 1. Extract the zip to your preferred directory.  
+In the example configs below, we've put the contents of the archive into `C:\Tools\Ombi`.
 **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
-1. Use [NSSM](https://nssm.cc/) to manage Ombi. Download either the 32-/64-bit version, extract the archive, then put the `nssm.exe` file into *C:\Windows\system32*. Open command prompt as an Administrator and type *nssm install Ombi*. Use one of the following settings depending on whether you want to keep or change the default port.
+1. Use [NSSM](https://nssm.cc/) to manage Ombi.  
+(Download either the 32-/64-bit version, extract the archive, then put the `nssm.exe` file into `C:\Windows\system32`.)
+1. Open command prompt as an Administrator, type `nssm install Ombi`, then press ++enter++  
+Use one of the below settings depending on whether you want to keep or change the default port.
+1. Click "Install service"
+1. In your command prompt window, type `net start Ombi` and press ++enter++
+1. Wait 10-20 seconds for Ombi to start up, then open a web browser.
+1. Ombi should now be reachable at [http://localhost:5000](http://localhost:5000).
 
 === "Standard Setup"
     Be sure to adjust directories to your Ombi install location
