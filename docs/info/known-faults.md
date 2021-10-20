@@ -17,6 +17,12 @@ Using the v4 repo, I get "missing release file".
 We are currently migrating the repositories. Bear with us, it will be resolved soon.  
 ***
 
+## apt-key is deprecated
+
+Ubuntu 21.xx and onwards has moved to a new method of signing repositories, where keys are trusted per repository instead of per key.  
+Unfortunately, this will require further testing of our key deployment method to identify a solution.  
+***
+
 ## Cannot start Ombi on Ubuntu 19.04
 
 .Net Core 5.0 is not supported officially on Ubuntu 19.04 (see [Supported Distributions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) to confirm).  
