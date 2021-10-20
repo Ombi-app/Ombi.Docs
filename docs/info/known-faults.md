@@ -20,7 +20,7 @@ We are currently migrating the repositories. Bear with us, it will be resolved s
 ## Error "apt-key is Deprecated"
 
 Ubuntu 21.xx and onwards has moved to a new method of signing repositories, where keys are trusted per repository instead of per key.  
-Apt-Key still works, but an updated method for 21.xx has been added to the installation page. You may have to remove the old apt repository in order to update to the new method moving forward.
+Apt-Key still works, but an updated method for 21.xx has been added to the installation page. You may have to remove the old apt repository in order to update to the new method moving forward.  
 ***
 
 ## Cannot start Ombi on Ubuntu 19.04
