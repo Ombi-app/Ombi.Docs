@@ -140,7 +140,7 @@ Replace the port in the below commands with your own port if you're running a di
 **Note:** This is the easy way, and only works with Debian-based distributions.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.  
 **Note 2:**  We are in the process of changing repo providers. Bear with us.  
-**Note 3:**  Apt-Key has been deprecated in 21.xx onwards. We are currently working towards an updated example to solve this.
+**Note 3:**  Apt-Key has been deprecated in Ubuntu 21.xx onwards. Use the v4 (21.xx) method below for this OS.
 
 === "V4 (Develop)"
     1. Add the apt repository to the apt sources list:  
@@ -156,6 +156,15 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     `echo "deb https://apt.ombi.app/master jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
     1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
     `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
+    1. Update the package list and install Ombi:  
+    `sudo apt update && sudo apt install ombi`
+
+=== "V4 (21.xx)"
+    _Note that this is for Ubuntu 21.xx onwards, and on the development branch._  
+    1. Add the apt repository to the apt sources list:  
+    `echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
+    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    `curl -sSL https://apt.ombi.app/pub.key | gpg --dearmor > /usr/share/keyrings/ombi-archive-keyring.gpg`  
     1. Update the package list and install Ombi:  
     `sudo apt update && sudo apt install ombi`
 
