@@ -17,10 +17,10 @@ Using the v4 repo, I get "missing release file".
 We are currently migrating the repositories. Bear with us, it will be resolved soon.  
 ***
 
-## apt-key is deprecated
+## Error "apt-key is Deprecated"
 
 Ubuntu 21.xx and onwards has moved to a new method of signing repositories, where keys are trusted per repository instead of per key.  
-Unfortunately, this will require further testing of our key deployment method to identify a solution.  
+Apt-Key still works, but an updated method for 21.xx has been added to the installation page. You may have to remove the old apt repository in order to update to the new method moving forward.  
 ***
 
 ## Cannot start Ombi on Ubuntu 19.04
