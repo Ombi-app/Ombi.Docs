@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/known-faults/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.4">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.db9e7362.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -1302,6 +1302,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#apt-key-is-deprecated" class="md-nav__link">
+    apt-key is deprecated
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cannot-start-ombi-on-ubuntu-1904" class="md-nav__link">
     Cannot start Ombi on Ubuntu 19.04
   </a>
@@ -1908,6 +1915,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#apt-key-is-deprecated" class="md-nav__link">
+    apt-key is deprecated
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cannot-start-ombi-on-ubuntu-1904" class="md-nav__link">
     Cannot start Ombi on Ubuntu 19.04
   </a>
@@ -1964,6 +1978,10 @@ To see all currently unfixed issues in the github repository, please see <a href
 <p>Using the v4 repo, I get "missing release file".  </p>
 <p>We are currently migrating the repositories. Bear with us, it will be resolved soon.  </p>
 <hr />
+<h2 id="apt-key-is-deprecated">apt-key is deprecated<a class="headerlink" href="#apt-key-is-deprecated" title="Permanent link">&para;</a></h2>
+<p>Ubuntu 21.xx and onwards has moved to a new method of signing repositories, where keys are trusted per repository instead of per key.<br />
+Unfortunately, this will require further testing of our key deployment method to identify a solution.  </p>
+<hr />
 <h2 id="cannot-start-ombi-on-ubuntu-1904">Cannot start Ombi on Ubuntu 19.04<a class="headerlink" href="#cannot-start-ombi-on-ubuntu-1904" title="Permanent link">&para;</a></h2>
 <p>.Net Core 5.0 is not supported officially on Ubuntu 19.04 (see <a href="https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions">Supported Distributions</a> to confirm).<br />
 Since the Ombi backend uses .Net Core, we will have to manually install the older version of libssl (from 18.10) in order to make Ombi run.<br />
@@ -2001,7 +2019,7 @@ If you see "onesignal.com" being blocked, whitelist it and try again.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-05-05T02:33:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-05-05</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-10-20T20:47:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-10-20</span>
       
     
   </small>
@@ -2136,7 +2154,7 @@ If you see "onesignal.com" being blocked, whitelist it and try again.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1e84347e.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
