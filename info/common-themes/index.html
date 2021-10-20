@@ -2059,17 +2059,20 @@ Once we finish the standardisation of CSS classes, we will write up a "how-to" r
 </code></pre></div>
 <hr />
 <h3 id="red-buttons">Red Buttons<a class="headerlink" href="#red-buttons" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Dark Mode</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Dark Mode</label><label for="__tabbed_1_2">Light Mode</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-flat-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-mini-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-raised-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-list-item</span><span class="p">.</span><span class="nc">active-list-item</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-checkbox-checked</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-checkbox-indeterminate</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">buttons</span> <span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="o">],</span> <span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">mat-tab-label-active</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;tab&quot;</span><span class="o">]</span> <span class="p">{</span>
 <span class="k">background-color</span><span class="p">:</span> <span class="mh">#a30000</span> <span class="cp">!important</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Light Mode</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">mat-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-flat-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-mini-fab</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-raised-button</span><span class="p">.</span><span class="nc">mat-accent</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-list-item</span><span class="p">.</span><span class="nc">active-list-item</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-checkbox-checked</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">mat-checkbox-indeterminate</span><span class="p">.</span><span class="nc">mat-accent</span> <span class="p">.</span><span class="nc">mat-checkbox-background</span><span class="o">,</span> <span class="p">.</span><span class="nc">buttons</span> <span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="o">],</span> <span class="p">.</span><span class="nc">mat-tab-label-active</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s2">&quot;tab&quot;</span><span class="o">]</span> <span class="p">{</span>
 <span class="k">background-color</span><span class="p">:</span> <span class="mh">#a30000</span> <span class="cp">!important</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <hr />
@@ -2085,17 +2088,20 @@ This solution is neither perfect nor elegant, but it works for now.</p>
 <h2 id="hide-sign-in-with-ombi">Hide "Sign in with Ombi"<a class="headerlink" href="#hide-sign-in-with-ombi" title="Permanent link">&para;</a></h2>
 <p>(Only show "Sign in with Plex")<br />
 <strong>Note:</strong> This css mod hides the "Sign in with Ombi" option (but does not disable it). A user <em>could</em> inspect the HTML element and "un-hide" the ombi login option, but the hope is "out of sight == out of mind".  </p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">V4</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">V4</label><label for="__tabbed_2_2">V3 (Legacy)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="nt">button</span><span class="p">#</span><span class="nn">sign-in</span><span class="p">{</span>
    <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">V3 (Legacy)</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">login-buttons</span> <span class="nt">button</span><span class="p">:</span><span class="nd">nth-of-type</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <hr />
@@ -2103,23 +2109,26 @@ This solution is neither perfect nor elegant, but it works for now.</p>
 <p><strong>Note:</strong><br />
 You're basically hiding the ID of whatever tab you want to hide using a CSS tag.<br />
 This only works for V3 (legacy) builds, as V4 is no longer tabbed like this.</p>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">TV Shows</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">TV Shows</label><label for="__tabbed_3_2">Movies</label><label for="__tabbed_3_3">Music</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">TVtab</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Movies</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">Moviestab</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Music</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">Music</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <hr />
@@ -2149,7 +2158,9 @@ Please note that these are not tested or endorsed by the Ombi&trade; team. Any '
 <hr />
 <h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
 <p><strong>Please thank all the people posting their custom CSS and the people below. Most of these are from the community at large, so credit where credit is due.</strong></p>
-<div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Reddit</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Reddit</label><label for="__tabbed_4_2">Github</label><label for="__tabbed_4_3">Discord</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><a href="https://www.reddit.com/user/sokotaro/">sokotaro</a>  </p>
 <ul>
 <li>Remove Sign In with Ombi</li>
@@ -2169,17 +2180,18 @@ Please note that these are not tested or endorsed by the Ombi&trade; team. Any '
 <li>Hide Movies,TV-Shows,and Music Tabs</li>
 </ul>
 </div>
-<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Github</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p><a href="https://github.com/DevilsDesigns/">DevilsCoder</a>  </p>
 <ul>
 <li><a href="https://github.com/DevilsDesigns/OmbiFlix-Themes">OmbiFlix (Dark Netflix Clone)</a></li>
 </ul>
 </div>
-<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Discord</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p><a href="">Alacard</a></p>
 <ul>
 <li>Hide "Stream on" services</li>
 </ul>
+</div>
 </div>
 </div>
                 

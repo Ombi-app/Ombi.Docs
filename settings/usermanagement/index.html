@@ -1954,7 +1954,9 @@ You can view what the different roles mean <a href="../../info/user-roles/">here
 <p>These are the default request limits for the users, based on the behaviour in the version in use.<br />
 If the user reaches their request limit they will no longer be able to request. If you do not want your user to have a request limit, set it to 0.</p>
 <p><strong>NOTE:</strong> For TV Shows, 1 episode counts as 1 request</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">New Behaviour</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">New Behaviour</label><label for="__tabbed_1_2">Versions older than 4.0.1499</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Request limits reset at the start of the day/week/month depending on the setting of that user.<br />
 This is set per user and request type (so for each user you can have a different setting for music/movies/TV shows if you want).<br />
 Coming soon:</p>
@@ -1963,7 +1965,7 @@ Coming soon:</p>
 <li>Setting a default for importing as.</li>
 </ul>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Versions older than 4.0.1499</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>Older versions of Ombi employed a 'rolling' 7 day count.<br />
 <em>This is still the default for existing installs, for backwards compatibility. New installs will use the new behaviour by default.</em>
 When we state a rolling 7 days, this is how it works:</p>
@@ -1974,6 +1976,7 @@ When we state a rolling 7 days, this is how it works:</p>
 <li>Day 7 - Cannot Request</li>
 <li>Day 8 - We can now request 3 more times</li>
 </ul>
+</div>
 </div>
 </div>
 <h2 id="run-importer-button">Run Importer button<a class="headerlink" href="#run-importer-button" title="Permanent link">&para;</a></h2>
