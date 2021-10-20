@@ -2354,8 +2354,8 @@ Replace the port in the below commands with your own port if you're running a di
 <p><strong>Note:</strong> This is the easy way, and only works with Debian-based distributions.<br />
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.<br />
 <strong>Note 2:</strong>  We are in the process of changing repo providers. Bear with us.<br />
-<strong>Note 3:</strong>  Apt-Key has been deprecated in 21.xx onwards. We are currently working towards an updated example to solve this.</p>
-<div class="tabbed-set" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">V4 (Develop)</label><div class="tabbed-content">
+<strong>Note 3:</strong>  Apt-Key has been deprecated in Ubuntu 21.xx onwards. Use the v4 (21.xx) method below for this OS.</p>
+<div class="tabbed-set" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">V4 (Develop)</label><div class="tabbed-content">
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
 <code class="highlight">echo &quot;deb https://apt.ombi.app/develop jessie main&quot; | sudo tee /etc/apt/sources.list.d/ombi.list</code>  </li>
@@ -2374,7 +2374,16 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 1. Update the package list and install Ombi:<br />
 <code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></p>
 </div>
-<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">V3 (Legacy)</label><div class="tabbed-content">
+<input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><label for="__tabbed_5_3">V4 (21.xx)</label><div class="tabbed-content">
+<p><em>Note that this is for Ubuntu 21.xx onwards, and on the development branch.</em><br />
+1. Add the apt repository to the apt sources list:<br />
+<code class="highlight">echo &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://apt.ombi.app/develop jessie main&quot; | sudo tee /etc/apt/sources.list.d/ombi.list</code><br />
+1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
+<code class="highlight">curl -sSL https://apt.ombi.app/pub.key | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
+1. Update the package list and install Ombi:<br />
+<code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></p>
+</div>
+<input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><label for="__tabbed_5_4">V3 (Legacy)</label><div class="tabbed-content">
 <ol>
 <li>Add the apt repository to the apt sources list:<br />
 <code class="highlight">echo &quot;deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main&quot; | sudo tee &quot;/etc/apt/sources.list.d/ombi.list&quot;</code>  </li>
@@ -2427,7 +2436,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-10-20T20:46:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-10-20</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-10-20T22:20:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-10-20</span>
       
     
   </small>
