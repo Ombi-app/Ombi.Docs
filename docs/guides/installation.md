@@ -139,7 +139,8 @@ Replace the port in the below commands with your own port if you're running a di
 
 **Note:** This is the easy way, and only works with Debian-based distributions.  
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.  
-**Note 2:**  We are in the process of changing repo providers. Bear with us.
+**Note 2:**  We are in the process of changing repo providers. Bear with us.  
+**Note 3:**  Apt-Key has been deprecated in 21.xx onwards. We are currently working towards an updated example to solve this.
 
 === "V4 (Develop)"
     1. Add the apt repository to the apt sources list:  
