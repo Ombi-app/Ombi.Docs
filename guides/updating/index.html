@@ -499,6 +499,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#external-script-windows" class="md-nav__link">
+    External Script (windows)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1656,6 +1663,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#external-script-windows" class="md-nav__link">
+    External Script (windows)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2023,6 +2037,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#external-script-windows" class="md-nav__link">
+    External Script (windows)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2097,6 +2118,29 @@ To do so is fairly straightforward.  </p>
 <li>Extract the zip to your Ombi directory.</li>
 <li>Start Ombi again.</li>
 </ol>
+<h2 id="external-script-windows">External Script (windows)<a class="headerlink" href="#external-script-windows" title="Permanent link">&para;</a></h2>
+<p>Windows users who are running Ombi as a service can make use of a powershell script to update their Ombi instance. This script can be scheduled in task scheduler to run daily (or hourly), and it will check the current version of your Ombi instance against the latest release.<br />
+This only works for develop releases, <strong><em>and is very beta</em></strong>.<br />
+<strong><em>Do not use unless you know what you are doing with powershell</em></strong>.</p>
+<p><a href="../../assets/scripts/Get-OmbiUpdate.ps1">You can download the script from here.</a></p>
+<p>You will need to pass parameters to the script when calling it for it to work, and it will need to be run as an administrator.<br />
+Parameters are:</p>
+<ul>
+<li>ApiKey<br />
+This should be your API key for Ombi (found in your web interface). This is required.</li>
+<li>Ombidir<br />
+This is the folder your copy of Ombi is running from. This is required.</li>
+<li>OmbiURL<br />
+The address Ombi is listening on. This is required if you are using a non-standard port, IP, or baseurl. Defaults to <code class="highlight">http://localhost:5000</code></li>
+<li>updaterpath<br />
+This is where the script will download to. It's only required if you don't want them put in your downloads folder, as it defaults to a folder in your downloads folder.</li>
+<li>ServiceName<br />
+Most of us just use 'Ombi', so it's the default. If you used something different, pass in this parameter with whatever you used.</li>
+<li>file<br />
+This is only for if you are using x86. If this is the case, pass in <code class="highlight">Win10-x86.zip</code> as the parameter. Default is <code class="highlight">Win10-x64.zip</code>.  </li>
+</ul>
+<p>To pass parameters to a powershell script, you name them when calling the script as such:<br />
+<code class="highlight">script -parametername &#39;parametervalue&#39; -parameter2name &#39;parameter2value</code>  </p>
                 
                   
                     
@@ -2105,7 +2149,7 @@ To do so is fairly straightforward.  </p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-05-18T21:44:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-05-18</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-10-21T23:08:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-10-21</span>
       
     
   </small>
