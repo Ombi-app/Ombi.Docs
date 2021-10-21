@@ -64,3 +64,30 @@ To do so is fairly straightforward.
 [Stable](https://github.com/Ombi-app/Ombi.Releases/releases)
 5. Extract the zip to your Ombi directory.
 6. Start Ombi again.
+
+## External Script (windows)
+
+Windows users who are running Ombi as a service can make use of a powershell script to update their Ombi instance. This script can be scheduled in task scheduler to run daily (or hourly), and it will check the current version of your Ombi instance against the latest release.  
+This only works for develop releases, __*and is very beta*__.  
+__*Do not use unless you know what you are doing with powershell*__.
+
+[You can download the script from here.](../assets/scripts/Get-OmbiUpdate.ps1)
+
+You will need to pass parameters to the script when calling it for it to work, and it will need to be run as an administrator.  
+Parameters are:
+
+* ApiKey  
+This should be your API key for Ombi (found in your web interface). This is required.
+* Ombidir  
+This is the folder your copy of Ombi is running from. This is required.
+* OmbiURL  
+The address Ombi is listening on. This is required if you are using a non-standard port, IP, or baseurl. Defaults to `http://localhost:5000`
+* updaterpath  
+This is where the script will download to. It's only required if you don't want them put in your downloads folder, as it defaults to a folder in your downloads folder.
+* ServiceName  
+Most of us just use 'Ombi', so it's the default. If you used something different, pass in this parameter with whatever you used.
+* file  
+This is only for if you are using x86. If this is the case, pass in `Win10-x86.zip` as the parameter. Default is `Win10-x64.zip`.  
+
+To pass parameters to a powershell script, you name them when calling the script as such:  
+`script -parametername 'parametervalue' -parameter2name 'parameter2value`  
