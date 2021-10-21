@@ -39,14 +39,14 @@ If you are running docker, place these files into the folder you've passed into 
 ## Windows
 
 === "V4"
-    1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases/latest)
+    1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi/releases/latest)
     1. Right click the file > Properties > Unblock
     1. Extract the zip to your preferred directory.  
     **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
     1. Run Ombi.exe
 
 === "V4 (Develop)"
-    1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases)
+    1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi/releases)
     1. Right click the file > Properties > Unblock
     1. Extract the zip to your preferred directory.  
     **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
@@ -56,7 +56,7 @@ If you are running docker, place these files into the folder you've passed into 
 
 (This is the preferred method on Windows)
 
-1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi.Releases/releases)
+1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi/releases)
 1. Right click > Properties > Unblock
 1. Extract the zip to your preferred directory.  
 In the example configs below, we've put the contents of the archive into `C:\Tools\Ombi`.
