@@ -17,7 +17,7 @@ docker run -d --name=ombi -p 5000:5000 --restart=unless-stopped -v /opt/ombi/con
 ```
 
 This will create the folder and a container named "ombi" that you can then manage like any other docker container.  
-If you wish to use mysql as a database for ombi, then you'll need to create a "database.json" file in the config folder created before.  
+If you wish to use MySQL as a database for ombi, then you'll need to create a "database.json" file in the config folder created before.  
 Details for the file can be found [here](../alternate-databases).  
 
 ### Docker Compose

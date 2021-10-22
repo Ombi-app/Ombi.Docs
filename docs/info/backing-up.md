@@ -17,4 +17,4 @@ Stop Ombi with the relevant command for your system (stop-process ombi, net stop
 === "MySQL"
 
     Back up database.json.  
-    Export your mysql databases.
+    Export your MySQL databases.

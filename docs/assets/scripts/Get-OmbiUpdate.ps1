@@ -91,7 +91,7 @@ Copy-Item $ombidir\OmbiExternal.db $dir -Force -ErrorAction SilentlyContinue
 Copy-Item $ombidir\Ombi.db $dir -Force -ErrorAction SilentlyContinue
 Copy-Item $ombidir\OmbiSettings.db $dir -Force -ErrorAction SilentlyContinue
 
-Write-Host Backing up Ombi mysql settings if present
+Write-Host Backing up Ombi MySQL settings if present
 Copy-Item $ombidir\database.json $dir -Force -ErrorAction SilentlyContinue
 
 Write-Host Deleting Ombi folder

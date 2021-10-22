@@ -6,7 +6,7 @@ If the file is not found then Ombi falls back to the default, creating or using 
 
 ## database.json
 
-The `database.json` file needs to look like the below example (replacing usernames, passwords, and server addresses to match your own mysql server as needed).
+The `database.json` file needs to look like the below example (replacing usernames, passwords, and server addresses to match your own MySQL server as needed).
 
 ```json
 {
@@ -49,12 +49,12 @@ Supported versions:
 Please ensure that your database character set is set to `utf8mb4`.  
 You can check your db charset by running the following query:  
 `show variables like 'character_set_database';`  
-You can use a separate database per function (like sqlite does, with the 3 db files), or point all of them at the same mysql database, as each table has a unique name regardless.  
+You can use a separate database per function (like sqlite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.  
 _It is up to you whether you use separate databases for each. For people unfamiliar with mysql, it is much easier to drop a database than to drop specific tables._
 
 #### Single Database
 
-This example shows using a single mysql "ombi" database for all 'sub' databases (tables).  
+This example shows using a single MySQL (ombi) database for all 'sub' databases (tables).  
 
 ```json
 {
@@ -75,7 +75,7 @@ This example shows using a single mysql "ombi" database for all 'sub' databases 
 
 #### Multiple Databases
 
-This example shows using a separate mysql database for each 'sub' database (tables).  
+This example shows using a separate MySQL database for each 'sub' database (tables).  
 
 ```json
 {
@@ -99,27 +99,53 @@ This example shows using a separate mysql database for each 'sub' database (tabl
 On the MySQL/MariaDB server we will create the database and the user that we will use later.  
 _You need to_ `GRANT ALL PRIVILEGES` _for every database you create._
 
-This is done in the mysql console (or phpmyadmin if you have that configured).
+This is done in the MySQL console (or phpmyadmin if you have that configured).  
 
-##### Single Database permissions
+__Note: MySQL 8+ does authentication a little differently. If Ombi fails to connect to a MySQL 8+ instance, the first thing to try is recreating the user with the `mysql_native_password` auth method attached to it (as below).__
 
-```mysql
-CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
-GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-```
+=== "MySQL 5.7"
 
-##### Multiple Database permissions
+    === "Single Database permissions"
 
-```mysql
-CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
-GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
-```
+    ```mysql
+    CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
+    GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    ```
+
+    === "Multiple Database permissions"
+
+    ```mysql
+    CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
+    GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    ```
+
+=== "MySQL 8.x"
+
+    === "Single Database permissions"
+
+    ```mysql
+    CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+    GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    ```
+
+    === "Multiple Database permissions"
+
+    ```mysql
+    CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+    CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+    GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+    ```
 
 ***
 
@@ -139,7 +165,7 @@ You effectively have a clean ombi install.
 
 #### Migration
 
-You can migrate the existing sqlite databases to mysql if you choose by following the [Migration Guide](../../guides/migrating-databases)
+You can migrate the existing sqlite databases to MySQL if you choose by following the [Migration Guide](../../guides/migrating-databases)
 
 ## Installing MySQL on Windows
 
