@@ -82,11 +82,11 @@ This should be your API key for Ombi (found in your web interface). This is requ
 This is the folder your copy of Ombi is running from. This is required.
 * OmbiURL  
 The address Ombi is listening on. This is required if you are using a non-standard port, IP, or baseurl. Defaults to `http://localhost:5000`
-* updaterpath  
+* UpdaterPath  
 This is where the script will download to. It's only required if you don't want them put in your downloads folder, as it defaults to a folder in your downloads folder.
 * ServiceName  
 Most of us just use 'Ombi', so it's the default. If you used something different, pass in this parameter with whatever you used.
-* file  
+* Filename  
 This is only for if you are using x86. If this is the case, pass in `Win10-x86.zip` as the parameter. Default is `Win10-x64.zip`.  
 
 To pass parameters to a powershell script, you name them when calling the script as such:  
