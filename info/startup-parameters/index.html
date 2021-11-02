@@ -2141,9 +2141,10 @@ For most 'nix variants, Ombi will run as a service (especially when installed vi
 <div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Apt Repo</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>You'll need to edit the ombi service file, usually located at <code class="highlight">/lib/systemd/system/ombi.service</code>.
+<p>You'll need to edit the ombi service file, usually located at <code class="highlight">/lib/systemd/system/ombi.service</code>.<br />
 Edit the line that reads <code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/</code>, and add <code class="highlight">--baseurl /ombi</code> to the end (or your preferred baseurl).<br />
-The resulting line should look similar to this: <code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --baseurl /ombi</code>.<br />
+The resulting line should look similar to this:<br />
+<code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --baseurl /ombi</code>.<br />
 Restart the ombi service to apply this change (<code class="highlight">sudo service ombi restart</code>).</p>
 </div>
 </div>
@@ -2158,7 +2159,7 @@ Restart the ombi service to apply this change (<code class="highlight">sudo serv
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-02T22:48:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-02</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-02T22:50:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-02</span>
       
     
   </small>
