@@ -24,7 +24,8 @@ The default for this differs slightly by OS. On Windows, this is the application
 
 ### --baseurl
 
-The base URL for reverse proxy scenarios. See [reverse proxying](../../info/reverse-proxy) for more info.
+The base URL for reverse proxy scenarios. See [reverse proxying](../../info/reverse-proxy) for more info.  
+Note that this _**MUST**_ begin with a "/" character (i.e. `/ombi`, not `ombi`).
 
 ### --demo
 
@@ -51,7 +52,8 @@ This is not an exhaustive or comprehensive guide, but should provide a rough ide
 This varies depending on whether you run it manually, via task scheduler, or via nssm as a service.
 
 === "Manual run"
-    Coming soon.
+    * When launching Ombi by simply double-clicking the file, you cannot pass in any startup parameters.
+    * If you are using CMD (or another terminal, like PowerShell) to launch Ombi, simply add the parameter after the filename for Ombi.
 
 === "Scheduled task"
     Coming soon.
