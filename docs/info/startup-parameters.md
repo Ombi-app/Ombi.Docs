@@ -53,13 +53,20 @@ This varies depending on whether you run it manually, via task scheduler, or via
 
 === "Manual run"
     * When launching Ombi by simply double-clicking the file, you cannot pass in any startup parameters.
-    * If you are using CMD (or another terminal, like PowerShell) to launch Ombi, simply add the parameter after the filename for Ombi.
+    * If you are using CMD (or another terminal, like PowerShell) to launch Ombi, simply add the parameter after the filename for Ombi, as shown below.
+    * If you are using a script to launch ombi, or a shortcut, add the parameters _after_ the path to the Ombi file is called.
+
+    ![Parameters in CMD](../assets/images/parameters_windows_cmd.png){: loading=lazy }  
 
 === "Scheduled task"
     Coming soon.
 
 === "NSSM"
-    Coming soon.
+    When installing Ombi via nssm, or switching to a baseurl from an existing install, you will need to edit your service to include the parameters.  
+    With nssm, this can be done during install (`nssm install ombi`) or after initial install (`nssm edit ombi`).  
+    Parameters should be put into the "arguments" field in nssm, as shown below.  
+
+    ![Parameters in NSSM](../assets/images/parameters_windows_nssm.png){: loading=lazy }  
 
 ### Mac
 
@@ -67,10 +74,15 @@ Coming soon.
 
 ### Linux
 
-This one has a lot of variety involved, so a few common options will be broken down here.
+This one has a lot of variety involved, so a few common options will be broken down here.  
+For most 'nix variants, Ombi will run as a service (especially when installed via the apt repo), so the _service_ file itself will need editing to include the parameters to be used at launch each time.
 
 === "Systemd"
     1. Coming soon.
 
 === "Upstart"
     1. Coming soon.
+
+### Docker
+
+This varies depending on the package maintainer (hotio or linuxserver). Generally, the parameters can be passed in as ENV variables - however this should be confirmed with the package maintainer directly.
