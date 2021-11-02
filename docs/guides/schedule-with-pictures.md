@@ -16,8 +16,10 @@ Add a description _if you want_ (this is not required).
 7. Configure for: (Choose your Windows version.)
 8. Click the `Triggers` Tab and click `New...`
 9. Begin the task: `At system startup`. Click `OK`.  
-10. Click `Browse...` and navigate to your `Ombi.exe` Click `Open`
-11. Fill `Start in (optional):` with Ombi.exe's working directory.  
+10. Click the `Actions` Tab and click `New...`  
+![Task Action](../assets/images/task_actions.png){: loading=lazy }  
+11. Click `Browse...` and navigate to your `Ombi.exe` Click `Open`
+12. Fill `Start in (optional):` with Ombi.exe's working directory.  
 IE: `C:\Ombi\` or `C:\SERVERS\Ombi\`. Basically, wherever you extracted your 'Ombi' folder to. Click `OK`  
 12. Conditions: un-tick all, click 'OK'.
 ![Task Conditions](../assets/images/task_conditions.png){: loading=lazy }  
