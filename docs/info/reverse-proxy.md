@@ -22,7 +22,7 @@ www.example.com/radarr
 
 You would only need to install/support a certificate for **www.example.com**.
 
-This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the `--baseurl /ombi` option
+This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the `--baseurl /ombi` option (see [here](../startup-parameters) for startup parameters)
 
 #### Location Block
 
