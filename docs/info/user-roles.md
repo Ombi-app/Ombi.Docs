@@ -4,9 +4,12 @@ Here is an explanation of what the roles mean and what permissions they give.
 **Note**: _Changing user roles requires them to log out and in again before they are applied._  
 
 * Admin  
-This is the role that gives the power to do everything! You have full access to all users, manage requests and the ability to view and change any settings.
+This is the role that gives the power to do everything!  
+An admin user will  have full access to all users, manage requests and the ability to view and change any settings.  
+They will also receive the pop-up for requesting on behalf of another user when making a request.
 * Power User  
-This role has the ability to manage users and manage requests. It does _not_ have access to any settings.
+This role has the ability to manage users and manage requests. It does _not_ have access to any settings.  
+They will also receive the pop-up for requesting on behalf of another user when making a request.
 * Request Movie  
 Gives the ability for the user to request movies.
 * Request Tv  
