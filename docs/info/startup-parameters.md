@@ -61,7 +61,9 @@ This varies depending on whether you run it manually, via task scheduler, or via
     ![Parameters in CMD](../assets/images/parameters_windows_cmd.png){: loading=lazy }  
 
 === "Scheduled task"
-    Coming soon.
+    Parameters on a scheduled task go into the "action" for the task, under `Add Arguments (optional)`.  
+
+    ![Parameters in task scheduler](../assets/images/task_actions.png){: loading=lazy }
 
 === "NSSM"
     When installing Ombi via nssm, or switching to a baseurl from an existing install, you will need to edit your service to include the parameters.  
