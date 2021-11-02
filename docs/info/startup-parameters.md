@@ -82,9 +82,10 @@ This one has a lot of variety involved, so a few common options will be broken d
 For most 'nix variants, Ombi will run as a service (especially when installed via the apt repo), so the _service_ file itself will need editing to include the parameters to be used at launch each time.
 
 === "Apt Repo"
-    You'll need to edit the ombi service file, usually located at `/lib/systemd/system/ombi.service`.
+    You'll need to edit the ombi service file, usually located at `/lib/systemd/system/ombi.service`.  
     Edit the line that reads `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/`, and add `--baseurl /ombi` to the end (or your preferred baseurl).  
-    The resulting line should look similar to this: `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --baseurl /ombi`.  
+    The resulting line should look similar to this:  
+    `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --baseurl /ombi`.  
     Restart the ombi service to apply this change (`sudo service ombi restart`).
 
 ### Docker
