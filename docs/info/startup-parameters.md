@@ -3,6 +3,7 @@
 Certain parameters (or _arguments_) can be passed to the ombi application to enforce specific settings.  
 The available options are the same across all platforms (Mac, Windows, Linux etc), but in some instances actually using them differs.  
 This page is intended to help with some rough information on how to use them on different platforms.  
+To jump to how they're used, click [here](#usage).  
 
 ## Parameters
 
@@ -11,11 +12,12 @@ Below you'll find each available parameter, and what they do.
 ### --host
 
 This should be a semicolon-separated (;) list of URL prefixes to which the server should respond.  
-For example, `--host http://localhost:123`.  
-Use "\*" to indicate that the server should listen for requests on any IP address or hostname of the system it's installed on using the specified port and protocol.  
+For example, `--host http://localhost:123;http://ip.of.ombi.host:123`.  
+Use "\*" to indicate that the server should listen for requests on any IP held by the system it's installed on using the specified port and protocol.  
 For example, `--host http://*:5000` would listen on localhost, the machine IPv4 address, and the IPv6 address.  
-The protocol (http:// or https://) must be included with each URL. Supported formats vary between servers. Note that if behind a reverse proxy Ombi should use `http://` as the proxy will handle the "s" part.  
-Default = "http://*:5000"
+The protocol (http:// or https://) **must** be included with each URL.  
+Note: if behind a reverse proxy, Ombi should use `http://` as the proxy will handle the "s" part.  
+Default = `http://*:5000`
 
 ### --storage
 
