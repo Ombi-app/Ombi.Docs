@@ -8,42 +8,44 @@ To jump to how they're used, click [here](#usage).
 ## Parameters
 
 Below you'll find each available parameter, and what they do.  
+Each parameter should be entered in lower case with a `--` before the name of it, i.e. `--baseurl` or `--storage`.  
+Multiple parameters can be passed at once, and should be separated with a space, i.e. `--baseurl /ombi --storage /opt/ombi`
 
-### --host
+=== "Host"
 
-This should be a semicolon-separated (;) list of URL prefixes to which the server should respond.  
-For example, `--host http://localhost:123;http://ip.of.ombi.host:123`.  
-Use "\*" to indicate that the server should listen for requests on any IP held by the system it's installed on using the specified port and protocol.  
-For example, `--host http://*:5000` would listen on localhost, the machine IPv4 address, and the IPv6 address.  
-The protocol (http:// or https://) **must** be included with each URL.  
-Note: if behind a reverse proxy, Ombi should use `http://` as the proxy will handle the "s" part.  
-Default = `http://*:5000`
+    This should be a semicolon-separated (;) list of URL prefixes to which the server should respond.  
+    For example, `--host http://localhost:123;http://ip.of.ombi.host:123`.  
+    Use "\*" to indicate that the server should listen for requests on any IP held by the system it's installed on using the specified port and protocol.  
+    For example, `--host http://*:5000` would listen on localhost, the machine IPv4 address, and the IPv6 address.  
+    The protocol (http:// or https://) **must** be included with each URL.  
+    Note: if behind a reverse proxy, Ombi should use `http://` as the proxy will handle the "s" part.  
+    Default = `http://*:5000`
 
-### --storage
+=== "Storage"
 
-Storage path, where we save the logs and database.  
-The default for this differs slightly by OS. On Windows, this is the application directory. On Linux, this is `/opt/ombi`.  
+    Storage path, where we save the logs and database.  
+    The default for this differs slightly by OS. On Windows, this is the application directory. On Linux, this is `/opt/ombi`.  
 
-### --baseurl
+=== "Baseurl"
 
-The base URL for reverse proxy scenarios. See [reverse proxying](../../info/reverse-proxy) for more info.  
-Note that this _**MUST**_ begin with a "/" character (i.e. `/ombi`, not `ombi`).
+    The base URL for reverse proxy scenarios. See [reverse proxying](../../info/reverse-proxy) for more info.  
+    Note that this _**MUST**_ begin with a "/" character (i.e. `/ombi`, not `ombi`).
 
-### --demo
+=== "Demo"
 
-Demo mode. You will _never_ need to use this, and we don't like that fruit company...
+    Demo mode. You will _never_ need to use this, and we don't like that fruit company...
 
-### --migrate
+=== "Migrate"
 
-Will run any database migrations that have not been run on your database and then exit the application.  
+    Will run any database migrations that have not been run on your database and then exit the application.  
 
-### --help
+=== "Help"
 
-Display a help screen listing these startup options.
+    Display a help screen listing these startup options.
 
-### --version
+=== "Version"
 
-Display version information.
+    Display version information.
 
 ## Usage
 
