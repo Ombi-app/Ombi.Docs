@@ -1378,61 +1378,6 @@
     Parameters
   </a>
   
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-host" class="md-nav__link">
-    --host
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-storage" class="md-nav__link">
-    --storage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-baseurl" class="md-nav__link">
-    --baseurl
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-demo" class="md-nav__link">
-    --demo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-migrate" class="md-nav__link">
-    --migrate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-help" class="md-nav__link">
-    --help
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-version" class="md-nav__link">
-    --version
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1963,61 +1908,6 @@
     Parameters
   </a>
   
-    <nav class="md-nav" aria-label="Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-host" class="md-nav__link">
-    --host
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-storage" class="md-nav__link">
-    --storage
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-baseurl" class="md-nav__link">
-    --baseurl
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-demo" class="md-nav__link">
-    --demo
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-migrate" class="md-nav__link">
-    --migrate
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-help" class="md-nav__link">
-    --help
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#-version" class="md-nav__link">
-    --version
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2084,8 +1974,12 @@ The available options are the same across all platforms (Mac, Windows, Linux etc
 This page is intended to help with some rough information on how to use them on different platforms.<br />
 To jump to how they're used, click <a href="#usage">here</a>.  </p>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<p>Below you'll find each available parameter, and what they do.  </p>
-<h3 id="-host">--host<a class="headerlink" href="#-host" title="Permanent link">&para;</a></h3>
+<p>Below you'll find each available parameter, and what they do.<br />
+Each parameter should be entered in lower case with a <code class="highlight">--</code> before the name of it, i.e. <code class="highlight">--baseurl</code> or <code class="highlight">--storage</code>.<br />
+Multiple parameters can be passed at once, and should be separated with a space, i.e. <code class="highlight">--baseurl /ombi --storage /opt/ombi</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Host</label><label for="__tabbed_1_2">Storage</label><label for="__tabbed_1_3">Baseurl</label><label for="__tabbed_1_4">Demo</label><label for="__tabbed_1_5">Migrate</label><label for="__tabbed_1_6">Help</label><label for="__tabbed_1_7">Version</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>This should be a semicolon-separated (;) list of URL prefixes to which the server should respond.<br />
 For example, <code class="highlight"><span class="nt">--host</span> <span class="nt">http</span><span class="o">://</span><span class="nt">localhost</span><span class="p">:</span><span class="nd">123</span><span class="o">;</span><span class="nt">http</span><span class="o">://</span><span class="nt">ip</span><span class="p">.</span><span class="nc">of</span><span class="p">.</span><span class="nc">ombi</span><span class="p">.</span><span class="nc">host</span><span class="p">:</span><span class="nd">123</span></code>.<br />
 Use "*" to indicate that the server should listen for requests on any IP held by the system it's installed on using the specified port and protocol.<br />
@@ -2093,25 +1987,34 @@ For example, <code class="highlight">--host http://*:5000</code> would listen on
 The protocol (http:// or https://) <strong>must</strong> be included with each URL.<br />
 Note: if behind a reverse proxy, Ombi should use <code class="highlight">http://</code> as the proxy will handle the "s" part.<br />
 Default = <code class="highlight">http://*:5000</code></p>
-<h3 id="-storage">--storage<a class="headerlink" href="#-storage" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
 <p>Storage path, where we save the logs and database.<br />
 The default for this differs slightly by OS. On Windows, this is the application directory. On Linux, this is <code class="highlight">/opt/ombi</code>.  </p>
-<h3 id="-baseurl">--baseurl<a class="headerlink" href="#-baseurl" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
 <p>The base URL for reverse proxy scenarios. See <a href="../../info/reverse-proxy">reverse proxying</a> for more info.<br />
 Note that this <em><strong>MUST</strong></em> begin with a "/" character (i.e. <code class="highlight">/ombi</code>, not <code class="highlight">ombi</code>).</p>
-<h3 id="-demo">--demo<a class="headerlink" href="#-demo" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
 <p>Demo mode. You will <em>never</em> need to use this, and we don't like that fruit company...</p>
-<h3 id="-migrate">--migrate<a class="headerlink" href="#-migrate" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
 <p>Will run any database migrations that have not been run on your database and then exit the application.  </p>
-<h3 id="-help">--help<a class="headerlink" href="#-help" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
 <p>Display a help screen listing these startup options.</p>
-<h3 id="-version">--version<a class="headerlink" href="#-version" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
 <p>Display version information.</p>
+</div>
+</div>
+</div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>This is not an exhaustive or comprehensive guide, but should provide a rough idea for using parameters on the different platforms Ombi works on.</p>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>This varies depending on whether you run it manually, via task scheduler, or via nssm as a service.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Manual run</label><label for="__tabbed_1_2">Scheduled task</label><label for="__tabbed_1_3">NSSM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Manual run</label><label for="__tabbed_2_2">Scheduled task</label><label for="__tabbed_2_3">NSSM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -2138,7 +2041,7 @@ Parameters should be put into the "arguments" field in nssm, as shown below.  </
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <p>This one has a lot of variety involved, so a few common options will be broken down here.<br />
 For most 'nix variants, Ombi will run as a service (especially when installed via the apt repo), so the <em>service</em> file itself will need editing to include the parameters to be used at launch each time.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Apt Repo</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Apt Repo</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>You'll need to edit the ombi service file, usually located at <code class="highlight">/lib/systemd/system/ombi.service</code>.<br />
@@ -2159,7 +2062,7 @@ Restart the ombi service to apply this change (<code class="highlight">sudo serv
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-02T22:50:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-02</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-03T00:38:49+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-03</span>
       
     
   </small>
