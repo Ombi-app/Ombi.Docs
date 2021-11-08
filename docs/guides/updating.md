@@ -72,7 +72,8 @@ Do not put it into the same folder as Ombi itself, as the script cleans out that
 This only works for develop releases, __*and is very beta*__.  
 __*Do not use unless you know what you are doing with powershell*__.
 
-[You can download the script from here.](../assets/scripts/Get-OmbiUpdate.ps1)
+You can download the script from [here.](../assets/scripts/Get-OmbiUpdate.ps1)  
+If you would prefer a pre-compiled executable file that can be scheduled in task scheduler, you can download that [here.](../assets/scripts/Get-OmbiUpdate.exe)  
 
 You will need to pass parameters to the script when calling it for it to work, and it will need to be run as an administrator.  
 Parameters are:
