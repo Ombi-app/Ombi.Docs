@@ -2126,9 +2126,11 @@ To do so is fairly straightforward.  </p>
 </ol>
 <h2 id="external-script-windows">External Script (windows)<a class="headerlink" href="#external-script-windows" title="Permanent link">&para;</a></h2>
 <p>Windows users who are running Ombi as a service can make use of a powershell script to update their Ombi instance. This script can be scheduled in task scheduler to run daily (or hourly), and it will check the current version of your Ombi instance against the latest release.<br />
+Do not put it into the same folder as Ombi itself, as the script cleans out that folder and <em>will</em> have issues if it deletes itself.<br />
 This only works for develop releases, <strong><em>and is very beta</em></strong>.<br />
 <strong><em>Do not use unless you know what you are doing with powershell</em></strong>.</p>
-<p><a href="../../assets/scripts/Get-OmbiUpdate.ps1">You can download the script from here.</a></p>
+<p>You can download the script from <a href="../../assets/scripts/Get-OmbiUpdate.ps1">here.</a><br />
+If you would prefer a pre-compiled executable file that can be scheduled in task scheduler, you can download that <a href="../../assets/scripts/Get-OmbiUpdate.exe">here.</a>  </p>
 <p>You will need to pass parameters to the script when calling it for it to work, and it will need to be run as an administrator.<br />
 Parameters are:</p>
 <ul>
@@ -2157,7 +2159,7 @@ This is a simple true/false switch - it will force the script to install the new
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-08T01:38:10+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-08</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-08T03:25:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-08</span>
       
     
   </small>
