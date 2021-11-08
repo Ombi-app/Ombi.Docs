@@ -145,35 +145,38 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 === "V4 (Develop)"
     1. Add the apt repository to the apt sources list:  
     `echo "deb https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
-    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
     `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
-    1. Update the package list and install Ombi:  
+    3. Update the package list and install Ombi:  
     `sudo apt update && sudo apt install ombi`
 
 === "V4 (Stable)"
     _Note that this is the 'slow' ring. Fixes and features get pushed to V4 (Develop) much more rapidly than Stable._  
     1. Add the apt repository to the apt sources list:  
     `echo "deb https://apt.ombi.app/master jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
-    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
     `curl -sSL https://apt.ombi.app/pub.key | sudo apt-key add -`  
-    1. Update the package list and install Ombi:  
+    3. Update the package list and install Ombi:  
     `sudo apt update && sudo apt install ombi`
 
-=== "V4 (21.xx)"
-    _Note that this is for Ubuntu 21.xx onwards, and on the development branch._  
+=== "V4 (PackageCloud)"
+    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, **and** on the new repo._  
     1. Add the apt repository to the apt sources list:  
-    `echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://apt.ombi.app/develop jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list`  
-    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
-    `curl -sSL https://apt.ombi.app/pub.key | gpg --dearmor > /usr/share/keyrings/ombi-archive-keyring.gpg`  
-    1. Update the package list and install Ombi:  
+    ```bash
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list
+    echo "deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list
+    ```  
+    2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    `curl -sSL https://packagecloud.io/Ombi-app/Ombi/gpgkey | gpg --dearmor > /usr/share/keyrings/ombi-archive-keyring.gpg`  
+    3. Update the package list and install Ombi:  
     `sudo apt update && sudo apt install ombi`
 
 === "V3 (Legacy)"
     1. Add the apt repository to the apt sources list:  
     `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`  
-    1. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
     `wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add -`  
-    1. Update the package list and install Ombi:  
+    3. Update the package list and install Ombi:  
     `sudo apt update && sudo apt install ombi`
 
 If no errors are shown, Ombi has been installed successfully and will automatically start during boot.  
