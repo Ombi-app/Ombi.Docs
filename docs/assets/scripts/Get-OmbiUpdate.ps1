@@ -112,4 +112,4 @@ else
 Write-Host ($OmbiCurrent.version + " is the latest version.")
 }
 #endregion
-timeout 5
+Start-Sleep -s 5
