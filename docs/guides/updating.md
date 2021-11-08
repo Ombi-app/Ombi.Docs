@@ -68,10 +68,12 @@ To do so is fairly straightforward.
 ## External Script (windows)
 
 Windows users who are running Ombi as a service can make use of a powershell script to update their Ombi instance. This script can be scheduled in task scheduler to run daily (or hourly), and it will check the current version of your Ombi instance against the latest release.  
+Do not put it into the same folder as Ombi itself, as the script cleans out that folder and _will_ have issues if it deletes itself.  
 This only works for develop releases, __*and is very beta*__.  
 __*Do not use unless you know what you are doing with powershell*__.
 
-[You can download the script from here.](../assets/scripts/Get-OmbiUpdate.ps1)
+You can download the script from [here.](../assets/scripts/Get-OmbiUpdate.ps1)  
+If you would prefer a pre-compiled executable file that can be scheduled in task scheduler, you can download that [here.](../assets/scripts/Get-OmbiUpdate.exe)  
 
 You will need to pass parameters to the script when calling it for it to work, and it will need to be run as an administrator.  
 Parameters are:

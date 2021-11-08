@@ -23,6 +23,7 @@ to ensure you have all the relevant packages for use.
 
 To edit the site content, edit the markdown files under "docs".  
 To edit the site layout, edit the `mkdocs.yml` file (held in the root directory).  
+If you are working on changes, use the development branch in this repo as a base, and create a branch with your suggested changes.  
 
 Note that the new documentation repository is not directly publicly editable - for a few reasons, including (but not limited to):
 
