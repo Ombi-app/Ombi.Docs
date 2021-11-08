@@ -88,6 +88,8 @@ This is where the script will download to. It's only required if you don't want 
 Most of us just use 'Ombi', so it's the default. If you used something different, pass in this parameter with whatever you used.
 * Filename  
 This is only for if you are using x86. If this is the case, pass in `Win10-x86.zip` as the parameter. Default is `Win10-x64.zip`.  
+* Force  
+This is a simple true/false switch - it will force the script to install the newest version, even if it's already installed. If the parameter isn't there, it's a `false`. The moment you add `-Force` to the end of the command you'd normally use to run this script, it'll be `true` and force a reinstall.
 
 To pass parameters to a powershell script, you name them when calling the script as such:  
 `script -parametername 'parametervalue' -parameter2name 'parameter2value`  
