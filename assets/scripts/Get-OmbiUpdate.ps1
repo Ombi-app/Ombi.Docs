@@ -21,7 +21,9 @@ param(
 # The name of the Ombi Service (Default: Ombi, can override)
 [Parameter(HelpMessage="The name of the Ombi Service (Default: Ombi, can override)")][string]$ServiceName = "Ombi",
 # The filename of the Ombi download
-[Parameter(HelpMessage="Filename of the Ombi archive to download")][string]$Filename = "Win10-x64.zip"
+[Parameter(HelpMessage="Filename of the Ombi archive to download")][string]$Filename = "Win10-x64.zip",
+# Is this a forced reinstall?
+[Parameter(HelpMessage="Is this a forced reinstall?")][Switch]$Force
 )
 #endregion
 #region Get-CurrentDetails (array.version)
@@ -64,10 +66,10 @@ $zip = "$name-v$OmbiUpdate.zip"
 $dir = "$name-v$OmbiUpdate"
 #endregion
 #region Compare current version to latest version, define $UpdateNeeded
-if ($OmbiCurrent.version -ne $OmbiUpdate){
+if ($OmbiCurrent.version -ne $OmbiUpdate) {
 $UpdateNeeded = $true}
 #endregion
-if ($UpdateNeeded -and -not $UpdateError)
+if ($UpdateNeeded -or $Force -and -not $UpdateError)
 #region Update is needed, continue
 {
 #region Notify of version change and update
