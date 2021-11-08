@@ -66,7 +66,7 @@ $zip = "$name-v$OmbiUpdate.zip"
 $dir = "$name-v$OmbiUpdate"
 #endregion
 #region Compare current version to latest version, define $UpdateNeeded
-if ($OmbiCurrent.version -ne $OmbiUpdate){
+if ($OmbiCurrent.version -ne $OmbiUpdate -or $Force) {
 $UpdateNeeded = $true}
 #endregion
 if ($UpdateNeeded -and -not $UpdateError)
