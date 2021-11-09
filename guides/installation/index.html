@@ -533,6 +533,26 @@
     macOS
   </a>
   
+    <nav class="md-nav" aria-label="macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac-autostart" class="md-nav__link">
+    Mac Autostart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-note" class="md-nav__link">
+    Security Note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1712,6 +1732,26 @@
     macOS
   </a>
   
+    <nav class="md-nav" aria-label="macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac-autostart" class="md-nav__link">
+    Mac Autostart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-note" class="md-nav__link">
+    Security Note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2199,6 +2239,26 @@
     macOS
   </a>
   
+    <nav class="md-nav" aria-label="macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac-autostart" class="md-nav__link">
+    Mac Autostart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-note" class="md-nav__link">
+    Security Note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2426,20 +2486,23 @@ Use either the <code class="highlight">systemctl</code> or the <code class="high
 <hr />
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Download the latest osx <a href="https://github.com/Ombi-app/Ombi.Releases/releases">release</a> <code class="highlight">osx-x64.tar.gz</code></li>
+<li>Download the latest osx <a href="https://github.com/Ombi-app/Ombi/releases">release</a> <code class="highlight">osx-x64.tar.gz</code></li>
 <li>Extract the contents to the desired location (we suggest something like /opt/Ombi/)</li>
 <li>Launch Terminal</li>
 <li><code class="highlight">cd</code> to the path of the folder (e.g. <code class="highlight">cd /opt/Ombi</code>)</li>
 <li>Execute <code class="highlight">./Ombi</code>. Process should load.</li>
 <li>Ombi should now be reachable at localhost:5000</li>
 </ol>
-<p><strong>Startup</strong><br />
-To have Ombi run at startup, add <code class="highlight">RunAtLoad WorkingDirectory /opt/Ombi</code> to the command.<br />
-i.e.  <code class="highlight">/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi</code></p>
-<p><strong><em>Note: macOS Catalina has strengthened Gatekeeper.<br />
+<h3 id="mac-autostart">Mac Autostart<a class="headerlink" href="#mac-autostart" title="Permanent link">&para;</a></h3>
+<p>To have Ombi run at startup, add <code class="highlight">RunAtLoad WorkingDirectory /opt/Ombi</code> to the command.<br />
+i.e.  <code class="highlight">/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi</code>  </p>
+<h3 id="security-note">Security Note<a class="headerlink" href="#security-note" title="Permanent link">&para;</a></h3>
+<p><strong><em>As of macOS Catalina, Apple has strengthened Gatekeeper considerably.</em></strong><br />
 As a result, allowing apps from 'unverified' sources is now a hidden option.<br />
-It requires executing <code class="highlight">sudo spctl --master-disable</code> in Terminal to allow apps from unverified sources before Ombi can be launched reliably.<br />
-Our preferred deployment method for macOS now, as a result, has to be as a Docker container (simply to avoid this as a problem until a more secure and stable solution is discovered).</em></strong></p>
+While you could outright disable Gatekeeper and allow all unverified apps to run without prompt, that is a significant hole to punch in your security for one application to work.<br />
+Instead, we recommend turning it off for the folder you have Ombi in specifically.<br />
+To do this, in Terminal, run <code class="highlight">echo yourpassword | sudo -S xattr -r -d com.apple.quarantine /your/path/to/Ombi</code> (substituting your password and your path to Ombi).  </p>
+<p><strong><em>Our preferred deployment method for macOS is still as a Docker container, as it does not impact security on the host OS in the same way.</em></strong></p>
 <hr />
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <p>The Ombi team do not currently maintain any Docker containers directly.  </p>
@@ -2459,7 +2522,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-08T01:18:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-08</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-09T20:46:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-09</span>
       
     
   </small>
