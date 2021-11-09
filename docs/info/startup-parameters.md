@@ -76,7 +76,15 @@ This varies depending on whether you run it manually, via task scheduler, or via
 
 ### Mac
 
-Coming soon.
+=== "Manual run"
+    * When launching Ombi by simply double-clicking the file, you cannot pass in any startup parameters.
+    * If you are using Terminal to launch Ombi, simply add the parameter after the filename for Ombi, the same as for Windows (above).
+    * If you are using a script to launch ombi, or a shortcut, add the parameters _after_ the path to the Ombi file is called.
+
+=== "Autorun"
+    * If you use the [autostart method](../../guides/installation/#mac-autostart) to run Ombi, then you'll have to add the startup parameters to the initial command.  
+    * Example (assuming you have Ombi located in `/opt/Ombi`):  
+    `/opt/Ombi/Ombi --baseurl /ombi RunAtLoad WorkingDirectory /opt/Ombi`
 
 ### Linux
 
@@ -92,4 +100,5 @@ For most 'nix variants, Ombi will run as a service (especially when installed vi
 
 ### Docker
 
-This varies depending on the package maintainer (hotio or linuxserver). Generally, the parameters can be passed in as ENV variables - however this should be confirmed with the package maintainer directly.
+This varies depending on the package maintainer (i.e. hotio or linuxserver).  
+Generally, the parameters can be passed in as ENV variables - however this should be confirmed with the package maintainer directly.
