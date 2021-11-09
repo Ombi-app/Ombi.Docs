@@ -2037,11 +2037,28 @@ Parameters should be put into the "arguments" field in nssm, as shown below.  </
 </div>
 </div>
 <h3 id="mac">Mac<a class="headerlink" href="#mac" title="Permanent link">&para;</a></h3>
-<p>Coming soon.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Manual run</label><label for="__tabbed_3_2">Autorun</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>When launching Ombi by simply double-clicking the file, you cannot pass in any startup parameters.</li>
+<li>If you are using Terminal to launch Ombi, simply add the parameter after the filename for Ombi, the same as for Windows (above).</li>
+<li>If you are using a script to launch ombi, or a shortcut, add the parameters <em>after</em> the path to the Ombi file is called.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>If you use the <a href="../../guides/installation/#mac-autostart">autostart method</a> to run Ombi, then you'll have to add the startup parameters to the initial command.  </li>
+<li>Example (assuming you have Ombi located in <code class="highlight">/opt/Ombi</code>):<br />
+<code class="highlight">/opt/Ombi/Ombi --baseurl /ombi RunAtLoad WorkingDirectory /opt/Ombi</code></li>
+</ul>
+</div>
+</div>
+</div>
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <p>This one has a lot of variety involved, so a few common options will be broken down here.<br />
 For most 'nix variants, Ombi will run as a service (especially when installed via the apt repo), so the <em>service</em> file itself will need editing to include the parameters to be used at launch each time.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Apt Repo</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Apt Repo</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>You'll need to edit the ombi service file, usually located at <code class="highlight">/lib/systemd/system/ombi.service</code>.<br />
@@ -2053,7 +2070,8 @@ Restart the ombi service to apply this change (<code class="highlight">sudo serv
 </div>
 </div>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
-<p>This varies depending on the package maintainer (hotio or linuxserver). Generally, the parameters can be passed in as ENV variables - however this should be confirmed with the package maintainer directly.</p>
+<p>This varies depending on the package maintainer (i.e. hotio or linuxserver).<br />
+Generally, the parameters can be passed in as ENV variables - however this should be confirmed with the package maintainer directly.</p>
                 
                   
                     
@@ -2062,7 +2080,7 @@ Restart the ombi service to apply this change (<code class="highlight">sudo serv
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-03T00:38:49+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-03</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-09T21:03:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-09</span>
       
     
   </small>
