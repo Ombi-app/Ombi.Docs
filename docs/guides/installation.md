@@ -193,21 +193,27 @@ Deps: `compat-openssl10 libcurl-devel libunwind-devel openssl-devel`
 
 ## macOS
 
-1. Download the latest osx [release](https://github.com/Ombi-app/Ombi.Releases/releases) `osx-x64.tar.gz`
+1. Download the latest osx [release](https://github.com/Ombi-app/Ombi/releases) `osx-x64.tar.gz`
 2. Extract the contents to the desired location (we suggest something like /opt/Ombi/)
 3. Launch Terminal
 4. `cd` to the path of the folder (e.g. `cd /opt/Ombi`)
 5. Execute `./Ombi`. Process should load.
 6. Ombi should now be reachable at localhost:5000
 
-**Startup**  
-To have Ombi run at startup, add `RunAtLoad WorkingDirectory /opt/Ombi` to the command.  
-i.e.  `/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi`
+### Mac Autostart
 
-**_Note: macOS Catalina has strengthened Gatekeeper.  
+To have Ombi run at startup, add `RunAtLoad WorkingDirectory /opt/Ombi` to the command.  
+i.e.  `/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi`  
+
+### Security Note
+
+**_As of macOS Catalina, Apple has strengthened Gatekeeper considerably._**  
 As a result, allowing apps from 'unverified' sources is now a hidden option.  
-It requires executing `sudo spctl --master-disable` in Terminal to allow apps from unverified sources before Ombi can be launched reliably.  
-Our preferred deployment method for macOS now, as a result, has to be as a Docker container (simply to avoid this as a problem until a more secure and stable solution is discovered)._**
+While you could outright disable Gatekeeper and allow all unverified apps to run without prompt, that is a significant hole to punch in your security for one application to work.  
+Instead, we recommend turning it off for the folder you have Ombi in specifically.  
+To do this, in Terminal, run `echo yourpassword | sudo -S xattr -r -d com.apple.quarantine /your/path/to/Ombi` (substituting your password and your path to Ombi).  
+
+**_Our preferred deployment method for macOS is still as a Docker container, as it does not impact security on the host OS in the same way._**
 
 ***
 
