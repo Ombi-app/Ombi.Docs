@@ -2458,7 +2458,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 <p><em>Note that this is for Ubuntu 20.xx onwards, and on the development branch, <strong>and</strong> on the new repo.</em><br />
 1. Add the apt repository to the apt sources list:<br />
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ombi.list
-<span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ombi.list
+<span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
 </code></pre></div>
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
 <code class="highlight">curl -sSL https://packagecloud.io/Ombi-app/Ombi/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
@@ -2522,7 +2522,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-09T20:46:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-09</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-14T22:33:01+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-14</span>
       
     
   </small>
