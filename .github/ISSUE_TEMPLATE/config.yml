@@ -1,10 +1,7 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Docs
-    url: https://docs.ombi.app/
-    about: The Ombi documentation should help guide you through installation and setup as well as help resolve common problems and answer frequently asked questions
   - name: Ombi Repo
-    url: https://github.com/Ombi-App/Ombi
+    url: https://github.com/Ombi-App/Ombi/issues
     about: If this bug is to do with a bug in the Ombi application itself, submit the bug over on this repo instead.
   - name: Reddit support
     url: https://www.reddit.com/r/Ombi

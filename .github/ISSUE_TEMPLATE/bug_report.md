@@ -1,7 +1,6 @@
 ---
 name: "\U0001F41B Error report"
-about: Create a report to help us improve
-
+about: Report a flaw in or suggest an improvement to the documentation
 ---
 
 **Describe the error**  
