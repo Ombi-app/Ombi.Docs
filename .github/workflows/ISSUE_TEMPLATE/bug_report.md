@@ -1,35 +1,26 @@
 ---
-name: "\U0001F41B Bug report"
+name: "\U0001F41B Error report"
 about: Create a report to help us improve
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Describe the error**
+A clear and concise description of what the problem or error is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Location**
+What page in the docs does the error appear on?
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Suggested correction**
+What do you think this should say instead?  
+OR
+How do you think this information could be made clearer?
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Logs (Logs directory where Ombi is located)**
-If applicable, a snippet of the logs that seems relevant to the bug if present.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
-
-**Ombi Version (please complete the following information):**
- - Version [e.g. 4.0.958]
-- Media Server [e.g. Plex]
-- Database Type: SQLite (Please change if using MySQL)
+**Method of access:**
+ - OS: [e.g. iOS, Windows, Android]
+ - Browser: [e.g. Chrome, Firefox, Safari, Opera, Edge]
 
 **Additional context**
 Add any other context about the problem here.
