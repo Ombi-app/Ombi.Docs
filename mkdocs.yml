@@ -184,6 +184,7 @@ nav:
   - Guides:
     - Installation: guides/installation.md
     - Migrating Databases: guides/migrating-databases.md
+    - Installing MySQL on Windows: guides/mysql-installation-windows.md
     - Mobile App: guides/mobile-app.md
     - Suggesting Features: guides/feature-suggestions.md
     - Updating: guides/updating.md
