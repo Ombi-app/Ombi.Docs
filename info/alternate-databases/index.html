@@ -2081,7 +2081,7 @@
                 
                 
                 <h1 id="alternate-database-options">Alternate Database Options<a class="headerlink" href="#alternate-database-options" title="Permanent link">&para;</a></h1>
-<p>Ombi supports multiple database types, not just sqlite.<br />
+<p>Ombi supports multiple database types, not just SQLite.<br />
 The way this works is that Ombi looks for a <code class="highlight">database.json</code> file in the installation directory (or, if you specified a <code class="highlight">Storage Path</code> at startup, in that location e.g. AppData).<br />
 If the file is not found then Ombi falls back to the default, creating or using existing SQLite databases in the Ombi directory.</p>
 <h2 id="databasejson">database.json<a class="headerlink" href="#databasejson" title="Permanent link">&para;</a></h2>
@@ -2130,7 +2130,8 @@ It's used for pure simplicity - it can be deployed by Ombi itself, and relies on
 <h4 id="why-mysql">Why MySQL<a class="headerlink" href="#why-mysql" title="Permanent link">&para;</a></h4>
 <p>MySQL requires more user configuration to run - so it tends to be for more advanced users. That's why SQLite is the default - Ombi can deploy it itself.<br />
 MySQL is, however, measurably better once it's configured. It handles multiple users signing in at once, and isn't subject to the same database locks that SQLite is.<br />
-It is also drastically more efficient at handling data - and thus is <em>much</em> faster than SQLite is. If you are experiencing slowdowns with an SQLite setup, we strongly recommend using MySQL instead.</p>
+It is also drastically more efficient at handling data - and thus is <em>much</em> faster than SQLite is. How much faster depends a lot on the hardware you're running it on and the database size, of course, but we've seen improvements from 25% up to 3600%. You read that right. That's the percentage faster it is when a query goes from taking 18 minutes down to only 30 seconds (I'll back up the math, too. 18<em>60 = 1080 seconds. 1080/30 = 36. 36</em>100 = 3600% speed increase). That's <em>36 times faster</em>.<br />
+If you are experiencing slowdowns with an SQLite setup, we strongly recommend using MySQL instead.</p>
 <h4 id="supported-versions">Supported Versions<a class="headerlink" href="#supported-versions" title="Permanent link">&para;</a></h4>
 <p>Supported versions:<br />
 <a href="https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions">https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions</a><br />
@@ -2140,7 +2141,7 @@ It is also drastically more efficient at handling data - and thus is <em>much</e
 You can check your db charset by running the following query:<br />
 <code class="highlight"><span class="n">show</span> <span class="n">variables</span> <span class="n">like</span> <span class="s1">&#39;character_set_database&#39;</span><span class="p">;</span></code>  </p>
 <h4 id="database-structure-options">Database Structure Options<a class="headerlink" href="#database-structure-options" title="Permanent link">&para;</a></h4>
-<p>You can use a separate database per function (like sqlite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.<br />
+<p>You can use a separate database per function (like SQLite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.<br />
 <em>It is up to you whether you use separate databases for each. For people unfamiliar with mysql, it is much easier to drop a database than to drop specific tables.</em></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Single Database</label><label for="__tabbed_1_2">Multiple Databases</label></div>
 <div class="tabbed-content">
@@ -2255,7 +2256,7 @@ You effectively have a clean ombi install.</p>
 <p>The method for installing MySQL differs depending on your OS - guides will be added here as we write them, but the best/most up-to-date documentation for installation and configuration of MySQL will always be provided by their own website.  </p>
 <p><a href="../../guides/mysql-installation-windows">Installation on Windows</a></p>
 <h2 id="data-migration">Data Migration<a class="headerlink" href="#data-migration" title="Permanent link">&para;</a></h2>
-<p>You can migrate the existing sqlite databases to MySQL if you choose by following the <a href="../../guides/migrating-databases">Migration Guide</a>  </p>
+<p>You can migrate the existing SQLite databases to MySQL if you choose by following the <a href="../../guides/migrating-databases">Migration Guide</a>  </p>
                 
                   
                     
@@ -2264,7 +2265,7 @@ You effectively have a clean ombi install.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-23T19:51:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-23</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-23T20:04:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-23</span>
       
     
   </small>
