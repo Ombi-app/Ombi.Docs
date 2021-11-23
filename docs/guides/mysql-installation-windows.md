@@ -2,7 +2,7 @@
 
 To use MySQL we need to install the MySQL Community Server.  
 You can download it [here](https://dev.mysql.com/downloads/mysql/).  
-If you'd like to know why we recommend MySQL over SQLite, please see [Alternate Databases.](../../info/alternate-databases)
+If you'd like to know why we recommend MySQL over SQLite, please see [Alternate Databases.](../../info/alternate-databases#why-mysql)
 ***
 
 ## Download
