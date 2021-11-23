@@ -8,7 +8,7 @@ Stop Ombi with the relevant command for your system (stop-process ombi, net stop
 
 === "SQLite"
 
-    Back up the sqlite db files.
+    Back up the SQLite db files.
 
     - ombi.db
     - ombisettings.db

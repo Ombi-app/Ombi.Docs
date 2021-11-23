@@ -1,6 +1,6 @@
 # Alternate Database Options
 
-Ombi supports multiple database types, not just sqlite.  
+Ombi supports multiple database types, not just SQLite.  
 The way this works is that Ombi looks for a `database.json` file in the installation directory (or, if you specified a `Storage Path` at startup, in that location e.g. AppData).  
 If the file is not found then Ombi falls back to the default, creating or using existing SQLite databases in the Ombi directory.
 
@@ -48,7 +48,8 @@ It's used for pure simplicity - it can be deployed by Ombi itself, and relies on
 
 MySQL requires more user configuration to run - so it tends to be for more advanced users. That's why SQLite is the default - Ombi can deploy it itself.  
 MySQL is, however, measurably better once it's configured. It handles multiple users signing in at once, and isn't subject to the same database locks that SQLite is.  
-It is also drastically more efficient at handling data - and thus is _much_ faster than SQLite is. If you are experiencing slowdowns with an SQLite setup, we strongly recommend using MySQL instead.
+It is also drastically more efficient at handling data - and thus is _much_ faster than SQLite is. How much faster depends a lot on the hardware you're running it on and the database size, of course, but we've seen improvements from 25% up to 3600%. You read that right. That's the percentage faster it is when a query goes from taking 18 minutes down to only 30 seconds (I'll back up the math, too. 18*60 = 1080 seconds. 1080/30 = 36. 36*100 = 3600% speed increase). That's _36 times faster_.  
+If you are experiencing slowdowns with an SQLite setup, we strongly recommend using MySQL instead.
 
 #### Supported Versions
 
@@ -64,7 +65,7 @@ You can check your db charset by running the following query:
 
 #### Database Structure Options
 
-You can use a separate database per function (like sqlite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.  
+You can use a separate database per function (like SQLite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.  
 _It is up to you whether you use separate databases for each. For people unfamiliar with mysql, it is much easier to drop a database than to drop specific tables._
 
 === "Single Database"
@@ -186,4 +187,4 @@ The method for installing MySQL differs depending on your OS - guides will be ad
 
 ## Data Migration
 
-You can migrate the existing sqlite databases to MySQL if you choose by following the [Migration Guide](../../guides/migrating-databases)  
+You can migrate the existing SQLite databases to MySQL if you choose by following the [Migration Guide](../../guides/migrating-databases)  
