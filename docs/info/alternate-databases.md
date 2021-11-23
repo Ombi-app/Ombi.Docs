@@ -1,6 +1,6 @@
 # Alternate Database Options
 
-Ombi supports multiple database types, not just sqlite.  
+Ombi supports multiple database types, not just SQLite.  
 The way this works is that Ombi looks for a `database.json` file in the installation directory (or, if you specified a `Storage Path` at startup, in that location e.g. AppData).  
 If the file is not found then Ombi falls back to the default, creating or using existing SQLite databases in the Ombi directory.
 
@@ -65,7 +65,7 @@ You can check your db charset by running the following query:
 
 #### Database Structure Options
 
-You can use a separate database per function (like sqlite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.  
+You can use a separate database per function (like SQLite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.  
 _It is up to you whether you use separate databases for each. For people unfamiliar with mysql, it is much easier to drop a database than to drop specific tables._
 
 === "Single Database"
@@ -187,4 +187,4 @@ The method for installing MySQL differs depending on your OS - guides will be ad
 
 ## Data Migration
 
-You can migrate the existing sqlite databases to MySQL if you choose by following the [Migration Guide](../../guides/migrating-databases)  
+You can migrate the existing SQLite databases to MySQL if you choose by following the [Migration Guide](../../guides/migrating-databases)  
