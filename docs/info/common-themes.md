@@ -101,6 +101,18 @@ app-nav-search mat-form-field{
 
 ***
 
+## Use an Image instead of Application Name
+
+This allows you to replace the application name (on the left) with an image.  
+The example below uses a relative location for the logo, so bear in mind that if it's hosted elsewhere you'll need to put in the complete URL to the file.  
+
+```css
+/* Nav Bar */
+.sidenav-container .sidenav .mat-toolbar.application-name {
+    content: url("linktoimage/logo.png"); 
+}
+```
+
 ## Hide Media Types
 
 **Note:**  
