@@ -48,7 +48,7 @@ It's used for pure simplicity - it can be deployed by Ombi itself, and relies on
 
 MySQL requires more user configuration to run - so it tends to be for more advanced users. That's why SQLite is the default - Ombi can deploy it itself.  
 MySQL is, however, measurably better once it's configured. It handles multiple users signing in at once, and isn't subject to the same database locks that SQLite is.  
-It is also drastically more efficient at handling data - and thus is _much_ faster than SQLite is. How much faster depends a lot on the hardware you're running it on and the database size, of course, but we've seen improvements from 25% up to 3600%. You read that right. That's the percentage faster it is when a query goes from taking 18 minutes down to only 30 seconds (I'll back up the math, too. 18*60 = 1080 seconds. 1080/30 = 36. 36*100 = 3600% speed increase). That's _36 times faster_.  
+It is also drastically more efficient at handling data - and thus is _much_ faster than SQLite is. How much faster depends a lot on the hardware you're running it on and the database size, of course, but we've seen improvements anywhere from 25% up to 200% (and potentially higher, depending on the system).  
 If you are experiencing slowdowns with an SQLite setup, we strongly recommend using MySQL instead.
 
 #### Supported Versions
