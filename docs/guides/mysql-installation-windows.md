@@ -100,4 +100,4 @@ This will show you what kind of activity is running on your MySQL Server, and ca
 ## Migration Steps
 
 Now that MySQL is installed, you can migrate your existing SQLite data to the new MySQL server to take advantage of the faster system.  
-You can find a guide on this under [migrating databases.](../guides/migrating-databases)
+You can find a guide on this under [migrating databases.](../migrating-databases)
