@@ -171,6 +171,18 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     3. Update the package list and install Ombi:  
     `sudo apt update && sudo apt install ombi`
 
+=== "V4 Develop (PackageCloud)"
+    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, **and** on the new repo._  
+    1. Add the apt repository to the apt sources list:  
+    ```bash
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list
+    echo "deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main" | sudo tee -a /etc/apt/sources.list.d/ombi.list
+    ```  
+    2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:  
+    `curl -sSL https://packagecloud.io/Ombi-app/Ombi-Dev/gpgkey | gpg --dearmor > /usr/share/keyrings/ombi-archive-keyring.gpg`  
+    3. Update the package list and install Ombi:  
+    `sudo apt update && sudo apt install ombi`
+
 === "V3 (Legacy)"
     1. Add the apt repository to the apt sources list:  
     `echo "deb [arch=amd64,armhf,arm64] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list"`  
