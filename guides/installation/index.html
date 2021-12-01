@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/guides/installation/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
     
     
       
@@ -2442,7 +2442,7 @@ Replace the port in the below commands with your own port if you're running a di
 Also note that only systemd is supported, not upstart. That means Debian jessie and up, and Ubuntu 15.04 and up.<br />
 <strong>Note 2:</strong>  We are in the process of changing repo providers. Bear with us.<br />
 <strong>Note 3:</strong>  Apt-Key has been deprecated in Ubuntu 21.xx onwards. Use the v4 (21.xx) method below for this OS.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">V4 (Develop)</label><label for="__tabbed_5_2">V4 (Stable)</label><label for="__tabbed_5_3">V4 (PackageCloud)</label><label for="__tabbed_5_4">V3 (Legacy)</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:5"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><input id="__tabbed_5_5" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">V4 (Develop)</label><label for="__tabbed_5_2">V4 (Stable)</label><label for="__tabbed_5_3">V4 (PackageCloud)</label><label for="__tabbed_5_4">V4 Develop (PackageCloud)</label><label for="__tabbed_5_5">V3 (Legacy)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -2471,6 +2471,17 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 </code></pre></div>
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
 <code class="highlight">curl -sSL https://packagecloud.io/Ombi-app/Ombi/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
+3. Update the package list and install Ombi:<br />
+<code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></p>
+</div>
+<div class="tabbed-block">
+<p><em>Note that this is for Ubuntu 20.xx onwards, and on the development branch, <strong>and</strong> on the new repo.</em><br />
+1. Add the apt repository to the apt sources list:<br />
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ombi.list
+<span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
+</code></pre></div>
+2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
+<code class="highlight">curl -sSL https://packagecloud.io/Ombi-app/Ombi-Dev/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
 3. Update the package list and install Ombi:<br />
 <code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></p>
 </div>
@@ -2530,7 +2541,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-18T20:24:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-01T22:48:20+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-01</span>
       
     
   </small>
@@ -2657,7 +2668,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.01824240.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a87c2adc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ff0eccb3.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
