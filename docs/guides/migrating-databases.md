@@ -16,28 +16,54 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 
 1. Download the script.
 
-    ```bash
-    git clone https://github.com/vsc55/ombi_sqlite_mysql.git ombi_sqlite_mysql
-    cd ombi_sqlite_mysql
-    chmod +x *.py
-    ```
+    === "Linux"
+
+        ```bash
+        git clone https://github.com/vsc55/ombi_sqlite_mysql.git ombi_sqlite_mysql
+        cd ombi_sqlite_mysql
+        chmod +x *.py
+        ```
+
+    === "Windows"
+
+        Grab the migration scripts from [here](https://github.com/vsc55/ombi_sqlite_mysql).  
+        Click on the `ombi_sqlite2mysql.py` and copy the contents into a new Notepad++ (or VS Code) file. Save the file in your Ombi directory as `ombi_sqlite2mysql.py`.  
+        Do the same for `ombi_sqlite2mysql_multi.py` (using the alternate name, of course).
 
 2. Install the dependencies according to the operating system we use.
 
-    `apt-get install python-mysqldb`    # Debian/Ubuntu  
-    `emerge -va mysqlclient`            # Gentoo  
-    `pip install mysqlclient`           # Python Pip  
-    `python -m pip install mysqlclient` # Python Pip  
+    === "Debian/Ubuntu"
+        `apt-get install python-mysqldb`
+
+    === "Windows"
+        Install [Python](https://www.python.org/downloads/), ensuring you also install `Pip` and select the option to add Python to `PATH`.  
+        Then, from in a "CMD" window, run the same commands as you would for "Python Pip".
+
+    === "Gentoo"
+        `emerge -va mysqlclient`
+
+    === "Python Pip"
+        `pip install mysqlclient`  
+        If the above errors, try `python -m pip install mysqlclient` instead.
 
 ### 3. Create and prepare tables
 
 1. Update to the latest version of ombi.
 2. Stop ombi
 3. Create or Modify **database.json** to use mysql.  
-  `python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`  
+    (Substitute in whatever details match your MySQL instance, which you configured previously).
+
+    === "Linux"  
+        `python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`  
+    === "Windows"
+        1. In CMD, `cd` to your Ombi directory (we'll assume `C:\Ombi` for this).  
+        If your Ombi is on a different drive, you'll need to switch to that drive letter first  
+        (i.e. for `E:\Ombi`, you'd run `E:` followed by `cd E:\Ombi`).
+        2. `python ombi_sqlite2mysql.py -c C:\Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`  
+
 4. **Only if we are going to use *Multiple Databases* or *Multiple Servers*.**  
-   To be able to use multiple servers or databases we will need to manually edit **database.json**.  
-    The example below will export the **"OmbiDatabase"** and **"SettingsDatabase"** databases to the server at **"192.168.0.100"** (but to different databases on the same server), while the **"ExternalDatabase"** database will be sent to server **"192.168.1.200"**.
+    To be able to use multiple servers or databases we will need to manually edit **database.json**.  
+    The example below will export the **"OmbiDatabase"** and **"SettingsDatabase"** databases to the server at **"192.168.1.100"** (but to different databases on the same server), while the **"ExternalDatabase"** database will be sent to the server on **"192.168.1.200"**.
 
     ```json
     {
@@ -56,11 +82,19 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
     }
     ```
 
-5. Run the following command:
+5. Run the following command(s):
 
-    ``` bash
-    ombi --migrate
-    ```
+    === "Linux"
+        ```bash
+        ombi --migrate
+        ```
+
+    === "Windows"
+        ```batch
+        C:
+        cd C:\Ombi
+        ombi --migrate
+        ```
 
 ### 4. Data Migration
 
@@ -79,12 +113,12 @@ We can export everything to a single database (step 4.1), to different databases
 >
 > ```bash
 > $ python ombi_sqlite2mysql.py -c /etc/Ombi --only_manager_json
-> Migration tool from SQLite to MySql/MariaDB for ombi (3.0.4) By VSC55
+> Migration tool from SQLite to MySql/MariaDB for ombi (x.x.x) By VSC55
 >
 > Generate file "migration.json":
 > - Saving in (/etc/Ombi/migration.json)... [✓]
 >
-> $ vi /etc/Ombi/migration.json
+> $ nano /etc/Ombi/migration.json
 > ```
 >  
 > Content "migration.json":
@@ -157,7 +191,7 @@ We can export everything to a single database (step 4.1), to different databases
 1. To create the file **"database_multi.json"** we will use the file **"database.json"** so we will only have to rename it.  
 
     ```json
-    $ vi database_multi.json
+    $ nano database_multi.json
     {
         "OmbiDatabase": {
             "Type": "MySQL",
@@ -178,7 +212,7 @@ We can export everything to a single database (step 4.1), to different databases
     > The example next will export the databases **"OmbiDatabase"** and **"SettingsDatabase"** but omit **"ExternalDatabase"**.
 
     ```json
-    $ vi database_multi.json
+    $ nano database_multi.json
     {
         "OmbiDatabase": {
             "Type": "MySQL",
@@ -200,7 +234,7 @@ We can export everything to a single database (step 4.1), to different databases
     > The next example sends databases "OmbiDatabase", "SettingsDatabase" and "ExternalDatabase" to servers 192.168.1.100 and 192.168.1.200.
 
     ```json
-    $ vi database_multi.json
+    $ nano database_multi.json
     {
         "OmbiDatabase": {
             "Type": "MySQL",
@@ -231,7 +265,7 @@ We can export everything to a single database (step 4.1), to different databases
 
     > __NOTE: If you want to export all the content to several servers we will have to repeat the point "Create and prepare tables" with the different servers so that all the tables are created. You will also have to modify the file **database.json** at the end of the export process before running ombi to leave a single server for each database.__
 
-2. Start data migration.
+2. Start data migration.  
     > The script will empty the tables from the MySQL/MariaDB database and automatically migrate the data from SQLite to MySQL/MariaDB.
 
     ```bash
