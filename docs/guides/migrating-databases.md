@@ -33,7 +33,7 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 2. Install the dependencies according to the operating system we use.
 
     === "Debian/Ubuntu"
-        `apt-get install python-mysqldb`
+        `apt-get install python3-mysqldb`
 
     === "Windows"
         Install [Python](https://www.python.org/downloads/), ensuring you also install `Pip` and select the option to add Python to `PATH`.  

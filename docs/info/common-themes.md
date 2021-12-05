@@ -113,36 +113,6 @@ The example below uses a relative location for the logo, so bear in mind that if
 }
 ```
 
-## Hide Media Types
-
-**Note:**  
-You're basically hiding the ID of whatever tab you want to hide using a CSS tag.  
-This only works for V3 (legacy) builds, as V4 is no longer tabbed like this.
-
-=== "TV Shows"
-
-    ``` css
-    #TVtab {
-        display: none;
-    }
-    ```
-
-=== "Movies"
-
-    ``` css
-    #Moviestab {
-        display: none;
-    }
-    ```
-
-=== "Music"
-
-    ``` css
-    #Music {
-        display: none;
-    }
-    ```
-
 ***
 
 ## Hide "Play on Plex" button
@@ -176,6 +146,38 @@ Please note that these are not tested or endorsed by the Ombi(tm) team. Any 'jan
 
 * [Theme-Park](https://docs.theme-park.dev/themes/ombi/)
 * [OmbiFlix (Dark Netflix Clone)](https://github.com/DevilsDesigns/OmbiFlix-Themes)
+
+***
+
+## Hide Media Types
+
+**Note:**  
+You're basically hiding the ID of whatever tab you want to hide using a CSS tag.  
+This only works for V3 (legacy) builds, as V4 is no longer tabbed like this.
+
+=== "TV Shows"
+
+    ``` css
+    #TVtab {
+        display: none;
+    }
+    ```
+
+=== "Movies"
+
+    ``` css
+    #Moviestab {
+        display: none;
+    }
+    ```
+
+=== "Music"
+
+    ``` css
+    #Music {
+        display: none;
+    }
+    ```
 
 ***
 
