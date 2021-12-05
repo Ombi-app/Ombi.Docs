@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/common-themes/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.816931ca.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a4617e2.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
@@ -47,7 +47,6 @@
     <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
     
       
-
 
     
     
@@ -85,7 +84,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Ombi Docs" class="md-header__button md-logo" aria-label="Ombi Docs" data-md-component="logo">
       
@@ -184,14 +185,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
@@ -309,7 +304,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -1291,13 +1292,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hide-media-types" class="md-nav__link">
-    Hide Media Types
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hide-play-on-plex-button" class="md-nav__link">
     Hide "Play on Plex" button
   </a>
@@ -1314,6 +1308,13 @@
         <li class="md-nav__item">
   <a href="#community-themes" class="md-nav__link">
     Community Themes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-media-types" class="md-nav__link">
+    Hide Media Types
   </a>
   
 </li>
@@ -1997,13 +1998,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hide-media-types" class="md-nav__link">
-    Hide Media Types
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hide-play-on-plex-button" class="md-nav__link">
     Hide "Play on Plex" button
   </a>
@@ -2020,6 +2014,13 @@
         <li class="md-nav__item">
   <a href="#community-themes" class="md-nav__link">
     Community Themes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-media-types" class="md-nav__link">
+    Hide Media Types
   </a>
   
 </li>
@@ -2141,6 +2142,31 @@ The example below uses a relative location for the logo, so bear in mind that if
     <span class="k">content</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s2">&quot;linktoimage/logo.png&quot;</span><span class="p">);</span> 
 <span class="p">}</span>
 </code></pre></div>
+<hr />
+<h2 id="hide-play-on-plex-button">Hide "Play on Plex" button<a class="headerlink" href="#hide-play-on-plex-button" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="p">#</span><span class="nn">viewOnPlexButton</span> <span class="p">{</span>
+<span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="hide-stream-on-services">Hide "Stream On" services<a class="headerlink" href="#hide-stream-on-services" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">streamingContainer</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">streaming-on</span>
+<span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="community-themes">Community Themes<a class="headerlink" href="#community-themes" title="Permanent link">&para;</a></h2>
+<p>People with their own repositories of themes can have ones they'd like shared publicly linked here.<br />
+Please note that these are not tested or endorsed by the Ombi&trade; team. Any 'jank' encountered is down to the maintainer of the theme.</p>
+<ul>
+<li><a href="https://docs.theme-park.dev/themes/ombi/">Theme-Park</a></li>
+<li><a href="https://github.com/DevilsDesigns/OmbiFlix-Themes">OmbiFlix (Dark Netflix Clone)</a></li>
+</ul>
+<hr />
 <h2 id="hide-media-types">Hide Media Types<a class="headerlink" href="#hide-media-types" title="Permanent link">&para;</a></h2>
 <p><strong>Note:</strong><br />
 You're basically hiding the ID of whatever tab you want to hide using a CSS tag.<br />
@@ -2167,30 +2193,6 @@ This only works for V3 (legacy) builds, as V4 is no longer tabbed like this.</p>
 </div>
 </div>
 </div>
-<hr />
-<h2 id="hide-play-on-plex-button">Hide "Play on Plex" button<a class="headerlink" href="#hide-play-on-plex-button" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="p">#</span><span class="nn">viewOnPlexButton</span> <span class="p">{</span>
-<span class="k">display</span><span class="p">:</span><span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="hide-stream-on-services">Hide "Stream On" services<a class="headerlink" href="#hide-stream-on-services" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">streamingContainer</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">streaming-on</span>
-<span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="community-themes">Community Themes<a class="headerlink" href="#community-themes" title="Permanent link">&para;</a></h2>
-<p>People with their own repositories of themes can have ones they'd like shared publicly linked here.<br />
-Please note that these are not tested or endorsed by the Ombi&trade; team. Any 'jank' encountered is down to the maintainer of the theme.</p>
-<ul>
-<li><a href="https://docs.theme-park.dev/themes/ombi/">Theme-Park</a></li>
-<li><a href="https://github.com/DevilsDesigns/OmbiFlix-Themes">OmbiFlix (Dark Netflix Clone)</a></li>
-</ul>
 <hr />
 <h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
 <p><strong>Please thank all the people posting their custom CSS and the people below. Most of these are from the community at large, so credit where credit is due.</strong></p>
@@ -2236,7 +2238,7 @@ Please note that these are not tested or endorsed by the Ombi&trade; team. Any '
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-28T23:03:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-05T21:45:43+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-05</span>
       
     
   </small>
@@ -2360,10 +2362,10 @@ Please note that these are not tested or endorsed by the Ombi&trade; team. Any '
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.01824240.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.ca141e46.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ff0eccb3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6baa0517.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
