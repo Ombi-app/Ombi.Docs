@@ -2073,10 +2073,15 @@ For most 'nix variants, Ombi will run as a service (especially when installed vi
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>You'll need to edit the ombi service file, usually located at <code class="highlight">/lib/systemd/system/ombi.service</code>.<br />
-Edit the line that reads <code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/</code>, and add <code class="highlight">--baseurl /ombi</code> to the end (or your preferred baseurl).<br />
+Edit the line that reads <code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/</code>, and add whatever startup parameters you need, separated by spaces.<br />
+Restart the ombi service to apply any changes (<code class="highlight">sudo service ombi restart</code>).</p>
+<p>For a baseurl, add <code class="highlight">--baseurl /ombi</code> to the end (or your preferred baseurl).<br />
 The resulting line should look similar to this:<br />
-<code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --baseurl /ombi</code>.<br />
-Restart the ombi service to apply this change (<code class="highlight">sudo service ombi restart</code>).</p>
+<code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --baseurl /ombi</code>.  </p>
+<p>To run on a different port, use the <code class="highlight">--host</code> parameter. The below would run Ombi on port 3579. <br />
+<code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --host http://*:3579</code>.</p>
+<p>Again, multiple parameters should be separated by spaces.<br />
+<code class="highlight">ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --host http://*:3579 --baseurl /ombi</code>.</p>
 </div>
 </div>
 </div>
@@ -2089,7 +2094,7 @@ Generally, the parameters can be passed in as ENV variables - however this shoul
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-09T21:03:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-06T02:31:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-06</span>
       
     
   </small>
