@@ -93,10 +93,18 @@ For most 'nix variants, Ombi will run as a service (especially when installed vi
 
 === "Apt Repo"
     You'll need to edit the ombi service file, usually located at `/lib/systemd/system/ombi.service`.  
-    Edit the line that reads `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/`, and add `--baseurl /ombi` to the end (or your preferred baseurl).  
+    Edit the line that reads `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/`, and add whatever startup parameters you need, separated by spaces.  
+    Restart the ombi service to apply any changes (`sudo service ombi restart`).
+
+    For a baseurl, add `--baseurl /ombi` to the end (or your preferred baseurl).  
     The resulting line should look similar to this:  
     `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --baseurl /ombi`.  
-    Restart the ombi service to apply this change (`sudo service ombi restart`).
+    
+    To run on a different port, use the `--host` parameter. The below would run Ombi on port 3579.   
+    `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --host http://*:3579`.
+
+    Again, multiple parameters should be separated by spaces.  
+    `ExecStart=/opt/Ombi/Ombi --storage /etc/Ombi/ --host http://*:3579 --baseurl /ombi`.
 
 ### Docker
 

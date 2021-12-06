@@ -192,7 +192,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     `sudo apt update && sudo apt install ombi`
 
 If no errors are shown, Ombi has been installed successfully and will automatically start during boot.  
-Ombi should now be reachable on "http://your-ip-address:5000"
+Ombi should now be reachable on "http://your-ip-address:5000". If you would like to change this port, you will need to use the `--host` [startup parameter](../../info/startup-parameters).
 
 Packages in this repo use systemd.  
 Use either the `systemctl` or the `service` command to start, stop, or restart Ombi.  
