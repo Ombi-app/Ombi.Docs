@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/common-errors/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.1">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a4617e2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.23b6d78a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9204c3b2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -44,7 +44,7 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"../..":"../.."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -1258,6 +1258,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ombi-cannot-start-after-attempting-a-mysql-migration" class="md-nav__link">
+    Ombi cannot start after attempting a MySQL migration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-such-column-xrequestid" class="md-nav__link">
     No such column: x.RequestId
   </a>
@@ -1957,6 +1964,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ombi-cannot-start-after-attempting-a-mysql-migration" class="md-nav__link">
+    Ombi cannot start after attempting a MySQL migration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-such-column-xrequestid" class="md-nav__link">
     No such column: x.RequestId
   </a>
@@ -2043,6 +2057,12 @@ For a breakdown of docker networking (and some reasoning), see <a href="../info/
 </code></pre></div>
 <p>Replace <code class="highlight"><span class="k">deb</span> <span class="s">http://apt.ombi.app/develop</span> <span class="kp">jessie</span> <span class="kp">main</span></code> with  <code class="highlight"><span class="k">deb</span> <span class="sx">[arch=amd64]</span> <span class="kp">http://apt.ombi.app/develop/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> in <code class="highlight">/etc/apt/sources.list.d/ombi.list</code>.  </p>
 <hr />
+<h2 id="ombi-cannot-start-after-attempting-a-mysql-migration">Ombi cannot start after attempting a MySQL migration<a class="headerlink" href="#ombi-cannot-start-after-attempting-a-mysql-migration" title="Permanent link">&para;</a></h2>
+<p>In some instances, migrating the <code class="highlight">__EFMigrationsHistory</code> entries fails to succeed.<br />
+To get around this, we need to recreate and populate the tables manually in our MySQL server.<br />
+This can be done by running <a href="../../assets/scripts/mysql_migrations.sql">this MySQL command</a> in your preferred MySQL interface (CLI, PHPMyAdmin, MySQL workbench etc).<br />
+It will drop the invalid entries (if they exist), then create valid ones with all the current migrations (as at the time of uploading the script).</p>
+<hr />
 <h2 id="no-such-column-xrequestid">No such column: x.RequestId<a class="headerlink" href="#no-such-column-xrequestid" title="Permanent link">&para;</a></h2>
 <p>If you are on the latest version and are seeing <code class="highlight">SQLite Error 1: &#39;No such column: x.RequestId&#39;</code>, refer below for a solution.<br />
 Referenced in <a href="https://github.com/tidusjar/Ombi/issues/3214#issuecomment-555821356">Issue 3214</a></p>
@@ -2104,7 +2124,7 @@ sudo apt install -y sqlite3
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-03-03T20:16:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-03-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-14T19:42:01+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-14</span>
       
     
   </small>
@@ -2228,10 +2248,10 @@ sudo apt install -y sqlite3
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.ca141e46.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.c7dec7e7.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6baa0517.min.js"></script>
+      <script src="../../assets/javascripts/bundle.da79ceb7.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
