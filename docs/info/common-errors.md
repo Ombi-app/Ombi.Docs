@@ -62,6 +62,14 @@ Replace `deb http://apt.ombi.app/develop jessie main` with  `deb [arch=amd64] ht
 
 ***
 
+## Ombi cannot start after attempting a MySQL migration
+
+In some instances, migrating the `__EFMigrationsHistory` entries fails to succeed.  
+To get around this, we need to recreate and populate the tables manually in our MySQL server.  
+This can be done by running [this MySQL command](../../assets/scripts/mysql_migrations.sql) in your preferred MySQL interface (CLI, PHPMyAdmin, MySQL workbench etc).  
+It will drop the invalid entries (if they exist), then create valid ones with all the current migrations (as at the time of uploading the script).
+***
+
 ## No such column: x.RequestId
 
 If you are on the latest version and are seeing `SQLite Error 1: 'No such column: x.RequestId'`, refer below for a solution.  
