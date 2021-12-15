@@ -64,10 +64,12 @@ Replace `deb http://apt.ombi.app/develop jessie main` with  `deb [arch=amd64] ht
 
 ## Ombi cannot start after attempting a MySQL migration
 
+Note: *Only works when shifting to MySQL databases when you are already running Ombi 4.7.x, and you are staying on the same version*  
+
 In some instances, migrating the `__EFMigrationsHistory` entries fails to succeed.  
 To get around this, we need to recreate and populate the tables manually in our MySQL server.  
 With multiple databases (assuming they are named Ombi, Ombi_Settings, and Ombi_External), this can be achieved by running [this MySQL command](../../assets/scripts/mysql_migrations.sql) in your preferred MySQL interface (CLI, PHPMyAdmin, MySQL workbench etc).  
-It will drop the invalid entries (if they exist), then create valid ones with all the current migrations (as at the time of uploading the script).
+It will drop the invalid entries (if they exist), then create valid ones with all the current migrations (as at the time of uploading the script).  
 
 ***
 
