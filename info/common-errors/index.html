@@ -2058,10 +2058,11 @@ For a breakdown of docker networking (and some reasoning), see <a href="../info/
 <p>Replace <code class="highlight"><span class="k">deb</span> <span class="s">http://apt.ombi.app/develop</span> <span class="kp">jessie</span> <span class="kp">main</span></code> with  <code class="highlight"><span class="k">deb</span> <span class="sx">[arch=amd64]</span> <span class="kp">http://apt.ombi.app/develop/</span> <span class="kp">jessie</span> <span class="kp">main</span></code> in <code class="highlight">/etc/apt/sources.list.d/ombi.list</code>.  </p>
 <hr />
 <h2 id="ombi-cannot-start-after-attempting-a-mysql-migration">Ombi cannot start after attempting a MySQL migration<a class="headerlink" href="#ombi-cannot-start-after-attempting-a-mysql-migration" title="Permanent link">&para;</a></h2>
+<p>Note: <em>Only works when shifting to MySQL databases when you are already running Ombi 4.7.x, and you are staying on the same version</em>  </p>
 <p>In some instances, migrating the <code class="highlight">__EFMigrationsHistory</code> entries fails to succeed.<br />
 To get around this, we need to recreate and populate the tables manually in our MySQL server.<br />
 With multiple databases (assuming they are named Ombi, Ombi_Settings, and Ombi_External), this can be achieved by running <a href="../../assets/scripts/mysql_migrations.sql">this MySQL command</a> in your preferred MySQL interface (CLI, PHPMyAdmin, MySQL workbench etc).<br />
-It will drop the invalid entries (if they exist), then create valid ones with all the current migrations (as at the time of uploading the script).</p>
+It will drop the invalid entries (if they exist), then create valid ones with all the current migrations (as at the time of uploading the script).  </p>
 <hr />
 <h2 id="no-such-column-xrequestid">No such column: x.RequestId<a class="headerlink" href="#no-such-column-xrequestid" title="Permanent link">&para;</a></h2>
 <p>If you are on the latest version and are seeing <code class="highlight">SQLite Error 1: &#39;No such column: x.RequestId&#39;</code>, refer below for a solution.<br />
@@ -2124,7 +2125,7 @@ sudo apt install -y sqlite3
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-14T20:22:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-15T00:30:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-15</span>
       
     
   </small>
