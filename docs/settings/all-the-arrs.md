@@ -20,8 +20,9 @@ This switch tells Ombi whether to use this service or not. Don't run the service
 
 ## Scan for Availability
 
-This option will allow Ombi to sync with the Arrs to check for availability.  
-If you have set up your Plex (or Emby) sync to detect what is available you won't have to use this.  
+This option tells Ombi to use the Arrs to check for availability (instead of a media server).  
+If you have set up a Plex/Emby/Jellyfin connection in Ombi, then Ombi will use that to detect what is available (and this should be disabled).  
+_We recommend using the medie server rather than this option - it's mainly for people who use things like XBMC and local players._
 ***
 
 ## Hostname
