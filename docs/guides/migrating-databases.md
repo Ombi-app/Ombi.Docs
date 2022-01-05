@@ -34,17 +34,20 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 
     === "Debian/Ubuntu"
         `apt-get install python3-mysqldb`
+        `apt-get install python3-packaging`
 
     === "Windows"
         Install [Python](https://www.python.org/downloads/), ensuring you also install `Pip` and select the option to add Python to `PATH`.  
         Then, from in a "CMD" window, run the same commands as you would for "Python Pip".
 
     === "Gentoo"
-        `emerge -va mysqlclient`
+        `emerge -va dev-python/mysqlclient`
+        `emerge -va dev-python/packaging`
 
     === "Python Pip"
-        `pip install mysqlclient`  
-        If the above errors, try `python -m pip install mysqlclient` instead.
+        `pip install mysqlclient`
+        `pip install packaging`
+        If the above errors, try `python -m pip install mysqlclient` and `python -m pip install packaging` instead.
 
 ### 3. Create and prepare tables
 
@@ -86,8 +89,10 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 
     === "Linux"
         ```bash
-        ombi --migrate
+        /opt/ombi/Ombi --migrate
         ```
+        Note: We assume that Ombi is installed in '/opt/ombi', if it is not installed in that location use the corresponding path. If you are using docker ombi is installed in '/opt/ombi'
+
 
     === "Windows"
         ```batch
