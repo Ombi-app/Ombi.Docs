@@ -33,26 +33,26 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 2. Install the dependencies according to the operating system we use.
 
     === "Debian/Ubuntu"
-        `apt-get install python3-mysqldb`
+        `apt-get install python3-mysqldb`  
         `apt-get install python3-packaging`
 
     === "Windows"
         Install [Python](https://www.python.org/downloads/), ensuring you also install `Pip` and select the option to add Python to `PATH`.  
-        Then, from in a "CMD" window, run the same commands as you would for "Python Pip".
+        Then, from a "CMD" window, run the same commands as you would for "Python Pip".
 
     === "Gentoo"
         `emerge -va dev-python/mysqlclient`
         `emerge -va dev-python/packaging`
 
     === "Python Pip"
-        `pip install mysqlclient`
-        `pip install packaging`
+        `pip install mysqlclient`  
+        `pip install packaging`  
         If the above errors, try `python -m pip install mysqlclient` and `python -m pip install packaging` instead.
 
 ### 3. Create and prepare tables
 
-1. Update to the latest version of ombi.
-2. Stop ombi
+1. Update to the latest version of Ombi.
+2. Stop Ombi
 3. Create or Modify **database.json** to use mysql.  
     (Substitute in whatever details match your MySQL instance, which you configured previously).
 
@@ -91,8 +91,8 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
         ```bash
         /opt/ombi/Ombi --migrate
         ```
-        Note: We assume that Ombi is installed in '/opt/ombi', if it is not installed in that location use the corresponding path. If you are using docker ombi is installed in '/opt/ombi'
-
+        Note: We assume that Ombi is installed in '/opt/ombi'. If it is not installed in that location use the corresponding path.  
+        If you are using docker Ombi is installed in '/opt/ombi'
 
     === "Windows"
         ```batch
@@ -420,7 +420,7 @@ We can export everything to a single database (step 4.1), to different databases
     - Saving in (/etc/Ombi/database.json)... [✓]
     ```
 
-3. Start ombi and test if everything works fine.
+3. Start Ombi and test if everything works fine.
 
 ## 5. Help
 
