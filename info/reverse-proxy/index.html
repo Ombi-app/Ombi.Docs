@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/reverse-proxy/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2240,47 +2240,47 @@ www.example.com/radarr  </p>
 <p>You would only need to install/support a certificate for <strong>www.example.com</strong>.</p>
 <p>This configuration is if you want to run a subdirectory configuration. Note, Ombi must be started with the <code class="highlight">--baseurl /ombi</code> option (see <a href="../startup-parameters">here</a> for startup parameters)</p>
 <h4 id="location-block">Location Block<a class="headerlink" href="#location-block" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>    <span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span> <span class="p">{</span>
-       <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span> <span class="n">addr</span> <span class="n">or</span> <span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span>
-       <span class="err">include</span> <span class="err">/etc/nginx/proxy.conf</span><span class="p">;</span>
-    <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">location</span><span class="w"> </span><span class="o">/</span><span class="nt">ombi</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">       </span><span class="err">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span><span class="w"></span>
+<span class="w">       </span><span class="err">include</span><span class="w"> </span><span class="err">/etc/nginx/proxy.conf</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="err">#</span> <span class="nt">This</span> <span class="nt">allows</span> <span class="nt">access</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">actual</span> <span class="nt">api</span>
-    <span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span><span class="o">/</span><span class="nt">api</span> <span class="p">{</span>
-       <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span> <span class="n">addr</span> <span class="n">or</span> <span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="err">#</span> <span class="nt">This</span> <span class="nt">allows</span> <span class="nt">access</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">documentation</span> <span class="nt">for</span> <span class="nt">the</span> <span class="nt">api</span>
-    <span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span><span class="o">/</span><span class="nt">swagger</span> <span class="p">{</span>
-        <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span> <span class="n">addr</span> <span class="n">or</span> <span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nt">This</span><span class="w"> </span><span class="nt">allows</span><span class="w"> </span><span class="nt">access</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">the</span><span class="w"> </span><span class="nt">actual</span><span class="w"> </span><span class="nt">api</span><span class="w"></span>
+<span class="w">    </span><span class="nt">location</span><span class="w"> </span><span class="o">/</span><span class="nt">ombi</span><span class="o">/</span><span class="nt">api</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">       </span><span class="err">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nt">This</span><span class="w"> </span><span class="nt">allows</span><span class="w"> </span><span class="nt">access</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">the</span><span class="w"> </span><span class="nt">documentation</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nt">the</span><span class="w"> </span><span class="nt">api</span><span class="w"></span>
+<span class="w">    </span><span class="nt">location</span><span class="w"> </span><span class="o">/</span><span class="nt">ombi</span><span class="o">/</span><span class="nt">swagger</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">ip</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">hostname</span><span class="o">&gt;:</span><span class="mi">5000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h4 id="proxyconf">proxy.conf<a class="headerlink" href="#proxyconf" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>    <span class="nt">client_max_body_size</span> <span class="nt">10m</span><span class="o">;</span>
-    <span class="nt">client_body_buffer_size</span> <span class="nt">128k</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">client_max_body_size</span><span class="w"> </span><span class="nt">10m</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">client_body_buffer_size</span><span class="w"> </span><span class="nt">128k</span><span class="o">;</span><span class="w"></span>
 
-    <span class="err">#</span> <span class="nt">Timeout</span> <span class="nt">if</span> <span class="nt">the</span> <span class="nt">real</span> <span class="nt">server</span> <span class="nt">is</span> <span class="nt">dead</span>
-    <span class="nt">proxy_next_upstream</span> <span class="nt">error</span> <span class="nt">timeout</span> <span class="nt">invalid_header</span> <span class="nt">http_500</span> <span class="nt">http_502</span> <span class="nt">http_503</span><span class="o">;</span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nt">Timeout</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nt">the</span><span class="w"> </span><span class="nt">real</span><span class="w"> </span><span class="nt">server</span><span class="w"> </span><span class="nt">is</span><span class="w"> </span><span class="nt">dead</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_next_upstream</span><span class="w"> </span><span class="nt">error</span><span class="w"> </span><span class="nt">timeout</span><span class="w"> </span><span class="nt">invalid_header</span><span class="w"> </span><span class="nt">http_500</span><span class="w"> </span><span class="nt">http_502</span><span class="w"> </span><span class="nt">http_503</span><span class="o">;</span><span class="w"></span>
 
-    <span class="err">#</span> <span class="nt">Advanced</span> <span class="nt">Proxy</span> <span class="nt">Config</span>
-    <span class="nt">send_timeout</span> <span class="nt">5m</span><span class="o">;</span>
-    <span class="nt">proxy_read_timeout</span> <span class="nt">240</span><span class="o">;</span>
-    <span class="nt">proxy_send_timeout</span> <span class="nt">240</span><span class="o">;</span>
-    <span class="nt">proxy_connect_timeout</span> <span class="nt">240</span><span class="o">;</span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nt">Advanced</span><span class="w"> </span><span class="nt">Proxy</span><span class="w"> </span><span class="nt">Config</span><span class="w"></span>
+<span class="w">    </span><span class="nt">send_timeout</span><span class="w"> </span><span class="nt">5m</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_read_timeout</span><span class="w"> </span><span class="nt">240</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_send_timeout</span><span class="w"> </span><span class="nt">240</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_connect_timeout</span><span class="w"> </span><span class="nt">240</span><span class="o">;</span><span class="w"></span>
 
-    <span class="err">#</span> <span class="nt">Basic</span> <span class="nt">Proxy</span> <span class="nt">Config</span>
-    <span class="nt">proxy_set_header</span> <span class="nt">Host</span> <span class="o">$</span><span class="nt">host</span><span class="o">:$</span><span class="nt">server_port</span><span class="o">;</span>
-    <span class="nt">proxy_set_header</span> <span class="nt">X-Real-IP</span> <span class="o">$</span><span class="nt">remote_addr</span><span class="o">;</span>
-    <span class="nt">proxy_set_header</span> <span class="nt">X-Forwarded-Host</span> <span class="o">$</span><span class="nt">server_name</span><span class="o">;</span>
-    <span class="nt">proxy_set_header</span> <span class="nt">X-Forwarded-For</span> <span class="o">$</span><span class="nt">proxy_add_x_forwarded_for</span><span class="o">;</span>
-    <span class="nt">proxy_set_header</span> <span class="nt">X-Forwarded-Proto</span> <span class="nt">https</span><span class="o">;</span>
-    <span class="nt">proxy_redirect</span>  <span class="nt">http</span><span class="o">://</span>  <span class="o">$</span><span class="nt">scheme</span><span class="o">://;</span>
-    <span class="nt">proxy_http_version</span> <span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="o">;</span>
-    <span class="nt">proxy_set_header</span> <span class="nt">Upgrade</span> <span class="o">$</span><span class="nt">http_upgrade</span><span class="o">;</span>
-    <span class="nt">proxy_set_header</span> <span class="nt">Connection</span> <span class="s2">&quot;upgrade&quot;</span><span class="o">;</span>
-    <span class="nt">proxy_cache_bypass</span> <span class="o">$</span><span class="nt">cookie_session</span><span class="o">;</span>
-    <span class="nt">proxy_no_cache</span> <span class="o">$</span><span class="nt">cookie_session</span><span class="o">;</span>
-    <span class="nt">proxy_buffers</span> <span class="nt">32</span> <span class="nt">4k</span><span class="o">;</span>
-    <span class="nt">proxy_redirect</span> <span class="nt">http</span><span class="o">://&lt;</span><span class="nt">ip</span> <span class="nt">addr</span> <span class="nt">or</span> <span class="nt">hostname</span><span class="o">&gt;</span><span class="p">:</span><span class="nd">5000</span> <span class="nt">https</span><span class="o">://$</span><span class="nt">host</span><span class="o">;</span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="nt">Basic</span><span class="w"> </span><span class="nt">Proxy</span><span class="w"> </span><span class="nt">Config</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_set_header</span><span class="w"> </span><span class="nt">Host</span><span class="w"> </span><span class="o">$</span><span class="nt">host</span><span class="o">:$</span><span class="nt">server_port</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_set_header</span><span class="w"> </span><span class="nt">X-Real-IP</span><span class="w"> </span><span class="o">$</span><span class="nt">remote_addr</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_set_header</span><span class="w"> </span><span class="nt">X-Forwarded-Host</span><span class="w"> </span><span class="o">$</span><span class="nt">server_name</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_set_header</span><span class="w"> </span><span class="nt">X-Forwarded-For</span><span class="w"> </span><span class="o">$</span><span class="nt">proxy_add_x_forwarded_for</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_set_header</span><span class="w"> </span><span class="nt">X-Forwarded-Proto</span><span class="w"> </span><span class="nt">https</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_redirect</span><span class="w">  </span><span class="nt">http</span><span class="o">://</span><span class="w">  </span><span class="o">$</span><span class="nt">scheme</span><span class="o">://;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_http_version</span><span class="w"> </span><span class="nt">1</span><span class="p">.</span><span class="nc">1</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_set_header</span><span class="w"> </span><span class="nt">Upgrade</span><span class="w"> </span><span class="o">$</span><span class="nt">http_upgrade</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_set_header</span><span class="w"> </span><span class="nt">Connection</span><span class="w"> </span><span class="s2">&quot;upgrade&quot;</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_cache_bypass</span><span class="w"> </span><span class="o">$</span><span class="nt">cookie_session</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_no_cache</span><span class="w"> </span><span class="o">$</span><span class="nt">cookie_session</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_buffers</span><span class="w"> </span><span class="nt">32</span><span class="w"> </span><span class="nt">4k</span><span class="o">;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">proxy_redirect</span><span class="w"> </span><span class="nt">http</span><span class="o">://&lt;</span><span class="nt">ip</span><span class="w"> </span><span class="nt">addr</span><span class="w"> </span><span class="nt">or</span><span class="w"> </span><span class="nt">hostname</span><span class="o">&gt;</span><span class="p">:</span><span class="nd">5000</span><span class="w"> </span><span class="nt">https</span><span class="o">://$</span><span class="nt">host</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="nginx-subdomain">Nginx Subdomain<a class="headerlink" href="#nginx-subdomain" title="Permanent link">&para;</a></h3>
 <p>If you wish to use ombi.example.com rather than example.com/ombi, then you need to create a site per service.<br />
@@ -2291,49 +2291,49 @@ We're going to use the site name as the file name, so in this case we need to pu
 Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the <code class="highlight">listen 443</code>, generate, and apply the certificates using LetsEncrypt.<br />
 Of course, replace 127.0.0.1:5000 with whatever IP and port combination you are using for Ombi.<br />
 Ensure your Application Url (in Ombi) matches the <code class="highlight">server_name</code> field.</p>
-<div class="highlight"><pre><span></span><code>    <span class="c1"># Ombi v4 Subdomain</span>
-    <span class="c1"># Replace EXAMPLE.COM with your domain</span>
-    <span class="n">server</span> <span class="p">{</span>
-        <span class="n">listen</span> <span class="mi">80</span><span class="p">;</span>
-        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.*</span><span class="p">;</span>
-        <span class="k">return</span> <span class="mi">301</span> <span class="n">https</span><span class="p">:</span><span class="o">//$</span><span class="n">server_name</span><span class="o">$</span><span class="n">request_uri</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">server</span> <span class="p">{</span>
-        <span class="n">listen</span> <span class="mi">443</span> <span class="n">ssl</span> <span class="n">http2</span><span class="p">;</span>
-        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.*</span><span class="p">;</span>
-        <span class="n">server_name</span> <span class="n">ombi</span><span class="o">.</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="p">;</span>
-        <span class="n">ssl_certificate</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">chain</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
-        <span class="n">ssl_certificate_key</span> <span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span>
-        <span class="n">ssl_session_cache</span> <span class="n">builtin</span><span class="p">:</span><span class="mi">1000</span><span class="p">;</span>
-        <span class="n">ssl_protocols</span> <span class="n">TLSv1</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">1</span> <span class="n">TLSv1</span><span class="o">.</span><span class="mi">2</span><span class="p">;</span>
-        <span class="n">ssl_prefer_server_ciphers</span> <span class="n">on</span><span class="p">;</span>
-        <span class="n">ssl_ciphers</span> <span class="s1">&#39;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-DES-CBC3-SHA:ECDHE-ECDSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA&#39;</span><span class="p">;</span>
-        <span class="n">ssl_session_tickets</span> <span class="n">off</span><span class="p">;</span>
-        <span class="n">ssl_ecdh_curve</span> <span class="n">secp384r1</span><span class="p">;</span>
-        <span class="n">resolver</span> <span class="mf">1.1</span><span class="o">.</span><span class="mf">1.1</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="n">valid</span><span class="o">=</span><span class="mi">300</span><span class="n">s</span><span class="p">;</span>
-        <span class="n">resolver_timeout</span> <span class="mi">10</span><span class="n">s</span><span class="p">;</span>
-        <span class="n">gzip</span> <span class="n">on</span><span class="p">;</span>
-        <span class="n">gzip_vary</span> <span class="n">on</span><span class="p">;</span>
-        <span class="n">gzip_min_length</span> <span class="mi">1000</span><span class="p">;</span>
-        <span class="n">gzip_proxied</span> <span class="n">any</span><span class="p">;</span>
-        <span class="n">gzip_types</span> <span class="n">text</span><span class="o">/</span><span class="n">plain</span> <span class="n">text</span><span class="o">/</span><span class="n">css</span> <span class="n">text</span><span class="o">/</span><span class="n">xml</span> <span class="n">application</span><span class="o">/</span><span class="n">xml</span> <span class="n">text</span><span class="o">/</span><span class="n">javascript</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">javascript</span> <span class="n">image</span><span class="o">/</span><span class="n">svg</span><span class="o">+</span><span class="n">xml</span><span class="p">;</span>
-        <span class="n">gzip_disable</span> <span class="s2">&quot;MSIE [1-6]\.&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1"># Ombi v4 Subdomain</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Replace EXAMPLE.COM with your domain</span><span class="w"></span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">server_name</span><span class="w"> </span><span class="n">ombi</span><span class="o">.*</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">301</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//$</span><span class="n">server_name</span><span class="o">$</span><span class="n">request_uri</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">server</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="n">ssl</span><span class="w"> </span><span class="n">http2</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">server_name</span><span class="w"> </span><span class="n">ombi</span><span class="o">.*</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">server_name</span><span class="w"> </span><span class="n">ombi</span><span class="o">.</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_certificate</span><span class="w"> </span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">chain</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_certificate_key</span><span class="w"> </span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">EXAMPLE</span><span class="o">.</span><span class="n">COM</span><span class="o">-</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_session_cache</span><span class="w"> </span><span class="n">builtin</span><span class="p">:</span><span class="mi">1000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_protocols</span><span class="w"> </span><span class="n">TLSv1</span><span class="w"> </span><span class="n">TLSv1</span><span class="o">.</span><span class="mi">1</span><span class="w"> </span><span class="n">TLSv1</span><span class="o">.</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_prefer_server_ciphers</span><span class="w"> </span><span class="n">on</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_ciphers</span><span class="w"> </span><span class="s1">&#39;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-DES-CBC3-SHA:ECDHE-ECDSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_session_tickets</span><span class="w"> </span><span class="n">off</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">ssl_ecdh_curve</span><span class="w"> </span><span class="n">secp384r1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">resolver</span><span class="w"> </span><span class="mf">1.1</span><span class="o">.</span><span class="mf">1.1</span><span class="w"> </span><span class="mf">1.0</span><span class="o">.</span><span class="mf">0.1</span><span class="w"> </span><span class="n">valid</span><span class="o">=</span><span class="mi">300</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">resolver_timeout</span><span class="w"> </span><span class="mi">10</span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">gzip</span><span class="w"> </span><span class="n">on</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">gzip_vary</span><span class="w"> </span><span class="n">on</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">gzip_min_length</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">gzip_proxied</span><span class="w"> </span><span class="n">any</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">gzip_types</span><span class="w"> </span><span class="n">text</span><span class="o">/</span><span class="n">plain</span><span class="w"> </span><span class="n">text</span><span class="o">/</span><span class="n">css</span><span class="w"> </span><span class="n">text</span><span class="o">/</span><span class="n">xml</span><span class="w"> </span><span class="n">application</span><span class="o">/</span><span class="n">xml</span><span class="w"> </span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="w"> </span><span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">javascript</span><span class="w"> </span><span class="n">image</span><span class="o">/</span><span class="n">svg</span><span class="o">+</span><span class="n">xml</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">gzip_disable</span><span class="w"> </span><span class="s2">&quot;MSIE [1-6]\.&quot;</span><span class="p">;</span><span class="w"></span>
 
-        <span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
-            <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
-        <span class="n">proxy_http_version</span> <span class="mf">1.1</span><span class="p">;</span>
-        <span class="n">proxy_set_header</span> <span class="n">Upgrade</span> <span class="o">$</span><span class="n">http_upgrade</span><span class="p">;</span>
-        <span class="n">proxy_set_header</span> <span class="n">Connection</span> <span class="s2">&quot;upgrade&quot;</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="c1"># This allows access to the actual api</span>
-        <span class="n">location</span> <span class="o">/</span><span class="n">api</span> <span class="p">{</span>
-                <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="c1"># This allows access to the documentation for the api</span>
-        <span class="n">location</span> <span class="o">/</span><span class="n">swagger</span> <span class="p">{</span>
-                <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="n">location</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">proxy_http_version</span><span class="w"> </span><span class="mf">1.1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">proxy_set_header</span><span class="w"> </span><span class="n">Upgrade</span><span class="w"> </span><span class="o">$</span><span class="n">http_upgrade</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">proxy_set_header</span><span class="w"> </span><span class="n">Connection</span><span class="w"> </span><span class="s2">&quot;upgrade&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># This allows access to the actual api</span><span class="w"></span>
+<span class="w">        </span><span class="n">location</span><span class="w"> </span><span class="o">/</span><span class="n">api</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># This allows access to the documentation for the api</span><span class="w"></span>
+<span class="w">        </span><span class="n">location</span><span class="w"> </span><span class="o">/</span><span class="n">swagger</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Once the config file has been created (<em>and saved</em>), we need to enable the site. This is done by symlinking the config file into the sites-enabled directory. The below commands will achieve this (obviously, replace the <code class="highlight">ombi.example.com</code> sections with whatever names you used for your setup.<br />
 <strong>Linux:</strong><br />
@@ -2344,7 +2344,7 @@ We then restart nginx to load the new config file, at which point your system wi
 <strong>Linux:</strong><br />
 <code class="highlight">service nginx restart</code><br />
 <strong>Windows:</strong><br />
-<code class="highlight"><span class="n">nginx</span> <span class="o">-</span><span class="n">s</span> <span class="n">reload</span></code>  </p>
+<code class="highlight"><span class="n">nginx</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">reload</span><span class="w"></span></code>  </p>
 <hr />
 <h2 id="apache2">Apache2<a class="headerlink" href="#apache2" title="Permanent link">&para;</a></h2>
 <p>To run Apache with a reverse proxy setup, you'll need to activate certain modules.<br />
@@ -2527,67 +2527,67 @@ For more information and examples on the usage of labels in docker compose (spec
 <h3 id="traefik-subdirectory">Traefik Subdirectory<a class="headerlink" href="#traefik-subdirectory" title="Permanent link">&para;</a></h3>
 <p>The following configuration would make Ombi available at "https://example.com/ombi".<br />
 <em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight">PathPrefix</code> instead of <code class="highlight">Path</code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight">Path Vs PathPrefix</code>.</em></p>
-<div class="highlight"><pre><span></span><code>    <span class="nt">labels</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=PathPrefix(`/ombi`)</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=PathPrefix(`/ombi`)</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="traefik-subdomain">Traefik Subdomain<a class="headerlink" href="#traefik-subdomain" title="Permanent link">&para;</a></h3>
 <p>The following configuration would make Ombi available at <a href="https://ombi.example.com">https://ombi.example.com</a>.  </p>
-<div class="highlight"><pre><span></span><code>    <span class="nt">labels</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="traefik-subdomain-and-subdirectory">Traefik Subdomain and Subdirectory<a class="headerlink" href="#traefik-subdomain-and-subdirectory" title="Permanent link">&para;</a></h3>
 <p>The following configuration would make Ombi available at <a href="https://media.example.com/request">https://media.example.com/request</a>.<br />
 <em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight">PathPrefix</code> instead of <code class="highlight">Path</code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight">Path Vs PathPrefix</code>.</em></p>
-<div class="highlight"><pre><span></span><code>    <span class="nt">labels</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`media.example.com`) &amp;&amp; PathPrefix(`/request`)</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`media.example.com`) &amp;&amp; PathPrefix(`/request`)</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span><span class="w"></span>
 </code></pre></div>
 <h2 id="v3-specific">V3 Specific<a class="headerlink" href="#v3-specific" title="Permanent link">&para;</a></h2>
 <p>The notes regarding Ye Olde V3 Proxy can be found <a href="../../archive/v3-specific-proxy">in the archive</a>.</p>
@@ -2721,10 +2721,10 @@ For more information and examples on the usage of labels in docker compose (spec
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

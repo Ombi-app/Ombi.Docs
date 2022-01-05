@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/guides/migrating-databases/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2096,18 +2096,21 @@ Do the same for <code class="highlight">ombi_sqlite2mysql_multi.py</code> (using
 <div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Debian/Ubuntu</label><label for="__tabbed_2_2">Windows</label><label for="__tabbed_2_3">Gentoo</label><label for="__tabbed_2_4">Python Pip</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code class="highlight">apt-get install python3-mysqldb</code></p>
+<p><code class="highlight">apt-get install python3-mysqldb</code><br />
+<code class="highlight">apt-get install python3-packaging</code></p>
 </div>
 <div class="tabbed-block">
 <p>Install <a href="https://www.python.org/downloads/">Python</a>, ensuring you also install <code class="highlight">Pip</code> and select the option to add Python to <code class="highlight">PATH</code>.<br />
-Then, from in a "CMD" window, run the same commands as you would for "Python Pip".</p>
+Then, from a "CMD" window, run the same commands as you would for "Python Pip".</p>
 </div>
 <div class="tabbed-block">
-<p><code class="highlight">emerge -va mysqlclient</code></p>
+<p><code class="highlight">emerge -va dev-python/mysqlclient</code>
+<code class="highlight">emerge -va dev-python/packaging</code></p>
 </div>
 <div class="tabbed-block">
 <p><code class="highlight">pip install mysqlclient</code><br />
-If the above errors, try <code class="highlight">python -m pip install mysqlclient</code> instead.</p>
+<code class="highlight">pip install packaging</code><br />
+If the above errors, try <code class="highlight">python -m pip install mysqlclient</code> and <code class="highlight">python -m pip install packaging</code> instead.</p>
 </div>
 </div>
 </div>
@@ -2115,8 +2118,8 @@ If the above errors, try <code class="highlight">python -m pip install mysqlclie
 </ol>
 <h3 id="3-create-and-prepare-tables">3. Create and prepare tables<a class="headerlink" href="#3-create-and-prepare-tables" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Update to the latest version of ombi.</li>
-<li>Stop ombi</li>
+<li>Update to the latest version of Ombi.</li>
+<li>Stop Ombi</li>
 <li>
 <p>Create or Modify <strong>database.json</strong> to use mysql.<br />
     (Substitute in whatever details match your MySQL instance, which you configured previously).</p>
@@ -2140,20 +2143,20 @@ If your Ombi is on a different drive, you'll need to switch to that drive letter
 <p><strong>Only if we are going to use <em>Multiple Databases</em> or <em>Multiple Servers</em>.</strong><br />
     To be able to use multiple servers or databases we will need to manually edit <strong>database.json</strong>.<br />
     The example below will export the <strong>"OmbiDatabase"</strong> and <strong>"SettingsDatabase"</strong> databases to the server at <strong>"192.168.1.100"</strong> (but to different databases on the same server), while the <strong>"ExternalDatabase"</strong> database will be sent to the server on <strong>"192.168.1.200"</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-    <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </li>
 <li>
@@ -2161,8 +2164,10 @@ If your Ombi is on a different drive, you'll need to switch to that drive letter
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Linux</label><label for="__tabbed_4_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>ombi --migrate
+<p><div class="highlight"><pre><span></span><code>/opt/ombi/Ombi --migrate
 </code></pre></div>
+Note: We assume that Ombi is installed in '/opt/ombi'. If it is not installed in that location use the corresponding path.<br />
+If you are using docker Ombi is installed in '/opt/ombi'</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>C<span class="p">:</span>
@@ -2194,16 +2199,16 @@ Generate file <span class="s2">&quot;migration.json&quot;</span>:
 $ nano /etc/Ombi/migration.json
 </code></pre></div>
 <p>Content "migration.json":</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-   <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/Ombi.db&quot;</span>
-   <span class="p">},</span>
-   <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/OmbiSettings.db&quot;</span>
-   <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/Ombi.db&quot;</span><span class="w"></span>
+<span class="w">   </span><span class="p">},</span><span class="w"></span>
+<span class="w">   </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/OmbiSettings.db&quot;</span><span class="w"></span>
+<span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </blockquote>
 <ol>
@@ -2264,74 +2269,74 @@ MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
 <ol>
 <li>
 <p>To create the file <strong>"database_multi.json"</strong> we will use the file <strong>"database.json"</strong> so we will only have to rename it.  </p>
-<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="kc">nan</span><span class="err">o</span> <span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span>
-<span class="p">{</span>
-    <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
 <p>We can omit the export of a database by removing it from <strong>"database_multi.json"</strong> or adding the property <strong>"Skip"</strong>.
 The example next will export the databases <strong>"OmbiDatabase"</strong> and <strong>"SettingsDatabase"</strong> but omit <strong>"ExternalDatabase"</strong>.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="kc">nan</span><span class="err">o</span> <span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span>
-<span class="p">{</span>
-    <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;Skip&quot;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
 <p>We can also send the same database to different servers with the following configuration.
 The next example sends databases "OmbiDatabase", "SettingsDatabase" and "ExternalDatabase" to servers 192.168.1.100 and 192.168.1.200.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="kc">nan</span><span class="err">o</span> <span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span>
-<span class="p">{</span>
-    <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
 <p><strong>NOTE: If you want to export all the content to several servers we will have to repeat the point "Create and prepare tables" with the different servers so that all the tables are created. You will also have to modify the file <strong>database.json</strong> at the end of the export process before running ombi to leave a single server for each database.</strong></p>
@@ -2487,7 +2492,7 @@ MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
 </code></pre></div>
 </li>
 <li>
-<p>Start ombi and test if everything works fine.</p>
+<p>Start Ombi and test if everything works fine.</p>
 </li>
 </ol>
 <h2 id="5-help">5. Help<a class="headerlink" href="#5-help" title="Permanent link">&para;</a></h2>
@@ -2582,7 +2587,7 @@ Run your appropriate command for python like  <code class="highlight">python3 /m
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-05T21:46:10+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-01-05T19:48:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-01-05</span>
       
     
   </small>
@@ -2706,10 +2711,10 @@ Run your appropriate command for python like  <code class="highlight">python3 /m
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

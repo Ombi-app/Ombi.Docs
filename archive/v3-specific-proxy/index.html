@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/archive/v3-specific-proxy/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2186,17 +2186,17 @@ It goes directly below the default location, which usually looks like this:  </p
 <p>The block to add looks like this (some changes can be made depending on your setup, but generally this works).<br />
 Note that if the machine hosting your application is not the same as your web server, then you'll need to replace "127.0.0.1" with the IP of your Ombi host.<br />
 Nginx is smart enough to match the "ombi" in your location to the "ombi" in your BaseURL.  </p>
-<div class="highlight"><pre><span></span><code><span class="nt">location</span> <span class="o">/</span><span class="nt">ombi</span><span class="o">/</span> <span class="p">{</span>
-    <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span><span class="p">;</span>
-    <span class="err">proxy_set_header</span> <span class="err">Host</span> <span class="err">$host</span><span class="p">;</span>
-    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-Host</span> <span class="err">$server_name</span><span class="p">;</span>
-    <span class="err">proxy_set_header</span> <span class="err">X-Real-IP</span> <span class="err">$remote_addr</span><span class="p">;</span>
-    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-For</span> <span class="err">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-Ssl</span> <span class="err">on</span><span class="p">;</span>
-    <span class="err">proxy_set_header</span> <span class="err">X-Forwarded-Proto</span> <span class="err">$scheme</span><span class="p">;</span>
-    <span class="err">proxy_read_timeout</span>  <span class="err">90</span><span class="p">;</span>
-    <span class="err">proxy_redirect</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span> <span class="n">https</span><span class="o">://</span><span class="err">$</span><span class="n">host</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">location</span><span class="w"> </span><span class="o">/</span><span class="nt">ombi</span><span class="o">/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">Host</span><span class="w"> </span><span class="err">$host</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">X-Forwarded-Host</span><span class="w"> </span><span class="err">$server_name</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">X-Real-IP</span><span class="w"> </span><span class="err">$remote_addr</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">X-Forwarded-For</span><span class="w"> </span><span class="err">$proxy_add_x_forwarded_for</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">X-Forwarded-Ssl</span><span class="w"> </span><span class="err">on</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_set_header</span><span class="w"> </span><span class="err">X-Forwarded-Proto</span><span class="w"> </span><span class="err">$scheme</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_read_timeout</span><span class="w">  </span><span class="err">90</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="err">proxy_redirect</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="err">$</span><span class="n">host</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="nginx-with-subdomain">nginx with Subdomain<a class="headerlink" href="#nginx-with-subdomain" title="Permanent link">&para;</a></h3>
 <p>If you wish to use ombi.example.com rather than example.com/ombi, then you need to create a site per service.<br />
@@ -2204,18 +2204,18 @@ You will also need to ensure that ombi is not configured to use a BaseURL.<br />
 Each site has a separate config file in the sites-available directory. By default, this is <code class="highlight">/etc/nginx/sites-available</code>.<br />
 We're going to use the site name as the file name, so in this case we need to put the following into   <code class="highlight">/etc/nginx/sites-available/ombi.example.com.conf</code><br />
 Note that this example does not enable SSL or generate a certificate, but that can be done afterwards using a tool like Certbot. Certbot will add the <code class="highlight">listen 443</code>, generate, and apply the certificates using LetsEncrypt.<br />
-Of course, replace <code class="highlight"><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mf">5000</span></code> with whatever IP and port combination you are using for Ombi.<br />
+Of course, replace <code class="highlight"><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mf">5000</span><span class="w"></span></code> with whatever IP and port combination you are using for Ombi.<br />
 Ensure your Application Url (in Ombi) matches the <code class="highlight">server_name</code> field.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">server</span> <span class="p">{</span>
-  <span class="err">listen</span> <span class="err">80</span><span class="p">;</span>
-  <span class="n">listen</span> <span class="cp">[</span><span class="p">::</span><span class="cp">]</span><span class="p">:</span><span class="mi">80</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">server</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="err">listen</span><span class="w"> </span><span class="err">80</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">listen</span><span class="w"> </span><span class="cp">[</span><span class="p">::</span><span class="cp">]</span><span class="p">:</span><span class="mi">80</span><span class="p">;</span><span class="w"></span>
 
-  <span class="err">server_name</span> <span class="err">ombi.example.com</span><span class="p">;</span>
+<span class="w">  </span><span class="err">server_name</span><span class="w"> </span><span class="err">ombi.example.com</span><span class="p">;</span><span class="w"></span>
 
-  <span class="err">location</span> <span class="err">/</span> <span class="err">{</span>
-      <span class="err">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span><span class="o">/</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="err">}</span>
+<span class="w">  </span><span class="err">location</span><span class="w"> </span><span class="err">/</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">      </span><span class="err">proxy_pass</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="o">:</span><span class="mi">5000</span><span class="o">/</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
 </code></pre></div>
 <p>Disable support for Websockets. Disable these items by commenting them out:</p>
 <div class="highlight"><pre><span></span><code># Allow websockets on all servers
@@ -2232,7 +2232,7 @@ We then restart nginx to load the new config file, at which point your system wi
 <strong>Linux:</strong><br />
 <code class="highlight">service nginx restart</code><br />
 <strong>Windows:</strong><br />
-<code class="highlight"><span class="n">nginx</span> <span class="o">-</span><span class="n">s</span> <span class="n">reload</span></code>  </p>
+<code class="highlight"><span class="n">nginx</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">reload</span><span class="w"></span></code>  </p>
 <hr />
 <h2 id="apache">Apache<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h2>
 <p>To run Apache with a reverse proxy setup, you'll need to activate certain modules.</p>
@@ -2414,68 +2414,68 @@ For more information and examples on the usage of labels in docker compose (spec
 <p>Adjust the values of <code class="highlight">traefik.docker.network=traefik_proxy</code>, <code class="highlight">traefik.http.routers.ombi.entrypoints=https</code> and <code class="highlight">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</code> to match your specific setup.</p>
 <h3 id="traefik-with-subdomain">Traefik With Subdomain<a class="headerlink" href="#traefik-with-subdomain" title="Permanent link">&para;</a></h3>
 <p>The following configuration would make Ombi available at <code class="highlight">https://ombi.example.com</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+<div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`ombi.example.com`)</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="traefik-with-subdirectory">Traefik With Subdirectory<a class="headerlink" href="#traefik-with-subdirectory" title="Permanent link">&para;</a></h3>
 <p>The following configuration would make Ombi available at <code class="highlight">https://example.com/ombi</code>.<br />
 <em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight">PathPrefix</code> instead of <code class="highlight">Path</code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight">Path Vs PathPrefix</code>.</em></p>
-<div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=PathPrefix(`/ombi`)</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+<div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=PathPrefix(`/ombi`)</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span><span class="w"></span>
 </code></pre></div>
 <h3 id="traefik-with-subdomain-and-subdirectory">Traefik With Subdomain and Subdirectory<a class="headerlink" href="#traefik-with-subdomain-and-subdirectory" title="Permanent link">&para;</a></h3>
 <p>The following configuration would make Ombi available at <code class="highlight">https://plex.example.com/request</code>.<br />
 <em><strong>Note:</strong> When using a subdirectory it is essential to use <code class="highlight">PathPrefix</code> instead of <code class="highlight">Path</code>. More information <a href="https://docs.traefik.io/routing/routers/#rule">here</a>, specifically <code class="highlight">Path Vs PathPrefix</code>.</em></p>
-<div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`plex.example.com`) &amp;&amp; PathPrefix(`/request`)</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span>
+<div class="highlight"><pre><span></span><code><span class="nt">labels</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.enable=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.services.ombi.loadbalancer.server.port=3579</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.docker.network=traefik_proxy</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.rule=Host(`plex.example.com`) &amp;&amp; PathPrefix(`/request`)</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.entrypoints=https</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.certresolver=letsencrypt</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].main=*.example.com</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.routers.ombi.tls.domains[0].sans=example.com</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLRedirect=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSSeconds=315360000</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.browserXSSFilter=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.contentTypeNosniff=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.forceSTSHeader=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.SSLHost=</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSIncludeSubdomains=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.STSPreload=true</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">traefik.http.middlewares.ombi.headers.frameDeny=true</span><span class="w"></span>
 </code></pre></div>
 
   <hr>
@@ -2592,10 +2592,10 @@ For more information and examples on the usage of labels in docker compose (spec
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

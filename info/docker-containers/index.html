@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/docker-containers/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2059,62 +2059,62 @@ mkdir -p /opt/ombi/mysql/
 </li>
 <li>
 <p>Create a "database.json"-file in the folder from step 1 with this content &rarr; <a href="../alternate-databases">see here</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=mysql_db;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=mysql_db;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span> <span class="s2">&quot;Server=mysql_db;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=mysql_db;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=mysql_db;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=mysql_db;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </li>
 <li>
 <p>Create a "docker-compose.yml" file in the folder from step 1 with this content:<br />
 (replace the <code class="highlight">TZ</code> value with your timezone)</p>
-<div class="highlight"><pre><span></span><code><span class="o">---</span>
-<span class="n">version</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span>
-<span class="n">services</span><span class="p">:</span>
-  <span class="n">ombi</span><span class="p">:</span>
-    <span class="n">image</span><span class="p">:</span> <span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">linuxserver</span><span class="o">/</span><span class="n">ombi</span><span class="p">:</span><span class="n">latest</span>
-            <span class="n">container_name</span><span class="p">:</span> <span class="n">ombi</span>
-    <span class="n">restart</span><span class="p">:</span> <span class="n">unless</span><span class="o">-</span><span class="n">stopped</span>
-    <span class="n">environment</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">PUID</span><span class="o">=</span><span class="mi">1000</span>
-      <span class="o">-</span> <span class="n">PGID</span><span class="o">=</span><span class="mi">1000</span>
-      <span class="o">-</span> <span class="n">TZ</span><span class="o">=</span><span class="n">Europe</span><span class="o">/</span><span class="n">Zurich</span>
-    <span class="n">volumes</span><span class="p">:</span>
-      <span class="o">-</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="n">config</span><span class="p">:</span><span class="o">/</span><span class="n">config</span>
-    <span class="n">ports</span><span class="p">:</span>
-      <span class="o">-</span> <span class="s2">&quot;5000:3579&quot;</span>
-    <span class="n">depends_on</span><span class="p">:</span>
-    <span class="o">-</span> <span class="s2">&quot;mysql_db&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="o">---</span><span class="w"></span>
+<span class="n">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="w"></span>
+<span class="n">services</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">ombi</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">ghcr</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">linuxserver</span><span class="o">/</span><span class="n">ombi</span><span class="p">:</span><span class="n">latest</span><span class="w"></span>
+<span class="w">            </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">ombi</span><span class="w"></span>
+<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span><span class="w"></span>
+<span class="w">    </span><span class="n">environment</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">PUID</span><span class="o">=</span><span class="mi">1000</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">PGID</span><span class="o">=</span><span class="mi">1000</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">TZ</span><span class="o">=</span><span class="n">Europe</span><span class="o">/</span><span class="n">Zurich</span><span class="w"></span>
+<span class="w">    </span><span class="n">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="n">config</span><span class="p">:</span><span class="o">/</span><span class="n">config</span><span class="w"></span>
+<span class="w">    </span><span class="n">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;5000:3579&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">depends_on</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;mysql_db&quot;</span><span class="w"></span>
 
-  <span class="n">mysql_db</span><span class="p">:</span>
-    <span class="n">image</span><span class="p">:</span> <span class="s2">&quot;mysql:5.7&quot;</span>
-    <span class="n">container_name</span><span class="p">:</span> <span class="n">ombi_mysql</span>
-    <span class="n">restart</span><span class="p">:</span> <span class="n">unless</span><span class="o">-</span><span class="n">stopped</span>
-    <span class="n">environment</span><span class="p">:</span>
-      <span class="n">MYSQL_ROOT_PASSWORD</span><span class="p">:</span> <span class="mi">123</span> <span class="c1">#change your root password here</span>
-    <span class="n">volumes</span><span class="p">:</span>
-      <span class="o">-</span>  <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="n">mysql</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span>
+<span class="w">  </span><span class="n">mysql_db</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mysql:5.7&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">ombi_mysql</span><span class="w"></span>
+<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span><span class="w"></span>
+<span class="w">    </span><span class="n">environment</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">MYSQL_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="w"> </span><span class="c1">#change your root password here</span><span class="w"></span>
+<span class="w">    </span><span class="n">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w">  </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="n">mysql</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span><span class="w"></span>
 
-  <span class="n">phpmyadmin</span><span class="p">:</span>
-      <span class="n">image</span><span class="p">:</span> <span class="n">phpmyadmin</span><span class="o">/</span><span class="n">phpmyadmin</span>
-      <span class="n">container_name</span><span class="p">:</span> <span class="n">ombi_phpmyadmin</span>
-      <span class="n">restart</span><span class="p">:</span> <span class="n">unless</span><span class="o">-</span><span class="n">stopped</span>
-      <span class="n">environment</span><span class="p">:</span>
-        <span class="n">PMA_HOST</span><span class="p">:</span> <span class="n">mysql_db</span>
-      <span class="n">ports</span><span class="p">:</span>
-        <span class="o">-</span> <span class="s1">&#39;8080:80&#39;</span>
-      <span class="n">depends_on</span><span class="p">:</span>
-        <span class="o">-</span> <span class="s2">&quot;mysql_db&quot;</span>
+<span class="w">  </span><span class="n">phpmyadmin</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">phpmyadmin</span><span class="o">/</span><span class="n">phpmyadmin</span><span class="w"></span>
+<span class="w">      </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">ombi_phpmyadmin</span><span class="w"></span>
+<span class="w">      </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">unless</span><span class="o">-</span><span class="n">stopped</span><span class="w"></span>
+<span class="w">      </span><span class="n">environment</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">PMA_HOST</span><span class="p">:</span><span class="w"> </span><span class="n">mysql_db</span><span class="w"></span>
+<span class="w">      </span><span class="n">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="s1">&#39;8080:80&#39;</span><span class="w"></span>
+<span class="w">      </span><span class="n">depends_on</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;mysql_db&quot;</span><span class="w"></span>
 </code></pre></div>
 </li>
 <li>
@@ -2126,13 +2126,13 @@ docker-compose up -d
 <li>
 <p>Open the phpMyadmin website "http://docker-host-ip:8080/server_sql.php".<br />
 Login with root and your chosen password, then run the following commands:</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi_Settings`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n n-Quoted">`Ombi_External`</span> <span class="k">DEFAULT</span> <span class="k">CHARACTER</span> <span class="k">SET</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">utf8mb4_bin</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;ombi&#39;</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n n-Quoted">`Ombi`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n n-Quoted">`Ombi_Settings`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="n n-Quoted">`Ombi_External`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n n-Quoted">`Ombi`</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_bin</span><span class="p">;</span><span class="w"></span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n n-Quoted">`Ombi_Settings`</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_bin</span><span class="p">;</span><span class="w"></span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n n-Quoted">`Ombi_External`</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_bin</span><span class="p">;</span><span class="w"></span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span><span class="w"> </span><span class="k">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;ombi&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n n-Quoted">`Ombi`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">;</span><span class="w"></span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n n-Quoted">`Ombi_Settings`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">;</span><span class="w"></span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n n-Quoted">`Ombi_External`</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;ombi&#39;</span><span class="nv">@&#39;%&#39;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">GRANT</span><span class="w"> </span><span class="k">OPTION</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 </li>
 <li>
@@ -2300,10 +2300,10 @@ If you prefer the CLI/console/bash/shell, then you can inspect the container tha
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
