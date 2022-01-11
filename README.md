@@ -31,7 +31,8 @@ Note that the new documentation repository is not directly publicly editable - f
 - Markdown (what all the pages themselves are written with) has defined standards.
 - We'd like to be able to validate content _before_ it gets put into official documentation (the old wiki had a lot of inaccurate community-submitted content).
 
-As such, all edit requests will need to go through approval by [submitting a pull request](https://docs.github.com/en/free-pro-team@latest/articles/creating-a-pull-request).
+As such, all edit requests will need to go through approval by [submitting a pull request](https://docs.github.com/en/free-pro-team@latest/articles/creating-a-pull-request).  
+All PRs need to target the [development](https://github.com/Ombi-app/Ombi.Docs/tree/development) branch of the docs, to allow for merging of formatting for consistency.
 
 ## Suggested editor
 
