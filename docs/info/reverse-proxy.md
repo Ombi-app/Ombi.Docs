@@ -159,6 +159,7 @@ To run Apache with a reverse proxy setup, you'll need to activate certain module
     a2enmod proxy_balancer
     a2enmod proxy_connect
     a2enmod proxy_html
+    a2enmod proxy_wstunnel
 ```
 
 In your Virtualhost configuration file you'll need to add a few things.  
@@ -186,11 +187,35 @@ If you want to run ombi.example.com instead of site.example.com/ombi, then repla
 ### Apache2 Subdomain
 
 ```conf
-    ProxyPass /ombi http://ip.of.ombi.host:5000/ombi
-    ProxyPassReverse /ombi http://ip.of.ombi.host:5000/ombi
+    <Location />
+    ProxyPass http://ip.of.ombi.host:5000/ombi
+    ProxyPassReverse http://ip.of.ombi.host:5000/ombi
+    Order allow, deny
+    Allow from all
+    </Location>
 ```
 
-Once all your changes are done, you'll need to run `service apache2 restart` to make the changes go live.
+### Apache2 WebSocket requests
+
+While WebSockets are not a _requirement_ for Ombi to work, it does run a lot faster if it is able to use them. WebSocket requests need to be specifically handled when using a reverse proxy.  
+With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the `<Location>` block. This will ensure WebSocket requests are handled correctly through the reverse proxy.
+
+=== "Subdirectory"
+    ```conf
+        RewriteEngine On
+        RewriteCond %{HTTP:Upgrade} =websocket [NC]
+        RewriteRule /ombi/(.*) ws://ip.of.ombi.host:5000/ombi/$1 [P,L]
+    ```
+
+=== "Subdomain"
+    ```conf
+        RewriteEngine On
+        RewriteCond %{HTTP:Upgrade} =websocket [NC]
+        RewriteRule (.*) ws://ip.of.ombi.host:5000/$1 [P,L]
+    ```
+
+Once you have added this to the virtualhost config for your Ombi proxy (be it subdomain or subdirectory), you'll need to run `service apache2 restart` to make the changes go live.  
+For Linux distributions using `systemd`, you can use `systemctl restart apache2`.
 
 ***
 
