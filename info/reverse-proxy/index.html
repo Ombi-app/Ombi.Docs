@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/reverse-proxy/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -64,7 +64,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -1410,6 +1410,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#apache2-websocket-requests" class="md-nav__link">
+    Apache2 WebSocket requests
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2104,6 +2111,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#apache2-websocket-requests" class="md-nav__link">
+    Apache2 WebSocket requests
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2359,6 +2373,7 @@ We then restart nginx to load the new config file, at which point your system wi
     a2enmod proxy_balancer
     a2enmod proxy_connect
     a2enmod proxy_html
+    a2enmod proxy_wstunnel
 </code></pre></div>
 <p>In your Virtualhost configuration file you'll need to add a few things.<br />
 <em><strong>Note:</strong> VirtualHost configurations are usually under /etc/apache2/sites-enabled/</em>  </p>
@@ -2377,10 +2392,34 @@ If you want to run ombi.example.com instead of site.example.com/ombi, then repla
     <span class="nt">&lt;/Location&gt;</span>
 </code></pre></div>
 <h3 id="apache2-subdomain">Apache2 Subdomain<a class="headerlink" href="#apache2-subdomain" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>    ProxyPass /ombi http://ip.of.ombi.host:5000/ombi
-    ProxyPassReverse /ombi http://ip.of.ombi.host:5000/ombi
+<div class="highlight"><pre><span></span><code>    <span class="nt">&lt;Location</span> <span class="nt">/&gt;</span>
+    ProxyPass http://ip.of.ombi.host:5000/ombi
+    ProxyPassReverse http://ip.of.ombi.host:5000/ombi
+    Order allow, deny
+    Allow from all
+    <span class="nt">&lt;/Location&gt;</span>
 </code></pre></div>
-<p>Once all your changes are done, you'll need to run <code class="highlight">service apache2 restart</code> to make the changes go live.</p>
+<h3 id="apache2-websocket-requests">Apache2 WebSocket requests<a class="headerlink" href="#apache2-websocket-requests" title="Permanent link">&para;</a></h3>
+<p>While WebSockets are not a <em>requirement</em> for Ombi to work, it does run a lot faster if it is able to use them. WebSocket requests need to be specifically handled when using a reverse proxy.<br />
+With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the <code class="highlight">&lt;Location&gt;</code> block. This will ensure WebSocket requests are handled correctly through the reverse proxy.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Subdirectory</label><label for="__tabbed_1_2">Subdomain</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">RewriteEngine</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
+<span class="w">    </span><span class="n">RewriteCond</span><span class="w"> </span><span class="o">%</span><span class="err">{</span><span class="nl">HTTP</span><span class="p">:</span><span class="n">Upgrade</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="n">websocket</span><span class="w"> </span><span class="o">[</span><span class="n">NC</span><span class="o">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">RewriteRule</span><span class="w"> </span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nl">ws</span><span class="p">:</span><span class="o">//</span><span class="n">ip</span><span class="p">.</span><span class="k">of</span><span class="p">.</span><span class="n">ombi</span><span class="p">.</span><span class="k">host</span><span class="err">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="w"> </span><span class="o">[</span><span class="n">P,L</span><span class="o">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">RewriteEngine</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
+<span class="w">    </span><span class="n">RewriteCond</span><span class="w"> </span><span class="o">%</span><span class="err">{</span><span class="nl">HTTP</span><span class="p">:</span><span class="n">Upgrade</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="n">websocket</span><span class="w"> </span><span class="o">[</span><span class="n">NC</span><span class="o">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">RewriteRule</span><span class="w"> </span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nl">ws</span><span class="p">:</span><span class="o">//</span><span class="n">ip</span><span class="p">.</span><span class="k">of</span><span class="p">.</span><span class="n">ombi</span><span class="p">.</span><span class="k">host</span><span class="err">:</span><span class="mi">5000</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="w"> </span><span class="o">[</span><span class="n">P,L</span><span class="o">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Once you have added this to the virtualhost config for your Ombi proxy (be it subdomain or subdirectory), you'll need to run <code class="highlight">service apache2 restart</code> to make the changes go live.<br />
+For Linux distributions using <code class="highlight">systemd</code>, you can use <code class="highlight">systemctl restart apache2</code>.</p>
 <hr />
 <h2 id="iis">IIS<a class="headerlink" href="#iis" title="Permanent link">&para;</a></h2>
 <p>NOTE: There are some extra steps involved with getting IIS to proxy things.<br />
@@ -2597,7 +2636,7 @@ For more information and examples on the usage of labels in docker compose (spec
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-02T01:20:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-01-11T11:05:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-01-11</span>
       
     
   </small>
@@ -2721,10 +2760,10 @@ For more information and examples on the usage of labels in docker compose (spec
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
