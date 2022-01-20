@@ -12,6 +12,6 @@ Toggle the switch next to the ones you wish to send a notification to, enter the
 Down the right-hand side of the page you'll find a list of the different notification types.  
 Expanding each one will allow you to customise the message for each type.
 
-You can include [notification variables](../../info/notification-template-variables) in these messages for Ombi to auto-fill with.  
+You can include [notification variables](../../../info/notification-template-variables) in these messages for Ombi to auto-fill with.  
 
 _Be sure to hit "Submit" after you edit the messages for the changes to be saved._
