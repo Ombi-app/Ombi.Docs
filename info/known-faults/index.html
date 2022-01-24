@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/known-faults/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.7">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6e60f8b8.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -1334,6 +1334,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ombi-failing-to-start-on-macos-monterey" class="md-nav__link">
+    Ombi failing to start on macOS Monterey
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1964,6 +1971,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ombi-failing-to-start-on-macos-monterey" class="md-nav__link">
+    Ombi failing to start on macOS Monterey
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1991,7 +2005,7 @@ To see all currently unfixed issues in the github repository, please see <a href
 <hr />
 <h2 id="repo-errors">Repo Errors<a class="headerlink" href="#repo-errors" title="Permanent link">&para;</a></h2>
 <p>Using the v4 repo, I get "missing release file".  </p>
-<p>We are currently migrating the repositories. Bear with us, it will be resolved soon.  </p>
+<p>We are currently migrating the repositories. Bear with us, it will be resolved soon™.  </p>
 <hr />
 <h2 id="error-apt-key-is-deprecated">Error "apt-key is Deprecated"<a class="headerlink" href="#error-apt-key-is-deprecated" title="Permanent link">&para;</a></h2>
 <p>Ubuntu 21.xx and onwards has moved to a new method of signing repositories, where keys are trusted per repository instead of per key.<br />
@@ -2026,13 +2040,17 @@ If you see "onesignal.com" being blocked, whitelist it and try again.</p>
 </blockquote>
 <p>Run <code class="highlight">apt install libcurl4-openssl-dev</code></p>
 <hr />
+<h2 id="ombi-failing-to-start-on-macos-monterey">Ombi failing to start on macOS Monterey<a class="headerlink" href="#ombi-failing-to-start-on-macos-monterey" title="Permanent link">&para;</a></h2>
+<p>As of macOS Monterey the AirPlay listener now uses port 5000 by default. This causes Ombi to fail to start due to the port being in use.<br />
+You can turn off the AirPlay function under <code class="highlight"><span class="n">System</span><span class="w"> </span><span class="n">Preferences</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Sharing</span><span class="w"></span></code>. This will allow Ombi to start, however AirPlay will turn on again and cause the same issue at the next reboot.<br />
+The only possible workaround at present is to set the <code class="highlight">host</code> <a href="../startup-parameters">startup parameter</a> to use a different port (<code class="highlight">--host http://*:new_port</code>).  </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-10-20T22:21:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-10-20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-01-24T09:57:44+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-01-24</span>
       
     
   </small>
@@ -2159,7 +2177,7 @@ If you see "onesignal.com" being blocked, whitelist it and try again.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.01de222e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.960e086b.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
