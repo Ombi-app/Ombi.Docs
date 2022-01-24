@@ -14,7 +14,7 @@ See [Update Errors](../../guides/updating/#automatic-updates)
 
 Using the v4 repo, I get "missing release file".  
 
-We are currently migrating the repositories. Bear with us, it will be resolved soon.  
+We are currently migrating the repositories. Bear with us, it will be resolved soon™.  
 ***
 
 ## Error "apt-key is Deprecated"
@@ -63,3 +63,9 @@ Run `apt install libunwind8`
 Run `apt install libcurl4-openssl-dev`
 
 ***
+
+## Ombi failing to start on macOS Monterey
+
+As of macOS Monterey the AirPlay listener now uses port 5000 by default. This causes Ombi to fail to start due to the port being in use.  
+You can turn off the AirPlay function under `System Preferences -> Sharing`. This will allow Ombi to start, however AirPlay will turn on again and cause the same issue at the next reboot.  
+The only possible workaround at present is to set the `host` [startup parameter](../startup-parameters) to use a different port (`--host http://*:new_port`).  
