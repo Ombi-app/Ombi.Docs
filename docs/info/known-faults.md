@@ -23,6 +23,12 @@ Ubuntu 21.xx and onwards has moved to a new method of signing repositories, wher
 Apt-Key still works, but an updated method for 21.xx has been added to the installation page. You may have to remove the old apt repository in order to update to the new method moving forward.  
 ***
 
+## Unauthorized access to Index.html
+
+Ombi currently needs access to write and read the Index.html file (`ClientApp/dist/index.html`), this is to work around a unsupported scenario with Angular.  
+Ombi will write and read that file every time Ombi starts up.
+***
+
 ## Cannot start Ombi on Ubuntu 19.04
 
 .Net Core 5.0 is not supported officially on Ubuntu 19.04 (see [Supported Distributions](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions) to confirm).  
