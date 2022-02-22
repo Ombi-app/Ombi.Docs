@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/guides/installation/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50e68009.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e8d9bf0c.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -2302,6 +2302,7 @@
 </a>
 
 
+
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
 <p><strong>Note</strong>: After installing the system, be sure to configure your own systems to handle the requests after approval.<br />
 Any requests made without an endpoint to receive it will not be able to be re-processed at this point.<br />
@@ -2471,7 +2472,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 <span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
 </code></pre></div>
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
-<code class="highlight">curl -sSL https://packagecloud.io/Ombi-app/Ombi/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
+<code class="highlight">sudo curl -sSL https://packagecloud.io/Ombi-app/Ombi/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
 3. Update the package list and install Ombi:<br />
 <code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></p>
 </div>
@@ -2482,7 +2483,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 <span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
 </code></pre></div>
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
-<code class="highlight">curl -sSL https://packagecloud.io/Ombi-app/Ombi-Dev/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
+<code class="highlight">sudo curl -sSL https://packagecloud.io/Ombi-app/Ombi-Dev/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
 3. Update the package list and install Ombi:<br />
 <code class="highlight">sudo apt update &amp;&amp; sudo apt install ombi</code></p>
 </div>
@@ -2542,7 +2543,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-06T02:31:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-02-22T03:25:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-02-22</span>
       
     
   </small>
@@ -2666,10 +2667,10 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
