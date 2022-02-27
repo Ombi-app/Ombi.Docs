@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/guides/migrating-databases/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.3">
     
     
       
@@ -35,7 +35,7 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -2097,8 +2097,10 @@ Do the same for <code class="highlight">ombi_sqlite2mysql_multi.py</code> (using
 <div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Debian/Ubuntu</label><label for="__tabbed_2_2">Windows</label><label for="__tabbed_2_3">Gentoo</label><label for="__tabbed_2_4">Python Pip</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code class="highlight">apt-get install python3-mysqldb</code><br />
-<code class="highlight">apt-get install python3-packaging</code></p>
+<p><code class="highlight">apt-get install python3-packaging</code></p>
+<blockquote>
+<p>WARNING: It is not recommended to use the python3-mysqldb package on Debian/Ubutu systems as the version it installs fails with modern versions of MariaDB/MySQL.</p>
+</blockquote>
 </div>
 <div class="tabbed-block">
 <p>Install <a href="https://www.python.org/downloads/">Python</a>, ensuring you also install <code class="highlight">Pip</code> and select the option to add Python to <code class="highlight">PATH</code>.<br />
@@ -2109,8 +2111,8 @@ Then, from a "CMD" window, run the same commands as you would for "Python Pip".<
 <code class="highlight">emerge -va dev-python/packaging</code></p>
 </div>
 <div class="tabbed-block">
-<p><code class="highlight">pip install mysqlclient</code><br />
-<code class="highlight">pip install packaging</code><br />
+<p><code class="highlight">pip3 install mysqlclient</code>
+<code class="highlight">pip3 install packaging</code>
 If the above errors, try <code class="highlight">python -m pip install mysqlclient</code> and <code class="highlight">python -m pip install packaging</code> instead.</p>
 </div>
 </div>
@@ -2588,7 +2590,7 @@ Run your appropriate command for python like  <code class="highlight">python3 /m
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-01-05T19:48:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-01-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-02-27T19:39:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-02-27</span>
       
     
   </small>
@@ -2715,7 +2717,7 @@ Run your appropriate command for python like  <code class="highlight">python3 /m
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b88e97c5.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
