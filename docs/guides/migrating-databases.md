@@ -33,8 +33,8 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 2. Install the dependencies according to the operating system we use.
 
     === "Debian/Ubuntu"
-        `apt-get install python3-mysqldb`  
         `apt-get install python3-packaging`
+        > WARNING: It is not recommended to use the python3-mysqldb package on Debian/Ubutu systems as the version it installs fails with modern versions of MariaDB/MySQL.
 
     === "Windows"
         Install [Python](https://www.python.org/downloads/), ensuring you also install `Pip` and select the option to add Python to `PATH`.  
@@ -45,8 +45,8 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
         `emerge -va dev-python/packaging`
 
     === "Python Pip"
-        `pip install mysqlclient`  
-        `pip install packaging`  
+        `pip3 install mysqlclient`
+        `pip3 install packaging`
         If the above errors, try `python -m pip install mysqlclient` and `python -m pip install packaging` instead.
 
 ### 3. Create and prepare tables
