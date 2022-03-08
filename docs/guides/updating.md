@@ -48,22 +48,34 @@ The `{UpdateDownloadUrl}` is the Download that will contain either the .zip or .
 It is possible to update Ombi manually.  
 To do so is fairly straightforward.  
 
-1. Stop Ombi. You can't do anything to it if the program is running.
-    * If you're running Ombi as a service, stop the service.
-    * If you're running Ombi manually, kill the process.
-2. Back up the database info from the Ombi directory.
-    * SQLite  
-      There are 3 important db files (see what they do [here](../../info/faq/#database-uses)).  
+=== "SQLite"
+    1. Stop Ombi. You can't do anything to it if the program is running.
+        * If you're running Ombi as a service, stop the service.
+        * If you're running Ombi manually, kill the process.
+    2. Back up the database info from the Ombi directory.  
+    There are 3 important db files (see what they do [here](../../info/faq/#database-uses)).  
         * Ombi.db
         * OmbiExternal.db
         * OmbiSettings.db  
-    * MySQL  
-      Keep the "database.json" file. This defines how ombi connects to the MySQL server.
-3. Delete the contents of the Ombi directory, _excluding_ the files mentioned in step 2.
-4. Download the latest `windows.zip`  from the link below:
-[Stable](https://github.com/Ombi-app/Ombi.Releases/releases)
-5. Extract the zip to your Ombi directory.
-6. Start Ombi again.
+    1. Delete the contents of the Ombi directory, _excluding_ the files mentioned in step 2.
+    2. Download the latest `windows.zip`  from the link below:  
+        [Stable](https://github.com/Ombi-app/Ombi/releases/latest)  
+        [Develop](https://github.com/Ombi-app/Ombi/releases)
+    3. Extract the zip to your Ombi directory.
+    4. Start Ombi again.
+
+=== "MySQL"
+    1. Stop Ombi. You can't do anything to it if the program is running.
+        * If you're running Ombi as a service, stop the service.
+        * If you're running Ombi manually, kill the process.
+    2. Back up the `database.json` file from the Ombi directory.  
+    This defines how ombi connects to the MySQL server.
+    1. Delete the contents of the Ombi directory, _excluding_ the files mentioned in step 2.
+    2. Download the latest `windows.zip`  from the link below:  
+        [Stable](https://github.com/Ombi-app/Ombi/releases/latest)  
+        [Develop](https://github.com/Ombi-app/Ombi/releases)
+    3. Extract the zip to your Ombi directory.
+    4. Start Ombi again.
 
 ## External Script (windows)
 
