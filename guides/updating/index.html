@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/guides/updating/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e8d9bf0c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -33,6 +33,7 @@
     
     
       
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
@@ -2111,30 +2112,49 @@ For the Watchtower one, add a label to the container named <code class="highligh
 <h2 id="manual-updates">Manual Updates<a class="headerlink" href="#manual-updates" title="Permanent link">&para;</a></h2>
 <p>It is possible to update Ombi manually.<br />
 To do so is fairly straightforward.  </p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SQLite</label><label for="__tabbed_1_2">MySQL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <ol>
 <li>Stop Ombi. You can't do anything to it if the program is running.<ul>
 <li>If you're running Ombi as a service, stop the service.</li>
 <li>If you're running Ombi manually, kill the process.</li>
 </ul>
 </li>
-<li>Back up the database info from the Ombi directory.<ul>
-<li>SQLite<br />
-  There are 3 important db files (see what they do <a href="../../info/faq/#database-uses">here</a>).  <ul>
+<li>Back up the database info from the Ombi directory.<br />
+There are 3 important db files (see what they do <a href="../../info/faq/#database-uses">here</a>).  <ul>
 <li>Ombi.db</li>
 <li>OmbiExternal.db</li>
 <li>OmbiSettings.db  </li>
 </ul>
 </li>
-<li>MySQL<br />
-  Keep the "database.json" file. This defines how ombi connects to the MySQL server.</li>
-</ul>
-</li>
 <li>Delete the contents of the Ombi directory, <em>excluding</em> the files mentioned in step 2.</li>
-<li>Download the latest <code class="highlight">windows.zip</code>  from the link below:
-<a href="https://github.com/Ombi-app/Ombi.Releases/releases">Stable</a></li>
+<li>Download the latest <code class="highlight">windows.zip</code>  from the link below:<br />
+<a href="https://github.com/Ombi-app/Ombi/releases/latest">Stable</a><br />
+<a href="https://github.com/Ombi-app/Ombi/releases">Develop</a></li>
 <li>Extract the zip to your Ombi directory.</li>
 <li>Start Ombi again.</li>
 </ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Stop Ombi. You can't do anything to it if the program is running.<ul>
+<li>If you're running Ombi as a service, stop the service.</li>
+<li>If you're running Ombi manually, kill the process.</li>
+</ul>
+</li>
+<li>Back up the <code class="highlight">database.json</code> file from the Ombi directory.<br />
+This defines how ombi connects to the MySQL server.</li>
+<li>Delete the contents of the Ombi directory, <em>excluding</em> the files mentioned in step 2.</li>
+<li>Download the latest <code class="highlight">windows.zip</code>  from the link below:<br />
+<a href="https://github.com/Ombi-app/Ombi/releases/latest">Stable</a><br />
+<a href="https://github.com/Ombi-app/Ombi/releases">Develop</a></li>
+<li>Extract the zip to your Ombi directory.</li>
+<li>Start Ombi again.</li>
+</ol>
+</div>
+</div>
+</div>
 <h2 id="external-script-windows">External Script (windows)<a class="headerlink" href="#external-script-windows" title="Permanent link">&para;</a></h2>
 <p>Windows users who are running Ombi as a service can make use of a powershell script to update their Ombi instance. This script can be scheduled in task scheduler to run daily (or hourly), and it will check the current version of your Ombi instance against the latest release.<br />
 Do not put it into the same folder as Ombi itself, as the script cleans out that folder and <em>will</em> have issues if it deletes itself.<br />
@@ -2168,7 +2188,7 @@ This is a simple true/false switch - it will force the script to install the new
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-11-08T03:25:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-11-08</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-03-08T03:22:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-03-08</span>
       
     
   </small>
@@ -2295,7 +2315,7 @@ This is a simple true/false switch - it will force the script to install the new
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b88e97c5.min.js"></script>
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
