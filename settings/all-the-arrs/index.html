@@ -496,6 +496,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3">
@@ -517,7 +519,21 @@
   
     <li class="md-nav__item">
       <a href="../ombi/" class="md-nav__link">
-        Generic Settings
+        General
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setting/features.md" class="md-nav__link">
+        Control Features
       </a>
     </li>
   
@@ -913,6 +929,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#radarr-specific" class="md-nav__link">
+    Radarr Specific
+  </a>
+  
+    <nav class="md-nav" aria-label="Radarr Specific">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#radarr-4k" class="md-nav__link">
+    Radarr 4K
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sonarr-specific" class="md-nav__link">
     Sonarr Specific
   </a>
@@ -978,7 +1014,7 @@
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_18" data-md-state="indeterminate" type="checkbox" id="__nav_3_18" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_19" data-md-state="indeterminate" type="checkbox" id="__nav_3_19" checked>
       
       
       
@@ -1015,13 +1051,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_3_18">
+        <label class="md-nav__link" for="__nav_3_19">
           Notifications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Notifications" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_18">
+        <label class="md-nav__title" for="__nav_3_19">
           <span class="md-nav__icon md-icon"></span>
           Notifications
         </label>
@@ -2192,6 +2228,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#radarr-specific" class="md-nav__link">
+    Radarr Specific
+  </a>
+  
+    <nav class="md-nav" aria-label="Radarr Specific">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#radarr-4k" class="md-nav__link">
+    Radarr 4K
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sonarr-specific" class="md-nav__link">
     Sonarr Specific
   </a>
@@ -2378,6 +2434,13 @@ Again, 'get' the options from the service and select one.</p>
 <h4 id="album-folder">Album Folder<a class="headerlink" href="#album-folder" title="Permanent link">&para;</a></h4>
 <p>This tells Ombi that Lidarr wants things organised into individual subfolders per album. Usually, this should be ticked.</p>
 <hr />
+<h3 id="radarr-specific">Radarr Specific<a class="headerlink" href="#radarr-specific" title="Permanent link">&para;</a></h3>
+<h4 id="radarr-4k">Radarr 4K<a class="headerlink" href="#radarr-4k" title="Permanent link">&para;</a></h4>
+<p><em>This option only appears when  <a href="../features/#movie4krequests">Movie4KRequests</a> is turned on.</em>  </p>
+<p>This is where you configure a second (additional) copy of Radarr for Ombi to send requests to, with its own root paths and quality profiles.<br />
+This is designed for people to be able to request a movie in multiple resolutions at once (usually SD or HD along with 4K), but could be set up to do SD and HD or any combination you want.<br />
+Note that Ombi is unaware of the resolution of the item in Plex/Emby/Jellyfin - it uses the media ID for matching to see if it's available. As a result, if someone requests 4K and HD, Ombi will say the content is available <em>when either resolution is available, not both</em>.</p>
+<hr />
 <h3 id="sonarr-specific">Sonarr Specific<a class="headerlink" href="#sonarr-specific" title="Permanent link">&para;</a></h3>
 <h4 id="enable-season-folders">Enable Season Folders<a class="headerlink" href="#enable-season-folders" title="Permanent link">&para;</a></h4>
 <p>This tells Ombi that Sonarr wants things organised into Season subfolders. Usually, this should be ticked.</p>
@@ -2399,7 +2462,7 @@ This means it will not auto download.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-02-15T04:05:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-02-15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-03-14T20:46:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-03-14</span>
       
     
   </small>
