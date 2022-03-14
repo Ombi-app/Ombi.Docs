@@ -129,7 +129,8 @@ nav:
     - Installation: guides/installation.md
     - Updating: guides/updating.md
   - Settings: 
-    - Generic Settings: settings/ombi.md
+    - General: settings/ombi.md
+    - Control Features: setting/features.md
     - Customization: settings/customization.md
     - Landing Page: settings/landingpage.md
     - Issues: settings/issues.md

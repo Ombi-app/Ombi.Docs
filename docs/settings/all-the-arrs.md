@@ -152,6 +152,17 @@ Again, 'get' the options from the service and select one.
 This tells Ombi that Lidarr wants things organised into individual subfolders per album. Usually, this should be ticked.
 ***
 
+### Radarr Specific
+
+#### Radarr 4K
+
+_This option only appears when  [Movie4KRequests](../features/#movie4krequests) is turned on._  
+
+This is where you configure a second (additional) copy of Radarr for Ombi to send requests to, with its own root paths and quality profiles.  
+This is designed for people to be able to request a movie in multiple resolutions at once (usually SD or HD along with 4K), but could be set up to do SD and HD or any combination you want.  
+Note that Ombi is unaware of the resolution of the item in Plex/Emby/Jellyfin - it uses the media ID for matching to see if it's available. As a result, if someone requests 4K and HD, Ombi will say the content is available _when either resolution is available, not both_.
+***
+
 ### Sonarr Specific
 
 #### Enable Season Folders
