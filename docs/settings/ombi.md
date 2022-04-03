@@ -15,7 +15,7 @@ This is to use the API that Ombi provides. See [here](../../info/api-information
 ## Auto Delete Available Requests
 
 This will auto delete requests which have been marked available for 'x' days.  
-If the days are set to `0` then it will delete all requests after the job runs. If it's set to `1` then it will delete available requests after they have been available in the system for a day.  
+If it's set to `1` then it will delete available requests after they have been available in the system for a day.  
 
 ## Do not send Notifications if a User has the Auto Approve permission
 
