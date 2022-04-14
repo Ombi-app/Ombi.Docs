@@ -91,6 +91,14 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
         ```bash
         /opt/ombi/Ombi --migrate
         ```
+        
+        Note:
+        If our sqlite database and json configuration files are stored in a different location than the one where we have Ombi installed, we will have to add the --storage argument.
+        
+        ```bash
+        /opt/ombi/Ombi --migrate --storage /etc/Ombi
+        ```
+        
         Note: We assume that Ombi is installed in '/opt/ombi'. If it is not installed in that location use the corresponding path.  
         If you are using docker Ombi is installed in '/opt/ombi'
 
@@ -99,6 +107,15 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
         C:
         cd C:\Ombi
         ombi --migrate
+        ```
+        
+        Note:
+        If our sqlite database and json configuration files are stored in a different location than the one where we have Ombi installed, we will have to add the --storage argument.
+        
+        ```batch
+        C:
+        cd C:\Ombi
+        ombi --migrate --storage C:\Ombi
         ```
 
 ### 4. Data Migration
@@ -522,5 +539,29 @@ S: Configure `database_multi.json` as needed and place it into the `/config` fol
 In the docker storage config, mount the `ombi_sqlite_mysql` folder to the container (we recommend mounting it as `/migrate`).  
 Run `docker exec ombi bash` and install the appropriate python3 tools (`apt update; apt install python3 python3-mysqldb -y;`).  
 Run your appropriate command for python like  `python3 /migrate/ombi_sqlite2mysql_multi.py -c /config` and your migration will take place.
+
+---
+
+**P: Table "XXX" requiered is not exist in the server MySQL**
+```bash
+$ python3 ombi_sqlite2mysql.py -c /etc/Ombi  --host 127.0.0.1 --db Ombi --user ombi --passwd ombi
+Migration tool from SQLite to MySql/MariaDB for ombi (3.0.8) By VSC55
+
+Generate file "database.json":
+- Saving in (/etc/Ombi/database.json)... [✓]
+
+MySQL > Connecting... [✓]
+- Reading   [............................................................] 0/1
+- Error: Table "__EFMigrationsHistory" requiered is not exist in the server MySQL!!!
+Read tables [!!]
+
+MySQL > Disconnecting... [✓]
+```
+S: This error typically occurs when tables were not successfully created with the --migrate argument to ombi. This may be because the configuration (database.json file) and the databases are not in the same folder where we have installed ombi. The solution is to add the --storage argument when we run the migration.
+
+In the following example, both the database.json file and the databases are stored in /etc/Ombi:
+```bash
+$ /opt/ombi/Ombi --migrate --storage /etc/Ombi
+```
 
 ---
