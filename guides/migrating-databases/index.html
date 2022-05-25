@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/guides/migrating-databases/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -2184,15 +2184,25 @@ If your Ombi is on a different drive, you'll need to switch to that drive letter
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Linux</label><label for="__tabbed_4_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><div class="highlight"><pre><span></span><code>/opt/ombi/Ombi --migrate
+<div class="highlight"><pre><span></span><code>/opt/ombi/Ombi --migrate
 </code></pre></div>
-Note: We assume that Ombi is installed in '/opt/ombi'. If it is not installed in that location use the corresponding path.<br />
+<p>Note:
+If our sqlite database and json configuration files are stored in a different location than the one where we have Ombi installed, we will have to add the --storage argument.</p>
+<div class="highlight"><pre><span></span><code>/opt/ombi/Ombi --migrate --storage /etc/Ombi
+</code></pre></div>
+<p>Note: We assume that Ombi is installed in '/opt/ombi'. If it is not installed in that location use the corresponding path.<br />
 If you are using docker Ombi is installed in '/opt/ombi'</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>C<span class="p">:</span>
 <span class="k">cd</span> C:\Ombi
 ombi --migrate
+</code></pre></div>
+<p>Note:
+If our sqlite database and json configuration files are stored in a different location than the one where we have Ombi installed, we will have to add the --storage argument.</p>
+<div class="highlight"><pre><span></span><code>C<span class="p">:</span>
+<span class="k">cd</span> C:\Ombi
+ombi --migrate --storage C:\Ombi
 </code></pre></div>
 </div>
 </div>
@@ -2601,13 +2611,32 @@ In the docker storage config, mount the <code class="highlight">ombi_sqlite_mysq
 Run <code class="highlight"><span class="nv">docker</span> <span class="k">exec</span> <span class="nv">ombi</span> <span class="nv">bash</span></code> and install the appropriate python3 tools (<code class="highlight">apt update; apt install python3 python3-mysqldb -y;</code>).<br />
 Run your appropriate command for python like  <code class="highlight">python3 /migrate/ombi_sqlite2mysql_multi.py -c /config</code> and your migration will take place.</p>
 <hr />
+<p><strong>P: Table "XXX" requiered is not exist in the server MySQL</strong>
+<div class="highlight"><pre><span></span><code>$ python3 ombi_sqlite2mysql.py -c /etc/Ombi  --host <span class="m">127</span>.0.0.1 --db Ombi --user ombi --passwd ombi
+Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.8<span class="o">)</span> By VSC55
+
+Generate file <span class="s2">&quot;database.json&quot;</span>:
+- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+
+MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
+- Reading   <span class="o">[</span>............................................................<span class="o">]</span> <span class="m">0</span>/1
+- Error: Table <span class="s2">&quot;__EFMigrationsHistory&quot;</span> requiered is not exist <span class="k">in</span> the server MySQL!!!
+Read tables <span class="o">[</span>!!<span class="o">]</span>
+
+MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
+</code></pre></div>
+S: This error typically occurs when tables were not successfully created with the --migrate argument to ombi. This may be because the configuration (database.json file) and the databases are not in the same folder where we have installed ombi. The solution is to add the --storage argument when we run the migration.</p>
+<p>In the following example, both the database.json file and the databases are stored in /etc/Ombi:
+<div class="highlight"><pre><span></span><code>$ /opt/ombi/Ombi --migrate --storage /etc/Ombi
+</code></pre></div></p>
+<hr />
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-02-27T19:39:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-02-27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-04-14T09:44:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-04-14</span>
       
     
   </small>
@@ -2734,7 +2763,7 @@ Run your appropriate command for python like  <code class="highlight">python3 /m
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

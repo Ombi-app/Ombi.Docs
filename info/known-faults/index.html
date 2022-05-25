@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/known-faults/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.120efc48.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
         
       
     
@@ -1365,6 +1365,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#container-fails-to-start-with-coreclr-error" class="md-nav__link">
+    Container fails to start with CoreCLR error
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2009,6 +2016,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#container-fails-to-start-with-coreclr-error" class="md-nav__link">
+    Container fails to start with CoreCLR error
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2066,7 +2080,7 @@ If you see "onesignal.com" being blocked, whitelist it and try again.</p>
 <hr />
 <h2 id="libunwind8-error">libunwind8 error<a class="headerlink" href="#libunwind8-error" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>libunwind.so.8: cannot open shared object file You may need to install libwind8.  </p>
+<p>libunwind.so.8: cannot open shared object file You may need to install libunwind8.  </p>
 </blockquote>
 <p>Run <code class="highlight">apt install libunwind8</code></p>
 <hr />
@@ -2079,14 +2093,16 @@ If you see "onesignal.com" being blocked, whitelist it and try again.</p>
 <h2 id="ombi-failing-to-start-on-macos-monterey">Ombi failing to start on macOS Monterey<a class="headerlink" href="#ombi-failing-to-start-on-macos-monterey" title="Permanent link">&para;</a></h2>
 <p>As of macOS Monterey the AirPlay listener now uses port 5000 by default. This causes Ombi to fail to start due to the port being in use.<br />
 You can turn off the AirPlay function under <code class="highlight"><span class="n">System</span><span class="w"> </span><span class="n">Preferences</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Sharing</span><span class="w"></span></code>. This will allow Ombi to start, however AirPlay will turn on again and cause the same issue at the next reboot.<br />
-The only possible workaround at present is to set the <code class="highlight">host</code> <a href="../startup-parameters">startup parameter</a> to use a different port (<code class="highlight">--host http://*:new_port</code>).  </p>
+The only possible workaround at present is to set the <code class="highlight">host</code> <a href="../startup-parameters">startup parameter</a> to use a different port (<code class="highlight">--host http://*:new_port</code>). </p>
+<h2 id="container-fails-to-start-with-coreclr-error">Container fails to start with CoreCLR error<a class="headerlink" href="#container-fails-to-start-with-coreclr-error" title="Permanent link">&para;</a></h2>
+<p>The error "Failed to create CoreCLR, HRESULT: 0x80070008" can be resolved by updating your docker engine to 20.10.10 or higher. <a href="https://docs.linuxserver.io/faq#jammy">Reference</a>.  </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-02-02T03:27:10+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-02-02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-05-25T20:52:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-05-25</span>
       
     
   </small>
@@ -2213,7 +2229,7 @@ The only possible workaround at present is to set the <code class="highlight">ho
     <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
