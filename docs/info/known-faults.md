@@ -56,7 +56,7 @@ If you see "onesignal.com" being blocked, whitelist it and try again.
 
 ## libunwind8 error
 
-> libunwind.so.8: cannot open shared object file You may need to install libwind8.  
+> libunwind.so.8: cannot open shared object file You may need to install libunwind8.  
 
 Run `apt install libunwind8`
 
@@ -74,4 +74,8 @@ Run `apt install libcurl4-openssl-dev`
 
 As of macOS Monterey the AirPlay listener now uses port 5000 by default. This causes Ombi to fail to start due to the port being in use.  
 You can turn off the AirPlay function under `System Preferences -> Sharing`. This will allow Ombi to start, however AirPlay will turn on again and cause the same issue at the next reboot.  
-The only possible workaround at present is to set the `host` [startup parameter](../startup-parameters) to use a different port (`--host http://*:new_port`).  
+The only possible workaround at present is to set the `host` [startup parameter](../startup-parameters) to use a different port (`--host http://*:new_port`). 
+
+## Container fails to start with CoreCLR error
+
+The error "Failed to create CoreCLR, HRESULT: 0x80070008" can be resolved by updating your docker engine to 20.10.10 or higher. [Reference](https://docs.linuxserver.io/faq#jammy).  
