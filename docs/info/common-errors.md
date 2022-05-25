@@ -1,5 +1,7 @@
 # Commonly Encountered Errors
 
+This page is being used for common errors outside our control, and commonly made mistakes. If you're after a fix for a known fault, see [Known Faults](../known-faults).
+
 ## TV Show search results disappear
 
 This is due to our TV Provider [TVMaze](https://www.tvmaze.com/) not having the metadata we need to process that TV Show. We require TV Maze to supply us with a TVDBId for that show.
@@ -48,7 +50,7 @@ or
 
 and reboot
 
-_Taken from [https://github.com/tidusjar/Ombi/issues/1783#issuecomment-351498238](https://github.com/tidusjar/Ombi/issues/1783#issuecomment-351498238)_  
+_Taken from [https://github.com/Ombi-app/Ombi/issues/1783#issuecomment-351498238](https://github.com/Ombi-app/Ombi/issues/1783#issuecomment-351498238)_  
 
 ***
 
