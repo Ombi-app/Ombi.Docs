@@ -201,6 +201,12 @@ Use either the `systemctl` or the `service` command to start, stop, or restart O
 
 Deps: `compat-openssl10 libcurl-devel libunwind-devel openssl-devel`
 
+1. Download the latest linux [release](https://github.com/Ombi-app/Ombi/releases) for your cpu architecture.
+2. Extract the contents to the desired location (we suggest something like /opt/Ombi/)
+3. `cd` to the path of the folder (e.g. `cd /opt/Ombi`)
+4. Execute `./Ombi`. Process should load.
+5. Ombi should now be reachable at localhost:5000
+
 ***
 
 ## macOS
