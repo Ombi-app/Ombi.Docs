@@ -130,7 +130,7 @@ nav:
     - Updating: guides/updating.md
   - Settings: 
     - General: settings/ombi.md
-    - Control Features: setting/features.md
+    - Control Features: settings/features.md
     - Customization: settings/customization.md
     - Landing Page: settings/landingpage.md
     - Issues: settings/issues.md
