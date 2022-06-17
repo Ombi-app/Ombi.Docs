@@ -36,7 +36,7 @@ Submit these settings, and then can run a test. This will confirm whether or not
 
 In the past, Gmail has required you to enable "access for less secure apps", under your account security. [https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps).  
 This setting has been/is being retired (it's being done in stages, not all users will encounter this at once).  
-The only way moving forward is via Two Factor Authentication.
+The only way moving forward is via Two Factor Authentication (2FA).
 
 ### Two Factor Authentication
 
