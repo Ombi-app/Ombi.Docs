@@ -34,11 +34,15 @@ Submit these settings, and then can run a test. This will confirm whether or not
 
 ### Gmail Less Secure Apps
 
-Sometimes Gmail requires you to enable "access for less secure apps". This setting can be found [here](https://myaccount.google.com/lesssecureapps).  
+In the past, Gmail has required you to enable "access for less secure apps", under your account security. [https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps).  
+This setting has been/is being retired (it's being done in stages, not all users will encounter this at once).  
+The only way moving forward is via Two Factor Authentication.
 
 ### Two Factor Authentication
 
-If you have 2 factor authentication turned on with your Gmail account, you will need to create an App Password with Google. More information can be found [here](https://support.google.com/accounts/answer/185833)
+To send email via Gmail with a direct SMTP connection, you may need to add an "App Password" to your account.  
+This is only possible if you have 2 factor authentication turned ON with your Gmail account.  
+More information can be found [here](https://support.google.com/accounts/answer/185833)
 
 ### Email failing even with correct SMTP settings
 
