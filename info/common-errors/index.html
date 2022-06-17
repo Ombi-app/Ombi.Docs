@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/common-errors/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.2">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.5d38496d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -1283,6 +1283,41 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cannot-start-ombi-on-ubuntu-1904" class="md-nav__link">
+    Cannot start Ombi on Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libunwind8-error" class="md-nav__link">
+    libunwind8 error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-notifications-pihole" class="md-nav__link">
+    Mobile Notifications &amp; PiHole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ombi-failing-to-start-on-macos-monterey" class="md-nav__link">
+    Ombi failing to start on macOS Monterey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-fails-to-start-with-coreclr-error" class="md-nav__link">
+    Container fails to start with CoreCLR error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-such-column-xrequestid" class="md-nav__link">
     No such column: x.RequestId
   </a>
@@ -1989,6 +2024,41 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cannot-start-ombi-on-ubuntu-1904" class="md-nav__link">
+    Cannot start Ombi on Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libunwind8-error" class="md-nav__link">
+    libunwind8 error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mobile-notifications-pihole" class="md-nav__link">
+    Mobile Notifications &amp; PiHole
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ombi-failing-to-start-on-macos-monterey" class="md-nav__link">
+    Ombi failing to start on macOS Monterey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-fails-to-start-with-coreclr-error" class="md-nav__link">
+    Container fails to start with CoreCLR error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-such-column-xrequestid" class="md-nav__link">
     No such column: x.RequestId
   </a>
@@ -2084,6 +2154,35 @@ To get around this, we need to recreate and populate the tables manually in our 
 With multiple databases (assuming they are named Ombi, Ombi_Settings, and Ombi_External), this can be achieved by running <a href="../../assets/scripts/mysql_migrations.sql">this MySQL command</a> in your preferred MySQL interface (CLI, PHPMyAdmin, MySQL workbench etc).<br />
 It will drop the invalid entries (if they exist), then create valid ones with all the current migrations (as at the time of uploading the script).  </p>
 <hr />
+<h2 id="cannot-start-ombi-on-ubuntu-1904">Cannot start Ombi on Ubuntu 19.04<a class="headerlink" href="#cannot-start-ombi-on-ubuntu-1904" title="Permanent link">&para;</a></h2>
+<p>.Net Core 5.0 is not supported officially on Ubuntu 19.04 (see <a href="https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#supported-distributions">Supported Distributions</a> to confirm).<br />
+Since the Ombi backend uses .Net Core, we will have to manually install the older version of libssl (from 18.10) in order to make Ombi run.<br />
+To confirm this is the fault, run <code class="highlight">journalctl -u Ombi -b</code> and look for the line "<code class="highlight">no usable version of libssl found</code>" - this will confirm that this is the fix.<br />
+We can do this using the following commands from a terminal:</p>
+<div class="highlight"><pre><span></span><code>wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
+sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
+</code></pre></div>
+<p>Start the Ombi service with <code class="highlight">service Ombi start</code> and confirm that it's worked with <code class="highlight">systemctl status ombi</code>.</p>
+<hr />
+<h2 id="libunwind8-error">libunwind8 error<a class="headerlink" href="#libunwind8-error" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>libunwind.so.8: cannot open shared object file You may need to install libunwind8.  </p>
+</blockquote>
+<p>Run <code class="highlight">apt install libunwind8</code></p>
+<hr />
+<h2 id="mobile-notifications-pihole">Mobile Notifications &amp; PiHole<a class="headerlink" href="#mobile-notifications-pihole" title="Permanent link">&para;</a></h2>
+<p>Numerous PiHole and AdGuard lists block OneSignal by default, causing Ombi to be unable to push a notification to it and your mobile device to be unable to retrieve one from it.<br />
+The error will be similar to:<br />
+<code class="highlight">There was an error when sending the Mobile message. Please check your settings</code>.</p>
+<p>Check your PiHole/Adguard immediately after hitting the "Test Notification" button.<br />
+If you see "onesignal.com" being blocked, whitelist it and try again.</p>
+<hr />
+<h2 id="ombi-failing-to-start-on-macos-monterey">Ombi failing to start on macOS Monterey<a class="headerlink" href="#ombi-failing-to-start-on-macos-monterey" title="Permanent link">&para;</a></h2>
+<p>As of macOS Monterey the AirPlay listener now uses port 5000 by default. This causes Ombi to fail to start due to the port being in use.<br />
+You can turn off the AirPlay function under <code class="highlight"><span class="n">System</span><span class="w"> </span><span class="n">Preferences</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Sharing</span><span class="w"></span></code>. This will allow Ombi to start, however AirPlay will turn on again and cause the same issue at the next reboot.<br />
+The only possible workaround at present is to set the <code class="highlight">host</code> <a href="../startup-parameters">startup parameter</a> to use a different port (<code class="highlight">--host http://*:new_port</code>). </p>
+<h2 id="container-fails-to-start-with-coreclr-error">Container fails to start with CoreCLR error<a class="headerlink" href="#container-fails-to-start-with-coreclr-error" title="Permanent link">&para;</a></h2>
+<p>The error "Failed to create CoreCLR, HRESULT: 0x80070008" can be resolved by updating your docker engine to 20.10.10 or higher. <a href="https://docs.linuxserver.io/faq#jammy">Reference</a>.  </p>
 <h2 id="no-such-column-xrequestid">No such column: x.RequestId<a class="headerlink" href="#no-such-column-xrequestid" title="Permanent link">&para;</a></h2>
 <p>If you are on the latest version and are seeing <code class="highlight">SQLite Error 1: &#39;No such column: x.RequestId&#39;</code>, refer below for a solution.<br />
 Referenced in <a href="https://github.com/tidusjar/Ombi/issues/3214#issuecomment-555821356">Issue 3214</a></p>
@@ -2145,7 +2244,7 @@ sudo apt install -y sqlite3
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-05-25T20:55:48+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-05-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-06-17T01:43:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-06-17</span>
       
     
   </small>
@@ -2157,7 +2256,7 @@ sudo apt install -y sqlite3
           </div>
         </div>
         
-          <a href="#" class="md-top md-top--hidden md-icon" data-md-component="top">
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
           </a>
@@ -2271,10 +2370,10 @@ sudo apt install -y sqlite3
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.7f366e99.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
