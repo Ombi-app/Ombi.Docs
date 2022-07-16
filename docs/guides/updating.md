@@ -71,7 +71,7 @@ To do so is fairly straightforward.
     2. Back up the `database.json` file from the Ombi directory.  
     This defines how ombi connects to the MySQL server.
     1. Delete the contents of the Ombi directory, _excluding_ the files mentioned in step 2.
-    2. Download the latest `windows.zip`  from the link below:  
+    2. Download the latest `win10-x86.zip` or `win10-x64.zip` from the link below:  
         [Stable](https://github.com/Ombi-app/Ombi/releases/latest)  
         [Develop](https://github.com/Ombi-app/Ombi/releases)
     3. Extract the zip to your Ombi directory.
