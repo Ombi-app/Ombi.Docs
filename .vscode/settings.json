@@ -2,7 +2,8 @@
     "markdownlint.config": {
         "default": true,
         "code-block-style": { "style": "consistent" },
-        "ol-prefix": { "style": "one_or_ordered" }
+        "ol-prefix": { "style": "one_or_ordered" },
+        "MD046": false
     },
     "cSpell.allowCompoundWords": true,
     "cSpell.language": "en-GB",
