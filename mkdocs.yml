@@ -112,6 +112,7 @@ plugins:
         'discover.md': 'guides/discover.md'
         'donate.md': 'guides/donate.md'
         'installation.md': 'guides/installation.md'
+        'changing-plex-password.md': 'guides/changing-plex-password.md'
         'issues.md': 'guides/issues.md'
         'preferences.md': 'guides/preferences.md'
         'requests-list.md': 'guides/requests-list.md'
@@ -186,6 +187,7 @@ nav:
     - User Roles: info/user-roles.md
   - Guides:
     - Installation: guides/installation.md
+    - Changing Plex Password: guides/changing-plex-password.md
     - Migrating Databases: guides/migrating-databases.md
     - Installing MySQL on Windows: guides/mysql-installation-windows.md
     - Mobile App: guides/mobile-app.md
