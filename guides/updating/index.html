@@ -2129,10 +2129,10 @@ For the Watchtower one, add a label to the container named <code class="highligh
 </ul>
 <h3 id="script-path">Script Path<a class="headerlink" href="#script-path" title="Permanent link">&para;</a></h3>
 <p>The path to your script, we will automatically pass it the following arguments in the following order:</p>
-<div class="highlight"><pre><span></span><code>YourScript <span class="o">{</span>UpdateDownloadUrl<span class="o">}</span> --applicationPath <span class="o">{</span>CurrentInstallLocation<span class="o">}</span> --processname <span class="o">{</span>ProcessName<span class="o">}</span> --host <span class="o">{</span>Ombi Host Argument<span class="o">}</span> --storage <span class="o">{</span>Ombi StoragePath Argument<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>YourScript <span class="o">{</span>UpdateDownloadUrl<span class="o">}</span> --applicationPath <span class="o">{</span>CurrentInstallLocation<span class="o">}</span> --processname <span class="o">{</span>ProcessName<span class="o">}</span> --host <span class="o">{</span>Ombi Host Argument<span class="o">}</span> --storage <span class="o">{</span>Ombi StoragePath Argument<span class="o">}</span>
 </code></pre></div>
 <p>e.g.</p>
-<div class="highlight"><pre><span></span><code>Update.sh https://ci.appveyor.com/api/buildjobs/vxergo4kdyoaw929/artifacts/linux.tar.gz --applicationPath /opt/ombi --processname ombi --host http://*:5000 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Update.sh https://ci.appveyor.com/api/buildjobs/vxergo4kdyoaw929/artifacts/linux.tar.gz --applicationPath /opt/ombi --processname ombi --host http://*:5000 
 </code></pre></div>
 <p>This means the variables will be:<br />
 {UpdateDownloadUrl}: $1<br />
@@ -2233,6 +2233,8 @@ This is a simple true/false switch - it will force the script to install the new
               
             </article>
             
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -2351,7 +2353,7 @@ This is a simple true/false switch - it will force the script to install the new
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

@@ -2357,13 +2357,18 @@ Ensure you have systems to handle approved requests <em>before</em> you give use
 <h2 id="migrating-systems">Migrating Systems<a class="headerlink" href="#migrating-systems" title="Permanent link">&para;</a></h2>
 <p>If you're migrating Ombi from an existing install to a new install, the install process itself is exactly the same as below - with one exception, regardless of what you're migrating from or to.<br />
 Depending on what database you're using, you will need to keep the following files:  </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SQLite</label><label for="__tabbed_1_2">MySQL</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">SQLite</label><label for="__tabbed_1_2">MySQL</label><label for="__tabbed_1_3">MariaDB</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
 <li><code class="highlight">Ombi.db</code></li>
 <li><code class="highlight">OmbiExternal.db</code></li>
 <li><code class="highlight">OmbiSettings.db</code></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><code class="highlight">database.json</code></li>
 </ul>
 </div>
 <div class="tabbed-block">
@@ -2462,11 +2467,11 @@ Replace the port in the below commands with your own port if you're running a di
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Command Prompt</label><label for="__tabbed_4_2">Powershell</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>netsh advfirewall firewall add rule name=<span class="s2">&quot;Ombi&quot;</span> dir=in action=allow protocol=TCP localport=5000
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>netsh advfirewall firewall add rule name=<span class="s2">&quot;Ombi&quot;</span> dir=in action=allow protocol=TCP localport=5000
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;Ombi&#39;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-LocalPort</span> <span class="p">@(</span><span class="s1">&#39;5000&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-NetFirewallRule</span> <span class="n">-DisplayName</span> <span class="s1">&#39;Ombi&#39;</span> <span class="n">-Direction</span> <span class="n">Inbound</span> <span class="n">-Action</span> <span class="n">Allow</span> <span class="n">-Protocol</span> <span class="n">TCP</span> <span class="n">-LocalPort</span> <span class="p">@(</span><span class="s1">&#39;5000&#39;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 </div>
@@ -2502,8 +2507,8 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 <div class="tabbed-block">
 <p><em>Note that this is for Ubuntu 20.xx onwards, and on the development branch, <strong>and</strong> on the new repo.</em><br />
 1. Add the apt repository to the apt sources list:<br />
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ombi.list
-<span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ombi.list
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
 </code></pre></div>
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
 <code class="highlight">sudo curl -sSL https://packagecloud.io/Ombi-app/Ombi/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
@@ -2513,8 +2518,8 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
 <div class="tabbed-block">
 <p><em>Note that this is for Ubuntu 20.xx onwards, and on the development branch, <strong>and</strong> on the new repo.</em><br />
 1. Add the apt repository to the apt sources list:<br />
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ombi.list
-<span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">echo</span> <span class="s2">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/ombi.list
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span> <span class="s2">&quot;deb-src [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/ombi.list
 </code></pre></div>
 2. This repo is signed. This means packages get validated before installation. So, to safely download and install Ombi packages, the Ombi key needs to be installed:<br />
 <code class="highlight">sudo curl -sSL https://packagecloud.io/Ombi-app/Ombi-Dev/gpgkey | gpg --dearmor &gt; /usr/share/keyrings/ombi-archive-keyring.gpg</code><br />
@@ -2584,7 +2589,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-06-03T01:58:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-06-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-08-26T10:33:48+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-08-26</span>
       
     
   </small>
@@ -2596,6 +2601,8 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
               
             </article>
             
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -2714,7 +2721,7 @@ Installation, upgrade, and removal docs are all on the <a href="https://artifact
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

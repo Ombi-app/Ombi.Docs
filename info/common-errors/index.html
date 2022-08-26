@@ -2159,7 +2159,7 @@ For a breakdown of docker networking (and some reasoning), see <a href="../info/
 <p><em>Taken from <a href="https://github.com/Ombi-app/Ombi/issues/1783#issuecomment-351498238">https://github.com/Ombi-app/Ombi/issues/1783#issuecomment-351498238</a></em>  </p>
 <hr />
 <h2 id="i386-unsupported">i386 unsupported<a class="headerlink" href="#i386-unsupported" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>N: Skipping acquire of configured file <span class="s1">&#39;main/binary-i386/Packages&#39;</span> as repository <span class="s1">&#39;https://apt.ombi.app/develop jessie InRelease&#39;</span> doesn<span class="s1">&#39;t support architecture &#39;</span>i386<span class="err">&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>N: Skipping acquire of configured file <span class="s1">&#39;main/binary-i386/Packages&#39;</span> as repository <span class="s1">&#39;https://apt.ombi.app/develop jessie InRelease&#39;</span> doesn<span class="s1">&#39;t support architecture &#39;</span>i386<span class="err">&#39;</span>
 </code></pre></div>
 <p>Replace <code class="highlight"><span class="k">deb</span><span class="w"> </span><span class="s">http://apt.ombi.app/develop</span><span class="w"> </span><span class="kp">jessie</span><span class="w"> </span><span class="kp">main</span><span class="w"></span></code> with  <code class="highlight"><span class="k">deb</span><span class="w"> </span><span class="sx">[arch=amd64]</span><span class="w"> </span><span class="kp">http://apt.ombi.app/develop/</span><span class="w"> </span><span class="kp">jessie</span><span class="w"> </span><span class="kp">main</span><span class="w"></span></code> in <code class="highlight">/etc/apt/sources.list.d/ombi.list</code>.  </p>
 <hr />
@@ -2175,8 +2175,8 @@ It will drop the invalid entries (if they exist), then create valid ones with al
 Since the Ombi backend uses .Net Core, we will have to manually install the older version of libssl (from 18.10) in order to make Ombi run.<br />
 To confirm this is the fault, run <code class="highlight">journalctl -u Ombi -b</code> and look for the line "<code class="highlight">no usable version of libssl found</code>" - this will confirm that this is the fix.<br />
 We can do this using the following commands from a terminal:</p>
-<div class="highlight"><pre><span></span><code>wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
-sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu6_amd64.deb
 </code></pre></div>
 <p>Start the Ombi service with <code class="highlight">service Ombi start</code> and confirm that it's worked with <code class="highlight">systemctl status ombi</code>.</p>
 <hr />
@@ -2204,55 +2204,55 @@ The only possible workaround at present is to set the <code class="highlight">ho
 Referenced in <a href="https://github.com/tidusjar/Ombi/issues/3214#issuecomment-555821356">Issue 3214</a></p>
 <h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>Here is a one-liner to fix the issue, assuming you are running in a docker container, your container has <code class="highlight">ombi</code> in the name, your image requires the config dir to be mounted at <code class="highlight">/config</code>, and the host is running Debian, Ubuntu, or a related distro that uses <code class="highlight">apt</code>. If any of these points aren't true, see the details below the command and modify to your needs.</p>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install -y sqlite3
-sqlite3 <span class="k">$(</span> <span class="se">\</span>
-  docker inspect --format <span class="s1">&#39;{{ range .Mounts }}{{if eq .Destination &quot;/config&quot;}}{{ .Source }}{{end}}{{end}}&#39;</span>  <span class="se">\</span>
-  <span class="k">$(</span>docker ps --filter <span class="nv">name</span><span class="o">=</span>ombi --format <span class="s1">&#39;{{.ID}}&#39;</span><span class="k">)</span> <span class="se">\</span>
-<span class="k">)</span>/app/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo apt update
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo apt install -y sqlite3
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sqlite3 <span class="k">$(</span> <span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  docker inspect --format <span class="s1">&#39;{{ range .Mounts }}{{if eq .Destination &quot;/config&quot;}}{{ .Source }}{{end}}{{end}}&#39;</span>  <span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  <span class="k">$(</span>docker ps --filter <span class="nv">name</span><span class="o">=</span>ombi --format <span class="s1">&#39;{{.ID}}&#39;</span><span class="k">)</span> <span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">)</span>/app/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
 </code></pre></div>
 <p>Explanation of parts:</p>
 <p>Update <code class="highlight">apt</code> &amp; install <code class="highlight">sqlite3</code></p>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install -y sqlite3<span class="p">;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo apt update
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo apt install -y sqlite3<span class="p">;</span>
 </code></pre></div>
 <p>Inspect container <code class="highlight">$CONTAINER_ID</code>, list mounts, and if the mount destination is <code class="highlight">/config</code>, print the source</p>
-<div class="highlight"><pre><span></span><code>docker inspect --format <span class="se">\</span>
-  <span class="s1">&#39;{{ range .Mounts }}{{if eq .Destination &quot;/config&quot;}}{{ .Source }}{{end}}{{end}}&#39;</span>  <span class="se">\</span>
-  <span class="nv">$CONTAINER_ID</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker inspect --format <span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="s1">&#39;{{ range .Mounts }}{{if eq .Destination &quot;/config&quot;}}{{ .Source }}{{end}}{{end}}&#39;</span>  <span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  <span class="nv">$CONTAINER_ID</span>
 </code></pre></div>
 <p>List containers, filtering on <code class="highlight">ombi</code>. Format output to only include the container id.</p>
-<div class="highlight"><pre><span></span><code>docker ps --filter <span class="nv">name</span><span class="o">=</span>ombi --format <span class="s1">&#39;{{.ID}}&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker ps --filter <span class="nv">name</span><span class="o">=</span>ombi --format <span class="s1">&#39;{{.ID}}&#39;</span>
 </code></pre></div>
 <p>Concatenate the inspected directory path with the path to the <code class="highlight"><span class="na">.db</span><span class="w"></span></code> file within the <code class="highlight">/config</code> dir</p>
-<div class="highlight"><pre><span></span><code><span class="k">$(</span> ... <span class="k">)</span>/app/OmbiExternal.db
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">$(</span> ... <span class="k">)</span>/app/OmbiExternal.db
 </code></pre></div>
 <p>Tell <code class="highlight">sqlite3</code> to run the actual query</p>
-<div class="highlight"><pre><span></span><code> sqlite3 /opt/ombi/app/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a> sqlite3 /opt/ombi/app/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
 </code></pre></div>
 <p>After you are done, you can remove <code class="highlight">sqlite3</code></p>
-<div class="highlight"><pre><span></span><code>sudo apt remove --purge sqlite3
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo apt remove --purge sqlite3
 </code></pre></div>
 <h3 id="unraid">Unraid<a class="headerlink" href="#unraid" title="Permanent link">&para;</a></h3>
 <p>RUN:  </p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~
-wget https://www.sqlite.org/2019/sqlite-tools-linux-x86-3300100.zip
-unzip sqlite-tools-linux-x86-3300100.zip
-<span class="nb">cd</span> sqlite-tools-linux-x86-3300100
-chmod a+x sqlite3
-./sqlite3 <span class="k">$(</span>find / -name OmbiExternal.db -print0 -quit <span class="m">2</span>&gt;/dev/null<span class="k">)</span> <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span> ~
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>wget https://www.sqlite.org/2019/sqlite-tools-linux-x86-3300100.zip
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>unzip sqlite-tools-linux-x86-3300100.zip
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">cd</span> sqlite-tools-linux-x86-3300100
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>chmod a+x sqlite3
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>./sqlite3 <span class="k">$(</span>find / -name OmbiExternal.db -print0 -quit <span class="m">2</span>&gt;/dev/null<span class="k">)</span> <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
 </code></pre></div>
 <h3 id="debianubuntu">Debian/Ubuntu<a class="headerlink" href="#debianubuntu" title="Permanent link">&para;</a></h3>
 <p>If "sqlite3" is not installed:  </p>
-<div class="highlight"><pre><span></span><code>sudo apt update
-sudo apt install -y sqlite3
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo apt update
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo apt install -y sqlite3
 </code></pre></div>
 <p>Fix Database:<br />
 <em>If your Ombi databases are in a different location than "<strong>/etc/Ombi</strong>", replace that with the location of your Ombi databases.</em>  </p>
-<div class="highlight"><pre><span></span><code>sqlite3 /etc/Ombi/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sqlite3 /etc/Ombi/OmbiExternal.db <span class="s1">&#39;ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL&#39;</span>
 </code></pre></div>
 <p>If we want to uninstall "sqlite3" to clean the system.</p>
-<div class="highlight"><pre><span></span><code>sudo apt remove --purge sqlite3
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo apt remove --purge sqlite3
 </code></pre></div>
 
   <hr>
@@ -2272,6 +2272,8 @@ sudo apt install -y sqlite3
               
             </article>
             
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -2390,7 +2392,7 @@ sudo apt install -y sqlite3
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>

@@ -2113,9 +2113,9 @@ If there is an error you can contact in Discord or you can open an incident <a h
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label><label for="__tabbed_1_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>git clone https://github.com/vsc55/ombi_sqlite_mysql.git ombi_sqlite_mysql
-<span class="nb">cd</span> ombi_sqlite_mysql
-chmod +x *.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/vsc55/ombi_sqlite_mysql.git ombi_sqlite_mysql
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span> ombi_sqlite_mysql
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>chmod +x *.py
 </code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -2180,20 +2180,20 @@ If your Ombi is on a different drive, you'll need to switch to that drive letter
 <p><strong>Only if we are going to use <em>Multiple Databases</em> or <em>Multiple Servers</em>.</strong><br />
     To be able to use multiple servers or databases we will need to manually edit <strong>database.json</strong>.<br />
     The example below will export the <strong>"OmbiDatabase"</strong> and <strong>"SettingsDatabase"</strong> databases to the server at <strong>"192.168.1.100"</strong> (but to different databases on the same server), while the <strong>"ExternalDatabase"</strong> database will be sent to the server on <strong>"192.168.1.200"</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </li>
 <li>
@@ -2201,25 +2201,25 @@ If your Ombi is on a different drive, you'll need to switch to that drive letter
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Linux</label><label for="__tabbed_4_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>/opt/ombi/Ombi --migrate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/opt/ombi/Ombi --migrate
 </code></pre></div>
 <p>Note:
 If our sqlite database and json configuration files are stored in a different location than the one where we have Ombi installed, we will have to add the --storage argument.</p>
-<div class="highlight"><pre><span></span><code>/opt/ombi/Ombi --migrate --storage /etc/Ombi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/opt/ombi/Ombi --migrate --storage /etc/Ombi
 </code></pre></div>
 <p>Note: We assume that Ombi is installed in '/opt/ombi'. If it is not installed in that location use the corresponding path.<br />
 If you are using docker Ombi is installed in '/opt/ombi'</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>C<span class="p">:</span>
-<span class="k">cd</span> C:\Ombi
-ombi --migrate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>C<span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">cd</span> C:\Ombi
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>ombi --migrate
 </code></pre></div>
 <p>Note:
 If our sqlite database and json configuration files are stored in a different location than the one where we have Ombi installed, we will have to add the --storage argument.</p>
-<div class="highlight"><pre><span></span><code>C<span class="p">:</span>
-<span class="k">cd</span> C:\Ombi
-ombi --migrate --storage C:\Ombi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>C<span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">cd</span> C:\Ombi
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>ombi --migrate --storage C:\Ombi
 </code></pre></div>
 </div>
 </div>
@@ -2237,25 +2237,25 @@ We can export everything to a single database (step 4.1), to different databases
 </blockquote>
 <h5 id="411-exclude-ombiexternal-from-export-optional">4.1.1 Exclude OmbiExternal from export (optional)<a class="headerlink" href="#411-exclude-ombiexternal-from-export-optional" title="Permanent link">&para;</a></h5>
 <blockquote>
-<div class="highlight"><pre><span></span><code>$ python ombi_sqlite2mysql.py -c /etc/Ombi --only_manager_json
-Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span>x.x.x<span class="o">)</span> By VSC55
-
-Generate file <span class="s2">&quot;migration.json&quot;</span>:
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-
-$ nano /etc/Ombi/migration.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ python ombi_sqlite2mysql.py -c /etc/Ombi --only_manager_json
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span>x.x.x<span class="o">)</span> By VSC55
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Generate file <span class="s2">&quot;migration.json&quot;</span>:
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>$ nano /etc/Ombi/migration.json
 </code></pre></div>
 <p>Content "migration.json":</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">   </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/Ombi.db&quot;</span><span class="w"></span>
-<span class="w">   </span><span class="p">},</span><span class="w"></span>
-<span class="w">   </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/OmbiSettings.db&quot;</span><span class="w"></span>
-<span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">   </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">      </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/Ombi.db&quot;</span><span class="w"></span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">   </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">   </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">      </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="s2">&quot;sqlite&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">      </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="s2">&quot;Data Source=/etc/Ombi/OmbiSettings.db&quot;</span><span class="w"></span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </blockquote>
 <ol>
@@ -2264,45 +2264,45 @@ $ nano /etc/Ombi/migration.json
 <blockquote>
 <p><em>The script will <strong>empty the tables</strong> from the MySQL/MariaDB database and automatically migrate the data from SQLite to MySQL/MariaDB.</em></p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>$ python ombi_sqlite2mysql.py -c /etc/Ombi --host <span class="m">192</span>.168.1.100 --db Ombi --user ombi --passwd ombi
-Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.4<span class="o">)</span> By VSC55
-
-Generate file <span class="s2">&quot;migration.json&quot;</span>:
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-
-Generate file <span class="s2">&quot;database.json&quot;</span>:
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
-Check migration.json:
-- SettingsDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
-- OmbiDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
-- ExternalDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
-
-Dump SQLite:
-- SettingsDatabase  <span class="o">[</span><span class="c1">############################################################] 27/27</span>
-- OmbiDatabase      <span class="o">[</span><span class="c1">############################################################] 117106/117106</span>
-- ExternalDatabase  <span class="o">[</span><span class="c1">############################################################] 574/574</span>
-
-Start clean tables:
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; ApplicationConfiguration -&gt; rows: <span class="m">3</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetRoles -&gt; rows: <span class="m">12</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUserRoles -&gt; rows: <span class="m">18</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUsers -&gt; rows: <span class="m">6</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; GlobalSettings -&gt; rows: <span class="m">12</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; NotificationTemplates -&gt; rows: <span class="m">90</span>
-- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
-- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">3</span>
-
-- Running   <span class="o">[</span><span class="c1">############################################################] 8/8</span>
-Clean tables <span class="o">[</span>✓<span class="o">]</span>
-
-Start Migration:
-- Preparing <span class="o">[</span><span class="c1">############################################################] 117716/117716</span>
-- Running   <span class="o">[</span><span class="c1">############################################################] 117641/117641</span>
-- Checking  <span class="o">[</span><span class="c1">############################################################] 43/43</span>
-
-MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$ python ombi_sqlite2mysql.py -c /etc/Ombi --host <span class="m">192</span>.168.1.100 --db Ombi --user ombi --passwd ombi
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.4<span class="o">)</span> By VSC55
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Generate file <span class="s2">&quot;migration.json&quot;</span>:
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Generate file <span class="s2">&quot;database.json&quot;</span>:
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>Check migration.json:
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>- SettingsDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>- OmbiDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>- ExternalDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>Dump SQLite:
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>- SettingsDatabase  <span class="o">[</span><span class="c1">############################################################] 27/27</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>- OmbiDatabase      <span class="o">[</span><span class="c1">############################################################] 117106/117106</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>- ExternalDatabase  <span class="o">[</span><span class="c1">############################################################] 574/574</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>Start clean tables:
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; ApplicationConfiguration -&gt; rows: <span class="m">3</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetRoles -&gt; rows: <span class="m">12</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUserRoles -&gt; rows: <span class="m">18</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUsers -&gt; rows: <span class="m">6</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; GlobalSettings -&gt; rows: <span class="m">12</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; NotificationTemplates -&gt; rows: <span class="m">90</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">3</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 8/8</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>Clean tables <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>Start Migration:
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>- Preparing <span class="o">[</span><span class="c1">############################################################] 117716/117716</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 117641/117641</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>- Checking  <span class="o">[</span><span class="c1">############################################################] 43/43</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
 </code></pre></div>
 </li>
 <li>
@@ -2316,74 +2316,74 @@ MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
 <ol>
 <li>
 <p>To create the file <strong>"database_multi.json"</strong> we will use the file <strong>"database.json"</strong> so we will only have to rename it.  </p>
-<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
 <p>We can omit the export of a database by removing it from <strong>"database_multi.json"</strong> or adding the property <strong>"Skip"</strong>.
 The example next will export the databases <strong>"OmbiDatabase"</strong> and <strong>"SettingsDatabase"</strong> but omit <strong>"ExternalDatabase"</strong>.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">        </span><span class="nt">&quot;Skip&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
 <p>We can also send the same database to different servers with the following configuration.
 The next example sends databases "OmbiDatabase", "SettingsDatabase" and "ExternalDatabase" to servers 192.168.1.100 and 192.168.1.200.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="err">$</span><span class="w"> </span><span class="kc">nan</span><span class="err">o</span><span class="w"> </span><span class="err">da</span><span class="kc">ta</span><span class="err">base_mul</span><span class="kc">t</span><span class="err">i.jso</span><span class="kc">n</span><span class="w"></span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.100;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="nt">&quot;OmbiDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">    </span><span class="nt">&quot;SettingsDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_Settings;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">    </span><span class="p">},</span><span class="w"></span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="nt">&quot;ExternalDatabase&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">        </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MySQL&quot;</span><span class="p">,</span><span class="w"></span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">        </span><span class="nt">&quot;ConnectionString&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Server=192.168.1.200;Port=3306;Database=Ombi_External;User=ombi;Password=ombi&quot;</span><span class="w"></span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span><span class="p">}</span><span class="w"></span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
 <p><strong>NOTE: If you want to export all the content to several servers we will have to repeat the point "Create and prepare tables" with the different servers so that all the tables are created. You will also have to modify the file <strong>database.json</strong> at the end of the export process before running ombi to leave a single server for each database.</strong></p>
@@ -2392,150 +2392,150 @@ The next example sends databases "OmbiDatabase", "SettingsDatabase" and "Externa
 <li>
 <p>Start data migration.<br />
     &gt; The script will empty the tables from the MySQL/MariaDB database and automatically migrate the data from SQLite to MySQL/MariaDB.</p>
-<div class="highlight"><pre><span></span><code>$ python ombi_sqlite2mysql_multi.py -c /etc/Ombi
-Migration tool from SQLite to Multi MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">1</span>.0.0<span class="o">)</span> By VSC55
-
-- Processing DataBase <span class="o">(</span>OmbiDatabase<span class="o">)</span>...
--------------------
-
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-Generate file <span class="s2">&quot;database.json&quot;</span>:
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
-- Reading   <span class="o">[</span><span class="c1">############################################################] 1/1</span>
-Read tables <span class="o">[</span>✓<span class="o">]</span>
-
-Check migration.json:
-- OmbiDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
-- SettingsDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
-- ExternalDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
-
-Dump SQLite:
-- OmbiDatabase      <span class="o">[</span><span class="c1">############################################################] 4068/4068</span>
-
-Start clean tables:
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetRoles -&gt; rows: <span class="m">12</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUserRoles -&gt; rows: <span class="m">190</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUsers -&gt; rows: <span class="m">41</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; Audit -&gt; rows: <span class="m">15</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; ChildRequests -&gt; rows: <span class="m">11</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; EpisodeRequests -&gt; rows: <span class="m">407</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; IssueCategory -&gt; rows: <span class="m">4</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; IssueComments -&gt; rows: <span class="m">1</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; Issues -&gt; rows: <span class="m">3</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; MovieRequests -&gt; rows: <span class="m">198</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; NotificationTemplates -&gt; rows: <span class="m">100</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; NotificationUserId -&gt; rows: <span class="m">2</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RecentlyAddedLog -&gt; rows: <span class="m">2566</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RequestLog -&gt; rows: <span class="m">247</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RequestQueue -&gt; rows: <span class="m">6</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RequestSubscription -&gt; rows: <span class="m">18</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; SeasonRequests -&gt; rows: <span class="m">28</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; TvRequests -&gt; rows: <span class="m">11</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; UserNotificationPreferences -&gt; rows: <span class="m">125</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; UserQualityProfiles -&gt; rows: <span class="m">20</span>
-- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
-- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">36</span>
-
-- Running   <span class="o">[</span><span class="c1">############################################################] 22/22</span>
-Clean tables <span class="o">[</span>✓<span class="o">]</span>
-
-Start Migration:
-- Preparing <span class="o">[</span><span class="c1">############################################################] 4074/4074</span>
-- Running   <span class="o">[</span><span class="c1">############################################################] 4005/4005</span>
-- Checking  <span class="o">[</span><span class="c1">############################################################] 28/28</span>
-Migration <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
-
-----------------------------------------------------------------
-----------------------------------------------------------------
-
-- Processing DataBase <span class="o">(</span>SettingsDatabase<span class="o">)</span>...
--------------------
-
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-Generate file <span class="s2">&quot;database.json&quot;</span>:
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
-- Reading   <span class="o">[</span><span class="c1">############################################################] 1/1</span>
-Read tables <span class="o">[</span>✓<span class="o">]</span>
-
-Check migration.json:
-- OmbiDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
-- SettingsDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
-- ExternalDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
-
-Dump SQLite:
-- SettingsDatabase  <span class="o">[</span><span class="c1">############################################################] 25/25</span>
-
-Start clean tables:
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; ApplicationConfiguration -&gt; rows: <span class="m">3</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; GlobalSettings -&gt; rows: <span class="m">13</span>
-- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
-- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">4</span>
-
-- Running   <span class="o">[</span><span class="c1">############################################################] 4/4</span>
-Clean tables <span class="o">[</span>✓<span class="o">]</span>
-
-Start Migration:
-- Preparing <span class="o">[</span><span class="c1">############################################################] 31/31</span>
-- Running   <span class="o">[</span><span class="c1">############################################################] 16/16</span>
-- Checking  <span class="o">[</span><span class="c1">############################################################] 3/3</span>
-Migration <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
-
-----------------------------------------------------------------
-----------------------------------------------------------------
-
-- Processing DataBase <span class="o">(</span>ExternalDatabase<span class="o">)</span>...
--------------------
-
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-Generate file <span class="s2">&quot;database.json&quot;</span>:
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
-- Reading   <span class="o">[</span><span class="c1">############################################################] 1/1</span>
-Read tables <span class="o">[</span>✓<span class="o">]</span>
-
-Check migration.json:
-- OmbiDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
-- SettingsDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
-- ExternalDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
-
-Dump SQLite:
-- ExternalDatabase  <span class="o">[</span><span class="c1">############################################################] 5201/5201</span>
-
-Start clean tables:
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; PlexEpisode -&gt; rows: <span class="m">2174</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; PlexSeasonsContent -&gt; rows: <span class="m">150</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; PlexServerContent -&gt; rows: <span class="m">349</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RadarrCache -&gt; rows: <span class="m">270</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; SonarrCache -&gt; rows: <span class="m">43</span>
-- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; SonarrEpisodeCache -&gt; rows: <span class="m">2194</span>
-- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
-- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">4</span>
-
-- Running   <span class="o">[</span><span class="c1">############################################################] 8/8</span>
-Clean tables <span class="o">[</span>✓<span class="o">]</span>
-
-Start Migration:
-- Preparing <span class="o">[</span><span class="c1">############################################################] 5207/5207</span>
-- Running   <span class="o">[</span><span class="c1">############################################################] 5180/5180</span>
-- Checking  <span class="o">[</span><span class="c1">############################################################] 14/14</span>
-Migration <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
-
-----------------------------------------------------------------
-----------------------------------------------------------------
-
-&gt; Updating database.json...
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$ python ombi_sqlite2mysql_multi.py -c /etc/Ombi
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Migration tool from SQLite to Multi MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">1</span>.0.0<span class="o">)</span> By VSC55
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>- Processing DataBase <span class="o">(</span>OmbiDatabase<span class="o">)</span>...
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>-------------------
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>Generate file <span class="s2">&quot;database.json&quot;</span>:
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>- Reading   <span class="o">[</span><span class="c1">############################################################] 1/1</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>Read tables <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>Check migration.json:
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>- OmbiDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>- SettingsDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>- ExternalDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>Dump SQLite:
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>- OmbiDatabase      <span class="o">[</span><span class="c1">############################################################] 4068/4068</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>Start clean tables:
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetRoles -&gt; rows: <span class="m">12</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUserRoles -&gt; rows: <span class="m">190</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; AspNetUsers -&gt; rows: <span class="m">41</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; Audit -&gt; rows: <span class="m">15</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; ChildRequests -&gt; rows: <span class="m">11</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; EpisodeRequests -&gt; rows: <span class="m">407</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; IssueCategory -&gt; rows: <span class="m">4</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; IssueComments -&gt; rows: <span class="m">1</span>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; Issues -&gt; rows: <span class="m">3</span>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; MovieRequests -&gt; rows: <span class="m">198</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; NotificationTemplates -&gt; rows: <span class="m">100</span>
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; NotificationUserId -&gt; rows: <span class="m">2</span>
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RecentlyAddedLog -&gt; rows: <span class="m">2566</span>
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RequestLog -&gt; rows: <span class="m">247</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RequestQueue -&gt; rows: <span class="m">6</span>
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RequestSubscription -&gt; rows: <span class="m">18</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; SeasonRequests -&gt; rows: <span class="m">28</span>
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; TvRequests -&gt; rows: <span class="m">11</span>
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; UserNotificationPreferences -&gt; rows: <span class="m">125</span>
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; UserQualityProfiles -&gt; rows: <span class="m">20</span>
+<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
+<a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">36</span>
+<a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>
+<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 22/22</span>
+<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>Clean tables <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>
+<a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a>Start Migration:
+<a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a>- Preparing <span class="o">[</span><span class="c1">############################################################] 4074/4074</span>
+<a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 4005/4005</span>
+<a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>- Checking  <span class="o">[</span><span class="c1">############################################################] 28/28</span>
+<a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a>Migration <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a>
+<a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a>MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>
+<a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a>----------------------------------------------------------------
+<a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>----------------------------------------------------------------
+<a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a>
+<a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a>- Processing DataBase <span class="o">(</span>SettingsDatabase<span class="o">)</span>...
+<a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a>-------------------
+<a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a>
+<a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a>Generate file <span class="s2">&quot;database.json&quot;</span>:
+<a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a>
+<a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a>MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a>- Reading   <span class="o">[</span><span class="c1">############################################################] 1/1</span>
+<a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a>Read tables <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a>
+<a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a>Check migration.json:
+<a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a>- OmbiDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
+<a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a>- SettingsDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
+<a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a>- ExternalDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
+<a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a>
+<a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a>Dump SQLite:
+<a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a>- SettingsDatabase  <span class="o">[</span><span class="c1">############################################################] 25/25</span>
+<a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a>
+<a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a>Start clean tables:
+<a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; ApplicationConfiguration -&gt; rows: <span class="m">3</span>
+<a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; GlobalSettings -&gt; rows: <span class="m">13</span>
+<a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a>- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
+<a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a>- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">4</span>
+<a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a>
+<a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 4/4</span>
+<a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a>Clean tables <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a>
+<a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a>Start Migration:
+<a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a>- Preparing <span class="o">[</span><span class="c1">############################################################] 31/31</span>
+<a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 16/16</span>
+<a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a>- Checking  <span class="o">[</span><span class="c1">############################################################] 3/3</span>
+<a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a>Migration <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a>
+<a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a>MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a>
+<a id="__codelineno-12-97" name="__codelineno-12-97" href="#__codelineno-12-97"></a>----------------------------------------------------------------
+<a id="__codelineno-12-98" name="__codelineno-12-98" href="#__codelineno-12-98"></a>----------------------------------------------------------------
+<a id="__codelineno-12-99" name="__codelineno-12-99" href="#__codelineno-12-99"></a>
+<a id="__codelineno-12-100" name="__codelineno-12-100" href="#__codelineno-12-100"></a>- Processing DataBase <span class="o">(</span>ExternalDatabase<span class="o">)</span>...
+<a id="__codelineno-12-101" name="__codelineno-12-101" href="#__codelineno-12-101"></a>-------------------
+<a id="__codelineno-12-102" name="__codelineno-12-102" href="#__codelineno-12-102"></a>
+<a id="__codelineno-12-103" name="__codelineno-12-103" href="#__codelineno-12-103"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/migration.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-104" name="__codelineno-12-104" href="#__codelineno-12-104"></a>Generate file <span class="s2">&quot;database.json&quot;</span>:
+<a id="__codelineno-12-105" name="__codelineno-12-105" href="#__codelineno-12-105"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-106" name="__codelineno-12-106" href="#__codelineno-12-106"></a>
+<a id="__codelineno-12-107" name="__codelineno-12-107" href="#__codelineno-12-107"></a>MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-108" name="__codelineno-12-108" href="#__codelineno-12-108"></a>- Reading   <span class="o">[</span><span class="c1">############################################################] 1/1</span>
+<a id="__codelineno-12-109" name="__codelineno-12-109" href="#__codelineno-12-109"></a>Read tables <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-110" name="__codelineno-12-110" href="#__codelineno-12-110"></a>
+<a id="__codelineno-12-111" name="__codelineno-12-111" href="#__codelineno-12-111"></a>Check migration.json:
+<a id="__codelineno-12-112" name="__codelineno-12-112" href="#__codelineno-12-112"></a>- OmbiDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
+<a id="__codelineno-12-113" name="__codelineno-12-113" href="#__codelineno-12-113"></a>- SettingsDatabase <span class="o">[</span>No Config &gt;&gt; Skip<span class="o">]</span>
+<a id="__codelineno-12-114" name="__codelineno-12-114" href="#__codelineno-12-114"></a>- ExternalDatabase <span class="o">[</span>SQLite &gt;&gt; Migrate<span class="o">]</span>
+<a id="__codelineno-12-115" name="__codelineno-12-115" href="#__codelineno-12-115"></a>
+<a id="__codelineno-12-116" name="__codelineno-12-116" href="#__codelineno-12-116"></a>Dump SQLite:
+<a id="__codelineno-12-117" name="__codelineno-12-117" href="#__codelineno-12-117"></a>- ExternalDatabase  <span class="o">[</span><span class="c1">############################################################] 5201/5201</span>
+<a id="__codelineno-12-118" name="__codelineno-12-118" href="#__codelineno-12-118"></a>
+<a id="__codelineno-12-119" name="__codelineno-12-119" href="#__codelineno-12-119"></a>Start clean tables:
+<a id="__codelineno-12-120" name="__codelineno-12-120" href="#__codelineno-12-120"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; PlexEpisode -&gt; rows: <span class="m">2174</span>
+<a id="__codelineno-12-121" name="__codelineno-12-121" href="#__codelineno-12-121"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; PlexSeasonsContent -&gt; rows: <span class="m">150</span>
+<a id="__codelineno-12-122" name="__codelineno-12-122" href="#__codelineno-12-122"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; PlexServerContent -&gt; rows: <span class="m">349</span>
+<a id="__codelineno-12-123" name="__codelineno-12-123" href="#__codelineno-12-123"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; RadarrCache -&gt; rows: <span class="m">270</span>
+<a id="__codelineno-12-124" name="__codelineno-12-124" href="#__codelineno-12-124"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; SonarrCache -&gt; rows: <span class="m">43</span>
+<a id="__codelineno-12-125" name="__codelineno-12-125" href="#__codelineno-12-125"></a>- <span class="o">[</span>CLEAN <span class="o">]</span> -&gt; SonarrEpisodeCache -&gt; rows: <span class="m">2194</span>
+<a id="__codelineno-12-126" name="__codelineno-12-126" href="#__codelineno-12-126"></a>- <span class="o">[</span>BACKUP<span class="o">]</span> -&gt; __EFMigrationsHistory
+<a id="__codelineno-12-127" name="__codelineno-12-127" href="#__codelineno-12-127"></a>- <span class="o">[</span>SKIP  <span class="o">]</span> -&gt; __EFMigrationsHistory -&gt; rows: <span class="m">4</span>
+<a id="__codelineno-12-128" name="__codelineno-12-128" href="#__codelineno-12-128"></a>
+<a id="__codelineno-12-129" name="__codelineno-12-129" href="#__codelineno-12-129"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 8/8</span>
+<a id="__codelineno-12-130" name="__codelineno-12-130" href="#__codelineno-12-130"></a>Clean tables <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-131" name="__codelineno-12-131" href="#__codelineno-12-131"></a>
+<a id="__codelineno-12-132" name="__codelineno-12-132" href="#__codelineno-12-132"></a>Start Migration:
+<a id="__codelineno-12-133" name="__codelineno-12-133" href="#__codelineno-12-133"></a>- Preparing <span class="o">[</span><span class="c1">############################################################] 5207/5207</span>
+<a id="__codelineno-12-134" name="__codelineno-12-134" href="#__codelineno-12-134"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 5180/5180</span>
+<a id="__codelineno-12-135" name="__codelineno-12-135" href="#__codelineno-12-135"></a>- Checking  <span class="o">[</span><span class="c1">############################################################] 14/14</span>
+<a id="__codelineno-12-136" name="__codelineno-12-136" href="#__codelineno-12-136"></a>Migration <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-137" name="__codelineno-12-137" href="#__codelineno-12-137"></a>
+<a id="__codelineno-12-138" name="__codelineno-12-138" href="#__codelineno-12-138"></a>MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-12-139" name="__codelineno-12-139" href="#__codelineno-12-139"></a>
+<a id="__codelineno-12-140" name="__codelineno-12-140" href="#__codelineno-12-140"></a>----------------------------------------------------------------
+<a id="__codelineno-12-141" name="__codelineno-12-141" href="#__codelineno-12-141"></a>----------------------------------------------------------------
+<a id="__codelineno-12-142" name="__codelineno-12-142" href="#__codelineno-12-142"></a>
+<a id="__codelineno-12-143" name="__codelineno-12-143" href="#__codelineno-12-143"></a>&gt; Updating database.json...
+<a id="__codelineno-12-144" name="__codelineno-12-144" href="#__codelineno-12-144"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
 </code></pre></div>
 </li>
 <li>
@@ -2543,84 +2543,84 @@ MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
 </li>
 </ol>
 <h2 id="5-help">5. Help<a class="headerlink" href="#5-help" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ python ombi_sqlite2mysql.py -h
-Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.4<span class="o">)</span> By VSC55
-
-Usage: ombi_sqlite2mysql.py <span class="o">[</span>options<span class="o">]</span>
-
-Options:
-  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
-  -c CONFIG, --config<span class="o">=</span>CONFIG
-                        Path folder config ombi, default /etc/Ombi.
-  --host<span class="o">=</span>HOST           Host server MySQL/MariaDB. If not defined, a file is
-                        generated with INSERT queries.
-  --port<span class="o">=</span>PORT           Port server MySQL/MariaDB, default <span class="m">3306</span>.
-  --db<span class="o">=</span>DB               Name database, default Ombi.
-  --user<span class="o">=</span>USER           User with access to MySQL/MariaDB, default ombi.
-  --passwd<span class="o">=</span>PASSWD       User password <span class="k">for</span> MySQL/MariaDB, default empty.
-  --no_backup           Disable the backup of the <span class="s2">&quot;__EFMigrationsHistory&quot;</span>
-                        table.
-  --save_dump           Save all query insert <span class="k">in</span> the file <span class="s2">&quot;data_ombi.mysql&quot;</span>.
-  --force               Force clear all tables.
-  --only_db_json        Only create or modify the file <span class="s2">&quot;database.json&quot;</span> with
-                        the parameters that we specify.
-  --only_manager_json   Only create or modify the file <span class="s2">&quot;migration.json&quot;</span> with
-                        the parameters that we specify.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$ python ombi_sqlite2mysql.py -h
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.4<span class="o">)</span> By VSC55
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Usage: ombi_sqlite2mysql.py <span class="o">[</span>options<span class="o">]</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Options:
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  -c CONFIG, --config<span class="o">=</span>CONFIG
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>                        Path folder config ombi, default /etc/Ombi.
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  --host<span class="o">=</span>HOST           Host server MySQL/MariaDB. If not defined, a file is
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>                        generated with INSERT queries.
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>  --port<span class="o">=</span>PORT           Port server MySQL/MariaDB, default <span class="m">3306</span>.
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>  --db<span class="o">=</span>DB               Name database, default Ombi.
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>  --user<span class="o">=</span>USER           User with access to MySQL/MariaDB, default ombi.
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>  --passwd<span class="o">=</span>PASSWD       User password <span class="k">for</span> MySQL/MariaDB, default empty.
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>  --no_backup           Disable the backup of the <span class="s2">&quot;__EFMigrationsHistory&quot;</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>                        table.
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>  --save_dump           Save all query insert <span class="k">in</span> the file <span class="s2">&quot;data_ombi.mysql&quot;</span>.
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>  --force               Force clear all tables.
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>  --only_db_json        Only create or modify the file <span class="s2">&quot;database.json&quot;</span> with
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>                        the parameters that we specify.
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>  --only_manager_json   Only create or modify the file <span class="s2">&quot;migration.json&quot;</span> with
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>                        the parameters that we specify.
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$ python ombi_sqlite2mysql_multi.py --help
-Migration tool from SQLite to Multi MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">1</span>.0.0<span class="o">)</span> By VSC55
-
-Usage: ombi_sqlite2mysql_multi.py <span class="o">[</span>options<span class="o">]</span>
-
-Options:
-  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
-  -c CONFIG, --config<span class="o">=</span>CONFIG
-                        Path folder config ombi, default /etc/Ombi.
-  --no_backup           Disable the backup of the <span class="s2">&quot;__EFMigrationsHistory&quot;</span>
-                        table.
-  --force               Force clear all tables.
-  --save_dump           Save all query insert <span class="k">in</span> the file.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$ python ombi_sqlite2mysql_multi.py --help
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Migration tool from SQLite to Multi MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">1</span>.0.0<span class="o">)</span> By VSC55
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Usage: ombi_sqlite2mysql_multi.py <span class="o">[</span>options<span class="o">]</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Options:
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  -c CONFIG, --config<span class="o">=</span>CONFIG
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>                        Path folder config ombi, default /etc/Ombi.
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  --no_backup           Disable the backup of the <span class="s2">&quot;__EFMigrationsHistory&quot;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>                        table.
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>  --force               Force clear all tables.
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>  --save_dump           Save all query insert <span class="k">in</span> the file.
 </code></pre></div>
 <h2 id="6-faq">6. FAQ<a class="headerlink" href="#6-faq" title="Permanent link">&para;</a></h2>
 <p><strong>P: Migrated data verification says there is more data in SQLite than in MySQL or vice versa.</strong>  </p>
-<div class="highlight"><pre><span></span><code>- Running   <span class="o">[</span><span class="c1">############################################################] 9242/9242</span>
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; __efmigrationshistory -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">41</span><span class="o">)]</span> <span class="o">=</span> -41
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; applicationconfiguration -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">3</span><span class="o">)]</span> <span class="o">=</span> -3
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; aspnetroles -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">12</span><span class="o">)]</span> <span class="o">=</span> -12
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; aspnetuserroles -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">190</span><span class="o">)]</span> <span class="o">=</span> -190
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; aspnetusers -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">41</span><span class="o">)]</span> <span class="o">=</span> -41
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; audit -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">15</span><span class="o">)]</span> <span class="o">=</span> -15
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; childrequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">11</span><span class="o">)]</span> <span class="o">=</span> -11
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; episoderequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">407</span><span class="o">)]</span> <span class="o">=</span> -407
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; globalsettings -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">13</span><span class="o">)]</span> <span class="o">=</span> -13
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; issuecategory -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">4</span><span class="o">)]</span> <span class="o">=</span> -4
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; issuecomments -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">1</span><span class="o">)]</span> <span class="o">=</span> -1
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; issues -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">3</span><span class="o">)]</span> <span class="o">=</span> -3
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; movierequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">198</span><span class="o">)]</span> <span class="o">=</span> -198
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; notificationtemplates -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">100</span><span class="o">)]</span> <span class="o">=</span> -100
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; notificationuserid -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2</span><span class="o">)]</span> <span class="o">=</span> -2
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; plexepisode -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2174</span><span class="o">)]</span> <span class="o">=</span> -2174
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; plexseasonscontent -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">150</span><span class="o">)]</span> <span class="o">=</span> -150
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; plexservercontent -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">349</span><span class="o">)]</span> <span class="o">=</span> -349
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; radarrcache -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">270</span><span class="o">)]</span> <span class="o">=</span> -270
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; recentlyaddedlog -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2566</span><span class="o">)]</span> <span class="o">=</span> -2566
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; requestlog -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">247</span><span class="o">)]</span> <span class="o">=</span> -247
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; requestqueue -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">6</span><span class="o">)]</span> <span class="o">=</span> -6
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; requestsubscription -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">18</span><span class="o">)]</span> <span class="o">=</span> -18
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; seasonrequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">28</span><span class="o">)]</span> <span class="o">=</span> -28
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; sonarrcache -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">43</span><span class="o">)]</span> <span class="o">=</span> -43
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; sonarrepisodecache -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2194</span><span class="o">)]</span> <span class="o">=</span> -2194
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; tvrequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">11</span><span class="o">)]</span> <span class="o">=</span> -11
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; usernotificationpreferences -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">125</span><span class="o">)]</span> <span class="o">=</span> -125
-- <span class="o">[</span>!!<span class="o">]</span> -&gt; userqualityprofiles -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">20</span><span class="o">)]</span> <span class="o">=</span> -20
-- Checking  <span class="o">[</span><span class="c1">############################################################] 43/43</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>- Running   <span class="o">[</span><span class="c1">############################################################] 9242/9242</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; __efmigrationshistory -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">41</span><span class="o">)]</span> <span class="o">=</span> -41
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; applicationconfiguration -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">3</span><span class="o">)]</span> <span class="o">=</span> -3
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; aspnetroles -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">12</span><span class="o">)]</span> <span class="o">=</span> -12
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; aspnetuserroles -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">190</span><span class="o">)]</span> <span class="o">=</span> -190
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; aspnetusers -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">41</span><span class="o">)]</span> <span class="o">=</span> -41
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; audit -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">15</span><span class="o">)]</span> <span class="o">=</span> -15
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; childrequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">11</span><span class="o">)]</span> <span class="o">=</span> -11
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; episoderequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">407</span><span class="o">)]</span> <span class="o">=</span> -407
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; globalsettings -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">13</span><span class="o">)]</span> <span class="o">=</span> -13
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; issuecategory -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">4</span><span class="o">)]</span> <span class="o">=</span> -4
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; issuecomments -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">1</span><span class="o">)]</span> <span class="o">=</span> -1
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; issues -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">3</span><span class="o">)]</span> <span class="o">=</span> -3
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; movierequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">198</span><span class="o">)]</span> <span class="o">=</span> -198
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; notificationtemplates -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">100</span><span class="o">)]</span> <span class="o">=</span> -100
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; notificationuserid -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2</span><span class="o">)]</span> <span class="o">=</span> -2
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; plexepisode -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2174</span><span class="o">)]</span> <span class="o">=</span> -2174
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; plexseasonscontent -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">150</span><span class="o">)]</span> <span class="o">=</span> -150
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; plexservercontent -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">349</span><span class="o">)]</span> <span class="o">=</span> -349
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; radarrcache -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">270</span><span class="o">)]</span> <span class="o">=</span> -270
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; recentlyaddedlog -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2566</span><span class="o">)]</span> <span class="o">=</span> -2566
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; requestlog -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">247</span><span class="o">)]</span> <span class="o">=</span> -247
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; requestqueue -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">6</span><span class="o">)]</span> <span class="o">=</span> -6
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; requestsubscription -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">18</span><span class="o">)]</span> <span class="o">=</span> -18
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; seasonrequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">28</span><span class="o">)]</span> <span class="o">=</span> -28
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; sonarrcache -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">43</span><span class="o">)]</span> <span class="o">=</span> -43
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; sonarrepisodecache -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">2194</span><span class="o">)]</span> <span class="o">=</span> -2194
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; tvrequests -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">11</span><span class="o">)]</span> <span class="o">=</span> -11
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; usernotificationpreferences -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">125</span><span class="o">)]</span> <span class="o">=</span> -125
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>- <span class="o">[</span>!!<span class="o">]</span> -&gt; userqualityprofiles -&gt; <span class="o">[</span>SQLite <span class="o">(</span><span class="m">0</span><span class="o">)</span> / MySQL <span class="o">(</span><span class="m">20</span><span class="o">)]</span> <span class="o">=</span> -20
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>- Checking  <span class="o">[</span><span class="c1">############################################################] 43/43</span>
 </code></pre></div>
 <p>S: We will have to force the elimination of the data in all the tables with the parameter <code class="highlight">--force</code> as follows.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Single Database:</span>
-$ python ombi_sqlite2mysql.py -c /etc/Ombi --force --host <span class="m">192</span>.168.1.100 --db Ombi --user ombi --passwd ombi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Single Database:</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>$ python ombi_sqlite2mysql.py -c /etc/Ombi --force --host <span class="m">192</span>.168.1.100 --db Ombi --user ombi --passwd ombi
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1"># Multiple DataBases or Servers MySql/MariaDB:</span>
-$ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Multiple DataBases or Servers MySql/MariaDB:</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 </code></pre></div>
 <p><strong>P: How do I migrate if I'm using docker?</strong></p>
 <p>S: Configure <code class="highlight">database_multi.json</code> as needed and place it into the <code class="highlight">/config</code> folder.<br />
@@ -2629,22 +2629,22 @@ Run <code class="highlight"><span class="nv">docker</span><span class="w"> </spa
 Run your appropriate command for python like  <code class="highlight">python3 /migrate/ombi_sqlite2mysql_multi.py -c /config</code> and your migration will take place.</p>
 <hr />
 <p><strong>P: Table "XXX" requiered is not exist in the server MySQL</strong>
-<div class="highlight"><pre><span></span><code>$ python3 ombi_sqlite2mysql.py -c /etc/Ombi  --host <span class="m">127</span>.0.0.1 --db Ombi --user ombi --passwd ombi
-Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.8<span class="o">)</span> By VSC55
-
-Generate file <span class="s2">&quot;database.json&quot;</span>:
-- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
-
-MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
-- Reading   <span class="o">[</span>............................................................<span class="o">]</span> <span class="m">0</span>/1
-- Error: Table <span class="s2">&quot;__EFMigrationsHistory&quot;</span> requiered is not exist <span class="k">in</span> the server MySQL!!!
-Read tables <span class="o">[</span>!!<span class="o">]</span>
-
-MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ python3 ombi_sqlite2mysql.py -c /etc/Ombi  --host <span class="m">127</span>.0.0.1 --db Ombi --user ombi --passwd ombi
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>Migration tool from SQLite to MySql/MariaDB <span class="k">for</span> ombi <span class="o">(</span><span class="m">3</span>.0.8<span class="o">)</span> By VSC55
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>Generate file <span class="s2">&quot;database.json&quot;</span>:
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>- Saving <span class="k">in</span> <span class="o">(</span>/etc/Ombi/database.json<span class="o">)</span>... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>MySQL &gt; Connecting... <span class="o">[</span>✓<span class="o">]</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>- Reading   <span class="o">[</span>............................................................<span class="o">]</span> <span class="m">0</span>/1
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>- Error: Table <span class="s2">&quot;__EFMigrationsHistory&quot;</span> requiered is not exist <span class="k">in</span> the server MySQL!!!
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>Read tables <span class="o">[</span>!!<span class="o">]</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>MySQL &gt; Disconnecting... <span class="o">[</span>✓<span class="o">]</span>
 </code></pre></div>
 S: This error typically occurs when tables were not successfully created with the --migrate argument to ombi. This may be because the configuration (database.json file) and the databases are not in the same folder where we have installed ombi. The solution is to add the --storage argument when we run the migration.</p>
 <p>In the following example, both the database.json file and the databases are stored in /etc/Ombi:
-<div class="highlight"><pre><span></span><code>$ /opt/ombi/Ombi --migrate --storage /etc/Ombi
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$ /opt/ombi/Ombi --migrate --storage /etc/Ombi
 </code></pre></div></p>
 <hr />
 
@@ -2665,6 +2665,8 @@ S: This error typically occurs when tables were not successfully created with th
               
             </article>
             
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -2783,7 +2785,7 @@ S: This error typically occurs when tables were not successfully created with th
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
