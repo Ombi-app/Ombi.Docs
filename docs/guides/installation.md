@@ -32,6 +32,9 @@ Depending on what database you're using, you will need to keep the following fil
 === "MySQL"
     * `database.json`
 
+=== "MariaDB"
+    * `database.json`
+
 When it comes time to actually launch Ombi on your fresh installation, place the relevant files into the new Ombi directory (wherever you may have put it), and *then* launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).  
 If you are running docker, place these files into the folder you've passed into the container as "/config" for the installation to find them.  
 ***
