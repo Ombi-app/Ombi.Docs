@@ -124,7 +124,7 @@ __Note: MySQL 8+ does authentication a little differently to how 5.7 used to. If
 
 === "MySQL 8.x (recommended)"
 
-    === "Single Database permissions"
+    === "Single Database"
 
         ```mysql
         CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
@@ -132,7 +132,7 @@ __Note: MySQL 8+ does authentication a little differently to how 5.7 used to. If
         GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
         ```
 
-    === "Multiple Database permissions"
+    === "Multiple Databases"
 
         ```mysql
         CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
@@ -146,14 +146,14 @@ __Note: MySQL 8+ does authentication a little differently to how 5.7 used to. If
 
 === "MariaDB"
 
-    === "Single Database permissions"
+    === "Single Database"
 
         ```mysql
         CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
         CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password USING PASSWORD('USE_A_SECURE_PASSWORD_HERE');
         GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
         ```
-    === "Multiple Database permissions"
+    === "Multiple Databases"
 
         ```mysql
         CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
@@ -166,7 +166,7 @@ __Note: MySQL 8+ does authentication a little differently to how 5.7 used to. If
         ```
 === "MySQL 5.7 (deprecated)"
 
-    === "Single Database permissions"
+    === "Single Database"
 
         ```mysql
         CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
@@ -174,7 +174,7 @@ __Note: MySQL 8+ does authentication a little differently to how 5.7 used to. If
         GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
         ```
 
-    === "Multiple Database permissions"
+    === "Multiple Databases"
 
         ```mysql
         CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
