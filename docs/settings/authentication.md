@@ -11,3 +11,11 @@ If the user has PowerUser or Admin permissions then they also require a password
 
 This allows the user to login using their Plex account.  
 A new popup will appear going to Plex.tv asking them to login. Once logged in they will then be able to access Ombi.
+
+## Enable Authentication with Header Variable
+
+This option allows the user to select a HTTP header value that contains the desired login username. 
+> Note that if the header value is present and matches an existing user, default authentication is bypassed - use with caution.  
+
+This is most commonly utilized when Ombi is behind a reverse proxy which handles authentication.
+For example, if using Authentik, the `X-authentik-username` HTTP header which contains the logged in user's username is set by Authentik's proxy outpost.
