@@ -19,6 +19,8 @@ In every notification type, you are able to pass in variables that Ombi will pop
 | {Year} |  The release year of the request     |
 | {EpisodesList} |    A comma separated list of Episodes requested    |
 | {SeasonsList} |    A comma separated list of seasons requested   |
+| {PartiallyAvailableEpisodeCount} | The amount of episodes that have become available |
+| {PartiallyAvailableEpisodesList} | A list of episodes that have become available in a format of `SxE` e.g. 1x1, 1x2, 1x3 for the first three episodes of Season 1.
 | {PosterImage} |   The requested poster image link    |
 | {ApplicationName} |    The Application Name from the Customization Settings   |
 | {ApplicationUrl} |   The Application URL from the Customization Settings    |
