@@ -188,8 +188,12 @@ If you want to run ombi.example.com instead of site.example.com/ombi, then repla
 
 ```conf
     ServerName ombi.example.com
-    ProxyPass / "http://127.0.0.1:5000/"
-    ProxyPassReverse / "http://127.0.0.1:5000/"
+    <Location />
+        ProxyPass http://ip.of.ombi.host:5000/
+        ProxyPassReverse http://ip.of.ombi.host:5000/
+        Order allow,deny
+        Allow from all
+    </Location>
 ```
 
 _**Note:** Lets Encrypt Support_
