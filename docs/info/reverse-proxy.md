@@ -205,14 +205,14 @@ Add `ProxyPass "/.well-known/" "!"` to the configuration file to allow Lets Encr
 While WebSockets are not a _requirement_ for Ombi to work, it does run a lot faster if it is able to use them. WebSocket requests need to be specifically handled when using a reverse proxy.  
 With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the `<Location>` or `<VirtualHost>` block. This will ensure WebSocket requests are handled correctly through the reverse proxy.
 
-=== "Subdirectory"
+### "Subdirectory"
     ```conf
         RewriteEngine On
         RewriteCond %{HTTP:Upgrade} =websocket [NC]
         RewriteRule /ombi/(.*) ws://ip.of.ombi.host:5000/ombi/$1 [P,L]
     ```
 
-=== "Subdomain"
+### "Subdomain"
     ```conf
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
