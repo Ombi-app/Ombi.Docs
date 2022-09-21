@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.ombi.app/info/reverse-proxy/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
       
@@ -23,13 +23,14 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6b80c2a2.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
+
     
     
     
@@ -50,6 +51,7 @@
     
       
 
+    
     
     
   </head>
@@ -153,7 +155,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -1435,6 +1437,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#subdirectory" class="md-nav__link">
+    "Subdirectory"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subdomain" class="md-nav__link">
+    "Subdomain"
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2152,6 +2168,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#subdirectory" class="md-nav__link">
+    "Subdirectory"
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subdomain" class="md-nav__link">
+    "Subdomain"
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2260,10 +2290,11 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
+                  
 
   <a href="https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/info/reverse-proxy.md" title="Edit this page" class="md-content__button md-icon">
     
@@ -2397,7 +2428,7 @@ We then restart nginx to load the new config file, at which point your system wi
 <code class="highlight"><span class="n">nginx</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">reload</span><span class="w"></span></code>  </p>
 <hr />
 <h2 id="apache2">Apache2<a class="headerlink" href="#apache2" title="Permanent link">&para;</a></h2>
-<p>To run Apache with a reverse proxy setup, you'll need to activate certain modules.<br />
+<p>To run Apache with a reverse proxy setup, you'll need to activate certain modules. The following instructions are for Debian, please adjust commands for each package manager your OS uses.<br />
 (assume all commands require sudo):  </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    apt-get install -y libapache2-mod-proxy-html libxml2-dev
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    a2enmod proxy
@@ -2417,7 +2448,7 @@ We then restart nginx to load the new config file, at which point your system wi
 <code class="highlight">ProxyPreserveHost On</code>  </p>
 <p>You can then add the configuration for each item you wish to proxy.<br />
 There are two methods for doing this.<br />
-One is with a 'Location' section, the other is simply a direct mapping (the dirty way).<br />
+One is with a 'Location' section, the other is simply a direct mapping.<br />
 The mapping goes just before the <code class="highlight">&lt;/VirtualHost&gt;</code> closing tag, regardless of the method.<br />
 If you want to run ombi.example.com instead of site.example.com/ombi, then replace <code class="highlight">/ombi</code> with <code class="highlight">/</code> and drop the <code class="highlight">/ombi</code> from the end of the internal addresses, as well as removing the BaseURL from Ombi itself.</p>
 <h3 id="apache2-subdirectory">Apache2 Subdirectory<a class="headerlink" href="#apache2-subdirectory" title="Permanent link">&para;</a></h3>
@@ -2428,32 +2459,33 @@ If you want to run ombi.example.com instead of site.example.com/ombi, then repla
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="nt">&lt;/Location&gt;</span>
 </code></pre></div>
 <h3 id="apache2-subdomain">Apache2 Subdomain<a class="headerlink" href="#apache2-subdomain" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    <span class="nt">&lt;Location</span> <span class="nt">/&gt;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    ProxyPass http://ip.of.ombi.host:5000/ombi
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    ProxyPassReverse http://ip.of.ombi.host:5000/ombi
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    Order allow, deny
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    Allow from all
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="nt">&lt;/Location&gt;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    ServerName ombi.example.com
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nt">&lt;Location</span> <span class="nt">/&gt;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        ProxyPass http://ip.of.ombi.host:5000/
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        ProxyPassReverse http://ip.of.ombi.host:5000/
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        Order allow,deny
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        Allow from all
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="nt">&lt;/Location&gt;</span>
 </code></pre></div>
+<p><em><strong>Note:</strong> Lets Encrypt Support</em></p>
+<p>Add <code class="highlight">ProxyPass &quot;/.well-known/&quot; &quot;!&quot;</code> to the configuration file to allow Lets Encrypt to renew the subdomain TLS certificate.</p>
 <h3 id="apache2-websocket-requests">Apache2 WebSocket requests<a class="headerlink" href="#apache2-websocket-requests" title="Permanent link">&para;</a></h3>
 <p>While WebSockets are not a <em>requirement</em> for Ombi to work, it does run a lot faster if it is able to use them. WebSocket requests need to be specifically handled when using a reverse proxy.<br />
-With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the <code class="highlight">&lt;Location&gt;</code> block. This will ensure WebSocket requests are handled correctly through the reverse proxy.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Subdirectory</label><label for="__tabbed_1_2">Subdomain</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="n">RewriteEngine</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">RewriteCond</span><span class="w"> </span><span class="o">%</span><span class="err">{</span><span class="nl">HTTP</span><span class="p">:</span><span class="n">Upgrade</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="n">websocket</span><span class="w"> </span><span class="o">[</span><span class="n">NC</span><span class="o">]</span><span class="w"></span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">RewriteRule</span><span class="w"> </span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nl">ws</span><span class="p">:</span><span class="o">//</span><span class="n">ip</span><span class="p">.</span><span class="k">of</span><span class="p">.</span><span class="n">ombi</span><span class="p">.</span><span class="k">host</span><span class="err">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="w"> </span><span class="o">[</span><span class="n">P,L</span><span class="o">]</span><span class="w"></span>
+With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the <code class="highlight">&lt;Location&gt;</code> or <code class="highlight">&lt;VirtualHost&gt;</code> block. This will ensure WebSocket requests are handled correctly through the reverse proxy.</p>
+<h3 id="subdirectory">"Subdirectory"<a class="headerlink" href="#subdirectory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">```</span><span class="n">conf</span><span class="w"></span>
+<span class="w">    </span><span class="n">RewriteEngine</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
+<span class="w">    </span><span class="n">RewriteCond</span><span class="w"> </span><span class="o">%</span><span class="err">{</span><span class="nl">HTTP</span><span class="p">:</span><span class="n">Upgrade</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="n">websocket</span><span class="w"> </span><span class="o">[</span><span class="n">NC</span><span class="o">]</span><span class="w"></span>
+<span class="w">    </span><span class="n">RewriteRule</span><span class="w"> </span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nl">ws</span><span class="p">:</span><span class="o">//</span><span class="n">ip</span><span class="p">.</span><span class="k">of</span><span class="p">.</span><span class="n">ombi</span><span class="p">.</span><span class="k">host</span><span class="err">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">ombi</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="w"> </span><span class="o">[</span><span class="n">P,L</span><span class="o">]</span><span class="w"></span>
+<span class="err">```</span><span class="w"></span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="n">RewriteEngine</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">RewriteCond</span><span class="w"> </span><span class="o">%</span><span class="err">{</span><span class="nl">HTTP</span><span class="p">:</span><span class="n">Upgrade</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="n">websocket</span><span class="w"> </span><span class="o">[</span><span class="n">NC</span><span class="o">]</span><span class="w"></span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="n">RewriteRule</span><span class="w"> </span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nl">ws</span><span class="p">:</span><span class="o">//</span><span class="n">ip</span><span class="p">.</span><span class="k">of</span><span class="p">.</span><span class="n">ombi</span><span class="p">.</span><span class="k">host</span><span class="err">:</span><span class="mi">5000</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="w"> </span><span class="o">[</span><span class="n">P,L</span><span class="o">]</span><span class="w"></span>
+<h3 id="subdomain">"Subdomain"<a class="headerlink" href="#subdomain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">```</span><span class="n">conf</span><span class="w"></span>
+<span class="n">RewriteEngine</span><span class="w"> </span><span class="k">On</span><span class="w"></span>
+<span class="n">RewriteCond</span><span class="w"> </span><span class="o">%</span><span class="err">{</span><span class="nl">HTTP</span><span class="p">:</span><span class="n">Upgrade</span><span class="err">}</span><span class="w"> </span><span class="o">=</span><span class="n">websocket</span><span class="w"> </span><span class="o">[</span><span class="n">NC</span><span class="o">]</span><span class="w"></span>
+<span class="n">RewriteRule</span><span class="w"> </span><span class="p">(.</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="nl">ws</span><span class="p">:</span><span class="o">//</span><span class="n">ip</span><span class="p">.</span><span class="k">of</span><span class="p">.</span><span class="n">ombi</span><span class="p">.</span><span class="k">host</span><span class="err">:</span><span class="mi">5000</span><span class="o">/</span><span class="err">$</span><span class="mi">1</span><span class="w"> </span><span class="o">[</span><span class="n">P,L</span><span class="o">]</span><span class="w"></span>
+<span class="err">```</span><span class="w"></span>
 </code></pre></div>
-</div>
-</div>
-</div>
 <p>Once you have added this to the virtualhost config for your Ombi proxy (be it subdomain or subdirectory), you'll need to run <code class="highlight">service apache2 restart</code> to make the changes go live.<br />
 For Linux distributions using <code class="highlight">systemd</code>, you can use <code class="highlight">systemctl restart apache2</code>.</p>
 <hr />
@@ -2672,7 +2704,7 @@ For more information and examples on the usage of labels in docker compose (spec
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-01-11T11:05:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-01-11</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-09-21T21:15:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-09-21</span>
       
     
   </small>
@@ -2681,12 +2713,14 @@ For more information and examples on the usage of labels in docker compose (spec
 
 
 
-              
-            </article>
-            
+
+                
+              </article>
+            </div>
+          
+          
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
-          </div>
         </div>
         
           <a href="#" class="md-top md-icon" data-md-component="top" hidden>
@@ -2804,10 +2838,10 @@ For more information and examples on the usage of labels in docker compose (spec
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.2ab50757.min.js"></script>
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
