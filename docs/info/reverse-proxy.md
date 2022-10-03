@@ -145,7 +145,7 @@ __Windows:__
 
 ## Apache2
 
-To run Apache with a reverse proxy setup, you'll need to activate certain modules.  
+To run Apache with a reverse proxy setup, you'll need to activate certain modules. The following instructions are for Debian, please adjust commands for each package manager your OS uses.  
 (assume all commands require sudo):  
 
 ```bash
@@ -170,7 +170,7 @@ Just below the `DocumentRoot` entry:
 
 You can then add the configuration for each item you wish to proxy.  
 There are two methods for doing this.  
-One is with a 'Location' section, the other is simply a direct mapping (the dirty way).  
+One is with a 'Location' section, the other is simply a direct mapping.  
 The mapping goes just before the `</VirtualHost>` closing tag, regardless of the method.  
 If you want to run ombi.example.com instead of site.example.com/ombi, then replace `/ombi` with `/` and drop the `/ombi` from the end of the internal addresses, as well as removing the BaseURL from Ombi itself.
 
@@ -187,31 +187,36 @@ If you want to run ombi.example.com instead of site.example.com/ombi, then repla
 ### Apache2 Subdomain
 
 ```conf
+    ServerName ombi.example.com
     <Location />
-    ProxyPass http://ip.of.ombi.host:5000/ombi
-    ProxyPassReverse http://ip.of.ombi.host:5000/ombi
-    Order allow, deny
-    Allow from all
+        ProxyPass http://ip.of.ombi.host:5000/
+        ProxyPassReverse http://ip.of.ombi.host:5000/
+        Order allow,deny
+        Allow from all
     </Location>
 ```
+
+_**Note:** Lets Encrypt Support_
+
+Add `ProxyPass "/.well-known/" "!"` to the configuration file to allow Lets Encrypt to renew the subdomain TLS certificate.
 
 ### Apache2 WebSocket requests
 
 While WebSockets are not a _requirement_ for Ombi to work, it does run a lot faster if it is able to use them. WebSocket requests need to be specifically handled when using a reverse proxy.  
-With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the `<Location>` block. This will ensure WebSocket requests are handled correctly through the reverse proxy.
+With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the `<Location>` or `<VirtualHost>` block. This will ensure WebSocket requests are handled correctly through the reverse proxy.
 
-=== "Subdirectory"
+### "Subdirectory"
     ```conf
         RewriteEngine On
         RewriteCond %{HTTP:Upgrade} =websocket [NC]
         RewriteRule /ombi/(.*) ws://ip.of.ombi.host:5000/ombi/$1 [P,L]
     ```
 
-=== "Subdomain"
+### "Subdomain"
     ```conf
-        RewriteEngine On
-        RewriteCond %{HTTP:Upgrade} =websocket [NC]
-        RewriteRule (.*) ws://ip.of.ombi.host:5000/$1 [P,L]
+    RewriteEngine On
+    RewriteCond %{HTTP:Upgrade} =websocket [NC]
+    RewriteRule (.*) ws://ip.of.ombi.host:5000/$1 [P,L]
     ```
 
 Once you have added this to the virtualhost config for your Ombi proxy (be it subdomain or subdirectory), you'll need to run `service apache2 restart` to make the changes go live.  
