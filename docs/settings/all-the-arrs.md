@@ -172,9 +172,8 @@ This tells Ombi that Sonarr wants things organised into Season subfolders. Usual
 
 #### V3
 
-Sonarr made V3 their "stable" branch, meaning V2 is now 'legacy'.  
-This option is now the default for new sites, and should only be disabled if you are running the legacy version.  
-_We do not recommend this._  
+If you still have this option, _update your Ombi instance_.  
+Sonarr made V3 their "stable" branch a while ago, and we now use the V3 API by default (in preparation for the V4 API).
 ***
 
 ### Advanced
