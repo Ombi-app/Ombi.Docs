@@ -44,6 +44,10 @@ To send email via Gmail with a direct SMTP connection, you may need to add an "A
 This is only possible if you have 2 factor authentication turned ON with your Gmail account.  
 More information can be found [here](https://support.google.com/accounts/answer/185833)
 
+### App Password
+
+Once you have generated an app password for your Gmail account, this should be used in the "password" field instead of your usual password.
+
 ### Email failing even with correct SMTP settings
 
 A common cause of the system failing to generate emails is a missing entry under [Settings -> Customisation > Application URL](../../customization/#application-url).  
