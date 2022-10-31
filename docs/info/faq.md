@@ -171,7 +171,10 @@ _Do not forget to disable debug logging once you are done - it is for troublesho
         "System.Net.Http.HttpClient.health-checks": "Warning",
         "HealthChecks": "Warning"
         }
-    }
+    },
+    "Serilog": {
+        "MinimumLevel": "Warning"
+    },
     ```
 
 === "Debug Logging"
@@ -186,7 +189,10 @@ _Do not forget to disable debug logging once you are done - it is for troublesho
         "System.Net.Http.HttpClient.health-checks": "Warning",
         "HealthChecks": "Warning"
         }
-    }
+    },
+    "Serilog": {
+        "MinimumLevel": "Debug"
+    },
     ```
 
 === "Trace Logging"
@@ -201,5 +207,8 @@ _Do not forget to disable debug logging once you are done - it is for troublesho
         "System.Net.Http.HttpClient.health-checks": "Warning",
         "HealthChecks": "Warning"
         }
-    }
+    },
+    "Serilog": {
+        "MinimumLevel": "Trace"
+    },
     ```
