@@ -226,15 +226,22 @@ Deps: `compat-openssl10 libcurl-devel libunwind-devel openssl-devel`
 To have Ombi run at startup, add `RunAtLoad WorkingDirectory /opt/Ombi` to the command.  
 i.e.  `/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi`  
 
-### Security Note
+### Things to be aware of with macOS
 
-**_As of macOS Catalina, Apple has strengthened Gatekeeper considerably._**  
-As a result, allowing apps from 'unverified' sources is now a hidden option.  
-While you could outright disable Gatekeeper and allow all unverified apps to run without prompt, that is a significant hole to punch in your security for one application to work.  
-Instead, we recommend turning it off for the folder you have Ombi in specifically.  
-To do this, in Terminal, run `echo yourpassword | sudo -S xattr -r -d com.apple.quarantine /your/path/to/Ombi` (substituting your password and your path to Ombi).  
-
-**_Our preferred deployment method for macOS is still as a Docker container, as it does not impact security on the host OS in the same way._**
+=== "Port 5000 in use"
+    MacOS Monterey now uses port 5000 as part of the AirPlay Receiver.  
+    You can either turn off AirPlay Receiver from within the Sharing options menu, or use an alternate port for Ombi.  
+    _If you turn off AirPlay you will be unable to use your Mac for receiving audio via AirPlay._
+=== "Gatekeeper"
+    **_As of macOS Catalina, Apple has strengthened Gatekeeper considerably._**  
+    As a result, allowing apps from 'unverified' sources is now a hidden option.  
+    While you could outright disable Gatekeeper and allow all unverified apps to run without prompt, that is a significant hole to punch in your security for one application to work.  
+    Instead, we recommend turning it off for the folder you have Ombi in specifically.  
+    To do this, in Terminal, run  
+    `echo yourpassword | sudo -S xattr -r -d com.apple.quarantine /your/path/to/Ombi`  
+    (substituting your password and your path to Ombi).  
+=== "Preferred Method"
+    **_Our preferred deployment method for macOS is still as a Docker container, as it does not impact security on the host OS in the same way._**
 
 ***
 
