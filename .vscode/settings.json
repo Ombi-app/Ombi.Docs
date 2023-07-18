@@ -3,7 +3,8 @@
         "default": true,
         "code-block-style": { "style": "consistent" },
         "ol-prefix": { "style": "one_or_ordered" },
-        "MD046": false
+        "MD046": false,
+        "emphasis-style": { "style": "underscore" }
     },
     "cSpell.allowCompoundWords": true,
     "cSpell.language": "en-GB",
