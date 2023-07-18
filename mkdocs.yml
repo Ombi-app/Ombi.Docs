@@ -150,6 +150,7 @@ nav:
     - Couchpotato: settings/couchpotato.md
     - DogNzb: settings/dognzb.md
     - Radarr: settings/all-the-arrs.md
+    - User Preferences: settings/user-preferences.md
     - Notifications: 
       - WARNING: settings/notifications.md
       - Mobile: settings/notifications/cloudmobile.md
