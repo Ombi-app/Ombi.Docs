@@ -4,7 +4,8 @@
         "code-block-style": { "style": "consistent" },
         "ol-prefix": { "style": "one_or_ordered" },
         "MD046": false,
-        "emphasis-style": { "style": "underscore" }
+        "emphasis-style": { "style": "underscore" },
+        "ul-style": { "style": "asterisk" }
     },
     "cSpell.allowCompoundWords": true,
     "cSpell.language": "en-GB",
