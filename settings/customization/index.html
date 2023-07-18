@@ -21,7 +21,7 @@
         <link rel="next" href="../landingpage/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -514,6 +514,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -630,8 +632,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-css" class="md-nav__link">
-    Custom CSS
+  <a href="#custom-favicon" class="md-nav__link">
+    Custom Favicon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-available-content-on-the-discover-page" class="md-nav__link">
+    Hide Available Content on the Discover Page
   </a>
   
 </li>
@@ -646,6 +655,13 @@
         <li class="md-nav__item">
   <a href="#use-custom-page" class="md-nav__link">
     Use Custom Page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-css" class="md-nav__link">
+    Custom CSS
   </a>
   
 </li>
@@ -881,6 +897,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../user-preferences/" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
@@ -891,7 +921,7 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_19" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_20" >
       
       
         
@@ -927,13 +957,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_3_19" id="__nav_3_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="0">
           Notifications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_19">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_20_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_20">
           <span class="md-nav__icon md-icon"></span>
           Notifications
         </label>
@@ -2027,8 +2057,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-css" class="md-nav__link">
-    Custom CSS
+  <a href="#custom-favicon" class="md-nav__link">
+    Custom Favicon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-available-content-on-the-discover-page" class="md-nav__link">
+    Hide Available Content on the Discover Page
   </a>
   
 </li>
@@ -2043,6 +2080,13 @@
         <li class="md-nav__item">
   <a href="#use-custom-page" class="md-nav__link">
     Use Custom Page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-css" class="md-nav__link">
+    Custom CSS
   </a>
   
 </li>
@@ -2106,21 +2150,27 @@ This would be if you have Ombi configured behind a reverse proxy, with SSL enabl
 <h2 id="custom-logo">Custom Logo<a class="headerlink" href="#custom-logo" title="Permanent link">&para;</a></h2>
 <p>This is used for the Login Page, Landing Page and also any notifications that we send a logo e.g. Email Notifications.</p>
 <p><strong>Format:</strong> <code class="highlight">http://url.to.picture/</code></p>
-<h2 id="custom-css">Custom <abbr title="Cascading Style Sheet, used for storing common HTML formatting.">CSS</abbr><a class="headerlink" href="#custom-css" title="Permanent link">&para;</a></h2>
-<p>There are two ways we officially support custom <abbr title="Cascading Style Sheet, used for storing common HTML formatting.">CSS</abbr>.
-They are by import or direct entry.
-For some ideas, you can find some common customisations under <a href="../../info/common-themes/">Common Themes</a><br />
-Any <abbr title="Cascading Style Sheet, used for storing common HTML formatting.">CSS</abbr> you wish to use should be put into the Custom <abbr title="Cascading Style Sheet, used for storing common HTML formatting.">CSS</abbr> box. It could be a reference to a <abbr title="Cascading Style Sheet, used for storing common HTML formatting.">CSS</abbr> file (via an import reference) or could be raw <abbr title="Cascading Style Sheet, used for storing common HTML formatting.">CSS</abbr> itself.</p>
-<p><strong>Note:</strong> For <abbr title="Cascading Style Sheet, used for storing common HTML formatting.">CSS</abbr> import to work, it requires a <abbr title="Multipart Internet Mail Extension.">MIME</abbr> type of <code class="highlight">text/css</code> or the browser will not load it as a stylesheet.  </p>
+<h2 id="custom-favicon">Custom Favicon<a class="headerlink" href="#custom-favicon" title="Permanent link">&para;</a></h2>
+<p>This will default to the Ombi logo, but you can have your own favicon load if you wish to.<br />
+This should point to an externally accessible URL.  </p>
+<h2 id="hide-available-content-on-the-discover-page">Hide Available Content on the Discover Page<a class="headerlink" href="#hide-available-content-on-the-discover-page" title="Permanent link">&para;</a></h2>
+<p>Does what it says on the tin.<br />
+Anything that you have in your media server(s) already (that Ombi is aware of) will be hidden from the discover page.</p>
 <h2 id="custom-donation">Custom Donation<a class="headerlink" href="#custom-donation" title="Permanent link">&para;</a></h2>
 <p>We have the ability to set a custom donation url and message, this will be displayed to all users unlike the ombi donation message.</p>
 <h2 id="use-custom-page">Use Custom Page<a class="headerlink" href="#use-custom-page" title="Permanent link">&para;</a></h2>
-<p>This allows you to add a blank page to the Nav bar that you are able to fully customise the <abbr title="Hyper Text Markup Language.">HTML</abbr> with a WYSIWYG editor.<br />
+<p>This allows you to add a blank page to the Nav bar that you are able to fully customise the HTML with a WYSIWYG editor.<br />
 Once you enable this setting, just refresh the page and you will see the new option in the navigation bar, from there you can edit your page.  </p>
 <p><strong>Note:</strong> You must add the <em>Edit Custom Page</em> Role to your user account before you are able to edit the Custom Page.<br />
 This can be done via the <code class="highlight">User Management</code> page.  </p>
 <p><strong>Disclaimer</strong>: The <em>Custom Page</em> is public and can be accessed without authorization, there are plans to add an authorization toggle to this page.<br />
 Use the custom page with caution.  </p>
+<h2 id="custom-css">Custom CSS<a class="headerlink" href="#custom-css" title="Permanent link">&para;</a></h2>
+<p>There are two ways we officially support custom CSS.
+They are by import or direct entry.
+For some ideas, you can find some common customisations under <a href="../../info/common-themes/">Common Themes</a><br />
+Any CSS you wish to use should be put into the Custom CSS box. It could be a reference to a CSS file (via an import reference) or could be raw CSS itself.</p>
+<p><strong>Note:</strong> For CSS import to work, it requires a MIME type of <code class="highlight">text/css</code> or the browser will not load it as a stylesheet.  </p>
 <h2 id="landinglogin-page-backgrounds">Landing/Login Page Backgrounds<a class="headerlink" href="#landinglogin-page-backgrounds" title="Permanent link">&para;</a></h2>
 <p>We do have the ability to change what backgrounds are used on the landing and login pages.</p>
 <p>This is not done via the Ombi UI, but done in the <code class="highlight">appsettings.json</code> file in the Ombi directory <a href="https://github.com/Ombi-app/Ombi/blob/master/src/Ombi/appsettings.json">Example.</a><br />
@@ -2168,7 +2218,7 @@ If you do not want any TV shows or Movies then leave that section as an empty ar
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-09-22T23:31:54+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-09-22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T21:58:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
       
     
   </small>
@@ -2276,14 +2326,18 @@ If you do not want any TV shows or Movies then leave that section as an empty ar
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        
+          <script src="../../js/timeago.min.js"></script>
+        
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../js/timeago_mkdocs_material.js"></script>
+        
       
     
   </body>

@@ -18,10 +18,10 @@
         <link rel="prev" href="../dognzb/">
       
       
-        <link rel="next" href="../notifications/">
+        <link rel="next" href="../user-preferences/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -514,6 +514,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -835,6 +837,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#add-the-user-as-a-tag" class="md-nav__link">
+    Add the user as a tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hostname" class="md-nav__link">
     Hostname
   </a>
@@ -879,6 +888,13 @@
           <li class="md-nav__item">
   <a href="#root-folders" class="md-nav__link">
     Root Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag" class="md-nav__link">
+    Tag
   </a>
   
 </li>
@@ -1024,6 +1040,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../user-preferences/" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
@@ -1034,7 +1064,7 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_19" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_20" >
       
       
         
@@ -1070,13 +1100,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_3_19" id="__nav_3_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="0">
           Notifications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_19">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_20_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_20">
           <span class="md-nav__icon md-icon"></span>
           Notifications
         </label>
@@ -2165,6 +2195,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#add-the-user-as-a-tag" class="md-nav__link">
+    Add the user as a tag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hostname" class="md-nav__link">
     Hostname
   </a>
@@ -2209,6 +2246,13 @@
           <li class="md-nav__item">
   <a href="#root-folders" class="md-nav__link">
     Root Folders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag" class="md-nav__link">
+    Tag
   </a>
   
 </li>
@@ -2377,8 +2421,6 @@ They should be filled in in the following order:  </p>
 <ol>
 <li>Enable.<br />
 Toggle this to "on".</li>
-<li>V3.<br />
-Unless you are running a horrifically old version of Sonarr/Radarr/Lidarr, this should be enabled.</li>
 <li>Hostname/IP<br />
 The IP address or hostname your Sonarr/Radarr/Lidarr is running on.</li>
 <li>Port<br />
@@ -2395,6 +2437,8 @@ Admins get a prompt to override these when making requests, and they can have di
 <li>Folders/Root Folders<br />
 These also need to be loaded from the relevant *arr. Hit the button, then once they've been retrieved you'll need to select them from the relevant dropdowns.<br />
 Admins get a prompt to override these when making requests, and they can have different ones set per-user if you so choose. Here is where the default selection is.</li>
+<li>Tags (optional)
+This allows you to define a tag to be attached to anything added to *arr for quick identification in their lists.</li>
 <li>Sonarr<ol>
 <li>Languages
 This is mostly to account for things like Anime vs TV, but it does need setting. Load them with the button, select from the dropdown.</li>
@@ -2428,17 +2472,19 @@ Hit the button to save settings. If at any point one of the "Load" buttons didn'
 If you have set up a Plex/Emby/Jellyfin connection in Ombi, then Ombi will use that to detect what is available (and this should be disabled).<br />
 <em>We recommend using the media server rather than this option - it's mainly for people who use things like XBMC and local players.</em></p>
 <hr />
+<h3 id="add-the-user-as-a-tag">Add the user as a tag<a class="headerlink" href="#add-the-user-as-a-tag" title="Permanent link">&para;</a></h3>
+<p>This will add the username as a tag to requested content in the relevant *arr, allowing you to find them easily.</p>
 <h3 id="hostname">Hostname<a class="headerlink" href="#hostname" title="Permanent link">&para;</a></h3>
 <p>This is the address you use to connect to the service. If it's running on the same machine as Ombi, localhost usually works.<br />
 If you're running the services (and Ombi itself) in docker containers, you could use the <a href="../../info/docker-containers">container IP</a>.<br />
 If the services are on multiple machines, IP addresses tend to be useful here.<br />
-If, however, you use the service behind a <a href="../../info/reverse-proxy">reverse proxy</a>, then the 'hostname' field is the bit from <strong>before</strong> the 'baseurl'.<br />
+If, however, you use the service behind a <a href="../../info/reverse-proxy">reverse proxy</a>, then the 'hostname' field is the bit from <em>before</em> the 'baseurl'.<br />
 In the examples above, this would be <code class="highlight">app.example.com</code>.</p>
 <hr />
 <h3 id="port">Port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h3>
 <p>If you're not using a reverse proxy, this is whatever port you use to access the service (it's the number after the second ":" in the address bar). In the case of Sonarr, the default is <code class="highlight"><span class="mf">8989</span></code>.<br />
-If you're using a reverse proxy <em>without</em> SSL, the port will be <code class="highlight"><span class="mf">80</span></code> <em>(pro-tip: don't do that)</em>.<br />
-If you're running <em>with</em> SSL, the port will be <code class="highlight"><span class="mf">443</span></code>.  </p>
+If you're using a reverse proxy <em>without</em>*<em> SSL, the port will be <code class="highlight"><span class="mf">80</span></code> </em>(pro-tip: don't do that)<em>.<br />
+If you're running _with</em> SSL, the port will be <code class="highlight"><span class="mf">443</span></code>.  </p>
 <hr />
 <h3 id="ssl">SSL<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h3>
 <p>If you're running a reverse proxy with SSL, and are going through that address rather than the direct internal address, this needs to be enabled. Otherwise, leave it off.</p>
@@ -2460,6 +2506,8 @@ If it doesn't work, save the settings and "Test Connectivity". You may not be ab
 <p>Depending on the service, you may have this appear several times. There will be a button to 'get' these from the service. Click it, wait, and select one.<br />
 If it doesn't work, save the settings and "Test Connectivity". You may not be able to communicate with the service yet.</p>
 <hr />
+<h3 id="tag">Tag<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h3>
+<p>This allows you to define a tag to be attached to anything added to *arr for quick identification in their lists.</p>
 <h3 id="submit">Submit<a class="headerlink" href="#submit" title="Permanent link">&para;</a></h3>
 <p>This button is used to save and activate your new settings.<br />
 This will not work if you have not filled in <em>every</em> option for the relevant service (folders, qualities, languages, seasons, albums, availability).  </p>
@@ -2508,7 +2556,7 @@ This means it will not auto download.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-10-03T03:22:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-10-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T23:03:35+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
       
     
   </small>
@@ -2616,14 +2664,18 @@ This means it will not auto download.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        
+          <script src="../../js/timeago.min.js"></script>
+        
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../js/timeago_mkdocs_material.js"></script>
+        
       
     
   </body>

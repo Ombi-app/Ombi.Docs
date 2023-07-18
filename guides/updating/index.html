@@ -21,7 +21,7 @@
         <link rel="next" href="../discover/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -627,6 +627,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -898,6 +900,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../settings/user-preferences/" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
@@ -908,7 +924,7 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_19" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_20" >
       
       
         
@@ -944,13 +960,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_3_19" id="__nav_3_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="0">
           Notifications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_19">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_20_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_20">
           <span class="md-nav__icon md-icon"></span>
           Notifications
         </label>
@@ -2300,8 +2316,8 @@ This defines how ombi connects to the MySQL server.</li>
 </div>
 </div>
 <h2 id="external-script-windows">External Script (Windows)<a class="headerlink" href="#external-script-windows" title="Permanent link">&para;</a></h2>
-<p>Windows users who are running Ombi as a service can make use of a Powershell script to update their Ombi instance automatically. 
-This script can be scheduled in Task Scheduler to run at whatever cadence you specify (daily is recommended).
+<p>Windows users who are running Ombi as a service can make use of a Powershell script to update their Ombi instance automatically.<br />
+This script can be scheduled in Task Scheduler to run at whatever cadence you specify (daily is recommended).<br />
 The script will check the current version of your Ombi instance against the latest release, and if the latest version is newer than the current installed version, the script will stop the Ombi service, download and install the update, and restart the service.  </p>
 <p>This script only works for develop releases and should be considered <strong><em>beta</em></strong>.<br />
 <strong><em>Do not use unless you know what you are doing</em></strong>.</p>
@@ -2310,18 +2326,23 @@ If you would prefer a pre-compiled executable file that can be scheduled in task
 <h3 id="installation-and-use">Installation and Use<a class="headerlink" href="#installation-and-use" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Back up your SQLite database and/or your database.json files from your Ombi installation. If something goes wrong with the automatic update script, these files may be deleted and will need to be recovered.</li>
-<li>The script deletes the contents of the Ombi folder during the update process. The update script must reside in its own folder, separate from your Ombi install folder. Do not put the script into the same folder or a subfolder within your Ombi install directory.   </li>
-<li>If you want to execute the script automatically using Task Scheduler, you must create a new task and fill out all the parameters as follows:</li>
-<li>Create a new task, with an informative name and description. </li>
-<li>Within the Triggers tab, set the task to execute at your desired cadence. Daily is recommended.</li>
-<li>Within the Action tab, create a new action. Set the task to Run whether user is logged on or not, and Run with highest privileges.</li>
-<li>In the Program/script field, enter the location of your Powershell executable. This typically resides in <code class="highlight">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</code>, but be sure to check the location for your system. </li>
-<li>If you are using the pre-compiled executable file, enter this file's path instead. If you are using the Powershell script, add the full path to the script as the first argument in the Add arguments field.</li>
-<li>Add all the remaining arguments (see instructions below) too the Add arguments field. Be sure to surround all arguments in quotation marks, and escape any spaces in folder paths. When executing the script using Task Scheduler, it is best to specify all arguments rather than relying on the default values.</li>
-<li>In the Start in field, enter the location of the script file or executable.</li>
-<li>When you are finished, you will be prompted to enter the credentials for the user account that the script/executable will be run using. You must use an Administrator account.</li>
+<li>The script deletes the contents of the Ombi folder during the update process. The update script must reside in its own folder, separate from your Ombi install folder. Do not put the script into the same folder or a subfolder within your Ombi install directory.  </li>
+<li>If you want to execute the script automatically using Task Scheduler, you must create a new task and fill out all the parameters as follows:  <ul>
+<li>Create a new task, with an informative name and description.  </li>
+<li>Within the Triggers tab, set the task to execute at your desired cadence. Daily is recommended.  </li>
+<li>Within the Action tab, create a new action. Set the task to Run whether user is logged on or not, and Run with highest privileges.  </li>
+<li>In the Program/script field, enter the location of your Powershell executable.<br />
+This typically resides in <code class="highlight">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</code>, but be sure to check the location for your system.  </li>
+<li>If you are using the pre-compiled executable file, enter this file's path instead. If you are using the Powershell script, add the full path to the script as the first argument in the Add arguments field.  </li>
+<li>Add all the remaining arguments (see instructions below) to the "Add arguments" field.<br />
+Be sure to surround all arguments in quotation marks, and escape any spaces in folder paths.<br />
+When executing the script using Task Scheduler, it is best to specify all arguments rather than relying on the default values.  </li>
+<li>In the "Start in" field, enter the location of the script file or executable.  </li>
+<li>When you are finished, you will be prompted to enter the credentials for the user account that the script/executable will be run using. You must use an Administrator account.  </li>
 </ul>
-<p><img alt="image" src="https://github.com/Ombi-app/Ombi.Docs/assets/2737227/31654903-913e-4b2c-8e58-4f00da4bce86" /></p>
+</li>
+</ul>
+<p><img alt="Scheduled Update Task" loading="lazy" src="../../assets/images/task_scheduler_updater.png" />  </p>
 <h3 id="arguments">Arguments<a class="headerlink" href="#arguments" title="Permanent link">&para;</a></h3>
 <p>You will need to pass arguments to the script when calling it for it to work. The script must be run as an Administrator.  </p>
 <ul>
@@ -2337,22 +2358,22 @@ This is where the script will download to. It's only required if you don't want 
 Most of us just use 'Ombi', so it's the default. If you used something different, pass in this argument with whatever you used.</li>
 <li>Filename<br />
 This is only for if you are using x86. If this is the case, pass in <code class="highlight">Win10-x86.zip</code> as the argument. Default is <code class="highlight">Win10-x64.zip</code>.  </li>
-<li>Force<br />
-This is a simple true/false switch - it will force the script to install the newest version, even if it's already installed. If the argument isn't there, it's a <code class="highlight">false</code>. The moment you add <code class="highlight">-Force</code> to the end of the command you'd normally use to run this script, it'll be <code class="highlight">true</code> and force a reinstall.</li>
+<li>Force  </li>
 </ul>
+<p>This is a simple true/false switch - it will force the script to install the newest version, even if it's already installed. If the argument isn't there, it's a <code class="highlight">false</code>. The moment you add <code class="highlight">-Force</code> to the end of the command you'd normally use to run this script, it'll be <code class="highlight">true</code> and force a reinstall.</p>
 <p>To pass arguments to a Powershell script, you name them when calling the script using the following syntax:<br />
 <code class="highlight">script -parametername &#39;parametervalue&#39; -parameter2name &#39;parameter2value</code>  </p>
 <h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
-<p>If you have difficulty getting the script/executable working, you can test the script by opening a command prompt in the folder where your script is located.
-Double check that you have backed up your SQLite database and/or database.json file before proceeding.
-Copy the full path to Powershell or the executable version of the script, then copy all the parameters used in the Scheduled Task into the same command. Execute the command and take note of the output.</p>
+<p>If you have difficulty getting the script/executable working, you can test the script by opening a command prompt in the folder where your script is located.<br />
+Double check that you have backed up your SQLite database and/or database.json file before proceeding.  </p>
+<p>Copy the full path to Powershell or the executable version of the script, then copy all the parameters used in the Scheduled Task into the same command. Execute the command and take note of the output.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-05-18T17:16:46+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-05-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T23:40:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
       
     
   </small>
@@ -2460,14 +2481,18 @@ Copy the full path to Powershell or the executable version of the script, then c
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        
+          <script src="../../js/timeago.min.js"></script>
+        
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../js/timeago_mkdocs_material.js"></script>
+        
       
     
   </body>

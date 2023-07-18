@@ -21,7 +21,7 @@
         <link rel="next" href="../authentication/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -514,6 +514,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -638,15 +640,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#import-plexemby-users" class="md-nav__link">
-    Import Plex/Emby Users
+  <a href="#import-plex-users" class="md-nav__link">
+    Import Plex Users
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#plexemby-users-to-exclude-from-import" class="md-nav__link">
-    Plex/Emby Users to exclude from import
+  <a href="#import-plex-admin" class="md-nav__link">
+    Import Plex Admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup-plex-users" class="md-nav__link">
+    Cleanup Plex Users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plex-users-excluded-from-import" class="md-nav__link">
+    Plex Users excluded from import
   </a>
   
 </li>
@@ -661,6 +677,13 @@
         <li class="md-nav__item">
   <a href="#default-request-limit" class="md-nav__link">
     Default Request Limit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-country" class="md-nav__link">
+    Streaming Country
   </a>
   
 </li>
@@ -854,6 +877,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../user-preferences/" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
@@ -864,7 +901,7 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_19" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_20" >
       
       
         
@@ -900,13 +937,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_3_19" id="__nav_3_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="0">
           Notifications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_19">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_20_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_20">
           <span class="md-nav__icon md-icon"></span>
           Notifications
         </label>
@@ -1966,15 +2003,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#import-plexemby-users" class="md-nav__link">
-    Import Plex/Emby Users
+  <a href="#import-plex-users" class="md-nav__link">
+    Import Plex Users
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#plexemby-users-to-exclude-from-import" class="md-nav__link">
-    Plex/Emby Users to exclude from import
+  <a href="#import-plex-admin" class="md-nav__link">
+    Import Plex Admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup-plex-users" class="md-nav__link">
+    Cleanup Plex Users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plex-users-excluded-from-import" class="md-nav__link">
+    Plex Users excluded from import
   </a>
   
 </li>
@@ -1989,6 +2040,13 @@
         <li class="md-nav__item">
   <a href="#default-request-limit" class="md-nav__link">
     Default Request Limit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-country" class="md-nav__link">
+    Streaming Country
   </a>
   
 </li>
@@ -2021,10 +2079,16 @@
 <h1 id="importing-users">Importing Users<a class="headerlink" href="#importing-users" title="Permanent link">&para;</a></h1>
 <p>This page is slightly dynamic depending on what Media Server you have enabled.<br />
 Per-user settings can be applied under <a href="../../guides/usermanagement/">User Management</a>.  </p>
-<h2 id="import-plexemby-users">Import Plex/Emby Users<a class="headerlink" href="#import-plexemby-users" title="Permanent link">&para;</a></h2>
-<p>This will run a scheduled job every day that will import Plex/Emby users and give them the default permissions you have setup.<br />
+<h2 id="import-plex-users">Import Plex Users<a class="headerlink" href="#import-plex-users" title="Permanent link">&para;</a></h2>
+<p>This will run a scheduled job every day that will import Plex users and give them the default permissions you have setup.<br />
 It will also look at the existing users that have been imported and update their email if it has changed.</p>
-<h2 id="plexemby-users-to-exclude-from-import">Plex/Emby Users to exclude from import<a class="headerlink" href="#plexemby-users-to-exclude-from-import" title="Permanent link">&para;</a></h2>
+<h2 id="import-plex-admin">Import Plex Admin<a class="headerlink" href="#import-plex-admin" title="Permanent link">&para;</a></h2>
+<p>This will allow the scheduled job to also import your user from Plex (as an admin).<br />
+This will allow you to use Plex SSO as the admin as well.</p>
+<h2 id="cleanup-plex-users">Cleanup Plex Users<a class="headerlink" href="#cleanup-plex-users" title="Permanent link">&para;</a></h2>
+<p>This will allow the scheduled job to remove old Plex users from your Ombi instance.<br />
+This will prevent anyone who no longer has access to your Plex from requesting content.  </p>
+<h2 id="plex-users-excluded-from-import">Plex Users excluded from import<a class="headerlink" href="#plex-users-excluded-from-import" title="Permanent link">&para;</a></h2>
 <p>This is an autocomplete field where you can type in the users username and select users that you DO NOT want to be imported if the above option is enabled.</p>
 <h2 id="default-roles">Default Roles<a class="headerlink" href="#default-roles" title="Permanent link">&para;</a></h2>
 <p>Choose the default roles that the imported users will take when the import job runs.
@@ -2059,6 +2123,8 @@ When we state a rolling 7 days, this is how it works:</p>
 </div>
 </div>
 </div>
+<h2 id="streaming-country">Streaming Country<a class="headerlink" href="#streaming-country" title="Permanent link">&para;</a></h2>
+<p>Defines what the default country imported users will be set as.  </p>
 <h2 id="run-importer-button">Run Importer button<a class="headerlink" href="#run-importer-button" title="Permanent link">&para;</a></h2>
 <p>Clicking this button will run the Emby/Plex user import jobs on-demand.</p>
 
@@ -2067,7 +2133,7 @@ When we state a rolling 7 days, this is how it works:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-09-26T21:55:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-09-26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T22:07:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
       
     
   </small>
@@ -2175,14 +2241,18 @@ When we state a rolling 7 days, this is how it works:</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        
+          <script src="../../js/timeago.min.js"></script>
+        
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../js/timeago_mkdocs_material.js"></script>
+        
       
     
   </body>

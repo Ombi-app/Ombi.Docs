@@ -21,7 +21,7 @@
         <link rel="next" href="../features/">
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -514,6 +514,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -582,8 +584,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#auto-delete-available-requests" class="md-nav__link">
-    Auto Delete Available Requests
+  <a href="#branch" class="md-nav__link">
+    Branch
   </a>
   
 </li>
@@ -598,6 +600,27 @@
         <li class="md-nav__item">
   <a href="#hide-requests-from-other-users" class="md-nav__link">
     Hide requests from other users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-delete-available-requests" class="md-nav__link">
+    Auto Delete Available Requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-us-to-collect-anonymous-analytical-data" class="md-nav__link">
+    Allow us to collect anonymous analytical data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    Language
   </a>
   
 </li>
@@ -854,6 +877,20 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../user-preferences/" class="md-nav__link">
+        User Preferences
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
       
     
@@ -864,7 +901,7 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_19" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_20" >
       
       
         
@@ -900,13 +937,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_3_19" id="__nav_3_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="0">
           Notifications
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_19">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_20_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_20">
           <span class="md-nav__icon md-icon"></span>
           Notifications
         </label>
@@ -1980,8 +2017,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#auto-delete-available-requests" class="md-nav__link">
-    Auto Delete Available Requests
+  <a href="#branch" class="md-nav__link">
+    Branch
   </a>
   
 </li>
@@ -1996,6 +2033,27 @@
         <li class="md-nav__item">
   <a href="#hide-requests-from-other-users" class="md-nav__link">
     Hide requests from other users
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-delete-available-requests" class="md-nav__link">
+    Auto Delete Available Requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-us-to-collect-anonymous-analytical-data" class="md-nav__link">
+    Allow us to collect anonymous analytical data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language" class="md-nav__link">
+    Language
   </a>
   
 </li>
@@ -2026,20 +2084,29 @@ It is a <em>stub</em>, and only holds settings that aren't big enough for their 
 If you are running Ombi on startup (so it launches when the system boots up), see <a href="../../info/startup-parameters">startup parameters</a> for how to set the <code class="highlight">--baseurl</code> startup parameter on your method.  </p>
 <h2 id="api-key">Api Key<a class="headerlink" href="#api-key" title="Permanent link">&para;</a></h2>
 <p>This is to use the API that Ombi provides. See <a href="../../info/api-information">here</a></p>
+<h2 id="branch">Branch<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h2>
+<p>This controls whether Ombi checks for Stable or Develop releases in the update checker.<br />
+<em>This does not auto update Ombi - it is only for notifications.</em></p>
+<h2 id="do-not-send-notifications-if-a-user-has-the-auto-approve-permission">Do not send Notifications if a User has the Auto Approve permission<a class="headerlink" href="#do-not-send-notifications-if-a-user-has-the-auto-approve-permission" title="Permanent link">&para;</a></h2>
+<p>This will not send the admin any "New Request" notifications if the user making them has auto approve.</p>
+<h2 id="hide-requests-from-other-users">Hide requests from other users<a class="headerlink" href="#hide-requests-from-other-users" title="Permanent link">&para;</a></h2>
+<p>This will not show any existing requests to any "normal" user (non-admin or power user).</p>
 <h2 id="auto-delete-available-requests">Auto Delete Available Requests<a class="headerlink" href="#auto-delete-available-requests" title="Permanent link">&para;</a></h2>
 <p>This will auto delete requests which have been marked available for 'x' days.<br />
 If it's set to <code class="highlight"><span class="mf">1</span></code> then it will delete available requests after they have been available in the system for a day.  </p>
-<h2 id="do-not-send-notifications-if-a-user-has-the-auto-approve-permission">Do not send Notifications if a User has the Auto Approve permission<a class="headerlink" href="#do-not-send-notifications-if-a-user-has-the-auto-approve-permission" title="Permanent link">&para;</a></h2>
-<p>This will not send the admin any "New Request" notifications if they have auto approve, that simple really!</p>
-<h2 id="hide-requests-from-other-users">Hide requests from other users<a class="headerlink" href="#hide-requests-from-other-users" title="Permanent link">&para;</a></h2>
-<p>This will not show any requests to any "normal" user (non-admin or power user).</p>
+<h2 id="allow-us-to-collect-anonymous-analytical-data">Allow us to collect anonymous analytical data<a class="headerlink" href="#allow-us-to-collect-anonymous-analytical-data" title="Permanent link">&para;</a></h2>
+<p>This one is pretty simple - allows Ombi to give us stats regarding what browsers are being used to access it most, what platform it is deployed on etc.<br />
+This helps us to target dev time - better support on the most used platforms makes sense.  </p>
+<h2 id="language">Language<a class="headerlink" href="#language" title="Permanent link">&para;</a></h2>
+<p>Self-explanatory - what language do you want as default for your instance of Ombi?<br />
+This can be overridden per-user in their <a href="../user-preferences">preferences</a>, should they wish to view Ombi in their own language.  </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-03-25T11:41:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-03-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T21:46:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
       
     
   </small>
@@ -2147,14 +2214,18 @@ If it's set to <code class="highlight"><span class="mf">1</span></code> then it 
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="../../js/timeago.min.js"></script>
+        
+          <script src="../../js/timeago.min.js"></script>
+        
       
-        <script src="../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../js/timeago_mkdocs_material.js"></script>
+        
       
     
   </body>
