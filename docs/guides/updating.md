@@ -106,7 +106,7 @@ If you would prefer a pre-compiled executable file that can be scheduled in task
     - In the "Start in" field, enter the location of the script file or executable.  
     - When you are finished, you will be prompted to enter the credentials for the user account that the script/executable will be run using. You must use an Administrator account.  
 
-![image](https://github.com/Ombi-app/Ombi.Docs/assets/2737227/31654903-913e-4b2c-8e58-4f00da4bce86)
+![Scheduled Update Task](../assets/images/task_settings.png){: loading=lazy }  
 
 ### Arguments
 
