@@ -3,12 +3,22 @@
 This page is slightly dynamic depending on what Media Server you have enabled.  
 Per-user settings can be applied under [User Management](../guides/usermanagement.md).  
 
-## Import Plex/Emby Users
+## Import Plex Users
 
-This will run a scheduled job every day that will import Plex/Emby users and give them the default permissions you have setup.  
+This will run a scheduled job every day that will import Plex users and give them the default permissions you have setup.  
 It will also look at the existing users that have been imported and update their email if it has changed.
 
-## Plex/Emby Users to exclude from import
+## Import Plex Admin
+
+This will allow the scheduled job to also import your user from Plex (as an admin).  
+This will allow you to use Plex SSO as the admin as well.
+
+## Cleanup Plex Users
+
+This will allow the scheduled job to remove old Plex users from your Ombi instance.  
+This will prevent anyone who no longer has access to your Plex from requesting content.  
+
+## Plex Users excluded from import
 
 This is an autocomplete field where you can type in the users username and select users that you DO NOT want to be imported if the above option is enabled.
 
