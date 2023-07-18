@@ -106,7 +106,7 @@ If you would prefer a pre-compiled executable file that can be scheduled in task
     - In the "Start in" field, enter the location of the script file or executable.  
     - When you are finished, you will be prompted to enter the credentials for the user account that the script/executable will be run using. You must use an Administrator account.  
 
-![Scheduled Update Task](../assets/images/task_settings.png){: loading=lazy }  
+![Scheduled Update Task](../assets/images/task_scheduler_updater.png){: loading=lazy }  
 
 ### Arguments
 
@@ -125,6 +125,7 @@ Most of us just use 'Ombi', so it's the default. If you used something different
 - Filename  
 This is only for if you are using x86. If this is the case, pass in `Win10-x86.zip` as the argument. Default is `Win10-x64.zip`.  
 - Force  
+
 This is a simple true/false switch - it will force the script to install the newest version, even if it's already installed. If the argument isn't there, it's a `false`. The moment you add `-Force` to the end of the command you'd normally use to run this script, it'll be `true` and force a reinstall.
 
 To pass arguments to a Powershell script, you name them when calling the script using the following syntax:  
@@ -134,4 +135,5 @@ To pass arguments to a Powershell script, you name them when calling the script 
 
 If you have difficulty getting the script/executable working, you can test the script by opening a command prompt in the folder where your script is located.  
 Double check that you have backed up your SQLite database and/or database.json file before proceeding.  
+
 Copy the full path to Powershell or the executable version of the script, then copy all the parameters used in the Scheduled Task into the same command. Execute the command and take note of the output.

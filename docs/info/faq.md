@@ -155,6 +155,8 @@ In order to enable debug logging in Ombi, you'll need to edit a file called `app
 In most cases, this is in the application directory. In a docker container, this is in /app/ombi _inside the container_.  
 
 Change the `Default` entry under `LogLevel` from "Warning" to "Debug".  
+You will need to restart Ombi after changing the file for the changes to apply.  
+
 _Do not forget to disable debug logging once you are done - it is for troubleshooting, and should not be left enabled full-time._
 
 === "Default Logging"
