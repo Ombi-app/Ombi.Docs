@@ -6,8 +6,6 @@ hide:
 ---
 # Ombi Docs
 
---8<-- "assets/glossary.md"
-
 **Welcome to the official Ombi Documentation!**
 
 Please note the docs are maintained by TidusJar and the Ombi-app team.  

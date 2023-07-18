@@ -2,9 +2,9 @@
 
 Under Settings -> Movies / TV / Music, you'll find the configuration sections for each of the following:  
 
-* Sonarr
-* Radarr
-* Lidarr
+- Sonarr
+- Radarr
+- Lidarr
 
 Each one does a different thing, but they're all based on the same codebase - so their configurations are similar.  
 As an example address, assume we use a service behind a reverse proxy, with each service being accessible at the following addresses:  
@@ -20,8 +20,6 @@ They should be filled in in the following order:
 
 1. Enable.  
 Toggle this to "on".
-1. V3.  
-Unless you are running a horrifically old version of Sonarr/Radarr/Lidarr, this should be enabled.
 1. Hostname/IP  
 The IP address or hostname your Sonarr/Radarr/Lidarr is running on.
 1. Port  
@@ -38,6 +36,8 @@ Admins get a prompt to override these when making requests, and they can have di
 1. Folders/Root Folders  
 These also need to be loaded from the relevant *arr. Hit the button, then once they've been retrieved you'll need to select them from the relevant dropdowns.  
 Admins get a prompt to override these when making requests, and they can have different ones set per-user if you so choose. Here is where the default selection is.
+1. Tags (optional)
+This allows you to define a tag to be attached to anything added to *arr for quick identification in their lists.
 1. Sonarr
     1. Languages
     This is mostly to account for things like Anime vs TV, but it does need setting. Load them with the button, select from the dropdown.
@@ -73,20 +73,24 @@ If you have set up a Plex/Emby/Jellyfin connection in Ombi, then Ombi will use t
 _We recommend using the media server rather than this option - it's mainly for people who use things like XBMC and local players._
 ***
 
+### Add the user as a tag
+
+This will add the username as a tag to requested content in the relevant *arr, allowing you to find them easily.
+
 ### Hostname
 
 This is the address you use to connect to the service. If it's running on the same machine as Ombi, localhost usually works.  
 If you're running the services (and Ombi itself) in docker containers, you could use the [container IP](../../info/docker-containers).  
 If the services are on multiple machines, IP addresses tend to be useful here.  
-If, however, you use the service behind a [reverse proxy](../../info/reverse-proxy), then the 'hostname' field is the bit from __before__ the 'baseurl'.  
+If, however, you use the service behind a [reverse proxy](../../info/reverse-proxy), then the 'hostname' field is the bit from _before_ the 'baseurl'.  
 In the examples above, this would be `app.example.com`.
 ***
 
 ### Port
 
 If you're not using a reverse proxy, this is whatever port you use to access the service (it's the number after the second ":" in the address bar). In the case of Sonarr, the default is `8989`.  
-If you're using a reverse proxy *without* SSL, the port will be `80` _(pro-tip: don't do that)_.  
-If you're running *with* SSL, the port will be `443`.  
+If you're using a reverse proxy _without_*_ SSL, the port will be `80` _(pro-tip: don't do that)_.  
+If you're running _with_ SSL, the port will be `443`.  
 ***
 
 ### SSL
@@ -118,6 +122,10 @@ If it doesn't work, save the settings and "Test Connectivity". You may not be ab
 Depending on the service, you may have this appear several times. There will be a button to 'get' these from the service. Click it, wait, and select one.  
 If it doesn't work, save the settings and "Test Connectivity". You may not be able to communicate with the service yet.
 ***
+
+### Tag
+
+This allows you to define a tag to be attached to anything added to *arr for quick identification in their lists.
 
 ### Submit
 

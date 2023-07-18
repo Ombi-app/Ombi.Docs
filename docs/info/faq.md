@@ -3,8 +3,6 @@ title: FAQ
 description: Frequently Asked Questions about Ombi!
 ---
 
---8<-- "assets/glossary.md"
-
 If you feel like a question should be added please reach out via the [Ombi Discord.](https://discord.gg/Sa7wNWb)  
 See also: [Known Faults](known-faults), [Common Errors](common-errors)
 
@@ -17,9 +15,9 @@ See [Feature Suggestions](../../guides/feature-suggestions)
 
 ## What is the Plex connection used for
 
-1) It allows for using oAuth sign-in (so users don't have to add _another_ password to the mix).
-1) It allows for checking for actual availability (not just in place according to *arr, but indexed in a library and actually watchable).
-1) It allows for Ombi to use a plex ID for the link in newsletters etc - so users can click the notification and be taken directly to the item in Plex.
+- It allows for using oAuth sign-in (so users don't have to add _another_ password to the mix).
+- It allows for checking for actual availability (not just in place according to *arr, but indexed in a library and actually watchable).
+- It allows for Ombi to use a plex ID for the link in newsletters etc - so users can click the notification and be taken directly to the item in Plex.
 
 ## Can I synchronise users between Ombi and Tautulli?
 

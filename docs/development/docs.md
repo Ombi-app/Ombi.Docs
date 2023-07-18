@@ -1,7 +1,5 @@
 # Documentation
 
---8<-- "assets/glossary.md"
-
 ## Framework
 
 This documentation is built using [mkdocs](https://www.mkdocs.org).

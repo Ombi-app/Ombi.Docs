@@ -1,7 +1,5 @@
 # Customization Settings
 
---8<-- "assets/glossary.md"
-
 ## Application Name
 
 This will replace most references to the word `Ombi` with a new name.  
@@ -39,14 +37,15 @@ This is used for the Login Page, Landing Page and also any notifications that we
 
 **Format:** `http://url.to.picture/`
 
-## Custom CSS
+## Custom Favicon
 
-There are two ways we officially support custom CSS.
-They are by import or direct entry.
-For some ideas, you can find some common customisations under [Common Themes](../../info/common-themes/)  
-Any CSS you wish to use should be put into the Custom CSS box. It could be a reference to a CSS file (via an import reference) or could be raw CSS itself.
+This will default to the Ombi logo, but you can have your own favicon load if you wish to.  
+This should point to an externally accessible URL.  
 
-**Note:** For CSS import to work, it requires a MIME type of `text/css` or the browser will not load it as a stylesheet.  
+## Hide Available Content on the Discover Page
+
+Does what it says on the tin.  
+Anything that you have in your media server(s) already (that Ombi is aware of) will be hidden from the discover page.
 
 ## Custom Donation
 
@@ -62,6 +61,15 @@ This can be done via the `User Management` page.
 
 **Disclaimer**: The _Custom Page_ is public and can be accessed without authorization, there are plans to add an authorization toggle to this page.  
 Use the custom page with caution.  
+
+## Custom CSS
+
+There are two ways we officially support custom CSS.
+They are by import or direct entry.
+For some ideas, you can find some common customisations under [Common Themes](../../info/common-themes/)  
+Any CSS you wish to use should be put into the Custom CSS box. It could be a reference to a CSS file (via an import reference) or could be raw CSS itself.
+
+**Note:** For CSS import to work, it requires a MIME type of `text/css` or the browser will not load it as a stylesheet.  
 
 ## Landing/Login Page Backgrounds
 
