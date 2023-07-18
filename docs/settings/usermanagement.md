@@ -55,6 +55,10 @@ If the user reaches their request limit they will no longer be able to request. 
     * Day 7 - Cannot Request
     * Day 8 - We can now request 3 more times
 
+## Streaming Country
+
+Defines what the default country imported users will be set as.  
+
 ## Run Importer button
 
 Clicking this button will run the Emby/Plex user import jobs on-demand.
