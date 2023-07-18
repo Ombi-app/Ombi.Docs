@@ -5,7 +5,8 @@
         "ol-prefix": { "style": "one_or_ordered" },
         "MD046": false,
         "emphasis-style": { "style": "underscore" },
-        "ul-style": { "style": "dash" }
+        "ul-style": { "style": "dash" },
+        "whitespace": false
     },
     "cSpell.allowCompoundWords": true,
     "cSpell.language": "en-GB",
@@ -129,9 +130,6 @@
         "yyyymmdd",
         "yzhang",
         "zimreapers"
-    ],
-    "markdownlint.ignore": [
-        "assets/glossary.md"
     ],
     "editor.detectIndentation": false
 }
