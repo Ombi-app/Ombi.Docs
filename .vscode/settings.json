@@ -5,7 +5,7 @@
         "ol-prefix": { "style": "one_or_ordered" },
         "MD046": false,
         "emphasis-style": { "style": "underscore" },
-        "ul-style": { "style": "asterisk" }
+        "ul-style": { "style": "dash" }
     },
     "cSpell.allowCompoundWords": true,
     "cSpell.language": "en-GB",
