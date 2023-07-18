@@ -82,7 +82,7 @@ This will add the username as a tag to requested content in the relevant *arr, a
 This is the address you use to connect to the service. If it's running on the same machine as Ombi, localhost usually works.  
 If you're running the services (and Ombi itself) in docker containers, you could use the [container IP](../../info/docker-containers).  
 If the services are on multiple machines, IP addresses tend to be useful here.  
-If, however, you use the service behind a [reverse proxy](../../info/reverse-proxy), then the 'hostname' field is the bit from __before__ the 'baseurl'.  
+If, however, you use the service behind a [reverse proxy](../../info/reverse-proxy), then the 'hostname' field is the bit from _before_ the 'baseurl'.  
 In the examples above, this would be `app.example.com`.
 ***
 
