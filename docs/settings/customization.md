@@ -1,7 +1,5 @@
 # Customization Settings
 
---8<-- "assets/glossary.md"
-
 ## Application Name
 
 This will replace most references to the word `Ombi` with a new name.  
