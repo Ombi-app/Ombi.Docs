@@ -84,51 +84,51 @@ To use nginx as a reverse proxy requires no extra modules, but it does require c
     Of course, replace 127.0.0.1:5000 with whatever IP and port combination you are using for Ombi.  
     Ensure your Application Url (in Ombi) matches the `server_name` field.
 
-```conf
-    # Ombi v4 Subdomain
-    # Replace EXAMPLE.COM with your domain
-    server {
-        listen 80;
-        server_name ombi.*;
-        return 301 https://$server_name$request_uri;
-    }
-    server {
-        listen 443 ssl http2;
-        server_name ombi.*;
-        server_name ombi.EXAMPLE.COM;
-        ssl_certificate /nginx/ssl/EXAMPLE.COM-chain.pem;
-        ssl_certificate_key /nginx/ssl/EXAMPLE.COM-key.pem;
-        ssl_session_cache builtin:1000;
-        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-        ssl_prefer_server_ciphers on;
-        ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-DES-CBC3-SHA:ECDHE-ECDSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA';
-        ssl_session_tickets off;
-        ssl_ecdh_curve secp384r1;
-        resolver 1.1.1.1 1.0.0.1 valid=300s;
-        resolver_timeout 10s;
-        gzip on;
-        gzip_vary on;
-        gzip_min_length 1000;
-        gzip_proxied any;
-        gzip_types text/plain text/css text/xml application/xml text/javascript application/x-javascript image/svg+xml;
-        gzip_disable "MSIE [1-6]\.";
-    
-        location / {
-            proxy_pass http://127.0.0.1:5000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
+    ```conf
+        # Ombi v4 Subdomain
+        # Replace EXAMPLE.COM with your domain
+        server {
+            listen 80;
+            server_name ombi.*;
+            return 301 https://$server_name$request_uri;
         }
-        # This allows access to the actual api
-        location /api {
+        server {
+            listen 443 ssl http2;
+            server_name ombi.*;
+            server_name ombi.EXAMPLE.COM;
+            ssl_certificate /nginx/ssl/EXAMPLE.COM-chain.pem;
+            ssl_certificate_key /nginx/ssl/EXAMPLE.COM-key.pem;
+            ssl_session_cache builtin:1000;
+            ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+            ssl_prefer_server_ciphers on;
+            ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:ECDHE-RSA-DES-CBC3-SHA:ECDHE-ECDSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA';
+            ssl_session_tickets off;
+            ssl_ecdh_curve secp384r1;
+            resolver 1.1.1.1 1.0.0.1 valid=300s;
+            resolver_timeout 10s;
+            gzip on;
+            gzip_vary on;
+            gzip_min_length 1000;
+            gzip_proxied any;
+            gzip_types text/plain text/css text/xml application/xml text/javascript application/x-javascript image/svg+xml;
+            gzip_disable "MSIE [1-6]\.";
+        
+            location / {
                 proxy_pass http://127.0.0.1:5000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            }
+            # This allows access to the actual api
+            location /api {
+                    proxy_pass http://127.0.0.1:5000;
+            }
+            # This allows access to the documentation for the api
+            location /swagger {
+                    proxy_pass http://127.0.0.1:5000;
+            }
         }
-        # This allows access to the documentation for the api
-        location /swagger {
-                proxy_pass http://127.0.0.1:5000;
-        }
-    }
-```
+    ```
 
 Once the config file(s) have been created (_and saved_), we need to enable the site. This is done by symlinking the config file into the sites-enabled directory. The below commands will achieve this (obviously, replace the `ombi.example.com` sections with whatever names you used for your setup).  
 
