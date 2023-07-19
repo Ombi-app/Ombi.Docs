@@ -35,7 +35,7 @@ Depending on what database you're using, you will need to keep the following fil
 === "MariaDB"
     * `database.json`
 
-When it comes time to actually launch Ombi on your fresh installation, place the relevant files into the new Ombi directory (wherever you may have put it), and *then* launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).  
+When it comes time to actually launch Ombi on your fresh installation, place the relevant files into the new Ombi directory (wherever you may have put it), and _then_ launch Ombi. This way Ombi will load with all of your prior settings, customisations, users, and synced data (so it doesn't require a full re-sync with Plex).  
 If you are running docker, place these files into the folder you've passed into the container as "/config" for the installation to find them.  
 ***
 
@@ -45,14 +45,14 @@ If you are running docker, place these files into the folder you've passed into 
     1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi/releases/latest)
     1. Right click the file > Properties > Unblock
     1. Extract the zip to your preferred directory.  
-    **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
+    __DO NOT__ place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
     1. Run Ombi.exe
 
 === "V4 (Develop)"
     1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi/releases)
     1. Right click the file > Properties > Unblock
     1. Extract the zip to your preferred directory.  
-    **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
+    __DO NOT__ place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
     1. Run Ombi.exe
 
 ### Install as a Service
@@ -163,7 +163,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     `sudo apt update && sudo apt install ombi`
 
 === "V4 (PackageCloud)"
-    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, **and** on the new repo._  
+    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, __and__ on the new repo._  
     1. Add the apt repository to the apt sources list:  
     ```bash
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list
@@ -175,7 +175,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     `sudo apt update && sudo apt install ombi`
 
 === "V4 Develop (PackageCloud)"
-    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, **and** on the new repo._  
+    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, __and__ on the new repo._  
     1. Add the apt repository to the apt sources list:  
     ```bash
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list
@@ -195,7 +195,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     `sudo apt update && sudo apt install ombi`
 
 If no errors are shown, Ombi has been installed successfully and will automatically start during boot.  
-Ombi should now be reachable on "http://your-ip-address:5000". If you would like to change this port, you will need to use the `--host` [startup parameter](../../info/startup-parameters).
+Ombi should now be reachable on `http://your-ip-address:5000`. If you would like to change this port, you will need to use the `--host` [startup parameter](../../info/startup-parameters).
 
 Packages in this repo use systemd.  
 Use either the `systemctl` or the `service` command to start, stop, or restart Ombi.  
@@ -233,7 +233,7 @@ i.e.  `/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi`
     You can either turn off AirPlay Receiver from within the Sharing options menu, or use an alternate port for Ombi.  
     _If you turn off AirPlay you will be unable to use your Mac for receiving audio via AirPlay._
 === "Gatekeeper"
-    **_As of macOS Catalina, Apple has strengthened Gatekeeper considerably._**  
+    __*As of macOS Catalina, Apple has strengthened Gatekeeper considerably.*__  
     As a result, allowing apps from 'unverified' sources is now a hidden option.  
     While you could outright disable Gatekeeper and allow all unverified apps to run without prompt, that is a significant hole to punch in your security for one application to work.  
     Instead, we recommend turning it off for the folder you have Ombi in specifically.  
