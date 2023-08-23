@@ -123,91 +123,91 @@ The error "Failed to create CoreCLR, HRESULT: 0x80070008" can be resolved by upd
 If you are on the latest version and are seeing `SQLite Error 1: 'No such column: x.RequestId'`, refer below for a solution.  
 Referenced in [Issue 3214](https://github.com/tidusjar/Ombi/issues/3214#issuecomment-555821356)
 
-### Docker
+=== "Docker"
 
-Here is a one-liner to fix the issue, assuming you are running in a docker container, your container has `ombi` in the name, your image requires the config dir to be mounted at `/config`, and the host is running Debian, Ubuntu, or a related distro that uses `apt`. If any of these points aren't true, see the details below the command and modify to your needs.
+    Here is a one-liner to fix the issue, assuming you are running in a docker container, your container has `ombi` in the name, your image requires the config dir to be mounted at `/config`, and the host is running Debian, Ubuntu, or a related distro that uses `apt`. If any of these points aren't true, see the details below the command and modify to your needs.
 
-```shell
-sudo apt update
-sudo apt install -y sqlite3
-sqlite3 $( \
-  docker inspect --format '{{ range .Mounts }}{{if eq .Destination "/config"}}{{ .Source }}{{end}}{{end}}'  \
-  $(docker ps --filter name=ombi --format '{{.ID}}') \
-)/app/OmbiExternal.db 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
-```
+    ```shell
+    sudo apt update
+    sudo apt install -y sqlite3
+    sqlite3 $( \
+    docker inspect --format '{{ range .Mounts }}{{if eq .Destination "/config"}}{{ .Source }}{{end}}{{end}}'  \
+    $(docker ps --filter name=ombi --format '{{.ID}}') \
+    )/app/OmbiExternal.db 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
+    ```
 
-Explanation of parts:
+    Explanation of parts:
 
-Update `apt` & install `sqlite3`
+    Update `apt` & install `sqlite3`
 
-```shell
-sudo apt update
-sudo apt install -y sqlite3;
-```
+    ```shell
+    sudo apt update
+    sudo apt install -y sqlite3;
+    ```
 
-Inspect container `$CONTAINER_ID`, list mounts, and if the mount destination is `/config`, print the source
+    Inspect container `$CONTAINER_ID`, list mounts, and if the mount destination is `/config`, print the source
 
-```shell
-docker inspect --format \
-  '{{ range .Mounts }}{{if eq .Destination "/config"}}{{ .Source }}{{end}}{{end}}'  \
-  $CONTAINER_ID
-```
+    ```shell
+    docker inspect --format \
+    '{{ range .Mounts }}{{if eq .Destination "/config"}}{{ .Source }}{{end}}{{end}}'  \
+    $CONTAINER_ID
+    ```
 
-List containers, filtering on `ombi`. Format output to only include the container id.
+    List containers, filtering on `ombi`. Format output to only include the container id.
 
-```shell
-docker ps --filter name=ombi --format '{{.ID}}'
-```
+    ```shell
+    docker ps --filter name=ombi --format '{{.ID}}'
+    ```
 
-Concatenate the inspected directory path with the path to the `.db` file within the `/config` dir
+    Concatenate the inspected directory path with the path to the `.db` file within the `/config` dir
 
-```shell
-$( ... )/app/OmbiExternal.db
-```
+    ```shell
+    $( ... )/app/OmbiExternal.db
+    ```
 
-Tell `sqlite3` to run the actual query
+    Tell `sqlite3` to run the actual query
 
-```shell
- sqlite3 /opt/ombi/app/OmbiExternal.db 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
-```
+    ```shell
+    sqlite3 /opt/ombi/app/OmbiExternal.db 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
+    ```
 
-After you are done, you can remove `sqlite3`
+    After you are done, you can remove `sqlite3`
 
-```shell
-sudo apt remove --purge sqlite3
-```
+    ```shell
+    sudo apt remove --purge sqlite3
+    ```
 
-### Unraid
+=== "Unraid"
 
-RUN:  
+    RUN:  
 
-```shell
-cd ~
-wget https://www.sqlite.org/2019/sqlite-tools-linux-x86-3300100.zip
-unzip sqlite-tools-linux-x86-3300100.zip
-cd sqlite-tools-linux-x86-3300100
-chmod a+x sqlite3
-./sqlite3 $(find / -name OmbiExternal.db -print0 -quit 2>/dev/null) 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
-```
+    ```shell
+    cd ~
+    wget https://www.sqlite.org/2019/sqlite-tools-linux-x86-3300100.zip
+    unzip sqlite-tools-linux-x86-3300100.zip
+    cd sqlite-tools-linux-x86-3300100
+    chmod a+x sqlite3
+    ./sqlite3 $(find / -name OmbiExternal.db -print0 -quit 2>/dev/null) 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
+    ```
 
-### Debian/Ubuntu
+=== "Debian/Ubuntu"
 
-If "sqlite3" is not installed:  
+    If "sqlite3" is not installed:  
 
-```shell
-sudo apt update
-sudo apt install -y sqlite3
-```
+    ```shell
+    sudo apt update
+    sudo apt install -y sqlite3
+    ```
 
-Fix Database:  
-_If your Ombi databases are in a different location than "**/etc/Ombi**", replace that with the location of your Ombi databases._  
+    Fix Database:  
+    _If your Ombi databases are in a different location than "**/etc/Ombi**", replace that with the location of your Ombi databases._  
 
-```shell
-sqlite3 /etc/Ombi/OmbiExternal.db 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
-```
+    ```shell
+    sqlite3 /etc/Ombi/OmbiExternal.db 'ALTER TABLE PlexServerContent ADD COLUMN RequestId INTEGER NULL'
+    ```
 
-If we want to uninstall "sqlite3" to clean the system.
+    If we want to uninstall "sqlite3" to clean the system.
 
-```shell
-sudo apt remove --purge sqlite3
-```
+    ```shell
+    sudo apt remove --purge sqlite3
+    ```
