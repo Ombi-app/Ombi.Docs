@@ -213,6 +213,7 @@ nav:
     - The Docs: development/docs.md
     - Translating Ombi: development/translations.md
   - Archive:
+    - Old Known Issues: archive/known-issues.md
     - Prerequisites: archive/prerequisites.md
     - V4 Specific Proxying: archive/v4-specific-proxy.md
     - Ye Olde v3 Proxy: archive/v3-specific-proxy.md
