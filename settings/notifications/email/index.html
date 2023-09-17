@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.3">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -339,7 +339,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../archive/prerequisites/" class="md-tabs__link">
+        <a href="../../../archive/known-issues/" class="md-tabs__link">
           
   
     
@@ -1178,13 +1178,6 @@
   
     <nav class="md-nav" aria-label="Common Mail Issues">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gmail-less-secure-apps" class="md-nav__link">
-    Gmail Less Secure Apps
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#two-factor-authentication" class="md-nav__link">
@@ -2433,6 +2426,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2462,6 +2457,26 @@
             Archive
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../archive/known-issues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Old Known Issues
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2579,13 +2594,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gmail-less-secure-apps" class="md-nav__link">
-    Gmail Less Secure Apps
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#two-factor-authentication" class="md-nav__link">
     Two Factor Authentication
   </a>
@@ -2650,6 +2658,7 @@ Generally, this is your own email address. If you have a service such as Office 
 <div class="tabbed-block">
 <p>SMTP Server: <code class="highlight">smtp.gmail.com</code><br />
 Port: <code class="highlight"><span class="mf">587</span></code></p>
+<p>Note: you will need to activate <a href="#two-factor-authentication">Two Factor Authentication</a> and configure an app password for this option. </p>
 </div>
 <div class="tabbed-block">
 <p>SMTP Server: <code class="highlight">smtp.office365.com</code><br />
@@ -2662,12 +2671,8 @@ Port: <code class="highlight"><span class="mf">587</span></code>  </p>
 </div>
 </div>
 <h2 id="common-mail-issues">Common Mail Issues<a class="headerlink" href="#common-mail-issues" title="Permanent link">&para;</a></h2>
-<h3 id="gmail-less-secure-apps">Gmail Less Secure Apps<a class="headerlink" href="#gmail-less-secure-apps" title="Permanent link">&para;</a></h3>
-<p>In the past, Gmail has required you to enable "access for less secure apps", under your account security. <a href="https://myaccount.google.com/lesssecureapps">https://myaccount.google.com/lesssecureapps</a>.<br />
-This setting has been/is being retired (it's being done in stages, not all users will encounter this at once).<br />
-The only way moving forward is via Two Factor Authentication (2FA).</p>
 <h3 id="two-factor-authentication">Two Factor Authentication<a class="headerlink" href="#two-factor-authentication" title="Permanent link">&para;</a></h3>
-<p>To send email via Gmail with a direct SMTP connection, you may need to add an "App Password" to your account.<br />
+<p>To send email via Gmail with a direct SMTP connection, you will need to add an "App Password" to your account.<br />
 This is only possible if you have 2 factor authentication turned ON with your Gmail account.<br />
 More information can be found <a href="https://support.google.com/accounts/answer/185833">here</a></p>
 <h3 id="app-password">App Password<a class="headerlink" href="#app-password" title="Permanent link">&para;</a></h3>
@@ -2684,7 +2689,7 @@ This generally results in Ombi logging an error saying:  </p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2022-10-13T22:50:46+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2022-10-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-17T23:01:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-17</span>
       
     
   </small>
@@ -2796,7 +2801,7 @@ This generally results in Ombi logging an error saying:  </p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.tabs.link", "header.autohide", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../../js/timeago.min.js"></script>
       
