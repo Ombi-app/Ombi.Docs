@@ -22,6 +22,8 @@ Submit these settings, and then can run a test. This will confirm whether or not
     SMTP Server: `smtp.gmail.com`  
     Port: `587`
 
+    Note: you will need to activate [Two Factor Authentication](#two-factor-authentication) and configure an app password for this option. 
+
 === "Office 365"
     SMTP Server: `smtp.office365.com`  
     Port: `587`  
@@ -32,15 +34,9 @@ Submit these settings, and then can run a test. This will confirm whether or not
 
 ## Common Mail Issues
 
-### Gmail Less Secure Apps
-
-In the past, Gmail has required you to enable "access for less secure apps", under your account security. [https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps).  
-This setting has been/is being retired (it's being done in stages, not all users will encounter this at once).  
-The only way moving forward is via Two Factor Authentication (2FA).
-
 ### Two Factor Authentication
 
-To send email via Gmail with a direct SMTP connection, you may need to add an "App Password" to your account.  
+To send email via Gmail with a direct SMTP connection, you will need to add an "App Password" to your account.  
 This is only possible if you have 2 factor authentication turned ON with your Gmail account.  
 More information can be found [here](https://support.google.com/accounts/answer/185833)
 
