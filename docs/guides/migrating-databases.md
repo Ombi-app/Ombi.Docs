@@ -34,7 +34,7 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 
     === "Debian/Ubuntu"
         `apt-get install python3-packaging`
-        > WARNING: It is not recommended to use the python3-mysqldb package on Debian/Ubutu systems as the version it installs fails with modern versions of MariaDB/MySQL.
+        > WARNING: It is not recommended to use the python3-mysqldb package on Debian/Ubuntu systems as the version it installs fails with modern versions of MariaDB/MySQL.
 
     === "Windows"
         Install [Python](https://www.python.org/downloads/), ensuring you also install `Pip` and select the option to add Python to `PATH`.  
@@ -45,8 +45,8 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
         `emerge -va dev-python/packaging`
 
     === "Python Pip"
-        `pip3 install mysqlclient`
-        `pip3 install packaging`
+        `pip3 install mysqlclient`  
+        `pip3 install packaging`  
         If the above errors, try `python -m pip install mysqlclient` and `python -m pip install packaging` instead.
 
 ### 3. Create and prepare tables
@@ -56,7 +56,7 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 3. Create or Modify **database.json** to use mysql.  
     (Substitute in whatever details match your MySQL instance, which you configured previously).
 
-    === "Linux"  
+    === "Debian/Ubuntu"  
         `python ombi_sqlite2mysql.py -c /etc/Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`  
     === "Windows"
         1. In CMD, `cd` to your Ombi directory (we'll assume `C:\Ombi` for this).  
