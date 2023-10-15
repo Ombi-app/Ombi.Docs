@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6a10b989.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
@@ -2686,8 +2686,8 @@ Multiple parameters can be passed at once, and should be separated with a space,
 For example, <code class="highlight"><span class="nt">--host</span><span class="w"> </span><span class="nt">http</span><span class="o">://</span><span class="nt">localhost</span><span class="p">:</span><span class="nd">123</span><span class="o">;</span><span class="nt">http</span><span class="o">://</span><span class="nt">ip</span><span class="p">.</span><span class="nc">of</span><span class="p">.</span><span class="nc">ombi</span><span class="p">.</span><span class="nc">host</span><span class="p">:</span><span class="nd">123</span></code>.<br />
 Use "*" to indicate that the server should listen for requests on any IP held by the system it's installed on using the specified port and protocol.<br />
 For example, <code class="highlight">--host http://*:5000</code> would listen on localhost, the machine IPv4 address, and the IPv6 address.<br />
-The protocol (http:// or https://) <strong>must</strong> be included with each URL.<br />
-Note: if behind a reverse proxy, Ombi should use <code class="highlight">http://</code> as the proxy will handle the "s" part.<br />
+The protocol (http://) <strong>must</strong> be included with each URL.<br />
+Note: this must be <code class="highlight">http://</code>, as Ombi itself does not handle the "s" part. For that, you need a proxy.<br />
 Default = <code class="highlight">http://*:5000</code></p>
 </div>
 <div class="tabbed-block">
@@ -2785,7 +2785,7 @@ Generally, the parameters can be passed in as ENV variables - however this shoul
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2021-12-06T02:31:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2021-12-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-15T20:59:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-15</span>
       
     
   </small>

@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.5">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6a10b989.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
@@ -1801,6 +1801,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#why-use-a-reverse-proxy" class="md-nav__link">
+    Why use a reverse proxy?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why use a reverse proxy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-nice-url" class="md-nav__link">
+    A "nice URL"?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-ssl" class="md-nav__link">
+    Providing SSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nginx" class="md-nav__link">
     Nginx
   </a>
@@ -2612,6 +2639,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#why-use-a-reverse-proxy" class="md-nav__link">
+    Why use a reverse proxy?
+  </a>
+  
+    <nav class="md-nav" aria-label="Why use a reverse proxy?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-nice-url" class="md-nav__link">
+    A "nice URL"?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-ssl" class="md-nav__link">
+    Providing SSL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#nginx" class="md-nav__link">
     Nginx
   </a>
@@ -2690,6 +2744,19 @@
 If your <strong>Base URL</strong> differs, replace all instances of <strong><em>/ombi</em></strong> with <strong><em>/YourBaseURL</em></strong>.<br />
 If you're using a <strong>subdomain</strong> (ombi.example.com), replace all instances of <strong><em>/ombi</em></strong> with <strong><em>/</em></strong>, and remove the first <em>location</em> block.</p>
 </blockquote>
+<h2 id="why-use-a-reverse-proxy">Why use a reverse proxy?<a class="headerlink" href="#why-use-a-reverse-proxy" title="Permanent link">&para;</a></h2>
+<p>There are a few reasons to consider using a reverse proxy for providing access to Ombi.<br />
+These include:  </p>
+<ul>
+<li>Providing a nice URL for users to access (instead of "http://your.external.ip.address:port").</li>
+<li>Providing a layer of SSL security for your Ombi users.</li>
+</ul>
+<h3 id="a-nice-url">A "nice URL"?<a class="headerlink" href="#a-nice-url" title="Permanent link">&para;</a></h3>
+<p>By default, the internet uses IP addresses to communicate. A service called DNS provides a way to alias these addresses with nice names (www.example.com, for example), rather than the direct IP address. Think of it like a phonebook for the internet, allowing you to look up a more complicated entry with an easy to remember name.<br />
+Setting up a reverse proxy allows you to use a nice url like "your.site.com", instead of just your external IP address.</p>
+<h3 id="providing-ssl">Providing SSL<a class="headerlink" href="#providing-ssl" title="Permanent link">&para;</a></h3>
+<p>Ombi doesn't do SSL in and of itself. We write a specific tool, for a specific purpose, and we're not going to be able to do SSL better than a dedicated web server software can.<br />
+As such, we recommend implementing a reverse proxy to handle that side of communication.</p>
 <h2 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
 <p>To use nginx as a reverse proxy requires no extra modules, but it does require configuring.  </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Subdirectory</label><label for="__tabbed_1_2">Subdomain</label></div>
@@ -3142,7 +3209,7 @@ Note: please don't run V3 any more. If you have somehow managed to get V3 from s
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-19T00:13:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-15T20:59:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-15</span>
       
     
   </small>
