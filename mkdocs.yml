@@ -46,6 +46,9 @@ theme:
 
 # Additional links
 extra:
+  analytics:
+    provider: google
+    property: G-7W69VYP0XL
   social:
     - icon: "fontawesome/brands/discord"
       link: "https://discord.gg/Sa7wNWb"
