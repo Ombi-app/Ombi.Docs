@@ -3,6 +3,24 @@
 > Note: These examples assume you are using **_/ombi_** as your **Base URL**.  
 > If your **Base URL** differs, replace all instances of **_/ombi_** with **_/YourBaseURL_**.  
 > If you're using a **subdomain** (ombi.example.com), replace all instances of **_/ombi_** with **_/_**, and remove the first _location_ block.
+
+## Why use a reverse proxy?
+
+There are a few reasons to consider using a reverse proxy for providing access to Ombi.  
+These include:  
+
+- Providing a nice URL for users to access (instead of "http://your.external.ip.address:port").
+- Providing a layer of SSL security for your Ombi users.
+
+### A "nice URL"?
+
+By default, the internet uses IP addresses to communicate. A service called DNS provides a way to alias these addresses with nice names (www.example.com, for example), rather than the direct IP address. Think of it like a phonebook for the internet, allowing you to look up a more complicated entry with an easy to remember name.  
+Setting up a reverse proxy allows you to use a nice url like "your.site.com", instead of just your external IP address.
+
+### Providing SSL
+
+Ombi doesn't do SSL in and of itself. We write a specific tool, for a specific purpose, and we're not going to be able to do SSL better than a dedicated web server software can.  
+As such, we recommend implementing a reverse proxy to handle that side of communication.
   
 ## Nginx
 

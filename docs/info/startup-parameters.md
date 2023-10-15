@@ -17,8 +17,8 @@ Multiple parameters can be passed at once, and should be separated with a space,
     For example, `--host http://localhost:123;http://ip.of.ombi.host:123`.  
     Use "\*" to indicate that the server should listen for requests on any IP held by the system it's installed on using the specified port and protocol.  
     For example, `--host http://*:5000` would listen on localhost, the machine IPv4 address, and the IPv6 address.  
-    The protocol (http:// or https://) **must** be included with each URL.  
-    Note: if behind a reverse proxy, Ombi should use `http://` as the proxy will handle the "s" part.  
+    The protocol (http://) **must** be included with each URL.  
+    Note: this must be `http://`, as Ombi itself does not handle the "s" part. For that, you need a proxy.  
     Default = `http://*:5000`
 
 === "Storage"

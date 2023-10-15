@@ -14,7 +14,7 @@ For considerations when migrating an existing install rather than starting fresh
 1. Install Ombi for your preferred OS using the steps provided below.  
 If you are migrating systems, rather than starting fresh, stop here and look at [Migrating Systems](#migrating-systems).
 1. Configure your [install-specific settings](../../settings/customization) like the application url you'll be using externally.
-1. Configure external access to Ombi. We recommend using SSL and a [reverse proxy](../../info/reverse-proxy).
+1. Configure external access to Ombi. We strongly recommend using a [reverse proxy](../../info/reverse-proxy) for a friendly URL and providing SSL.
 1. Configure notification methods and system connections (Sonarr, Radarr, etc).  
 Ensure you have systems to handle approved requests _before_ you give users access to the system.
 1. [Import users](../../settings/usermanagement) and [assign permissions](../../info/user-roles).
