@@ -49,7 +49,7 @@ theme:
 extra:
   analytics:
     provider: google
-    property: G-7W69VYP0XL
+    property: G-M4NQYEKN41
   consent:
     title: Cookie consent
     actions:
