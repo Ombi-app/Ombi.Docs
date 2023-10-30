@@ -114,6 +114,12 @@ As of macOS Monterey the AirPlay listener now uses port 5000 by default. This ca
 You can turn off the AirPlay function under `System Preferences -> Sharing`. This will allow Ombi to start, however AirPlay will turn on again and cause the same issue at the next reboot.  
 The only possible workaround at present is to set the `host` [startup parameter](../startup-parameters) to use a different port (`--host http://*:new_port`). 
 
+## Ombi has lost connection to the *arrs
+
+If Ombi has previously been able to connect to something (like Sonarr) just fine, but suddenly can't, chances are a firewall has come into play for some reason.  
+There can be other causes, of course, but if the service you've lost connection to is hosted on a Windows machine, then it's likely firewall related. Even when disabled, Windows Firewall can do some 'janky things'(tm).  
+Windows 10 (and 11) have a strange habit of setting themselves to a public network, at random. This can be verified in an administrator Powershell with the command `Get-NetConnectionProfile`. If it returns "NetworkCategory: Public", this can be easily resolved by using the command `Get-NetConnectionProfile | Set-NetConnectionProfile -NetworkCategory Private`.
+
 ## Container fails to start with CoreCLR error
 
 The error "Failed to create CoreCLR, HRESULT: 0x80070008" can be resolved by updating your docker engine to 20.10.10 or higher. [Reference](https://docs.linuxserver.io/faq#jammy).  
