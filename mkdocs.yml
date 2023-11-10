@@ -78,6 +78,7 @@ extra_css:
 # Markdown extensions
 markdown_extensions:
   - abbr
+  - admonition
   - attr_list
   - meta
   - pymdownx.details
