@@ -4,6 +4,11 @@ The newsletter will send out an email to each user with the `Receives Newsletter
 The newsletter will never show duplicates, so once it's been sent out then it will only show new content in the next email.  
 By default this is scheduled to run every Friday at 12GMT.
 
+!!! warning "Newsletter links"
+
+    For the newsletter to work correctly, ensure you have filled out the [Application URL](../../customization/#application-url)  
+    This will allow the logo at the top of the newsletter to be a link back to your Ombi instance.
+
 Please be sure you [Update Database](#update-database) before enabling newsletters.
 
 ## Enable
