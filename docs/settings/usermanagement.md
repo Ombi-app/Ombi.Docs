@@ -1,9 +1,13 @@
 # Importing Users
 
 This page is slightly dynamic depending on what Media Server you have enabled.  
-Per-user settings can be applied under [User Management](../guides/usermanagement.md).  
+Per-user settings can be applied under [User Management](../guides/usermanagement).  
 
 ## Import Plex Users
+
+!!! note ""
+
+    Only Plex users you have _shared_ your library with can be imported. Managed user accounts are tied to your admin account and cannot be imported separately.
 
 This will run a scheduled job every day that will import Plex users and give them the default permissions you have setup.  
 It will also look at the existing users that have been imported and update their email if it has changed.
@@ -25,7 +29,7 @@ This is an autocomplete field where you can type in the users username and selec
 ## Default Roles
 
 Choose the default roles that the imported users will take when the import job runs.
-You can view what the different roles mean [here](../info/user-roles.md)
+You can view what the different roles mean [here](../info/user-roles)
 
 ## Default Request Limit
 

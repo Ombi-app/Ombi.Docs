@@ -212,3 +212,8 @@ _Do not forget to disable debug logging once you are done - it is for troublesho
         "MinimumLevel": "Trace"
     },
     ```
+
+## Why are some of my Plex users not importing?
+
+Only Plex users who you have _shared_ your server/libraries with can be imported.  
+Plex does not expose managed accounts for Ombi to be able to import them, as they are not completely standalone accounts.
