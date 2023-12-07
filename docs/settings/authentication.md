@@ -25,4 +25,4 @@ For example, if using Authentik, the `X-authentik-username` HTTP header which co
 By default, header authentication will fail if the user doesn't already exist.
 If this option is enabled, new users will instead be created automatically.
 
-The default roles, request limits and streaming country set in [User Management](./usermanagement.md) will be applied to the new user.
+The default roles, request limits and streaming country set in [User Management](./usermanagement) will be applied to the new user.
