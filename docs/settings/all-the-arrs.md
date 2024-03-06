@@ -125,12 +125,13 @@ If it doesn't work, save the settings and "Test Connectivity". You may not be ab
 
 ### Tag
 
-This allows you to define a tag to be attached to anything added to *arr for quick identification in their lists.
+This allows you to define a tag to be attached to anything added to *arr for quick identification in their lists.  
+In some instances Ombi will refuse to let you save settings without something in this field. We suggest opening the relevant Arr and tagging something with a default option (like 'request') to be able to use.
 
 ### Submit
 
 This button is used to save and activate your new settings.  
-This will not work if you have not filled in _every_ option for the relevant service (folders, qualities, languages, seasons, albums, availability).  
+This will not work if you have not filled in _every_ option for the relevant service (folders, qualities, languages, seasons, albums, availability, tag).  
 ***
 
 ### Sonarr / Radarr
@@ -138,7 +139,7 @@ This will not work if you have not filled in _every_ option for the relevant ser
 #### Default Minimum Availability
 
 This tells Ombi what it should add movies to Radarr as - should it wait until they're available on disc to look for them, in theatres, announced...?  
-To try to avoid picking up fakes, `Physical/Web` is your best option.
+To try to avoid picking up fakes, `Physical / Web` is your best option.
 ***
 
 #### Language Profile

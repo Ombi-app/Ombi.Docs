@@ -29,6 +29,7 @@
         "chmod",
         "chronos",
         "compat",
+        "Cond",
         "couchpotato",
         "dearmor",
         "devel",
@@ -125,8 +126,10 @@
         "urllib",
         "vtab",
         "windir",
+        "wstunnel",
         "wwwroot",
         "xattr",
+        "XBMC",
         "yyyymmdd",
         "yzhang",
         "zimreapers"
