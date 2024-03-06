@@ -50,14 +50,6 @@ To use nginx as a reverse proxy requires no extra modules, but it does require c
             include /etc/nginx/proxy.conf;
             }
 
-            # This allows access to the actual api
-            location /ombi/api {
-            proxy_pass http://<ip addr or hostname>:5000;
-            }
-            # This allows access to the documentation for the api
-            location /ombi/swagger {
-                proxy_pass http://<ip addr or hostname>:5000;
-            }
         ```
 
     === "proxy.conf"
@@ -133,17 +125,9 @@ To use nginx as a reverse proxy requires no extra modules, but it does require c
         
             location / {
                 proxy_pass http://127.0.0.1:5000;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-            }
-            # This allows access to the actual api
-            location /api {
-                    proxy_pass http://127.0.0.1:5000;
-            }
-            # This allows access to the documentation for the api
-            location /swagger {
-                    proxy_pass http://127.0.0.1:5000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
             }
         }
     ```
