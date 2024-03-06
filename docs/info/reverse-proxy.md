@@ -9,12 +9,12 @@
 There are a few reasons to consider using a reverse proxy for providing access to Ombi.  
 These include:  
 
-- Providing a nice URL for users to access (instead of "http://your.external.ip.address:port").
+- Providing a nice URL for users to access (instead of `http://your.external.ip.address:port`).
 - Providing a layer of SSL security for your Ombi users.
 
 ### A "nice URL"?
 
-By default, the internet uses IP addresses to communicate. A service called DNS provides a way to alias these addresses with nice names (www.example.com, for example), rather than the direct IP address. Think of it like a phonebook for the internet, allowing you to look up a more complicated entry with an easy to remember name.  
+By default, the internet uses IP addresses to communicate. A service called DNS provides a way to alias these addresses with nice names (`www.example.com`, for example), rather than the direct IP address. Think of it like a phonebook for the internet, allowing you to look up a more complicated entry with an easy to remember name.  
 Setting up a reverse proxy allows you to use a nice url like "your.site.com", instead of just your external IP address.
 
 ### Providing SSL
