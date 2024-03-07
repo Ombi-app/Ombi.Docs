@@ -359,7 +359,7 @@ IIS admin -> Application Request Routing Cache -> Server Proxy Settings, tick "E
 
 Caddy 2 is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go.  
 You can find Caddy [here](https://caddyserver.com/), and their docs can be found [here](https://caddyserver.com/docs/).  
-An official docker image can be found [here](https://hub.docker.com/r/abiosoft/caddy/).  
+An official docker image can be found [here](https://hub.docker.com/_/caddy/).  
 Otherwise you can direct install using a binary found [here](https://github.com/caddyserver/caddy/releases).
 
 _**Note:** The official binaries and Docker image do not include any of the DNS plugins required for wildcard certificates or DNS verification instead of port 80 verification. If your connection blocks port 80, you will need to build your own binary or image to include these._
