@@ -148,6 +148,12 @@ There will be a button to 'get' these from the service. Click it, wait, and sele
 If it doesn't work, save the settings and "Test Connectivity". You may not be able to communicate with the service yet.
 ***
 
+#### Default Root Folders
+
+When setting up Sonarr/Radarr in Ombi, the option to "Load Folders" allows you to define what 'root folder' requested content should be put into by the relevant *arr.  
+If you are using 'atomic' mapping (i.e. direct media location in a containerised *arr), you will still need to define a root folder in it in order for you to be able to use Ombi.  
+_Note, in some older versions of Sonarr this was not an issue as it would supply a default location if the API was queried, but this behaviour seems to have been removed._
+
 ### Lidarr Specific
 
 #### Metadata Profile
