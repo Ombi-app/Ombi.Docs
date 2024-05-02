@@ -152,7 +152,7 @@ This is done in the MySQL console (or phpmyadmin if you have that configured).
 
         !!! info
             As of 8.4 onwards, the `mysql_native_password` plugin has been disabled by default. It will need to be enabled for 8.4 onwards to work with Ombi.  
-            For the official instruction on enabling this, 
+            For the official instruction on enabling this, see the [official documentation](https://mariadb.com/kb/en/authentication-plugin-mysql_native_password/).
 
         === "Single Database"
 
