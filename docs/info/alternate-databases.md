@@ -120,29 +120,86 @@ On the MySQL/MariaDB server we will create the database and the user that we wil
 
 This is done in the MySQL console (or phpmyadmin if you have that configured).  
 
-__Note: MySQL 8+ does authentication a little differently to how 5.7 used to. If Ombi fails to connect to a MySQL 8+ instance, the first thing to try is recreating the user with the `mysql_native_password` auth method attached to it (as below).__
+=== "MySQL (recommended)"
 
-=== "MySQL 8.x (recommended)"
+    === "MySQL 8.1-8.3 (recommended)"
+        !!! note
 
-    === "Single Database"
+            MySQL 8+ does authentication a little differently to how 5.7 used to.  
+            If Ombi fails to connect to a MySQL 8+ instance, the first thing to try is recreating the user with the `mysql_native_password` auth method attached to it (as below).
 
-        ```mysql
-        CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
-        GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        ```
+        === "Single Database"
 
-    === "Multiple Databases"
+            ```mysql
+            CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            ```
 
-        ```mysql
-        CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
-        GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        ```
+        === "Multiple Databases"
+
+            ```mysql
+            CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            ```
+
+    === "MySQL 8.4 (plugin needed)"
+
+        !!! info
+            As of 8.4 onwards, the `mysql_native_password` plugin has been disabled by default. It will need to be enabled for 8.4 onwards to work with Ombi.  
+            For the official instruction on enabling this, 
+
+        === "Single Database"
+
+            ```mysql
+            CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            ```
+
+        === "Multiple Databases"
+
+            ```mysql
+            CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            ```
+
+    === "MySQL 5.7 (deprecated)"
+
+        !!! warning
+            
+            Support for MySQL 5.7 ended in October 2023. After that, there have been (and will be) no further security patches or bug fixes released for it.  
+            We strongly recommend you look at migrating from 5.7 to 8.
+
+        === "Single Database"
+
+            ```mysql
+            CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
+            GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            ```
+
+        === "Multiple Databases"
+
+            ```mysql
+            CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+            CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
+            GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            ```
 
 === "MariaDB"
 
@@ -160,27 +217,6 @@ __Note: MySQL 8+ does authentication a little differently to how 5.7 used to. If
         CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
         CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
         CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password USING PASSWORD('USE_A_SECURE_PASSWORD_HERE');
-        GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        ```
-=== "MySQL 5.7 (deprecated)"
-
-    === "Single Database"
-
-        ```mysql
-        CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
-        GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
-        ```
-
-    === "Multiple Databases"
-
-        ```mysql
-        CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-        CREATE USER 'ombi'@'%' IDENTIFIED BY 'ombi';
         GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
         GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
         GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
