@@ -126,13 +126,14 @@ This is done in the MySQL console (or phpmyadmin if you have that configured).
         !!! note
 
             MySQL 8+ does authentication a little differently to how 5.7 used to.  
-            If Ombi fails to connect to a MySQL 8+ instance, the first thing to try is recreating the user with the `mysql_native_password` auth method attached to it (as below).
+            If Ombi fails to connect to a MySQL 8+ instance, the first thing to try is altering the user to use `caching_sha2_password` (as below).  
+            If you were previously using `mysql_native_password`, see "Alter Existing User" below to change it to the new (more secure) method.
 
         === "Single Database"
 
             ```mysql
             CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH caching_sha2_password BY 'USE_A_SECURE_PASSWORD_HERE';
             GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
             ```
 
@@ -142,23 +143,29 @@ This is done in the MySQL console (or phpmyadmin if you have that configured).
             CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
             CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
             CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH caching_sha2_password BY 'USE_A_SECURE_PASSWORD_HERE';
             GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
             GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
             GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
+            ```
+        
+        === "Alter Existing User"
+            ```mysql
+            ALTER USER 'ombi'@'%' IDENTIFIED BY 'USE_YOUR_PASSWORD_HERE' IDENTIFIED BY caching_sha2_password;
             ```
 
     === "MySQL 8.4 (plugin needed)"
 
         !!! info
-            As of 8.4 onwards, the `mysql_native_password` plugin has been disabled by default. It will need to be enabled for 8.4 onwards to work with Ombi.  
-            For the official instruction on enabling this, see the [official documentation](https://mariadb.com/kb/en/authentication-plugin-mysql_native_password/).
+            As of 8.4 onwards, the `mysql_native_password` plugin has been disabled by default. If you wish to use it, it will need to be enabled for 8.4 onwards to work with Ombi.  
+            We suggest using `caching_sha2_password` instead, as it is more secure. If you were previously using `mysql_native_password`, see "Alter Existing User" below to change to it.  
+            If you still wish to use the old method, see the [official documentation](https://mariadb.com/kb/en/authentication-plugin-mysql_native_password/) for how to enable it (at your own risk).
 
         === "Single Database"
 
             ```mysql
             CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH caching_sha2_password BY 'USE_A_SECURE_PASSWORD_HERE';
             GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
             ```
 
@@ -168,12 +175,17 @@ This is done in the MySQL console (or phpmyadmin if you have that configured).
             CREATE DATABASE IF NOT EXISTS `Ombi` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
             CREATE DATABASE IF NOT EXISTS `Ombi_Settings` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
             CREATE DATABASE IF NOT EXISTS `Ombi_External` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-            CREATE USER 'ombi'@'%' IDENTIFIED WITH mysql_native_password BY 'USE_A_SECURE_PASSWORD_HERE';
+            CREATE USER 'ombi'@'%' IDENTIFIED WITH caching_sha2_password BY 'USE_A_SECURE_PASSWORD_HERE';
             GRANT ALL PRIVILEGES ON `Ombi`.* TO 'ombi'@'%' WITH GRANT OPTION;
             GRANT ALL PRIVILEGES ON `Ombi_Settings`.* TO 'ombi'@'%' WITH GRANT OPTION;
             GRANT ALL PRIVILEGES ON `Ombi_External`.* TO 'ombi'@'%' WITH GRANT OPTION;
             ```
-
+        
+        === "Alter Existing User"
+            ```mysql
+            ALTER USER 'ombi'@'%' IDENTIFIED BY 'USE_YOUR_PASSWORD_HERE' IDENTIFIED BY caching_sha2_password;
+            ```
+    
     === "MySQL 5.7 (deprecated)"
 
         !!! warning
