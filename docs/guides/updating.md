@@ -87,7 +87,6 @@ This script only works for develop releases and should be considered __*beta*__.
 __*Do not use unless you know what you are doing*__.
 
 You can download the script from [here.](../assets/scripts/Get-OmbiUpdate.ps1)  
-If you would prefer a pre-compiled executable file that can be scheduled in task scheduler, you can download that [here.](../assets/scripts/Get-OmbiUpdate.exe)  
 
 ### Installation and Use
 
