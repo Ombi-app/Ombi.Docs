@@ -1890,6 +1890,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#why-fullchain-ssl-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Fullchain SSL Certificates?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-lets-encrypt-or-zerossl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Let's Encrypt or ZeroSSL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#a-nice-url" class="md-nav__link">
     <span class="md-ellipsis">
       A "nice URL"?
@@ -2786,6 +2804,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#why-fullchain-ssl-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Fullchain SSL Certificates?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-lets-encrypt-or-zerossl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Let's Encrypt or ZeroSSL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#a-nice-url" class="md-nav__link">
     <span class="md-ellipsis">
       A "nice URL"?
@@ -2910,10 +2946,10 @@ These include:  </p>
 </ul>
 <h2 id="ssltls-configuration">SSL/TLS Configuration<a class="headerlink" href="#ssltls-configuration" title="Permanent link">&para;</a></h2>
 <p>When configuring SSL/TLS for your reverse proxy, you may need to provide the fullchain SSL certificate. This is especially important when using certificate providers like Let's Encrypt or ZeroSSL.</p>
-<p><strong>Why Fullchain SSL Certificates?</strong></p>
+<h3 id="why-fullchain-ssl-certificates">Why Fullchain SSL Certificates?<a class="headerlink" href="#why-fullchain-ssl-certificates" title="Permanent link">&para;</a></h3>
 <p>Fullchain certificates include both your domain certificate and the intermediate certificates, ensuring that clients can validate the entire chain of trust. Without the fullchain certificate, clients might experience SSL errors, leading to failed connections.
 Some Android users have reported that using only the domain certificate and not providing the intermediate certificate has caused errors, resulting in "Wrong Server Version" messages in the app.</p>
-<p><strong>Using Let's Encrypt or ZeroSSL</strong></p>
+<h3 id="using-lets-encrypt-or-zerossl">Using Let's Encrypt or ZeroSSL<a class="headerlink" href="#using-lets-encrypt-or-zerossl" title="Permanent link">&para;</a></h3>
 <p>If you are using Let's Encrypt or ZeroSSL, the certificate generation process typically provides a fullchain certificate. Ensure that you configure your reverse proxy to use this certificate for proper SSL/TLS setup.</p>
 <h3 id="a-nice-url">A "nice URL"?<a class="headerlink" href="#a-nice-url" title="Permanent link">&para;</a></h3>
 <p>By default, the internet uses IP addresses to communicate. A service called DNS provides a way to alias these addresses with nice names (<code class="highlight">www.example.com</code>, for example), rather than the direct IP address. Think of it like a phonebook for the internet, allowing you to look up a more complicated entry with an easy to remember name.<br />
@@ -3370,7 +3406,7 @@ Note: please don't run V3 any more. If you have somehow managed to get V3 from s
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-17T17:07:16+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-17T21:32:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-17</span>
   </span>
 
     

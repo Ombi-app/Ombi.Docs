@@ -2191,6 +2191,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wrong-server-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wrong Server Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2757,6 +2781,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#common-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Errors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wrong-server-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wrong Server Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2800,8 +2848,10 @@ If you have a Plex Account with MFA/2FA enabled, you will need to enter your pas
 Make sure the application url is set to your externally accessible domain for Ombi.<br />
 e.g. the demo site uses <code class="highlight">https://demo.ombi.io/</code>  </p>
 <p>A good idea is to set this up using a <a href="../../info/reverse-proxy">Reverse Proxy</a>, rather than simply forwarding a port.</p>
-<p><strong>If you experience a "Wrong Server Version" error</strong> from your device, but browsing from your PC/Computer/Other devices is working.  You might have issues with your SSL configuration.
-Review the <a href="../../info/reverse-proxy">Reverse Proxy</a> page for additional details.</p>
+<h2 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">&para;</a></h2>
+<h3 id="wrong-server-version">Wrong Server Version<a class="headerlink" href="#wrong-server-version" title="Permanent link">&para;</a></h3>
+<p>We're seeing a few mobile app users encountering an error message when attempting to set up the mobile app on their device saying "Wrong server version".<br />
+This appears to be due to an inability to verify the full SSL trust chain, and is likely due to a misconfiguration in the <a href="../reverse-proxy/#why-fullchain-ssl-certificates">Reverse Proxy</a> configuration. Ensure your setup is using the Fullchain SSL certificate.</p>
 
 
 
@@ -2822,7 +2872,7 @@ Review the <a href="../../info/reverse-proxy">Reverse Proxy</a> page for additio
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-17T17:18:16+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-17T21:32:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-17</span>
   </span>
 
     
