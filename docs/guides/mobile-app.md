@@ -41,4 +41,4 @@ A good idea is to set this up using a [Reverse Proxy](../../info/reverse-proxy),
 ### Wrong Server Version
 
 We're seeing a few mobile app users encountering an error message when attempting to set up the mobile app on their device saying "Wrong server version".  
-This appears to be due to an inability to verify the full SSL trust chain, and is likely due to a misconfiguration in the [Reverse Proxy](../reverse-proxy/#why-fullchain-ssl-certificates) configuration. Ensure your setup is using the Fullchain SSL certificate.
+This appears to be due to an inability to verify the full SSL trust chain, and is likely due to a misconfiguration in the [Reverse Proxy](../../info/reverse-proxy/#why-fullchain-ssl-certificates) configuration. Ensure your setup is using the Fullchain SSL certificate.
