@@ -12,6 +12,19 @@ These include:
 - Providing a nice URL for users to access (instead of `http://your.external.ip.address:port`).
 - Providing a layer of SSL security for your Ombi users.
 
+## SSL/TLS Configuration
+
+When configuring SSL/TLS for your reverse proxy, you may need to provide the fullchain SSL certificate. This is especially important when using certificate providers like Let's Encrypt or ZeroSSL.
+
+**Why Fullchain SSL Certificates?**
+
+Fullchain certificates include both your domain certificate and the intermediate certificates, ensuring that clients can validate the entire chain of trust. Without the fullchain certificate, clients might experience SSL errors, leading to failed connections.
+Some Android users have reported that using only the domain certificate and not providing the intermediate certificate has caused errors, resulting in "Wrong Server Version" messages in the app.
+
+**Using Let's Encrypt or ZeroSSL**
+
+If you are using Let's Encrypt or ZeroSSL, the certificate generation process typically provides a fullchain certificate. Ensure that you configure your reverse proxy to use this certificate for proper SSL/TLS setup.
+
 ### A "nice URL"?
 
 By default, the internet uses IP addresses to communicate. A service called DNS provides a way to alias these addresses with nice names (`www.example.com`, for example), rather than the direct IP address. Think of it like a phonebook for the internet, allowing you to look up a more complicated entry with an easy to remember name.  
