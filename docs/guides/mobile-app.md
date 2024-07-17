@@ -35,3 +35,6 @@ Make sure the application url is set to your externally accessible domain for Om
 e.g. the demo site uses `https://demo.ombi.io/`  
 
 A good idea is to set this up using a [Reverse Proxy](../../info/reverse-proxy), rather than simply forwarding a port.
+
+**If you experience a "Wrong Server Version" error** from your device, but browsing from your PC/Computer/Other devices is working.  You might have issues with your SSL configuration.
+Review the [Reverse Proxy](../../info/reverse-proxy) page for additional details.
