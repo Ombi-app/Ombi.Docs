@@ -36,5 +36,9 @@ e.g. the demo site uses `https://demo.ombi.io/`
 
 A good idea is to set this up using a [Reverse Proxy](../../info/reverse-proxy), rather than simply forwarding a port.
 
-**If you experience a "Wrong Server Version" error** from your device, but browsing from your PC/Computer/Other devices is working.  You might have issues with your SSL configuration.
-Review the [Reverse Proxy](../../info/reverse-proxy) page for additional details.
+## Common Errors
+
+### Wrong Server Version
+
+We're seeing a few mobile app users encountering an error message when attempting to set up the mobile app on their device saying "Wrong server version".  
+This appears to be due to an inability to verify the full SSL trust chain, and is likely due to a misconfiguration in the [Reverse Proxy](../reverse-proxy/#why-fullchain-ssl-certificates) configuration. Ensure your setup is using the Fullchain SSL certificate.

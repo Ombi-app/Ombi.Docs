@@ -16,12 +16,12 @@ These include:
 
 When configuring SSL/TLS for your reverse proxy, you may need to provide the fullchain SSL certificate. This is especially important when using certificate providers like Let's Encrypt or ZeroSSL.
 
-**Why Fullchain SSL Certificates?**
+### Why Fullchain SSL Certificates?
 
 Fullchain certificates include both your domain certificate and the intermediate certificates, ensuring that clients can validate the entire chain of trust. Without the fullchain certificate, clients might experience SSL errors, leading to failed connections.
 Some Android users have reported that using only the domain certificate and not providing the intermediate certificate has caused errors, resulting in "Wrong Server Version" messages in the app.
 
-**Using Let's Encrypt or ZeroSSL**
+### Using Let's Encrypt or ZeroSSL
 
 If you are using Let's Encrypt or ZeroSSL, the certificate generation process typically provides a fullchain certificate. Ensure that you configure your reverse proxy to use this certificate for proper SSL/TLS setup.
 

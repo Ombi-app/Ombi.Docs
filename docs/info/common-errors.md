@@ -217,3 +217,8 @@ Referenced in [Issue 3214](https://github.com/tidusjar/Ombi/issues/3214#issuecom
     ```shell
     sudo apt remove --purge sqlite3
     ```
+
+## Wrong Server Version
+
+We're seeing a few mobile app users encountering an error message when attempting to set up the mobile app on their device saying "Wrong server version".  
+This appears to be due to an inability to verify the full SSL trust chain, and is likely due to a misconfiguration in the [Reverse Proxy](../reverse-proxy/#why-fullchain-ssl-certificates) configuration. Ensure your setup is using the Fullchain SSL certificate.
