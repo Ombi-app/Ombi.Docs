@@ -39,7 +39,7 @@ Likewise, you can set a specific quality profile for a user here. Like someone a
 ## Roles
 
 Each individual user can have additional roles above and beyond the defaults they're imported with.  
-You can view what the different roles mean [here](../info/user-roles)
+You can view what the different roles mean [here](/info/user-roles)
 
 For example, if your users aren't able to request music by default, but two or three people should be allowed to - you set the default to not, under [User Management](../../settings/usermanagement), and then set their specific user to have the "Request Music" role.  
 The reverse is also true - if someone abuses their ability to request things, you can revoke specific types for them in particular. Or set limits on their user.  
@@ -49,8 +49,8 @@ If one or two users have free reign on requests, everything is a 'yes' for them 
 ## Notification Preferences
 
 These let you enable alternative notification methods for a user (provided they're enabled at the server level).  
-Refer to the [notifications](../../settings/notifications) section for configuration of each relevant type (and a clarification about what happens when you enable multiple options at once for a user).
+Refer to the [notifications](/settings/notifications) section for configuration of each relevant type (and a clarification about what happens when you enable multiple options at once for a user).
 
 ## Additional Info
 
-See also [User Management](../../settings/usermanagement) for how to set the defaults that users can be imported with.
+See also [User Management](/settings/usermanagement) for how to set the defaults that users can be imported with.
