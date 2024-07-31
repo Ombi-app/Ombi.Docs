@@ -486,5 +486,5 @@ Adjust the values of `traefik.docker.network=traefik_proxy`, `traefik.http.route
 
 ## V3 Specific
 
-The notes regarding Ye Olde V3 Proxy can be found [in the archive](../../archive/v3-specific-proxy).  
+The notes regarding Ye Olde V3 Proxy can be found [in the archive](/archive/v3-specific-proxy).  
 Note: please don't run V3 any more. If you have somehow managed to get V3 from somewhere, replace it with V4.
