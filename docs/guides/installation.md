@@ -1,6 +1,6 @@
 # Installation
 
-__Note__: After installing the system, be sure to configure your own systems to handle the requests after approval.  
+**Note**: After installing the system, be sure to configure your own systems to handle the requests after approval.  
 Any requests made without an endpoint to receive it will not be able to be re-processed at this point.  
 Whatever combination of the supported systems you use is up to you - Sonarr, Radarr, Couchpotato, Lidarr... Whatever.  
 
@@ -45,14 +45,14 @@ If you are running docker, place these files into the folder you've passed into 
     1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi/releases/latest)
     1. Right click the file > Properties > Unblock
     1. Extract the zip to your preferred directory.  
-    __DO NOT__ place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
+    **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
     1. Run Ombi.exe
 
 === "V4 (Develop)"
     1. Download the latest `win10-xxx.zip` (x64 or x86 depends on your system) from [Ombi Releases](https://github.com/Ombi-app/Ombi/releases)
     1. Right click the file > Properties > Unblock
     1. Extract the zip to your preferred directory.  
-    __DO NOT__ place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
+    **DO NOT** place in the "Program Files" or "ProgramData" folders as the Ombi database will be locked.
     1. Run Ombi.exe
 
 ### Install as a Service
@@ -163,7 +163,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     `sudo apt update && sudo apt install ombi`
 
 === "V4 (PackageCloud)"
-    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, __and__ on the new repo._  
+    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, **and** on the new repo._  
     1. Add the apt repository to the apt sources list:  
     ```bash
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi/debian/ jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list
@@ -175,7 +175,7 @@ Also note that only systemd is supported, not upstart. That means Debian jessie 
     `sudo apt update && sudo apt install ombi`
 
 === "V4 Develop (PackageCloud)"
-    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, __and__ on the new repo._  
+    _Note that this is for Ubuntu 20.xx onwards, and on the development branch, **and** on the new repo._  
     1. Add the apt repository to the apt sources list:  
     ```bash
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ombi-archive-keyring.gpg] https://packagecloud.io/Ombi-app/Ombi-Dev/debian/ jessie main" | sudo tee /etc/apt/sources.list.d/ombi.list
@@ -215,16 +215,37 @@ Deps: `compat-openssl10 libcurl-devel libunwind-devel openssl-devel`
 ## macOS
 
 1. Download the latest osx [release](https://github.com/Ombi-app/Ombi/releases) `osx-x64.tar.gz`
-2. Extract the contents to the desired location (we suggest something like /opt/Ombi/)
-3. Launch Terminal
-4. `cd` to the path of the folder (e.g. `cd /opt/Ombi`)
-5. Execute `./Ombi`. Process should load.
-6. Ombi should now be reachable at localhost:5000
+2. Extract the contents to the desired location (we suggest putting it in a folder in the Applications folder, `/Applications/Ombi`)
+3. Create a `.plist` file in the folder `~/Library/LaunchAgents` folder.  
+_(For simplicity, name it `Ombi.plist`)_
+4. Put the below into the plist file:  
 
-### Mac Autostart
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>Ombi</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>./Ombi</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Applications/Ombi</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+```
 
-To have Ombi run at startup, add `RunAtLoad WorkingDirectory /opt/Ombi` to the command.  
-i.e.  `/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi`  
+5. Open a `Terminal` window
+6. Use launchctl to control the service.
+   1. To start the service, run the command `launchctl load ~/Library/LaunchAgents/Ombi.plist`
+   2. To stop the service, run the command `launchctl unload ~/Library/LaunchAgents/Ombi.plist`
+7. Ombi should now be reachable at localhost:5000
 
 ### Things to be aware of with macOS
 
@@ -233,13 +254,13 @@ i.e.  `/opt/Ombi/Ombi RunAtLoad WorkingDirectory /opt/Ombi`
     You can either turn off AirPlay Receiver from within the Sharing options menu, or use an alternate port for Ombi.  
     _If you turn off AirPlay you will be unable to use your Mac for receiving audio via AirPlay._
 === "Gatekeeper"
-    __*As of macOS Catalina, Apple has strengthened Gatekeeper considerably.*__  
+    **_As of macOS Catalina, Apple has strengthened Gatekeeper considerably._**   
     As a result, allowing apps from 'unverified' sources is now a hidden option.  
     While you could outright disable Gatekeeper and allow all unverified apps to run without prompt, that is a significant hole to punch in your security for one application to work.  
     Instead, we recommend turning it off for the folder you have Ombi in specifically.  
     To do this, in Terminal, run  
     `echo yourpassword | sudo -S xattr -r -d com.apple.quarantine /your/path/to/Ombi`  
-    (substituting your password and your path to Ombi).  
+    (substituting your password and your path to Ombi). The example would put this path as /Applications/Ombi/Ombi
 === "Preferred Method"
     **_Our preferred deployment method for macOS is still as a Docker container, as it does not impact security on the host OS in the same way._**
 
