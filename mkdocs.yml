@@ -7,7 +7,7 @@ edit_uri: https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/
 repo_url: https://github.com/Ombi-App/Ombi.Docs
 repo_name: Ombi-App/Ombi.Docs
 copyright: >
-  Copyright &copy; 2016 - 2023 <a href="https://github.com/tidusjar/">tidusjar</a> – <a href="#__consent">Change cookie settings</a>
+  Copyright &copy; 2016 - 2025 <a href="https://github.com/tidusjar/">tidusjar</a> – <a href="#__consent">Change cookie settings</a>
 # Site appearance (logos, colours, icons)
 theme:
   name: material
