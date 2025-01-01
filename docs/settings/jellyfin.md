@@ -1,7 +1,5 @@
 # Jellyfin
 
-## This page is a Work-In-Progress
-
 ## Enable
 
 Do you want Ombi to communicate with your JellyFin Server?

@@ -18,4 +18,4 @@ Refer to the [Notification Template Variables](../../../info/notification-templa
 
 Extra tips:  
 You can set a channel so nobody can post, and the webhook can still post.  
-You can @ people by using: `<@{Alias}>`. Be sure their Discord alias is known in the user profile of Ombi under Alias.  
+You can @ people by using: `<@{Alias}>!`. Be sure their Discord alias is known in the user profile of Ombi under Alias.  
