@@ -74,7 +74,7 @@ Please bear in mind that this is just an example and can/should be changed to yo
         - "mysql_db"
 
       mysql_db:
-        image: "mysql:5.7"
+        image: "mysql:lts"
         container_name: ombi_mysql
         restart: unless-stopped
         environment:
