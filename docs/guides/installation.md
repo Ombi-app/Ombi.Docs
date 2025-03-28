@@ -261,6 +261,9 @@ _(For simplicity, name it `Ombi.plist`)_
     To do this, in Terminal, run  
     `echo yourpassword | sudo -S xattr -r -d com.apple.quarantine /your/path/to/Ombi`  
     (substituting your password and your path to Ombi). The example would put this path as /Applications/Ombi/Ombi
+=== "zsh: bad CPU type in executable"
+    The executable is x64 and you are using an ARM processor. To enable execution of older x64 executables, run the following in Terminal:
+    `softwareupdate --install-rosetta`
 === "Preferred Method"
     **_Our preferred deployment method for macOS is still as a Docker container, as it does not impact security on the host OS in the same way._**
 
