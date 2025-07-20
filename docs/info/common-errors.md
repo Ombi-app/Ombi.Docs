@@ -2,6 +2,25 @@
 
 This page is being used for common errors outside our control, and commonly made mistakes. If you're after a fix for a known fault, see [Known Faults](../known-faults).
 
+## Lost admin access to Ombi
+
+It's possible to lose admin access to Ombi in a few scenarios. One that we see fairly often is a user configuring Ombi using the same email attached to their Plex account, enabling Plex Admin sync, then revoking active Plex sessions and changing their password for plex.tv.  
+
+There are some other situations where it can arise, but this is the most common.  
+
+If you are able to log in to Ombi, but find that your user _no longer has admin access_, it is possible to grant your user the admin role via a command in the database.  
+If you are unable to log in at all, this command will not help you.
+
+=== "sqlite"
+
+    Stop Ombi.  
+    Using a tool like SQLiteBrowser, open the Ombi database.  
+    Execute the following command to get the ID of the admin role, and the ID of the user you wish to give admin access - then attach them together.  
+    ```sqlite
+    INSERT INTO AspNetUserRoles (UserId, RoleId)
+    Values ((select ID from AspNetUsers where Email LIKE '%YOUR_EMAIL%'),(select ID from aspnetroles where name LIKE 'Admin'))
+    ```
+
 ## TV Show search results disappear
 
 This is due to our TV Provider [TVMaze](https://www.tvmaze.com/) not having the metadata we need to process that TV Show. We require TV Maze to supply us with a TVDBId for that show.
