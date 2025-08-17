@@ -71,7 +71,7 @@ To do so is fairly straightforward.
     2. Back up the `database.json` file from the Ombi directory.  
     This defines how ombi connects to the MySQL server.
     1. Delete the contents of the Ombi directory, _excluding_ the files mentioned in step 2.
-    2. Download the latest `win10-x86.zip` or `win10-x64.zip` from the link below:  
+    2. Download the latest `win-x86.zip` or `win-x64.zip` from the link below:  
         [Stable](https://github.com/Ombi-app/Ombi/releases/latest)  
         [Develop](https://github.com/Ombi-app/Ombi/releases)
     3. Extract the zip to your Ombi directory.
@@ -122,7 +122,7 @@ This is where the script will download to. It's only required if you don't want 
 - ServiceName  
 Most of us just use 'Ombi', so it's the default. If you used something different, pass in this argument with whatever you used.
 - Filename  
-This is only for if you are using x86. If this is the case, pass in `Win10-x86.zip` as the argument. Default is `Win10-x64.zip`.  
+This is only for if you are using x86. If this is the case, pass in `win-x86.zip` as the argument. Default is `win-x64.zip`.  
 - Force  
 
 This is a simple true/false switch - it will force the script to install the newest version, even if it's already installed. If the argument isn't there, it's a `false`. The moment you add `-Force` to the end of the command you'd normally use to run this script, it'll be `true` and force a reinstall.
