@@ -21,7 +21,7 @@ param(
 # The name of the Ombi Service (Default: Ombi, can override)
 [Parameter(HelpMessage="The name of the Ombi Service (Default: Ombi, can override)")][string]$ServiceName = "Ombi",
 # The filename of the Ombi download
-[Parameter(HelpMessage="Filename of the Ombi archive to download")][string]$Filename = "Win10-x64.zip",
+[Parameter(HelpMessage="Filename of the Ombi archive to download")][string]$Filename = "win-x64.zip",
 # Is this a forced reinstall?
 [Parameter(HelpMessage="Is this a forced reinstall?")][Switch]$Force
 )
