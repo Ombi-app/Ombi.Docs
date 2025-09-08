@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/logo/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -2005,6 +2005,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wrong-server-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wrong Server Version
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3081,6 +3090,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wrong-server-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wrong Server Version
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3286,6 +3304,16 @@ You will need to restart Ombi after changing the file for the changes to apply. 
 <h2 id="why-are-some-of-my-plex-users-not-importing">Why are some of my Plex users not importing?<a class="headerlink" href="#why-are-some-of-my-plex-users-not-importing" title="Permanent link">&para;</a></h2>
 <p>Only Plex users who you have <em>shared</em> your server/libraries with can be imported.<br />
 Plex does not expose managed accounts for Ombi to be able to import them, as they are not completely standalone accounts.</p>
+<h2 id="wrong-server-version">Wrong Server Version<a class="headerlink" href="#wrong-server-version" title="Permanent link">&para;</a></h2>
+<p>Some mobile app users will encounter an error message when attempting to set up the mobile app on their device saying "Wrong server version".<br />
+This is generally due to an inability to verify the full SSL trust chain, and could be caused by a couple things.</p>
+<ol>
+<li>There is a misconfiguration in the <a href="../reverse-proxy/#why-fullchain-ssl-certificates">Reverse Proxy</a> configuration. Ensure your setup is using the Fullchain SSL certificate.  </li>
+<li>You are using HTTPS and have an invalid certificate.  </li>
+<li>You are using some sort of iframe host (e.g. No-Ip) to forward your Ombi instance.<br />
+This will not work as iFrames are a web browser technology and the App communicates directly with the API's.  </li>
+<li>You have not put the URL into the app correctly (e.g. <code class="highlight">https://app.ombi.io/bareurl</code>).</li>
+</ol>
 
 
 
@@ -3306,7 +3334,7 @@ Plex does not expose managed accounts for Ombi to be able to import them, as the
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="December 7, 2023 22:32:45 UTC"><span class="timeago" datetime="2023-12-07T22:32:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="December 7, 2023 22:32:45 UTC">2023-12-07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 8, 2025 03:05:52 UTC"><span class="timeago" datetime="2025-09-08T03:05:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 8, 2025 03:05:52 UTC">2025-09-08</span>
   </span>
 
     
