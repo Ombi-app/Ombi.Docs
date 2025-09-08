@@ -217,3 +217,14 @@ _Do not forget to disable debug logging once you are done - it is for troublesho
 
 Only Plex users who you have _shared_ your server/libraries with can be imported.  
 Plex does not expose managed accounts for Ombi to be able to import them, as they are not completely standalone accounts.
+
+## Wrong Server Version
+
+Some mobile app users will encounter an error message when attempting to set up the mobile app on their device saying "Wrong server version".  
+This is generally due to an inability to verify the full SSL trust chain, and could be caused by a couple things.
+
+1. There is a misconfiguration in the [Reverse Proxy](../reverse-proxy/#why-fullchain-ssl-certificates) configuration. Ensure your setup is using the Fullchain SSL certificate.  
+2. You are using HTTPS and have an invalid certificate.  
+3. You are using some sort of iframe host (e.g. No-Ip) to forward your Ombi instance.  
+This will not work as iFrames are a web browser technology and the App communicates directly with the API's.  
+4. You have not put the URL into the app correctly (e.g. `https://app.ombi.io/bareurl`).
