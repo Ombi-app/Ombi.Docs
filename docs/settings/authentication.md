@@ -20,9 +20,17 @@ This option allows the user to select a HTTP header value that contains the desi
 This is most commonly utilized when Ombi is behind a reverse proxy which handles authentication.
 For example, if using Authentik, the `X-authentik-username` HTTP header which contains the logged in user's username is set by Authentik's proxy outpost.
 
-### SSO creates new users automatically
+## Things to consider
 
-By default, header authentication will fail if the user doesn't already exist.
-If this option is enabled, new users will instead be created automatically.
+### Exclude the API from the auth method
+
+If you are using an auth server (authentik, authelia, etc), be sure to exclude the `/api/*` path from it.  
+As a user never directly accesses the API, the header will never be passed correctly, so must be excluded from the auth provider.
+
+### Sign-in failed for new users
+
+By default, header authentication will fail if the user doesn't already exist.  
+If you enable "SSO creates new users automatically", new users will instead be created automatically when accessed via your authentication provider.
 
 The default roles, request limits and streaming country set in [User Management](./usermanagement) will be applied to the new user.
+
