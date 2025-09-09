@@ -872,13 +872,31 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Enable Authentication with Header Variable">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-consider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things to consider
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things to consider">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sso-creates-new-users-automatically" class="md-nav__link">
+  <a href="#exclude-the-api-from-the-auth-method" class="md-nav__link">
     <span class="md-ellipsis">
-      SSO creates new users automatically
+      Exclude the API from the auth method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-in-failed-for-new-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sign-in failed for new users
     </span>
   </a>
   
@@ -2923,13 +2941,31 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Enable Authentication with Header Variable">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-consider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Things to consider
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Things to consider">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sso-creates-new-users-automatically" class="md-nav__link">
+  <a href="#exclude-the-api-from-the-auth-method" class="md-nav__link">
     <span class="md-ellipsis">
-      SSO creates new users automatically
+      Exclude the API from the auth method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sign-in-failed-for-new-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sign-in failed for new users
     </span>
   </a>
   
@@ -2975,9 +3011,13 @@ A new popup will appear going to Plex.tv asking them to login. Once logged in th
 </blockquote>
 <p>This is most commonly utilized when Ombi is behind a reverse proxy which handles authentication.
 For example, if using Authentik, the <code class="highlight">X-authentik-username</code> HTTP header which contains the logged in user's username is set by Authentik's proxy outpost.</p>
-<h3 id="sso-creates-new-users-automatically">SSO creates new users automatically<a class="headerlink" href="#sso-creates-new-users-automatically" title="Permanent link">&para;</a></h3>
-<p>By default, header authentication will fail if the user doesn't already exist.
-If this option is enabled, new users will instead be created automatically.</p>
+<h2 id="things-to-consider">Things to consider<a class="headerlink" href="#things-to-consider" title="Permanent link">&para;</a></h2>
+<h3 id="exclude-the-api-from-the-auth-method">Exclude the API from the auth method<a class="headerlink" href="#exclude-the-api-from-the-auth-method" title="Permanent link">&para;</a></h3>
+<p>If you are using an auth server (authentik, authelia, etc), be sure to exclude the <code class="highlight">/api/*</code> path from it.<br />
+As a user never directly accesses the API, the header will never be passed correctly, so must be excluded from the auth provider.</p>
+<h3 id="sign-in-failed-for-new-users">Sign-in failed for new users<a class="headerlink" href="#sign-in-failed-for-new-users" title="Permanent link">&para;</a></h3>
+<p>By default, header authentication will fail if the user doesn't already exist.<br />
+If you enable "SSO creates new users automatically", new users will instead be created automatically when accessed via your authentication provider.</p>
 <p>The default roles, request limits and streaming country set in <a href="./usermanagement">User Management</a> will be applied to the new user.</p>
 
 
@@ -2999,7 +3039,7 @@ If this option is enabled, new users will instead be created automatically.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="December 7, 2023 22:32:50 UTC"><span class="timeago" datetime="2023-12-07T22:32:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="December 7, 2023 22:32:50 UTC">2023-12-07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="September 9, 2025 04:39:51 UTC"><span class="timeago" datetime="2025-09-09T04:39:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="September 9, 2025 04:39:51 UTC">2025-09-09</span>
   </span>
 
     
