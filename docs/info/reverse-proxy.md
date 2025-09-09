@@ -12,18 +12,19 @@ These include:
 - Providing a nice URL for users to access (instead of `http://your.external.ip.address:port`).
 - Providing a layer of SSL security for your Ombi users.
 
-## SSL/TLS Configuration
+### SSL/TLS Configuration
 
 When configuring SSL/TLS for your reverse proxy, you may need to provide the fullchain SSL certificate. This is especially important when using certificate providers like Let's Encrypt or ZeroSSL.
-
-### Why Fullchain SSL Certificates?
-
-Fullchain certificates include both your domain certificate and the intermediate certificates, ensuring that clients can validate the entire chain of trust. Without the fullchain certificate, clients might experience SSL errors, leading to failed connections.
-Some Android users have reported that using only the domain certificate and not providing the intermediate certificate has caused errors, resulting in "Wrong Server Version" messages in the app.
 
 ### Using Let's Encrypt or ZeroSSL
 
 If you are using Let's Encrypt or ZeroSSL, the certificate generation process typically provides a fullchain certificate. Ensure that you configure your reverse proxy to use this certificate for proper SSL/TLS setup.
+
+
+#### Why Fullchain SSL Certificates?
+
+Fullchain certificates include both your domain certificate and the intermediate certificates, ensuring that clients can validate the entire chain of trust. Without the fullchain certificate, clients might experience SSL errors, leading to failed connections.
+Some Android users have reported that using only the domain certificate and not providing the intermediate certificate has caused errors, resulting in "Wrong Server Version" messages in the app.
 
 ### A "nice URL"?
 
@@ -34,8 +35,10 @@ Setting up a reverse proxy allows you to use a nice url like "your.site.com", in
 
 Ombi doesn't do SSL in and of itself. We write a specific tool, for a specific purpose, and we're not going to be able to do SSL better than a dedicated web server software can.  
 As such, we recommend implementing a reverse proxy to handle that side of communication.
-  
-## Nginx
+
+## Examples
+
+### Nginx
 
 To use nginx as a reverse proxy requires no extra modules, but it does require configuring.  
 
@@ -163,7 +166,7 @@ We then restart nginx to load the new config file, at which point your system wi
 
 ***
 
-## Apache2
+### Apache2
 
 To run Apache with a reverse proxy setup, you'll need to activate certain modules. The following instructions are for Debian, please adjust commands for each package manager your OS uses.  
 (assume all commands require sudo):  
@@ -220,7 +223,7 @@ _**Note:** Lets Encrypt Support_
 
 Add `ProxyPass "/.well-known/" "!"` to the configuration file to allow Lets Encrypt to renew the subdomain TLS certificate.
 
-### Apache2 WebSocket requests
+#### Apache2 WebSocket requests
 
 While WebSockets are not a _requirement_ for Ombi to work, it does run a lot faster if it is able to use them. WebSocket requests need to be specifically handled when using a reverse proxy.  
 With Apache2, the configuration below needs to be applied in addition to any ProxyPass/ProxyReverse configuration in the `<Location>` or `<VirtualHost>` block. This will ensure WebSocket requests are handled correctly through the reverse proxy.
@@ -246,7 +249,7 @@ For Linux distributions using `systemd`, you can use `systemctl restart apache2`
 
 ***
 
-## IIS
+### IIS
 
 NOTE: There are some extra steps involved with getting IIS to proxy things.  
 Install these two modules:
@@ -368,7 +371,7 @@ IIS admin -> Application Request Routing Cache -> Server Proxy Settings, tick "E
 
 ***
 
-## Caddy
+### Caddy
 
 Caddy 2 is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go.  
 You can find Caddy [here](https://caddyserver.com/), and their docs can be found [here](https://caddyserver.com/docs/).  
@@ -395,9 +398,9 @@ _**Note:** The official binaries and Docker image do not include any of the DNS 
     }
     ```
 
-## Traefik
+### Traefik
 
-Traefik is the a great reverse proxy option if you are using a container-based setup such as docker compose.  
+Traefik is a great reverse proxy option if you are using a container-based setup such as docker compose.  
 You can find Traefik [here](https://docs.traefik.io/), and their getting started guide [here](https://docs.traefik.io/getting-started/quick-start/).  
 For more information and examples on the usage of labels in docker compose (specific to traefik) go [here](https://docs.traefik.io/user-guides/docker-compose/basic-example/).  
 _**Note:** The following configuration examples only apply to traefik version 2 and later._  
