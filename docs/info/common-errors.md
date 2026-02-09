@@ -236,3 +236,10 @@ Referenced in [Issue 3214](https://github.com/tidusjar/Ombi/issues/3214#issuecom
     ```shell
     sudo apt remove --purge sqlite3
     ```
+
+## Ombi shows white page when running as system service on Linux
+
+If Ombi was installed from apt, it runs as a service. In most cases, this means that the files for the application need to be owned by the user the service is running as.  
+For Ombi, this user is "Ombi".  
+If you have installed from apt and updated the files held in `/opt/Ombi/` manually, the file ownership has likely changed. To fix this, run `chown -R Ombi:Ombi /opt/Ombi` as root (if you are not logged in as root, run `sudo chown -R Ombi:Ombi /opt/Ombi` instead).  
+Once this command has been run, restart the Ombi service, and permissions should now be correct.
