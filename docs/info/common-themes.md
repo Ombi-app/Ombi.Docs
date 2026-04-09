@@ -178,6 +178,21 @@ This only works for V3 (legacy) builds, as V4 is no longer tabbed like this.
         display: none;
     }
     ```
+***
+
+## Hide Hero/Discover Section
+
+```css
+.hero-section{ display: none !important; }
+```
+
+***
+
+## Hide Quick Genre Button Section
+
+```css
+.genre-section.discover-section { display: none !important; }
+```
 
 ***
 
