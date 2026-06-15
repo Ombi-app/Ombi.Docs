@@ -85,31 +85,50 @@ app-nav-search mat-form-field{
 
 === "V4"
 
-    ``` css
-    button#sign-in{
-       display:none;
-    }
-    ```
+``` css
+/* Hide Ombi Sign-in Button */
+p.login-subtitle, button.btn-login.btn-login--primary, div.oauth-buttons div.divider-row {
+    display: none !important;
+}
+```
 
 === "V3 (Legacy)"
 
-    ``` css
-    .login-buttons button:nth-of-type(1) {
-        display:none;
-    }
-    ```
+``` css
+.login-buttons button:nth-of-type(1) {
+    display:none;
+}
+```
 
 ***
 
 ## Use an Image instead of Application Name
 
 This allows you to replace the application name (on the left) with an image.  
-The example below uses a relative location for the logo, so bear in mind that if it's hosted elsewhere you'll need to put in the complete URL to the file.  
+The example below uses a relative location for the logo, so bear in mind that if it's hosted elsewhere you'll need to put in the complete URL to the file.
+
+The image replaces the default "Ombi" text, including for screen readers. `content: url("images/ombi.png") / "Ombi";` restores an accessible name in browsers that support the syntax (and is harmlessly ignored where they don't).
 
 ```css
-/* Nav Bar */
-.sidenav-container .sidenav .mat-toolbar.application-name {
-    content: url("linktoimage/logo.png"); 
+/* Nav Bar Logo */
+#nav-applicationName .brand-link {
+  content: url("images/ombi.png") / "Ombi";
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+}
+```
+
+***
+
+## Override for custom application image showing as user avatars
+
+In some cases when using a custom application image, that image is shown as the avatar for all users. This will replace that image with a generic no-avatar style person logo.
+
+```css
+/* Profile image override */
+.profile-avatar img {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23555'/%3E%3Ccircle cx='16' cy='13' r='5.5' fill='%23ddd'/%3E%3Cpath d='M5 29a11 11 0 0 1 22 0z' fill='%23ddd'/%3E%3C/svg%3E");
 }
 ```
 
