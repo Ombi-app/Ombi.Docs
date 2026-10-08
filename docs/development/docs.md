@@ -4,8 +4,6 @@
 
 This documentation is built using [Zensical](https://zensical.org/).
 
-The previous MkDocs `git-revision-date-localized` and `redirects` plugin settings are not included in the Zensical configuration; their behavior needs separate replacements.
-
 ## Submitting Content
 
 Please see the [repository readme](https://github.com/Ombi-app/Ombi.Docs/blob/main/README.md) for information on submitting content for the site.
