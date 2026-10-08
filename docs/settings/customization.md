@@ -17,13 +17,13 @@ If you're not using a reverse proxy, it should also include the port needed near
 
 === "Reverse proxy with SSL"
     With a subdomain: `https://ombi.example.com`  
-    With a baseurl: `https://site.example.com/ombi`
+    With a baseurl: `https://site.example.com/ombi`  
     This would be if you have Ombi configured behind a reverse proxy, with SSL enabled.
 
 === "Reverse proxy without SSL"
     With a subdomain: `http://ombi.example.com`  
     With a baseurl: `http://site.example.com/ombi`  
-    This would be if you have Ombi configured behind a reverse proxy, with SSL enabled.  
+    This would be if you have Ombi configured behind a reverse proxy, without SSL enabled.  
     _This is not recommended._  
     _If you have a reverse proxy in play, put SSL on it with something like [Let'sEncrypt](https://letsencrypt.org/)._
 
