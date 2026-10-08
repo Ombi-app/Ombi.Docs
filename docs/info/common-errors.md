@@ -1,6 +1,6 @@
 # Commonly Encountered Errors
 
-This page is being used for common errors outside our control, and commonly made mistakes. If you're after a fix for a known fault, see [Known Faults](../known-faults).
+This page is being used for common errors outside our control, and commonly made mistakes. If you're after a fix for a known fault, see [Known Faults](./known-faults).
 
 ## Lost admin access to Ombi
 

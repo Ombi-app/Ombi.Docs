@@ -4,7 +4,7 @@ description: Frequently Asked Questions about Ombi!
 ---
 
 If you feel like a question should be added please reach out via the [Ombi Discord.](https://discord.gg/Sa7wNWb)  
-See also: [Known Faults](known-faults), [Common Errors](common-errors)
+See also: [Known Faults](./known-faults), [Common Errors](./common-errors)
 
 ***
 
