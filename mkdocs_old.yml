@@ -11,7 +11,7 @@ copyright: >
 # Site appearance (logos, colours, icons)
 theme:
   name: material
-  language: en
+language: en
   code_wrap: true
   features:
     - content.code.copy

@@ -4,7 +4,7 @@
 Any requests made without an endpoint to receive it will not be able to be re-processed at this point.  
 Whatever combination of the supported systems you use is up to you - Sonarr, Radarr, Couchpotato, Lidarr... Whatever.  
 
-For a guide on updating, see [Update Settings](../updating)  
+For a guide on updating, see [Update Settings](./updating)  
 For considerations when migrating an existing install rather than starting fresh, see [Migrating Systems](#migrating-systems)
 
 ***

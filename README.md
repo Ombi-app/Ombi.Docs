@@ -11,10 +11,10 @@ If you'd like to get involved with the project, reach out on [discord](https://d
 
 ## Setting up a dev environment
 
-The easiest method to install mkdocs is via python - it's consistent across different OS environments.  
+The easiest method to install Zensical is via Python - it's consistent across different OS environments.
 Install Python for your OS, ensuring that it gets added to PATH.  
 
-Once you have Python installed, you'll need to clone the repository and install the python packages used by this site (like mkdocs itself).
+Once you have Python installed, you'll need to clone the repository and install the Python packages used by this site.
 To do this, clone the repo, and from the relevant terminal/shell/prompt, change directory to the repo folder and run  
 `pip install -r requirements.txt`  
 to ensure you have all the relevant packages for use.
@@ -22,12 +22,12 @@ to ensure you have all the relevant packages for use.
 ## Editing the site
 
 To edit the site content, edit the markdown files under "docs".  
-To edit the site layout, edit the `mkdocs.yml` file (held in the root directory).  
+To edit the site layout, edit the `zensical.toml` file (held in the root directory).
 If you are working on changes, use the development branch in this repo as a base, and create a branch with your suggested changes.  
 
 Note that the new documentation repository is not directly publicly editable - for a few reasons, including (but not limited to):
 
-- Markup (as used in `mkdocs.yml`) _is_ an indent-sensitive language.
+- Configuration (as used in `zensical.toml`) must follow TOML syntax.
 - Markdown (what all the pages themselves are written with) has defined standards.
 - We'd like to be able to validate content _before_ it gets put into official documentation (the old wiki had a lot of inaccurate community-submitted content).
 
@@ -40,23 +40,14 @@ All PRs need to target the [development](https://github.com/Ombi-app/Ombi.Docs/t
 Included in this repository  is a workspace config for vscode with some defined spelling, linting, and error-checking methods, as well as a group of recommended VS Code extensions for use.  
 [Atom](https://atom.io/) is another good option.
 
-## Using mkdocs
+## Using Zensical
 
-The site is being built using [mkdocs](https://www.mkdocs.org/), which converts standard markdown to static html.  
-mkdocs itself can be told to 'serve' the folder by opening the folder containing `mkdocs.yml` in your relevant console/terminal and running `mkdocs serve`.  
+The site is built using [Zensical](https://zensical.org/), which converts Markdown to static HTML.
+To preview the site locally, open the repository folder in your console/terminal and run `zensical serve`.
 This will let you live preview the site in your browser, with changes being updated any time you save an edit to a file.  
 
-### mkdocs references
+### Zensical references
 
 Source reference:
 
-- [mkdocs wiki](https://github.com/mkdocs/mkdocs/wiki)
-- [Material theme](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation)
-
-Example Configs
-
-- [https://github.com/GhostWriters/DockSTARTer/blob/master/mkdocs.yml](https://github.com/GhostWriters/DockSTARTer/blob/master/mkdocs.yml)
-- [https://github.com/selfhosters/selfhosters.net/blob/master/mkdocs.yml](https://github.com/selfhosters/selfhosters.net/blob/master/mkdocs.yml)
-- [https://github.com/pi-hole/docs/blob/master/mkdocs.yml](https://github.com/pi-hole/docs/blob/master/mkdocs.yml)
-- [https://github.com/TRaSH-/Guides/blob/master/mkdocs.yml](https://github.com/IronicBadger/pms-wiki/blob/main/mkdocs.yml))
-- [https://github.com/IronicBadger/pms-wiki/blob/main/mkdocs.yml](https://github.com/IronicBadger/pms-wiki/blob/main/mkdocs.yml))
+- [Zensical documentation](https://zensical.org/docs/)

@@ -2,7 +2,9 @@
 
 ## Framework
 
-This documentation is built using [mkdocs](https://www.mkdocs.org).
+This documentation is built using [Zensical](https://zensical.org/).
+
+The previous MkDocs `git-revision-date-localized` and `redirects` plugin settings are not included in the Zensical configuration; their behavior needs separate replacements.
 
 ## Submitting Content
 
@@ -10,7 +12,7 @@ Please see the [repository readme](https://github.com/Ombi-app/Ombi.Docs/blob/ma
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file for the site itself.
+    zensical.toml # The configuration file for the site itself.
     assets/
         ... # Files to be included in other pages that shouldn't be directly accessible themselves.
     docs/
