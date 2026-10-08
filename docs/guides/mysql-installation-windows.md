@@ -1,7 +1,7 @@
 # MySQL on Windows
 
 To use MySQL we need to install the MySQL Community Server.  
-You can download it [here](https://dev.mysql.com/downloads/mysql/).  
+You can download it [from the MySQL website](https://dev.mysql.com/downloads/mysql/).  
 If you'd like to know why we recommend MySQL over SQLite, please see [Alternate Databases.](../../info/alternate-databases#why-mysql)
 ***
 
@@ -100,4 +100,4 @@ This will show you what kind of activity is running on your MySQL Server, and ca
 ## Migration Steps
 
 Now that MySQL is installed, you can migrate your existing SQLite data to the new MySQL server to take advantage of the faster system.  
-You can find a guide on this under [migrating databases.](../migrating-databases)
+You can find a guide on this under [migrating databases.](./migrating-databases)

@@ -21,11 +21,11 @@ Add a description _if you want_ (this is not required).
 11. Click `Browse...` and navigate to your `Ombi.exe` Click `Open`
 12. Fill `Start in (optional):` with Ombi.exe's working directory.  
 IE: `C:\Ombi\` or `C:\SERVERS\Ombi\`. Basically, wherever you extracted your 'Ombi' folder to. Click `OK`  
-12. Conditions: un-tick all, click 'OK'.
+13. Conditions: un-tick all, click 'OK'.
 ![Task Conditions](../assets/images/task_conditions.png){: loading=lazy }  
-13. Settings Tab: Untick `Stop the task if it runs longer than:`, then click `OK`.
+14. Settings Tab: Untick `Stop the task if it runs longer than:`, then click `OK`.
 ![Task Settings](../assets/images/task_settings.png){: loading=lazy }  
-14. You will be prompted for your windows user name and password.  
+15. You will be prompted for your windows user name and password.  
 Please enter your credentials, and click `OK`.
 
 Either restart your PC for task scheduler to take over, or manually start it in the Task Scheduler Library on the far left.

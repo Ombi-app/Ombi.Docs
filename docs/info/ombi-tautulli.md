@@ -12,8 +12,8 @@ One of the Discord users (thanks, DirtyCajunRice) wrote a python script to achie
 Either copy/paste the contents of [The Script](#the-script) into a file (saved somewhere logical) named `sync_aliases.py`, or [download the file](../assets/scripts/sync_aliases.py).  
 Something simple like the following is preferred:  
 
-* **Windows:** `C:\Scripts\`
-* **Linux:** `/opt/scripts/`
+- **Windows:** `C:\Scripts\`
+- **Linux:** `/opt/scripts/`
 
 _**Note:** This script requires the requests module to be installed. You can install this with  
 `pip install requests`._  

@@ -1,0 +1,229 @@
+[project]
+site_name = "Ombi Docs"
+site_description = "The official guide for Ombi"
+site_author = "Ombi-App"
+site_url = "https://docs.ombi.app/"
+edit_uri = "https://github.com/Ombi-App/Ombi.Docs/edit/development/docs/"
+repo_url = "https://github.com/Ombi-App/Ombi.Docs"
+repo_name = "Ombi-App/Ombi.Docs"
+copyright = """
+Copyright &copy; 2016 - 2026 <a href="https://github.com/tidusjar/">tidusjar</a> – <a href="#__consent">Change cookie settings</a>
+"""
+
+nav = [
+  { "Home" = "index.md" },
+  { "Getting Started" = [
+    { "Installation" = "guides/installation.md" },
+    { "Updating" = "guides/updating.md" },
+  ] },
+  { "Settings" = [
+    { "General" = "settings/ombi.md" },
+    { "Control Features" = "settings/features.md" },
+    { "Customization" = "settings/customization.md" },
+    { "Landing Page" = "settings/landingpage.md" },
+    { "Issues" = "settings/issues.md" },
+    { "User Management" = "settings/usermanagement.md" },
+    { "Authentication" = "settings/authentication.md" },
+    { "Vote" = "settings/vote.md" },
+    { "TheMovieDB" = "settings/themoviedb.md" },
+    { "Plex" = "settings/plex.md" },
+    { "Emby" = "settings/emby.md" },
+    { "Jellyfin" = "settings/jellyfin.md" },
+    { "Sonarr" = "settings/all-the-arrs.md" },
+    { "DogNzb" = "settings/dognzb.md" },
+    { "Sickrage" = "settings/sickrage.md" },
+    { "Couchpotato" = "settings/couchpotato.md" },
+    { "DogNzb" = "settings/dognzb.md" },
+    { "Radarr" = "settings/all-the-arrs.md" },
+    { "User Preferences" = "settings/user-preferences.md" },
+    { "Notifications" = [
+      { "WARNING" = "settings/notifications.md" },
+      { "Mobile" = "settings/notifications/cloudmobile.md" },
+      { "Legacy Mobile" = "settings/notifications/mobile.md" },
+      { "Email" = "settings/notifications/email.md" },
+      { "Mass Email" = "settings/notifications/massemail.md" },
+      { "Newsletter" = "settings/notifications/newsletter.md" },
+      { "Discord" = "settings/notifications/discord.md" },
+      { "Slack" = "settings/notifications/slack.md" },
+      { "Pushbullet" = "settings/notifications/pushbullet.md" },
+      { "Pushover" = "settings/notifications/pushover.md" },
+      { "Mattermost" = "settings/notifications/mattermost.md" },
+      { "Telegram" = "settings/notifications/telegram.md" },
+      { "Gotify" = "settings/notifications/gotify.md" },
+      { "Twilio" = "settings/notifications/twilio.md" },
+      { "Webhook" = "settings/notifications/webhook.md" },
+    ] },
+    { "About" = "settings/about.md" },
+    { "Failed Requests" = "settings/failedrequests.md" },
+    { "Scheduled Tasks" = "settings/jobs.md" },
+    { "Logs" = "settings/logs.md" },
+  ] },
+  { "Info" = [
+    { "Alternate Databases" = "info/alternate-databases.md" },
+    { "API Information" = "info/api-information.md" },
+    { "Backing Up" = "info/backing-up.md" },
+    { "Common Errors" = "info/common-errors.md" },
+    { "Common Themes" = "info/common-themes.md" },
+    { "Docker Containers" = "info/docker-containers.md" },
+    { "FAQ" = "info/faq.md" },
+    { "Known Faults" = "info/known-faults.md" },
+    { "Notification Variables" = "info/notification-template-variables.md" },
+    { "Ombi & Tautulli" = "info/ombi-tautulli.md" },
+    { "Request Flow" = "info/request-workflow.md" },
+    { "Reverse Proxying" = "info/reverse-proxy.md" },
+    { "Roles and Notifications" = "info/roles-and-notifications.md" },
+    { "Startup Parameters" = "info/startup-parameters.md" },
+    { "Suggesting Features" = "guides/feature-suggestions.md" },
+    { "User Roles" = "info/user-roles.md" },
+  ] },
+  { "Guides" = [
+    { "Installation" = "guides/installation.md" },
+    { "Changing Plex Password" = "guides/changing-plex-password.md" },
+    { "Migrating Databases" = "guides/migrating-databases.md" },
+    { "Installing MySQL on Windows" = "guides/mysql-installation-windows.md" },
+    { "Mobile App" = "guides/mobile-app.md" },
+    { "Suggesting Features" = "guides/feature-suggestions.md" },
+    { "Updating" = "guides/updating.md" },
+    { "Discover" = "guides/discover.md" },
+    { "Donate" = "guides/donate.md" },
+    { "Issues" = "guides/issues.md" },
+    { "Preferences" = "guides/preferences.md" },
+    { "Requests list" = "guides/requests-list.md" },
+    { "User Management" = "guides/usermanagement.md" },
+    { "Notifications" = "settings/notifications.md" },
+    { "Scheduled Windows Task" = "guides/schedule-with-pictures.md" },
+  ] },
+  { "Development" = [
+    { "Building Ombi" = "development/building-ombi.md" },
+    { "The Docs" = "development/docs.md" },
+    { "Translating Ombi" = "development/translations.md" },
+  ] },
+  { "Archive" = [
+    { "Old Known Issues" = "archive/known-issues.md" },
+    { "Prerequisites" = "archive/prerequisites.md" },
+    { "V4 Specific Proxying" = "archive/v4-specific-proxy.md" },
+    { "Ye Olde v3 Proxy" = "archive/v3-specific-proxy.md" },
+  ] },
+]
+
+extra_css = ["assets/stylesheets/extra.css"]
+
+[project.theme]
+variant = "classic"
+language = "en"
+code_wrap = true
+favicon = "assets/logo/favicon.ico"
+logo = "assets/logo/ombi-logo.png"
+features = [
+  "content.code.copy",
+  "content.tabs.link",
+  "header.autohide",
+  "navigation.expand",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "indigo"
+accent = "indigo"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "indigo"
+accent = "indigo"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to light mode"
+
+[project.extra.analytics]
+provider = "google"
+property = "G-M4NQYEKN41"
+
+[project.extra.consent]
+title = "Cookie consent"
+actions = ["accept", "manage", "reject"]
+description = """
+We use cookies to recognize your repeated visits and preferences, as well as to store your site preferences.
+With your consent, you're helping us to make our documentation better (and to work better for you).
+"""
+
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/Sa7wNWb"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/twitch"
+link = "https://www.twitch.tv/tidusjar"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/twitter"
+link = "https://twitter.com/intent/follow?screen_name=tidusjar"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/patreon"
+link = "https://patreon.com/tidusjar/Ombi"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/paypal"
+link = "https://paypal.me/PlexRequestsNet"
+
+[project.markdown_extensions]
+abbr = {}
+admonition = {}
+attr_list = {}
+meta = {}
+pymdownx.details = {}
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.highlight.guess_lang = true
+pymdownx.highlight.anchor_linenums = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.saneheaders = {}
+pymdownx.snippets = {}
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+sane_lists = {}
+toc.permalink = true
+toc.toc_depth = 5
+
+[project.plugins.search]
+
+[project.plugins.redirects.redirect_maps]
+"settings/lidarr.md" = "settings/all-the-arrs.md"
+"settings/radarr.md" = "settings/all-the-arrs.md"
+"settings/sonarr.md" = "settings/all-the-arrs.md"
+"settings/cloudmobile.md" = "settings/notifications/cloudmobile.md"
+"settings/discord.md" = "settings/notifications/discord.md"
+"settings/email.md" = "settings/notifications/email.md"
+"settings/gotify.md" = "settings/notifications/gotify.md"
+"settings/massemail.md" = "settings/notifications/massemail.md"
+"settings/mattermost.md" = "settings/notifications/mattermost.md"
+"settings/mobile.md" = "settings/notifications/mobile.md"
+"settings/newsletter.md" = "settings/notifications/newsletter.md"
+"settings/pushbullet.md" = "settings/notifications/pushbullet.md"
+"settings/pushover.md" = "settings/notifications/pushover.md"
+"settings/slack.md" = "settings/notifications/slack.md"
+"settings/telegram.md" = "settings/notifications/telegram.md"
+"settings/twilio.md" = "settings/notifications/twilio.md"
+"settings/webhook.md" = "settings/notifications/webhook.md"
+"discover.md" = "guides/discover.md"
+"donate.md" = "guides/donate.md"
+"installation.md" = "guides/installation.md"
+"changing-plex-password.md" = "guides/changing-plex-password.md"
+"issues.md" = "guides/issues.md"
+"preferences.md" = "guides/preferences.md"
+"requests-list.md" = "guides/requests-list.md"
+"usermanagement.md" = "guides/usermanagement.md"
+"faq.md" = "info/faq.md"
+"faults.md" = "info/known-faults.md"
+"settings/update.md" = "guides/updating.md"

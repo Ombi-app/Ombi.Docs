@@ -4,7 +4,7 @@
 Any requests made without an endpoint to receive it will not be able to be re-processed at this point.  
 Whatever combination of the supported systems you use is up to you - Sonarr, Radarr, Couchpotato, Lidarr... Whatever.  
 
-For a guide on updating, see [Update Settings](../updating)  
+For a guide on updating, see [Update Settings](./updating)  
 For considerations when migrating an existing install rather than starting fresh, see [Migrating Systems](#migrating-systems)
 
 ***
@@ -274,7 +274,7 @@ _(For simplicity, name it `Ombi.plist`)_
 The Ombi team do not currently maintain any Docker containers directly.  
 
 However, there are a number of them available, maintained by various members of the community.  
-linuxserver.io keep their image the most up-to-date, and they have pretty comprehensive instructions for installation. See the page for their image [here](https://hub.docker.com/r/linuxserver/ombi/).  
+linuxserver.io keep their image the most up-to-date, and they have pretty comprehensive instructions for installation. See the page for their image [on their page](https://hub.docker.com/r/linuxserver/ombi/).  
 
 If you are considering running Ombi in a container, and are unfamiliar with how Docker works, please see [Things to consider with Docker](../../info/docker-containers) to (hopefully) help clear up some things with how networking and access works with a Docker system.  
 

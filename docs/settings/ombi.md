@@ -10,7 +10,7 @@ If you are running Ombi on startup (so it launches when the system boots up), se
 
 ## Api Key
 
-This is to use the API that Ombi provides. See [here](../../info/api-information)
+This is to use the API that Ombi provides. See [API Information](../../info/api-information)
 
 ## Branch
 
@@ -38,4 +38,4 @@ This helps us to target dev time - better support on the most used platforms mak
 ## Language
 
 Self-explanatory - what language do you want as default for your instance of Ombi?  
-This can be overridden per-user in their [preferences](../user-preferences), should they wish to view Ombi in their own language.  
+This can be overridden per-user in their [preferences](./user-preferences), should they wish to view Ombi in their own language.  

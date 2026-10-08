@@ -29,7 +29,7 @@ This is an autocomplete field where you can type in the users username and selec
 ## Default Roles
 
 Choose the default roles that the imported users will take when the import job runs.
-You can view what the different roles mean [here](/info/user-roles)
+You can view what the different roles mean [User Roles](/info/user-roles)
 
 ## Default Request Limit
 

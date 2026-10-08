@@ -163,8 +163,8 @@ display:none;
 People with their own repositories of themes can have ones they'd like shared publicly linked here.  
 Please note that these are not tested or endorsed by the Ombi(tm) team. Any 'jank' encountered is down to the maintainer of the theme.
 
-* [Theme-Park](https://docs.theme-park.dev/themes/ombi/)
-* [OmbiFlix (Dark Netflix Clone)](https://github.com/DevilsDesigns/OmbiFlix-Themes)
+- [Theme-Park](https://docs.theme-park.dev/themes/ombi/)
+- [OmbiFlix (Dark Netflix Clone)](https://github.com/DevilsDesigns/OmbiFlix-Themes)
 
 ***
 
@@ -232,7 +232,7 @@ This only works for V3 (legacy) builds, as V4 is no longer tabbed like this.
 
     [bigworm50](https://www.reddit.com/user/bigworm50/)  
 
-    * Custom Colored UI
+    * Custom Coloured UI
 
     [zimreapers](https://www.reddit.com/user/zimreapers/)  
 

@@ -1,6 +1,4 @@
 wheel>=0.45.1
-mkdocs-material>=9.6.10
-mkdocs-redirects>=1.2.2
-mkdocs-git-revision-date-localized-plugin>=1.4.7
+zensical>=0.0.67
 Pygments>=2.19.2
 pymdown-extensions>=10.16

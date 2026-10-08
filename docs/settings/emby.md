@@ -18,13 +18,13 @@ These are the details you'll need to fill in for Ombi and Emby to talk to each o
 | Field | Required data |
 | --- | --- |
 | Server Name | This is for you to put the _name_ of your Emby server in.<br>It's used in notifications to say "your requested contented is now available on **ServerName**". |
-| Hostname / IP | This is the IP address of your Emby instance. If you have it running in a container, it's usually the IP of the machine hosting the container. <br>Either way, this should be the IP you can enter in a browser to be able to open the Emby UI (when combined with the port).|
+| Hostname / IP | This is the IP address of your Emby instance. If you have it running in a container, it's usually the IP of the machine hosting the container. <br>Either way, this should be the IP you can enter in a browser to be able to open the Emby UI (when combined with the port). |
 | Server ID | This one will auto-fill once you actually connect properly. |
 | Port | This is the port you use for Emby access. The default for this is 8096, so if you haven't changed it try that.<br>_Note that a container can pass through a different port - if you access the web interface through a different port, use that._ |
 | SSL | If you have enabled SSL _in Emby_, then turn this on.<br>If SSL is handled by a reverse proxy, leave it off. |
-| API Key | You will need to generate an API key in Emby in order for Ombi to authenticate with it. This is done in Emby itself.<br>Emby Admin Dashboard -> API Keys (under Advanced) -> ++plus++|
-| Base URL | This is needed if your Emby is configured with a BaseURL _(i.e. is accessed by http://ip:port/Emby/ or similar)_.<br>If you have not configured a BaseURL, leave this blank.|
-| Externally Facing Hostname | This is the address you use to access Emby _outside_ your network.<br>If you have a reverse proxy in place, this could be something like `https://Emby.example.com`|
+| API Key | You will need to generate an API key in Emby in order for Ombi to authenticate with it. This is done in Emby itself.<br>Emby Admin Dashboard -> API Keys (under Advanced) -> ++plus++ |
+| Base URL | This is needed if your Emby is configured with a BaseURL _(i.e. is accessed by http://ip:port/Emby/ or similar)_.<br>If you have not configured a BaseURL, leave this blank. |
+| Externally Facing Hostname | This is the address you use to access Emby _outside_ your network.<br>If you have a reverse proxy in place, this could be something like `https://Emby.example.com` |
 
 
 ### Load Libraries

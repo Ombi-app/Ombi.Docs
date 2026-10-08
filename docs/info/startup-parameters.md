@@ -3,7 +3,7 @@
 Certain parameters (or _arguments_) can be passed to the ombi application to enforce specific settings.  
 The available options are the same across all platforms (Mac, Windows, Linux etc), but in some instances actually using them differs.  
 This page is intended to help with some rough information on how to use them on different platforms.  
-To jump to how they're used, click [here](#usage).  
+To jump to how they're used, click [usage](#usage).  
 
 ## Parameters
 
