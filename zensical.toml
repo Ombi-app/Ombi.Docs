@@ -198,4 +198,32 @@ toc.toc_depth = 5
 
 [project.plugins.search]
 
-# Need to add method for short URLs to be generated for the docs, so that we can use them in the app. This will be done in a future update.
+[project.plugins.redirects.redirect_maps]
+"settings/lidarr.md" = "settings/all-the-arrs.md"
+"settings/radarr.md" = "settings/all-the-arrs.md"
+"settings/sonarr.md" = "settings/all-the-arrs.md"
+"settings/cloudmobile.md" = "settings/notifications/cloudmobile.md"
+"settings/discord.md" = "settings/notifications/discord.md"
+"settings/email.md" = "settings/notifications/email.md"
+"settings/gotify.md" = "settings/notifications/gotify.md"
+"settings/massemail.md" = "settings/notifications/massemail.md"
+"settings/mattermost.md" = "settings/notifications/mattermost.md"
+"settings/mobile.md" = "settings/notifications/mobile.md"
+"settings/newsletter.md" = "settings/notifications/newsletter.md"
+"settings/pushbullet.md" = "settings/notifications/pushbullet.md"
+"settings/pushover.md" = "settings/notifications/pushover.md"
+"settings/slack.md" = "settings/notifications/slack.md"
+"settings/telegram.md" = "settings/notifications/telegram.md"
+"settings/twilio.md" = "settings/notifications/twilio.md"
+"settings/webhook.md" = "settings/notifications/webhook.md"
+"discover.md" = "guides/discover.md"
+"donate.md" = "guides/donate.md"
+"installation.md" = "guides/installation.md"
+"changing-plex-password.md" = "guides/changing-plex-password.md"
+"issues.md" = "guides/issues.md"
+"preferences.md" = "guides/preferences.md"
+"requests-list.md" = "guides/requests-list.md"
+"usermanagement.md" = "guides/usermanagement.md"
+"faq.md" = "info/faq.md"
+"faults.md" = "info/known-faults.md"
+"settings/update.md" = "guides/updating.md"
