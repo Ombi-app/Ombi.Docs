@@ -374,9 +374,9 @@ IIS admin -> Application Request Routing Cache -> Server Proxy Settings, tick "E
 ### Caddy
 
 Caddy 2 is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go.  
-You can find Caddy [here](https://caddyserver.com/), and their docs can be found [here](https://caddyserver.com/docs/).  
-An official docker image can be found [here](https://hub.docker.com/_/caddy/).  
-Otherwise you can direct install using a binary found [here](https://github.com/caddyserver/caddy/releases).
+You can find Caddy [on their site](https://caddyserver.com/), and their docs can be found on their [docs page](https://caddyserver.com/docs/).  
+An official docker image can be found on [DockerHub](https://hub.docker.com/_/caddy/).  
+Otherwise you can direct install using a binary found on the [Caddy GitHub](https://github.com/caddyserver/caddy/releases).
 
 _**Note:** The official binaries and Docker image do not include any of the DNS plugins required for wildcard certificates or DNS verification instead of port 80 verification. If your connection blocks port 80, you will need to build your own binary or image to include these._
 
@@ -401,8 +401,8 @@ _**Note:** The official binaries and Docker image do not include any of the DNS 
 ### Traefik
 
 Traefik is a great reverse proxy option if you are using a container-based setup such as docker compose.  
-You can find Traefik [here](https://docs.traefik.io/), and their getting started guide [here](https://docs.traefik.io/getting-started/quick-start/).  
-For more information and examples on the usage of labels in docker compose (specific to traefik) go [here](https://docs.traefik.io/user-guides/docker-compose/basic-example/).  
+You can find Traefik on the [Traefik Site](https://docs.traefik.io/), and their [getting started guide](https://docs.traefik.io/getting-started/quick-start/).  
+For more information and examples on the usage of labels in docker compose (specific to traefik) see [their docs](https://docs.traefik.io/user-guides/docker-compose/basic-example/).  
 _**Note:** The following configuration examples only apply to traefik version 2 and later._  
 _**Note 2:** All examples contain additional labels not necessarily required for your setup such as wildcard SSL certificates via Let's Encrypt and SSL related headers._
 

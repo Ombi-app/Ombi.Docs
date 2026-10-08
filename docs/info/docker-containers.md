@@ -18,7 +18,7 @@ docker run -d --name=ombi -p 5000:5000 --restart=unless-stopped -v /opt/ombi/con
 
 This will create the folder and a container named "ombi" that you can then manage like any other docker container.  
 If you wish to use MySQL as a database for ombi, then you'll need to create a "database.json" file in the config folder created before.  
-Details for the file can be found [here](../alternate-databases).  
+Details for the file can be found on the [alternate databases page](../alternate-databases).  
 
 ### Docker Compose
 
@@ -130,22 +130,22 @@ Login with root and your chosen password, then run the following commands:
 
 ### Host
 
-Host networking gives the *__container__* direct access to the network adapter of the *__host__* machine (the one running Docker).  
+Host networking gives the **_container_** direct access to the network adapter of the **_host_** machine (the one running Docker).  
 This means that the container runs like any other network application, with complete freedom to discover other devices/services on your network. It is appropriate for some systems (like Home Assistant), but one of the benefits of Docker is the 'isolation' of services (so nothing depends on anything else).  
 
 ### Bridge
 
-Bridge networking makes the Docker Host behave like a VM Host *and* a router, with a whole separate virtual network behind its own LAN IP.  
-Each *__container__* then gets an IP in a whole different IP range than your LAN itself. Usually, Docker uses 172.17.0.x for these. If the Ombi container was given 172.17.0.3, then it would listen on 172.17.0.3:5000 (for example).  
-This means that you map ports from the *__host__* to the *__container__*, much like port forwarding for access from outside your network (as you would for passing ports 80 and 443 to your web server, for instance). The two ports do not have to be the same - you could map 3589 on your *__host__* to point to 3579 on your *__container__*.  
-To access the service from outside of the Docker *__host__*, you'd browse to the LAN IP of said host and the port you mapped - 3589 in the example above. Docker would see the traffic hit the *__host__* on 3589 and pass it through (via Network Address Translation, or 'NAT') to the *__container__* on 172.17.0.3:5000
+Bridge networking makes the Docker Host behave like a VM Host _and_ a router, with a whole separate virtual network behind its own LAN IP.  
+Each **_container_** then gets an IP in a whole different IP range than your LAN itself. Usually, Docker uses 172.17.0.x for these. If the Ombi container was given 172.17.0.3, then it would listen on 172.17.0.3:5000 (for example).  
+This means that you map ports from the **_host_** to the **_container_**, much like port forwarding for access from outside your network (as you would for passing ports 80 and 443 to your web server, for instance). The two ports do not have to be the same - you could map 3589 on your **_host_** to point to 3579 on your **_container_**.  
+To access the service from outside of the Docker **_host_**, you'd browse to the LAN IP of said host and the port you mapped - 3589 in the example above. Docker would see the traffic hit the **_host_** on 3589 and pass it through (via Network Address Translation, or 'NAT') to the **_container_** on 172.17.0.3:5000
 
 ## Talking to Other Services
 
 If you have an Ombi container, and a Sonarr container (or Radarr/Lidarr/CouchPotato etc), then these services will all need to talk to each other.  
-If you've configured your containers to use __host__ networking, then all you'll need to do is use the LAN IP of the Docker *__host__* as the IP of the service.  
-However, if you've used __bridge__, then you can use either the *__container__* IP or the *__container__* name instead (as this stays inside the virtual network that the *__host__* created for all the containers to communicate via).  
-For example, if you have a Sonarr *__container__* named "sonarr" that has an IP of 172.17.0.17, then you could either enter "sonarr" or "172.17.0.17" as the address for Ombi to reach Sonarr.  
+If you've configured your containers to use **host** networking, then all you'll need to do is use the LAN IP of the Docker **_host_** as the IP of the service.  
+However, if you've used **bridge**, then you can use either the **_container_** IP or the **_container_** name instead (as this stays inside the virtual network that the **_host_** created for all the containers to communicate via).  
+For example, if you have a Sonarr **_container_** named "sonarr" that has an IP of 172.17.0.17, then you could either enter "sonarr" or "172.17.0.17" as the address for Ombi to reach Sonarr.  
 
 ## Finding Container IP addresses
 

@@ -23,7 +23,7 @@ See [Feature Suggestions](../../guides/feature-suggestions)
 
 Yes, you can.  
 This is a little more involved than some people are comfortable with, as it's not officially supported.  
-If that doesn't worry you, and you're comfortable with running custom scripts and Python code, then you can check out the script created by DirtyCajunRice [here](../info/ombi-tautulli.md).
+If that doesn't worry you, and you're comfortable with running custom scripts and Python code, then you can check out the [script created by DirtyCajunRice](../info/ombi-tautulli.md).
 ***
 
 ## How do I get the QR code for mobile connections?

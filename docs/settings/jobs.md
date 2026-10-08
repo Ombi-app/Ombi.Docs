@@ -6,8 +6,8 @@ All of these tasks are on timers using Quartz CRON expressions.
 
 ## Job Descriptions
 
-|**Jobs**|**Default Expression**|**CRON Definition**|**Description**|
-|--------------------------|--------------------------|-------------------------------|-------------------------------|
+| **Jobs** | **Default Expression** | **CRON Definition** | **Description** |
+| -------------------------- | -------------------------- | ------------------------------- | ------------------------------- |
 | Sonarr Sync | `0 10 0/1 1/1 * ? *` | Every hour on the 10th minute | Pulls in all of the monitored episodes, seasons and series into Ombi, so Ombi can have a quick lookup |
 | SickRage Sync | `0 35 0/1 1/1 * ? *` | Every hour on the 35th minute | Pulls in all of the monitored episodes, seasons and series into Ombi, so Ombi can have a quick lookup |
 | Radarr Sync | `0 15 0/1 1/1 * ? *` | Every hour on the 15th minute | Pulls in all of the monitored Movies into Ombi, so Ombi can have a quick lookup |

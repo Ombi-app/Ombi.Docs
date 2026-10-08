@@ -28,7 +28,7 @@ You can easily check this by calling the TV Maze API: [http://api.tvmaze.com/sea
 
 You can see under the `externals` object there should be a `theTvDb` property. If that is `null` then Ombi cannot process that show.  
 
-You can request the `theTvDb` id to be added [here](https://www.tvmaze.com/threads/2677/edit-requests)  
+You can request the `theTvDb` id to be added on [TVMaze](https://www.tvmaze.com/threads/2677/edit-requests)  
 
 ***
 If you search for a TV show and get this error:

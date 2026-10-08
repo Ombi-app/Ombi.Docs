@@ -13,15 +13,15 @@ There are two different ways to interact with the API
 
 ### JWT Bearer Authentication  
 
-* This means you need to authenticate with a username and password and you will get a unique token that the application can use to identity that user including all roles.  
-* You use this by setting an `Authorization` header with the value being `Bearer YOUR_TOKEN`.  
+- This means you need to authenticate with a username and password and you will get a unique token that the application can use to identity that user including all roles.  
+- You use this by setting an `Authorization` header with the value being `Bearer YOUR_TOKEN`.  
 
 ### API Key
 
-* You can use the API key that is found in the Ombi settings page of the application.  
+- You can use the API key that is found in the Ombi settings page of the application.  
 Using the API key provides admin access to the whole system, so keep this a secret.
-* You can use this by setting an `ApiKey` header, with the value being the API key from the settings page
-* NOTE: when using the API Key everything is assumed to be admin, and thus has no user associated with it.  
+- You can use this by setting an `ApiKey` header, with the value being the API key from the settings page
+- NOTE: when using the API Key everything is assumed to be admin, and thus has no user associated with it.  
 If you want it to be associated with a user you need to pass in an _additional_ header ("UserName"), with the value being the username of the user you would like to associate it with.  
 If the username does not exist then the API call will fail.
 

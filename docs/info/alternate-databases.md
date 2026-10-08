@@ -26,19 +26,19 @@ The `database.json` file needs to look like the below example (replacing usernam
 ```
 
 As you can see you can specify a database type and a connectionstring per database that Ombi has.
-You can see what each database is used for [here](./faq/#database-uses).
+You can see what each database is used for on the [Alternate Databases entry](./faq/#database-uses).
 
 ***
 
 ## Supported Databases
 
 | Type | ConnectionString Example |
-| ---- | -----------------|
-| SQLite |    Data Source=C:/tmp/Ombi.db |
-| MySQL  |   Server=localhost;Database=Ombi;User=root;Password=123456; |
-| MariaDB  |   Server=localhost;Database=Ombi;User=root;Password=123456; |
+| ---- | ----------------- |
+| SQLite | Data Source=C:/tmp/Ombi.db |
+| MySQL | Server=localhost;Database=Ombi;User=root;Password=123456; |
+| MariaDB | Server=localhost;Database=Ombi;User=root;Password=123456; |
 
-**Note that MariaDB will need to be configured as `"Type":"MySQL"` in the `database.json` file.*
+_*Note that MariaDB will need to be configured as `"Type":"MySQL"` in the `database.json` file._
 
 ### SQLite
 
@@ -51,14 +51,14 @@ It's used for pure simplicity - it can be deployed by Ombi itself, and relies on
 
 MySQL requires more user configuration to run - so it tends to be for more advanced users. That's why SQLite is the default - Ombi can deploy it itself.  
 MySQL is, however, measurably better once it's configured. It handles multiple users signing in at once, and isn't subject to the same database locks that SQLite is.  
-It is also drastically more efficient at handling data - and thus is *much* faster than SQLite is. How much faster depends a lot on the hardware you're running it on and the database size, of course, but we've seen improvements anywhere from 25% up to 200% (and potentially higher, depending on the system).  
+It is also drastically more efficient at handling data - and thus is _much_ faster than SQLite is. How much faster depends a lot on the hardware you're running it on and the database size, of course, but we've seen improvements anywhere from 25% up to 200% (and potentially higher, depending on the system).  
 If you are experiencing slowdowns with an SQLite setup, we strongly recommend using MySQL instead.
 
 #### Supported Versions
 
 Supported versions:  
 [https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql#supported-dbms-and-versions)  
-*We currently recommend version 8.x and upwards - v5.7 is now end-of-life.*
+_We currently recommend version 8.x and upwards - v5.7 is now end-of-life._
 
 #### Database Character Set
 
@@ -69,7 +69,7 @@ You can check your db charset by running the following query:
 #### Database Structure Options
 
 You can use a separate database per function (like SQLite does, with the 3 db files), or point all of them at the same MySQL database, as each table has a unique name regardless.  
-*It is up to you whether you use separate databases for each. For people unfamiliar with mysql, it is much easier to drop a database than to drop specific tables.*
+_It is up to you whether you use separate databases for each. For people unfamiliar with mysql, it is much easier to drop a database than to drop specific tables._
 
 === "Single Database"
 
@@ -116,7 +116,7 @@ You can use a separate database per function (like SQLite does, with the 3 db fi
 #### Create database and user
 
 On the MySQL/MariaDB server we will create the database and the user that we will use later.  
-*You need to* `GRANT ALL PRIVILEGES` *for every database you create.*
+_You need to_ `GRANT ALL PRIVILEGES` _for every database you create._
 
 This is done in the MySQL console (or phpmyadmin if you have that configured).  
 
@@ -247,7 +247,7 @@ So long as:
 
 Restarting ombi should generate the tables and start up ombi like it would normally.
 
-*This will not migrate any existing settings.*  
+_This will not migrate any existing settings._  
 You effectively have a clean ombi install.
 
 ## Installation Guides

@@ -5,12 +5,12 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 ## Migration procedure
 
 > This would be the procedure to migrate the Ombi databases from SQLite to a MySQL/MariaDB server.
-> If there is an error you can contact in Discord or you can open an incident [here](https://github.com/vsc55/ombi_sqlite_mysql/issues).
+> If there is an error you can contact in Discord or you can open an incident [in the repo](https://github.com/vsc55/ombi_sqlite_mysql/issues).
 
 ### 1. Requirements
 
-* Python3
-* Ombi version 4.0.728 or higher
+- Python3
+- Ombi version 4.0.728 or higher
 
 ### 2. Download Script and install dependencies
 
@@ -64,7 +64,7 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
         (i.e. for `E:\Ombi`, you'd run `E:` followed by `cd E:\Ombi`).
         2. `python ombi_sqlite2mysql.py -c C:\Ombi --only_db_json --host 192.168.1.100 --db Ombi --user ombi --passwd ombi`  
 
-4. **Only if we are going to use *Multiple Databases* or *Multiple Servers*.**  
+4. **Only if we are going to use _Multiple Databases_ or _Multiple Servers_.**  
     To be able to use multiple servers or databases we will need to manually edit **database.json**.  
     The example below will export the **"OmbiDatabase"** and **"SettingsDatabase"** databases to the server at **"192.168.1.100"** (but to different databases on the same server), while the **"ExternalDatabase"** database will be sent to the server on **"192.168.1.200"**.
 
@@ -123,7 +123,7 @@ _This guide assumes you have already configured [MySQL/MariaDB](../../info/alter
 When it comes to migrating the data, we have several different ways of doing it.
 We can export everything to a single database (step 4.1), to different databases or to different MySQL servers (step 4.2).
 
-#### 4.1. Data Migration (*Single Database*)
+#### 4.1. Data Migration (_Single Database_)
 
 > For data migration we will need the file **"migration.json"** that contains the locations of the SQLite databases.
 >  
@@ -206,7 +206,7 @@ We can export everything to a single database (step 4.1), to different databases
 
 2. Start ombi and test if everything works fine.
 
-#### 4.2. Data Migration (*Multiple DataBases or Servers MySql/MariaDB*)
+#### 4.2. Data Migration (_Multiple DataBases or Servers MySql/MariaDB_)
 
 > For data migration to multiple databases or servers we will need the file **"database_multi.json"** that contains the locations of the servers where we are going to export the data.
 
@@ -285,7 +285,7 @@ We can export everything to a single database (step 4.1), to different databases
     }
     ```  
 
-    > __NOTE: If you want to export all the content to several servers we will have to repeat the point "Create and prepare tables" with the different servers so that all the tables are created. You will also have to modify the file **database.json** at the end of the export process before running ombi to leave a single server for each database.__
+    > **NOTE: If you want to export all the content to several servers we will have to repeat the point "Create and prepare tables" with the different servers so that all the tables are created. You will also have to modify the file **database.json** at the end of the export process before running ombi to leave a single server for each database.**
 
 2. Start data migration.  
     > The script will empty the tables from the MySQL/MariaDB database and automatically migrate the data from SQLite to MySQL/MariaDB.
@@ -485,7 +485,7 @@ Options:
 
 ## 6. FAQ
 
-**P: Migrated data verification says there is more data in SQLite than in MySQL or vice versa.**  
+### Migrated data verification says there is more data in SQLite than in MySQL or vice versa  
 
 ```bash
 - Running   [############################################################] 9242/9242
@@ -521,7 +521,7 @@ Options:
 - Checking  [############################################################] 43/43
 ```
 
-S: We will have to force the elimination of the data in all the tables with the parameter `--force` as follows.
+Solution: We will have to force the elimination of the data in all the tables with the parameter `--force` as follows.
 
 ```bash
 # Single Database:
@@ -533,16 +533,17 @@ $ python ombi_sqlite2mysql.py -c /etc/Ombi --force --host 192.168.1.100 --db Omb
 $ python ombi_sqlite2mysql_multi.py -c /etc/Ombi --force
 ```
 
-**P: How do I migrate if I'm using docker?**
+### How do I migrate if I'm using docker?
 
-S: Configure `database_multi.json` as needed and place it into the `/config` folder.  
+Configure `database_multi.json` as needed and place it into the `/config` folder.  
 In the docker storage config, mount the `ombi_sqlite_mysql` folder to the container (we recommend mounting it as `/migrate`).  
 Run `docker exec ombi bash` and install the appropriate python3 tools (`apt update; apt install python3 python3-mysqldb -y;`).  
 Run your appropriate command for python like  `python3 /migrate/ombi_sqlite2mysql_multi.py -c /config` and your migration will take place.
 
 ---
 
-**P: Table "XXX" requiered is not exist in the server MySQL**
+### Table "XXX" required is not exist in the server MySQL
+
 ```bash
 $ python3 ombi_sqlite2mysql.py -c /etc/Ombi  --host 127.0.0.1 --db Ombi --user ombi --passwd ombi
 Migration tool from SQLite to MySql/MariaDB for ombi (3.0.8) By VSC55
@@ -552,16 +553,18 @@ Generate file "database.json":
 
 MySQL > Connecting... [✓]
 - Reading   [............................................................] 0/1
-- Error: Table "__EFMigrationsHistory" requiered is not exist in the server MySQL!!!
+- Error: Table "__EFMigrationsHistory" required is not exist in the server MySQL!!!
 Read tables [!!]
 
 MySQL > Disconnecting... [✓]
 ```
-S: This error typically occurs when tables were not successfully created with the --migrate argument to ombi. This may be because the configuration (database.json file) and the databases are not in the same folder where we have installed ombi. The solution is to add the --storage argument when we run the migration.
+
+Solution: This error typically occurs when tables were not successfully created with the --migrate argument to ombi. This may be because the configuration (database.json file) and the databases are not in the same folder where we have installed ombi. The solution is to add the --storage argument when we run the migration.
 
 In the following example, both the database.json file and the databases are stored in /etc/Ombi:
+
 ```bash
-$ /opt/ombi/Ombi --migrate --storage /etc/Ombi
+/opt/ombi/Ombi --migrate --storage /etc/Ombi
 ```
 
 ---
