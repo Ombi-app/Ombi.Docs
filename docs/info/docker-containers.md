@@ -124,6 +124,17 @@ Login with root and your chosen password, then run the following commands:
 
 1. Open Ombi "http://docker-host-ip:5000" and setup your ombi installation.
 
+### Easypanel
+
+[Easypanel](https://easypanel.io) is a self-hosted Docker deployment platform, and Ombi has a one-click deployment template there.
+
+[![Deploy on Easypanel][easypanel-btn]][easypanel-deploy]
+
+[easypanel-btn]: https://easypanel.io/img/deploy-on-easypanel-40.svg
+[easypanel-deploy]: https://easypanel.io/templates/ombi
+
+The template deploys the `linuxserver/ombi` image with a persistent volume for `/config`.
+
 ## Considerations
 
 ## Host vs Bridge Networking
